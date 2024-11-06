@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"time"
 	"fmt"
+	"time"
 )
 
 // checks if the VirtualDeviceContext type satisfies the MappedNullable interface at compile time
@@ -21,25 +21,25 @@ var _ MappedNullable = &VirtualDeviceContext{}
 
 // VirtualDeviceContext Adds support for custom fields and tags.
 type VirtualDeviceContext struct {
-	Id int32 `json:"id"`
-	Url string `json:"url"`
-	DisplayUrl string `json:"display_url"`
-	Display string `json:"display"`
-	Name string `json:"name"`
-	Device BriefDevice `json:"device"`
-	Identifier NullableInt32 `json:"identifier,omitempty"`
-	Tenant NullableBriefTenant `json:"tenant,omitempty"`
-	PrimaryIp NullableBriefIPAddress `json:"primary_ip"`
-	PrimaryIp4 NullableBriefIPAddress `json:"primary_ip4,omitempty"`
-	PrimaryIp6 NullableBriefIPAddress `json:"primary_ip6,omitempty"`
-	Status VirtualDeviceContextStatus `json:"status"`
-	Description *string `json:"description,omitempty"`
-	Comments *string `json:"comments,omitempty"`
-	Tags []NestedTag `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	Created NullableTime `json:"created"`
-	LastUpdated NullableTime `json:"last_updated"`
-	InterfaceCount int64 `json:"interface_count"`
+	Id                   int32                      `json:"id"`
+	Url                  string                     `json:"url"`
+	DisplayUrl           string                     `json:"display_url"`
+	Display              string                     `json:"display"`
+	Name                 string                     `json:"name"`
+	Device               BriefDevice                `json:"device"`
+	Identifier           NullableInt32              `json:"identifier,omitempty"`
+	Tenant               NullableBriefTenant        `json:"tenant,omitempty"`
+	PrimaryIp            NullableBriefIPAddress     `json:"primary_ip"`
+	PrimaryIp4           NullableBriefIPAddress     `json:"primary_ip4,omitempty"`
+	PrimaryIp6           NullableBriefIPAddress     `json:"primary_ip6,omitempty"`
+	Status               VirtualDeviceContextStatus `json:"status"`
+	Description          *string                    `json:"description,omitempty"`
+	Comments             *string                    `json:"comments,omitempty"`
+	Tags                 []NestedTag                `json:"tags,omitempty"`
+	CustomFields         map[string]interface{}     `json:"custom_fields,omitempty"`
+	Created              NullableTime               `json:"created"`
+	LastUpdated          NullableTime               `json:"last_updated"`
+	InterfaceCount       int64                      `json:"interface_count"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -249,6 +249,7 @@ func (o *VirtualDeviceContext) HasIdentifier() bool {
 func (o *VirtualDeviceContext) SetIdentifier(v int32) {
 	o.Identifier.Set(&v)
 }
+
 // SetIdentifierNil sets the value for Identifier to be an explicit nil
 func (o *VirtualDeviceContext) SetIdentifierNil() {
 	o.Identifier.Set(nil)
@@ -291,6 +292,7 @@ func (o *VirtualDeviceContext) HasTenant() bool {
 func (o *VirtualDeviceContext) SetTenant(v BriefTenant) {
 	o.Tenant.Set(&v)
 }
+
 // SetTenantNil sets the value for Tenant to be an explicit nil
 func (o *VirtualDeviceContext) SetTenantNil() {
 	o.Tenant.Set(nil)
@@ -359,6 +361,7 @@ func (o *VirtualDeviceContext) HasPrimaryIp4() bool {
 func (o *VirtualDeviceContext) SetPrimaryIp4(v BriefIPAddress) {
 	o.PrimaryIp4.Set(&v)
 }
+
 // SetPrimaryIp4Nil sets the value for PrimaryIp4 to be an explicit nil
 func (o *VirtualDeviceContext) SetPrimaryIp4Nil() {
 	o.PrimaryIp4.Set(nil)
@@ -401,6 +404,7 @@ func (o *VirtualDeviceContext) HasPrimaryIp6() bool {
 func (o *VirtualDeviceContext) SetPrimaryIp6(v BriefIPAddress) {
 	o.PrimaryIp6.Set(&v)
 }
+
 // SetPrimaryIp6Nil sets the value for PrimaryIp6 to be an explicit nil
 func (o *VirtualDeviceContext) SetPrimaryIp6Nil() {
 	o.PrimaryIp6.Set(nil)
@@ -640,7 +644,7 @@ func (o *VirtualDeviceContext) SetInterfaceCount(v int64) {
 }
 
 func (o VirtualDeviceContext) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -715,10 +719,10 @@ func (o *VirtualDeviceContext) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -797,5 +801,3 @@ func (v *NullableVirtualDeviceContext) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

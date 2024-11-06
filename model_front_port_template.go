@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"time"
 	"fmt"
+	"time"
 )
 
 // checks if the FrontPortTemplate type satisfies the MappedNullable interface at compile time
@@ -21,22 +21,22 @@ var _ MappedNullable = &FrontPortTemplate{}
 
 // FrontPortTemplate Extends the built-in ModelSerializer to enforce calling full_clean() on a copy of the associated instance during validation. (DRF does not do this by default; see https://github.com/encode/django-rest-framework/issues/3144)
 type FrontPortTemplate struct {
-	Id int32 `json:"id"`
-	Url string `json:"url"`
-	Display string `json:"display"`
+	Id         int32                   `json:"id"`
+	Url        string                  `json:"url"`
+	Display    string                  `json:"display"`
 	DeviceType NullableBriefDeviceType `json:"device_type,omitempty"`
 	ModuleType NullableBriefModuleType `json:"module_type,omitempty"`
 	// {module} is accepted as a substitution for the module bay position when attached to a module type.
 	Name string `json:"name"`
 	// Physical label
-	Label *string `json:"label,omitempty"`
-	Type FrontPortType `json:"type"`
-	Color *string `json:"color,omitempty"`
-	RearPort BriefRearPortTemplate `json:"rear_port"`
-	RearPortPosition *int32 `json:"rear_port_position,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Created NullableTime `json:"created"`
-	LastUpdated NullableTime `json:"last_updated"`
+	Label                *string               `json:"label,omitempty"`
+	Type                 FrontPortType         `json:"type"`
+	Color                *string               `json:"color,omitempty" validate:"regexp=^[0-9a-f]{6}$"`
+	RearPort             BriefRearPortTemplate `json:"rear_port"`
+	RearPortPosition     *int32                `json:"rear_port_position,omitempty"`
+	Description          *string               `json:"description,omitempty"`
+	Created              NullableTime          `json:"created"`
+	LastUpdated          NullableTime          `json:"last_updated"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -175,6 +175,7 @@ func (o *FrontPortTemplate) HasDeviceType() bool {
 func (o *FrontPortTemplate) SetDeviceType(v BriefDeviceType) {
 	o.DeviceType.Set(&v)
 }
+
 // SetDeviceTypeNil sets the value for DeviceType to be an explicit nil
 func (o *FrontPortTemplate) SetDeviceTypeNil() {
 	o.DeviceType.Set(nil)
@@ -217,6 +218,7 @@ func (o *FrontPortTemplate) HasModuleType() bool {
 func (o *FrontPortTemplate) SetModuleType(v BriefModuleType) {
 	o.ModuleType.Set(&v)
 }
+
 // SetModuleTypeNil sets the value for ModuleType to be an explicit nil
 func (o *FrontPortTemplate) SetModuleTypeNil() {
 	o.ModuleType.Set(nil)
@@ -480,7 +482,7 @@ func (o *FrontPortTemplate) SetLastUpdated(v time.Time) {
 }
 
 func (o FrontPortTemplate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -543,10 +545,10 @@ func (o *FrontPortTemplate) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -620,5 +622,3 @@ func (v *NullableFrontPortTemplate) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

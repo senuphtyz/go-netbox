@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"time"
 	"fmt"
+	"time"
 )
 
 // checks if the L2VPN type satisfies the MappedNullable interface at compile time
@@ -21,23 +21,23 @@ var _ MappedNullable = &L2VPN{}
 
 // L2VPN Adds support for custom fields and tags.
 type L2VPN struct {
-	Id int32 `json:"id"`
-	Url string `json:"url"`
-	DisplayUrl string `json:"display_url"`
-	Display string `json:"display"`
-	Identifier NullableInt64 `json:"identifier,omitempty"`
-	Name string `json:"name"`
-	Slug string `json:"slug"`
-	Type *BriefL2VPNType `json:"type,omitempty"`
-	ImportTargets []RouteTarget `json:"import_targets,omitempty"`
-	ExportTargets []RouteTarget `json:"export_targets,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Comments *string `json:"comments,omitempty"`
-	Tenant NullableBriefTenant `json:"tenant,omitempty"`
-	Tags []NestedTag `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	Created NullableTime `json:"created"`
-	LastUpdated NullableTime `json:"last_updated"`
+	Id                   int32                  `json:"id"`
+	Url                  string                 `json:"url"`
+	DisplayUrl           string                 `json:"display_url"`
+	Display              string                 `json:"display"`
+	Identifier           NullableInt64          `json:"identifier,omitempty"`
+	Name                 string                 `json:"name"`
+	Slug                 string                 `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
+	Type                 *BriefL2VPNType        `json:"type,omitempty"`
+	ImportTargets        []RouteTarget          `json:"import_targets,omitempty"`
+	ExportTargets        []RouteTarget          `json:"export_targets,omitempty"`
+	Description          *string                `json:"description,omitempty"`
+	Comments             *string                `json:"comments,omitempty"`
+	Tenant               NullableBriefTenant    `json:"tenant,omitempty"`
+	Tags                 []NestedTag            `json:"tags,omitempty"`
+	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
+	Created              NullableTime           `json:"created"`
+	LastUpdated          NullableTime           `json:"last_updated"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -196,6 +196,7 @@ func (o *L2VPN) HasIdentifier() bool {
 func (o *L2VPN) SetIdentifier(v int64) {
 	o.Identifier.Set(&v)
 }
+
 // SetIdentifierNil sets the value for Identifier to be an explicit nil
 func (o *L2VPN) SetIdentifierNil() {
 	o.Identifier.Set(nil)
@@ -446,6 +447,7 @@ func (o *L2VPN) HasTenant() bool {
 func (o *L2VPN) SetTenant(v BriefTenant) {
 	o.Tenant.Set(&v)
 }
+
 // SetTenantNil sets the value for Tenant to be an explicit nil
 func (o *L2VPN) SetTenantNil() {
 	o.Tenant.Set(nil)
@@ -573,7 +575,7 @@ func (o *L2VPN) SetLastUpdated(v time.Time) {
 }
 
 func (o L2VPN) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -645,10 +647,10 @@ func (o *L2VPN) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -725,5 +727,3 @@ func (v *NullableL2VPN) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

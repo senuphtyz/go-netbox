@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"time"
 	"fmt"
+	"time"
 )
 
 // checks if the DeviceBay type satisfies the MappedNullable interface at compile time
@@ -21,20 +21,20 @@ var _ MappedNullable = &DeviceBay{}
 
 // DeviceBay Adds support for custom fields and tags.
 type DeviceBay struct {
-	Id int32 `json:"id"`
-	Url string `json:"url"`
-	DisplayUrl string `json:"display_url"`
-	Display string `json:"display"`
-	Device BriefDevice `json:"device"`
-	Name string `json:"name"`
+	Id         int32       `json:"id"`
+	Url        string      `json:"url"`
+	DisplayUrl string      `json:"display_url"`
+	Display    string      `json:"display"`
+	Device     BriefDevice `json:"device"`
+	Name       string      `json:"name"`
 	// Physical label
-	Label *string `json:"label,omitempty"`
-	Description *string `json:"description,omitempty"`
-	InstalledDevice NullableBriefDevice `json:"installed_device,omitempty"`
-	Tags []NestedTag `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	Created NullableTime `json:"created"`
-	LastUpdated NullableTime `json:"last_updated"`
+	Label                *string                `json:"label,omitempty"`
+	Description          *string                `json:"description,omitempty"`
+	InstalledDevice      NullableBriefDevice    `json:"installed_device,omitempty"`
+	Tags                 []NestedTag            `json:"tags,omitempty"`
+	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
+	Created              NullableTime           `json:"created"`
+	LastUpdated          NullableTime           `json:"last_updated"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -305,6 +305,7 @@ func (o *DeviceBay) HasInstalledDevice() bool {
 func (o *DeviceBay) SetInstalledDevice(v BriefDevice) {
 	o.InstalledDevice.Set(&v)
 }
+
 // SetInstalledDeviceNil sets the value for InstalledDevice to be an explicit nil
 func (o *DeviceBay) SetInstalledDeviceNil() {
 	o.InstalledDevice.Set(nil)
@@ -432,7 +433,7 @@ func (o *DeviceBay) SetLastUpdated(v time.Time) {
 }
 
 func (o DeviceBay) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -492,10 +493,10 @@ func (o *DeviceBay) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -568,5 +569,3 @@ func (v *NullableDeviceBay) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

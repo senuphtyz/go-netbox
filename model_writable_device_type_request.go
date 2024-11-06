@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"os"
 	"fmt"
+	"os"
 )
 
 // checks if the WritableDeviceTypeRequest type satisfies the MappedNullable interface at compile time
@@ -21,27 +21,27 @@ var _ MappedNullable = &WritableDeviceTypeRequest{}
 
 // WritableDeviceTypeRequest Adds support for custom fields and tags.
 type WritableDeviceTypeRequest struct {
-	Manufacturer BriefManufacturerRequest `json:"manufacturer"`
+	Manufacturer    BriefManufacturerRequest     `json:"manufacturer"`
 	DefaultPlatform NullableBriefPlatformRequest `json:"default_platform,omitempty"`
-	Model string `json:"model"`
-	Slug string `json:"slug"`
+	Model           string                       `json:"model"`
+	Slug            string                       `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
 	// Discrete part number (optional)
-	PartNumber *string `json:"part_number,omitempty"`
-	UHeight *float64 `json:"u_height,omitempty"`
+	PartNumber *string  `json:"part_number,omitempty"`
+	UHeight    *float64 `json:"u_height,omitempty"`
 	// Devices of this type are excluded when calculating rack utilization.
 	ExcludeFromUtilization *bool `json:"exclude_from_utilization,omitempty"`
 	// Device consumes both front and rear rack faces.
-	IsFullDepth *bool `json:"is_full_depth,omitempty"`
-	SubdeviceRole *ParentChildStatus1 `json:"subdevice_role,omitempty"`
-	Airflow *DeviceAirflowValue `json:"airflow,omitempty"`
-	Weight NullableFloat64 `json:"weight,omitempty"`
-	WeightUnit *DeviceTypeWeightUnitValue `json:"weight_unit,omitempty"`
-	FrontImage **os.File `json:"front_image,omitempty"`
-	RearImage **os.File `json:"rear_image,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Comments *string `json:"comments,omitempty"`
-	Tags []NestedTagRequest `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	IsFullDepth          *bool                      `json:"is_full_depth,omitempty"`
+	SubdeviceRole        *ParentChildStatus1        `json:"subdevice_role,omitempty"`
+	Airflow              *DeviceAirflowValue        `json:"airflow,omitempty"`
+	Weight               NullableFloat64            `json:"weight,omitempty"`
+	WeightUnit           *DeviceTypeWeightUnitValue `json:"weight_unit,omitempty"`
+	FrontImage           **os.File                  `json:"front_image,omitempty"`
+	RearImage            **os.File                  `json:"rear_image,omitempty"`
+	Description          *string                    `json:"description,omitempty"`
+	Comments             *string                    `json:"comments,omitempty"`
+	Tags                 []NestedTagRequest         `json:"tags,omitempty"`
+	CustomFields         map[string]interface{}     `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -127,6 +127,7 @@ func (o *WritableDeviceTypeRequest) HasDefaultPlatform() bool {
 func (o *WritableDeviceTypeRequest) SetDefaultPlatform(v BriefPlatformRequest) {
 	o.DefaultPlatform.Set(&v)
 }
+
 // SetDefaultPlatformNil sets the value for DefaultPlatform to be an explicit nil
 func (o *WritableDeviceTypeRequest) SetDefaultPlatformNil() {
 	o.DefaultPlatform.Set(nil)
@@ -409,6 +410,7 @@ func (o *WritableDeviceTypeRequest) HasWeight() bool {
 func (o *WritableDeviceTypeRequest) SetWeight(v float64) {
 	o.Weight.Set(&v)
 }
+
 // SetWeightNil sets the value for Weight to be an explicit nil
 func (o *WritableDeviceTypeRequest) SetWeightNil() {
 	o.Weight.Set(nil)
@@ -644,7 +646,7 @@ func (o *WritableDeviceTypeRequest) SetCustomFields(v map[string]interface{}) {
 }
 
 func (o WritableDeviceTypeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -724,10 +726,10 @@ func (o *WritableDeviceTypeRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -805,5 +807,3 @@ func (v *NullableWritableDeviceTypeRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

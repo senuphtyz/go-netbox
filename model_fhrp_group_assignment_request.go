@@ -20,10 +20,10 @@ var _ MappedNullable = &FHRPGroupAssignmentRequest{}
 
 // FHRPGroupAssignmentRequest Adds support for custom fields and tags.
 type FHRPGroupAssignmentRequest struct {
-	Group BriefFHRPGroupRequest `json:"group"`
-	InterfaceType string `json:"interface_type"`
-	InterfaceId int64 `json:"interface_id"`
-	Priority int32 `json:"priority"`
+	Group                BriefFHRPGroupRequest `json:"group"`
+	InterfaceType        string                `json:"interface_type"`
+	InterfaceId          int64                 `json:"interface_id"`
+	Priority             int32                 `json:"priority"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -147,7 +147,7 @@ func (o *FHRPGroupAssignmentRequest) SetPriority(v int32) {
 }
 
 func (o FHRPGroupAssignmentRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -184,10 +184,10 @@ func (o *FHRPGroupAssignmentRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -251,5 +251,3 @@ func (v *NullableFHRPGroupAssignmentRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

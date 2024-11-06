@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"time"
 	"fmt"
+	"time"
 )
 
 // checks if the IPAddress type satisfies the MappedNullable interface at compile time
@@ -21,29 +21,29 @@ var _ MappedNullable = &IPAddress{}
 
 // IPAddress Adds support for custom fields and tags.
 type IPAddress struct {
-	Id int32 `json:"id"`
-	Url string `json:"url"`
-	DisplayUrl string `json:"display_url"`
-	Display string `json:"display"`
-	Family AggregateFamily `json:"family"`
-	Address string `json:"address"`
-	Vrf NullableBriefVRF `json:"vrf,omitempty"`
-	Tenant NullableBriefTenant `json:"tenant,omitempty"`
-	Status *IPAddressStatus `json:"status,omitempty"`
-	Role *IPAddressRole `json:"role,omitempty"`
-	AssignedObjectType NullableString `json:"assigned_object_type,omitempty"`
-	AssignedObjectId NullableInt64 `json:"assigned_object_id,omitempty"`
-	AssignedObject interface{} `json:"assigned_object"`
-	NatInside NullableNestedIPAddress `json:"nat_inside,omitempty"`
-	NatOutside []NestedIPAddress `json:"nat_outside"`
+	Id                 int32                   `json:"id"`
+	Url                string                  `json:"url"`
+	DisplayUrl         string                  `json:"display_url"`
+	Display            string                  `json:"display"`
+	Family             AggregateFamily         `json:"family"`
+	Address            string                  `json:"address"`
+	Vrf                NullableBriefVRF        `json:"vrf,omitempty"`
+	Tenant             NullableBriefTenant     `json:"tenant,omitempty"`
+	Status             *IPAddressStatus        `json:"status,omitempty"`
+	Role               *IPAddressRole          `json:"role,omitempty"`
+	AssignedObjectType NullableString          `json:"assigned_object_type,omitempty"`
+	AssignedObjectId   NullableInt64           `json:"assigned_object_id,omitempty"`
+	AssignedObject     interface{}             `json:"assigned_object"`
+	NatInside          NullableNestedIPAddress `json:"nat_inside,omitempty"`
+	NatOutside         []NestedIPAddress       `json:"nat_outside"`
 	// Hostname or FQDN (not case-sensitive)
-	DnsName *string `json:"dns_name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Comments *string `json:"comments,omitempty"`
-	Tags []NestedTag `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	Created NullableTime `json:"created"`
-	LastUpdated NullableTime `json:"last_updated"`
+	DnsName              *string                `json:"dns_name,omitempty" validate:"regexp=^([0-9A-Za-z_-]+|\\\\*)(\\\\.[0-9A-Za-z_-]+)*\\\\.?$"`
+	Description          *string                `json:"description,omitempty"`
+	Comments             *string                `json:"comments,omitempty"`
+	Tags                 []NestedTag            `json:"tags,omitempty"`
+	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
+	Created              NullableTime           `json:"created"`
+	LastUpdated          NullableTime           `json:"last_updated"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -252,6 +252,7 @@ func (o *IPAddress) HasVrf() bool {
 func (o *IPAddress) SetVrf(v BriefVRF) {
 	o.Vrf.Set(&v)
 }
+
 // SetVrfNil sets the value for Vrf to be an explicit nil
 func (o *IPAddress) SetVrfNil() {
 	o.Vrf.Set(nil)
@@ -294,6 +295,7 @@ func (o *IPAddress) HasTenant() bool {
 func (o *IPAddress) SetTenant(v BriefTenant) {
 	o.Tenant.Set(&v)
 }
+
 // SetTenantNil sets the value for Tenant to be an explicit nil
 func (o *IPAddress) SetTenantNil() {
 	o.Tenant.Set(nil)
@@ -400,6 +402,7 @@ func (o *IPAddress) HasAssignedObjectType() bool {
 func (o *IPAddress) SetAssignedObjectType(v string) {
 	o.AssignedObjectType.Set(&v)
 }
+
 // SetAssignedObjectTypeNil sets the value for AssignedObjectType to be an explicit nil
 func (o *IPAddress) SetAssignedObjectTypeNil() {
 	o.AssignedObjectType.Set(nil)
@@ -442,6 +445,7 @@ func (o *IPAddress) HasAssignedObjectId() bool {
 func (o *IPAddress) SetAssignedObjectId(v int64) {
 	o.AssignedObjectId.Set(&v)
 }
+
 // SetAssignedObjectIdNil sets the value for AssignedObjectId to be an explicit nil
 func (o *IPAddress) SetAssignedObjectIdNil() {
 	o.AssignedObjectId.Set(nil)
@@ -510,6 +514,7 @@ func (o *IPAddress) HasNatInside() bool {
 func (o *IPAddress) SetNatInside(v NestedIPAddress) {
 	o.NatInside.Set(&v)
 }
+
 // SetNatInsideNil sets the value for NatInside to be an explicit nil
 func (o *IPAddress) SetNatInsideNil() {
 	o.NatInside.Set(nil)
@@ -757,7 +762,7 @@ func (o *IPAddress) SetLastUpdated(v time.Time) {
 }
 
 func (o IPAddress) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -844,10 +849,10 @@ func (o *IPAddress) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -929,5 +934,3 @@ func (v *NullableIPAddress) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

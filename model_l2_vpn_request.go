@@ -20,17 +20,17 @@ var _ MappedNullable = &L2VPNRequest{}
 
 // L2VPNRequest Adds support for custom fields and tags.
 type L2VPNRequest struct {
-	Identifier NullableInt64 `json:"identifier,omitempty"`
-	Name string `json:"name"`
-	Slug string `json:"slug"`
-	Type *BriefL2VPNTypeValue `json:"type,omitempty"`
-	ImportTargets []int32 `json:"import_targets,omitempty"`
-	ExportTargets []int32 `json:"export_targets,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Comments *string `json:"comments,omitempty"`
-	Tenant NullableBriefTenantRequest `json:"tenant,omitempty"`
-	Tags []NestedTagRequest `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	Identifier           NullableInt64              `json:"identifier,omitempty"`
+	Name                 string                     `json:"name"`
+	Slug                 string                     `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
+	Type                 *BriefL2VPNTypeValue       `json:"type,omitempty"`
+	ImportTargets        []int32                    `json:"import_targets,omitempty"`
+	ExportTargets        []int32                    `json:"export_targets,omitempty"`
+	Description          *string                    `json:"description,omitempty"`
+	Comments             *string                    `json:"comments,omitempty"`
+	Tenant               NullableBriefTenantRequest `json:"tenant,omitempty"`
+	Tags                 []NestedTagRequest         `json:"tags,omitempty"`
+	CustomFields         map[string]interface{}     `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -87,6 +87,7 @@ func (o *L2VPNRequest) HasIdentifier() bool {
 func (o *L2VPNRequest) SetIdentifier(v int64) {
 	o.Identifier.Set(&v)
 }
+
 // SetIdentifierNil sets the value for Identifier to be an explicit nil
 func (o *L2VPNRequest) SetIdentifierNil() {
 	o.Identifier.Set(nil)
@@ -337,6 +338,7 @@ func (o *L2VPNRequest) HasTenant() bool {
 func (o *L2VPNRequest) SetTenant(v BriefTenantRequest) {
 	o.Tenant.Set(&v)
 }
+
 // SetTenantNil sets the value for Tenant to be an explicit nil
 func (o *L2VPNRequest) SetTenantNil() {
 	o.Tenant.Set(nil)
@@ -412,7 +414,7 @@ func (o *L2VPNRequest) SetCustomFields(v map[string]interface{}) {
 }
 
 func (o L2VPNRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -472,10 +474,10 @@ func (o *L2VPNRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -546,5 +548,3 @@ func (v *NullableL2VPNRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

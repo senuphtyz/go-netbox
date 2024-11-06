@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"time"
 	"fmt"
+	"time"
 )
 
 // checks if the FHRPGroup type satisfies the MappedNullable interface at compile time
@@ -21,22 +21,22 @@ var _ MappedNullable = &FHRPGroup{}
 
 // FHRPGroup Adds support for custom fields and tags.
 type FHRPGroup struct {
-	Id int32 `json:"id"`
-	Name *string `json:"name,omitempty"`
-	Url string `json:"url"`
-	DisplayUrl string `json:"display_url"`
-	Display string `json:"display"`
-	Protocol BriefFHRPGroupProtocol `json:"protocol"`
-	GroupId int32 `json:"group_id"`
-	AuthType *AuthenticationType `json:"auth_type,omitempty"`
-	AuthKey *string `json:"auth_key,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Comments *string `json:"comments,omitempty"`
-	Tags []NestedTag `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	Created NullableTime `json:"created"`
-	LastUpdated NullableTime `json:"last_updated"`
-	IpAddresses []BriefIPAddress `json:"ip_addresses"`
+	Id                   int32                  `json:"id"`
+	Name                 *string                `json:"name,omitempty"`
+	Url                  string                 `json:"url"`
+	DisplayUrl           string                 `json:"display_url"`
+	Display              string                 `json:"display"`
+	Protocol             BriefFHRPGroupProtocol `json:"protocol"`
+	GroupId              int32                  `json:"group_id"`
+	AuthType             *AuthenticationType    `json:"auth_type,omitempty"`
+	AuthKey              *string                `json:"auth_key,omitempty"`
+	Description          *string                `json:"description,omitempty"`
+	Comments             *string                `json:"comments,omitempty"`
+	Tags                 []NestedTag            `json:"tags,omitempty"`
+	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
+	Created              NullableTime           `json:"created"`
+	LastUpdated          NullableTime           `json:"last_updated"`
+	IpAddresses          []BriefIPAddress       `json:"ip_addresses"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -513,7 +513,7 @@ func (o *FHRPGroup) SetIpAddresses(v []BriefIPAddress) {
 }
 
 func (o FHRPGroup) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -581,10 +581,10 @@ func (o *FHRPGroup) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -660,5 +660,3 @@ func (v *NullableFHRPGroup) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

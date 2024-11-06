@@ -11,23 +11,23 @@ API version: 4.1.4 (4.1)
 package netbox
 
 import (
+        "time"
 	"bytes"
 	"context"
 	"io"
 	"net/http"
 	"net/url"
+	"reflect"
 	"strings"
 	"time"
-	"reflect"
 )
-
 
 // ExtrasAPIService ExtrasAPI service
 type ExtrasAPIService service
 
 type ApiExtrasBookmarksBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx             context.Context
+	ApiService      *ExtrasAPIService
 	bookmarkRequest *[]BookmarkRequest
 }
 
@@ -45,22 +45,22 @@ ExtrasBookmarksBulkDestroy Method for ExtrasBookmarksBulkDestroy
 
 Delete a list of bookmark objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasBookmarksBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasBookmarksBulkDestroyRequest
 */
 func (a *ExtrasAPIService) ExtrasBookmarksBulkDestroy(ctx context.Context) ApiExtrasBookmarksBulkDestroyRequest {
 	return ApiExtrasBookmarksBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *ExtrasAPIService) ExtrasBookmarksBulkDestroyExecute(r ApiExtrasBookmarksBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasBookmarksBulkDestroy")
@@ -139,8 +139,8 @@ func (a *ExtrasAPIService) ExtrasBookmarksBulkDestroyExecute(r ApiExtrasBookmark
 }
 
 type ApiExtrasBookmarksBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx             context.Context
+	ApiService      *ExtrasAPIService
 	bookmarkRequest *[]BookmarkRequest
 }
 
@@ -158,24 +158,25 @@ ExtrasBookmarksBulkPartialUpdate Method for ExtrasBookmarksBulkPartialUpdate
 
 Patch a list of bookmark objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasBookmarksBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasBookmarksBulkPartialUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasBookmarksBulkPartialUpdate(ctx context.Context) ApiExtrasBookmarksBulkPartialUpdateRequest {
 	return ApiExtrasBookmarksBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []Bookmark
+//
+//	@return []Bookmark
 func (a *ExtrasAPIService) ExtrasBookmarksBulkPartialUpdateExecute(r ApiExtrasBookmarksBulkPartialUpdateRequest) ([]Bookmark, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []Bookmark
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []Bookmark
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasBookmarksBulkPartialUpdate")
@@ -263,8 +264,8 @@ func (a *ExtrasAPIService) ExtrasBookmarksBulkPartialUpdateExecute(r ApiExtrasBo
 }
 
 type ApiExtrasBookmarksBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx             context.Context
+	ApiService      *ExtrasAPIService
 	bookmarkRequest *[]BookmarkRequest
 }
 
@@ -282,24 +283,25 @@ ExtrasBookmarksBulkUpdate Method for ExtrasBookmarksBulkUpdate
 
 Put a list of bookmark objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasBookmarksBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasBookmarksBulkUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasBookmarksBulkUpdate(ctx context.Context) ApiExtrasBookmarksBulkUpdateRequest {
 	return ApiExtrasBookmarksBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []Bookmark
+//
+//	@return []Bookmark
 func (a *ExtrasAPIService) ExtrasBookmarksBulkUpdateExecute(r ApiExtrasBookmarksBulkUpdateRequest) ([]Bookmark, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []Bookmark
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []Bookmark
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasBookmarksBulkUpdate")
@@ -387,8 +389,8 @@ func (a *ExtrasAPIService) ExtrasBookmarksBulkUpdateExecute(r ApiExtrasBookmarks
 }
 
 type ApiExtrasBookmarksCreateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx             context.Context
+	ApiService      *ExtrasAPIService
 	bookmarkRequest *BookmarkRequest
 }
 
@@ -406,24 +408,25 @@ ExtrasBookmarksCreate Method for ExtrasBookmarksCreate
 
 Post a list of bookmark objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasBookmarksCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasBookmarksCreateRequest
 */
 func (a *ExtrasAPIService) ExtrasBookmarksCreate(ctx context.Context) ApiExtrasBookmarksCreateRequest {
 	return ApiExtrasBookmarksCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return Bookmark
+//
+//	@return Bookmark
 func (a *ExtrasAPIService) ExtrasBookmarksCreateExecute(r ApiExtrasBookmarksCreateRequest) (*Bookmark, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Bookmark
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Bookmark
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasBookmarksCreate")
@@ -511,9 +514,9 @@ func (a *ExtrasAPIService) ExtrasBookmarksCreateExecute(r ApiExtrasBookmarksCrea
 }
 
 type ApiExtrasBookmarksDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiExtrasBookmarksDestroyRequest) Execute() (*http.Response, error) {
@@ -525,24 +528,24 @@ ExtrasBookmarksDestroy Method for ExtrasBookmarksDestroy
 
 Delete a bookmark object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this bookmark.
- @return ApiExtrasBookmarksDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this bookmark.
+	@return ApiExtrasBookmarksDestroyRequest
 */
 func (a *ExtrasAPIService) ExtrasBookmarksDestroy(ctx context.Context, id int32) ApiExtrasBookmarksDestroyRequest {
 	return ApiExtrasBookmarksDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *ExtrasAPIService) ExtrasBookmarksDestroyExecute(r ApiExtrasBookmarksDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasBookmarksDestroy")
@@ -617,39 +620,39 @@ func (a *ExtrasAPIService) ExtrasBookmarksDestroyExecute(r ApiExtrasBookmarksDes
 }
 
 type ApiExtrasBookmarksListRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	created *time.Time
-	id *[]int32
-	idEmpty *bool
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	limit *int32
-	objectId *[]int32
-	objectIdEmpty *bool
-	objectIdGt *[]int32
-	objectIdGte *[]int32
-	objectIdLt *[]int32
-	objectIdLte *[]int32
-	objectIdN *[]int32
-	objectType *string
-	objectTypeN *string
-	objectTypeId *[]int32
+	ctx               context.Context
+	ApiService        *ExtrasAPIService
+	created           *time.Time
+	id                *[]int32
+	idEmpty           *bool
+	idGt              *[]int32
+	idGte             *[]int32
+	idLt              *[]int32
+	idLte             *[]int32
+	idN               *[]int32
+	limit             *int32
+	objectId          *[]int32
+	objectIdEmpty     *bool
+	objectIdGt        *[]int32
+	objectIdGte       *[]int32
+	objectIdLt        *[]int32
+	objectIdLte       *[]int32
+	objectIdN         *[]int32
+	objectType        *string
+	objectTypeN       *string
+	objectTypeId      *[]int32
 	objectTypeIdEmpty *[]int32
-	objectTypeIdGt *[]int32
-	objectTypeIdGte *[]int32
-	objectTypeIdLt *[]int32
-	objectTypeIdLte *[]int32
-	objectTypeIdN *[]int32
-	offset *int32
-	ordering *string
-	user *[]string
-	userN *[]string
-	userId *[]int32
-	userIdN *[]int32
+	objectTypeIdGt    *[]int32
+	objectTypeIdGte   *[]int32
+	objectTypeIdLt    *[]int32
+	objectTypeIdLte   *[]int32
+	objectTypeIdN     *[]int32
+	offset            *int32
+	ordering          *string
+	user              *[]string
+	userN             *[]string
+	userId            *[]int32
+	userIdN           *[]int32
 }
 
 func (r ApiExtrasBookmarksListRequest) Created(created time.Time) ApiExtrasBookmarksListRequest {
@@ -823,24 +826,25 @@ ExtrasBookmarksList Method for ExtrasBookmarksList
 
 Get a list of bookmark objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasBookmarksListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasBookmarksListRequest
 */
 func (a *ExtrasAPIService) ExtrasBookmarksList(ctx context.Context) ApiExtrasBookmarksListRequest {
 	return ApiExtrasBookmarksListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedBookmarkList
+//
+//	@return PaginatedBookmarkList
 func (a *ExtrasAPIService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRequest) (*PaginatedBookmarkList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedBookmarkList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedBookmarkList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasBookmarksList")
@@ -855,31 +859,31 @@ func (a *ExtrasAPIService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 	localVarFormParams := url.Values{}
 
 	if r.created != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "created", r.created, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "created", r.created, "form", "")
 	}
 	if r.id != nil {
 		t := *r.id
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "form", "multi")
 		}
 	}
 	if r.idEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "form", "")
 	}
 	if r.idGt != nil {
 		t := *r.idGt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "form", "multi")
 		}
 	}
 	if r.idGte != nil {
@@ -887,10 +891,10 @@ func (a *ExtrasAPIService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "form", "multi")
 		}
 	}
 	if r.idLt != nil {
@@ -898,10 +902,10 @@ func (a *ExtrasAPIService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "form", "multi")
 		}
 	}
 	if r.idLte != nil {
@@ -909,10 +913,10 @@ func (a *ExtrasAPIService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "form", "multi")
 		}
 	}
 	if r.idN != nil {
@@ -920,38 +924,38 @@ func (a *ExtrasAPIService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "form", "multi")
 		}
 	}
 	if r.limit != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
 	}
 	if r.objectId != nil {
 		t := *r.objectId
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id", t, "form", "multi")
 		}
 	}
 	if r.objectIdEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__empty", r.objectIdEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__empty", r.objectIdEmpty, "form", "")
 	}
 	if r.objectIdGt != nil {
 		t := *r.objectIdGt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__gt", t, "form", "multi")
 		}
 	}
 	if r.objectIdGte != nil {
@@ -959,10 +963,10 @@ func (a *ExtrasAPIService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__gte", t, "form", "multi")
 		}
 	}
 	if r.objectIdLt != nil {
@@ -970,10 +974,10 @@ func (a *ExtrasAPIService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__lt", t, "form", "multi")
 		}
 	}
 	if r.objectIdLte != nil {
@@ -981,10 +985,10 @@ func (a *ExtrasAPIService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__lte", t, "form", "multi")
 		}
 	}
 	if r.objectIdN != nil {
@@ -992,27 +996,27 @@ func (a *ExtrasAPIService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__n", t, "form", "multi")
 		}
 	}
 	if r.objectType != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type", r.objectType, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type", r.objectType, "form", "")
 	}
 	if r.objectTypeN != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__n", r.objectTypeN, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__n", r.objectTypeN, "form", "")
 	}
 	if r.objectTypeId != nil {
 		t := *r.objectTypeId
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id", t, "form", "multi")
 		}
 	}
 	if r.objectTypeIdEmpty != nil {
@@ -1020,10 +1024,10 @@ func (a *ExtrasAPIService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__empty", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__empty", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__empty", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__empty", t, "form", "multi")
 		}
 	}
 	if r.objectTypeIdGt != nil {
@@ -1031,10 +1035,10 @@ func (a *ExtrasAPIService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__gt", t, "form", "multi")
 		}
 	}
 	if r.objectTypeIdGte != nil {
@@ -1042,10 +1046,10 @@ func (a *ExtrasAPIService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__gte", t, "form", "multi")
 		}
 	}
 	if r.objectTypeIdLt != nil {
@@ -1053,10 +1057,10 @@ func (a *ExtrasAPIService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__lt", t, "form", "multi")
 		}
 	}
 	if r.objectTypeIdLte != nil {
@@ -1064,10 +1068,10 @@ func (a *ExtrasAPIService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__lte", t, "form", "multi")
 		}
 	}
 	if r.objectTypeIdN != nil {
@@ -1075,27 +1079,27 @@ func (a *ExtrasAPIService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__n", t, "form", "multi")
 		}
 	}
 	if r.offset != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "form", "")
 	}
 	if r.ordering != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "form", "")
 	}
 	if r.user != nil {
 		t := *r.user
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "user", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "user", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "user", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "user", t, "form", "multi")
 		}
 	}
 	if r.userN != nil {
@@ -1103,10 +1107,10 @@ func (a *ExtrasAPIService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "user__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "user__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "user__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "user__n", t, "form", "multi")
 		}
 	}
 	if r.userId != nil {
@@ -1114,10 +1118,10 @@ func (a *ExtrasAPIService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "user_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "user_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "user_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "user_id", t, "form", "multi")
 		}
 	}
 	if r.userIdN != nil {
@@ -1125,10 +1129,10 @@ func (a *ExtrasAPIService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "user_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "user_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "user_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "user_id__n", t, "form", "multi")
 		}
 	}
 	// to determine the Content-Type header
@@ -1200,9 +1204,9 @@ func (a *ExtrasAPIService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 }
 
 type ApiExtrasBookmarksPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	id int32
+	ctx                    context.Context
+	ApiService             *ExtrasAPIService
+	id                     int32
 	patchedBookmarkRequest *PatchedBookmarkRequest
 }
 
@@ -1220,26 +1224,27 @@ ExtrasBookmarksPartialUpdate Method for ExtrasBookmarksPartialUpdate
 
 Patch a bookmark object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this bookmark.
- @return ApiExtrasBookmarksPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this bookmark.
+	@return ApiExtrasBookmarksPartialUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasBookmarksPartialUpdate(ctx context.Context, id int32) ApiExtrasBookmarksPartialUpdateRequest {
 	return ApiExtrasBookmarksPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Bookmark
+//
+//	@return Bookmark
 func (a *ExtrasAPIService) ExtrasBookmarksPartialUpdateExecute(r ApiExtrasBookmarksPartialUpdateRequest) (*Bookmark, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Bookmark
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Bookmark
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasBookmarksPartialUpdate")
@@ -1325,9 +1330,9 @@ func (a *ExtrasAPIService) ExtrasBookmarksPartialUpdateExecute(r ApiExtrasBookma
 }
 
 type ApiExtrasBookmarksRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiExtrasBookmarksRetrieveRequest) Execute() (*Bookmark, *http.Response, error) {
@@ -1339,26 +1344,27 @@ ExtrasBookmarksRetrieve Method for ExtrasBookmarksRetrieve
 
 Get a bookmark object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this bookmark.
- @return ApiExtrasBookmarksRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this bookmark.
+	@return ApiExtrasBookmarksRetrieveRequest
 */
 func (a *ExtrasAPIService) ExtrasBookmarksRetrieve(ctx context.Context, id int32) ApiExtrasBookmarksRetrieveRequest {
 	return ApiExtrasBookmarksRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Bookmark
+//
+//	@return Bookmark
 func (a *ExtrasAPIService) ExtrasBookmarksRetrieveExecute(r ApiExtrasBookmarksRetrieveRequest) (*Bookmark, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Bookmark
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Bookmark
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasBookmarksRetrieve")
@@ -1442,9 +1448,9 @@ func (a *ExtrasAPIService) ExtrasBookmarksRetrieveExecute(r ApiExtrasBookmarksRe
 }
 
 type ApiExtrasBookmarksUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	id int32
+	ctx             context.Context
+	ApiService      *ExtrasAPIService
+	id              int32
 	bookmarkRequest *BookmarkRequest
 }
 
@@ -1462,26 +1468,27 @@ ExtrasBookmarksUpdate Method for ExtrasBookmarksUpdate
 
 Put a bookmark object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this bookmark.
- @return ApiExtrasBookmarksUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this bookmark.
+	@return ApiExtrasBookmarksUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasBookmarksUpdate(ctx context.Context, id int32) ApiExtrasBookmarksUpdateRequest {
 	return ApiExtrasBookmarksUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Bookmark
+//
+//	@return Bookmark
 func (a *ExtrasAPIService) ExtrasBookmarksUpdateExecute(r ApiExtrasBookmarksUpdateRequest) (*Bookmark, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Bookmark
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Bookmark
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasBookmarksUpdate")
@@ -1570,8 +1577,8 @@ func (a *ExtrasAPIService) ExtrasBookmarksUpdateExecute(r ApiExtrasBookmarksUpda
 }
 
 type ApiExtrasConfigContextsBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                  context.Context
+	ApiService           *ExtrasAPIService
 	configContextRequest *[]ConfigContextRequest
 }
 
@@ -1589,22 +1596,22 @@ ExtrasConfigContextsBulkDestroy Method for ExtrasConfigContextsBulkDestroy
 
 Delete a list of config context objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasConfigContextsBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasConfigContextsBulkDestroyRequest
 */
 func (a *ExtrasAPIService) ExtrasConfigContextsBulkDestroy(ctx context.Context) ApiExtrasConfigContextsBulkDestroyRequest {
 	return ApiExtrasConfigContextsBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *ExtrasAPIService) ExtrasConfigContextsBulkDestroyExecute(r ApiExtrasConfigContextsBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasConfigContextsBulkDestroy")
@@ -1683,8 +1690,8 @@ func (a *ExtrasAPIService) ExtrasConfigContextsBulkDestroyExecute(r ApiExtrasCon
 }
 
 type ApiExtrasConfigContextsBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                  context.Context
+	ApiService           *ExtrasAPIService
 	configContextRequest *[]ConfigContextRequest
 }
 
@@ -1702,24 +1709,25 @@ ExtrasConfigContextsBulkPartialUpdate Method for ExtrasConfigContextsBulkPartial
 
 Patch a list of config context objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasConfigContextsBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasConfigContextsBulkPartialUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasConfigContextsBulkPartialUpdate(ctx context.Context) ApiExtrasConfigContextsBulkPartialUpdateRequest {
 	return ApiExtrasConfigContextsBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []ConfigContext
+//
+//	@return []ConfigContext
 func (a *ExtrasAPIService) ExtrasConfigContextsBulkPartialUpdateExecute(r ApiExtrasConfigContextsBulkPartialUpdateRequest) ([]ConfigContext, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ConfigContext
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ConfigContext
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasConfigContextsBulkPartialUpdate")
@@ -1807,8 +1815,8 @@ func (a *ExtrasAPIService) ExtrasConfigContextsBulkPartialUpdateExecute(r ApiExt
 }
 
 type ApiExtrasConfigContextsBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                  context.Context
+	ApiService           *ExtrasAPIService
 	configContextRequest *[]ConfigContextRequest
 }
 
@@ -1826,24 +1834,25 @@ ExtrasConfigContextsBulkUpdate Method for ExtrasConfigContextsBulkUpdate
 
 Put a list of config context objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasConfigContextsBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasConfigContextsBulkUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasConfigContextsBulkUpdate(ctx context.Context) ApiExtrasConfigContextsBulkUpdateRequest {
 	return ApiExtrasConfigContextsBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []ConfigContext
+//
+//	@return []ConfigContext
 func (a *ExtrasAPIService) ExtrasConfigContextsBulkUpdateExecute(r ApiExtrasConfigContextsBulkUpdateRequest) ([]ConfigContext, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ConfigContext
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ConfigContext
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasConfigContextsBulkUpdate")
@@ -1931,8 +1940,8 @@ func (a *ExtrasAPIService) ExtrasConfigContextsBulkUpdateExecute(r ApiExtrasConf
 }
 
 type ApiExtrasConfigContextsCreateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                  context.Context
+	ApiService           *ExtrasAPIService
 	configContextRequest *ConfigContextRequest
 }
 
@@ -1950,24 +1959,25 @@ ExtrasConfigContextsCreate Method for ExtrasConfigContextsCreate
 
 Post a list of config context objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasConfigContextsCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasConfigContextsCreateRequest
 */
 func (a *ExtrasAPIService) ExtrasConfigContextsCreate(ctx context.Context) ApiExtrasConfigContextsCreateRequest {
 	return ApiExtrasConfigContextsCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ConfigContext
+//
+//	@return ConfigContext
 func (a *ExtrasAPIService) ExtrasConfigContextsCreateExecute(r ApiExtrasConfigContextsCreateRequest) (*ConfigContext, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ConfigContext
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ConfigContext
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasConfigContextsCreate")
@@ -2055,9 +2065,9 @@ func (a *ExtrasAPIService) ExtrasConfigContextsCreateExecute(r ApiExtrasConfigCo
 }
 
 type ApiExtrasConfigContextsDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiExtrasConfigContextsDestroyRequest) Execute() (*http.Response, error) {
@@ -2069,24 +2079,24 @@ ExtrasConfigContextsDestroy Method for ExtrasConfigContextsDestroy
 
 Delete a config context object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this config context.
- @return ApiExtrasConfigContextsDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this config context.
+	@return ApiExtrasConfigContextsDestroyRequest
 */
 func (a *ExtrasAPIService) ExtrasConfigContextsDestroy(ctx context.Context, id int32) ApiExtrasConfigContextsDestroyRequest {
 	return ApiExtrasConfigContextsDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *ExtrasAPIService) ExtrasConfigContextsDestroyExecute(r ApiExtrasConfigContextsDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasConfigContextsDestroy")
@@ -2161,126 +2171,126 @@ func (a *ExtrasAPIService) ExtrasConfigContextsDestroyExecute(r ApiExtrasConfigC
 }
 
 type ApiExtrasConfigContextsListRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	autoSyncEnabled *bool
-	clusterGroup *[]string
-	clusterGroupN *[]string
-	clusterGroupId *[]int32
-	clusterGroupIdN *[]int32
-	clusterId *[]int32
-	clusterIdN *[]int32
-	clusterType *[]string
-	clusterTypeN *[]string
-	clusterTypeId *[]int32
-	clusterTypeIdN *[]int32
-	created *[]time.Time
-	createdEmpty *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
-	createdByRequest *string
-	dataFileId *[]*int32
-	dataFileIdN *[]*int32
-	dataSourceId *[]*int32
-	dataSourceIdN *[]*int32
-	dataSynced *[]time.Time
-	dataSyncedEmpty *bool
-	dataSyncedGt *[]time.Time
-	dataSyncedGte *[]time.Time
-	dataSyncedLt *[]time.Time
-	dataSyncedLte *[]time.Time
-	dataSyncedN *[]time.Time
-	description *[]string
-	descriptionEmpty *bool
-	descriptionIc *[]string
-	descriptionIe *[]string
-	descriptionIew *[]string
-	descriptionIsw *[]string
-	descriptionN *[]string
-	descriptionNic *[]string
-	descriptionNie *[]string
-	descriptionNiew *[]string
-	descriptionNisw *[]string
-	deviceRole *[]string
-	deviceRoleN *[]string
-	deviceRoleId *[]int32
-	deviceRoleIdN *[]int32
-	deviceTypeId *[]int32
-	deviceTypeIdN *[]int32
-	id *[]int32
-	idEmpty *bool
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	isActive *bool
-	lastUpdated *[]time.Time
-	lastUpdatedEmpty *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	location *[]string
-	locationN *[]string
-	locationId *[]int32
-	locationIdN *[]int32
+	ctx               context.Context
+	ApiService        *ExtrasAPIService
+	autoSyncEnabled   *bool
+	clusterGroup      *[]string
+	clusterGroupN     *[]string
+	clusterGroupId    *[]int32
+	clusterGroupIdN   *[]int32
+	clusterId         *[]int32
+	clusterIdN        *[]int32
+	clusterType       *[]string
+	clusterTypeN      *[]string
+	clusterTypeId     *[]int32
+	clusterTypeIdN    *[]int32
+	created           *[]time.Time
+	createdEmpty      *[]time.Time
+	createdGt         *[]time.Time
+	createdGte        *[]time.Time
+	createdLt         *[]time.Time
+	createdLte        *[]time.Time
+	createdN          *[]time.Time
+	createdByRequest  *string
+	dataFileId        *[]*int32
+	dataFileIdN       *[]*int32
+	dataSourceId      *[]*int32
+	dataSourceIdN     *[]*int32
+	dataSynced        *[]time.Time
+	dataSyncedEmpty   *bool
+	dataSyncedGt      *[]time.Time
+	dataSyncedGte     *[]time.Time
+	dataSyncedLt      *[]time.Time
+	dataSyncedLte     *[]time.Time
+	dataSyncedN       *[]time.Time
+	description       *[]string
+	descriptionEmpty  *bool
+	descriptionIc     *[]string
+	descriptionIe     *[]string
+	descriptionIew    *[]string
+	descriptionIsw    *[]string
+	descriptionN      *[]string
+	descriptionNic    *[]string
+	descriptionNie    *[]string
+	descriptionNiew   *[]string
+	descriptionNisw   *[]string
+	deviceRole        *[]string
+	deviceRoleN       *[]string
+	deviceRoleId      *[]int32
+	deviceRoleIdN     *[]int32
+	deviceTypeId      *[]int32
+	deviceTypeIdN     *[]int32
+	id                *[]int32
+	idEmpty           *bool
+	idGt              *[]int32
+	idGte             *[]int32
+	idLt              *[]int32
+	idLte             *[]int32
+	idN               *[]int32
+	isActive          *bool
+	lastUpdated       *[]time.Time
+	lastUpdatedEmpty  *[]time.Time
+	lastUpdatedGt     *[]time.Time
+	lastUpdatedGte    *[]time.Time
+	lastUpdatedLt     *[]time.Time
+	lastUpdatedLte    *[]time.Time
+	lastUpdatedN      *[]time.Time
+	limit             *int32
+	location          *[]string
+	locationN         *[]string
+	locationId        *[]int32
+	locationIdN       *[]int32
 	modifiedByRequest *string
-	name *[]string
-	nameEmpty *bool
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	offset *int32
-	ordering *string
-	platform *[]string
-	platformN *[]string
-	platformId *[]int32
-	platformIdN *[]int32
-	q *string
-	region *[]string
-	regionN *[]string
-	regionId *[]int32
-	regionIdN *[]int32
-	site *[]string
-	siteN *[]string
-	siteGroup *[]string
-	siteGroupN *[]string
-	siteGroupId *[]int32
-	siteGroupIdN *[]int32
-	siteId *[]int32
-	siteIdN *[]int32
-	tag *[]string
-	tagN *[]string
-	tagId *[]int32
-	tagIdN *[]int32
-	tenant *[]string
-	tenantN *[]string
-	tenantGroup *[]string
-	tenantGroupN *[]string
-	tenantGroupId *[]int32
-	tenantGroupIdN *[]int32
-	tenantId *[]int32
-	tenantIdN *[]int32
-	updatedByRequest *string
-	weight *[]int32
-	weightEmpty *bool
-	weightGt *[]int32
-	weightGte *[]int32
-	weightLt *[]int32
-	weightLte *[]int32
-	weightN *[]int32
+	name              *[]string
+	nameEmpty         *bool
+	nameIc            *[]string
+	nameIe            *[]string
+	nameIew           *[]string
+	nameIsw           *[]string
+	nameN             *[]string
+	nameNic           *[]string
+	nameNie           *[]string
+	nameNiew          *[]string
+	nameNisw          *[]string
+	offset            *int32
+	ordering          *string
+	platform          *[]string
+	platformN         *[]string
+	platformId        *[]int32
+	platformIdN       *[]int32
+	q                 *string
+	region            *[]string
+	regionN           *[]string
+	regionId          *[]int32
+	regionIdN         *[]int32
+	site              *[]string
+	siteN             *[]string
+	siteGroup         *[]string
+	siteGroupN        *[]string
+	siteGroupId       *[]int32
+	siteGroupIdN      *[]int32
+	siteId            *[]int32
+	siteIdN           *[]int32
+	tag               *[]string
+	tagN              *[]string
+	tagId             *[]int32
+	tagIdN            *[]int32
+	tenant            *[]string
+	tenantN           *[]string
+	tenantGroup       *[]string
+	tenantGroupN      *[]string
+	tenantGroupId     *[]int32
+	tenantGroupIdN    *[]int32
+	tenantId          *[]int32
+	tenantIdN         *[]int32
+	updatedByRequest  *string
+	weight            *[]int32
+	weightEmpty       *bool
+	weightGt          *[]int32
+	weightGte         *[]int32
+	weightLt          *[]int32
+	weightLte         *[]int32
+	weightN           *[]int32
 }
 
 func (r ApiExtrasConfigContextsListRequest) AutoSyncEnabled(autoSyncEnabled bool) ApiExtrasConfigContextsListRequest {
@@ -2938,24 +2948,25 @@ ExtrasConfigContextsList Method for ExtrasConfigContextsList
 
 Get a list of config context objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasConfigContextsListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasConfigContextsListRequest
 */
 func (a *ExtrasAPIService) ExtrasConfigContextsList(ctx context.Context) ApiExtrasConfigContextsListRequest {
 	return ApiExtrasConfigContextsListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedConfigContextList
+//
+//	@return PaginatedConfigContextList
 func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigContextsListRequest) (*PaginatedConfigContextList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedConfigContextList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedConfigContextList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasConfigContextsList")
@@ -2970,17 +2981,17 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 	localVarFormParams := url.Values{}
 
 	if r.autoSyncEnabled != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "auto_sync_enabled", r.autoSyncEnabled, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "auto_sync_enabled", r.autoSyncEnabled, "form", "")
 	}
 	if r.clusterGroup != nil {
 		t := *r.clusterGroup
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_group", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_group", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_group", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_group", t, "form", "multi")
 		}
 	}
 	if r.clusterGroupN != nil {
@@ -2988,10 +2999,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_group__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_group__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_group__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_group__n", t, "form", "multi")
 		}
 	}
 	if r.clusterGroupId != nil {
@@ -2999,10 +3010,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_group_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_group_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_group_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_group_id", t, "form", "multi")
 		}
 	}
 	if r.clusterGroupIdN != nil {
@@ -3010,10 +3021,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_group_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_group_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_group_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_group_id__n", t, "form", "multi")
 		}
 	}
 	if r.clusterId != nil {
@@ -3021,10 +3032,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_id", t, "form", "multi")
 		}
 	}
 	if r.clusterIdN != nil {
@@ -3032,10 +3043,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_id__n", t, "form", "multi")
 		}
 	}
 	if r.clusterType != nil {
@@ -3043,10 +3054,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_type", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_type", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_type", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_type", t, "form", "multi")
 		}
 	}
 	if r.clusterTypeN != nil {
@@ -3054,10 +3065,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_type__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_type__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_type__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_type__n", t, "form", "multi")
 		}
 	}
 	if r.clusterTypeId != nil {
@@ -3065,10 +3076,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_type_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_type_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_type_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_type_id", t, "form", "multi")
 		}
 	}
 	if r.clusterTypeIdN != nil {
@@ -3076,10 +3087,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_type_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_type_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_type_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_type_id__n", t, "form", "multi")
 		}
 	}
 	if r.created != nil {
@@ -3087,10 +3098,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "form", "multi")
 		}
 	}
 	if r.createdEmpty != nil {
@@ -3098,10 +3109,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "form", "multi")
 		}
 	}
 	if r.createdGt != nil {
@@ -3109,10 +3120,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "form", "multi")
 		}
 	}
 	if r.createdGte != nil {
@@ -3120,10 +3131,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "form", "multi")
 		}
 	}
 	if r.createdLt != nil {
@@ -3131,10 +3142,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "form", "multi")
 		}
 	}
 	if r.createdLte != nil {
@@ -3142,10 +3153,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "form", "multi")
 		}
 	}
 	if r.createdN != nil {
@@ -3153,24 +3164,24 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "form", "multi")
 		}
 	}
 	if r.createdByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_request", r.createdByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_request", r.createdByRequest, "form", "")
 	}
 	if r.dataFileId != nil {
 		t := *r.dataFileId
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_file_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_file_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "data_file_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "data_file_id", t, "form", "multi")
 		}
 	}
 	if r.dataFileIdN != nil {
@@ -3178,10 +3189,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_file_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_file_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "data_file_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "data_file_id__n", t, "form", "multi")
 		}
 	}
 	if r.dataSourceId != nil {
@@ -3189,10 +3200,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_source_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_source_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "data_source_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "data_source_id", t, "form", "multi")
 		}
 	}
 	if r.dataSourceIdN != nil {
@@ -3200,10 +3211,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_source_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_source_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "data_source_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "data_source_id__n", t, "form", "multi")
 		}
 	}
 	if r.dataSynced != nil {
@@ -3211,24 +3222,24 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced", t, "form", "multi")
 		}
 	}
 	if r.dataSyncedEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__empty", r.dataSyncedEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__empty", r.dataSyncedEmpty, "form", "")
 	}
 	if r.dataSyncedGt != nil {
 		t := *r.dataSyncedGt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__gt", t, "form", "multi")
 		}
 	}
 	if r.dataSyncedGte != nil {
@@ -3236,10 +3247,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__gte", t, "form", "multi")
 		}
 	}
 	if r.dataSyncedLt != nil {
@@ -3247,10 +3258,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__lt", t, "form", "multi")
 		}
 	}
 	if r.dataSyncedLte != nil {
@@ -3258,10 +3269,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__lte", t, "form", "multi")
 		}
 	}
 	if r.dataSyncedN != nil {
@@ -3269,10 +3280,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__n", t, "form", "multi")
 		}
 	}
 	if r.description != nil {
@@ -3280,24 +3291,24 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "form", "multi")
 		}
 	}
 	if r.descriptionEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "description__empty", r.descriptionEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "description__empty", r.descriptionEmpty, "form", "")
 	}
 	if r.descriptionIc != nil {
 		t := *r.descriptionIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "form", "multi")
 		}
 	}
 	if r.descriptionIe != nil {
@@ -3305,10 +3316,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "form", "multi")
 		}
 	}
 	if r.descriptionIew != nil {
@@ -3316,10 +3327,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "form", "multi")
 		}
 	}
 	if r.descriptionIsw != nil {
@@ -3327,10 +3338,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "form", "multi")
 		}
 	}
 	if r.descriptionN != nil {
@@ -3338,10 +3349,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "form", "multi")
 		}
 	}
 	if r.descriptionNic != nil {
@@ -3349,10 +3360,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "form", "multi")
 		}
 	}
 	if r.descriptionNie != nil {
@@ -3360,10 +3371,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "form", "multi")
 		}
 	}
 	if r.descriptionNiew != nil {
@@ -3371,10 +3382,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "form", "multi")
 		}
 	}
 	if r.descriptionNisw != nil {
@@ -3382,10 +3393,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "form", "multi")
 		}
 	}
 	if r.deviceRole != nil {
@@ -3393,10 +3404,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "device_role", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "device_role", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "device_role", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "device_role", t, "form", "multi")
 		}
 	}
 	if r.deviceRoleN != nil {
@@ -3404,10 +3415,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "device_role__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "device_role__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "device_role__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "device_role__n", t, "form", "multi")
 		}
 	}
 	if r.deviceRoleId != nil {
@@ -3415,10 +3426,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "device_role_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "device_role_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "device_role_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "device_role_id", t, "form", "multi")
 		}
 	}
 	if r.deviceRoleIdN != nil {
@@ -3426,10 +3437,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "device_role_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "device_role_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "device_role_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "device_role_id__n", t, "form", "multi")
 		}
 	}
 	if r.deviceTypeId != nil {
@@ -3437,10 +3448,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "device_type_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "device_type_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "device_type_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "device_type_id", t, "form", "multi")
 		}
 	}
 	if r.deviceTypeIdN != nil {
@@ -3448,10 +3459,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "device_type_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "device_type_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "device_type_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "device_type_id__n", t, "form", "multi")
 		}
 	}
 	if r.id != nil {
@@ -3459,24 +3470,24 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "form", "multi")
 		}
 	}
 	if r.idEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "form", "")
 	}
 	if r.idGt != nil {
 		t := *r.idGt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "form", "multi")
 		}
 	}
 	if r.idGte != nil {
@@ -3484,10 +3495,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "form", "multi")
 		}
 	}
 	if r.idLt != nil {
@@ -3495,10 +3506,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "form", "multi")
 		}
 	}
 	if r.idLte != nil {
@@ -3506,10 +3517,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "form", "multi")
 		}
 	}
 	if r.idN != nil {
@@ -3517,24 +3528,24 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "form", "multi")
 		}
 	}
 	if r.isActive != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "is_active", r.isActive, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "is_active", r.isActive, "form", "")
 	}
 	if r.lastUpdated != nil {
 		t := *r.lastUpdated
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedEmpty != nil {
@@ -3542,10 +3553,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedGt != nil {
@@ -3553,10 +3564,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedGte != nil {
@@ -3564,10 +3575,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedLt != nil {
@@ -3575,10 +3586,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedLte != nil {
@@ -3586,10 +3597,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedN != nil {
@@ -3597,24 +3608,24 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "form", "multi")
 		}
 	}
 	if r.limit != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
 	}
 	if r.location != nil {
 		t := *r.location
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "location", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "location", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "location", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "location", t, "form", "multi")
 		}
 	}
 	if r.locationN != nil {
@@ -3622,10 +3633,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "location__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "location__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "location__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "location__n", t, "form", "multi")
 		}
 	}
 	if r.locationId != nil {
@@ -3633,10 +3644,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "location_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "location_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "location_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "location_id", t, "form", "multi")
 		}
 	}
 	if r.locationIdN != nil {
@@ -3644,38 +3655,38 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "location_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "location_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "location_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "location_id__n", t, "form", "multi")
 		}
 	}
 	if r.modifiedByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "modified_by_request", r.modifiedByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "modified_by_request", r.modifiedByRequest, "form", "")
 	}
 	if r.name != nil {
 		t := *r.name
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "form", "multi")
 		}
 	}
 	if r.nameEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "name__empty", r.nameEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "name__empty", r.nameEmpty, "form", "")
 	}
 	if r.nameIc != nil {
 		t := *r.nameIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "form", "multi")
 		}
 	}
 	if r.nameIe != nil {
@@ -3683,10 +3694,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "form", "multi")
 		}
 	}
 	if r.nameIew != nil {
@@ -3694,10 +3705,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "form", "multi")
 		}
 	}
 	if r.nameIsw != nil {
@@ -3705,10 +3716,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "form", "multi")
 		}
 	}
 	if r.nameN != nil {
@@ -3716,10 +3727,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "form", "multi")
 		}
 	}
 	if r.nameNic != nil {
@@ -3727,10 +3738,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "form", "multi")
 		}
 	}
 	if r.nameNie != nil {
@@ -3738,10 +3749,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "form", "multi")
 		}
 	}
 	if r.nameNiew != nil {
@@ -3749,10 +3760,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "form", "multi")
 		}
 	}
 	if r.nameNisw != nil {
@@ -3760,27 +3771,27 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "form", "multi")
 		}
 	}
 	if r.offset != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "form", "")
 	}
 	if r.ordering != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "form", "")
 	}
 	if r.platform != nil {
 		t := *r.platform
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "platform", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "platform", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "platform", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "platform", t, "form", "multi")
 		}
 	}
 	if r.platformN != nil {
@@ -3788,10 +3799,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "platform__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "platform__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "platform__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "platform__n", t, "form", "multi")
 		}
 	}
 	if r.platformId != nil {
@@ -3799,10 +3810,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "platform_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "platform_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "platform_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "platform_id", t, "form", "multi")
 		}
 	}
 	if r.platformIdN != nil {
@@ -3810,24 +3821,24 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "platform_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "platform_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "platform_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "platform_id__n", t, "form", "multi")
 		}
 	}
 	if r.q != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "form", "")
 	}
 	if r.region != nil {
 		t := *r.region
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "region", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "region", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "region", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "region", t, "form", "multi")
 		}
 	}
 	if r.regionN != nil {
@@ -3835,10 +3846,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "region__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "region__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "region__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "region__n", t, "form", "multi")
 		}
 	}
 	if r.regionId != nil {
@@ -3846,10 +3857,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "region_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "region_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "region_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "region_id", t, "form", "multi")
 		}
 	}
 	if r.regionIdN != nil {
@@ -3857,10 +3868,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "region_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "region_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "region_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "region_id__n", t, "form", "multi")
 		}
 	}
 	if r.site != nil {
@@ -3868,10 +3879,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "site", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "site", t, "form", "multi")
 		}
 	}
 	if r.siteN != nil {
@@ -3879,10 +3890,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "site__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "site__n", t, "form", "multi")
 		}
 	}
 	if r.siteGroup != nil {
@@ -3890,10 +3901,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "site_group", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "site_group", t, "form", "multi")
 		}
 	}
 	if r.siteGroupN != nil {
@@ -3901,10 +3912,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "site_group__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "site_group__n", t, "form", "multi")
 		}
 	}
 	if r.siteGroupId != nil {
@@ -3912,10 +3923,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id", t, "form", "multi")
 		}
 	}
 	if r.siteGroupIdN != nil {
@@ -3923,10 +3934,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id__n", t, "form", "multi")
 		}
 	}
 	if r.siteId != nil {
@@ -3934,10 +3945,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "site_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "site_id", t, "form", "multi")
 		}
 	}
 	if r.siteIdN != nil {
@@ -3945,10 +3956,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "site_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "site_id__n", t, "form", "multi")
 		}
 	}
 	if r.tag != nil {
@@ -3956,10 +3967,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "form", "multi")
 		}
 	}
 	if r.tagN != nil {
@@ -3967,10 +3978,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "form", "multi")
 		}
 	}
 	if r.tagId != nil {
@@ -3978,10 +3989,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tag_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tag_id", t, "form", "multi")
 		}
 	}
 	if r.tagIdN != nil {
@@ -3989,10 +4000,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tag_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tag_id__n", t, "form", "multi")
 		}
 	}
 	if r.tenant != nil {
@@ -4000,10 +4011,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", t, "form", "multi")
 		}
 	}
 	if r.tenantN != nil {
@@ -4011,10 +4022,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", t, "form", "multi")
 		}
 	}
 	if r.tenantGroup != nil {
@@ -4022,10 +4033,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", t, "form", "multi")
 		}
 	}
 	if r.tenantGroupN != nil {
@@ -4033,10 +4044,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", t, "form", "multi")
 		}
 	}
 	if r.tenantGroupId != nil {
@@ -4044,10 +4055,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", t, "form", "multi")
 		}
 	}
 	if r.tenantGroupIdN != nil {
@@ -4055,10 +4066,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", t, "form", "multi")
 		}
 	}
 	if r.tenantId != nil {
@@ -4066,10 +4077,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", t, "form", "multi")
 		}
 	}
 	if r.tenantIdN != nil {
@@ -4077,38 +4088,38 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", t, "form", "multi")
 		}
 	}
 	if r.updatedByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "updated_by_request", r.updatedByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "updated_by_request", r.updatedByRequest, "form", "")
 	}
 	if r.weight != nil {
 		t := *r.weight
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "weight", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "weight", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "weight", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "weight", t, "form", "multi")
 		}
 	}
 	if r.weightEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "weight__empty", r.weightEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "weight__empty", r.weightEmpty, "form", "")
 	}
 	if r.weightGt != nil {
 		t := *r.weightGt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gt", t, "form", "multi")
 		}
 	}
 	if r.weightGte != nil {
@@ -4116,10 +4127,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gte", t, "form", "multi")
 		}
 	}
 	if r.weightLt != nil {
@@ -4127,10 +4138,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lt", t, "form", "multi")
 		}
 	}
 	if r.weightLte != nil {
@@ -4138,10 +4149,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lte", t, "form", "multi")
 		}
 	}
 	if r.weightN != nil {
@@ -4149,10 +4160,10 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__n", t, "form", "multi")
 		}
 	}
 	// to determine the Content-Type header
@@ -4224,9 +4235,9 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 }
 
 type ApiExtrasConfigContextsPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	id int32
+	ctx                         context.Context
+	ApiService                  *ExtrasAPIService
+	id                          int32
 	patchedConfigContextRequest *PatchedConfigContextRequest
 }
 
@@ -4244,26 +4255,27 @@ ExtrasConfigContextsPartialUpdate Method for ExtrasConfigContextsPartialUpdate
 
 Patch a config context object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this config context.
- @return ApiExtrasConfigContextsPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this config context.
+	@return ApiExtrasConfigContextsPartialUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasConfigContextsPartialUpdate(ctx context.Context, id int32) ApiExtrasConfigContextsPartialUpdateRequest {
 	return ApiExtrasConfigContextsPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ConfigContext
+//
+//	@return ConfigContext
 func (a *ExtrasAPIService) ExtrasConfigContextsPartialUpdateExecute(r ApiExtrasConfigContextsPartialUpdateRequest) (*ConfigContext, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ConfigContext
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ConfigContext
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasConfigContextsPartialUpdate")
@@ -4349,9 +4361,9 @@ func (a *ExtrasAPIService) ExtrasConfigContextsPartialUpdateExecute(r ApiExtrasC
 }
 
 type ApiExtrasConfigContextsRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiExtrasConfigContextsRetrieveRequest) Execute() (*ConfigContext, *http.Response, error) {
@@ -4363,26 +4375,27 @@ ExtrasConfigContextsRetrieve Method for ExtrasConfigContextsRetrieve
 
 Get a config context object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this config context.
- @return ApiExtrasConfigContextsRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this config context.
+	@return ApiExtrasConfigContextsRetrieveRequest
 */
 func (a *ExtrasAPIService) ExtrasConfigContextsRetrieve(ctx context.Context, id int32) ApiExtrasConfigContextsRetrieveRequest {
 	return ApiExtrasConfigContextsRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ConfigContext
+//
+//	@return ConfigContext
 func (a *ExtrasAPIService) ExtrasConfigContextsRetrieveExecute(r ApiExtrasConfigContextsRetrieveRequest) (*ConfigContext, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ConfigContext
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ConfigContext
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasConfigContextsRetrieve")
@@ -4466,9 +4479,9 @@ func (a *ExtrasAPIService) ExtrasConfigContextsRetrieveExecute(r ApiExtrasConfig
 }
 
 type ApiExtrasConfigContextsSyncCreateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	id int32
+	ctx                  context.Context
+	ApiService           *ExtrasAPIService
+	id                   int32
 	configContextRequest *ConfigContextRequest
 }
 
@@ -4486,26 +4499,27 @@ ExtrasConfigContextsSyncCreate Method for ExtrasConfigContextsSyncCreate
 
 Provide a /sync API endpoint to synchronize an object's data from its associated DataFile (if any).
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this config context.
- @return ApiExtrasConfigContextsSyncCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this config context.
+	@return ApiExtrasConfigContextsSyncCreateRequest
 */
 func (a *ExtrasAPIService) ExtrasConfigContextsSyncCreate(ctx context.Context, id int32) ApiExtrasConfigContextsSyncCreateRequest {
 	return ApiExtrasConfigContextsSyncCreateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ConfigContext
+//
+//	@return ConfigContext
 func (a *ExtrasAPIService) ExtrasConfigContextsSyncCreateExecute(r ApiExtrasConfigContextsSyncCreateRequest) (*ConfigContext, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ConfigContext
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ConfigContext
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasConfigContextsSyncCreate")
@@ -4594,9 +4608,9 @@ func (a *ExtrasAPIService) ExtrasConfigContextsSyncCreateExecute(r ApiExtrasConf
 }
 
 type ApiExtrasConfigContextsUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	id int32
+	ctx                  context.Context
+	ApiService           *ExtrasAPIService
+	id                   int32
 	configContextRequest *ConfigContextRequest
 }
 
@@ -4614,26 +4628,27 @@ ExtrasConfigContextsUpdate Method for ExtrasConfigContextsUpdate
 
 Put a config context object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this config context.
- @return ApiExtrasConfigContextsUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this config context.
+	@return ApiExtrasConfigContextsUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasConfigContextsUpdate(ctx context.Context, id int32) ApiExtrasConfigContextsUpdateRequest {
 	return ApiExtrasConfigContextsUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ConfigContext
+//
+//	@return ConfigContext
 func (a *ExtrasAPIService) ExtrasConfigContextsUpdateExecute(r ApiExtrasConfigContextsUpdateRequest) (*ConfigContext, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ConfigContext
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ConfigContext
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasConfigContextsUpdate")
@@ -4722,8 +4737,8 @@ func (a *ExtrasAPIService) ExtrasConfigContextsUpdateExecute(r ApiExtrasConfigCo
 }
 
 type ApiExtrasConfigTemplatesBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                   context.Context
+	ApiService            *ExtrasAPIService
 	configTemplateRequest *[]ConfigTemplateRequest
 }
 
@@ -4741,22 +4756,22 @@ ExtrasConfigTemplatesBulkDestroy Method for ExtrasConfigTemplatesBulkDestroy
 
 Delete a list of config template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasConfigTemplatesBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasConfigTemplatesBulkDestroyRequest
 */
 func (a *ExtrasAPIService) ExtrasConfigTemplatesBulkDestroy(ctx context.Context) ApiExtrasConfigTemplatesBulkDestroyRequest {
 	return ApiExtrasConfigTemplatesBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *ExtrasAPIService) ExtrasConfigTemplatesBulkDestroyExecute(r ApiExtrasConfigTemplatesBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasConfigTemplatesBulkDestroy")
@@ -4835,8 +4850,8 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesBulkDestroyExecute(r ApiExtrasCo
 }
 
 type ApiExtrasConfigTemplatesBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                   context.Context
+	ApiService            *ExtrasAPIService
 	configTemplateRequest *[]ConfigTemplateRequest
 }
 
@@ -4854,24 +4869,25 @@ ExtrasConfigTemplatesBulkPartialUpdate Method for ExtrasConfigTemplatesBulkParti
 
 Patch a list of config template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasConfigTemplatesBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasConfigTemplatesBulkPartialUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasConfigTemplatesBulkPartialUpdate(ctx context.Context) ApiExtrasConfigTemplatesBulkPartialUpdateRequest {
 	return ApiExtrasConfigTemplatesBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []ConfigTemplate
+//
+//	@return []ConfigTemplate
 func (a *ExtrasAPIService) ExtrasConfigTemplatesBulkPartialUpdateExecute(r ApiExtrasConfigTemplatesBulkPartialUpdateRequest) ([]ConfigTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ConfigTemplate
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ConfigTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasConfigTemplatesBulkPartialUpdate")
@@ -4959,8 +4975,8 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesBulkPartialUpdateExecute(r ApiEx
 }
 
 type ApiExtrasConfigTemplatesBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                   context.Context
+	ApiService            *ExtrasAPIService
 	configTemplateRequest *[]ConfigTemplateRequest
 }
 
@@ -4978,24 +4994,25 @@ ExtrasConfigTemplatesBulkUpdate Method for ExtrasConfigTemplatesBulkUpdate
 
 Put a list of config template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasConfigTemplatesBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasConfigTemplatesBulkUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasConfigTemplatesBulkUpdate(ctx context.Context) ApiExtrasConfigTemplatesBulkUpdateRequest {
 	return ApiExtrasConfigTemplatesBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []ConfigTemplate
+//
+//	@return []ConfigTemplate
 func (a *ExtrasAPIService) ExtrasConfigTemplatesBulkUpdateExecute(r ApiExtrasConfigTemplatesBulkUpdateRequest) ([]ConfigTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ConfigTemplate
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ConfigTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasConfigTemplatesBulkUpdate")
@@ -5083,8 +5100,8 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesBulkUpdateExecute(r ApiExtrasCon
 }
 
 type ApiExtrasConfigTemplatesCreateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                   context.Context
+	ApiService            *ExtrasAPIService
 	configTemplateRequest *ConfigTemplateRequest
 }
 
@@ -5102,24 +5119,25 @@ ExtrasConfigTemplatesCreate Method for ExtrasConfigTemplatesCreate
 
 Post a list of config template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasConfigTemplatesCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasConfigTemplatesCreateRequest
 */
 func (a *ExtrasAPIService) ExtrasConfigTemplatesCreate(ctx context.Context) ApiExtrasConfigTemplatesCreateRequest {
 	return ApiExtrasConfigTemplatesCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ConfigTemplate
+//
+//	@return ConfigTemplate
 func (a *ExtrasAPIService) ExtrasConfigTemplatesCreateExecute(r ApiExtrasConfigTemplatesCreateRequest) (*ConfigTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ConfigTemplate
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ConfigTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasConfigTemplatesCreate")
@@ -5207,9 +5225,9 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesCreateExecute(r ApiExtrasConfigT
 }
 
 type ApiExtrasConfigTemplatesDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiExtrasConfigTemplatesDestroyRequest) Execute() (*http.Response, error) {
@@ -5221,24 +5239,24 @@ ExtrasConfigTemplatesDestroy Method for ExtrasConfigTemplatesDestroy
 
 Delete a config template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this config template.
- @return ApiExtrasConfigTemplatesDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this config template.
+	@return ApiExtrasConfigTemplatesDestroyRequest
 */
 func (a *ExtrasAPIService) ExtrasConfigTemplatesDestroy(ctx context.Context, id int32) ApiExtrasConfigTemplatesDestroyRequest {
 	return ApiExtrasConfigTemplatesDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *ExtrasAPIService) ExtrasConfigTemplatesDestroyExecute(r ApiExtrasConfigTemplatesDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasConfigTemplatesDestroy")
@@ -5313,72 +5331,72 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesDestroyExecute(r ApiExtrasConfig
 }
 
 type ApiExtrasConfigTemplatesListRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	autoSyncEnabled *bool
-	created *[]time.Time
-	createdEmpty *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
-	createdByRequest *string
-	dataFileId *[]*int32
-	dataFileIdN *[]*int32
-	dataSourceId *[]*int32
-	dataSourceIdN *[]*int32
-	dataSynced *[]time.Time
-	dataSyncedEmpty *bool
-	dataSyncedGt *[]time.Time
-	dataSyncedGte *[]time.Time
-	dataSyncedLt *[]time.Time
-	dataSyncedLte *[]time.Time
-	dataSyncedN *[]time.Time
-	description *[]string
-	descriptionEmpty *bool
-	descriptionIc *[]string
-	descriptionIe *[]string
-	descriptionIew *[]string
-	descriptionIsw *[]string
-	descriptionN *[]string
-	descriptionNic *[]string
-	descriptionNie *[]string
-	descriptionNiew *[]string
-	descriptionNisw *[]string
-	id *[]int32
-	idEmpty *bool
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedEmpty *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
+	ctx               context.Context
+	ApiService        *ExtrasAPIService
+	autoSyncEnabled   *bool
+	created           *[]time.Time
+	createdEmpty      *[]time.Time
+	createdGt         *[]time.Time
+	createdGte        *[]time.Time
+	createdLt         *[]time.Time
+	createdLte        *[]time.Time
+	createdN          *[]time.Time
+	createdByRequest  *string
+	dataFileId        *[]*int32
+	dataFileIdN       *[]*int32
+	dataSourceId      *[]*int32
+	dataSourceIdN     *[]*int32
+	dataSynced        *[]time.Time
+	dataSyncedEmpty   *bool
+	dataSyncedGt      *[]time.Time
+	dataSyncedGte     *[]time.Time
+	dataSyncedLt      *[]time.Time
+	dataSyncedLte     *[]time.Time
+	dataSyncedN       *[]time.Time
+	description       *[]string
+	descriptionEmpty  *bool
+	descriptionIc     *[]string
+	descriptionIe     *[]string
+	descriptionIew    *[]string
+	descriptionIsw    *[]string
+	descriptionN      *[]string
+	descriptionNic    *[]string
+	descriptionNie    *[]string
+	descriptionNiew   *[]string
+	descriptionNisw   *[]string
+	id                *[]int32
+	idEmpty           *bool
+	idGt              *[]int32
+	idGte             *[]int32
+	idLt              *[]int32
+	idLte             *[]int32
+	idN               *[]int32
+	lastUpdated       *[]time.Time
+	lastUpdatedEmpty  *[]time.Time
+	lastUpdatedGt     *[]time.Time
+	lastUpdatedGte    *[]time.Time
+	lastUpdatedLt     *[]time.Time
+	lastUpdatedLte    *[]time.Time
+	lastUpdatedN      *[]time.Time
+	limit             *int32
 	modifiedByRequest *string
-	name *[]string
-	nameEmpty *bool
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	offset *int32
-	ordering *string
-	q *string
-	tag *[]string
-	tagN *[]string
-	updatedByRequest *string
+	name              *[]string
+	nameEmpty         *bool
+	nameIc            *[]string
+	nameIe            *[]string
+	nameIew           *[]string
+	nameIsw           *[]string
+	nameN             *[]string
+	nameNic           *[]string
+	nameNie           *[]string
+	nameNiew          *[]string
+	nameNisw          *[]string
+	offset            *int32
+	ordering          *string
+	q                 *string
+	tag               *[]string
+	tagN              *[]string
+	updatedByRequest  *string
 }
 
 func (r ApiExtrasConfigTemplatesListRequest) AutoSyncEnabled(autoSyncEnabled bool) ApiExtrasConfigTemplatesListRequest {
@@ -5718,24 +5736,25 @@ ExtrasConfigTemplatesList Method for ExtrasConfigTemplatesList
 
 Get a list of config template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasConfigTemplatesListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasConfigTemplatesListRequest
 */
 func (a *ExtrasAPIService) ExtrasConfigTemplatesList(ctx context.Context) ApiExtrasConfigTemplatesListRequest {
 	return ApiExtrasConfigTemplatesListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedConfigTemplateList
+//
+//	@return PaginatedConfigTemplateList
 func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTemplatesListRequest) (*PaginatedConfigTemplateList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedConfigTemplateList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedConfigTemplateList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasConfigTemplatesList")
@@ -5750,17 +5769,17 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 	localVarFormParams := url.Values{}
 
 	if r.autoSyncEnabled != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "auto_sync_enabled", r.autoSyncEnabled, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "auto_sync_enabled", r.autoSyncEnabled, "form", "")
 	}
 	if r.created != nil {
 		t := *r.created
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "form", "multi")
 		}
 	}
 	if r.createdEmpty != nil {
@@ -5768,10 +5787,10 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "form", "multi")
 		}
 	}
 	if r.createdGt != nil {
@@ -5779,10 +5798,10 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "form", "multi")
 		}
 	}
 	if r.createdGte != nil {
@@ -5790,10 +5809,10 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "form", "multi")
 		}
 	}
 	if r.createdLt != nil {
@@ -5801,10 +5820,10 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "form", "multi")
 		}
 	}
 	if r.createdLte != nil {
@@ -5812,10 +5831,10 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "form", "multi")
 		}
 	}
 	if r.createdN != nil {
@@ -5823,24 +5842,24 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "form", "multi")
 		}
 	}
 	if r.createdByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_request", r.createdByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_request", r.createdByRequest, "form", "")
 	}
 	if r.dataFileId != nil {
 		t := *r.dataFileId
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_file_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_file_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "data_file_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "data_file_id", t, "form", "multi")
 		}
 	}
 	if r.dataFileIdN != nil {
@@ -5848,10 +5867,10 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_file_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_file_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "data_file_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "data_file_id__n", t, "form", "multi")
 		}
 	}
 	if r.dataSourceId != nil {
@@ -5859,10 +5878,10 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_source_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_source_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "data_source_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "data_source_id", t, "form", "multi")
 		}
 	}
 	if r.dataSourceIdN != nil {
@@ -5870,10 +5889,10 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_source_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_source_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "data_source_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "data_source_id__n", t, "form", "multi")
 		}
 	}
 	if r.dataSynced != nil {
@@ -5881,24 +5900,24 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced", t, "form", "multi")
 		}
 	}
 	if r.dataSyncedEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__empty", r.dataSyncedEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__empty", r.dataSyncedEmpty, "form", "")
 	}
 	if r.dataSyncedGt != nil {
 		t := *r.dataSyncedGt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__gt", t, "form", "multi")
 		}
 	}
 	if r.dataSyncedGte != nil {
@@ -5906,10 +5925,10 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__gte", t, "form", "multi")
 		}
 	}
 	if r.dataSyncedLt != nil {
@@ -5917,10 +5936,10 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__lt", t, "form", "multi")
 		}
 	}
 	if r.dataSyncedLte != nil {
@@ -5928,10 +5947,10 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__lte", t, "form", "multi")
 		}
 	}
 	if r.dataSyncedN != nil {
@@ -5939,10 +5958,10 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__n", t, "form", "multi")
 		}
 	}
 	if r.description != nil {
@@ -5950,24 +5969,24 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "form", "multi")
 		}
 	}
 	if r.descriptionEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "description__empty", r.descriptionEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "description__empty", r.descriptionEmpty, "form", "")
 	}
 	if r.descriptionIc != nil {
 		t := *r.descriptionIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "form", "multi")
 		}
 	}
 	if r.descriptionIe != nil {
@@ -5975,10 +5994,10 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "form", "multi")
 		}
 	}
 	if r.descriptionIew != nil {
@@ -5986,10 +6005,10 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "form", "multi")
 		}
 	}
 	if r.descriptionIsw != nil {
@@ -5997,10 +6016,10 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "form", "multi")
 		}
 	}
 	if r.descriptionN != nil {
@@ -6008,10 +6027,10 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "form", "multi")
 		}
 	}
 	if r.descriptionNic != nil {
@@ -6019,10 +6038,10 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "form", "multi")
 		}
 	}
 	if r.descriptionNie != nil {
@@ -6030,10 +6049,10 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "form", "multi")
 		}
 	}
 	if r.descriptionNiew != nil {
@@ -6041,10 +6060,10 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "form", "multi")
 		}
 	}
 	if r.descriptionNisw != nil {
@@ -6052,10 +6071,10 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "form", "multi")
 		}
 	}
 	if r.id != nil {
@@ -6063,24 +6082,24 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "form", "multi")
 		}
 	}
 	if r.idEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "form", "")
 	}
 	if r.idGt != nil {
 		t := *r.idGt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "form", "multi")
 		}
 	}
 	if r.idGte != nil {
@@ -6088,10 +6107,10 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "form", "multi")
 		}
 	}
 	if r.idLt != nil {
@@ -6099,10 +6118,10 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "form", "multi")
 		}
 	}
 	if r.idLte != nil {
@@ -6110,10 +6129,10 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "form", "multi")
 		}
 	}
 	if r.idN != nil {
@@ -6121,10 +6140,10 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "form", "multi")
 		}
 	}
 	if r.lastUpdated != nil {
@@ -6132,10 +6151,10 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedEmpty != nil {
@@ -6143,10 +6162,10 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedGt != nil {
@@ -6154,10 +6173,10 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedGte != nil {
@@ -6165,10 +6184,10 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedLt != nil {
@@ -6176,10 +6195,10 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedLte != nil {
@@ -6187,10 +6206,10 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedN != nil {
@@ -6198,41 +6217,41 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "form", "multi")
 		}
 	}
 	if r.limit != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
 	}
 	if r.modifiedByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "modified_by_request", r.modifiedByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "modified_by_request", r.modifiedByRequest, "form", "")
 	}
 	if r.name != nil {
 		t := *r.name
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "form", "multi")
 		}
 	}
 	if r.nameEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "name__empty", r.nameEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "name__empty", r.nameEmpty, "form", "")
 	}
 	if r.nameIc != nil {
 		t := *r.nameIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "form", "multi")
 		}
 	}
 	if r.nameIe != nil {
@@ -6240,10 +6259,10 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "form", "multi")
 		}
 	}
 	if r.nameIew != nil {
@@ -6251,10 +6270,10 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "form", "multi")
 		}
 	}
 	if r.nameIsw != nil {
@@ -6262,10 +6281,10 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "form", "multi")
 		}
 	}
 	if r.nameN != nil {
@@ -6273,10 +6292,10 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "form", "multi")
 		}
 	}
 	if r.nameNic != nil {
@@ -6284,10 +6303,10 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "form", "multi")
 		}
 	}
 	if r.nameNie != nil {
@@ -6295,10 +6314,10 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "form", "multi")
 		}
 	}
 	if r.nameNiew != nil {
@@ -6306,10 +6325,10 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "form", "multi")
 		}
 	}
 	if r.nameNisw != nil {
@@ -6317,30 +6336,30 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "form", "multi")
 		}
 	}
 	if r.offset != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "form", "")
 	}
 	if r.ordering != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "form", "")
 	}
 	if r.q != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "form", "")
 	}
 	if r.tag != nil {
 		t := *r.tag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "form", "multi")
 		}
 	}
 	if r.tagN != nil {
@@ -6348,14 +6367,14 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "form", "multi")
 		}
 	}
 	if r.updatedByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "updated_by_request", r.updatedByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "updated_by_request", r.updatedByRequest, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -6426,9 +6445,9 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 }
 
 type ApiExtrasConfigTemplatesPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	id int32
+	ctx                          context.Context
+	ApiService                   *ExtrasAPIService
+	id                           int32
 	patchedConfigTemplateRequest *PatchedConfigTemplateRequest
 }
 
@@ -6446,26 +6465,27 @@ ExtrasConfigTemplatesPartialUpdate Method for ExtrasConfigTemplatesPartialUpdate
 
 Patch a config template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this config template.
- @return ApiExtrasConfigTemplatesPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this config template.
+	@return ApiExtrasConfigTemplatesPartialUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasConfigTemplatesPartialUpdate(ctx context.Context, id int32) ApiExtrasConfigTemplatesPartialUpdateRequest {
 	return ApiExtrasConfigTemplatesPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ConfigTemplate
+//
+//	@return ConfigTemplate
 func (a *ExtrasAPIService) ExtrasConfigTemplatesPartialUpdateExecute(r ApiExtrasConfigTemplatesPartialUpdateRequest) (*ConfigTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ConfigTemplate
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ConfigTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasConfigTemplatesPartialUpdate")
@@ -6551,11 +6571,11 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesPartialUpdateExecute(r ApiExtras
 }
 
 type ApiExtrasConfigTemplatesRenderCreateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	id int32
+	ctx                   context.Context
+	ApiService            *ExtrasAPIService
+	id                    int32
 	configTemplateRequest *ConfigTemplateRequest
-	format *DcimDevicesRenderConfigCreateFormatParameter
+	format                *DcimDevicesRenderConfigCreateFormatParameter
 }
 
 func (r ApiExtrasConfigTemplatesRenderCreateRequest) ConfigTemplateRequest(configTemplateRequest ConfigTemplateRequest) ApiExtrasConfigTemplatesRenderCreateRequest {
@@ -6578,26 +6598,27 @@ ExtrasConfigTemplatesRenderCreate Method for ExtrasConfigTemplatesRenderCreate
 Render a ConfigTemplate using the context data provided (if any). If the client requests "text/plain" data,
 return the raw rendered content, rather than serialized JSON.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this config template.
- @return ApiExtrasConfigTemplatesRenderCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this config template.
+	@return ApiExtrasConfigTemplatesRenderCreateRequest
 */
 func (a *ExtrasAPIService) ExtrasConfigTemplatesRenderCreate(ctx context.Context, id int32) ApiExtrasConfigTemplatesRenderCreateRequest {
 	return ApiExtrasConfigTemplatesRenderCreateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ConfigTemplate
+//
+//	@return ConfigTemplate
 func (a *ExtrasAPIService) ExtrasConfigTemplatesRenderCreateExecute(r ApiExtrasConfigTemplatesRenderCreateRequest) (*ConfigTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ConfigTemplate
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ConfigTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasConfigTemplatesRenderCreate")
@@ -6616,7 +6637,7 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesRenderCreateExecute(r ApiExtrasC
 	}
 
 	if r.format != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "format", r.format, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "format", r.format, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "multipart/form-data"}
@@ -6689,9 +6710,9 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesRenderCreateExecute(r ApiExtrasC
 }
 
 type ApiExtrasConfigTemplatesRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiExtrasConfigTemplatesRetrieveRequest) Execute() (*ConfigTemplate, *http.Response, error) {
@@ -6703,26 +6724,27 @@ ExtrasConfigTemplatesRetrieve Method for ExtrasConfigTemplatesRetrieve
 
 Get a config template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this config template.
- @return ApiExtrasConfigTemplatesRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this config template.
+	@return ApiExtrasConfigTemplatesRetrieveRequest
 */
 func (a *ExtrasAPIService) ExtrasConfigTemplatesRetrieve(ctx context.Context, id int32) ApiExtrasConfigTemplatesRetrieveRequest {
 	return ApiExtrasConfigTemplatesRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ConfigTemplate
+//
+//	@return ConfigTemplate
 func (a *ExtrasAPIService) ExtrasConfigTemplatesRetrieveExecute(r ApiExtrasConfigTemplatesRetrieveRequest) (*ConfigTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ConfigTemplate
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ConfigTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasConfigTemplatesRetrieve")
@@ -6806,9 +6828,9 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesRetrieveExecute(r ApiExtrasConfi
 }
 
 type ApiExtrasConfigTemplatesSyncCreateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	id int32
+	ctx                   context.Context
+	ApiService            *ExtrasAPIService
+	id                    int32
 	configTemplateRequest *ConfigTemplateRequest
 }
 
@@ -6826,26 +6848,27 @@ ExtrasConfigTemplatesSyncCreate Method for ExtrasConfigTemplatesSyncCreate
 
 Provide a /sync API endpoint to synchronize an object's data from its associated DataFile (if any).
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this config template.
- @return ApiExtrasConfigTemplatesSyncCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this config template.
+	@return ApiExtrasConfigTemplatesSyncCreateRequest
 */
 func (a *ExtrasAPIService) ExtrasConfigTemplatesSyncCreate(ctx context.Context, id int32) ApiExtrasConfigTemplatesSyncCreateRequest {
 	return ApiExtrasConfigTemplatesSyncCreateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ConfigTemplate
+//
+//	@return ConfigTemplate
 func (a *ExtrasAPIService) ExtrasConfigTemplatesSyncCreateExecute(r ApiExtrasConfigTemplatesSyncCreateRequest) (*ConfigTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ConfigTemplate
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ConfigTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasConfigTemplatesSyncCreate")
@@ -6934,9 +6957,9 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesSyncCreateExecute(r ApiExtrasCon
 }
 
 type ApiExtrasConfigTemplatesUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	id int32
+	ctx                   context.Context
+	ApiService            *ExtrasAPIService
+	id                    int32
 	configTemplateRequest *ConfigTemplateRequest
 }
 
@@ -6954,26 +6977,27 @@ ExtrasConfigTemplatesUpdate Method for ExtrasConfigTemplatesUpdate
 
 Put a config template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this config template.
- @return ApiExtrasConfigTemplatesUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this config template.
+	@return ApiExtrasConfigTemplatesUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasConfigTemplatesUpdate(ctx context.Context, id int32) ApiExtrasConfigTemplatesUpdateRequest {
 	return ApiExtrasConfigTemplatesUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ConfigTemplate
+//
+//	@return ConfigTemplate
 func (a *ExtrasAPIService) ExtrasConfigTemplatesUpdateExecute(r ApiExtrasConfigTemplatesUpdateRequest) (*ConfigTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ConfigTemplate
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ConfigTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasConfigTemplatesUpdate")
@@ -7062,8 +7086,8 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesUpdateExecute(r ApiExtrasConfigT
 }
 
 type ApiExtrasCustomFieldChoiceSetsBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                         context.Context
+	ApiService                  *ExtrasAPIService
 	customFieldChoiceSetRequest *[]CustomFieldChoiceSetRequest
 }
 
@@ -7081,22 +7105,22 @@ ExtrasCustomFieldChoiceSetsBulkDestroy Method for ExtrasCustomFieldChoiceSetsBul
 
 Delete a list of custom field choice set objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasCustomFieldChoiceSetsBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasCustomFieldChoiceSetsBulkDestroyRequest
 */
 func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsBulkDestroy(ctx context.Context) ApiExtrasCustomFieldChoiceSetsBulkDestroyRequest {
 	return ApiExtrasCustomFieldChoiceSetsBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsBulkDestroyExecute(r ApiExtrasCustomFieldChoiceSetsBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomFieldChoiceSetsBulkDestroy")
@@ -7175,8 +7199,8 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsBulkDestroyExecute(r ApiEx
 }
 
 type ApiExtrasCustomFieldChoiceSetsBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                         context.Context
+	ApiService                  *ExtrasAPIService
 	customFieldChoiceSetRequest *[]CustomFieldChoiceSetRequest
 }
 
@@ -7194,24 +7218,25 @@ ExtrasCustomFieldChoiceSetsBulkPartialUpdate Method for ExtrasCustomFieldChoiceS
 
 Patch a list of custom field choice set objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasCustomFieldChoiceSetsBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasCustomFieldChoiceSetsBulkPartialUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsBulkPartialUpdate(ctx context.Context) ApiExtrasCustomFieldChoiceSetsBulkPartialUpdateRequest {
 	return ApiExtrasCustomFieldChoiceSetsBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []CustomFieldChoiceSet
+//
+//	@return []CustomFieldChoiceSet
 func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsBulkPartialUpdateExecute(r ApiExtrasCustomFieldChoiceSetsBulkPartialUpdateRequest) ([]CustomFieldChoiceSet, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []CustomFieldChoiceSet
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []CustomFieldChoiceSet
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomFieldChoiceSetsBulkPartialUpdate")
@@ -7299,8 +7324,8 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsBulkPartialUpdateExecute(r
 }
 
 type ApiExtrasCustomFieldChoiceSetsBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                         context.Context
+	ApiService                  *ExtrasAPIService
 	customFieldChoiceSetRequest *[]CustomFieldChoiceSetRequest
 }
 
@@ -7318,24 +7343,25 @@ ExtrasCustomFieldChoiceSetsBulkUpdate Method for ExtrasCustomFieldChoiceSetsBulk
 
 Put a list of custom field choice set objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasCustomFieldChoiceSetsBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasCustomFieldChoiceSetsBulkUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsBulkUpdate(ctx context.Context) ApiExtrasCustomFieldChoiceSetsBulkUpdateRequest {
 	return ApiExtrasCustomFieldChoiceSetsBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []CustomFieldChoiceSet
+//
+//	@return []CustomFieldChoiceSet
 func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsBulkUpdateExecute(r ApiExtrasCustomFieldChoiceSetsBulkUpdateRequest) ([]CustomFieldChoiceSet, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []CustomFieldChoiceSet
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []CustomFieldChoiceSet
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomFieldChoiceSetsBulkUpdate")
@@ -7423,9 +7449,9 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsBulkUpdateExecute(r ApiExt
 }
 
 type ApiExtrasCustomFieldChoiceSetsChoicesRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiExtrasCustomFieldChoiceSetsChoicesRetrieveRequest) Execute() (*CustomFieldChoiceSet, *http.Response, error) {
@@ -7437,26 +7463,27 @@ ExtrasCustomFieldChoiceSetsChoicesRetrieve Method for ExtrasCustomFieldChoiceSet
 
 Provides an endpoint to iterate through each choice in a set.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this custom field choice set.
- @return ApiExtrasCustomFieldChoiceSetsChoicesRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this custom field choice set.
+	@return ApiExtrasCustomFieldChoiceSetsChoicesRetrieveRequest
 */
 func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsChoicesRetrieve(ctx context.Context, id int32) ApiExtrasCustomFieldChoiceSetsChoicesRetrieveRequest {
 	return ApiExtrasCustomFieldChoiceSetsChoicesRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return CustomFieldChoiceSet
+//
+//	@return CustomFieldChoiceSet
 func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsChoicesRetrieveExecute(r ApiExtrasCustomFieldChoiceSetsChoicesRetrieveRequest) (*CustomFieldChoiceSet, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CustomFieldChoiceSet
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CustomFieldChoiceSet
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomFieldChoiceSetsChoicesRetrieve")
@@ -7540,8 +7567,8 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsChoicesRetrieveExecute(r A
 }
 
 type ApiExtrasCustomFieldChoiceSetsCreateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                                 context.Context
+	ApiService                          *ExtrasAPIService
 	writableCustomFieldChoiceSetRequest *WritableCustomFieldChoiceSetRequest
 }
 
@@ -7559,24 +7586,25 @@ ExtrasCustomFieldChoiceSetsCreate Method for ExtrasCustomFieldChoiceSetsCreate
 
 Post a list of custom field choice set objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasCustomFieldChoiceSetsCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasCustomFieldChoiceSetsCreateRequest
 */
 func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsCreate(ctx context.Context) ApiExtrasCustomFieldChoiceSetsCreateRequest {
 	return ApiExtrasCustomFieldChoiceSetsCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return CustomFieldChoiceSet
+//
+//	@return CustomFieldChoiceSet
 func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsCreateExecute(r ApiExtrasCustomFieldChoiceSetsCreateRequest) (*CustomFieldChoiceSet, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CustomFieldChoiceSet
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CustomFieldChoiceSet
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomFieldChoiceSetsCreate")
@@ -7664,9 +7692,9 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsCreateExecute(r ApiExtrasC
 }
 
 type ApiExtrasCustomFieldChoiceSetsDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiExtrasCustomFieldChoiceSetsDestroyRequest) Execute() (*http.Response, error) {
@@ -7678,24 +7706,24 @@ ExtrasCustomFieldChoiceSetsDestroy Method for ExtrasCustomFieldChoiceSetsDestroy
 
 Delete a custom field choice set object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this custom field choice set.
- @return ApiExtrasCustomFieldChoiceSetsDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this custom field choice set.
+	@return ApiExtrasCustomFieldChoiceSetsDestroyRequest
 */
 func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsDestroy(ctx context.Context, id int32) ApiExtrasCustomFieldChoiceSetsDestroyRequest {
 	return ApiExtrasCustomFieldChoiceSetsDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsDestroyExecute(r ApiExtrasCustomFieldChoiceSetsDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomFieldChoiceSetsDestroy")
@@ -7770,61 +7798,61 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsDestroyExecute(r ApiExtras
 }
 
 type ApiExtrasCustomFieldChoiceSetsListRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	baseChoices *ExtrasCustomFieldChoiceSetsListBaseChoicesParameter
-	choice *[]string
-	created *[]time.Time
-	createdEmpty *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
-	createdByRequest *string
-	description *[]string
-	descriptionEmpty *bool
-	descriptionIc *[]string
-	descriptionIe *[]string
-	descriptionIew *[]string
-	descriptionIsw *[]string
-	descriptionN *[]string
-	descriptionNic *[]string
-	descriptionNie *[]string
-	descriptionNiew *[]string
-	descriptionNisw *[]string
-	id *[]int32
-	idEmpty *bool
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedEmpty *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	modifiedByRequest *string
-	name *[]string
-	nameEmpty *bool
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	offset *int32
+	ctx                 context.Context
+	ApiService          *ExtrasAPIService
+	baseChoices         *ExtrasCustomFieldChoiceSetsListBaseChoicesParameter
+	choice              *[]string
+	created             *[]time.Time
+	createdEmpty        *[]time.Time
+	createdGt           *[]time.Time
+	createdGte          *[]time.Time
+	createdLt           *[]time.Time
+	createdLte          *[]time.Time
+	createdN            *[]time.Time
+	createdByRequest    *string
+	description         *[]string
+	descriptionEmpty    *bool
+	descriptionIc       *[]string
+	descriptionIe       *[]string
+	descriptionIew      *[]string
+	descriptionIsw      *[]string
+	descriptionN        *[]string
+	descriptionNic      *[]string
+	descriptionNie      *[]string
+	descriptionNiew     *[]string
+	descriptionNisw     *[]string
+	id                  *[]int32
+	idEmpty             *bool
+	idGt                *[]int32
+	idGte               *[]int32
+	idLt                *[]int32
+	idLte               *[]int32
+	idN                 *[]int32
+	lastUpdated         *[]time.Time
+	lastUpdatedEmpty    *[]time.Time
+	lastUpdatedGt       *[]time.Time
+	lastUpdatedGte      *[]time.Time
+	lastUpdatedLt       *[]time.Time
+	lastUpdatedLte      *[]time.Time
+	lastUpdatedN        *[]time.Time
+	limit               *int32
+	modifiedByRequest   *string
+	name                *[]string
+	nameEmpty           *bool
+	nameIc              *[]string
+	nameIe              *[]string
+	nameIew             *[]string
+	nameIsw             *[]string
+	nameN               *[]string
+	nameNic             *[]string
+	nameNie             *[]string
+	nameNiew            *[]string
+	nameNisw            *[]string
+	offset              *int32
 	orderAlphabetically *bool
-	ordering *string
-	q *string
-	updatedByRequest *string
+	ordering            *string
+	q                   *string
+	updatedByRequest    *string
 }
 
 // Base set of predefined choices (optional)  * &#x60;IATA&#x60; - IATA (Airport codes) * &#x60;ISO_3166&#x60; - ISO 3166 (Country codes) * &#x60;UN_LOCODE&#x60; - UN/LOCODE (Location codes)
@@ -8106,24 +8134,25 @@ ExtrasCustomFieldChoiceSetsList Method for ExtrasCustomFieldChoiceSetsList
 
 Get a list of custom field choice set objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasCustomFieldChoiceSetsListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasCustomFieldChoiceSetsListRequest
 */
 func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsList(ctx context.Context) ApiExtrasCustomFieldChoiceSetsListRequest {
 	return ApiExtrasCustomFieldChoiceSetsListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedCustomFieldChoiceSetList
+//
+//	@return PaginatedCustomFieldChoiceSetList
 func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCustomFieldChoiceSetsListRequest) (*PaginatedCustomFieldChoiceSetList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedCustomFieldChoiceSetList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedCustomFieldChoiceSetList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomFieldChoiceSetsList")
@@ -8138,17 +8167,17 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 	localVarFormParams := url.Values{}
 
 	if r.baseChoices != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "base_choices", r.baseChoices, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "base_choices", r.baseChoices, "form", "")
 	}
 	if r.choice != nil {
 		t := *r.choice
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "choice", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "choice", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "choice", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "choice", t, "form", "multi")
 		}
 	}
 	if r.created != nil {
@@ -8156,10 +8185,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "form", "multi")
 		}
 	}
 	if r.createdEmpty != nil {
@@ -8167,10 +8196,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "form", "multi")
 		}
 	}
 	if r.createdGt != nil {
@@ -8178,10 +8207,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "form", "multi")
 		}
 	}
 	if r.createdGte != nil {
@@ -8189,10 +8218,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "form", "multi")
 		}
 	}
 	if r.createdLt != nil {
@@ -8200,10 +8229,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "form", "multi")
 		}
 	}
 	if r.createdLte != nil {
@@ -8211,10 +8240,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "form", "multi")
 		}
 	}
 	if r.createdN != nil {
@@ -8222,38 +8251,38 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "form", "multi")
 		}
 	}
 	if r.createdByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_request", r.createdByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_request", r.createdByRequest, "form", "")
 	}
 	if r.description != nil {
 		t := *r.description
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "form", "multi")
 		}
 	}
 	if r.descriptionEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "description__empty", r.descriptionEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "description__empty", r.descriptionEmpty, "form", "")
 	}
 	if r.descriptionIc != nil {
 		t := *r.descriptionIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "form", "multi")
 		}
 	}
 	if r.descriptionIe != nil {
@@ -8261,10 +8290,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "form", "multi")
 		}
 	}
 	if r.descriptionIew != nil {
@@ -8272,10 +8301,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "form", "multi")
 		}
 	}
 	if r.descriptionIsw != nil {
@@ -8283,10 +8312,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "form", "multi")
 		}
 	}
 	if r.descriptionN != nil {
@@ -8294,10 +8323,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "form", "multi")
 		}
 	}
 	if r.descriptionNic != nil {
@@ -8305,10 +8334,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "form", "multi")
 		}
 	}
 	if r.descriptionNie != nil {
@@ -8316,10 +8345,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "form", "multi")
 		}
 	}
 	if r.descriptionNiew != nil {
@@ -8327,10 +8356,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "form", "multi")
 		}
 	}
 	if r.descriptionNisw != nil {
@@ -8338,10 +8367,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "form", "multi")
 		}
 	}
 	if r.id != nil {
@@ -8349,24 +8378,24 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "form", "multi")
 		}
 	}
 	if r.idEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "form", "")
 	}
 	if r.idGt != nil {
 		t := *r.idGt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "form", "multi")
 		}
 	}
 	if r.idGte != nil {
@@ -8374,10 +8403,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "form", "multi")
 		}
 	}
 	if r.idLt != nil {
@@ -8385,10 +8414,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "form", "multi")
 		}
 	}
 	if r.idLte != nil {
@@ -8396,10 +8425,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "form", "multi")
 		}
 	}
 	if r.idN != nil {
@@ -8407,10 +8436,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "form", "multi")
 		}
 	}
 	if r.lastUpdated != nil {
@@ -8418,10 +8447,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedEmpty != nil {
@@ -8429,10 +8458,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedGt != nil {
@@ -8440,10 +8469,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedGte != nil {
@@ -8451,10 +8480,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedLt != nil {
@@ -8462,10 +8491,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedLte != nil {
@@ -8473,10 +8502,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedN != nil {
@@ -8484,41 +8513,41 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "form", "multi")
 		}
 	}
 	if r.limit != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
 	}
 	if r.modifiedByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "modified_by_request", r.modifiedByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "modified_by_request", r.modifiedByRequest, "form", "")
 	}
 	if r.name != nil {
 		t := *r.name
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "form", "multi")
 		}
 	}
 	if r.nameEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "name__empty", r.nameEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "name__empty", r.nameEmpty, "form", "")
 	}
 	if r.nameIc != nil {
 		t := *r.nameIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "form", "multi")
 		}
 	}
 	if r.nameIe != nil {
@@ -8526,10 +8555,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "form", "multi")
 		}
 	}
 	if r.nameIew != nil {
@@ -8537,10 +8566,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "form", "multi")
 		}
 	}
 	if r.nameIsw != nil {
@@ -8548,10 +8577,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "form", "multi")
 		}
 	}
 	if r.nameN != nil {
@@ -8559,10 +8588,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "form", "multi")
 		}
 	}
 	if r.nameNic != nil {
@@ -8570,10 +8599,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "form", "multi")
 		}
 	}
 	if r.nameNie != nil {
@@ -8581,10 +8610,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "form", "multi")
 		}
 	}
 	if r.nameNiew != nil {
@@ -8592,10 +8621,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "form", "multi")
 		}
 	}
 	if r.nameNisw != nil {
@@ -8603,26 +8632,26 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "form", "multi")
 		}
 	}
 	if r.offset != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "form", "")
 	}
 	if r.orderAlphabetically != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "order_alphabetically", r.orderAlphabetically, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "order_alphabetically", r.orderAlphabetically, "form", "")
 	}
 	if r.ordering != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "form", "")
 	}
 	if r.q != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "form", "")
 	}
 	if r.updatedByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "updated_by_request", r.updatedByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "updated_by_request", r.updatedByRequest, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -8693,9 +8722,9 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 }
 
 type ApiExtrasCustomFieldChoiceSetsPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	id int32
+	ctx                                        context.Context
+	ApiService                                 *ExtrasAPIService
+	id                                         int32
 	patchedWritableCustomFieldChoiceSetRequest *PatchedWritableCustomFieldChoiceSetRequest
 }
 
@@ -8713,26 +8742,27 @@ ExtrasCustomFieldChoiceSetsPartialUpdate Method for ExtrasCustomFieldChoiceSetsP
 
 Patch a custom field choice set object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this custom field choice set.
- @return ApiExtrasCustomFieldChoiceSetsPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this custom field choice set.
+	@return ApiExtrasCustomFieldChoiceSetsPartialUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsPartialUpdate(ctx context.Context, id int32) ApiExtrasCustomFieldChoiceSetsPartialUpdateRequest {
 	return ApiExtrasCustomFieldChoiceSetsPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return CustomFieldChoiceSet
+//
+//	@return CustomFieldChoiceSet
 func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsPartialUpdateExecute(r ApiExtrasCustomFieldChoiceSetsPartialUpdateRequest) (*CustomFieldChoiceSet, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CustomFieldChoiceSet
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CustomFieldChoiceSet
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomFieldChoiceSetsPartialUpdate")
@@ -8818,9 +8848,9 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsPartialUpdateExecute(r Api
 }
 
 type ApiExtrasCustomFieldChoiceSetsRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiExtrasCustomFieldChoiceSetsRetrieveRequest) Execute() (*CustomFieldChoiceSet, *http.Response, error) {
@@ -8832,26 +8862,27 @@ ExtrasCustomFieldChoiceSetsRetrieve Method for ExtrasCustomFieldChoiceSetsRetrie
 
 Get a custom field choice set object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this custom field choice set.
- @return ApiExtrasCustomFieldChoiceSetsRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this custom field choice set.
+	@return ApiExtrasCustomFieldChoiceSetsRetrieveRequest
 */
 func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsRetrieve(ctx context.Context, id int32) ApiExtrasCustomFieldChoiceSetsRetrieveRequest {
 	return ApiExtrasCustomFieldChoiceSetsRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return CustomFieldChoiceSet
+//
+//	@return CustomFieldChoiceSet
 func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsRetrieveExecute(r ApiExtrasCustomFieldChoiceSetsRetrieveRequest) (*CustomFieldChoiceSet, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CustomFieldChoiceSet
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CustomFieldChoiceSet
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomFieldChoiceSetsRetrieve")
@@ -8935,9 +8966,9 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsRetrieveExecute(r ApiExtra
 }
 
 type ApiExtrasCustomFieldChoiceSetsUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	id int32
+	ctx                                 context.Context
+	ApiService                          *ExtrasAPIService
+	id                                  int32
 	writableCustomFieldChoiceSetRequest *WritableCustomFieldChoiceSetRequest
 }
 
@@ -8955,26 +8986,27 @@ ExtrasCustomFieldChoiceSetsUpdate Method for ExtrasCustomFieldChoiceSetsUpdate
 
 Put a custom field choice set object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this custom field choice set.
- @return ApiExtrasCustomFieldChoiceSetsUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this custom field choice set.
+	@return ApiExtrasCustomFieldChoiceSetsUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsUpdate(ctx context.Context, id int32) ApiExtrasCustomFieldChoiceSetsUpdateRequest {
 	return ApiExtrasCustomFieldChoiceSetsUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return CustomFieldChoiceSet
+//
+//	@return CustomFieldChoiceSet
 func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsUpdateExecute(r ApiExtrasCustomFieldChoiceSetsUpdateRequest) (*CustomFieldChoiceSet, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CustomFieldChoiceSet
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CustomFieldChoiceSet
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomFieldChoiceSetsUpdate")
@@ -9063,8 +9095,8 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsUpdateExecute(r ApiExtrasC
 }
 
 type ApiExtrasCustomFieldsBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                context.Context
+	ApiService         *ExtrasAPIService
 	customFieldRequest *[]CustomFieldRequest
 }
 
@@ -9082,22 +9114,22 @@ ExtrasCustomFieldsBulkDestroy Method for ExtrasCustomFieldsBulkDestroy
 
 Delete a list of custom field objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasCustomFieldsBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasCustomFieldsBulkDestroyRequest
 */
 func (a *ExtrasAPIService) ExtrasCustomFieldsBulkDestroy(ctx context.Context) ApiExtrasCustomFieldsBulkDestroyRequest {
 	return ApiExtrasCustomFieldsBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *ExtrasAPIService) ExtrasCustomFieldsBulkDestroyExecute(r ApiExtrasCustomFieldsBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomFieldsBulkDestroy")
@@ -9176,8 +9208,8 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsBulkDestroyExecute(r ApiExtrasCusto
 }
 
 type ApiExtrasCustomFieldsBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                context.Context
+	ApiService         *ExtrasAPIService
 	customFieldRequest *[]CustomFieldRequest
 }
 
@@ -9195,24 +9227,25 @@ ExtrasCustomFieldsBulkPartialUpdate Method for ExtrasCustomFieldsBulkPartialUpda
 
 Patch a list of custom field objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasCustomFieldsBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasCustomFieldsBulkPartialUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasCustomFieldsBulkPartialUpdate(ctx context.Context) ApiExtrasCustomFieldsBulkPartialUpdateRequest {
 	return ApiExtrasCustomFieldsBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []CustomField
+//
+//	@return []CustomField
 func (a *ExtrasAPIService) ExtrasCustomFieldsBulkPartialUpdateExecute(r ApiExtrasCustomFieldsBulkPartialUpdateRequest) ([]CustomField, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []CustomField
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []CustomField
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomFieldsBulkPartialUpdate")
@@ -9300,8 +9333,8 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsBulkPartialUpdateExecute(r ApiExtra
 }
 
 type ApiExtrasCustomFieldsBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                context.Context
+	ApiService         *ExtrasAPIService
 	customFieldRequest *[]CustomFieldRequest
 }
 
@@ -9319,24 +9352,25 @@ ExtrasCustomFieldsBulkUpdate Method for ExtrasCustomFieldsBulkUpdate
 
 Put a list of custom field objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasCustomFieldsBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasCustomFieldsBulkUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasCustomFieldsBulkUpdate(ctx context.Context) ApiExtrasCustomFieldsBulkUpdateRequest {
 	return ApiExtrasCustomFieldsBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []CustomField
+//
+//	@return []CustomField
 func (a *ExtrasAPIService) ExtrasCustomFieldsBulkUpdateExecute(r ApiExtrasCustomFieldsBulkUpdateRequest) ([]CustomField, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []CustomField
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []CustomField
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomFieldsBulkUpdate")
@@ -9424,8 +9458,8 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsBulkUpdateExecute(r ApiExtrasCustom
 }
 
 type ApiExtrasCustomFieldsCreateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                        context.Context
+	ApiService                 *ExtrasAPIService
 	writableCustomFieldRequest *WritableCustomFieldRequest
 }
 
@@ -9443,24 +9477,25 @@ ExtrasCustomFieldsCreate Method for ExtrasCustomFieldsCreate
 
 Post a list of custom field objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasCustomFieldsCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasCustomFieldsCreateRequest
 */
 func (a *ExtrasAPIService) ExtrasCustomFieldsCreate(ctx context.Context) ApiExtrasCustomFieldsCreateRequest {
 	return ApiExtrasCustomFieldsCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return CustomField
+//
+//	@return CustomField
 func (a *ExtrasAPIService) ExtrasCustomFieldsCreateExecute(r ApiExtrasCustomFieldsCreateRequest) (*CustomField, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CustomField
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CustomField
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomFieldsCreate")
@@ -9548,9 +9583,9 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsCreateExecute(r ApiExtrasCustomFiel
 }
 
 type ApiExtrasCustomFieldsDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiExtrasCustomFieldsDestroyRequest) Execute() (*http.Response, error) {
@@ -9562,24 +9597,24 @@ ExtrasCustomFieldsDestroy Method for ExtrasCustomFieldsDestroy
 
 Delete a custom field object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this custom field.
- @return ApiExtrasCustomFieldsDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this custom field.
+	@return ApiExtrasCustomFieldsDestroyRequest
 */
 func (a *ExtrasAPIService) ExtrasCustomFieldsDestroy(ctx context.Context, id int32) ApiExtrasCustomFieldsDestroyRequest {
 	return ApiExtrasCustomFieldsDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *ExtrasAPIService) ExtrasCustomFieldsDestroyExecute(r ApiExtrasCustomFieldsDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomFieldsDestroy")
@@ -9654,156 +9689,156 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsDestroyExecute(r ApiExtrasCustomFie
 }
 
 type ApiExtrasCustomFieldsListRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	choiceSet *[]string
-	choiceSetN *[]string
-	choiceSetId *[]*int32
-	choiceSetIdN *[]*int32
-	created *[]time.Time
-	createdEmpty *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
-	createdByRequest *string
-	description *[]string
-	descriptionEmpty *bool
-	descriptionIc *[]string
-	descriptionIe *[]string
-	descriptionIew *[]string
-	descriptionIsw *[]string
-	descriptionN *[]string
-	descriptionNic *[]string
-	descriptionNie *[]string
-	descriptionNiew *[]string
-	descriptionNisw *[]string
-	filterLogic *ExtrasCustomFieldsListFilterLogicParameter
-	groupName *[]string
-	groupNameEmpty *bool
-	groupNameIc *[]string
-	groupNameIe *[]string
-	groupNameIew *[]string
-	groupNameIsw *[]string
-	groupNameN *[]string
-	groupNameNic *[]string
-	groupNameNie *[]string
-	groupNameNiew *[]string
-	groupNameNisw *[]string
-	id *[]int32
-	idEmpty *bool
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	isCloneable *bool
-	label *[]string
-	labelEmpty *bool
-	labelIc *[]string
-	labelIe *[]string
-	labelIew *[]string
-	labelIsw *[]string
-	labelN *[]string
-	labelNic *[]string
-	labelNie *[]string
-	labelNiew *[]string
-	labelNisw *[]string
-	lastUpdated *[]time.Time
-	lastUpdatedEmpty *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	modifiedByRequest *string
-	name *[]string
-	nameEmpty *bool
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	objectType *string
-	objectTypeIc *string
-	objectTypeIe *string
-	objectTypeIew *string
-	objectTypeIsw *string
-	objectTypeN *string
-	objectTypeNic *string
-	objectTypeNie *string
-	objectTypeNiew *string
-	objectTypeNisw *string
-	objectTypeId *[]int32
-	objectTypeIdN *[]int32
-	offset *int32
-	ordering *string
-	q *string
-	relatedObjectType *string
-	relatedObjectTypeN *string
-	relatedObjectTypeId *[]int32
-	relatedObjectTypeIdN *[]int32
-	required *bool
-	searchWeight *[]int32
-	searchWeightEmpty *bool
-	searchWeightGt *[]int32
-	searchWeightGte *[]int32
-	searchWeightLt *[]int32
-	searchWeightLte *[]int32
-	searchWeightN *[]int32
-	type_ *[]string
-	typeEmpty *bool
-	typeIc *[]string
-	typeIe *[]string
-	typeIew *[]string
-	typeIsw *[]string
-	typeN *[]string
-	typeNic *[]string
-	typeNie *[]string
-	typeNiew *[]string
-	typeNisw *[]string
-	uiEditable *ExtrasCustomFieldsListUiEditableParameter
-	uiVisible *ExtrasCustomFieldsListUiVisibleParameter
-	unique *bool
-	updatedByRequest *string
-	validationMaximum *[]int32
+	ctx                    context.Context
+	ApiService             *ExtrasAPIService
+	choiceSet              *[]string
+	choiceSetN             *[]string
+	choiceSetId            *[]*int32
+	choiceSetIdN           *[]*int32
+	created                *[]time.Time
+	createdEmpty           *[]time.Time
+	createdGt              *[]time.Time
+	createdGte             *[]time.Time
+	createdLt              *[]time.Time
+	createdLte             *[]time.Time
+	createdN               *[]time.Time
+	createdByRequest       *string
+	description            *[]string
+	descriptionEmpty       *bool
+	descriptionIc          *[]string
+	descriptionIe          *[]string
+	descriptionIew         *[]string
+	descriptionIsw         *[]string
+	descriptionN           *[]string
+	descriptionNic         *[]string
+	descriptionNie         *[]string
+	descriptionNiew        *[]string
+	descriptionNisw        *[]string
+	filterLogic            *ExtrasCustomFieldsListFilterLogicParameter
+	groupName              *[]string
+	groupNameEmpty         *bool
+	groupNameIc            *[]string
+	groupNameIe            *[]string
+	groupNameIew           *[]string
+	groupNameIsw           *[]string
+	groupNameN             *[]string
+	groupNameNic           *[]string
+	groupNameNie           *[]string
+	groupNameNiew          *[]string
+	groupNameNisw          *[]string
+	id                     *[]int32
+	idEmpty                *bool
+	idGt                   *[]int32
+	idGte                  *[]int32
+	idLt                   *[]int32
+	idLte                  *[]int32
+	idN                    *[]int32
+	isCloneable            *bool
+	label                  *[]string
+	labelEmpty             *bool
+	labelIc                *[]string
+	labelIe                *[]string
+	labelIew               *[]string
+	labelIsw               *[]string
+	labelN                 *[]string
+	labelNic               *[]string
+	labelNie               *[]string
+	labelNiew              *[]string
+	labelNisw              *[]string
+	lastUpdated            *[]time.Time
+	lastUpdatedEmpty       *[]time.Time
+	lastUpdatedGt          *[]time.Time
+	lastUpdatedGte         *[]time.Time
+	lastUpdatedLt          *[]time.Time
+	lastUpdatedLte         *[]time.Time
+	lastUpdatedN           *[]time.Time
+	limit                  *int32
+	modifiedByRequest      *string
+	name                   *[]string
+	nameEmpty              *bool
+	nameIc                 *[]string
+	nameIe                 *[]string
+	nameIew                *[]string
+	nameIsw                *[]string
+	nameN                  *[]string
+	nameNic                *[]string
+	nameNie                *[]string
+	nameNiew               *[]string
+	nameNisw               *[]string
+	objectType             *string
+	objectTypeIc           *string
+	objectTypeIe           *string
+	objectTypeIew          *string
+	objectTypeIsw          *string
+	objectTypeN            *string
+	objectTypeNic          *string
+	objectTypeNie          *string
+	objectTypeNiew         *string
+	objectTypeNisw         *string
+	objectTypeId           *[]int32
+	objectTypeIdN          *[]int32
+	offset                 *int32
+	ordering               *string
+	q                      *string
+	relatedObjectType      *string
+	relatedObjectTypeN     *string
+	relatedObjectTypeId    *[]int32
+	relatedObjectTypeIdN   *[]int32
+	required               *bool
+	searchWeight           *[]int32
+	searchWeightEmpty      *bool
+	searchWeightGt         *[]int32
+	searchWeightGte        *[]int32
+	searchWeightLt         *[]int32
+	searchWeightLte        *[]int32
+	searchWeightN          *[]int32
+	type_                  *[]string
+	typeEmpty              *bool
+	typeIc                 *[]string
+	typeIe                 *[]string
+	typeIew                *[]string
+	typeIsw                *[]string
+	typeN                  *[]string
+	typeNic                *[]string
+	typeNie                *[]string
+	typeNiew               *[]string
+	typeNisw               *[]string
+	uiEditable             *ExtrasCustomFieldsListUiEditableParameter
+	uiVisible              *ExtrasCustomFieldsListUiVisibleParameter
+	unique                 *bool
+	updatedByRequest       *string
+	validationMaximum      *[]int32
 	validationMaximumEmpty *bool
-	validationMaximumGt *[]int32
-	validationMaximumGte *[]int32
-	validationMaximumLt *[]int32
-	validationMaximumLte *[]int32
-	validationMaximumN *[]int32
-	validationMinimum *[]int32
+	validationMaximumGt    *[]int32
+	validationMaximumGte   *[]int32
+	validationMaximumLt    *[]int32
+	validationMaximumLte   *[]int32
+	validationMaximumN     *[]int32
+	validationMinimum      *[]int32
 	validationMinimumEmpty *bool
-	validationMinimumGt *[]int32
-	validationMinimumGte *[]int32
-	validationMinimumLt *[]int32
-	validationMinimumLte *[]int32
-	validationMinimumN *[]int32
-	validationRegex *[]string
-	validationRegexEmpty *bool
-	validationRegexIc *[]string
-	validationRegexIe *[]string
-	validationRegexIew *[]string
-	validationRegexIsw *[]string
-	validationRegexN *[]string
-	validationRegexNic *[]string
-	validationRegexNie *[]string
-	validationRegexNiew *[]string
-	validationRegexNisw *[]string
-	weight *[]int32
-	weightEmpty *bool
-	weightGt *[]int32
-	weightGte *[]int32
-	weightLt *[]int32
-	weightLte *[]int32
-	weightN *[]int32
+	validationMinimumGt    *[]int32
+	validationMinimumGte   *[]int32
+	validationMinimumLt    *[]int32
+	validationMinimumLte   *[]int32
+	validationMinimumN     *[]int32
+	validationRegex        *[]string
+	validationRegexEmpty   *bool
+	validationRegexIc      *[]string
+	validationRegexIe      *[]string
+	validationRegexIew     *[]string
+	validationRegexIsw     *[]string
+	validationRegexN       *[]string
+	validationRegexNic     *[]string
+	validationRegexNie     *[]string
+	validationRegexNiew    *[]string
+	validationRegexNisw    *[]string
+	weight                 *[]int32
+	weightEmpty            *bool
+	weightGt               *[]int32
+	weightGte              *[]int32
+	weightLt               *[]int32
+	weightLte              *[]int32
+	weightN                *[]int32
 }
 
 func (r ApiExtrasCustomFieldsListRequest) ChoiceSet(choiceSet []string) ApiExtrasCustomFieldsListRequest {
@@ -10572,24 +10607,25 @@ ExtrasCustomFieldsList Method for ExtrasCustomFieldsList
 
 Get a list of custom field objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasCustomFieldsListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasCustomFieldsListRequest
 */
 func (a *ExtrasAPIService) ExtrasCustomFieldsList(ctx context.Context) ApiExtrasCustomFieldsListRequest {
 	return ApiExtrasCustomFieldsListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedCustomFieldList
+//
+//	@return PaginatedCustomFieldList
 func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFieldsListRequest) (*PaginatedCustomFieldList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedCustomFieldList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedCustomFieldList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomFieldsList")
@@ -10608,10 +10644,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "choice_set", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "choice_set", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "choice_set", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "choice_set", t, "form", "multi")
 		}
 	}
 	if r.choiceSetN != nil {
@@ -10619,10 +10655,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "choice_set__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "choice_set__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "choice_set__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "choice_set__n", t, "form", "multi")
 		}
 	}
 	if r.choiceSetId != nil {
@@ -10630,10 +10666,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "choice_set_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "choice_set_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "choice_set_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "choice_set_id", t, "form", "multi")
 		}
 	}
 	if r.choiceSetIdN != nil {
@@ -10641,10 +10677,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "choice_set_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "choice_set_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "choice_set_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "choice_set_id__n", t, "form", "multi")
 		}
 	}
 	if r.created != nil {
@@ -10652,10 +10688,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "form", "multi")
 		}
 	}
 	if r.createdEmpty != nil {
@@ -10663,10 +10699,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "form", "multi")
 		}
 	}
 	if r.createdGt != nil {
@@ -10674,10 +10710,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "form", "multi")
 		}
 	}
 	if r.createdGte != nil {
@@ -10685,10 +10721,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "form", "multi")
 		}
 	}
 	if r.createdLt != nil {
@@ -10696,10 +10732,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "form", "multi")
 		}
 	}
 	if r.createdLte != nil {
@@ -10707,10 +10743,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "form", "multi")
 		}
 	}
 	if r.createdN != nil {
@@ -10718,38 +10754,38 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "form", "multi")
 		}
 	}
 	if r.createdByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_request", r.createdByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_request", r.createdByRequest, "form", "")
 	}
 	if r.description != nil {
 		t := *r.description
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "form", "multi")
 		}
 	}
 	if r.descriptionEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "description__empty", r.descriptionEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "description__empty", r.descriptionEmpty, "form", "")
 	}
 	if r.descriptionIc != nil {
 		t := *r.descriptionIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "form", "multi")
 		}
 	}
 	if r.descriptionIe != nil {
@@ -10757,10 +10793,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "form", "multi")
 		}
 	}
 	if r.descriptionIew != nil {
@@ -10768,10 +10804,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "form", "multi")
 		}
 	}
 	if r.descriptionIsw != nil {
@@ -10779,10 +10815,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "form", "multi")
 		}
 	}
 	if r.descriptionN != nil {
@@ -10790,10 +10826,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "form", "multi")
 		}
 	}
 	if r.descriptionNic != nil {
@@ -10801,10 +10837,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "form", "multi")
 		}
 	}
 	if r.descriptionNie != nil {
@@ -10812,10 +10848,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "form", "multi")
 		}
 	}
 	if r.descriptionNiew != nil {
@@ -10823,10 +10859,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "form", "multi")
 		}
 	}
 	if r.descriptionNisw != nil {
@@ -10834,38 +10870,38 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "form", "multi")
 		}
 	}
 	if r.filterLogic != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "filter_logic", r.filterLogic, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter_logic", r.filterLogic, "form", "")
 	}
 	if r.groupName != nil {
 		t := *r.groupName
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name", t, "form", "multi")
 		}
 	}
 	if r.groupNameEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__empty", r.groupNameEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__empty", r.groupNameEmpty, "form", "")
 	}
 	if r.groupNameIc != nil {
 		t := *r.groupNameIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__ic", t, "form", "multi")
 		}
 	}
 	if r.groupNameIe != nil {
@@ -10873,10 +10909,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__ie", t, "form", "multi")
 		}
 	}
 	if r.groupNameIew != nil {
@@ -10884,10 +10920,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__iew", t, "form", "multi")
 		}
 	}
 	if r.groupNameIsw != nil {
@@ -10895,10 +10931,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__isw", t, "form", "multi")
 		}
 	}
 	if r.groupNameN != nil {
@@ -10906,10 +10942,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__n", t, "form", "multi")
 		}
 	}
 	if r.groupNameNic != nil {
@@ -10917,10 +10953,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__nic", t, "form", "multi")
 		}
 	}
 	if r.groupNameNie != nil {
@@ -10928,10 +10964,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__nie", t, "form", "multi")
 		}
 	}
 	if r.groupNameNiew != nil {
@@ -10939,10 +10975,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__niew", t, "form", "multi")
 		}
 	}
 	if r.groupNameNisw != nil {
@@ -10950,10 +10986,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__nisw", t, "form", "multi")
 		}
 	}
 	if r.id != nil {
@@ -10961,24 +10997,24 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "form", "multi")
 		}
 	}
 	if r.idEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "form", "")
 	}
 	if r.idGt != nil {
 		t := *r.idGt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "form", "multi")
 		}
 	}
 	if r.idGte != nil {
@@ -10986,10 +11022,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "form", "multi")
 		}
 	}
 	if r.idLt != nil {
@@ -10997,10 +11033,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "form", "multi")
 		}
 	}
 	if r.idLte != nil {
@@ -11008,10 +11044,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "form", "multi")
 		}
 	}
 	if r.idN != nil {
@@ -11019,38 +11055,38 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "form", "multi")
 		}
 	}
 	if r.isCloneable != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "is_cloneable", r.isCloneable, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "is_cloneable", r.isCloneable, "form", "")
 	}
 	if r.label != nil {
 		t := *r.label
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "label", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "label", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "label", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "label", t, "form", "multi")
 		}
 	}
 	if r.labelEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "label__empty", r.labelEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "label__empty", r.labelEmpty, "form", "")
 	}
 	if r.labelIc != nil {
 		t := *r.labelIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "label__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "label__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "label__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "label__ic", t, "form", "multi")
 		}
 	}
 	if r.labelIe != nil {
@@ -11058,10 +11094,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "label__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "label__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "label__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "label__ie", t, "form", "multi")
 		}
 	}
 	if r.labelIew != nil {
@@ -11069,10 +11105,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "label__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "label__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "label__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "label__iew", t, "form", "multi")
 		}
 	}
 	if r.labelIsw != nil {
@@ -11080,10 +11116,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "label__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "label__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "label__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "label__isw", t, "form", "multi")
 		}
 	}
 	if r.labelN != nil {
@@ -11091,10 +11127,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "label__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "label__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "label__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "label__n", t, "form", "multi")
 		}
 	}
 	if r.labelNic != nil {
@@ -11102,10 +11138,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "label__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "label__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "label__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "label__nic", t, "form", "multi")
 		}
 	}
 	if r.labelNie != nil {
@@ -11113,10 +11149,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "label__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "label__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "label__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "label__nie", t, "form", "multi")
 		}
 	}
 	if r.labelNiew != nil {
@@ -11124,10 +11160,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "label__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "label__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "label__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "label__niew", t, "form", "multi")
 		}
 	}
 	if r.labelNisw != nil {
@@ -11135,10 +11171,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "label__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "label__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "label__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "label__nisw", t, "form", "multi")
 		}
 	}
 	if r.lastUpdated != nil {
@@ -11146,10 +11182,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedEmpty != nil {
@@ -11157,10 +11193,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedGt != nil {
@@ -11168,10 +11204,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedGte != nil {
@@ -11179,10 +11215,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedLt != nil {
@@ -11190,10 +11226,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedLte != nil {
@@ -11201,10 +11237,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedN != nil {
@@ -11212,41 +11248,41 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "form", "multi")
 		}
 	}
 	if r.limit != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
 	}
 	if r.modifiedByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "modified_by_request", r.modifiedByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "modified_by_request", r.modifiedByRequest, "form", "")
 	}
 	if r.name != nil {
 		t := *r.name
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "form", "multi")
 		}
 	}
 	if r.nameEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "name__empty", r.nameEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "name__empty", r.nameEmpty, "form", "")
 	}
 	if r.nameIc != nil {
 		t := *r.nameIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "form", "multi")
 		}
 	}
 	if r.nameIe != nil {
@@ -11254,10 +11290,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "form", "multi")
 		}
 	}
 	if r.nameIew != nil {
@@ -11265,10 +11301,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "form", "multi")
 		}
 	}
 	if r.nameIsw != nil {
@@ -11276,10 +11312,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "form", "multi")
 		}
 	}
 	if r.nameN != nil {
@@ -11287,10 +11323,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "form", "multi")
 		}
 	}
 	if r.nameNic != nil {
@@ -11298,10 +11334,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "form", "multi")
 		}
 	}
 	if r.nameNie != nil {
@@ -11309,10 +11345,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "form", "multi")
 		}
 	}
 	if r.nameNiew != nil {
@@ -11320,10 +11356,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "form", "multi")
 		}
 	}
 	if r.nameNisw != nil {
@@ -11331,51 +11367,51 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "form", "multi")
 		}
 	}
 	if r.objectType != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type", r.objectType, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type", r.objectType, "form", "")
 	}
 	if r.objectTypeIc != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__ic", r.objectTypeIc, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__ic", r.objectTypeIc, "form", "")
 	}
 	if r.objectTypeIe != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__ie", r.objectTypeIe, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__ie", r.objectTypeIe, "form", "")
 	}
 	if r.objectTypeIew != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__iew", r.objectTypeIew, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__iew", r.objectTypeIew, "form", "")
 	}
 	if r.objectTypeIsw != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__isw", r.objectTypeIsw, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__isw", r.objectTypeIsw, "form", "")
 	}
 	if r.objectTypeN != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__n", r.objectTypeN, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__n", r.objectTypeN, "form", "")
 	}
 	if r.objectTypeNic != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__nic", r.objectTypeNic, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__nic", r.objectTypeNic, "form", "")
 	}
 	if r.objectTypeNie != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__nie", r.objectTypeNie, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__nie", r.objectTypeNie, "form", "")
 	}
 	if r.objectTypeNiew != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__niew", r.objectTypeNiew, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__niew", r.objectTypeNiew, "form", "")
 	}
 	if r.objectTypeNisw != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__nisw", r.objectTypeNisw, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__nisw", r.objectTypeNisw, "form", "")
 	}
 	if r.objectTypeId != nil {
 		t := *r.objectTypeId
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id", t, "form", "multi")
 		}
 	}
 	if r.objectTypeIdN != nil {
@@ -11383,36 +11419,36 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__n", t, "form", "multi")
 		}
 	}
 	if r.offset != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "form", "")
 	}
 	if r.ordering != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "form", "")
 	}
 	if r.q != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "form", "")
 	}
 	if r.relatedObjectType != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "related_object_type", r.relatedObjectType, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "related_object_type", r.relatedObjectType, "form", "")
 	}
 	if r.relatedObjectTypeN != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "related_object_type__n", r.relatedObjectTypeN, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "related_object_type__n", r.relatedObjectTypeN, "form", "")
 	}
 	if r.relatedObjectTypeId != nil {
 		t := *r.relatedObjectTypeId
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "related_object_type_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "related_object_type_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "related_object_type_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "related_object_type_id", t, "form", "multi")
 		}
 	}
 	if r.relatedObjectTypeIdN != nil {
@@ -11420,38 +11456,38 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "related_object_type_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "related_object_type_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "related_object_type_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "related_object_type_id__n", t, "form", "multi")
 		}
 	}
 	if r.required != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "required", r.required, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "required", r.required, "form", "")
 	}
 	if r.searchWeight != nil {
 		t := *r.searchWeight
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "search_weight", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "search_weight", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "search_weight", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "search_weight", t, "form", "multi")
 		}
 	}
 	if r.searchWeightEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "search_weight__empty", r.searchWeightEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "search_weight__empty", r.searchWeightEmpty, "form", "")
 	}
 	if r.searchWeightGt != nil {
 		t := *r.searchWeightGt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "search_weight__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "search_weight__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "search_weight__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "search_weight__gt", t, "form", "multi")
 		}
 	}
 	if r.searchWeightGte != nil {
@@ -11459,10 +11495,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "search_weight__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "search_weight__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "search_weight__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "search_weight__gte", t, "form", "multi")
 		}
 	}
 	if r.searchWeightLt != nil {
@@ -11470,10 +11506,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "search_weight__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "search_weight__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "search_weight__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "search_weight__lt", t, "form", "multi")
 		}
 	}
 	if r.searchWeightLte != nil {
@@ -11481,10 +11517,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "search_weight__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "search_weight__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "search_weight__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "search_weight__lte", t, "form", "multi")
 		}
 	}
 	if r.searchWeightN != nil {
@@ -11492,10 +11528,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "search_weight__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "search_weight__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "search_weight__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "search_weight__n", t, "form", "multi")
 		}
 	}
 	if r.type_ != nil {
@@ -11503,24 +11539,24 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "type", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "type", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "type", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "type", t, "form", "multi")
 		}
 	}
 	if r.typeEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "type__empty", r.typeEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "type__empty", r.typeEmpty, "form", "")
 	}
 	if r.typeIc != nil {
 		t := *r.typeIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "type__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "type__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "type__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "type__ic", t, "form", "multi")
 		}
 	}
 	if r.typeIe != nil {
@@ -11528,10 +11564,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "type__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "type__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "type__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "type__ie", t, "form", "multi")
 		}
 	}
 	if r.typeIew != nil {
@@ -11539,10 +11575,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "type__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "type__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "type__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "type__iew", t, "form", "multi")
 		}
 	}
 	if r.typeIsw != nil {
@@ -11550,10 +11586,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "type__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "type__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "type__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "type__isw", t, "form", "multi")
 		}
 	}
 	if r.typeN != nil {
@@ -11561,10 +11597,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "type__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "type__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "type__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "type__n", t, "form", "multi")
 		}
 	}
 	if r.typeNic != nil {
@@ -11572,10 +11608,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "type__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "type__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "type__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "type__nic", t, "form", "multi")
 		}
 	}
 	if r.typeNie != nil {
@@ -11583,10 +11619,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "type__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "type__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "type__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "type__nie", t, "form", "multi")
 		}
 	}
 	if r.typeNiew != nil {
@@ -11594,10 +11630,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "type__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "type__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "type__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "type__niew", t, "form", "multi")
 		}
 	}
 	if r.typeNisw != nil {
@@ -11605,47 +11641,47 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "type__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "type__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "type__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "type__nisw", t, "form", "multi")
 		}
 	}
 	if r.uiEditable != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ui_editable", r.uiEditable, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ui_editable", r.uiEditable, "form", "")
 	}
 	if r.uiVisible != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ui_visible", r.uiVisible, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ui_visible", r.uiVisible, "form", "")
 	}
 	if r.unique != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "unique", r.unique, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "unique", r.unique, "form", "")
 	}
 	if r.updatedByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "updated_by_request", r.updatedByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "updated_by_request", r.updatedByRequest, "form", "")
 	}
 	if r.validationMaximum != nil {
 		t := *r.validationMaximum
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "validation_maximum", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "validation_maximum", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "validation_maximum", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "validation_maximum", t, "form", "multi")
 		}
 	}
 	if r.validationMaximumEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "validation_maximum__empty", r.validationMaximumEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "validation_maximum__empty", r.validationMaximumEmpty, "form", "")
 	}
 	if r.validationMaximumGt != nil {
 		t := *r.validationMaximumGt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "validation_maximum__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "validation_maximum__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "validation_maximum__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "validation_maximum__gt", t, "form", "multi")
 		}
 	}
 	if r.validationMaximumGte != nil {
@@ -11653,10 +11689,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "validation_maximum__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "validation_maximum__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "validation_maximum__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "validation_maximum__gte", t, "form", "multi")
 		}
 	}
 	if r.validationMaximumLt != nil {
@@ -11664,10 +11700,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "validation_maximum__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "validation_maximum__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "validation_maximum__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "validation_maximum__lt", t, "form", "multi")
 		}
 	}
 	if r.validationMaximumLte != nil {
@@ -11675,10 +11711,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "validation_maximum__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "validation_maximum__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "validation_maximum__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "validation_maximum__lte", t, "form", "multi")
 		}
 	}
 	if r.validationMaximumN != nil {
@@ -11686,10 +11722,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "validation_maximum__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "validation_maximum__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "validation_maximum__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "validation_maximum__n", t, "form", "multi")
 		}
 	}
 	if r.validationMinimum != nil {
@@ -11697,24 +11733,24 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "validation_minimum", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "validation_minimum", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "validation_minimum", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "validation_minimum", t, "form", "multi")
 		}
 	}
 	if r.validationMinimumEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "validation_minimum__empty", r.validationMinimumEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "validation_minimum__empty", r.validationMinimumEmpty, "form", "")
 	}
 	if r.validationMinimumGt != nil {
 		t := *r.validationMinimumGt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "validation_minimum__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "validation_minimum__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "validation_minimum__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "validation_minimum__gt", t, "form", "multi")
 		}
 	}
 	if r.validationMinimumGte != nil {
@@ -11722,10 +11758,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "validation_minimum__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "validation_minimum__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "validation_minimum__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "validation_minimum__gte", t, "form", "multi")
 		}
 	}
 	if r.validationMinimumLt != nil {
@@ -11733,10 +11769,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "validation_minimum__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "validation_minimum__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "validation_minimum__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "validation_minimum__lt", t, "form", "multi")
 		}
 	}
 	if r.validationMinimumLte != nil {
@@ -11744,10 +11780,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "validation_minimum__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "validation_minimum__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "validation_minimum__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "validation_minimum__lte", t, "form", "multi")
 		}
 	}
 	if r.validationMinimumN != nil {
@@ -11755,10 +11791,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "validation_minimum__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "validation_minimum__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "validation_minimum__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "validation_minimum__n", t, "form", "multi")
 		}
 	}
 	if r.validationRegex != nil {
@@ -11766,24 +11802,24 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "validation_regex", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "validation_regex", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "validation_regex", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "validation_regex", t, "form", "multi")
 		}
 	}
 	if r.validationRegexEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "validation_regex__empty", r.validationRegexEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "validation_regex__empty", r.validationRegexEmpty, "form", "")
 	}
 	if r.validationRegexIc != nil {
 		t := *r.validationRegexIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "validation_regex__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "validation_regex__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "validation_regex__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "validation_regex__ic", t, "form", "multi")
 		}
 	}
 	if r.validationRegexIe != nil {
@@ -11791,10 +11827,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "validation_regex__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "validation_regex__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "validation_regex__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "validation_regex__ie", t, "form", "multi")
 		}
 	}
 	if r.validationRegexIew != nil {
@@ -11802,10 +11838,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "validation_regex__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "validation_regex__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "validation_regex__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "validation_regex__iew", t, "form", "multi")
 		}
 	}
 	if r.validationRegexIsw != nil {
@@ -11813,10 +11849,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "validation_regex__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "validation_regex__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "validation_regex__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "validation_regex__isw", t, "form", "multi")
 		}
 	}
 	if r.validationRegexN != nil {
@@ -11824,10 +11860,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "validation_regex__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "validation_regex__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "validation_regex__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "validation_regex__n", t, "form", "multi")
 		}
 	}
 	if r.validationRegexNic != nil {
@@ -11835,10 +11871,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "validation_regex__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "validation_regex__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "validation_regex__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "validation_regex__nic", t, "form", "multi")
 		}
 	}
 	if r.validationRegexNie != nil {
@@ -11846,10 +11882,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "validation_regex__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "validation_regex__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "validation_regex__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "validation_regex__nie", t, "form", "multi")
 		}
 	}
 	if r.validationRegexNiew != nil {
@@ -11857,10 +11893,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "validation_regex__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "validation_regex__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "validation_regex__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "validation_regex__niew", t, "form", "multi")
 		}
 	}
 	if r.validationRegexNisw != nil {
@@ -11868,10 +11904,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "validation_regex__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "validation_regex__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "validation_regex__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "validation_regex__nisw", t, "form", "multi")
 		}
 	}
 	if r.weight != nil {
@@ -11879,24 +11915,24 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "weight", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "weight", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "weight", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "weight", t, "form", "multi")
 		}
 	}
 	if r.weightEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "weight__empty", r.weightEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "weight__empty", r.weightEmpty, "form", "")
 	}
 	if r.weightGt != nil {
 		t := *r.weightGt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gt", t, "form", "multi")
 		}
 	}
 	if r.weightGte != nil {
@@ -11904,10 +11940,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gte", t, "form", "multi")
 		}
 	}
 	if r.weightLt != nil {
@@ -11915,10 +11951,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lt", t, "form", "multi")
 		}
 	}
 	if r.weightLte != nil {
@@ -11926,10 +11962,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lte", t, "form", "multi")
 		}
 	}
 	if r.weightN != nil {
@@ -11937,10 +11973,10 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__n", t, "form", "multi")
 		}
 	}
 	// to determine the Content-Type header
@@ -12012,9 +12048,9 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 }
 
 type ApiExtrasCustomFieldsPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	id int32
+	ctx                               context.Context
+	ApiService                        *ExtrasAPIService
+	id                                int32
 	patchedWritableCustomFieldRequest *PatchedWritableCustomFieldRequest
 }
 
@@ -12032,26 +12068,27 @@ ExtrasCustomFieldsPartialUpdate Method for ExtrasCustomFieldsPartialUpdate
 
 Patch a custom field object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this custom field.
- @return ApiExtrasCustomFieldsPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this custom field.
+	@return ApiExtrasCustomFieldsPartialUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasCustomFieldsPartialUpdate(ctx context.Context, id int32) ApiExtrasCustomFieldsPartialUpdateRequest {
 	return ApiExtrasCustomFieldsPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return CustomField
+//
+//	@return CustomField
 func (a *ExtrasAPIService) ExtrasCustomFieldsPartialUpdateExecute(r ApiExtrasCustomFieldsPartialUpdateRequest) (*CustomField, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CustomField
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CustomField
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomFieldsPartialUpdate")
@@ -12137,9 +12174,9 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsPartialUpdateExecute(r ApiExtrasCus
 }
 
 type ApiExtrasCustomFieldsRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiExtrasCustomFieldsRetrieveRequest) Execute() (*CustomField, *http.Response, error) {
@@ -12151,26 +12188,27 @@ ExtrasCustomFieldsRetrieve Method for ExtrasCustomFieldsRetrieve
 
 Get a custom field object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this custom field.
- @return ApiExtrasCustomFieldsRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this custom field.
+	@return ApiExtrasCustomFieldsRetrieveRequest
 */
 func (a *ExtrasAPIService) ExtrasCustomFieldsRetrieve(ctx context.Context, id int32) ApiExtrasCustomFieldsRetrieveRequest {
 	return ApiExtrasCustomFieldsRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return CustomField
+//
+//	@return CustomField
 func (a *ExtrasAPIService) ExtrasCustomFieldsRetrieveExecute(r ApiExtrasCustomFieldsRetrieveRequest) (*CustomField, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CustomField
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CustomField
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomFieldsRetrieve")
@@ -12254,9 +12292,9 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsRetrieveExecute(r ApiExtrasCustomFi
 }
 
 type ApiExtrasCustomFieldsUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	id int32
+	ctx                        context.Context
+	ApiService                 *ExtrasAPIService
+	id                         int32
 	writableCustomFieldRequest *WritableCustomFieldRequest
 }
 
@@ -12274,26 +12312,27 @@ ExtrasCustomFieldsUpdate Method for ExtrasCustomFieldsUpdate
 
 Put a custom field object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this custom field.
- @return ApiExtrasCustomFieldsUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this custom field.
+	@return ApiExtrasCustomFieldsUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasCustomFieldsUpdate(ctx context.Context, id int32) ApiExtrasCustomFieldsUpdateRequest {
 	return ApiExtrasCustomFieldsUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return CustomField
+//
+//	@return CustomField
 func (a *ExtrasAPIService) ExtrasCustomFieldsUpdateExecute(r ApiExtrasCustomFieldsUpdateRequest) (*CustomField, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CustomField
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CustomField
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomFieldsUpdate")
@@ -12382,8 +12421,8 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsUpdateExecute(r ApiExtrasCustomFiel
 }
 
 type ApiExtrasCustomLinksBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx               context.Context
+	ApiService        *ExtrasAPIService
 	customLinkRequest *[]CustomLinkRequest
 }
 
@@ -12401,22 +12440,22 @@ ExtrasCustomLinksBulkDestroy Method for ExtrasCustomLinksBulkDestroy
 
 Delete a list of custom link objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasCustomLinksBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasCustomLinksBulkDestroyRequest
 */
 func (a *ExtrasAPIService) ExtrasCustomLinksBulkDestroy(ctx context.Context) ApiExtrasCustomLinksBulkDestroyRequest {
 	return ApiExtrasCustomLinksBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *ExtrasAPIService) ExtrasCustomLinksBulkDestroyExecute(r ApiExtrasCustomLinksBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomLinksBulkDestroy")
@@ -12495,8 +12534,8 @@ func (a *ExtrasAPIService) ExtrasCustomLinksBulkDestroyExecute(r ApiExtrasCustom
 }
 
 type ApiExtrasCustomLinksBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx               context.Context
+	ApiService        *ExtrasAPIService
 	customLinkRequest *[]CustomLinkRequest
 }
 
@@ -12514,24 +12553,25 @@ ExtrasCustomLinksBulkPartialUpdate Method for ExtrasCustomLinksBulkPartialUpdate
 
 Patch a list of custom link objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasCustomLinksBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasCustomLinksBulkPartialUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasCustomLinksBulkPartialUpdate(ctx context.Context) ApiExtrasCustomLinksBulkPartialUpdateRequest {
 	return ApiExtrasCustomLinksBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []CustomLink
+//
+//	@return []CustomLink
 func (a *ExtrasAPIService) ExtrasCustomLinksBulkPartialUpdateExecute(r ApiExtrasCustomLinksBulkPartialUpdateRequest) ([]CustomLink, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []CustomLink
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []CustomLink
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomLinksBulkPartialUpdate")
@@ -12619,8 +12659,8 @@ func (a *ExtrasAPIService) ExtrasCustomLinksBulkPartialUpdateExecute(r ApiExtras
 }
 
 type ApiExtrasCustomLinksBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx               context.Context
+	ApiService        *ExtrasAPIService
 	customLinkRequest *[]CustomLinkRequest
 }
 
@@ -12638,24 +12678,25 @@ ExtrasCustomLinksBulkUpdate Method for ExtrasCustomLinksBulkUpdate
 
 Put a list of custom link objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasCustomLinksBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasCustomLinksBulkUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasCustomLinksBulkUpdate(ctx context.Context) ApiExtrasCustomLinksBulkUpdateRequest {
 	return ApiExtrasCustomLinksBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []CustomLink
+//
+//	@return []CustomLink
 func (a *ExtrasAPIService) ExtrasCustomLinksBulkUpdateExecute(r ApiExtrasCustomLinksBulkUpdateRequest) ([]CustomLink, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []CustomLink
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []CustomLink
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomLinksBulkUpdate")
@@ -12743,8 +12784,8 @@ func (a *ExtrasAPIService) ExtrasCustomLinksBulkUpdateExecute(r ApiExtrasCustomL
 }
 
 type ApiExtrasCustomLinksCreateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx               context.Context
+	ApiService        *ExtrasAPIService
 	customLinkRequest *CustomLinkRequest
 }
 
@@ -12762,24 +12803,25 @@ ExtrasCustomLinksCreate Method for ExtrasCustomLinksCreate
 
 Post a list of custom link objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasCustomLinksCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasCustomLinksCreateRequest
 */
 func (a *ExtrasAPIService) ExtrasCustomLinksCreate(ctx context.Context) ApiExtrasCustomLinksCreateRequest {
 	return ApiExtrasCustomLinksCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return CustomLink
+//
+//	@return CustomLink
 func (a *ExtrasAPIService) ExtrasCustomLinksCreateExecute(r ApiExtrasCustomLinksCreateRequest) (*CustomLink, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CustomLink
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CustomLink
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomLinksCreate")
@@ -12867,9 +12909,9 @@ func (a *ExtrasAPIService) ExtrasCustomLinksCreateExecute(r ApiExtrasCustomLinks
 }
 
 type ApiExtrasCustomLinksDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiExtrasCustomLinksDestroyRequest) Execute() (*http.Response, error) {
@@ -12881,24 +12923,24 @@ ExtrasCustomLinksDestroy Method for ExtrasCustomLinksDestroy
 
 Delete a custom link object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this custom link.
- @return ApiExtrasCustomLinksDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this custom link.
+	@return ApiExtrasCustomLinksDestroyRequest
 */
 func (a *ExtrasAPIService) ExtrasCustomLinksDestroy(ctx context.Context, id int32) ApiExtrasCustomLinksDestroyRequest {
 	return ApiExtrasCustomLinksDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *ExtrasAPIService) ExtrasCustomLinksDestroyExecute(r ApiExtrasCustomLinksDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomLinksDestroy")
@@ -12973,100 +13015,100 @@ func (a *ExtrasAPIService) ExtrasCustomLinksDestroyExecute(r ApiExtrasCustomLink
 }
 
 type ApiExtrasCustomLinksListRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	buttonClass *ExtrasCustomLinksListButtonClassParameter
-	created *[]time.Time
-	createdEmpty *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
-	createdByRequest *string
-	enabled *bool
-	groupName *[]string
-	groupNameEmpty *bool
-	groupNameIc *[]string
-	groupNameIe *[]string
-	groupNameIew *[]string
-	groupNameIsw *[]string
-	groupNameN *[]string
-	groupNameNic *[]string
-	groupNameNie *[]string
-	groupNameNiew *[]string
-	groupNameNisw *[]string
-	id *[]int32
-	idEmpty *bool
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedEmpty *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	linkText *string
-	linkTextIc *string
-	linkTextIe *string
-	linkTextIew *string
-	linkTextIsw *string
-	linkTextN *string
-	linkTextNic *string
-	linkTextNie *string
-	linkTextNiew *string
-	linkTextNisw *string
-	linkUrl *string
-	linkUrlIc *string
-	linkUrlIe *string
-	linkUrlIew *string
-	linkUrlIsw *string
-	linkUrlN *string
-	linkUrlNic *string
-	linkUrlNie *string
-	linkUrlNiew *string
-	linkUrlNisw *string
+	ctx               context.Context
+	ApiService        *ExtrasAPIService
+	buttonClass       *ExtrasCustomLinksListButtonClassParameter
+	created           *[]time.Time
+	createdEmpty      *[]time.Time
+	createdGt         *[]time.Time
+	createdGte        *[]time.Time
+	createdLt         *[]time.Time
+	createdLte        *[]time.Time
+	createdN          *[]time.Time
+	createdByRequest  *string
+	enabled           *bool
+	groupName         *[]string
+	groupNameEmpty    *bool
+	groupNameIc       *[]string
+	groupNameIe       *[]string
+	groupNameIew      *[]string
+	groupNameIsw      *[]string
+	groupNameN        *[]string
+	groupNameNic      *[]string
+	groupNameNie      *[]string
+	groupNameNiew     *[]string
+	groupNameNisw     *[]string
+	id                *[]int32
+	idEmpty           *bool
+	idGt              *[]int32
+	idGte             *[]int32
+	idLt              *[]int32
+	idLte             *[]int32
+	idN               *[]int32
+	lastUpdated       *[]time.Time
+	lastUpdatedEmpty  *[]time.Time
+	lastUpdatedGt     *[]time.Time
+	lastUpdatedGte    *[]time.Time
+	lastUpdatedLt     *[]time.Time
+	lastUpdatedLte    *[]time.Time
+	lastUpdatedN      *[]time.Time
+	limit             *int32
+	linkText          *string
+	linkTextIc        *string
+	linkTextIe        *string
+	linkTextIew       *string
+	linkTextIsw       *string
+	linkTextN         *string
+	linkTextNic       *string
+	linkTextNie       *string
+	linkTextNiew      *string
+	linkTextNisw      *string
+	linkUrl           *string
+	linkUrlIc         *string
+	linkUrlIe         *string
+	linkUrlIew        *string
+	linkUrlIsw        *string
+	linkUrlN          *string
+	linkUrlNic        *string
+	linkUrlNie        *string
+	linkUrlNiew       *string
+	linkUrlNisw       *string
 	modifiedByRequest *string
-	name *[]string
-	nameEmpty *bool
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	newWindow *bool
-	objectType *string
-	objectTypeIc *string
-	objectTypeIe *string
-	objectTypeIew *string
-	objectTypeIsw *string
-	objectTypeN *string
-	objectTypeNic *string
-	objectTypeNie *string
-	objectTypeNiew *string
-	objectTypeNisw *string
-	objectTypeId *[]int32
-	objectTypeIdN *[]int32
-	offset *int32
-	ordering *string
-	q *string
-	updatedByRequest *string
-	weight *[]int32
-	weightEmpty *bool
-	weightGt *[]int32
-	weightGte *[]int32
-	weightLt *[]int32
-	weightLte *[]int32
-	weightN *[]int32
+	name              *[]string
+	nameEmpty         *bool
+	nameIc            *[]string
+	nameIe            *[]string
+	nameIew           *[]string
+	nameIsw           *[]string
+	nameN             *[]string
+	nameNic           *[]string
+	nameNie           *[]string
+	nameNiew          *[]string
+	nameNisw          *[]string
+	newWindow         *bool
+	objectType        *string
+	objectTypeIc      *string
+	objectTypeIe      *string
+	objectTypeIew     *string
+	objectTypeIsw     *string
+	objectTypeN       *string
+	objectTypeNic     *string
+	objectTypeNie     *string
+	objectTypeNiew    *string
+	objectTypeNisw    *string
+	objectTypeId      *[]int32
+	objectTypeIdN     *[]int32
+	offset            *int32
+	ordering          *string
+	q                 *string
+	updatedByRequest  *string
+	weight            *[]int32
+	weightEmpty       *bool
+	weightGt          *[]int32
+	weightGte         *[]int32
+	weightLt          *[]int32
+	weightLte         *[]int32
+	weightN           *[]int32
 }
 
 // The class of the first link in a group will be used for the dropdown button  * &#x60;default&#x60; - Default * &#x60;blue&#x60; - Blue * &#x60;indigo&#x60; - Indigo * &#x60;purple&#x60; - Purple * &#x60;pink&#x60; - Pink * &#x60;red&#x60; - Red * &#x60;orange&#x60; - Orange * &#x60;yellow&#x60; - Yellow * &#x60;green&#x60; - Green * &#x60;teal&#x60; - Teal * &#x60;cyan&#x60; - Cyan * &#x60;gray&#x60; - Gray * &#x60;black&#x60; - Black * &#x60;white&#x60; - White * &#x60;ghost-dark&#x60; - Link
@@ -13543,24 +13585,25 @@ ExtrasCustomLinksList Method for ExtrasCustomLinksList
 
 Get a list of custom link objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasCustomLinksListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasCustomLinksListRequest
 */
 func (a *ExtrasAPIService) ExtrasCustomLinksList(ctx context.Context) ApiExtrasCustomLinksListRequest {
 	return ApiExtrasCustomLinksListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedCustomLinkList
+//
+//	@return PaginatedCustomLinkList
 func (a *ExtrasAPIService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksListRequest) (*PaginatedCustomLinkList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedCustomLinkList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedCustomLinkList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomLinksList")
@@ -13575,17 +13618,17 @@ func (a *ExtrasAPIService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 	localVarFormParams := url.Values{}
 
 	if r.buttonClass != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "button_class", r.buttonClass, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "button_class", r.buttonClass, "form", "")
 	}
 	if r.created != nil {
 		t := *r.created
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "form", "multi")
 		}
 	}
 	if r.createdEmpty != nil {
@@ -13593,10 +13636,10 @@ func (a *ExtrasAPIService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "form", "multi")
 		}
 	}
 	if r.createdGt != nil {
@@ -13604,10 +13647,10 @@ func (a *ExtrasAPIService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "form", "multi")
 		}
 	}
 	if r.createdGte != nil {
@@ -13615,10 +13658,10 @@ func (a *ExtrasAPIService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "form", "multi")
 		}
 	}
 	if r.createdLt != nil {
@@ -13626,10 +13669,10 @@ func (a *ExtrasAPIService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "form", "multi")
 		}
 	}
 	if r.createdLte != nil {
@@ -13637,10 +13680,10 @@ func (a *ExtrasAPIService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "form", "multi")
 		}
 	}
 	if r.createdN != nil {
@@ -13648,41 +13691,41 @@ func (a *ExtrasAPIService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "form", "multi")
 		}
 	}
 	if r.createdByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_request", r.createdByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_request", r.createdByRequest, "form", "")
 	}
 	if r.enabled != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "enabled", r.enabled, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "enabled", r.enabled, "form", "")
 	}
 	if r.groupName != nil {
 		t := *r.groupName
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name", t, "form", "multi")
 		}
 	}
 	if r.groupNameEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__empty", r.groupNameEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__empty", r.groupNameEmpty, "form", "")
 	}
 	if r.groupNameIc != nil {
 		t := *r.groupNameIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__ic", t, "form", "multi")
 		}
 	}
 	if r.groupNameIe != nil {
@@ -13690,10 +13733,10 @@ func (a *ExtrasAPIService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__ie", t, "form", "multi")
 		}
 	}
 	if r.groupNameIew != nil {
@@ -13701,10 +13744,10 @@ func (a *ExtrasAPIService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__iew", t, "form", "multi")
 		}
 	}
 	if r.groupNameIsw != nil {
@@ -13712,10 +13755,10 @@ func (a *ExtrasAPIService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__isw", t, "form", "multi")
 		}
 	}
 	if r.groupNameN != nil {
@@ -13723,10 +13766,10 @@ func (a *ExtrasAPIService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__n", t, "form", "multi")
 		}
 	}
 	if r.groupNameNic != nil {
@@ -13734,10 +13777,10 @@ func (a *ExtrasAPIService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__nic", t, "form", "multi")
 		}
 	}
 	if r.groupNameNie != nil {
@@ -13745,10 +13788,10 @@ func (a *ExtrasAPIService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__nie", t, "form", "multi")
 		}
 	}
 	if r.groupNameNiew != nil {
@@ -13756,10 +13799,10 @@ func (a *ExtrasAPIService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__niew", t, "form", "multi")
 		}
 	}
 	if r.groupNameNisw != nil {
@@ -13767,10 +13810,10 @@ func (a *ExtrasAPIService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__nisw", t, "form", "multi")
 		}
 	}
 	if r.id != nil {
@@ -13778,24 +13821,24 @@ func (a *ExtrasAPIService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "form", "multi")
 		}
 	}
 	if r.idEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "form", "")
 	}
 	if r.idGt != nil {
 		t := *r.idGt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "form", "multi")
 		}
 	}
 	if r.idGte != nil {
@@ -13803,10 +13846,10 @@ func (a *ExtrasAPIService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "form", "multi")
 		}
 	}
 	if r.idLt != nil {
@@ -13814,10 +13857,10 @@ func (a *ExtrasAPIService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "form", "multi")
 		}
 	}
 	if r.idLte != nil {
@@ -13825,10 +13868,10 @@ func (a *ExtrasAPIService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "form", "multi")
 		}
 	}
 	if r.idN != nil {
@@ -13836,10 +13879,10 @@ func (a *ExtrasAPIService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "form", "multi")
 		}
 	}
 	if r.lastUpdated != nil {
@@ -13847,10 +13890,10 @@ func (a *ExtrasAPIService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedEmpty != nil {
@@ -13858,10 +13901,10 @@ func (a *ExtrasAPIService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedGt != nil {
@@ -13869,10 +13912,10 @@ func (a *ExtrasAPIService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedGte != nil {
@@ -13880,10 +13923,10 @@ func (a *ExtrasAPIService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedLt != nil {
@@ -13891,10 +13934,10 @@ func (a *ExtrasAPIService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedLte != nil {
@@ -13902,10 +13945,10 @@ func (a *ExtrasAPIService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedN != nil {
@@ -13913,101 +13956,101 @@ func (a *ExtrasAPIService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "form", "multi")
 		}
 	}
 	if r.limit != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
 	}
 	if r.linkText != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "link_text", r.linkText, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "link_text", r.linkText, "form", "")
 	}
 	if r.linkTextIc != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "link_text__ic", r.linkTextIc, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "link_text__ic", r.linkTextIc, "form", "")
 	}
 	if r.linkTextIe != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "link_text__ie", r.linkTextIe, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "link_text__ie", r.linkTextIe, "form", "")
 	}
 	if r.linkTextIew != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "link_text__iew", r.linkTextIew, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "link_text__iew", r.linkTextIew, "form", "")
 	}
 	if r.linkTextIsw != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "link_text__isw", r.linkTextIsw, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "link_text__isw", r.linkTextIsw, "form", "")
 	}
 	if r.linkTextN != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "link_text__n", r.linkTextN, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "link_text__n", r.linkTextN, "form", "")
 	}
 	if r.linkTextNic != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "link_text__nic", r.linkTextNic, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "link_text__nic", r.linkTextNic, "form", "")
 	}
 	if r.linkTextNie != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "link_text__nie", r.linkTextNie, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "link_text__nie", r.linkTextNie, "form", "")
 	}
 	if r.linkTextNiew != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "link_text__niew", r.linkTextNiew, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "link_text__niew", r.linkTextNiew, "form", "")
 	}
 	if r.linkTextNisw != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "link_text__nisw", r.linkTextNisw, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "link_text__nisw", r.linkTextNisw, "form", "")
 	}
 	if r.linkUrl != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "link_url", r.linkUrl, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "link_url", r.linkUrl, "form", "")
 	}
 	if r.linkUrlIc != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "link_url__ic", r.linkUrlIc, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "link_url__ic", r.linkUrlIc, "form", "")
 	}
 	if r.linkUrlIe != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "link_url__ie", r.linkUrlIe, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "link_url__ie", r.linkUrlIe, "form", "")
 	}
 	if r.linkUrlIew != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "link_url__iew", r.linkUrlIew, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "link_url__iew", r.linkUrlIew, "form", "")
 	}
 	if r.linkUrlIsw != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "link_url__isw", r.linkUrlIsw, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "link_url__isw", r.linkUrlIsw, "form", "")
 	}
 	if r.linkUrlN != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "link_url__n", r.linkUrlN, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "link_url__n", r.linkUrlN, "form", "")
 	}
 	if r.linkUrlNic != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "link_url__nic", r.linkUrlNic, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "link_url__nic", r.linkUrlNic, "form", "")
 	}
 	if r.linkUrlNie != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "link_url__nie", r.linkUrlNie, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "link_url__nie", r.linkUrlNie, "form", "")
 	}
 	if r.linkUrlNiew != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "link_url__niew", r.linkUrlNiew, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "link_url__niew", r.linkUrlNiew, "form", "")
 	}
 	if r.linkUrlNisw != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "link_url__nisw", r.linkUrlNisw, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "link_url__nisw", r.linkUrlNisw, "form", "")
 	}
 	if r.modifiedByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "modified_by_request", r.modifiedByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "modified_by_request", r.modifiedByRequest, "form", "")
 	}
 	if r.name != nil {
 		t := *r.name
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "form", "multi")
 		}
 	}
 	if r.nameEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "name__empty", r.nameEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "name__empty", r.nameEmpty, "form", "")
 	}
 	if r.nameIc != nil {
 		t := *r.nameIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "form", "multi")
 		}
 	}
 	if r.nameIe != nil {
@@ -14015,10 +14058,10 @@ func (a *ExtrasAPIService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "form", "multi")
 		}
 	}
 	if r.nameIew != nil {
@@ -14026,10 +14069,10 @@ func (a *ExtrasAPIService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "form", "multi")
 		}
 	}
 	if r.nameIsw != nil {
@@ -14037,10 +14080,10 @@ func (a *ExtrasAPIService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "form", "multi")
 		}
 	}
 	if r.nameN != nil {
@@ -14048,10 +14091,10 @@ func (a *ExtrasAPIService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "form", "multi")
 		}
 	}
 	if r.nameNic != nil {
@@ -14059,10 +14102,10 @@ func (a *ExtrasAPIService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "form", "multi")
 		}
 	}
 	if r.nameNie != nil {
@@ -14070,10 +14113,10 @@ func (a *ExtrasAPIService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "form", "multi")
 		}
 	}
 	if r.nameNiew != nil {
@@ -14081,10 +14124,10 @@ func (a *ExtrasAPIService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "form", "multi")
 		}
 	}
 	if r.nameNisw != nil {
@@ -14092,54 +14135,54 @@ func (a *ExtrasAPIService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "form", "multi")
 		}
 	}
 	if r.newWindow != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "new_window", r.newWindow, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "new_window", r.newWindow, "form", "")
 	}
 	if r.objectType != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type", r.objectType, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type", r.objectType, "form", "")
 	}
 	if r.objectTypeIc != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__ic", r.objectTypeIc, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__ic", r.objectTypeIc, "form", "")
 	}
 	if r.objectTypeIe != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__ie", r.objectTypeIe, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__ie", r.objectTypeIe, "form", "")
 	}
 	if r.objectTypeIew != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__iew", r.objectTypeIew, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__iew", r.objectTypeIew, "form", "")
 	}
 	if r.objectTypeIsw != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__isw", r.objectTypeIsw, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__isw", r.objectTypeIsw, "form", "")
 	}
 	if r.objectTypeN != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__n", r.objectTypeN, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__n", r.objectTypeN, "form", "")
 	}
 	if r.objectTypeNic != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__nic", r.objectTypeNic, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__nic", r.objectTypeNic, "form", "")
 	}
 	if r.objectTypeNie != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__nie", r.objectTypeNie, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__nie", r.objectTypeNie, "form", "")
 	}
 	if r.objectTypeNiew != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__niew", r.objectTypeNiew, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__niew", r.objectTypeNiew, "form", "")
 	}
 	if r.objectTypeNisw != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__nisw", r.objectTypeNisw, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__nisw", r.objectTypeNisw, "form", "")
 	}
 	if r.objectTypeId != nil {
 		t := *r.objectTypeId
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id", t, "form", "multi")
 		}
 	}
 	if r.objectTypeIdN != nil {
@@ -14147,47 +14190,47 @@ func (a *ExtrasAPIService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__n", t, "form", "multi")
 		}
 	}
 	if r.offset != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "form", "")
 	}
 	if r.ordering != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "form", "")
 	}
 	if r.q != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "form", "")
 	}
 	if r.updatedByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "updated_by_request", r.updatedByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "updated_by_request", r.updatedByRequest, "form", "")
 	}
 	if r.weight != nil {
 		t := *r.weight
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "weight", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "weight", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "weight", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "weight", t, "form", "multi")
 		}
 	}
 	if r.weightEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "weight__empty", r.weightEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "weight__empty", r.weightEmpty, "form", "")
 	}
 	if r.weightGt != nil {
 		t := *r.weightGt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gt", t, "form", "multi")
 		}
 	}
 	if r.weightGte != nil {
@@ -14195,10 +14238,10 @@ func (a *ExtrasAPIService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gte", t, "form", "multi")
 		}
 	}
 	if r.weightLt != nil {
@@ -14206,10 +14249,10 @@ func (a *ExtrasAPIService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lt", t, "form", "multi")
 		}
 	}
 	if r.weightLte != nil {
@@ -14217,10 +14260,10 @@ func (a *ExtrasAPIService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lte", t, "form", "multi")
 		}
 	}
 	if r.weightN != nil {
@@ -14228,10 +14271,10 @@ func (a *ExtrasAPIService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__n", t, "form", "multi")
 		}
 	}
 	// to determine the Content-Type header
@@ -14303,9 +14346,9 @@ func (a *ExtrasAPIService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 }
 
 type ApiExtrasCustomLinksPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	id int32
+	ctx                      context.Context
+	ApiService               *ExtrasAPIService
+	id                       int32
 	patchedCustomLinkRequest *PatchedCustomLinkRequest
 }
 
@@ -14323,26 +14366,27 @@ ExtrasCustomLinksPartialUpdate Method for ExtrasCustomLinksPartialUpdate
 
 Patch a custom link object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this custom link.
- @return ApiExtrasCustomLinksPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this custom link.
+	@return ApiExtrasCustomLinksPartialUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasCustomLinksPartialUpdate(ctx context.Context, id int32) ApiExtrasCustomLinksPartialUpdateRequest {
 	return ApiExtrasCustomLinksPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return CustomLink
+//
+//	@return CustomLink
 func (a *ExtrasAPIService) ExtrasCustomLinksPartialUpdateExecute(r ApiExtrasCustomLinksPartialUpdateRequest) (*CustomLink, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CustomLink
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CustomLink
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomLinksPartialUpdate")
@@ -14428,9 +14472,9 @@ func (a *ExtrasAPIService) ExtrasCustomLinksPartialUpdateExecute(r ApiExtrasCust
 }
 
 type ApiExtrasCustomLinksRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiExtrasCustomLinksRetrieveRequest) Execute() (*CustomLink, *http.Response, error) {
@@ -14442,26 +14486,27 @@ ExtrasCustomLinksRetrieve Method for ExtrasCustomLinksRetrieve
 
 Get a custom link object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this custom link.
- @return ApiExtrasCustomLinksRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this custom link.
+	@return ApiExtrasCustomLinksRetrieveRequest
 */
 func (a *ExtrasAPIService) ExtrasCustomLinksRetrieve(ctx context.Context, id int32) ApiExtrasCustomLinksRetrieveRequest {
 	return ApiExtrasCustomLinksRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return CustomLink
+//
+//	@return CustomLink
 func (a *ExtrasAPIService) ExtrasCustomLinksRetrieveExecute(r ApiExtrasCustomLinksRetrieveRequest) (*CustomLink, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CustomLink
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CustomLink
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomLinksRetrieve")
@@ -14545,9 +14590,9 @@ func (a *ExtrasAPIService) ExtrasCustomLinksRetrieveExecute(r ApiExtrasCustomLin
 }
 
 type ApiExtrasCustomLinksUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	id int32
+	ctx               context.Context
+	ApiService        *ExtrasAPIService
+	id                int32
 	customLinkRequest *CustomLinkRequest
 }
 
@@ -14565,26 +14610,27 @@ ExtrasCustomLinksUpdate Method for ExtrasCustomLinksUpdate
 
 Put a custom link object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this custom link.
- @return ApiExtrasCustomLinksUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this custom link.
+	@return ApiExtrasCustomLinksUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasCustomLinksUpdate(ctx context.Context, id int32) ApiExtrasCustomLinksUpdateRequest {
 	return ApiExtrasCustomLinksUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return CustomLink
+//
+//	@return CustomLink
 func (a *ExtrasAPIService) ExtrasCustomLinksUpdateExecute(r ApiExtrasCustomLinksUpdateRequest) (*CustomLink, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CustomLink
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CustomLink
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomLinksUpdate")
@@ -14673,7 +14719,7 @@ func (a *ExtrasAPIService) ExtrasCustomLinksUpdateExecute(r ApiExtrasCustomLinks
 }
 
 type ApiExtrasDashboardDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
 }
 
@@ -14686,22 +14732,22 @@ ExtrasDashboardDestroy Method for ExtrasDashboardDestroy
 
 Delete a list of dashboard objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasDashboardDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasDashboardDestroyRequest
 */
 func (a *ExtrasAPIService) ExtrasDashboardDestroy(ctx context.Context) ApiExtrasDashboardDestroyRequest {
 	return ApiExtrasDashboardDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *ExtrasAPIService) ExtrasDashboardDestroyExecute(r ApiExtrasDashboardDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasDashboardDestroy")
@@ -14775,8 +14821,8 @@ func (a *ExtrasAPIService) ExtrasDashboardDestroyExecute(r ApiExtrasDashboardDes
 }
 
 type ApiExtrasDashboardPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                     context.Context
+	ApiService              *ExtrasAPIService
 	patchedDashboardRequest *PatchedDashboardRequest
 }
 
@@ -14794,24 +14840,25 @@ ExtrasDashboardPartialUpdate Method for ExtrasDashboardPartialUpdate
 
 Patch a list of dashboard objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasDashboardPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasDashboardPartialUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasDashboardPartialUpdate(ctx context.Context) ApiExtrasDashboardPartialUpdateRequest {
 	return ApiExtrasDashboardPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return Dashboard
+//
+//	@return Dashboard
 func (a *ExtrasAPIService) ExtrasDashboardPartialUpdateExecute(r ApiExtrasDashboardPartialUpdateRequest) (*Dashboard, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Dashboard
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Dashboard
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasDashboardPartialUpdate")
@@ -14896,7 +14943,7 @@ func (a *ExtrasAPIService) ExtrasDashboardPartialUpdateExecute(r ApiExtrasDashbo
 }
 
 type ApiExtrasDashboardRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
 }
 
@@ -14909,24 +14956,25 @@ ExtrasDashboardRetrieve Method for ExtrasDashboardRetrieve
 
 Get a list of dashboard objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasDashboardRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasDashboardRetrieveRequest
 */
 func (a *ExtrasAPIService) ExtrasDashboardRetrieve(ctx context.Context) ApiExtrasDashboardRetrieveRequest {
 	return ApiExtrasDashboardRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return Dashboard
+//
+//	@return Dashboard
 func (a *ExtrasAPIService) ExtrasDashboardRetrieveExecute(r ApiExtrasDashboardRetrieveRequest) (*Dashboard, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Dashboard
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Dashboard
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasDashboardRetrieve")
@@ -15009,8 +15057,8 @@ func (a *ExtrasAPIService) ExtrasDashboardRetrieveExecute(r ApiExtrasDashboardRe
 }
 
 type ApiExtrasDashboardUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx              context.Context
+	ApiService       *ExtrasAPIService
 	dashboardRequest *DashboardRequest
 }
 
@@ -15028,24 +15076,25 @@ ExtrasDashboardUpdate Method for ExtrasDashboardUpdate
 
 Put a list of dashboard objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasDashboardUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasDashboardUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasDashboardUpdate(ctx context.Context) ApiExtrasDashboardUpdateRequest {
 	return ApiExtrasDashboardUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return Dashboard
+//
+//	@return Dashboard
 func (a *ExtrasAPIService) ExtrasDashboardUpdateExecute(r ApiExtrasDashboardUpdateRequest) (*Dashboard, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Dashboard
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Dashboard
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasDashboardUpdate")
@@ -15130,8 +15179,8 @@ func (a *ExtrasAPIService) ExtrasDashboardUpdateExecute(r ApiExtrasDashboardUpda
 }
 
 type ApiExtrasEventRulesBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx              context.Context
+	ApiService       *ExtrasAPIService
 	eventRuleRequest *[]EventRuleRequest
 }
 
@@ -15149,22 +15198,22 @@ ExtrasEventRulesBulkDestroy Method for ExtrasEventRulesBulkDestroy
 
 Delete a list of event rule objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasEventRulesBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasEventRulesBulkDestroyRequest
 */
 func (a *ExtrasAPIService) ExtrasEventRulesBulkDestroy(ctx context.Context) ApiExtrasEventRulesBulkDestroyRequest {
 	return ApiExtrasEventRulesBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *ExtrasAPIService) ExtrasEventRulesBulkDestroyExecute(r ApiExtrasEventRulesBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasEventRulesBulkDestroy")
@@ -15243,8 +15292,8 @@ func (a *ExtrasAPIService) ExtrasEventRulesBulkDestroyExecute(r ApiExtrasEventRu
 }
 
 type ApiExtrasEventRulesBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx              context.Context
+	ApiService       *ExtrasAPIService
 	eventRuleRequest *[]EventRuleRequest
 }
 
@@ -15262,24 +15311,25 @@ ExtrasEventRulesBulkPartialUpdate Method for ExtrasEventRulesBulkPartialUpdate
 
 Patch a list of event rule objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasEventRulesBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasEventRulesBulkPartialUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasEventRulesBulkPartialUpdate(ctx context.Context) ApiExtrasEventRulesBulkPartialUpdateRequest {
 	return ApiExtrasEventRulesBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []EventRule
+//
+//	@return []EventRule
 func (a *ExtrasAPIService) ExtrasEventRulesBulkPartialUpdateExecute(r ApiExtrasEventRulesBulkPartialUpdateRequest) ([]EventRule, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []EventRule
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []EventRule
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasEventRulesBulkPartialUpdate")
@@ -15367,8 +15417,8 @@ func (a *ExtrasAPIService) ExtrasEventRulesBulkPartialUpdateExecute(r ApiExtrasE
 }
 
 type ApiExtrasEventRulesBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx              context.Context
+	ApiService       *ExtrasAPIService
 	eventRuleRequest *[]EventRuleRequest
 }
 
@@ -15386,24 +15436,25 @@ ExtrasEventRulesBulkUpdate Method for ExtrasEventRulesBulkUpdate
 
 Put a list of event rule objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasEventRulesBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasEventRulesBulkUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasEventRulesBulkUpdate(ctx context.Context) ApiExtrasEventRulesBulkUpdateRequest {
 	return ApiExtrasEventRulesBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []EventRule
+//
+//	@return []EventRule
 func (a *ExtrasAPIService) ExtrasEventRulesBulkUpdateExecute(r ApiExtrasEventRulesBulkUpdateRequest) ([]EventRule, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []EventRule
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []EventRule
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasEventRulesBulkUpdate")
@@ -15491,8 +15542,8 @@ func (a *ExtrasAPIService) ExtrasEventRulesBulkUpdateExecute(r ApiExtrasEventRul
 }
 
 type ApiExtrasEventRulesCreateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                      context.Context
+	ApiService               *ExtrasAPIService
 	writableEventRuleRequest *WritableEventRuleRequest
 }
 
@@ -15510,24 +15561,25 @@ ExtrasEventRulesCreate Method for ExtrasEventRulesCreate
 
 Post a list of event rule objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasEventRulesCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasEventRulesCreateRequest
 */
 func (a *ExtrasAPIService) ExtrasEventRulesCreate(ctx context.Context) ApiExtrasEventRulesCreateRequest {
 	return ApiExtrasEventRulesCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return EventRule
+//
+//	@return EventRule
 func (a *ExtrasAPIService) ExtrasEventRulesCreateExecute(r ApiExtrasEventRulesCreateRequest) (*EventRule, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *EventRule
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *EventRule
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasEventRulesCreate")
@@ -15615,9 +15667,9 @@ func (a *ExtrasAPIService) ExtrasEventRulesCreateExecute(r ApiExtrasEventRulesCr
 }
 
 type ApiExtrasEventRulesDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiExtrasEventRulesDestroyRequest) Execute() (*http.Response, error) {
@@ -15629,24 +15681,24 @@ ExtrasEventRulesDestroy Method for ExtrasEventRulesDestroy
 
 Delete a event rule object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this event rule.
- @return ApiExtrasEventRulesDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this event rule.
+	@return ApiExtrasEventRulesDestroyRequest
 */
 func (a *ExtrasAPIService) ExtrasEventRulesDestroy(ctx context.Context, id int32) ApiExtrasEventRulesDestroyRequest {
 	return ApiExtrasEventRulesDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *ExtrasAPIService) ExtrasEventRulesDestroyExecute(r ApiExtrasEventRulesDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasEventRulesDestroy")
@@ -15721,94 +15773,94 @@ func (a *ExtrasAPIService) ExtrasEventRulesDestroyExecute(r ApiExtrasEventRulesD
 }
 
 type ApiExtrasEventRulesListRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	actionObjectId *[]int32
+	ctx                 context.Context
+	ApiService          *ExtrasAPIService
+	actionObjectId      *[]int32
 	actionObjectIdEmpty *[]int32
-	actionObjectIdGt *[]int32
-	actionObjectIdGte *[]int32
-	actionObjectIdLt *[]int32
-	actionObjectIdLte *[]int32
-	actionObjectIdN *[]int32
-	actionObjectType *string
-	actionObjectTypeN *string
-	actionType *[]string
-	actionTypeEmpty *bool
-	actionTypeIc *[]string
-	actionTypeIe *[]string
-	actionTypeIew *[]string
-	actionTypeIsw *[]string
-	actionTypeN *[]string
-	actionTypeNic *[]string
-	actionTypeNie *[]string
-	actionTypeNiew *[]string
-	actionTypeNisw *[]string
-	created *[]time.Time
-	createdEmpty *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
-	createdByRequest *string
-	description *[]string
-	descriptionEmpty *bool
-	descriptionIc *[]string
-	descriptionIe *[]string
-	descriptionIew *[]string
-	descriptionIsw *[]string
-	descriptionN *[]string
-	descriptionNic *[]string
-	descriptionNie *[]string
-	descriptionNiew *[]string
-	descriptionNisw *[]string
-	enabled *bool
-	eventType *[]string
-	id *[]int32
-	idEmpty *bool
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedEmpty *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	modifiedByRequest *string
-	name *[]string
-	nameEmpty *bool
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	objectType *string
-	objectTypeIc *string
-	objectTypeIe *string
-	objectTypeIew *string
-	objectTypeIsw *string
-	objectTypeN *string
-	objectTypeNic *string
-	objectTypeNie *string
-	objectTypeNiew *string
-	objectTypeNisw *string
-	objectTypeId *[]int32
-	objectTypeIdN *[]int32
-	offset *int32
-	ordering *string
-	q *string
-	tag *[]string
-	tagN *[]string
-	updatedByRequest *string
+	actionObjectIdGt    *[]int32
+	actionObjectIdGte   *[]int32
+	actionObjectIdLt    *[]int32
+	actionObjectIdLte   *[]int32
+	actionObjectIdN     *[]int32
+	actionObjectType    *string
+	actionObjectTypeN   *string
+	actionType          *[]string
+	actionTypeEmpty     *bool
+	actionTypeIc        *[]string
+	actionTypeIe        *[]string
+	actionTypeIew       *[]string
+	actionTypeIsw       *[]string
+	actionTypeN         *[]string
+	actionTypeNic       *[]string
+	actionTypeNie       *[]string
+	actionTypeNiew      *[]string
+	actionTypeNisw      *[]string
+	created             *[]time.Time
+	createdEmpty        *[]time.Time
+	createdGt           *[]time.Time
+	createdGte          *[]time.Time
+	createdLt           *[]time.Time
+	createdLte          *[]time.Time
+	createdN            *[]time.Time
+	createdByRequest    *string
+	description         *[]string
+	descriptionEmpty    *bool
+	descriptionIc       *[]string
+	descriptionIe       *[]string
+	descriptionIew      *[]string
+	descriptionIsw      *[]string
+	descriptionN        *[]string
+	descriptionNic      *[]string
+	descriptionNie      *[]string
+	descriptionNiew     *[]string
+	descriptionNisw     *[]string
+	enabled             *bool
+	eventType           *[]string
+	id                  *[]int32
+	idEmpty             *bool
+	idGt                *[]int32
+	idGte               *[]int32
+	idLt                *[]int32
+	idLte               *[]int32
+	idN                 *[]int32
+	lastUpdated         *[]time.Time
+	lastUpdatedEmpty    *[]time.Time
+	lastUpdatedGt       *[]time.Time
+	lastUpdatedGte      *[]time.Time
+	lastUpdatedLt       *[]time.Time
+	lastUpdatedLte      *[]time.Time
+	lastUpdatedN        *[]time.Time
+	limit               *int32
+	modifiedByRequest   *string
+	name                *[]string
+	nameEmpty           *bool
+	nameIc              *[]string
+	nameIe              *[]string
+	nameIew             *[]string
+	nameIsw             *[]string
+	nameN               *[]string
+	nameNic             *[]string
+	nameNie             *[]string
+	nameNiew            *[]string
+	nameNisw            *[]string
+	objectType          *string
+	objectTypeIc        *string
+	objectTypeIe        *string
+	objectTypeIew       *string
+	objectTypeIsw       *string
+	objectTypeN         *string
+	objectTypeNic       *string
+	objectTypeNie       *string
+	objectTypeNiew      *string
+	objectTypeNisw      *string
+	objectTypeId        *[]int32
+	objectTypeIdN       *[]int32
+	offset              *int32
+	ordering            *string
+	q                   *string
+	tag                 *[]string
+	tagN                *[]string
+	updatedByRequest    *string
 }
 
 func (r ApiExtrasEventRulesListRequest) ActionObjectId(actionObjectId []int32) ApiExtrasEventRulesListRequest {
@@ -16254,24 +16306,25 @@ ExtrasEventRulesList Method for ExtrasEventRulesList
 
 Get a list of event rule objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasEventRulesListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasEventRulesListRequest
 */
 func (a *ExtrasAPIService) ExtrasEventRulesList(ctx context.Context) ApiExtrasEventRulesListRequest {
 	return ApiExtrasEventRulesListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedEventRuleList
+//
+//	@return PaginatedEventRuleList
 func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesListRequest) (*PaginatedEventRuleList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedEventRuleList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedEventRuleList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasEventRulesList")
@@ -16290,10 +16343,10 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_id", t, "form", "multi")
 		}
 	}
 	if r.actionObjectIdEmpty != nil {
@@ -16301,10 +16354,10 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_id__empty", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_id__empty", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_id__empty", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_id__empty", t, "form", "multi")
 		}
 	}
 	if r.actionObjectIdGt != nil {
@@ -16312,10 +16365,10 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_id__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_id__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_id__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_id__gt", t, "form", "multi")
 		}
 	}
 	if r.actionObjectIdGte != nil {
@@ -16323,10 +16376,10 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_id__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_id__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_id__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_id__gte", t, "form", "multi")
 		}
 	}
 	if r.actionObjectIdLt != nil {
@@ -16334,10 +16387,10 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_id__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_id__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_id__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_id__lt", t, "form", "multi")
 		}
 	}
 	if r.actionObjectIdLte != nil {
@@ -16345,10 +16398,10 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_id__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_id__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_id__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_id__lte", t, "form", "multi")
 		}
 	}
 	if r.actionObjectIdN != nil {
@@ -16356,41 +16409,41 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_id__n", t, "form", "multi")
 		}
 	}
 	if r.actionObjectType != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_type", r.actionObjectType, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_type", r.actionObjectType, "form", "")
 	}
 	if r.actionObjectTypeN != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_type__n", r.actionObjectTypeN, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_type__n", r.actionObjectTypeN, "form", "")
 	}
 	if r.actionType != nil {
 		t := *r.actionType
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "action_type", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "action_type", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "action_type", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "action_type", t, "form", "multi")
 		}
 	}
 	if r.actionTypeEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__empty", r.actionTypeEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__empty", r.actionTypeEmpty, "form", "")
 	}
 	if r.actionTypeIc != nil {
 		t := *r.actionTypeIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__ic", t, "form", "multi")
 		}
 	}
 	if r.actionTypeIe != nil {
@@ -16398,10 +16451,10 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__ie", t, "form", "multi")
 		}
 	}
 	if r.actionTypeIew != nil {
@@ -16409,10 +16462,10 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__iew", t, "form", "multi")
 		}
 	}
 	if r.actionTypeIsw != nil {
@@ -16420,10 +16473,10 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__isw", t, "form", "multi")
 		}
 	}
 	if r.actionTypeN != nil {
@@ -16431,10 +16484,10 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__n", t, "form", "multi")
 		}
 	}
 	if r.actionTypeNic != nil {
@@ -16442,10 +16495,10 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__nic", t, "form", "multi")
 		}
 	}
 	if r.actionTypeNie != nil {
@@ -16453,10 +16506,10 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__nie", t, "form", "multi")
 		}
 	}
 	if r.actionTypeNiew != nil {
@@ -16464,10 +16517,10 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__niew", t, "form", "multi")
 		}
 	}
 	if r.actionTypeNisw != nil {
@@ -16475,10 +16528,10 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__nisw", t, "form", "multi")
 		}
 	}
 	if r.created != nil {
@@ -16486,10 +16539,10 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "form", "multi")
 		}
 	}
 	if r.createdEmpty != nil {
@@ -16497,10 +16550,10 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "form", "multi")
 		}
 	}
 	if r.createdGt != nil {
@@ -16508,10 +16561,10 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "form", "multi")
 		}
 	}
 	if r.createdGte != nil {
@@ -16519,10 +16572,10 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "form", "multi")
 		}
 	}
 	if r.createdLt != nil {
@@ -16530,10 +16583,10 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "form", "multi")
 		}
 	}
 	if r.createdLte != nil {
@@ -16541,10 +16594,10 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "form", "multi")
 		}
 	}
 	if r.createdN != nil {
@@ -16552,38 +16605,38 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "form", "multi")
 		}
 	}
 	if r.createdByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_request", r.createdByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_request", r.createdByRequest, "form", "")
 	}
 	if r.description != nil {
 		t := *r.description
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "form", "multi")
 		}
 	}
 	if r.descriptionEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "description__empty", r.descriptionEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "description__empty", r.descriptionEmpty, "form", "")
 	}
 	if r.descriptionIc != nil {
 		t := *r.descriptionIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "form", "multi")
 		}
 	}
 	if r.descriptionIe != nil {
@@ -16591,10 +16644,10 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "form", "multi")
 		}
 	}
 	if r.descriptionIew != nil {
@@ -16602,10 +16655,10 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "form", "multi")
 		}
 	}
 	if r.descriptionIsw != nil {
@@ -16613,10 +16666,10 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "form", "multi")
 		}
 	}
 	if r.descriptionN != nil {
@@ -16624,10 +16677,10 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "form", "multi")
 		}
 	}
 	if r.descriptionNic != nil {
@@ -16635,10 +16688,10 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "form", "multi")
 		}
 	}
 	if r.descriptionNie != nil {
@@ -16646,10 +16699,10 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "form", "multi")
 		}
 	}
 	if r.descriptionNiew != nil {
@@ -16657,10 +16710,10 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "form", "multi")
 		}
 	}
 	if r.descriptionNisw != nil {
@@ -16668,24 +16721,24 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "form", "multi")
 		}
 	}
 	if r.enabled != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "enabled", r.enabled, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "enabled", r.enabled, "form", "")
 	}
 	if r.eventType != nil {
 		t := *r.eventType
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "event_type", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "event_type", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "event_type", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "event_type", t, "form", "multi")
 		}
 	}
 	if r.id != nil {
@@ -16693,24 +16746,24 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "form", "multi")
 		}
 	}
 	if r.idEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "form", "")
 	}
 	if r.idGt != nil {
 		t := *r.idGt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "form", "multi")
 		}
 	}
 	if r.idGte != nil {
@@ -16718,10 +16771,10 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "form", "multi")
 		}
 	}
 	if r.idLt != nil {
@@ -16729,10 +16782,10 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "form", "multi")
 		}
 	}
 	if r.idLte != nil {
@@ -16740,10 +16793,10 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "form", "multi")
 		}
 	}
 	if r.idN != nil {
@@ -16751,10 +16804,10 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "form", "multi")
 		}
 	}
 	if r.lastUpdated != nil {
@@ -16762,10 +16815,10 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedEmpty != nil {
@@ -16773,10 +16826,10 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedGt != nil {
@@ -16784,10 +16837,10 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedGte != nil {
@@ -16795,10 +16848,10 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedLt != nil {
@@ -16806,10 +16859,10 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedLte != nil {
@@ -16817,10 +16870,10 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedN != nil {
@@ -16828,41 +16881,41 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "form", "multi")
 		}
 	}
 	if r.limit != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
 	}
 	if r.modifiedByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "modified_by_request", r.modifiedByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "modified_by_request", r.modifiedByRequest, "form", "")
 	}
 	if r.name != nil {
 		t := *r.name
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "form", "multi")
 		}
 	}
 	if r.nameEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "name__empty", r.nameEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "name__empty", r.nameEmpty, "form", "")
 	}
 	if r.nameIc != nil {
 		t := *r.nameIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "form", "multi")
 		}
 	}
 	if r.nameIe != nil {
@@ -16870,10 +16923,10 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "form", "multi")
 		}
 	}
 	if r.nameIew != nil {
@@ -16881,10 +16934,10 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "form", "multi")
 		}
 	}
 	if r.nameIsw != nil {
@@ -16892,10 +16945,10 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "form", "multi")
 		}
 	}
 	if r.nameN != nil {
@@ -16903,10 +16956,10 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "form", "multi")
 		}
 	}
 	if r.nameNic != nil {
@@ -16914,10 +16967,10 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "form", "multi")
 		}
 	}
 	if r.nameNie != nil {
@@ -16925,10 +16978,10 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "form", "multi")
 		}
 	}
 	if r.nameNiew != nil {
@@ -16936,10 +16989,10 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "form", "multi")
 		}
 	}
 	if r.nameNisw != nil {
@@ -16947,51 +17000,51 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "form", "multi")
 		}
 	}
 	if r.objectType != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type", r.objectType, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type", r.objectType, "form", "")
 	}
 	if r.objectTypeIc != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__ic", r.objectTypeIc, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__ic", r.objectTypeIc, "form", "")
 	}
 	if r.objectTypeIe != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__ie", r.objectTypeIe, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__ie", r.objectTypeIe, "form", "")
 	}
 	if r.objectTypeIew != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__iew", r.objectTypeIew, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__iew", r.objectTypeIew, "form", "")
 	}
 	if r.objectTypeIsw != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__isw", r.objectTypeIsw, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__isw", r.objectTypeIsw, "form", "")
 	}
 	if r.objectTypeN != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__n", r.objectTypeN, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__n", r.objectTypeN, "form", "")
 	}
 	if r.objectTypeNic != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__nic", r.objectTypeNic, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__nic", r.objectTypeNic, "form", "")
 	}
 	if r.objectTypeNie != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__nie", r.objectTypeNie, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__nie", r.objectTypeNie, "form", "")
 	}
 	if r.objectTypeNiew != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__niew", r.objectTypeNiew, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__niew", r.objectTypeNiew, "form", "")
 	}
 	if r.objectTypeNisw != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__nisw", r.objectTypeNisw, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__nisw", r.objectTypeNisw, "form", "")
 	}
 	if r.objectTypeId != nil {
 		t := *r.objectTypeId
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id", t, "form", "multi")
 		}
 	}
 	if r.objectTypeIdN != nil {
@@ -16999,30 +17052,30 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__n", t, "form", "multi")
 		}
 	}
 	if r.offset != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "form", "")
 	}
 	if r.ordering != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "form", "")
 	}
 	if r.q != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "form", "")
 	}
 	if r.tag != nil {
 		t := *r.tag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "form", "multi")
 		}
 	}
 	if r.tagN != nil {
@@ -17030,14 +17083,14 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "form", "multi")
 		}
 	}
 	if r.updatedByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "updated_by_request", r.updatedByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "updated_by_request", r.updatedByRequest, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -17108,9 +17161,9 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 }
 
 type ApiExtrasEventRulesPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	id int32
+	ctx                             context.Context
+	ApiService                      *ExtrasAPIService
+	id                              int32
 	patchedWritableEventRuleRequest *PatchedWritableEventRuleRequest
 }
 
@@ -17128,26 +17181,27 @@ ExtrasEventRulesPartialUpdate Method for ExtrasEventRulesPartialUpdate
 
 Patch a event rule object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this event rule.
- @return ApiExtrasEventRulesPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this event rule.
+	@return ApiExtrasEventRulesPartialUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasEventRulesPartialUpdate(ctx context.Context, id int32) ApiExtrasEventRulesPartialUpdateRequest {
 	return ApiExtrasEventRulesPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return EventRule
+//
+//	@return EventRule
 func (a *ExtrasAPIService) ExtrasEventRulesPartialUpdateExecute(r ApiExtrasEventRulesPartialUpdateRequest) (*EventRule, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *EventRule
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *EventRule
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasEventRulesPartialUpdate")
@@ -17233,9 +17287,9 @@ func (a *ExtrasAPIService) ExtrasEventRulesPartialUpdateExecute(r ApiExtrasEvent
 }
 
 type ApiExtrasEventRulesRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiExtrasEventRulesRetrieveRequest) Execute() (*EventRule, *http.Response, error) {
@@ -17247,26 +17301,27 @@ ExtrasEventRulesRetrieve Method for ExtrasEventRulesRetrieve
 
 Get a event rule object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this event rule.
- @return ApiExtrasEventRulesRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this event rule.
+	@return ApiExtrasEventRulesRetrieveRequest
 */
 func (a *ExtrasAPIService) ExtrasEventRulesRetrieve(ctx context.Context, id int32) ApiExtrasEventRulesRetrieveRequest {
 	return ApiExtrasEventRulesRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return EventRule
+//
+//	@return EventRule
 func (a *ExtrasAPIService) ExtrasEventRulesRetrieveExecute(r ApiExtrasEventRulesRetrieveRequest) (*EventRule, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *EventRule
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *EventRule
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasEventRulesRetrieve")
@@ -17350,9 +17405,9 @@ func (a *ExtrasAPIService) ExtrasEventRulesRetrieveExecute(r ApiExtrasEventRules
 }
 
 type ApiExtrasEventRulesUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	id int32
+	ctx                      context.Context
+	ApiService               *ExtrasAPIService
+	id                       int32
 	writableEventRuleRequest *WritableEventRuleRequest
 }
 
@@ -17370,26 +17425,27 @@ ExtrasEventRulesUpdate Method for ExtrasEventRulesUpdate
 
 Put a event rule object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this event rule.
- @return ApiExtrasEventRulesUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this event rule.
+	@return ApiExtrasEventRulesUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasEventRulesUpdate(ctx context.Context, id int32) ApiExtrasEventRulesUpdateRequest {
 	return ApiExtrasEventRulesUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return EventRule
+//
+//	@return EventRule
 func (a *ExtrasAPIService) ExtrasEventRulesUpdateExecute(r ApiExtrasEventRulesUpdateRequest) (*EventRule, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *EventRule
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *EventRule
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasEventRulesUpdate")
@@ -17478,8 +17534,8 @@ func (a *ExtrasAPIService) ExtrasEventRulesUpdateExecute(r ApiExtrasEventRulesUp
 }
 
 type ApiExtrasExportTemplatesBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                   context.Context
+	ApiService            *ExtrasAPIService
 	exportTemplateRequest *[]ExportTemplateRequest
 }
 
@@ -17497,22 +17553,22 @@ ExtrasExportTemplatesBulkDestroy Method for ExtrasExportTemplatesBulkDestroy
 
 Delete a list of export template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasExportTemplatesBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasExportTemplatesBulkDestroyRequest
 */
 func (a *ExtrasAPIService) ExtrasExportTemplatesBulkDestroy(ctx context.Context) ApiExtrasExportTemplatesBulkDestroyRequest {
 	return ApiExtrasExportTemplatesBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *ExtrasAPIService) ExtrasExportTemplatesBulkDestroyExecute(r ApiExtrasExportTemplatesBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasExportTemplatesBulkDestroy")
@@ -17591,8 +17647,8 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesBulkDestroyExecute(r ApiExtrasEx
 }
 
 type ApiExtrasExportTemplatesBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                   context.Context
+	ApiService            *ExtrasAPIService
 	exportTemplateRequest *[]ExportTemplateRequest
 }
 
@@ -17610,24 +17666,25 @@ ExtrasExportTemplatesBulkPartialUpdate Method for ExtrasExportTemplatesBulkParti
 
 Patch a list of export template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasExportTemplatesBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasExportTemplatesBulkPartialUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasExportTemplatesBulkPartialUpdate(ctx context.Context) ApiExtrasExportTemplatesBulkPartialUpdateRequest {
 	return ApiExtrasExportTemplatesBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []ExportTemplate
+//
+//	@return []ExportTemplate
 func (a *ExtrasAPIService) ExtrasExportTemplatesBulkPartialUpdateExecute(r ApiExtrasExportTemplatesBulkPartialUpdateRequest) ([]ExportTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ExportTemplate
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ExportTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasExportTemplatesBulkPartialUpdate")
@@ -17715,8 +17772,8 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesBulkPartialUpdateExecute(r ApiEx
 }
 
 type ApiExtrasExportTemplatesBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                   context.Context
+	ApiService            *ExtrasAPIService
 	exportTemplateRequest *[]ExportTemplateRequest
 }
 
@@ -17734,24 +17791,25 @@ ExtrasExportTemplatesBulkUpdate Method for ExtrasExportTemplatesBulkUpdate
 
 Put a list of export template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasExportTemplatesBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasExportTemplatesBulkUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasExportTemplatesBulkUpdate(ctx context.Context) ApiExtrasExportTemplatesBulkUpdateRequest {
 	return ApiExtrasExportTemplatesBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []ExportTemplate
+//
+//	@return []ExportTemplate
 func (a *ExtrasAPIService) ExtrasExportTemplatesBulkUpdateExecute(r ApiExtrasExportTemplatesBulkUpdateRequest) ([]ExportTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ExportTemplate
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ExportTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasExportTemplatesBulkUpdate")
@@ -17839,8 +17897,8 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesBulkUpdateExecute(r ApiExtrasExp
 }
 
 type ApiExtrasExportTemplatesCreateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                   context.Context
+	ApiService            *ExtrasAPIService
 	exportTemplateRequest *ExportTemplateRequest
 }
 
@@ -17858,24 +17916,25 @@ ExtrasExportTemplatesCreate Method for ExtrasExportTemplatesCreate
 
 Post a list of export template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasExportTemplatesCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasExportTemplatesCreateRequest
 */
 func (a *ExtrasAPIService) ExtrasExportTemplatesCreate(ctx context.Context) ApiExtrasExportTemplatesCreateRequest {
 	return ApiExtrasExportTemplatesCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ExportTemplate
+//
+//	@return ExportTemplate
 func (a *ExtrasAPIService) ExtrasExportTemplatesCreateExecute(r ApiExtrasExportTemplatesCreateRequest) (*ExportTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ExportTemplate
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ExportTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasExportTemplatesCreate")
@@ -17963,9 +18022,9 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesCreateExecute(r ApiExtrasExportT
 }
 
 type ApiExtrasExportTemplatesDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiExtrasExportTemplatesDestroyRequest) Execute() (*http.Response, error) {
@@ -17977,24 +18036,24 @@ ExtrasExportTemplatesDestroy Method for ExtrasExportTemplatesDestroy
 
 Delete a export template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this export template.
- @return ApiExtrasExportTemplatesDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this export template.
+	@return ApiExtrasExportTemplatesDestroyRequest
 */
 func (a *ExtrasAPIService) ExtrasExportTemplatesDestroy(ctx context.Context, id int32) ApiExtrasExportTemplatesDestroyRequest {
 	return ApiExtrasExportTemplatesDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *ExtrasAPIService) ExtrasExportTemplatesDestroyExecute(r ApiExtrasExportTemplatesDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasExportTemplatesDestroy")
@@ -18069,105 +18128,105 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesDestroyExecute(r ApiExtrasExport
 }
 
 type ApiExtrasExportTemplatesListRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	asAttachment *bool
-	autoSyncEnabled *bool
-	created *[]time.Time
-	createdEmpty *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
-	createdByRequest *string
-	dataFileId *[]*int32
-	dataFileIdN *[]*int32
-	dataSourceId *[]*int32
-	dataSourceIdN *[]*int32
-	dataSynced *[]time.Time
-	dataSyncedEmpty *bool
-	dataSyncedGt *[]time.Time
-	dataSyncedGte *[]time.Time
-	dataSyncedLt *[]time.Time
-	dataSyncedLte *[]time.Time
-	dataSyncedN *[]time.Time
-	description *[]string
-	descriptionEmpty *bool
-	descriptionIc *[]string
-	descriptionIe *[]string
-	descriptionIew *[]string
-	descriptionIsw *[]string
-	descriptionN *[]string
-	descriptionNic *[]string
-	descriptionNie *[]string
-	descriptionNiew *[]string
-	descriptionNisw *[]string
-	fileExtension *[]string
+	ctx                context.Context
+	ApiService         *ExtrasAPIService
+	asAttachment       *bool
+	autoSyncEnabled    *bool
+	created            *[]time.Time
+	createdEmpty       *[]time.Time
+	createdGt          *[]time.Time
+	createdGte         *[]time.Time
+	createdLt          *[]time.Time
+	createdLte         *[]time.Time
+	createdN           *[]time.Time
+	createdByRequest   *string
+	dataFileId         *[]*int32
+	dataFileIdN        *[]*int32
+	dataSourceId       *[]*int32
+	dataSourceIdN      *[]*int32
+	dataSynced         *[]time.Time
+	dataSyncedEmpty    *bool
+	dataSyncedGt       *[]time.Time
+	dataSyncedGte      *[]time.Time
+	dataSyncedLt       *[]time.Time
+	dataSyncedLte      *[]time.Time
+	dataSyncedN        *[]time.Time
+	description        *[]string
+	descriptionEmpty   *bool
+	descriptionIc      *[]string
+	descriptionIe      *[]string
+	descriptionIew     *[]string
+	descriptionIsw     *[]string
+	descriptionN       *[]string
+	descriptionNic     *[]string
+	descriptionNie     *[]string
+	descriptionNiew    *[]string
+	descriptionNisw    *[]string
+	fileExtension      *[]string
 	fileExtensionEmpty *bool
-	fileExtensionIc *[]string
-	fileExtensionIe *[]string
-	fileExtensionIew *[]string
-	fileExtensionIsw *[]string
-	fileExtensionN *[]string
-	fileExtensionNic *[]string
-	fileExtensionNie *[]string
-	fileExtensionNiew *[]string
-	fileExtensionNisw *[]string
-	id *[]int32
-	idEmpty *bool
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedEmpty *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	mimeType *[]string
-	mimeTypeEmpty *bool
-	mimeTypeIc *[]string
-	mimeTypeIe *[]string
-	mimeTypeIew *[]string
-	mimeTypeIsw *[]string
-	mimeTypeN *[]string
-	mimeTypeNic *[]string
-	mimeTypeNie *[]string
-	mimeTypeNiew *[]string
-	mimeTypeNisw *[]string
-	modifiedByRequest *string
-	name *[]string
-	nameEmpty *bool
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	objectType *string
-	objectTypeIc *string
-	objectTypeIe *string
-	objectTypeIew *string
-	objectTypeIsw *string
-	objectTypeN *string
-	objectTypeNic *string
-	objectTypeNie *string
-	objectTypeNiew *string
-	objectTypeNisw *string
-	objectTypeId *[]int32
-	objectTypeIdN *[]int32
-	offset *int32
-	ordering *string
-	q *string
-	updatedByRequest *string
+	fileExtensionIc    *[]string
+	fileExtensionIe    *[]string
+	fileExtensionIew   *[]string
+	fileExtensionIsw   *[]string
+	fileExtensionN     *[]string
+	fileExtensionNic   *[]string
+	fileExtensionNie   *[]string
+	fileExtensionNiew  *[]string
+	fileExtensionNisw  *[]string
+	id                 *[]int32
+	idEmpty            *bool
+	idGt               *[]int32
+	idGte              *[]int32
+	idLt               *[]int32
+	idLte              *[]int32
+	idN                *[]int32
+	lastUpdated        *[]time.Time
+	lastUpdatedEmpty   *[]time.Time
+	lastUpdatedGt      *[]time.Time
+	lastUpdatedGte     *[]time.Time
+	lastUpdatedLt      *[]time.Time
+	lastUpdatedLte     *[]time.Time
+	lastUpdatedN       *[]time.Time
+	limit              *int32
+	mimeType           *[]string
+	mimeTypeEmpty      *bool
+	mimeTypeIc         *[]string
+	mimeTypeIe         *[]string
+	mimeTypeIew        *[]string
+	mimeTypeIsw        *[]string
+	mimeTypeN          *[]string
+	mimeTypeNic        *[]string
+	mimeTypeNie        *[]string
+	mimeTypeNiew       *[]string
+	mimeTypeNisw       *[]string
+	modifiedByRequest  *string
+	name               *[]string
+	nameEmpty          *bool
+	nameIc             *[]string
+	nameIe             *[]string
+	nameIew            *[]string
+	nameIsw            *[]string
+	nameN              *[]string
+	nameNic            *[]string
+	nameNie            *[]string
+	nameNiew           *[]string
+	nameNisw           *[]string
+	objectType         *string
+	objectTypeIc       *string
+	objectTypeIe       *string
+	objectTypeIew      *string
+	objectTypeIsw      *string
+	objectTypeN        *string
+	objectTypeNic      *string
+	objectTypeNie      *string
+	objectTypeNiew     *string
+	objectTypeNisw     *string
+	objectTypeId       *[]int32
+	objectTypeIdN      *[]int32
+	offset             *int32
+	ordering           *string
+	q                  *string
+	updatedByRequest   *string
 }
 
 func (r ApiExtrasExportTemplatesListRequest) AsAttachment(asAttachment bool) ApiExtrasExportTemplatesListRequest {
@@ -18672,24 +18731,25 @@ ExtrasExportTemplatesList Method for ExtrasExportTemplatesList
 
 Get a list of export template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasExportTemplatesListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasExportTemplatesListRequest
 */
 func (a *ExtrasAPIService) ExtrasExportTemplatesList(ctx context.Context) ApiExtrasExportTemplatesListRequest {
 	return ApiExtrasExportTemplatesListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedExportTemplateList
+//
+//	@return PaginatedExportTemplateList
 func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTemplatesListRequest) (*PaginatedExportTemplateList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedExportTemplateList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedExportTemplateList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasExportTemplatesList")
@@ -18704,20 +18764,20 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 	localVarFormParams := url.Values{}
 
 	if r.asAttachment != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "as_attachment", r.asAttachment, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "as_attachment", r.asAttachment, "form", "")
 	}
 	if r.autoSyncEnabled != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "auto_sync_enabled", r.autoSyncEnabled, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "auto_sync_enabled", r.autoSyncEnabled, "form", "")
 	}
 	if r.created != nil {
 		t := *r.created
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "form", "multi")
 		}
 	}
 	if r.createdEmpty != nil {
@@ -18725,10 +18785,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "form", "multi")
 		}
 	}
 	if r.createdGt != nil {
@@ -18736,10 +18796,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "form", "multi")
 		}
 	}
 	if r.createdGte != nil {
@@ -18747,10 +18807,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "form", "multi")
 		}
 	}
 	if r.createdLt != nil {
@@ -18758,10 +18818,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "form", "multi")
 		}
 	}
 	if r.createdLte != nil {
@@ -18769,10 +18829,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "form", "multi")
 		}
 	}
 	if r.createdN != nil {
@@ -18780,24 +18840,24 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "form", "multi")
 		}
 	}
 	if r.createdByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_request", r.createdByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_request", r.createdByRequest, "form", "")
 	}
 	if r.dataFileId != nil {
 		t := *r.dataFileId
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_file_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_file_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "data_file_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "data_file_id", t, "form", "multi")
 		}
 	}
 	if r.dataFileIdN != nil {
@@ -18805,10 +18865,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_file_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_file_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "data_file_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "data_file_id__n", t, "form", "multi")
 		}
 	}
 	if r.dataSourceId != nil {
@@ -18816,10 +18876,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_source_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_source_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "data_source_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "data_source_id", t, "form", "multi")
 		}
 	}
 	if r.dataSourceIdN != nil {
@@ -18827,10 +18887,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_source_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_source_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "data_source_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "data_source_id__n", t, "form", "multi")
 		}
 	}
 	if r.dataSynced != nil {
@@ -18838,24 +18898,24 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced", t, "form", "multi")
 		}
 	}
 	if r.dataSyncedEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__empty", r.dataSyncedEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__empty", r.dataSyncedEmpty, "form", "")
 	}
 	if r.dataSyncedGt != nil {
 		t := *r.dataSyncedGt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__gt", t, "form", "multi")
 		}
 	}
 	if r.dataSyncedGte != nil {
@@ -18863,10 +18923,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__gte", t, "form", "multi")
 		}
 	}
 	if r.dataSyncedLt != nil {
@@ -18874,10 +18934,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__lt", t, "form", "multi")
 		}
 	}
 	if r.dataSyncedLte != nil {
@@ -18885,10 +18945,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__lte", t, "form", "multi")
 		}
 	}
 	if r.dataSyncedN != nil {
@@ -18896,10 +18956,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__n", t, "form", "multi")
 		}
 	}
 	if r.description != nil {
@@ -18907,24 +18967,24 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "form", "multi")
 		}
 	}
 	if r.descriptionEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "description__empty", r.descriptionEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "description__empty", r.descriptionEmpty, "form", "")
 	}
 	if r.descriptionIc != nil {
 		t := *r.descriptionIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "form", "multi")
 		}
 	}
 	if r.descriptionIe != nil {
@@ -18932,10 +18992,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "form", "multi")
 		}
 	}
 	if r.descriptionIew != nil {
@@ -18943,10 +19003,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "form", "multi")
 		}
 	}
 	if r.descriptionIsw != nil {
@@ -18954,10 +19014,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "form", "multi")
 		}
 	}
 	if r.descriptionN != nil {
@@ -18965,10 +19025,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "form", "multi")
 		}
 	}
 	if r.descriptionNic != nil {
@@ -18976,10 +19036,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "form", "multi")
 		}
 	}
 	if r.descriptionNie != nil {
@@ -18987,10 +19047,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "form", "multi")
 		}
 	}
 	if r.descriptionNiew != nil {
@@ -18998,10 +19058,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "form", "multi")
 		}
 	}
 	if r.descriptionNisw != nil {
@@ -19009,10 +19069,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "form", "multi")
 		}
 	}
 	if r.fileExtension != nil {
@@ -19020,24 +19080,24 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "file_extension", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "file_extension", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "file_extension", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "file_extension", t, "form", "multi")
 		}
 	}
 	if r.fileExtensionEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "file_extension__empty", r.fileExtensionEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "file_extension__empty", r.fileExtensionEmpty, "form", "")
 	}
 	if r.fileExtensionIc != nil {
 		t := *r.fileExtensionIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "file_extension__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "file_extension__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "file_extension__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "file_extension__ic", t, "form", "multi")
 		}
 	}
 	if r.fileExtensionIe != nil {
@@ -19045,10 +19105,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "file_extension__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "file_extension__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "file_extension__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "file_extension__ie", t, "form", "multi")
 		}
 	}
 	if r.fileExtensionIew != nil {
@@ -19056,10 +19116,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "file_extension__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "file_extension__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "file_extension__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "file_extension__iew", t, "form", "multi")
 		}
 	}
 	if r.fileExtensionIsw != nil {
@@ -19067,10 +19127,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "file_extension__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "file_extension__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "file_extension__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "file_extension__isw", t, "form", "multi")
 		}
 	}
 	if r.fileExtensionN != nil {
@@ -19078,10 +19138,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "file_extension__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "file_extension__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "file_extension__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "file_extension__n", t, "form", "multi")
 		}
 	}
 	if r.fileExtensionNic != nil {
@@ -19089,10 +19149,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "file_extension__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "file_extension__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "file_extension__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "file_extension__nic", t, "form", "multi")
 		}
 	}
 	if r.fileExtensionNie != nil {
@@ -19100,10 +19160,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "file_extension__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "file_extension__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "file_extension__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "file_extension__nie", t, "form", "multi")
 		}
 	}
 	if r.fileExtensionNiew != nil {
@@ -19111,10 +19171,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "file_extension__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "file_extension__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "file_extension__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "file_extension__niew", t, "form", "multi")
 		}
 	}
 	if r.fileExtensionNisw != nil {
@@ -19122,10 +19182,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "file_extension__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "file_extension__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "file_extension__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "file_extension__nisw", t, "form", "multi")
 		}
 	}
 	if r.id != nil {
@@ -19133,24 +19193,24 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "form", "multi")
 		}
 	}
 	if r.idEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "form", "")
 	}
 	if r.idGt != nil {
 		t := *r.idGt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "form", "multi")
 		}
 	}
 	if r.idGte != nil {
@@ -19158,10 +19218,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "form", "multi")
 		}
 	}
 	if r.idLt != nil {
@@ -19169,10 +19229,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "form", "multi")
 		}
 	}
 	if r.idLte != nil {
@@ -19180,10 +19240,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "form", "multi")
 		}
 	}
 	if r.idN != nil {
@@ -19191,10 +19251,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "form", "multi")
 		}
 	}
 	if r.lastUpdated != nil {
@@ -19202,10 +19262,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedEmpty != nil {
@@ -19213,10 +19273,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedGt != nil {
@@ -19224,10 +19284,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedGte != nil {
@@ -19235,10 +19295,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedLt != nil {
@@ -19246,10 +19306,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedLte != nil {
@@ -19257,10 +19317,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedN != nil {
@@ -19268,38 +19328,38 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "form", "multi")
 		}
 	}
 	if r.limit != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
 	}
 	if r.mimeType != nil {
 		t := *r.mimeType
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "mime_type", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "mime_type", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "mime_type", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "mime_type", t, "form", "multi")
 		}
 	}
 	if r.mimeTypeEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "mime_type__empty", r.mimeTypeEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "mime_type__empty", r.mimeTypeEmpty, "form", "")
 	}
 	if r.mimeTypeIc != nil {
 		t := *r.mimeTypeIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "mime_type__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "mime_type__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "mime_type__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "mime_type__ic", t, "form", "multi")
 		}
 	}
 	if r.mimeTypeIe != nil {
@@ -19307,10 +19367,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "mime_type__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "mime_type__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "mime_type__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "mime_type__ie", t, "form", "multi")
 		}
 	}
 	if r.mimeTypeIew != nil {
@@ -19318,10 +19378,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "mime_type__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "mime_type__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "mime_type__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "mime_type__iew", t, "form", "multi")
 		}
 	}
 	if r.mimeTypeIsw != nil {
@@ -19329,10 +19389,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "mime_type__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "mime_type__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "mime_type__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "mime_type__isw", t, "form", "multi")
 		}
 	}
 	if r.mimeTypeN != nil {
@@ -19340,10 +19400,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "mime_type__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "mime_type__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "mime_type__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "mime_type__n", t, "form", "multi")
 		}
 	}
 	if r.mimeTypeNic != nil {
@@ -19351,10 +19411,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "mime_type__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "mime_type__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "mime_type__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "mime_type__nic", t, "form", "multi")
 		}
 	}
 	if r.mimeTypeNie != nil {
@@ -19362,10 +19422,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "mime_type__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "mime_type__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "mime_type__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "mime_type__nie", t, "form", "multi")
 		}
 	}
 	if r.mimeTypeNiew != nil {
@@ -19373,10 +19433,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "mime_type__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "mime_type__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "mime_type__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "mime_type__niew", t, "form", "multi")
 		}
 	}
 	if r.mimeTypeNisw != nil {
@@ -19384,38 +19444,38 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "mime_type__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "mime_type__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "mime_type__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "mime_type__nisw", t, "form", "multi")
 		}
 	}
 	if r.modifiedByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "modified_by_request", r.modifiedByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "modified_by_request", r.modifiedByRequest, "form", "")
 	}
 	if r.name != nil {
 		t := *r.name
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "form", "multi")
 		}
 	}
 	if r.nameEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "name__empty", r.nameEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "name__empty", r.nameEmpty, "form", "")
 	}
 	if r.nameIc != nil {
 		t := *r.nameIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "form", "multi")
 		}
 	}
 	if r.nameIe != nil {
@@ -19423,10 +19483,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "form", "multi")
 		}
 	}
 	if r.nameIew != nil {
@@ -19434,10 +19494,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "form", "multi")
 		}
 	}
 	if r.nameIsw != nil {
@@ -19445,10 +19505,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "form", "multi")
 		}
 	}
 	if r.nameN != nil {
@@ -19456,10 +19516,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "form", "multi")
 		}
 	}
 	if r.nameNic != nil {
@@ -19467,10 +19527,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "form", "multi")
 		}
 	}
 	if r.nameNie != nil {
@@ -19478,10 +19538,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "form", "multi")
 		}
 	}
 	if r.nameNiew != nil {
@@ -19489,10 +19549,10 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "form", "multi")
 		}
 	}
 	if r.nameNisw != nil {
@@ -19500,51 +19560,51 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "form", "multi")
 		}
 	}
 	if r.objectType != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type", r.objectType, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type", r.objectType, "form", "")
 	}
 	if r.objectTypeIc != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__ic", r.objectTypeIc, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__ic", r.objectTypeIc, "form", "")
 	}
 	if r.objectTypeIe != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__ie", r.objectTypeIe, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__ie", r.objectTypeIe, "form", "")
 	}
 	if r.objectTypeIew != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__iew", r.objectTypeIew, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__iew", r.objectTypeIew, "form", "")
 	}
 	if r.objectTypeIsw != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__isw", r.objectTypeIsw, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__isw", r.objectTypeIsw, "form", "")
 	}
 	if r.objectTypeN != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__n", r.objectTypeN, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__n", r.objectTypeN, "form", "")
 	}
 	if r.objectTypeNic != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__nic", r.objectTypeNic, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__nic", r.objectTypeNic, "form", "")
 	}
 	if r.objectTypeNie != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__nie", r.objectTypeNie, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__nie", r.objectTypeNie, "form", "")
 	}
 	if r.objectTypeNiew != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__niew", r.objectTypeNiew, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__niew", r.objectTypeNiew, "form", "")
 	}
 	if r.objectTypeNisw != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__nisw", r.objectTypeNisw, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__nisw", r.objectTypeNisw, "form", "")
 	}
 	if r.objectTypeId != nil {
 		t := *r.objectTypeId
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id", t, "form", "multi")
 		}
 	}
 	if r.objectTypeIdN != nil {
@@ -19552,23 +19612,23 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__n", t, "form", "multi")
 		}
 	}
 	if r.offset != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "form", "")
 	}
 	if r.ordering != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "form", "")
 	}
 	if r.q != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "form", "")
 	}
 	if r.updatedByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "updated_by_request", r.updatedByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "updated_by_request", r.updatedByRequest, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -19639,9 +19699,9 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 }
 
 type ApiExtrasExportTemplatesPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	id int32
+	ctx                          context.Context
+	ApiService                   *ExtrasAPIService
+	id                           int32
 	patchedExportTemplateRequest *PatchedExportTemplateRequest
 }
 
@@ -19659,26 +19719,27 @@ ExtrasExportTemplatesPartialUpdate Method for ExtrasExportTemplatesPartialUpdate
 
 Patch a export template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this export template.
- @return ApiExtrasExportTemplatesPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this export template.
+	@return ApiExtrasExportTemplatesPartialUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasExportTemplatesPartialUpdate(ctx context.Context, id int32) ApiExtrasExportTemplatesPartialUpdateRequest {
 	return ApiExtrasExportTemplatesPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ExportTemplate
+//
+//	@return ExportTemplate
 func (a *ExtrasAPIService) ExtrasExportTemplatesPartialUpdateExecute(r ApiExtrasExportTemplatesPartialUpdateRequest) (*ExportTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ExportTemplate
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ExportTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasExportTemplatesPartialUpdate")
@@ -19764,9 +19825,9 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesPartialUpdateExecute(r ApiExtras
 }
 
 type ApiExtrasExportTemplatesRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiExtrasExportTemplatesRetrieveRequest) Execute() (*ExportTemplate, *http.Response, error) {
@@ -19778,26 +19839,27 @@ ExtrasExportTemplatesRetrieve Method for ExtrasExportTemplatesRetrieve
 
 Get a export template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this export template.
- @return ApiExtrasExportTemplatesRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this export template.
+	@return ApiExtrasExportTemplatesRetrieveRequest
 */
 func (a *ExtrasAPIService) ExtrasExportTemplatesRetrieve(ctx context.Context, id int32) ApiExtrasExportTemplatesRetrieveRequest {
 	return ApiExtrasExportTemplatesRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ExportTemplate
+//
+//	@return ExportTemplate
 func (a *ExtrasAPIService) ExtrasExportTemplatesRetrieveExecute(r ApiExtrasExportTemplatesRetrieveRequest) (*ExportTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ExportTemplate
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ExportTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasExportTemplatesRetrieve")
@@ -19881,9 +19943,9 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesRetrieveExecute(r ApiExtrasExpor
 }
 
 type ApiExtrasExportTemplatesSyncCreateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	id int32
+	ctx                   context.Context
+	ApiService            *ExtrasAPIService
+	id                    int32
 	exportTemplateRequest *ExportTemplateRequest
 }
 
@@ -19901,26 +19963,27 @@ ExtrasExportTemplatesSyncCreate Method for ExtrasExportTemplatesSyncCreate
 
 Provide a /sync API endpoint to synchronize an object's data from its associated DataFile (if any).
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this export template.
- @return ApiExtrasExportTemplatesSyncCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this export template.
+	@return ApiExtrasExportTemplatesSyncCreateRequest
 */
 func (a *ExtrasAPIService) ExtrasExportTemplatesSyncCreate(ctx context.Context, id int32) ApiExtrasExportTemplatesSyncCreateRequest {
 	return ApiExtrasExportTemplatesSyncCreateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ExportTemplate
+//
+//	@return ExportTemplate
 func (a *ExtrasAPIService) ExtrasExportTemplatesSyncCreateExecute(r ApiExtrasExportTemplatesSyncCreateRequest) (*ExportTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ExportTemplate
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ExportTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasExportTemplatesSyncCreate")
@@ -20009,9 +20072,9 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesSyncCreateExecute(r ApiExtrasExp
 }
 
 type ApiExtrasExportTemplatesUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	id int32
+	ctx                   context.Context
+	ApiService            *ExtrasAPIService
+	id                    int32
 	exportTemplateRequest *ExportTemplateRequest
 }
 
@@ -20029,26 +20092,27 @@ ExtrasExportTemplatesUpdate Method for ExtrasExportTemplatesUpdate
 
 Put a export template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this export template.
- @return ApiExtrasExportTemplatesUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this export template.
+	@return ApiExtrasExportTemplatesUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasExportTemplatesUpdate(ctx context.Context, id int32) ApiExtrasExportTemplatesUpdateRequest {
 	return ApiExtrasExportTemplatesUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ExportTemplate
+//
+//	@return ExportTemplate
 func (a *ExtrasAPIService) ExtrasExportTemplatesUpdateExecute(r ApiExtrasExportTemplatesUpdateRequest) (*ExportTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ExportTemplate
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ExportTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasExportTemplatesUpdate")
@@ -20137,8 +20201,8 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesUpdateExecute(r ApiExtrasExportT
 }
 
 type ApiExtrasImageAttachmentsBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                    context.Context
+	ApiService             *ExtrasAPIService
 	imageAttachmentRequest *[]ImageAttachmentRequest
 }
 
@@ -20156,22 +20220,22 @@ ExtrasImageAttachmentsBulkDestroy Method for ExtrasImageAttachmentsBulkDestroy
 
 Delete a list of image attachment objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasImageAttachmentsBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasImageAttachmentsBulkDestroyRequest
 */
 func (a *ExtrasAPIService) ExtrasImageAttachmentsBulkDestroy(ctx context.Context) ApiExtrasImageAttachmentsBulkDestroyRequest {
 	return ApiExtrasImageAttachmentsBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *ExtrasAPIService) ExtrasImageAttachmentsBulkDestroyExecute(r ApiExtrasImageAttachmentsBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasImageAttachmentsBulkDestroy")
@@ -20250,8 +20314,8 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsBulkDestroyExecute(r ApiExtrasI
 }
 
 type ApiExtrasImageAttachmentsBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                    context.Context
+	ApiService             *ExtrasAPIService
 	imageAttachmentRequest *[]ImageAttachmentRequest
 }
 
@@ -20269,24 +20333,25 @@ ExtrasImageAttachmentsBulkPartialUpdate Method for ExtrasImageAttachmentsBulkPar
 
 Patch a list of image attachment objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasImageAttachmentsBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasImageAttachmentsBulkPartialUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasImageAttachmentsBulkPartialUpdate(ctx context.Context) ApiExtrasImageAttachmentsBulkPartialUpdateRequest {
 	return ApiExtrasImageAttachmentsBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []ImageAttachment
+//
+//	@return []ImageAttachment
 func (a *ExtrasAPIService) ExtrasImageAttachmentsBulkPartialUpdateExecute(r ApiExtrasImageAttachmentsBulkPartialUpdateRequest) ([]ImageAttachment, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ImageAttachment
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ImageAttachment
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasImageAttachmentsBulkPartialUpdate")
@@ -20374,8 +20439,8 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsBulkPartialUpdateExecute(r ApiE
 }
 
 type ApiExtrasImageAttachmentsBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                    context.Context
+	ApiService             *ExtrasAPIService
 	imageAttachmentRequest *[]ImageAttachmentRequest
 }
 
@@ -20393,24 +20458,25 @@ ExtrasImageAttachmentsBulkUpdate Method for ExtrasImageAttachmentsBulkUpdate
 
 Put a list of image attachment objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasImageAttachmentsBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasImageAttachmentsBulkUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasImageAttachmentsBulkUpdate(ctx context.Context) ApiExtrasImageAttachmentsBulkUpdateRequest {
 	return ApiExtrasImageAttachmentsBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []ImageAttachment
+//
+//	@return []ImageAttachment
 func (a *ExtrasAPIService) ExtrasImageAttachmentsBulkUpdateExecute(r ApiExtrasImageAttachmentsBulkUpdateRequest) ([]ImageAttachment, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ImageAttachment
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ImageAttachment
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasImageAttachmentsBulkUpdate")
@@ -20498,8 +20564,8 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsBulkUpdateExecute(r ApiExtrasIm
 }
 
 type ApiExtrasImageAttachmentsCreateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                    context.Context
+	ApiService             *ExtrasAPIService
 	imageAttachmentRequest *ImageAttachmentRequest
 }
 
@@ -20517,24 +20583,25 @@ ExtrasImageAttachmentsCreate Method for ExtrasImageAttachmentsCreate
 
 Post a list of image attachment objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasImageAttachmentsCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasImageAttachmentsCreateRequest
 */
 func (a *ExtrasAPIService) ExtrasImageAttachmentsCreate(ctx context.Context) ApiExtrasImageAttachmentsCreateRequest {
 	return ApiExtrasImageAttachmentsCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ImageAttachment
+//
+//	@return ImageAttachment
 func (a *ExtrasAPIService) ExtrasImageAttachmentsCreateExecute(r ApiExtrasImageAttachmentsCreateRequest) (*ImageAttachment, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ImageAttachment
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ImageAttachment
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasImageAttachmentsCreate")
@@ -20622,9 +20689,9 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsCreateExecute(r ApiExtrasImageA
 }
 
 type ApiExtrasImageAttachmentsDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiExtrasImageAttachmentsDestroyRequest) Execute() (*http.Response, error) {
@@ -20636,24 +20703,24 @@ ExtrasImageAttachmentsDestroy Method for ExtrasImageAttachmentsDestroy
 
 Delete a image attachment object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this image attachment.
- @return ApiExtrasImageAttachmentsDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this image attachment.
+	@return ApiExtrasImageAttachmentsDestroyRequest
 */
 func (a *ExtrasAPIService) ExtrasImageAttachmentsDestroy(ctx context.Context, id int32) ApiExtrasImageAttachmentsDestroyRequest {
 	return ApiExtrasImageAttachmentsDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *ExtrasAPIService) ExtrasImageAttachmentsDestroyExecute(r ApiExtrasImageAttachmentsDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasImageAttachmentsDestroy")
@@ -20728,72 +20795,72 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsDestroyExecute(r ApiExtrasImage
 }
 
 type ApiExtrasImageAttachmentsListRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	created *[]time.Time
-	createdEmpty *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
-	createdByRequest *string
-	id *[]int32
-	idEmpty *bool
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	imageHeight *[]int32
-	imageHeightEmpty *bool
-	imageHeightGt *[]int32
-	imageHeightGte *[]int32
-	imageHeightLt *[]int32
-	imageHeightLte *[]int32
-	imageHeightN *[]int32
-	imageWidth *[]int32
-	imageWidthEmpty *bool
-	imageWidthGt *[]int32
-	imageWidthGte *[]int32
-	imageWidthLt *[]int32
-	imageWidthLte *[]int32
-	imageWidthN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedEmpty *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
+	ctx               context.Context
+	ApiService        *ExtrasAPIService
+	created           *[]time.Time
+	createdEmpty      *[]time.Time
+	createdGt         *[]time.Time
+	createdGte        *[]time.Time
+	createdLt         *[]time.Time
+	createdLte        *[]time.Time
+	createdN          *[]time.Time
+	createdByRequest  *string
+	id                *[]int32
+	idEmpty           *bool
+	idGt              *[]int32
+	idGte             *[]int32
+	idLt              *[]int32
+	idLte             *[]int32
+	idN               *[]int32
+	imageHeight       *[]int32
+	imageHeightEmpty  *bool
+	imageHeightGt     *[]int32
+	imageHeightGte    *[]int32
+	imageHeightLt     *[]int32
+	imageHeightLte    *[]int32
+	imageHeightN      *[]int32
+	imageWidth        *[]int32
+	imageWidthEmpty   *bool
+	imageWidthGt      *[]int32
+	imageWidthGte     *[]int32
+	imageWidthLt      *[]int32
+	imageWidthLte     *[]int32
+	imageWidthN       *[]int32
+	lastUpdated       *[]time.Time
+	lastUpdatedEmpty  *[]time.Time
+	lastUpdatedGt     *[]time.Time
+	lastUpdatedGte    *[]time.Time
+	lastUpdatedLt     *[]time.Time
+	lastUpdatedLte    *[]time.Time
+	lastUpdatedN      *[]time.Time
+	limit             *int32
 	modifiedByRequest *string
-	name *[]string
-	nameEmpty *bool
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	objectId *[]int32
-	objectIdEmpty *bool
-	objectIdGt *[]int32
-	objectIdGte *[]int32
-	objectIdLt *[]int32
-	objectIdLte *[]int32
-	objectIdN *[]int32
-	objectType *string
-	objectTypeN *string
-	objectTypeId *int32
-	objectTypeIdN *int32
-	offset *int32
-	ordering *string
-	q *string
-	updatedByRequest *string
+	name              *[]string
+	nameEmpty         *bool
+	nameIc            *[]string
+	nameIe            *[]string
+	nameIew           *[]string
+	nameIsw           *[]string
+	nameN             *[]string
+	nameNic           *[]string
+	nameNie           *[]string
+	nameNiew          *[]string
+	nameNisw          *[]string
+	objectId          *[]int32
+	objectIdEmpty     *bool
+	objectIdGt        *[]int32
+	objectIdGte       *[]int32
+	objectIdLt        *[]int32
+	objectIdLte       *[]int32
+	objectIdN         *[]int32
+	objectType        *string
+	objectTypeN       *string
+	objectTypeId      *int32
+	objectTypeIdN     *int32
+	offset            *int32
+	ordering          *string
+	q                 *string
+	updatedByRequest  *string
 }
 
 func (r ApiExtrasImageAttachmentsListRequest) Created(created []time.Time) ApiExtrasImageAttachmentsListRequest {
@@ -21129,24 +21196,25 @@ ExtrasImageAttachmentsList Method for ExtrasImageAttachmentsList
 
 Get a list of image attachment objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasImageAttachmentsListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasImageAttachmentsListRequest
 */
 func (a *ExtrasAPIService) ExtrasImageAttachmentsList(ctx context.Context) ApiExtrasImageAttachmentsListRequest {
 	return ApiExtrasImageAttachmentsListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedImageAttachmentList
+//
+//	@return PaginatedImageAttachmentList
 func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAttachmentsListRequest) (*PaginatedImageAttachmentList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedImageAttachmentList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedImageAttachmentList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasImageAttachmentsList")
@@ -21165,10 +21233,10 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "form", "multi")
 		}
 	}
 	if r.createdEmpty != nil {
@@ -21176,10 +21244,10 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "form", "multi")
 		}
 	}
 	if r.createdGt != nil {
@@ -21187,10 +21255,10 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "form", "multi")
 		}
 	}
 	if r.createdGte != nil {
@@ -21198,10 +21266,10 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "form", "multi")
 		}
 	}
 	if r.createdLt != nil {
@@ -21209,10 +21277,10 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "form", "multi")
 		}
 	}
 	if r.createdLte != nil {
@@ -21220,10 +21288,10 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "form", "multi")
 		}
 	}
 	if r.createdN != nil {
@@ -21231,38 +21299,38 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "form", "multi")
 		}
 	}
 	if r.createdByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_request", r.createdByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_request", r.createdByRequest, "form", "")
 	}
 	if r.id != nil {
 		t := *r.id
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "form", "multi")
 		}
 	}
 	if r.idEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "form", "")
 	}
 	if r.idGt != nil {
 		t := *r.idGt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "form", "multi")
 		}
 	}
 	if r.idGte != nil {
@@ -21270,10 +21338,10 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "form", "multi")
 		}
 	}
 	if r.idLt != nil {
@@ -21281,10 +21349,10 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "form", "multi")
 		}
 	}
 	if r.idLte != nil {
@@ -21292,10 +21360,10 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "form", "multi")
 		}
 	}
 	if r.idN != nil {
@@ -21303,10 +21371,10 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "form", "multi")
 		}
 	}
 	if r.imageHeight != nil {
@@ -21314,24 +21382,24 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "image_height", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "image_height", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "image_height", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "image_height", t, "form", "multi")
 		}
 	}
 	if r.imageHeightEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "image_height__empty", r.imageHeightEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "image_height__empty", r.imageHeightEmpty, "form", "")
 	}
 	if r.imageHeightGt != nil {
 		t := *r.imageHeightGt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "image_height__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "image_height__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "image_height__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "image_height__gt", t, "form", "multi")
 		}
 	}
 	if r.imageHeightGte != nil {
@@ -21339,10 +21407,10 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "image_height__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "image_height__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "image_height__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "image_height__gte", t, "form", "multi")
 		}
 	}
 	if r.imageHeightLt != nil {
@@ -21350,10 +21418,10 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "image_height__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "image_height__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "image_height__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "image_height__lt", t, "form", "multi")
 		}
 	}
 	if r.imageHeightLte != nil {
@@ -21361,10 +21429,10 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "image_height__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "image_height__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "image_height__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "image_height__lte", t, "form", "multi")
 		}
 	}
 	if r.imageHeightN != nil {
@@ -21372,10 +21440,10 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "image_height__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "image_height__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "image_height__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "image_height__n", t, "form", "multi")
 		}
 	}
 	if r.imageWidth != nil {
@@ -21383,24 +21451,24 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "image_width", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "image_width", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "image_width", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "image_width", t, "form", "multi")
 		}
 	}
 	if r.imageWidthEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "image_width__empty", r.imageWidthEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "image_width__empty", r.imageWidthEmpty, "form", "")
 	}
 	if r.imageWidthGt != nil {
 		t := *r.imageWidthGt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "image_width__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "image_width__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "image_width__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "image_width__gt", t, "form", "multi")
 		}
 	}
 	if r.imageWidthGte != nil {
@@ -21408,10 +21476,10 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "image_width__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "image_width__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "image_width__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "image_width__gte", t, "form", "multi")
 		}
 	}
 	if r.imageWidthLt != nil {
@@ -21419,10 +21487,10 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "image_width__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "image_width__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "image_width__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "image_width__lt", t, "form", "multi")
 		}
 	}
 	if r.imageWidthLte != nil {
@@ -21430,10 +21498,10 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "image_width__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "image_width__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "image_width__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "image_width__lte", t, "form", "multi")
 		}
 	}
 	if r.imageWidthN != nil {
@@ -21441,10 +21509,10 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "image_width__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "image_width__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "image_width__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "image_width__n", t, "form", "multi")
 		}
 	}
 	if r.lastUpdated != nil {
@@ -21452,10 +21520,10 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedEmpty != nil {
@@ -21463,10 +21531,10 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedGt != nil {
@@ -21474,10 +21542,10 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedGte != nil {
@@ -21485,10 +21553,10 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedLt != nil {
@@ -21496,10 +21564,10 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedLte != nil {
@@ -21507,10 +21575,10 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedN != nil {
@@ -21518,41 +21586,41 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "form", "multi")
 		}
 	}
 	if r.limit != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
 	}
 	if r.modifiedByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "modified_by_request", r.modifiedByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "modified_by_request", r.modifiedByRequest, "form", "")
 	}
 	if r.name != nil {
 		t := *r.name
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "form", "multi")
 		}
 	}
 	if r.nameEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "name__empty", r.nameEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "name__empty", r.nameEmpty, "form", "")
 	}
 	if r.nameIc != nil {
 		t := *r.nameIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "form", "multi")
 		}
 	}
 	if r.nameIe != nil {
@@ -21560,10 +21628,10 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "form", "multi")
 		}
 	}
 	if r.nameIew != nil {
@@ -21571,10 +21639,10 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "form", "multi")
 		}
 	}
 	if r.nameIsw != nil {
@@ -21582,10 +21650,10 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "form", "multi")
 		}
 	}
 	if r.nameN != nil {
@@ -21593,10 +21661,10 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "form", "multi")
 		}
 	}
 	if r.nameNic != nil {
@@ -21604,10 +21672,10 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "form", "multi")
 		}
 	}
 	if r.nameNie != nil {
@@ -21615,10 +21683,10 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "form", "multi")
 		}
 	}
 	if r.nameNiew != nil {
@@ -21626,10 +21694,10 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "form", "multi")
 		}
 	}
 	if r.nameNisw != nil {
@@ -21637,10 +21705,10 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "form", "multi")
 		}
 	}
 	if r.objectId != nil {
@@ -21648,24 +21716,24 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id", t, "form", "multi")
 		}
 	}
 	if r.objectIdEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__empty", r.objectIdEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__empty", r.objectIdEmpty, "form", "")
 	}
 	if r.objectIdGt != nil {
 		t := *r.objectIdGt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__gt", t, "form", "multi")
 		}
 	}
 	if r.objectIdGte != nil {
@@ -21673,10 +21741,10 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__gte", t, "form", "multi")
 		}
 	}
 	if r.objectIdLt != nil {
@@ -21684,10 +21752,10 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__lt", t, "form", "multi")
 		}
 	}
 	if r.objectIdLte != nil {
@@ -21695,10 +21763,10 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__lte", t, "form", "multi")
 		}
 	}
 	if r.objectIdN != nil {
@@ -21706,35 +21774,35 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__n", t, "form", "multi")
 		}
 	}
 	if r.objectType != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type", r.objectType, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type", r.objectType, "form", "")
 	}
 	if r.objectTypeN != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__n", r.objectTypeN, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__n", r.objectTypeN, "form", "")
 	}
 	if r.objectTypeId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id", r.objectTypeId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id", r.objectTypeId, "form", "")
 	}
 	if r.objectTypeIdN != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__n", r.objectTypeIdN, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__n", r.objectTypeIdN, "form", "")
 	}
 	if r.offset != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "form", "")
 	}
 	if r.ordering != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "form", "")
 	}
 	if r.q != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "form", "")
 	}
 	if r.updatedByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "updated_by_request", r.updatedByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "updated_by_request", r.updatedByRequest, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -21805,9 +21873,9 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 }
 
 type ApiExtrasImageAttachmentsPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	id int32
+	ctx                           context.Context
+	ApiService                    *ExtrasAPIService
+	id                            int32
 	patchedImageAttachmentRequest *PatchedImageAttachmentRequest
 }
 
@@ -21825,26 +21893,27 @@ ExtrasImageAttachmentsPartialUpdate Method for ExtrasImageAttachmentsPartialUpda
 
 Patch a image attachment object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this image attachment.
- @return ApiExtrasImageAttachmentsPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this image attachment.
+	@return ApiExtrasImageAttachmentsPartialUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasImageAttachmentsPartialUpdate(ctx context.Context, id int32) ApiExtrasImageAttachmentsPartialUpdateRequest {
 	return ApiExtrasImageAttachmentsPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ImageAttachment
+//
+//	@return ImageAttachment
 func (a *ExtrasAPIService) ExtrasImageAttachmentsPartialUpdateExecute(r ApiExtrasImageAttachmentsPartialUpdateRequest) (*ImageAttachment, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ImageAttachment
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ImageAttachment
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasImageAttachmentsPartialUpdate")
@@ -21930,9 +21999,9 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsPartialUpdateExecute(r ApiExtra
 }
 
 type ApiExtrasImageAttachmentsRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiExtrasImageAttachmentsRetrieveRequest) Execute() (*ImageAttachment, *http.Response, error) {
@@ -21944,26 +22013,27 @@ ExtrasImageAttachmentsRetrieve Method for ExtrasImageAttachmentsRetrieve
 
 Get a image attachment object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this image attachment.
- @return ApiExtrasImageAttachmentsRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this image attachment.
+	@return ApiExtrasImageAttachmentsRetrieveRequest
 */
 func (a *ExtrasAPIService) ExtrasImageAttachmentsRetrieve(ctx context.Context, id int32) ApiExtrasImageAttachmentsRetrieveRequest {
 	return ApiExtrasImageAttachmentsRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ImageAttachment
+//
+//	@return ImageAttachment
 func (a *ExtrasAPIService) ExtrasImageAttachmentsRetrieveExecute(r ApiExtrasImageAttachmentsRetrieveRequest) (*ImageAttachment, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ImageAttachment
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ImageAttachment
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasImageAttachmentsRetrieve")
@@ -22047,9 +22117,9 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsRetrieveExecute(r ApiExtrasImag
 }
 
 type ApiExtrasImageAttachmentsUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	id int32
+	ctx                    context.Context
+	ApiService             *ExtrasAPIService
+	id                     int32
 	imageAttachmentRequest *ImageAttachmentRequest
 }
 
@@ -22067,26 +22137,27 @@ ExtrasImageAttachmentsUpdate Method for ExtrasImageAttachmentsUpdate
 
 Put a image attachment object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this image attachment.
- @return ApiExtrasImageAttachmentsUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this image attachment.
+	@return ApiExtrasImageAttachmentsUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasImageAttachmentsUpdate(ctx context.Context, id int32) ApiExtrasImageAttachmentsUpdateRequest {
 	return ApiExtrasImageAttachmentsUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ImageAttachment
+//
+//	@return ImageAttachment
 func (a *ExtrasAPIService) ExtrasImageAttachmentsUpdateExecute(r ApiExtrasImageAttachmentsUpdateRequest) (*ImageAttachment, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ImageAttachment
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ImageAttachment
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasImageAttachmentsUpdate")
@@ -22175,8 +22246,8 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsUpdateExecute(r ApiExtrasImageA
 }
 
 type ApiExtrasJournalEntriesBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                 context.Context
+	ApiService          *ExtrasAPIService
 	journalEntryRequest *[]JournalEntryRequest
 }
 
@@ -22194,22 +22265,22 @@ ExtrasJournalEntriesBulkDestroy Method for ExtrasJournalEntriesBulkDestroy
 
 Delete a list of journal entry objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasJournalEntriesBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasJournalEntriesBulkDestroyRequest
 */
 func (a *ExtrasAPIService) ExtrasJournalEntriesBulkDestroy(ctx context.Context) ApiExtrasJournalEntriesBulkDestroyRequest {
 	return ApiExtrasJournalEntriesBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *ExtrasAPIService) ExtrasJournalEntriesBulkDestroyExecute(r ApiExtrasJournalEntriesBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasJournalEntriesBulkDestroy")
@@ -22288,8 +22359,8 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesBulkDestroyExecute(r ApiExtrasJou
 }
 
 type ApiExtrasJournalEntriesBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                 context.Context
+	ApiService          *ExtrasAPIService
 	journalEntryRequest *[]JournalEntryRequest
 }
 
@@ -22307,24 +22378,25 @@ ExtrasJournalEntriesBulkPartialUpdate Method for ExtrasJournalEntriesBulkPartial
 
 Patch a list of journal entry objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasJournalEntriesBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasJournalEntriesBulkPartialUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasJournalEntriesBulkPartialUpdate(ctx context.Context) ApiExtrasJournalEntriesBulkPartialUpdateRequest {
 	return ApiExtrasJournalEntriesBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []JournalEntry
+//
+//	@return []JournalEntry
 func (a *ExtrasAPIService) ExtrasJournalEntriesBulkPartialUpdateExecute(r ApiExtrasJournalEntriesBulkPartialUpdateRequest) ([]JournalEntry, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []JournalEntry
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []JournalEntry
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasJournalEntriesBulkPartialUpdate")
@@ -22412,8 +22484,8 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesBulkPartialUpdateExecute(r ApiExt
 }
 
 type ApiExtrasJournalEntriesBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                 context.Context
+	ApiService          *ExtrasAPIService
 	journalEntryRequest *[]JournalEntryRequest
 }
 
@@ -22431,24 +22503,25 @@ ExtrasJournalEntriesBulkUpdate Method for ExtrasJournalEntriesBulkUpdate
 
 Put a list of journal entry objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasJournalEntriesBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasJournalEntriesBulkUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasJournalEntriesBulkUpdate(ctx context.Context) ApiExtrasJournalEntriesBulkUpdateRequest {
 	return ApiExtrasJournalEntriesBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []JournalEntry
+//
+//	@return []JournalEntry
 func (a *ExtrasAPIService) ExtrasJournalEntriesBulkUpdateExecute(r ApiExtrasJournalEntriesBulkUpdateRequest) ([]JournalEntry, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []JournalEntry
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []JournalEntry
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasJournalEntriesBulkUpdate")
@@ -22536,8 +22609,8 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesBulkUpdateExecute(r ApiExtrasJour
 }
 
 type ApiExtrasJournalEntriesCreateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                         context.Context
+	ApiService                  *ExtrasAPIService
 	writableJournalEntryRequest *WritableJournalEntryRequest
 }
 
@@ -22555,24 +22628,25 @@ ExtrasJournalEntriesCreate Method for ExtrasJournalEntriesCreate
 
 Post a list of journal entry objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasJournalEntriesCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasJournalEntriesCreateRequest
 */
 func (a *ExtrasAPIService) ExtrasJournalEntriesCreate(ctx context.Context) ApiExtrasJournalEntriesCreateRequest {
 	return ApiExtrasJournalEntriesCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return JournalEntry
+//
+//	@return JournalEntry
 func (a *ExtrasAPIService) ExtrasJournalEntriesCreateExecute(r ApiExtrasJournalEntriesCreateRequest) (*JournalEntry, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *JournalEntry
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *JournalEntry
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasJournalEntriesCreate")
@@ -22660,9 +22734,9 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesCreateExecute(r ApiExtrasJournalE
 }
 
 type ApiExtrasJournalEntriesDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiExtrasJournalEntriesDestroyRequest) Execute() (*http.Response, error) {
@@ -22674,24 +22748,24 @@ ExtrasJournalEntriesDestroy Method for ExtrasJournalEntriesDestroy
 
 Delete a journal entry object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this journal entry.
- @return ApiExtrasJournalEntriesDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this journal entry.
+	@return ApiExtrasJournalEntriesDestroyRequest
 */
 func (a *ExtrasAPIService) ExtrasJournalEntriesDestroy(ctx context.Context, id int32) ApiExtrasJournalEntriesDestroyRequest {
 	return ApiExtrasJournalEntriesDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *ExtrasAPIService) ExtrasJournalEntriesDestroyExecute(r ApiExtrasJournalEntriesDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasJournalEntriesDestroy")
@@ -22766,59 +22840,59 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesDestroyExecute(r ApiExtrasJournal
 }
 
 type ApiExtrasJournalEntriesListRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	assignedObjectId *[]int32
+	ctx                   context.Context
+	ApiService            *ExtrasAPIService
+	assignedObjectId      *[]int32
 	assignedObjectIdEmpty *bool
-	assignedObjectIdGt *[]int32
-	assignedObjectIdGte *[]int32
-	assignedObjectIdLt *[]int32
-	assignedObjectIdLte *[]int32
-	assignedObjectIdN *[]int32
-	assignedObjectType *string
-	assignedObjectTypeN *string
-	assignedObjectTypeId *[]int32
+	assignedObjectIdGt    *[]int32
+	assignedObjectIdGte   *[]int32
+	assignedObjectIdLt    *[]int32
+	assignedObjectIdLte   *[]int32
+	assignedObjectIdN     *[]int32
+	assignedObjectType    *string
+	assignedObjectTypeN   *string
+	assignedObjectTypeId  *[]int32
 	assignedObjectTypeIdN *[]int32
-	createdAfter *time.Time
-	createdBefore *time.Time
-	createdBy *[]string
-	createdByN *[]string
-	createdById *[]*int32
-	createdByIdN *[]*int32
-	createdByRequest *string
-	id *[]int32
-	idEmpty *bool
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	kind *[]string
-	kindEmpty *bool
-	kindIc *[]string
-	kindIe *[]string
-	kindIew *[]string
-	kindIsw *[]string
-	kindN *[]string
-	kindNic *[]string
-	kindNie *[]string
-	kindNiew *[]string
-	kindNisw *[]string
-	lastUpdated *[]time.Time
-	lastUpdatedEmpty *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	modifiedByRequest *string
-	offset *int32
-	ordering *string
-	q *string
-	tag *[]string
-	tagN *[]string
-	updatedByRequest *string
+	createdAfter          *time.Time
+	createdBefore         *time.Time
+	createdBy             *[]string
+	createdByN            *[]string
+	createdById           *[]*int32
+	createdByIdN          *[]*int32
+	createdByRequest      *string
+	id                    *[]int32
+	idEmpty               *bool
+	idGt                  *[]int32
+	idGte                 *[]int32
+	idLt                  *[]int32
+	idLte                 *[]int32
+	idN                   *[]int32
+	kind                  *[]string
+	kindEmpty             *bool
+	kindIc                *[]string
+	kindIe                *[]string
+	kindIew               *[]string
+	kindIsw               *[]string
+	kindN                 *[]string
+	kindNic               *[]string
+	kindNie               *[]string
+	kindNiew              *[]string
+	kindNisw              *[]string
+	lastUpdated           *[]time.Time
+	lastUpdatedEmpty      *[]time.Time
+	lastUpdatedGt         *[]time.Time
+	lastUpdatedGte        *[]time.Time
+	lastUpdatedLt         *[]time.Time
+	lastUpdatedLte        *[]time.Time
+	lastUpdatedN          *[]time.Time
+	limit                 *int32
+	modifiedByRequest     *string
+	offset                *int32
+	ordering              *string
+	q                     *string
+	tag                   *[]string
+	tagN                  *[]string
+	updatedByRequest      *string
 }
 
 func (r ApiExtrasJournalEntriesListRequest) AssignedObjectId(assignedObjectId []int32) ApiExtrasJournalEntriesListRequest {
@@ -23093,24 +23167,25 @@ ExtrasJournalEntriesList Method for ExtrasJournalEntriesList
 
 Get a list of journal entry objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasJournalEntriesListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasJournalEntriesListRequest
 */
 func (a *ExtrasAPIService) ExtrasJournalEntriesList(ctx context.Context) ApiExtrasJournalEntriesListRequest {
 	return ApiExtrasJournalEntriesListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedJournalEntryList
+//
+//	@return PaginatedJournalEntryList
 func (a *ExtrasAPIService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEntriesListRequest) (*PaginatedJournalEntryList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedJournalEntryList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedJournalEntryList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasJournalEntriesList")
@@ -23129,24 +23204,24 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_id", t, "form", "multi")
 		}
 	}
 	if r.assignedObjectIdEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_id__empty", r.assignedObjectIdEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_id__empty", r.assignedObjectIdEmpty, "form", "")
 	}
 	if r.assignedObjectIdGt != nil {
 		t := *r.assignedObjectIdGt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_id__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_id__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_id__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_id__gt", t, "form", "multi")
 		}
 	}
 	if r.assignedObjectIdGte != nil {
@@ -23154,10 +23229,10 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_id__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_id__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_id__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_id__gte", t, "form", "multi")
 		}
 	}
 	if r.assignedObjectIdLt != nil {
@@ -23165,10 +23240,10 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_id__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_id__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_id__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_id__lt", t, "form", "multi")
 		}
 	}
 	if r.assignedObjectIdLte != nil {
@@ -23176,10 +23251,10 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_id__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_id__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_id__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_id__lte", t, "form", "multi")
 		}
 	}
 	if r.assignedObjectIdN != nil {
@@ -23187,27 +23262,27 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_id__n", t, "form", "multi")
 		}
 	}
 	if r.assignedObjectType != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_type", r.assignedObjectType, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_type", r.assignedObjectType, "form", "")
 	}
 	if r.assignedObjectTypeN != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_type__n", r.assignedObjectTypeN, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_type__n", r.assignedObjectTypeN, "form", "")
 	}
 	if r.assignedObjectTypeId != nil {
 		t := *r.assignedObjectTypeId
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_type_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_type_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_type_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_type_id", t, "form", "multi")
 		}
 	}
 	if r.assignedObjectTypeIdN != nil {
@@ -23215,27 +23290,27 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_type_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_type_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_type_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_type_id__n", t, "form", "multi")
 		}
 	}
 	if r.createdAfter != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "created_after", r.createdAfter, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "created_after", r.createdAfter, "form", "")
 	}
 	if r.createdBefore != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "created_before", r.createdBefore, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "created_before", r.createdBefore, "form", "")
 	}
 	if r.createdBy != nil {
 		t := *r.createdBy
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created_by", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created_by", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created_by", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created_by", t, "form", "multi")
 		}
 	}
 	if r.createdByN != nil {
@@ -23243,10 +23318,10 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created_by__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created_by__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created_by__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created_by__n", t, "form", "multi")
 		}
 	}
 	if r.createdById != nil {
@@ -23254,10 +23329,10 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_id", t, "form", "multi")
 		}
 	}
 	if r.createdByIdN != nil {
@@ -23265,38 +23340,38 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_id__n", t, "form", "multi")
 		}
 	}
 	if r.createdByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_request", r.createdByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_request", r.createdByRequest, "form", "")
 	}
 	if r.id != nil {
 		t := *r.id
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "form", "multi")
 		}
 	}
 	if r.idEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "form", "")
 	}
 	if r.idGt != nil {
 		t := *r.idGt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "form", "multi")
 		}
 	}
 	if r.idGte != nil {
@@ -23304,10 +23379,10 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "form", "multi")
 		}
 	}
 	if r.idLt != nil {
@@ -23315,10 +23390,10 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "form", "multi")
 		}
 	}
 	if r.idLte != nil {
@@ -23326,10 +23401,10 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "form", "multi")
 		}
 	}
 	if r.idN != nil {
@@ -23337,10 +23412,10 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "form", "multi")
 		}
 	}
 	if r.kind != nil {
@@ -23348,24 +23423,24 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "kind", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "kind", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "kind", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "kind", t, "form", "multi")
 		}
 	}
 	if r.kindEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "kind__empty", r.kindEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "kind__empty", r.kindEmpty, "form", "")
 	}
 	if r.kindIc != nil {
 		t := *r.kindIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "kind__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "kind__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "kind__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "kind__ic", t, "form", "multi")
 		}
 	}
 	if r.kindIe != nil {
@@ -23373,10 +23448,10 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "kind__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "kind__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "kind__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "kind__ie", t, "form", "multi")
 		}
 	}
 	if r.kindIew != nil {
@@ -23384,10 +23459,10 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "kind__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "kind__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "kind__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "kind__iew", t, "form", "multi")
 		}
 	}
 	if r.kindIsw != nil {
@@ -23395,10 +23470,10 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "kind__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "kind__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "kind__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "kind__isw", t, "form", "multi")
 		}
 	}
 	if r.kindN != nil {
@@ -23406,10 +23481,10 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "kind__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "kind__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "kind__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "kind__n", t, "form", "multi")
 		}
 	}
 	if r.kindNic != nil {
@@ -23417,10 +23492,10 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "kind__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "kind__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "kind__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "kind__nic", t, "form", "multi")
 		}
 	}
 	if r.kindNie != nil {
@@ -23428,10 +23503,10 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "kind__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "kind__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "kind__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "kind__nie", t, "form", "multi")
 		}
 	}
 	if r.kindNiew != nil {
@@ -23439,10 +23514,10 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "kind__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "kind__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "kind__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "kind__niew", t, "form", "multi")
 		}
 	}
 	if r.kindNisw != nil {
@@ -23450,10 +23525,10 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "kind__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "kind__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "kind__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "kind__nisw", t, "form", "multi")
 		}
 	}
 	if r.lastUpdated != nil {
@@ -23461,10 +23536,10 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedEmpty != nil {
@@ -23472,10 +23547,10 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedGt != nil {
@@ -23483,10 +23558,10 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedGte != nil {
@@ -23494,10 +23569,10 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedLt != nil {
@@ -23505,10 +23580,10 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedLte != nil {
@@ -23516,10 +23591,10 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedN != nil {
@@ -23527,36 +23602,36 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "form", "multi")
 		}
 	}
 	if r.limit != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
 	}
 	if r.modifiedByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "modified_by_request", r.modifiedByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "modified_by_request", r.modifiedByRequest, "form", "")
 	}
 	if r.offset != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "form", "")
 	}
 	if r.ordering != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "form", "")
 	}
 	if r.q != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "form", "")
 	}
 	if r.tag != nil {
 		t := *r.tag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "form", "multi")
 		}
 	}
 	if r.tagN != nil {
@@ -23564,14 +23639,14 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "form", "multi")
 		}
 	}
 	if r.updatedByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "updated_by_request", r.updatedByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "updated_by_request", r.updatedByRequest, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -23642,9 +23717,9 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 }
 
 type ApiExtrasJournalEntriesPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	id int32
+	ctx                                context.Context
+	ApiService                         *ExtrasAPIService
+	id                                 int32
 	patchedWritableJournalEntryRequest *PatchedWritableJournalEntryRequest
 }
 
@@ -23662,26 +23737,27 @@ ExtrasJournalEntriesPartialUpdate Method for ExtrasJournalEntriesPartialUpdate
 
 Patch a journal entry object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this journal entry.
- @return ApiExtrasJournalEntriesPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this journal entry.
+	@return ApiExtrasJournalEntriesPartialUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasJournalEntriesPartialUpdate(ctx context.Context, id int32) ApiExtrasJournalEntriesPartialUpdateRequest {
 	return ApiExtrasJournalEntriesPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return JournalEntry
+//
+//	@return JournalEntry
 func (a *ExtrasAPIService) ExtrasJournalEntriesPartialUpdateExecute(r ApiExtrasJournalEntriesPartialUpdateRequest) (*JournalEntry, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *JournalEntry
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *JournalEntry
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasJournalEntriesPartialUpdate")
@@ -23767,9 +23843,9 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesPartialUpdateExecute(r ApiExtrasJ
 }
 
 type ApiExtrasJournalEntriesRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiExtrasJournalEntriesRetrieveRequest) Execute() (*JournalEntry, *http.Response, error) {
@@ -23781,26 +23857,27 @@ ExtrasJournalEntriesRetrieve Method for ExtrasJournalEntriesRetrieve
 
 Get a journal entry object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this journal entry.
- @return ApiExtrasJournalEntriesRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this journal entry.
+	@return ApiExtrasJournalEntriesRetrieveRequest
 */
 func (a *ExtrasAPIService) ExtrasJournalEntriesRetrieve(ctx context.Context, id int32) ApiExtrasJournalEntriesRetrieveRequest {
 	return ApiExtrasJournalEntriesRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return JournalEntry
+//
+//	@return JournalEntry
 func (a *ExtrasAPIService) ExtrasJournalEntriesRetrieveExecute(r ApiExtrasJournalEntriesRetrieveRequest) (*JournalEntry, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *JournalEntry
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *JournalEntry
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasJournalEntriesRetrieve")
@@ -23884,9 +23961,9 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesRetrieveExecute(r ApiExtrasJourna
 }
 
 type ApiExtrasJournalEntriesUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	id int32
+	ctx                         context.Context
+	ApiService                  *ExtrasAPIService
+	id                          int32
 	writableJournalEntryRequest *WritableJournalEntryRequest
 }
 
@@ -23904,26 +23981,27 @@ ExtrasJournalEntriesUpdate Method for ExtrasJournalEntriesUpdate
 
 Put a journal entry object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this journal entry.
- @return ApiExtrasJournalEntriesUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this journal entry.
+	@return ApiExtrasJournalEntriesUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasJournalEntriesUpdate(ctx context.Context, id int32) ApiExtrasJournalEntriesUpdateRequest {
 	return ApiExtrasJournalEntriesUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return JournalEntry
+//
+//	@return JournalEntry
 func (a *ExtrasAPIService) ExtrasJournalEntriesUpdateExecute(r ApiExtrasJournalEntriesUpdateRequest) (*JournalEntry, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *JournalEntry
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *JournalEntry
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasJournalEntriesUpdate")
@@ -24012,8 +24090,8 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesUpdateExecute(r ApiExtrasJournalE
 }
 
 type ApiExtrasNotificationGroupsBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                      context.Context
+	ApiService               *ExtrasAPIService
 	notificationGroupRequest *[]NotificationGroupRequest
 }
 
@@ -24031,22 +24109,22 @@ ExtrasNotificationGroupsBulkDestroy Method for ExtrasNotificationGroupsBulkDestr
 
 Delete a list of notification group objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasNotificationGroupsBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasNotificationGroupsBulkDestroyRequest
 */
 func (a *ExtrasAPIService) ExtrasNotificationGroupsBulkDestroy(ctx context.Context) ApiExtrasNotificationGroupsBulkDestroyRequest {
 	return ApiExtrasNotificationGroupsBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *ExtrasAPIService) ExtrasNotificationGroupsBulkDestroyExecute(r ApiExtrasNotificationGroupsBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasNotificationGroupsBulkDestroy")
@@ -24125,8 +24203,8 @@ func (a *ExtrasAPIService) ExtrasNotificationGroupsBulkDestroyExecute(r ApiExtra
 }
 
 type ApiExtrasNotificationGroupsBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                      context.Context
+	ApiService               *ExtrasAPIService
 	notificationGroupRequest *[]NotificationGroupRequest
 }
 
@@ -24144,24 +24222,25 @@ ExtrasNotificationGroupsBulkPartialUpdate Method for ExtrasNotificationGroupsBul
 
 Patch a list of notification group objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasNotificationGroupsBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasNotificationGroupsBulkPartialUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasNotificationGroupsBulkPartialUpdate(ctx context.Context) ApiExtrasNotificationGroupsBulkPartialUpdateRequest {
 	return ApiExtrasNotificationGroupsBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []NotificationGroup
+//
+//	@return []NotificationGroup
 func (a *ExtrasAPIService) ExtrasNotificationGroupsBulkPartialUpdateExecute(r ApiExtrasNotificationGroupsBulkPartialUpdateRequest) ([]NotificationGroup, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []NotificationGroup
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []NotificationGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasNotificationGroupsBulkPartialUpdate")
@@ -24249,8 +24328,8 @@ func (a *ExtrasAPIService) ExtrasNotificationGroupsBulkPartialUpdateExecute(r Ap
 }
 
 type ApiExtrasNotificationGroupsBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                      context.Context
+	ApiService               *ExtrasAPIService
 	notificationGroupRequest *[]NotificationGroupRequest
 }
 
@@ -24268,24 +24347,25 @@ ExtrasNotificationGroupsBulkUpdate Method for ExtrasNotificationGroupsBulkUpdate
 
 Put a list of notification group objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasNotificationGroupsBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasNotificationGroupsBulkUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasNotificationGroupsBulkUpdate(ctx context.Context) ApiExtrasNotificationGroupsBulkUpdateRequest {
 	return ApiExtrasNotificationGroupsBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []NotificationGroup
+//
+//	@return []NotificationGroup
 func (a *ExtrasAPIService) ExtrasNotificationGroupsBulkUpdateExecute(r ApiExtrasNotificationGroupsBulkUpdateRequest) ([]NotificationGroup, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []NotificationGroup
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []NotificationGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasNotificationGroupsBulkUpdate")
@@ -24373,8 +24453,8 @@ func (a *ExtrasAPIService) ExtrasNotificationGroupsBulkUpdateExecute(r ApiExtras
 }
 
 type ApiExtrasNotificationGroupsCreateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                      context.Context
+	ApiService               *ExtrasAPIService
 	notificationGroupRequest *NotificationGroupRequest
 }
 
@@ -24392,24 +24472,25 @@ ExtrasNotificationGroupsCreate Method for ExtrasNotificationGroupsCreate
 
 Post a list of notification group objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasNotificationGroupsCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasNotificationGroupsCreateRequest
 */
 func (a *ExtrasAPIService) ExtrasNotificationGroupsCreate(ctx context.Context) ApiExtrasNotificationGroupsCreateRequest {
 	return ApiExtrasNotificationGroupsCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return NotificationGroup
+//
+//	@return NotificationGroup
 func (a *ExtrasAPIService) ExtrasNotificationGroupsCreateExecute(r ApiExtrasNotificationGroupsCreateRequest) (*NotificationGroup, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *NotificationGroup
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *NotificationGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasNotificationGroupsCreate")
@@ -24497,9 +24578,9 @@ func (a *ExtrasAPIService) ExtrasNotificationGroupsCreateExecute(r ApiExtrasNoti
 }
 
 type ApiExtrasNotificationGroupsDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiExtrasNotificationGroupsDestroyRequest) Execute() (*http.Response, error) {
@@ -24511,24 +24592,24 @@ ExtrasNotificationGroupsDestroy Method for ExtrasNotificationGroupsDestroy
 
 Delete a notification group object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this notification group.
- @return ApiExtrasNotificationGroupsDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this notification group.
+	@return ApiExtrasNotificationGroupsDestroyRequest
 */
 func (a *ExtrasAPIService) ExtrasNotificationGroupsDestroy(ctx context.Context, id int32) ApiExtrasNotificationGroupsDestroyRequest {
 	return ApiExtrasNotificationGroupsDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *ExtrasAPIService) ExtrasNotificationGroupsDestroyExecute(r ApiExtrasNotificationGroupsDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasNotificationGroupsDestroy")
@@ -24603,11 +24684,11 @@ func (a *ExtrasAPIService) ExtrasNotificationGroupsDestroyExecute(r ApiExtrasNot
 }
 
 type ApiExtrasNotificationGroupsListRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
-	limit *int32
-	offset *int32
-	ordering *string
+	limit      *int32
+	offset     *int32
+	ordering   *string
 }
 
 // Number of results to return per page.
@@ -24637,24 +24718,25 @@ ExtrasNotificationGroupsList Method for ExtrasNotificationGroupsList
 
 Get a list of notification group objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasNotificationGroupsListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasNotificationGroupsListRequest
 */
 func (a *ExtrasAPIService) ExtrasNotificationGroupsList(ctx context.Context) ApiExtrasNotificationGroupsListRequest {
 	return ApiExtrasNotificationGroupsListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedNotificationGroupList
+//
+//	@return PaginatedNotificationGroupList
 func (a *ExtrasAPIService) ExtrasNotificationGroupsListExecute(r ApiExtrasNotificationGroupsListRequest) (*PaginatedNotificationGroupList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedNotificationGroupList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedNotificationGroupList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasNotificationGroupsList")
@@ -24669,13 +24751,13 @@ func (a *ExtrasAPIService) ExtrasNotificationGroupsListExecute(r ApiExtrasNotifi
 	localVarFormParams := url.Values{}
 
 	if r.limit != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
 	}
 	if r.offset != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "form", "")
 	}
 	if r.ordering != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -24746,9 +24828,9 @@ func (a *ExtrasAPIService) ExtrasNotificationGroupsListExecute(r ApiExtrasNotifi
 }
 
 type ApiExtrasNotificationGroupsPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	id int32
+	ctx                             context.Context
+	ApiService                      *ExtrasAPIService
+	id                              int32
 	patchedNotificationGroupRequest *PatchedNotificationGroupRequest
 }
 
@@ -24766,26 +24848,27 @@ ExtrasNotificationGroupsPartialUpdate Method for ExtrasNotificationGroupsPartial
 
 Patch a notification group object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this notification group.
- @return ApiExtrasNotificationGroupsPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this notification group.
+	@return ApiExtrasNotificationGroupsPartialUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasNotificationGroupsPartialUpdate(ctx context.Context, id int32) ApiExtrasNotificationGroupsPartialUpdateRequest {
 	return ApiExtrasNotificationGroupsPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return NotificationGroup
+//
+//	@return NotificationGroup
 func (a *ExtrasAPIService) ExtrasNotificationGroupsPartialUpdateExecute(r ApiExtrasNotificationGroupsPartialUpdateRequest) (*NotificationGroup, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *NotificationGroup
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *NotificationGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasNotificationGroupsPartialUpdate")
@@ -24871,9 +24954,9 @@ func (a *ExtrasAPIService) ExtrasNotificationGroupsPartialUpdateExecute(r ApiExt
 }
 
 type ApiExtrasNotificationGroupsRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiExtrasNotificationGroupsRetrieveRequest) Execute() (*NotificationGroup, *http.Response, error) {
@@ -24885,26 +24968,27 @@ ExtrasNotificationGroupsRetrieve Method for ExtrasNotificationGroupsRetrieve
 
 Get a notification group object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this notification group.
- @return ApiExtrasNotificationGroupsRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this notification group.
+	@return ApiExtrasNotificationGroupsRetrieveRequest
 */
 func (a *ExtrasAPIService) ExtrasNotificationGroupsRetrieve(ctx context.Context, id int32) ApiExtrasNotificationGroupsRetrieveRequest {
 	return ApiExtrasNotificationGroupsRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return NotificationGroup
+//
+//	@return NotificationGroup
 func (a *ExtrasAPIService) ExtrasNotificationGroupsRetrieveExecute(r ApiExtrasNotificationGroupsRetrieveRequest) (*NotificationGroup, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *NotificationGroup
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *NotificationGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasNotificationGroupsRetrieve")
@@ -24988,9 +25072,9 @@ func (a *ExtrasAPIService) ExtrasNotificationGroupsRetrieveExecute(r ApiExtrasNo
 }
 
 type ApiExtrasNotificationGroupsUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	id int32
+	ctx                      context.Context
+	ApiService               *ExtrasAPIService
+	id                       int32
 	notificationGroupRequest *NotificationGroupRequest
 }
 
@@ -25008,26 +25092,27 @@ ExtrasNotificationGroupsUpdate Method for ExtrasNotificationGroupsUpdate
 
 Put a notification group object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this notification group.
- @return ApiExtrasNotificationGroupsUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this notification group.
+	@return ApiExtrasNotificationGroupsUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasNotificationGroupsUpdate(ctx context.Context, id int32) ApiExtrasNotificationGroupsUpdateRequest {
 	return ApiExtrasNotificationGroupsUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return NotificationGroup
+//
+//	@return NotificationGroup
 func (a *ExtrasAPIService) ExtrasNotificationGroupsUpdateExecute(r ApiExtrasNotificationGroupsUpdateRequest) (*NotificationGroup, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *NotificationGroup
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *NotificationGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasNotificationGroupsUpdate")
@@ -25116,8 +25201,8 @@ func (a *ExtrasAPIService) ExtrasNotificationGroupsUpdateExecute(r ApiExtrasNoti
 }
 
 type ApiExtrasNotificationsBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                 context.Context
+	ApiService          *ExtrasAPIService
 	notificationRequest *[]NotificationRequest
 }
 
@@ -25135,22 +25220,22 @@ ExtrasNotificationsBulkDestroy Method for ExtrasNotificationsBulkDestroy
 
 Delete a list of notification objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasNotificationsBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasNotificationsBulkDestroyRequest
 */
 func (a *ExtrasAPIService) ExtrasNotificationsBulkDestroy(ctx context.Context) ApiExtrasNotificationsBulkDestroyRequest {
 	return ApiExtrasNotificationsBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *ExtrasAPIService) ExtrasNotificationsBulkDestroyExecute(r ApiExtrasNotificationsBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasNotificationsBulkDestroy")
@@ -25229,8 +25314,8 @@ func (a *ExtrasAPIService) ExtrasNotificationsBulkDestroyExecute(r ApiExtrasNoti
 }
 
 type ApiExtrasNotificationsBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                 context.Context
+	ApiService          *ExtrasAPIService
 	notificationRequest *[]NotificationRequest
 }
 
@@ -25248,24 +25333,25 @@ ExtrasNotificationsBulkPartialUpdate Method for ExtrasNotificationsBulkPartialUp
 
 Patch a list of notification objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasNotificationsBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasNotificationsBulkPartialUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasNotificationsBulkPartialUpdate(ctx context.Context) ApiExtrasNotificationsBulkPartialUpdateRequest {
 	return ApiExtrasNotificationsBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []Notification
+//
+//	@return []Notification
 func (a *ExtrasAPIService) ExtrasNotificationsBulkPartialUpdateExecute(r ApiExtrasNotificationsBulkPartialUpdateRequest) ([]Notification, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []Notification
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []Notification
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasNotificationsBulkPartialUpdate")
@@ -25353,8 +25439,8 @@ func (a *ExtrasAPIService) ExtrasNotificationsBulkPartialUpdateExecute(r ApiExtr
 }
 
 type ApiExtrasNotificationsBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                 context.Context
+	ApiService          *ExtrasAPIService
 	notificationRequest *[]NotificationRequest
 }
 
@@ -25372,24 +25458,25 @@ ExtrasNotificationsBulkUpdate Method for ExtrasNotificationsBulkUpdate
 
 Put a list of notification objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasNotificationsBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasNotificationsBulkUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasNotificationsBulkUpdate(ctx context.Context) ApiExtrasNotificationsBulkUpdateRequest {
 	return ApiExtrasNotificationsBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []Notification
+//
+//	@return []Notification
 func (a *ExtrasAPIService) ExtrasNotificationsBulkUpdateExecute(r ApiExtrasNotificationsBulkUpdateRequest) ([]Notification, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []Notification
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []Notification
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasNotificationsBulkUpdate")
@@ -25477,8 +25564,8 @@ func (a *ExtrasAPIService) ExtrasNotificationsBulkUpdateExecute(r ApiExtrasNotif
 }
 
 type ApiExtrasNotificationsCreateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                 context.Context
+	ApiService          *ExtrasAPIService
 	notificationRequest *NotificationRequest
 }
 
@@ -25496,24 +25583,25 @@ ExtrasNotificationsCreate Method for ExtrasNotificationsCreate
 
 Post a list of notification objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasNotificationsCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasNotificationsCreateRequest
 */
 func (a *ExtrasAPIService) ExtrasNotificationsCreate(ctx context.Context) ApiExtrasNotificationsCreateRequest {
 	return ApiExtrasNotificationsCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return Notification
+//
+//	@return Notification
 func (a *ExtrasAPIService) ExtrasNotificationsCreateExecute(r ApiExtrasNotificationsCreateRequest) (*Notification, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Notification
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Notification
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasNotificationsCreate")
@@ -25601,9 +25689,9 @@ func (a *ExtrasAPIService) ExtrasNotificationsCreateExecute(r ApiExtrasNotificat
 }
 
 type ApiExtrasNotificationsDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiExtrasNotificationsDestroyRequest) Execute() (*http.Response, error) {
@@ -25615,24 +25703,24 @@ ExtrasNotificationsDestroy Method for ExtrasNotificationsDestroy
 
 Delete a notification object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this notification.
- @return ApiExtrasNotificationsDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this notification.
+	@return ApiExtrasNotificationsDestroyRequest
 */
 func (a *ExtrasAPIService) ExtrasNotificationsDestroy(ctx context.Context, id int32) ApiExtrasNotificationsDestroyRequest {
 	return ApiExtrasNotificationsDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *ExtrasAPIService) ExtrasNotificationsDestroyExecute(r ApiExtrasNotificationsDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasNotificationsDestroy")
@@ -25707,11 +25795,11 @@ func (a *ExtrasAPIService) ExtrasNotificationsDestroyExecute(r ApiExtrasNotifica
 }
 
 type ApiExtrasNotificationsListRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
-	limit *int32
-	offset *int32
-	ordering *string
+	limit      *int32
+	offset     *int32
+	ordering   *string
 }
 
 // Number of results to return per page.
@@ -25741,24 +25829,25 @@ ExtrasNotificationsList Method for ExtrasNotificationsList
 
 Get a list of notification objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasNotificationsListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasNotificationsListRequest
 */
 func (a *ExtrasAPIService) ExtrasNotificationsList(ctx context.Context) ApiExtrasNotificationsListRequest {
 	return ApiExtrasNotificationsListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedNotificationList
+//
+//	@return PaginatedNotificationList
 func (a *ExtrasAPIService) ExtrasNotificationsListExecute(r ApiExtrasNotificationsListRequest) (*PaginatedNotificationList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedNotificationList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedNotificationList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasNotificationsList")
@@ -25773,13 +25862,13 @@ func (a *ExtrasAPIService) ExtrasNotificationsListExecute(r ApiExtrasNotificatio
 	localVarFormParams := url.Values{}
 
 	if r.limit != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
 	}
 	if r.offset != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "form", "")
 	}
 	if r.ordering != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -25850,9 +25939,9 @@ func (a *ExtrasAPIService) ExtrasNotificationsListExecute(r ApiExtrasNotificatio
 }
 
 type ApiExtrasNotificationsPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	id int32
+	ctx                        context.Context
+	ApiService                 *ExtrasAPIService
+	id                         int32
 	patchedNotificationRequest *PatchedNotificationRequest
 }
 
@@ -25870,26 +25959,27 @@ ExtrasNotificationsPartialUpdate Method for ExtrasNotificationsPartialUpdate
 
 Patch a notification object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this notification.
- @return ApiExtrasNotificationsPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this notification.
+	@return ApiExtrasNotificationsPartialUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasNotificationsPartialUpdate(ctx context.Context, id int32) ApiExtrasNotificationsPartialUpdateRequest {
 	return ApiExtrasNotificationsPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Notification
+//
+//	@return Notification
 func (a *ExtrasAPIService) ExtrasNotificationsPartialUpdateExecute(r ApiExtrasNotificationsPartialUpdateRequest) (*Notification, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Notification
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Notification
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasNotificationsPartialUpdate")
@@ -25975,9 +26065,9 @@ func (a *ExtrasAPIService) ExtrasNotificationsPartialUpdateExecute(r ApiExtrasNo
 }
 
 type ApiExtrasNotificationsRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiExtrasNotificationsRetrieveRequest) Execute() (*Notification, *http.Response, error) {
@@ -25989,26 +26079,27 @@ ExtrasNotificationsRetrieve Method for ExtrasNotificationsRetrieve
 
 Get a notification object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this notification.
- @return ApiExtrasNotificationsRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this notification.
+	@return ApiExtrasNotificationsRetrieveRequest
 */
 func (a *ExtrasAPIService) ExtrasNotificationsRetrieve(ctx context.Context, id int32) ApiExtrasNotificationsRetrieveRequest {
 	return ApiExtrasNotificationsRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Notification
+//
+//	@return Notification
 func (a *ExtrasAPIService) ExtrasNotificationsRetrieveExecute(r ApiExtrasNotificationsRetrieveRequest) (*Notification, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Notification
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Notification
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasNotificationsRetrieve")
@@ -26092,9 +26183,9 @@ func (a *ExtrasAPIService) ExtrasNotificationsRetrieveExecute(r ApiExtrasNotific
 }
 
 type ApiExtrasNotificationsUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	id int32
+	ctx                 context.Context
+	ApiService          *ExtrasAPIService
+	id                  int32
 	notificationRequest *NotificationRequest
 }
 
@@ -26112,26 +26203,27 @@ ExtrasNotificationsUpdate Method for ExtrasNotificationsUpdate
 
 Put a notification object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this notification.
- @return ApiExtrasNotificationsUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this notification.
+	@return ApiExtrasNotificationsUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasNotificationsUpdate(ctx context.Context, id int32) ApiExtrasNotificationsUpdateRequest {
 	return ApiExtrasNotificationsUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Notification
+//
+//	@return Notification
 func (a *ExtrasAPIService) ExtrasNotificationsUpdateExecute(r ApiExtrasNotificationsUpdateRequest) (*Notification, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Notification
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Notification
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasNotificationsUpdate")
@@ -26220,15 +26312,15 @@ func (a *ExtrasAPIService) ExtrasNotificationsUpdateExecute(r ApiExtrasNotificat
 }
 
 type ApiExtrasObjectTypesListRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
-	appLabel *string
-	id *int32
-	limit *int32
-	model *string
-	offset *int32
-	ordering *string
-	q *string
+	appLabel   *string
+	id         *int32
+	limit      *int32
+	model      *string
+	offset     *int32
+	ordering   *string
+	q          *string
 }
 
 func (r ApiExtrasObjectTypesListRequest) AppLabel(appLabel string) ApiExtrasObjectTypesListRequest {
@@ -26279,24 +26371,25 @@ ExtrasObjectTypesList Method for ExtrasObjectTypesList
 
 Read-only list of ObjectTypes.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasObjectTypesListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasObjectTypesListRequest
 */
 func (a *ExtrasAPIService) ExtrasObjectTypesList(ctx context.Context) ApiExtrasObjectTypesListRequest {
 	return ApiExtrasObjectTypesListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedObjectTypeList
+//
+//	@return PaginatedObjectTypeList
 func (a *ExtrasAPIService) ExtrasObjectTypesListExecute(r ApiExtrasObjectTypesListRequest) (*PaginatedObjectTypeList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedObjectTypeList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedObjectTypeList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasObjectTypesList")
@@ -26311,25 +26404,25 @@ func (a *ExtrasAPIService) ExtrasObjectTypesListExecute(r ApiExtrasObjectTypesLi
 	localVarFormParams := url.Values{}
 
 	if r.appLabel != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "app_label", r.appLabel, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "app_label", r.appLabel, "form", "")
 	}
 	if r.id != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "id", r.id, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "id", r.id, "form", "")
 	}
 	if r.limit != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
 	}
 	if r.model != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "model", r.model, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "model", r.model, "form", "")
 	}
 	if r.offset != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "form", "")
 	}
 	if r.ordering != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "form", "")
 	}
 	if r.q != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -26400,9 +26493,9 @@ func (a *ExtrasAPIService) ExtrasObjectTypesListExecute(r ApiExtrasObjectTypesLi
 }
 
 type ApiExtrasObjectTypesRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiExtrasObjectTypesRetrieveRequest) Execute() (*ObjectType, *http.Response, error) {
@@ -26414,26 +26507,27 @@ ExtrasObjectTypesRetrieve Method for ExtrasObjectTypesRetrieve
 
 Read-only list of ObjectTypes.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this object type.
- @return ApiExtrasObjectTypesRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this object type.
+	@return ApiExtrasObjectTypesRetrieveRequest
 */
 func (a *ExtrasAPIService) ExtrasObjectTypesRetrieve(ctx context.Context, id int32) ApiExtrasObjectTypesRetrieveRequest {
 	return ApiExtrasObjectTypesRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ObjectType
+//
+//	@return ObjectType
 func (a *ExtrasAPIService) ExtrasObjectTypesRetrieveExecute(r ApiExtrasObjectTypesRetrieveRequest) (*ObjectType, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ObjectType
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ObjectType
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasObjectTypesRetrieve")
@@ -26517,8 +26611,8 @@ func (a *ExtrasAPIService) ExtrasObjectTypesRetrieveExecute(r ApiExtrasObjectTyp
 }
 
 type ApiExtrasSavedFiltersBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                context.Context
+	ApiService         *ExtrasAPIService
 	savedFilterRequest *[]SavedFilterRequest
 }
 
@@ -26536,22 +26630,22 @@ ExtrasSavedFiltersBulkDestroy Method for ExtrasSavedFiltersBulkDestroy
 
 Delete a list of saved filter objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasSavedFiltersBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasSavedFiltersBulkDestroyRequest
 */
 func (a *ExtrasAPIService) ExtrasSavedFiltersBulkDestroy(ctx context.Context) ApiExtrasSavedFiltersBulkDestroyRequest {
 	return ApiExtrasSavedFiltersBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *ExtrasAPIService) ExtrasSavedFiltersBulkDestroyExecute(r ApiExtrasSavedFiltersBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasSavedFiltersBulkDestroy")
@@ -26630,8 +26724,8 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersBulkDestroyExecute(r ApiExtrasSaved
 }
 
 type ApiExtrasSavedFiltersBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                context.Context
+	ApiService         *ExtrasAPIService
 	savedFilterRequest *[]SavedFilterRequest
 }
 
@@ -26649,24 +26743,25 @@ ExtrasSavedFiltersBulkPartialUpdate Method for ExtrasSavedFiltersBulkPartialUpda
 
 Patch a list of saved filter objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasSavedFiltersBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasSavedFiltersBulkPartialUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasSavedFiltersBulkPartialUpdate(ctx context.Context) ApiExtrasSavedFiltersBulkPartialUpdateRequest {
 	return ApiExtrasSavedFiltersBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []SavedFilter
+//
+//	@return []SavedFilter
 func (a *ExtrasAPIService) ExtrasSavedFiltersBulkPartialUpdateExecute(r ApiExtrasSavedFiltersBulkPartialUpdateRequest) ([]SavedFilter, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []SavedFilter
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []SavedFilter
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasSavedFiltersBulkPartialUpdate")
@@ -26754,8 +26849,8 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersBulkPartialUpdateExecute(r ApiExtra
 }
 
 type ApiExtrasSavedFiltersBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                context.Context
+	ApiService         *ExtrasAPIService
 	savedFilterRequest *[]SavedFilterRequest
 }
 
@@ -26773,24 +26868,25 @@ ExtrasSavedFiltersBulkUpdate Method for ExtrasSavedFiltersBulkUpdate
 
 Put a list of saved filter objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasSavedFiltersBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasSavedFiltersBulkUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasSavedFiltersBulkUpdate(ctx context.Context) ApiExtrasSavedFiltersBulkUpdateRequest {
 	return ApiExtrasSavedFiltersBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []SavedFilter
+//
+//	@return []SavedFilter
 func (a *ExtrasAPIService) ExtrasSavedFiltersBulkUpdateExecute(r ApiExtrasSavedFiltersBulkUpdateRequest) ([]SavedFilter, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []SavedFilter
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []SavedFilter
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasSavedFiltersBulkUpdate")
@@ -26878,8 +26974,8 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersBulkUpdateExecute(r ApiExtrasSavedF
 }
 
 type ApiExtrasSavedFiltersCreateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                context.Context
+	ApiService         *ExtrasAPIService
 	savedFilterRequest *SavedFilterRequest
 }
 
@@ -26897,24 +26993,25 @@ ExtrasSavedFiltersCreate Method for ExtrasSavedFiltersCreate
 
 Post a list of saved filter objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasSavedFiltersCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasSavedFiltersCreateRequest
 */
 func (a *ExtrasAPIService) ExtrasSavedFiltersCreate(ctx context.Context) ApiExtrasSavedFiltersCreateRequest {
 	return ApiExtrasSavedFiltersCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SavedFilter
+//
+//	@return SavedFilter
 func (a *ExtrasAPIService) ExtrasSavedFiltersCreateExecute(r ApiExtrasSavedFiltersCreateRequest) (*SavedFilter, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SavedFilter
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SavedFilter
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasSavedFiltersCreate")
@@ -27002,9 +27099,9 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersCreateExecute(r ApiExtrasSavedFilte
 }
 
 type ApiExtrasSavedFiltersDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiExtrasSavedFiltersDestroyRequest) Execute() (*http.Response, error) {
@@ -27016,24 +27113,24 @@ ExtrasSavedFiltersDestroy Method for ExtrasSavedFiltersDestroy
 
 Delete a saved filter object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this saved filter.
- @return ApiExtrasSavedFiltersDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this saved filter.
+	@return ApiExtrasSavedFiltersDestroyRequest
 */
 func (a *ExtrasAPIService) ExtrasSavedFiltersDestroy(ctx context.Context, id int32) ApiExtrasSavedFiltersDestroyRequest {
 	return ApiExtrasSavedFiltersDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *ExtrasAPIService) ExtrasSavedFiltersDestroyExecute(r ApiExtrasSavedFiltersDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasSavedFiltersDestroy")
@@ -27108,95 +27205,95 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersDestroyExecute(r ApiExtrasSavedFilt
 }
 
 type ApiExtrasSavedFiltersListRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	created *[]time.Time
-	createdEmpty *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
-	createdByRequest *string
-	description *[]string
-	descriptionEmpty *bool
-	descriptionIc *[]string
-	descriptionIe *[]string
-	descriptionIew *[]string
-	descriptionIsw *[]string
-	descriptionN *[]string
-	descriptionNic *[]string
-	descriptionNie *[]string
-	descriptionNiew *[]string
-	descriptionNisw *[]string
-	enabled *bool
-	id *[]int32
-	idEmpty *bool
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedEmpty *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
+	ctx               context.Context
+	ApiService        *ExtrasAPIService
+	created           *[]time.Time
+	createdEmpty      *[]time.Time
+	createdGt         *[]time.Time
+	createdGte        *[]time.Time
+	createdLt         *[]time.Time
+	createdLte        *[]time.Time
+	createdN          *[]time.Time
+	createdByRequest  *string
+	description       *[]string
+	descriptionEmpty  *bool
+	descriptionIc     *[]string
+	descriptionIe     *[]string
+	descriptionIew    *[]string
+	descriptionIsw    *[]string
+	descriptionN      *[]string
+	descriptionNic    *[]string
+	descriptionNie    *[]string
+	descriptionNiew   *[]string
+	descriptionNisw   *[]string
+	enabled           *bool
+	id                *[]int32
+	idEmpty           *bool
+	idGt              *[]int32
+	idGte             *[]int32
+	idLt              *[]int32
+	idLte             *[]int32
+	idN               *[]int32
+	lastUpdated       *[]time.Time
+	lastUpdatedEmpty  *[]time.Time
+	lastUpdatedGt     *[]time.Time
+	lastUpdatedGte    *[]time.Time
+	lastUpdatedLt     *[]time.Time
+	lastUpdatedLte    *[]time.Time
+	lastUpdatedN      *[]time.Time
+	limit             *int32
 	modifiedByRequest *string
-	name *[]string
-	nameEmpty *bool
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	objectType *string
-	objectTypeIc *string
-	objectTypeIe *string
-	objectTypeIew *string
-	objectTypeIsw *string
-	objectTypeN *string
-	objectTypeNic *string
-	objectTypeNie *string
-	objectTypeNiew *string
-	objectTypeNisw *string
-	objectTypeId *[]int32
-	objectTypeIdN *[]int32
-	offset *int32
-	ordering *string
-	q *string
-	shared *bool
-	slug *[]string
-	slugEmpty *bool
-	slugIc *[]string
-	slugIe *[]string
-	slugIew *[]string
-	slugIsw *[]string
-	slugN *[]string
-	slugNic *[]string
-	slugNie *[]string
-	slugNiew *[]string
-	slugNisw *[]string
-	updatedByRequest *string
-	usable *bool
-	user *[]string
-	userN *[]string
-	userId *[]*int32
-	userIdN *[]*int32
-	weight *[]int32
-	weightEmpty *bool
-	weightGt *[]int32
-	weightGte *[]int32
-	weightLt *[]int32
-	weightLte *[]int32
-	weightN *[]int32
+	name              *[]string
+	nameEmpty         *bool
+	nameIc            *[]string
+	nameIe            *[]string
+	nameIew           *[]string
+	nameIsw           *[]string
+	nameN             *[]string
+	nameNic           *[]string
+	nameNie           *[]string
+	nameNiew          *[]string
+	nameNisw          *[]string
+	objectType        *string
+	objectTypeIc      *string
+	objectTypeIe      *string
+	objectTypeIew     *string
+	objectTypeIsw     *string
+	objectTypeN       *string
+	objectTypeNic     *string
+	objectTypeNie     *string
+	objectTypeNiew    *string
+	objectTypeNisw    *string
+	objectTypeId      *[]int32
+	objectTypeIdN     *[]int32
+	offset            *int32
+	ordering          *string
+	q                 *string
+	shared            *bool
+	slug              *[]string
+	slugEmpty         *bool
+	slugIc            *[]string
+	slugIe            *[]string
+	slugIew           *[]string
+	slugIsw           *[]string
+	slugN             *[]string
+	slugNic           *[]string
+	slugNie           *[]string
+	slugNiew          *[]string
+	slugNisw          *[]string
+	updatedByRequest  *string
+	usable            *bool
+	user              *[]string
+	userN             *[]string
+	userId            *[]*int32
+	userIdN           *[]*int32
+	weight            *[]int32
+	weightEmpty       *bool
+	weightGt          *[]int32
+	weightGte         *[]int32
+	weightLt          *[]int32
+	weightLte         *[]int32
+	weightN           *[]int32
 }
 
 func (r ApiExtrasSavedFiltersListRequest) Created(created []time.Time) ApiExtrasSavedFiltersListRequest {
@@ -27651,24 +27748,25 @@ ExtrasSavedFiltersList Method for ExtrasSavedFiltersList
 
 Get a list of saved filter objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasSavedFiltersListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasSavedFiltersListRequest
 */
 func (a *ExtrasAPIService) ExtrasSavedFiltersList(ctx context.Context) ApiExtrasSavedFiltersListRequest {
 	return ApiExtrasSavedFiltersListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedSavedFilterList
+//
+//	@return PaginatedSavedFilterList
 func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFiltersListRequest) (*PaginatedSavedFilterList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedSavedFilterList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedSavedFilterList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasSavedFiltersList")
@@ -27687,10 +27785,10 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "form", "multi")
 		}
 	}
 	if r.createdEmpty != nil {
@@ -27698,10 +27796,10 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "form", "multi")
 		}
 	}
 	if r.createdGt != nil {
@@ -27709,10 +27807,10 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "form", "multi")
 		}
 	}
 	if r.createdGte != nil {
@@ -27720,10 +27818,10 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "form", "multi")
 		}
 	}
 	if r.createdLt != nil {
@@ -27731,10 +27829,10 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "form", "multi")
 		}
 	}
 	if r.createdLte != nil {
@@ -27742,10 +27840,10 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "form", "multi")
 		}
 	}
 	if r.createdN != nil {
@@ -27753,38 +27851,38 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "form", "multi")
 		}
 	}
 	if r.createdByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_request", r.createdByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_request", r.createdByRequest, "form", "")
 	}
 	if r.description != nil {
 		t := *r.description
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "form", "multi")
 		}
 	}
 	if r.descriptionEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "description__empty", r.descriptionEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "description__empty", r.descriptionEmpty, "form", "")
 	}
 	if r.descriptionIc != nil {
 		t := *r.descriptionIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "form", "multi")
 		}
 	}
 	if r.descriptionIe != nil {
@@ -27792,10 +27890,10 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "form", "multi")
 		}
 	}
 	if r.descriptionIew != nil {
@@ -27803,10 +27901,10 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "form", "multi")
 		}
 	}
 	if r.descriptionIsw != nil {
@@ -27814,10 +27912,10 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "form", "multi")
 		}
 	}
 	if r.descriptionN != nil {
@@ -27825,10 +27923,10 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "form", "multi")
 		}
 	}
 	if r.descriptionNic != nil {
@@ -27836,10 +27934,10 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "form", "multi")
 		}
 	}
 	if r.descriptionNie != nil {
@@ -27847,10 +27945,10 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "form", "multi")
 		}
 	}
 	if r.descriptionNiew != nil {
@@ -27858,10 +27956,10 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "form", "multi")
 		}
 	}
 	if r.descriptionNisw != nil {
@@ -27869,38 +27967,38 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "form", "multi")
 		}
 	}
 	if r.enabled != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "enabled", r.enabled, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "enabled", r.enabled, "form", "")
 	}
 	if r.id != nil {
 		t := *r.id
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "form", "multi")
 		}
 	}
 	if r.idEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "form", "")
 	}
 	if r.idGt != nil {
 		t := *r.idGt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "form", "multi")
 		}
 	}
 	if r.idGte != nil {
@@ -27908,10 +28006,10 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "form", "multi")
 		}
 	}
 	if r.idLt != nil {
@@ -27919,10 +28017,10 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "form", "multi")
 		}
 	}
 	if r.idLte != nil {
@@ -27930,10 +28028,10 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "form", "multi")
 		}
 	}
 	if r.idN != nil {
@@ -27941,10 +28039,10 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "form", "multi")
 		}
 	}
 	if r.lastUpdated != nil {
@@ -27952,10 +28050,10 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedEmpty != nil {
@@ -27963,10 +28061,10 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedGt != nil {
@@ -27974,10 +28072,10 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedGte != nil {
@@ -27985,10 +28083,10 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedLt != nil {
@@ -27996,10 +28094,10 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedLte != nil {
@@ -28007,10 +28105,10 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedN != nil {
@@ -28018,41 +28116,41 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "form", "multi")
 		}
 	}
 	if r.limit != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
 	}
 	if r.modifiedByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "modified_by_request", r.modifiedByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "modified_by_request", r.modifiedByRequest, "form", "")
 	}
 	if r.name != nil {
 		t := *r.name
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "form", "multi")
 		}
 	}
 	if r.nameEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "name__empty", r.nameEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "name__empty", r.nameEmpty, "form", "")
 	}
 	if r.nameIc != nil {
 		t := *r.nameIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "form", "multi")
 		}
 	}
 	if r.nameIe != nil {
@@ -28060,10 +28158,10 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "form", "multi")
 		}
 	}
 	if r.nameIew != nil {
@@ -28071,10 +28169,10 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "form", "multi")
 		}
 	}
 	if r.nameIsw != nil {
@@ -28082,10 +28180,10 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "form", "multi")
 		}
 	}
 	if r.nameN != nil {
@@ -28093,10 +28191,10 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "form", "multi")
 		}
 	}
 	if r.nameNic != nil {
@@ -28104,10 +28202,10 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "form", "multi")
 		}
 	}
 	if r.nameNie != nil {
@@ -28115,10 +28213,10 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "form", "multi")
 		}
 	}
 	if r.nameNiew != nil {
@@ -28126,10 +28224,10 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "form", "multi")
 		}
 	}
 	if r.nameNisw != nil {
@@ -28137,51 +28235,51 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "form", "multi")
 		}
 	}
 	if r.objectType != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type", r.objectType, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type", r.objectType, "form", "")
 	}
 	if r.objectTypeIc != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__ic", r.objectTypeIc, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__ic", r.objectTypeIc, "form", "")
 	}
 	if r.objectTypeIe != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__ie", r.objectTypeIe, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__ie", r.objectTypeIe, "form", "")
 	}
 	if r.objectTypeIew != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__iew", r.objectTypeIew, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__iew", r.objectTypeIew, "form", "")
 	}
 	if r.objectTypeIsw != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__isw", r.objectTypeIsw, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__isw", r.objectTypeIsw, "form", "")
 	}
 	if r.objectTypeN != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__n", r.objectTypeN, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__n", r.objectTypeN, "form", "")
 	}
 	if r.objectTypeNic != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__nic", r.objectTypeNic, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__nic", r.objectTypeNic, "form", "")
 	}
 	if r.objectTypeNie != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__nie", r.objectTypeNie, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__nie", r.objectTypeNie, "form", "")
 	}
 	if r.objectTypeNiew != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__niew", r.objectTypeNiew, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__niew", r.objectTypeNiew, "form", "")
 	}
 	if r.objectTypeNisw != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__nisw", r.objectTypeNisw, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__nisw", r.objectTypeNisw, "form", "")
 	}
 	if r.objectTypeId != nil {
 		t := *r.objectTypeId
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id", t, "form", "multi")
 		}
 	}
 	if r.objectTypeIdN != nil {
@@ -28189,47 +28287,47 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__n", t, "form", "multi")
 		}
 	}
 	if r.offset != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "form", "")
 	}
 	if r.ordering != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "form", "")
 	}
 	if r.q != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "form", "")
 	}
 	if r.shared != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "shared", r.shared, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "shared", r.shared, "form", "")
 	}
 	if r.slug != nil {
 		t := *r.slug
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug", t, "form", "multi")
 		}
 	}
 	if r.slugEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "slug__empty", r.slugEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "slug__empty", r.slugEmpty, "form", "")
 	}
 	if r.slugIc != nil {
 		t := *r.slugIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", t, "form", "multi")
 		}
 	}
 	if r.slugIe != nil {
@@ -28237,10 +28335,10 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", t, "form", "multi")
 		}
 	}
 	if r.slugIew != nil {
@@ -28248,10 +28346,10 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", t, "form", "multi")
 		}
 	}
 	if r.slugIsw != nil {
@@ -28259,10 +28357,10 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", t, "form", "multi")
 		}
 	}
 	if r.slugN != nil {
@@ -28270,10 +28368,10 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", t, "form", "multi")
 		}
 	}
 	if r.slugNic != nil {
@@ -28281,10 +28379,10 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", t, "form", "multi")
 		}
 	}
 	if r.slugNie != nil {
@@ -28292,10 +28390,10 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", t, "form", "multi")
 		}
 	}
 	if r.slugNiew != nil {
@@ -28303,10 +28401,10 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", t, "form", "multi")
 		}
 	}
 	if r.slugNisw != nil {
@@ -28314,27 +28412,27 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", t, "form", "multi")
 		}
 	}
 	if r.updatedByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "updated_by_request", r.updatedByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "updated_by_request", r.updatedByRequest, "form", "")
 	}
 	if r.usable != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "usable", r.usable, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "usable", r.usable, "form", "")
 	}
 	if r.user != nil {
 		t := *r.user
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "user", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "user", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "user", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "user", t, "form", "multi")
 		}
 	}
 	if r.userN != nil {
@@ -28342,10 +28440,10 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "user__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "user__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "user__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "user__n", t, "form", "multi")
 		}
 	}
 	if r.userId != nil {
@@ -28353,10 +28451,10 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "user_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "user_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "user_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "user_id", t, "form", "multi")
 		}
 	}
 	if r.userIdN != nil {
@@ -28364,10 +28462,10 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "user_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "user_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "user_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "user_id__n", t, "form", "multi")
 		}
 	}
 	if r.weight != nil {
@@ -28375,24 +28473,24 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "weight", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "weight", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "weight", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "weight", t, "form", "multi")
 		}
 	}
 	if r.weightEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "weight__empty", r.weightEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "weight__empty", r.weightEmpty, "form", "")
 	}
 	if r.weightGt != nil {
 		t := *r.weightGt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gt", t, "form", "multi")
 		}
 	}
 	if r.weightGte != nil {
@@ -28400,10 +28498,10 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gte", t, "form", "multi")
 		}
 	}
 	if r.weightLt != nil {
@@ -28411,10 +28509,10 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lt", t, "form", "multi")
 		}
 	}
 	if r.weightLte != nil {
@@ -28422,10 +28520,10 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lte", t, "form", "multi")
 		}
 	}
 	if r.weightN != nil {
@@ -28433,10 +28531,10 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__n", t, "form", "multi")
 		}
 	}
 	// to determine the Content-Type header
@@ -28508,9 +28606,9 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 }
 
 type ApiExtrasSavedFiltersPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	id int32
+	ctx                       context.Context
+	ApiService                *ExtrasAPIService
+	id                        int32
 	patchedSavedFilterRequest *PatchedSavedFilterRequest
 }
 
@@ -28528,26 +28626,27 @@ ExtrasSavedFiltersPartialUpdate Method for ExtrasSavedFiltersPartialUpdate
 
 Patch a saved filter object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this saved filter.
- @return ApiExtrasSavedFiltersPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this saved filter.
+	@return ApiExtrasSavedFiltersPartialUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasSavedFiltersPartialUpdate(ctx context.Context, id int32) ApiExtrasSavedFiltersPartialUpdateRequest {
 	return ApiExtrasSavedFiltersPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return SavedFilter
+//
+//	@return SavedFilter
 func (a *ExtrasAPIService) ExtrasSavedFiltersPartialUpdateExecute(r ApiExtrasSavedFiltersPartialUpdateRequest) (*SavedFilter, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SavedFilter
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SavedFilter
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasSavedFiltersPartialUpdate")
@@ -28633,9 +28732,9 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersPartialUpdateExecute(r ApiExtrasSav
 }
 
 type ApiExtrasSavedFiltersRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiExtrasSavedFiltersRetrieveRequest) Execute() (*SavedFilter, *http.Response, error) {
@@ -28647,26 +28746,27 @@ ExtrasSavedFiltersRetrieve Method for ExtrasSavedFiltersRetrieve
 
 Get a saved filter object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this saved filter.
- @return ApiExtrasSavedFiltersRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this saved filter.
+	@return ApiExtrasSavedFiltersRetrieveRequest
 */
 func (a *ExtrasAPIService) ExtrasSavedFiltersRetrieve(ctx context.Context, id int32) ApiExtrasSavedFiltersRetrieveRequest {
 	return ApiExtrasSavedFiltersRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return SavedFilter
+//
+//	@return SavedFilter
 func (a *ExtrasAPIService) ExtrasSavedFiltersRetrieveExecute(r ApiExtrasSavedFiltersRetrieveRequest) (*SavedFilter, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SavedFilter
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SavedFilter
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasSavedFiltersRetrieve")
@@ -28750,9 +28850,9 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersRetrieveExecute(r ApiExtrasSavedFil
 }
 
 type ApiExtrasSavedFiltersUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	id int32
+	ctx                context.Context
+	ApiService         *ExtrasAPIService
+	id                 int32
 	savedFilterRequest *SavedFilterRequest
 }
 
@@ -28770,26 +28870,27 @@ ExtrasSavedFiltersUpdate Method for ExtrasSavedFiltersUpdate
 
 Put a saved filter object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this saved filter.
- @return ApiExtrasSavedFiltersUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this saved filter.
+	@return ApiExtrasSavedFiltersUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasSavedFiltersUpdate(ctx context.Context, id int32) ApiExtrasSavedFiltersUpdateRequest {
 	return ApiExtrasSavedFiltersUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return SavedFilter
+//
+//	@return SavedFilter
 func (a *ExtrasAPIService) ExtrasSavedFiltersUpdateExecute(r ApiExtrasSavedFiltersUpdateRequest) (*SavedFilter, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SavedFilter
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SavedFilter
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasSavedFiltersUpdate")
@@ -28878,7 +28979,7 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersUpdateExecute(r ApiExtrasSavedFilte
 }
 
 type ApiExtrasScriptsCreateRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
 }
 
@@ -28891,24 +28992,25 @@ ExtrasScriptsCreate Method for ExtrasScriptsCreate
 
 Post a list of script objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasScriptsCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasScriptsCreateRequest
 */
 func (a *ExtrasAPIService) ExtrasScriptsCreate(ctx context.Context) ApiExtrasScriptsCreateRequest {
 	return ApiExtrasScriptsCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return Script
+//
+//	@return Script
 func (a *ExtrasAPIService) ExtrasScriptsCreateExecute(r ApiExtrasScriptsCreateRequest) (*Script, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Script
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Script
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasScriptsCreate")
@@ -28991,9 +29093,9 @@ func (a *ExtrasAPIService) ExtrasScriptsCreateExecute(r ApiExtrasScriptsCreateRe
 }
 
 type ApiExtrasScriptsDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
-	id string
+	id         string
 }
 
 func (r ApiExtrasScriptsDestroyRequest) Execute() (*http.Response, error) {
@@ -29005,24 +29107,24 @@ ExtrasScriptsDestroy Method for ExtrasScriptsDestroy
 
 Delete a script object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id
- @return ApiExtrasScriptsDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id
+	@return ApiExtrasScriptsDestroyRequest
 */
 func (a *ExtrasAPIService) ExtrasScriptsDestroy(ctx context.Context, id string) ApiExtrasScriptsDestroyRequest {
 	return ApiExtrasScriptsDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *ExtrasAPIService) ExtrasScriptsDestroyExecute(r ApiExtrasScriptsDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasScriptsDestroy")
@@ -29097,33 +29199,33 @@ func (a *ExtrasAPIService) ExtrasScriptsDestroyExecute(r ApiExtrasScriptsDestroy
 }
 
 type ApiExtrasScriptsListRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	id *[]int32
-	idEmpty *bool
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
+	ctx          context.Context
+	ApiService   *ExtrasAPIService
+	id           *[]int32
+	idEmpty      *bool
+	idGt         *[]int32
+	idGte        *[]int32
+	idLt         *[]int32
+	idLte        *[]int32
+	idN          *[]int32
 	isExecutable *bool
-	limit *int32
-	moduleId *[]int32
-	moduleIdN *[]int32
-	name *[]string
-	nameEmpty *bool
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	offset *int32
-	ordering *string
-	q *string
+	limit        *int32
+	moduleId     *[]int32
+	moduleIdN    *[]int32
+	name         *[]string
+	nameEmpty    *bool
+	nameIc       *[]string
+	nameIe       *[]string
+	nameIew      *[]string
+	nameIsw      *[]string
+	nameN        *[]string
+	nameNic      *[]string
+	nameNie      *[]string
+	nameNiew     *[]string
+	nameNisw     *[]string
+	offset       *int32
+	ordering     *string
+	q            *string
 }
 
 func (r ApiExtrasScriptsListRequest) Id(id []int32) ApiExtrasScriptsListRequest {
@@ -29266,24 +29368,25 @@ ExtrasScriptsList Method for ExtrasScriptsList
 
 Get a list of script objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasScriptsListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasScriptsListRequest
 */
 func (a *ExtrasAPIService) ExtrasScriptsList(ctx context.Context) ApiExtrasScriptsListRequest {
 	return ApiExtrasScriptsListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedScriptList
+//
+//	@return PaginatedScriptList
 func (a *ExtrasAPIService) ExtrasScriptsListExecute(r ApiExtrasScriptsListRequest) (*PaginatedScriptList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedScriptList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedScriptList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasScriptsList")
@@ -29302,24 +29405,24 @@ func (a *ExtrasAPIService) ExtrasScriptsListExecute(r ApiExtrasScriptsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "form", "multi")
 		}
 	}
 	if r.idEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "form", "")
 	}
 	if r.idGt != nil {
 		t := *r.idGt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "form", "multi")
 		}
 	}
 	if r.idGte != nil {
@@ -29327,10 +29430,10 @@ func (a *ExtrasAPIService) ExtrasScriptsListExecute(r ApiExtrasScriptsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "form", "multi")
 		}
 	}
 	if r.idLt != nil {
@@ -29338,10 +29441,10 @@ func (a *ExtrasAPIService) ExtrasScriptsListExecute(r ApiExtrasScriptsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "form", "multi")
 		}
 	}
 	if r.idLte != nil {
@@ -29349,10 +29452,10 @@ func (a *ExtrasAPIService) ExtrasScriptsListExecute(r ApiExtrasScriptsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "form", "multi")
 		}
 	}
 	if r.idN != nil {
@@ -29360,27 +29463,27 @@ func (a *ExtrasAPIService) ExtrasScriptsListExecute(r ApiExtrasScriptsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "form", "multi")
 		}
 	}
 	if r.isExecutable != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "is_executable", r.isExecutable, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "is_executable", r.isExecutable, "form", "")
 	}
 	if r.limit != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
 	}
 	if r.moduleId != nil {
 		t := *r.moduleId
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "module_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "module_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "module_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "module_id", t, "form", "multi")
 		}
 	}
 	if r.moduleIdN != nil {
@@ -29388,10 +29491,10 @@ func (a *ExtrasAPIService) ExtrasScriptsListExecute(r ApiExtrasScriptsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "module_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "module_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "module_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "module_id__n", t, "form", "multi")
 		}
 	}
 	if r.name != nil {
@@ -29399,24 +29502,24 @@ func (a *ExtrasAPIService) ExtrasScriptsListExecute(r ApiExtrasScriptsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "form", "multi")
 		}
 	}
 	if r.nameEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "name__empty", r.nameEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "name__empty", r.nameEmpty, "form", "")
 	}
 	if r.nameIc != nil {
 		t := *r.nameIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "form", "multi")
 		}
 	}
 	if r.nameIe != nil {
@@ -29424,10 +29527,10 @@ func (a *ExtrasAPIService) ExtrasScriptsListExecute(r ApiExtrasScriptsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "form", "multi")
 		}
 	}
 	if r.nameIew != nil {
@@ -29435,10 +29538,10 @@ func (a *ExtrasAPIService) ExtrasScriptsListExecute(r ApiExtrasScriptsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "form", "multi")
 		}
 	}
 	if r.nameIsw != nil {
@@ -29446,10 +29549,10 @@ func (a *ExtrasAPIService) ExtrasScriptsListExecute(r ApiExtrasScriptsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "form", "multi")
 		}
 	}
 	if r.nameN != nil {
@@ -29457,10 +29560,10 @@ func (a *ExtrasAPIService) ExtrasScriptsListExecute(r ApiExtrasScriptsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "form", "multi")
 		}
 	}
 	if r.nameNic != nil {
@@ -29468,10 +29571,10 @@ func (a *ExtrasAPIService) ExtrasScriptsListExecute(r ApiExtrasScriptsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "form", "multi")
 		}
 	}
 	if r.nameNie != nil {
@@ -29479,10 +29582,10 @@ func (a *ExtrasAPIService) ExtrasScriptsListExecute(r ApiExtrasScriptsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "form", "multi")
 		}
 	}
 	if r.nameNiew != nil {
@@ -29490,10 +29593,10 @@ func (a *ExtrasAPIService) ExtrasScriptsListExecute(r ApiExtrasScriptsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "form", "multi")
 		}
 	}
 	if r.nameNisw != nil {
@@ -29501,20 +29604,20 @@ func (a *ExtrasAPIService) ExtrasScriptsListExecute(r ApiExtrasScriptsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "form", "multi")
 		}
 	}
 	if r.offset != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "form", "")
 	}
 	if r.ordering != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "form", "")
 	}
 	if r.q != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -29585,9 +29688,9 @@ func (a *ExtrasAPIService) ExtrasScriptsListExecute(r ApiExtrasScriptsListReques
 }
 
 type ApiExtrasScriptsPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	id string
+	ctx                       context.Context
+	ApiService                *ExtrasAPIService
+	id                        string
 	patchedScriptInputRequest *PatchedScriptInputRequest
 }
 
@@ -29605,26 +29708,27 @@ ExtrasScriptsPartialUpdate Method for ExtrasScriptsPartialUpdate
 
 Patch a script object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id
- @return ApiExtrasScriptsPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id
+	@return ApiExtrasScriptsPartialUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasScriptsPartialUpdate(ctx context.Context, id string) ApiExtrasScriptsPartialUpdateRequest {
 	return ApiExtrasScriptsPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Script
+//
+//	@return Script
 func (a *ExtrasAPIService) ExtrasScriptsPartialUpdateExecute(r ApiExtrasScriptsPartialUpdateRequest) (*Script, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Script
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Script
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasScriptsPartialUpdate")
@@ -29710,9 +29814,9 @@ func (a *ExtrasAPIService) ExtrasScriptsPartialUpdateExecute(r ApiExtrasScriptsP
 }
 
 type ApiExtrasScriptsRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
-	id string
+	id         string
 }
 
 func (r ApiExtrasScriptsRetrieveRequest) Execute() (*Script, *http.Response, error) {
@@ -29724,26 +29828,27 @@ ExtrasScriptsRetrieve Method for ExtrasScriptsRetrieve
 
 Get a script object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id
- @return ApiExtrasScriptsRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id
+	@return ApiExtrasScriptsRetrieveRequest
 */
 func (a *ExtrasAPIService) ExtrasScriptsRetrieve(ctx context.Context, id string) ApiExtrasScriptsRetrieveRequest {
 	return ApiExtrasScriptsRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Script
+//
+//	@return Script
 func (a *ExtrasAPIService) ExtrasScriptsRetrieveExecute(r ApiExtrasScriptsRetrieveRequest) (*Script, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Script
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Script
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasScriptsRetrieve")
@@ -29827,9 +29932,9 @@ func (a *ExtrasAPIService) ExtrasScriptsRetrieveExecute(r ApiExtrasScriptsRetrie
 }
 
 type ApiExtrasScriptsUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	id string
+	ctx                context.Context
+	ApiService         *ExtrasAPIService
+	id                 string
 	scriptInputRequest *ScriptInputRequest
 }
 
@@ -29847,26 +29952,27 @@ ExtrasScriptsUpdate Method for ExtrasScriptsUpdate
 
 Put a script object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id
- @return ApiExtrasScriptsUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id
+	@return ApiExtrasScriptsUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasScriptsUpdate(ctx context.Context, id string) ApiExtrasScriptsUpdateRequest {
 	return ApiExtrasScriptsUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Script
+//
+//	@return Script
 func (a *ExtrasAPIService) ExtrasScriptsUpdateExecute(r ApiExtrasScriptsUpdateRequest) (*Script, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Script
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Script
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasScriptsUpdate")
@@ -29955,8 +30061,8 @@ func (a *ExtrasAPIService) ExtrasScriptsUpdateExecute(r ApiExtrasScriptsUpdateRe
 }
 
 type ApiExtrasSubscriptionsBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                 context.Context
+	ApiService          *ExtrasAPIService
 	subscriptionRequest *[]SubscriptionRequest
 }
 
@@ -29974,22 +30080,22 @@ ExtrasSubscriptionsBulkDestroy Method for ExtrasSubscriptionsBulkDestroy
 
 Delete a list of subscription objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasSubscriptionsBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasSubscriptionsBulkDestroyRequest
 */
 func (a *ExtrasAPIService) ExtrasSubscriptionsBulkDestroy(ctx context.Context) ApiExtrasSubscriptionsBulkDestroyRequest {
 	return ApiExtrasSubscriptionsBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *ExtrasAPIService) ExtrasSubscriptionsBulkDestroyExecute(r ApiExtrasSubscriptionsBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasSubscriptionsBulkDestroy")
@@ -30068,8 +30174,8 @@ func (a *ExtrasAPIService) ExtrasSubscriptionsBulkDestroyExecute(r ApiExtrasSubs
 }
 
 type ApiExtrasSubscriptionsBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                 context.Context
+	ApiService          *ExtrasAPIService
 	subscriptionRequest *[]SubscriptionRequest
 }
 
@@ -30087,24 +30193,25 @@ ExtrasSubscriptionsBulkPartialUpdate Method for ExtrasSubscriptionsBulkPartialUp
 
 Patch a list of subscription objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasSubscriptionsBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasSubscriptionsBulkPartialUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasSubscriptionsBulkPartialUpdate(ctx context.Context) ApiExtrasSubscriptionsBulkPartialUpdateRequest {
 	return ApiExtrasSubscriptionsBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []Subscription
+//
+//	@return []Subscription
 func (a *ExtrasAPIService) ExtrasSubscriptionsBulkPartialUpdateExecute(r ApiExtrasSubscriptionsBulkPartialUpdateRequest) ([]Subscription, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []Subscription
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []Subscription
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasSubscriptionsBulkPartialUpdate")
@@ -30192,8 +30299,8 @@ func (a *ExtrasAPIService) ExtrasSubscriptionsBulkPartialUpdateExecute(r ApiExtr
 }
 
 type ApiExtrasSubscriptionsBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                 context.Context
+	ApiService          *ExtrasAPIService
 	subscriptionRequest *[]SubscriptionRequest
 }
 
@@ -30211,24 +30318,25 @@ ExtrasSubscriptionsBulkUpdate Method for ExtrasSubscriptionsBulkUpdate
 
 Put a list of subscription objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasSubscriptionsBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasSubscriptionsBulkUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasSubscriptionsBulkUpdate(ctx context.Context) ApiExtrasSubscriptionsBulkUpdateRequest {
 	return ApiExtrasSubscriptionsBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []Subscription
+//
+//	@return []Subscription
 func (a *ExtrasAPIService) ExtrasSubscriptionsBulkUpdateExecute(r ApiExtrasSubscriptionsBulkUpdateRequest) ([]Subscription, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []Subscription
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []Subscription
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasSubscriptionsBulkUpdate")
@@ -30316,8 +30424,8 @@ func (a *ExtrasAPIService) ExtrasSubscriptionsBulkUpdateExecute(r ApiExtrasSubsc
 }
 
 type ApiExtrasSubscriptionsCreateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx                 context.Context
+	ApiService          *ExtrasAPIService
 	subscriptionRequest *SubscriptionRequest
 }
 
@@ -30335,24 +30443,25 @@ ExtrasSubscriptionsCreate Method for ExtrasSubscriptionsCreate
 
 Post a list of subscription objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasSubscriptionsCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasSubscriptionsCreateRequest
 */
 func (a *ExtrasAPIService) ExtrasSubscriptionsCreate(ctx context.Context) ApiExtrasSubscriptionsCreateRequest {
 	return ApiExtrasSubscriptionsCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return Subscription
+//
+//	@return Subscription
 func (a *ExtrasAPIService) ExtrasSubscriptionsCreateExecute(r ApiExtrasSubscriptionsCreateRequest) (*Subscription, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Subscription
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Subscription
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasSubscriptionsCreate")
@@ -30440,9 +30549,9 @@ func (a *ExtrasAPIService) ExtrasSubscriptionsCreateExecute(r ApiExtrasSubscript
 }
 
 type ApiExtrasSubscriptionsDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiExtrasSubscriptionsDestroyRequest) Execute() (*http.Response, error) {
@@ -30454,24 +30563,24 @@ ExtrasSubscriptionsDestroy Method for ExtrasSubscriptionsDestroy
 
 Delete a subscription object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this subscription.
- @return ApiExtrasSubscriptionsDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this subscription.
+	@return ApiExtrasSubscriptionsDestroyRequest
 */
 func (a *ExtrasAPIService) ExtrasSubscriptionsDestroy(ctx context.Context, id int32) ApiExtrasSubscriptionsDestroyRequest {
 	return ApiExtrasSubscriptionsDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *ExtrasAPIService) ExtrasSubscriptionsDestroyExecute(r ApiExtrasSubscriptionsDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasSubscriptionsDestroy")
@@ -30546,11 +30655,11 @@ func (a *ExtrasAPIService) ExtrasSubscriptionsDestroyExecute(r ApiExtrasSubscrip
 }
 
 type ApiExtrasSubscriptionsListRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
-	limit *int32
-	offset *int32
-	ordering *string
+	limit      *int32
+	offset     *int32
+	ordering   *string
 }
 
 // Number of results to return per page.
@@ -30580,24 +30689,25 @@ ExtrasSubscriptionsList Method for ExtrasSubscriptionsList
 
 Get a list of subscription objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasSubscriptionsListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasSubscriptionsListRequest
 */
 func (a *ExtrasAPIService) ExtrasSubscriptionsList(ctx context.Context) ApiExtrasSubscriptionsListRequest {
 	return ApiExtrasSubscriptionsListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedSubscriptionList
+//
+//	@return PaginatedSubscriptionList
 func (a *ExtrasAPIService) ExtrasSubscriptionsListExecute(r ApiExtrasSubscriptionsListRequest) (*PaginatedSubscriptionList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedSubscriptionList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedSubscriptionList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasSubscriptionsList")
@@ -30612,13 +30722,13 @@ func (a *ExtrasAPIService) ExtrasSubscriptionsListExecute(r ApiExtrasSubscriptio
 	localVarFormParams := url.Values{}
 
 	if r.limit != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
 	}
 	if r.offset != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "form", "")
 	}
 	if r.ordering != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -30689,9 +30799,9 @@ func (a *ExtrasAPIService) ExtrasSubscriptionsListExecute(r ApiExtrasSubscriptio
 }
 
 type ApiExtrasSubscriptionsPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	id int32
+	ctx                        context.Context
+	ApiService                 *ExtrasAPIService
+	id                         int32
 	patchedSubscriptionRequest *PatchedSubscriptionRequest
 }
 
@@ -30709,26 +30819,27 @@ ExtrasSubscriptionsPartialUpdate Method for ExtrasSubscriptionsPartialUpdate
 
 Patch a subscription object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this subscription.
- @return ApiExtrasSubscriptionsPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this subscription.
+	@return ApiExtrasSubscriptionsPartialUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasSubscriptionsPartialUpdate(ctx context.Context, id int32) ApiExtrasSubscriptionsPartialUpdateRequest {
 	return ApiExtrasSubscriptionsPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Subscription
+//
+//	@return Subscription
 func (a *ExtrasAPIService) ExtrasSubscriptionsPartialUpdateExecute(r ApiExtrasSubscriptionsPartialUpdateRequest) (*Subscription, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Subscription
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Subscription
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasSubscriptionsPartialUpdate")
@@ -30814,9 +30925,9 @@ func (a *ExtrasAPIService) ExtrasSubscriptionsPartialUpdateExecute(r ApiExtrasSu
 }
 
 type ApiExtrasSubscriptionsRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiExtrasSubscriptionsRetrieveRequest) Execute() (*Subscription, *http.Response, error) {
@@ -30828,26 +30939,27 @@ ExtrasSubscriptionsRetrieve Method for ExtrasSubscriptionsRetrieve
 
 Get a subscription object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this subscription.
- @return ApiExtrasSubscriptionsRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this subscription.
+	@return ApiExtrasSubscriptionsRetrieveRequest
 */
 func (a *ExtrasAPIService) ExtrasSubscriptionsRetrieve(ctx context.Context, id int32) ApiExtrasSubscriptionsRetrieveRequest {
 	return ApiExtrasSubscriptionsRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Subscription
+//
+//	@return Subscription
 func (a *ExtrasAPIService) ExtrasSubscriptionsRetrieveExecute(r ApiExtrasSubscriptionsRetrieveRequest) (*Subscription, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Subscription
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Subscription
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasSubscriptionsRetrieve")
@@ -30931,9 +31043,9 @@ func (a *ExtrasAPIService) ExtrasSubscriptionsRetrieveExecute(r ApiExtrasSubscri
 }
 
 type ApiExtrasSubscriptionsUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	id int32
+	ctx                 context.Context
+	ApiService          *ExtrasAPIService
+	id                  int32
 	subscriptionRequest *SubscriptionRequest
 }
 
@@ -30951,26 +31063,27 @@ ExtrasSubscriptionsUpdate Method for ExtrasSubscriptionsUpdate
 
 Put a subscription object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this subscription.
- @return ApiExtrasSubscriptionsUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this subscription.
+	@return ApiExtrasSubscriptionsUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasSubscriptionsUpdate(ctx context.Context, id int32) ApiExtrasSubscriptionsUpdateRequest {
 	return ApiExtrasSubscriptionsUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Subscription
+//
+//	@return Subscription
 func (a *ExtrasAPIService) ExtrasSubscriptionsUpdateExecute(r ApiExtrasSubscriptionsUpdateRequest) (*Subscription, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Subscription
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Subscription
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasSubscriptionsUpdate")
@@ -31059,7 +31172,7 @@ func (a *ExtrasAPIService) ExtrasSubscriptionsUpdateExecute(r ApiExtrasSubscript
 }
 
 type ApiExtrasTagsBulkDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
 	tagRequest *[]TagRequest
 }
@@ -31078,22 +31191,22 @@ ExtrasTagsBulkDestroy Method for ExtrasTagsBulkDestroy
 
 Delete a list of tag objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasTagsBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasTagsBulkDestroyRequest
 */
 func (a *ExtrasAPIService) ExtrasTagsBulkDestroy(ctx context.Context) ApiExtrasTagsBulkDestroyRequest {
 	return ApiExtrasTagsBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *ExtrasAPIService) ExtrasTagsBulkDestroyExecute(r ApiExtrasTagsBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasTagsBulkDestroy")
@@ -31172,7 +31285,7 @@ func (a *ExtrasAPIService) ExtrasTagsBulkDestroyExecute(r ApiExtrasTagsBulkDestr
 }
 
 type ApiExtrasTagsBulkPartialUpdateRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
 	tagRequest *[]TagRequest
 }
@@ -31191,24 +31304,25 @@ ExtrasTagsBulkPartialUpdate Method for ExtrasTagsBulkPartialUpdate
 
 Patch a list of tag objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasTagsBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasTagsBulkPartialUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasTagsBulkPartialUpdate(ctx context.Context) ApiExtrasTagsBulkPartialUpdateRequest {
 	return ApiExtrasTagsBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []Tag
+//
+//	@return []Tag
 func (a *ExtrasAPIService) ExtrasTagsBulkPartialUpdateExecute(r ApiExtrasTagsBulkPartialUpdateRequest) ([]Tag, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []Tag
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []Tag
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasTagsBulkPartialUpdate")
@@ -31296,7 +31410,7 @@ func (a *ExtrasAPIService) ExtrasTagsBulkPartialUpdateExecute(r ApiExtrasTagsBul
 }
 
 type ApiExtrasTagsBulkUpdateRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
 	tagRequest *[]TagRequest
 }
@@ -31315,24 +31429,25 @@ ExtrasTagsBulkUpdate Method for ExtrasTagsBulkUpdate
 
 Put a list of tag objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasTagsBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasTagsBulkUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasTagsBulkUpdate(ctx context.Context) ApiExtrasTagsBulkUpdateRequest {
 	return ApiExtrasTagsBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []Tag
+//
+//	@return []Tag
 func (a *ExtrasAPIService) ExtrasTagsBulkUpdateExecute(r ApiExtrasTagsBulkUpdateRequest) ([]Tag, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []Tag
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []Tag
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasTagsBulkUpdate")
@@ -31420,7 +31535,7 @@ func (a *ExtrasAPIService) ExtrasTagsBulkUpdateExecute(r ApiExtrasTagsBulkUpdate
 }
 
 type ApiExtrasTagsCreateRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
 	tagRequest *TagRequest
 }
@@ -31439,24 +31554,25 @@ ExtrasTagsCreate Method for ExtrasTagsCreate
 
 Post a list of tag objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasTagsCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasTagsCreateRequest
 */
 func (a *ExtrasAPIService) ExtrasTagsCreate(ctx context.Context) ApiExtrasTagsCreateRequest {
 	return ApiExtrasTagsCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return Tag
+//
+//	@return Tag
 func (a *ExtrasAPIService) ExtrasTagsCreateExecute(r ApiExtrasTagsCreateRequest) (*Tag, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Tag
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Tag
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasTagsCreate")
@@ -31544,9 +31660,9 @@ func (a *ExtrasAPIService) ExtrasTagsCreateExecute(r ApiExtrasTagsCreateRequest)
 }
 
 type ApiExtrasTagsDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiExtrasTagsDestroyRequest) Execute() (*http.Response, error) {
@@ -31558,24 +31674,24 @@ ExtrasTagsDestroy Method for ExtrasTagsDestroy
 
 Delete a tag object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this tag.
- @return ApiExtrasTagsDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this tag.
+	@return ApiExtrasTagsDestroyRequest
 */
 func (a *ExtrasAPIService) ExtrasTagsDestroy(ctx context.Context, id int32) ApiExtrasTagsDestroyRequest {
 	return ApiExtrasTagsDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *ExtrasAPIService) ExtrasTagsDestroyExecute(r ApiExtrasTagsDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasTagsDestroy")
@@ -31650,85 +31766,85 @@ func (a *ExtrasAPIService) ExtrasTagsDestroyExecute(r ApiExtrasTagsDestroyReques
 }
 
 type ApiExtrasTagsListRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	color *[]string
-	colorEmpty *bool
-	colorIc *[]string
-	colorIe *[]string
-	colorIew *[]string
-	colorIsw *[]string
-	colorN *[]string
-	colorNic *[]string
-	colorNie *[]string
-	colorNiew *[]string
-	colorNisw *[]string
-	contentType *[]string
-	contentTypeId *[]int32
-	created *[]time.Time
-	createdEmpty *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
-	createdByRequest *string
-	description *[]string
-	descriptionEmpty *bool
-	descriptionIc *[]string
-	descriptionIe *[]string
-	descriptionIew *[]string
-	descriptionIsw *[]string
-	descriptionN *[]string
-	descriptionNic *[]string
-	descriptionNie *[]string
-	descriptionNiew *[]string
-	descriptionNisw *[]string
-	forObjectTypeId *[]int32
-	id *[]int32
-	idEmpty *bool
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedEmpty *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
+	ctx               context.Context
+	ApiService        *ExtrasAPIService
+	color             *[]string
+	colorEmpty        *bool
+	colorIc           *[]string
+	colorIe           *[]string
+	colorIew          *[]string
+	colorIsw          *[]string
+	colorN            *[]string
+	colorNic          *[]string
+	colorNie          *[]string
+	colorNiew         *[]string
+	colorNisw         *[]string
+	contentType       *[]string
+	contentTypeId     *[]int32
+	created           *[]time.Time
+	createdEmpty      *[]time.Time
+	createdGt         *[]time.Time
+	createdGte        *[]time.Time
+	createdLt         *[]time.Time
+	createdLte        *[]time.Time
+	createdN          *[]time.Time
+	createdByRequest  *string
+	description       *[]string
+	descriptionEmpty  *bool
+	descriptionIc     *[]string
+	descriptionIe     *[]string
+	descriptionIew    *[]string
+	descriptionIsw    *[]string
+	descriptionN      *[]string
+	descriptionNic    *[]string
+	descriptionNie    *[]string
+	descriptionNiew   *[]string
+	descriptionNisw   *[]string
+	forObjectTypeId   *[]int32
+	id                *[]int32
+	idEmpty           *bool
+	idGt              *[]int32
+	idGte             *[]int32
+	idLt              *[]int32
+	idLte             *[]int32
+	idN               *[]int32
+	lastUpdated       *[]time.Time
+	lastUpdatedEmpty  *[]time.Time
+	lastUpdatedGt     *[]time.Time
+	lastUpdatedGte    *[]time.Time
+	lastUpdatedLt     *[]time.Time
+	lastUpdatedLte    *[]time.Time
+	lastUpdatedN      *[]time.Time
+	limit             *int32
 	modifiedByRequest *string
-	name *[]string
-	nameEmpty *bool
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	objectTypes *[]int32
-	objectTypesN *[]int32
-	offset *int32
-	ordering *string
-	q *string
-	slug *[]string
-	slugEmpty *bool
-	slugIc *[]string
-	slugIe *[]string
-	slugIew *[]string
-	slugIsw *[]string
-	slugN *[]string
-	slugNic *[]string
-	slugNie *[]string
-	slugNiew *[]string
-	slugNisw *[]string
-	updatedByRequest *string
+	name              *[]string
+	nameEmpty         *bool
+	nameIc            *[]string
+	nameIe            *[]string
+	nameIew           *[]string
+	nameIsw           *[]string
+	nameN             *[]string
+	nameNic           *[]string
+	nameNie           *[]string
+	nameNiew          *[]string
+	nameNisw          *[]string
+	objectTypes       *[]int32
+	objectTypesN      *[]int32
+	offset            *int32
+	ordering          *string
+	q                 *string
+	slug              *[]string
+	slugEmpty         *bool
+	slugIc            *[]string
+	slugIe            *[]string
+	slugIew           *[]string
+	slugIsw           *[]string
+	slugN             *[]string
+	slugNic           *[]string
+	slugNie           *[]string
+	slugNiew          *[]string
+	slugNisw          *[]string
+	updatedByRequest  *string
 }
 
 func (r ApiExtrasTagsListRequest) Color(color []string) ApiExtrasTagsListRequest {
@@ -32129,24 +32245,25 @@ ExtrasTagsList Method for ExtrasTagsList
 
 Get a list of tag objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasTagsListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasTagsListRequest
 */
 func (a *ExtrasAPIService) ExtrasTagsList(ctx context.Context) ApiExtrasTagsListRequest {
 	return ApiExtrasTagsListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedTagList
+//
+//	@return PaginatedTagList
 func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*PaginatedTagList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedTagList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedTagList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasTagsList")
@@ -32165,24 +32282,24 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "color", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "color", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "color", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "color", t, "form", "multi")
 		}
 	}
 	if r.colorEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "color__empty", r.colorEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "color__empty", r.colorEmpty, "form", "")
 	}
 	if r.colorIc != nil {
 		t := *r.colorIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "color__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "color__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "color__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "color__ic", t, "form", "multi")
 		}
 	}
 	if r.colorIe != nil {
@@ -32190,10 +32307,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "color__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "color__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "color__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "color__ie", t, "form", "multi")
 		}
 	}
 	if r.colorIew != nil {
@@ -32201,10 +32318,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "color__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "color__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "color__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "color__iew", t, "form", "multi")
 		}
 	}
 	if r.colorIsw != nil {
@@ -32212,10 +32329,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "color__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "color__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "color__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "color__isw", t, "form", "multi")
 		}
 	}
 	if r.colorN != nil {
@@ -32223,10 +32340,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "color__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "color__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "color__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "color__n", t, "form", "multi")
 		}
 	}
 	if r.colorNic != nil {
@@ -32234,10 +32351,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "color__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "color__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "color__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "color__nic", t, "form", "multi")
 		}
 	}
 	if r.colorNie != nil {
@@ -32245,10 +32362,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "color__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "color__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "color__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "color__nie", t, "form", "multi")
 		}
 	}
 	if r.colorNiew != nil {
@@ -32256,10 +32373,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "color__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "color__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "color__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "color__niew", t, "form", "multi")
 		}
 	}
 	if r.colorNisw != nil {
@@ -32267,10 +32384,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "color__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "color__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "color__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "color__nisw", t, "form", "multi")
 		}
 	}
 	if r.contentType != nil {
@@ -32278,10 +32395,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "content_type", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "content_type", t, "form", "multi")
 		}
 	}
 	if r.contentTypeId != nil {
@@ -32289,10 +32406,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id", t, "form", "multi")
 		}
 	}
 	if r.created != nil {
@@ -32300,10 +32417,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "form", "multi")
 		}
 	}
 	if r.createdEmpty != nil {
@@ -32311,10 +32428,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "form", "multi")
 		}
 	}
 	if r.createdGt != nil {
@@ -32322,10 +32439,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "form", "multi")
 		}
 	}
 	if r.createdGte != nil {
@@ -32333,10 +32450,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "form", "multi")
 		}
 	}
 	if r.createdLt != nil {
@@ -32344,10 +32461,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "form", "multi")
 		}
 	}
 	if r.createdLte != nil {
@@ -32355,10 +32472,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "form", "multi")
 		}
 	}
 	if r.createdN != nil {
@@ -32366,38 +32483,38 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "form", "multi")
 		}
 	}
 	if r.createdByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_request", r.createdByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_request", r.createdByRequest, "form", "")
 	}
 	if r.description != nil {
 		t := *r.description
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "form", "multi")
 		}
 	}
 	if r.descriptionEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "description__empty", r.descriptionEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "description__empty", r.descriptionEmpty, "form", "")
 	}
 	if r.descriptionIc != nil {
 		t := *r.descriptionIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "form", "multi")
 		}
 	}
 	if r.descriptionIe != nil {
@@ -32405,10 +32522,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "form", "multi")
 		}
 	}
 	if r.descriptionIew != nil {
@@ -32416,10 +32533,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "form", "multi")
 		}
 	}
 	if r.descriptionIsw != nil {
@@ -32427,10 +32544,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "form", "multi")
 		}
 	}
 	if r.descriptionN != nil {
@@ -32438,10 +32555,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "form", "multi")
 		}
 	}
 	if r.descriptionNic != nil {
@@ -32449,10 +32566,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "form", "multi")
 		}
 	}
 	if r.descriptionNie != nil {
@@ -32460,10 +32577,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "form", "multi")
 		}
 	}
 	if r.descriptionNiew != nil {
@@ -32471,10 +32588,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "form", "multi")
 		}
 	}
 	if r.descriptionNisw != nil {
@@ -32482,10 +32599,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "form", "multi")
 		}
 	}
 	if r.forObjectTypeId != nil {
@@ -32493,10 +32610,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "for_object_type_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "for_object_type_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "for_object_type_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "for_object_type_id", t, "form", "multi")
 		}
 	}
 	if r.id != nil {
@@ -32504,24 +32621,24 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "form", "multi")
 		}
 	}
 	if r.idEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "form", "")
 	}
 	if r.idGt != nil {
 		t := *r.idGt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "form", "multi")
 		}
 	}
 	if r.idGte != nil {
@@ -32529,10 +32646,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "form", "multi")
 		}
 	}
 	if r.idLt != nil {
@@ -32540,10 +32657,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "form", "multi")
 		}
 	}
 	if r.idLte != nil {
@@ -32551,10 +32668,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "form", "multi")
 		}
 	}
 	if r.idN != nil {
@@ -32562,10 +32679,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "form", "multi")
 		}
 	}
 	if r.lastUpdated != nil {
@@ -32573,10 +32690,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedEmpty != nil {
@@ -32584,10 +32701,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedGt != nil {
@@ -32595,10 +32712,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedGte != nil {
@@ -32606,10 +32723,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedLt != nil {
@@ -32617,10 +32734,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedLte != nil {
@@ -32628,10 +32745,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedN != nil {
@@ -32639,41 +32756,41 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "form", "multi")
 		}
 	}
 	if r.limit != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
 	}
 	if r.modifiedByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "modified_by_request", r.modifiedByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "modified_by_request", r.modifiedByRequest, "form", "")
 	}
 	if r.name != nil {
 		t := *r.name
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "form", "multi")
 		}
 	}
 	if r.nameEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "name__empty", r.nameEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "name__empty", r.nameEmpty, "form", "")
 	}
 	if r.nameIc != nil {
 		t := *r.nameIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "form", "multi")
 		}
 	}
 	if r.nameIe != nil {
@@ -32681,10 +32798,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "form", "multi")
 		}
 	}
 	if r.nameIew != nil {
@@ -32692,10 +32809,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "form", "multi")
 		}
 	}
 	if r.nameIsw != nil {
@@ -32703,10 +32820,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "form", "multi")
 		}
 	}
 	if r.nameN != nil {
@@ -32714,10 +32831,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "form", "multi")
 		}
 	}
 	if r.nameNic != nil {
@@ -32725,10 +32842,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "form", "multi")
 		}
 	}
 	if r.nameNie != nil {
@@ -32736,10 +32853,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "form", "multi")
 		}
 	}
 	if r.nameNiew != nil {
@@ -32747,10 +32864,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "form", "multi")
 		}
 	}
 	if r.nameNisw != nil {
@@ -32758,10 +32875,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "form", "multi")
 		}
 	}
 	if r.objectTypes != nil {
@@ -32769,10 +32886,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_types", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_types", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "object_types", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_types", t, "form", "multi")
 		}
 	}
 	if r.objectTypesN != nil {
@@ -32780,44 +32897,44 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_types__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_types__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "object_types__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_types__n", t, "form", "multi")
 		}
 	}
 	if r.offset != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "form", "")
 	}
 	if r.ordering != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "form", "")
 	}
 	if r.q != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "form", "")
 	}
 	if r.slug != nil {
 		t := *r.slug
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug", t, "form", "multi")
 		}
 	}
 	if r.slugEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "slug__empty", r.slugEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "slug__empty", r.slugEmpty, "form", "")
 	}
 	if r.slugIc != nil {
 		t := *r.slugIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", t, "form", "multi")
 		}
 	}
 	if r.slugIe != nil {
@@ -32825,10 +32942,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", t, "form", "multi")
 		}
 	}
 	if r.slugIew != nil {
@@ -32836,10 +32953,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", t, "form", "multi")
 		}
 	}
 	if r.slugIsw != nil {
@@ -32847,10 +32964,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", t, "form", "multi")
 		}
 	}
 	if r.slugN != nil {
@@ -32858,10 +32975,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", t, "form", "multi")
 		}
 	}
 	if r.slugNic != nil {
@@ -32869,10 +32986,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", t, "form", "multi")
 		}
 	}
 	if r.slugNie != nil {
@@ -32880,10 +32997,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", t, "form", "multi")
 		}
 	}
 	if r.slugNiew != nil {
@@ -32891,10 +33008,10 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", t, "form", "multi")
 		}
 	}
 	if r.slugNisw != nil {
@@ -32902,14 +33019,14 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", t, "form", "multi")
 		}
 	}
 	if r.updatedByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "updated_by_request", r.updatedByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "updated_by_request", r.updatedByRequest, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -32980,9 +33097,9 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 }
 
 type ApiExtrasTagsPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	id int32
+	ctx               context.Context
+	ApiService        *ExtrasAPIService
+	id                int32
 	patchedTagRequest *PatchedTagRequest
 }
 
@@ -33000,26 +33117,27 @@ ExtrasTagsPartialUpdate Method for ExtrasTagsPartialUpdate
 
 Patch a tag object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this tag.
- @return ApiExtrasTagsPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this tag.
+	@return ApiExtrasTagsPartialUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasTagsPartialUpdate(ctx context.Context, id int32) ApiExtrasTagsPartialUpdateRequest {
 	return ApiExtrasTagsPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Tag
+//
+//	@return Tag
 func (a *ExtrasAPIService) ExtrasTagsPartialUpdateExecute(r ApiExtrasTagsPartialUpdateRequest) (*Tag, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Tag
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Tag
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasTagsPartialUpdate")
@@ -33105,9 +33223,9 @@ func (a *ExtrasAPIService) ExtrasTagsPartialUpdateExecute(r ApiExtrasTagsPartial
 }
 
 type ApiExtrasTagsRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiExtrasTagsRetrieveRequest) Execute() (*Tag, *http.Response, error) {
@@ -33119,26 +33237,27 @@ ExtrasTagsRetrieve Method for ExtrasTagsRetrieve
 
 Get a tag object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this tag.
- @return ApiExtrasTagsRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this tag.
+	@return ApiExtrasTagsRetrieveRequest
 */
 func (a *ExtrasAPIService) ExtrasTagsRetrieve(ctx context.Context, id int32) ApiExtrasTagsRetrieveRequest {
 	return ApiExtrasTagsRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Tag
+//
+//	@return Tag
 func (a *ExtrasAPIService) ExtrasTagsRetrieveExecute(r ApiExtrasTagsRetrieveRequest) (*Tag, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Tag
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Tag
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasTagsRetrieve")
@@ -33222,9 +33341,9 @@ func (a *ExtrasAPIService) ExtrasTagsRetrieveExecute(r ApiExtrasTagsRetrieveRequ
 }
 
 type ApiExtrasTagsUpdateRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
-	id int32
+	id         int32
 	tagRequest *TagRequest
 }
 
@@ -33242,26 +33361,27 @@ ExtrasTagsUpdate Method for ExtrasTagsUpdate
 
 Put a tag object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this tag.
- @return ApiExtrasTagsUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this tag.
+	@return ApiExtrasTagsUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasTagsUpdate(ctx context.Context, id int32) ApiExtrasTagsUpdateRequest {
 	return ApiExtrasTagsUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Tag
+//
+//	@return Tag
 func (a *ExtrasAPIService) ExtrasTagsUpdateExecute(r ApiExtrasTagsUpdateRequest) (*Tag, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Tag
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Tag
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasTagsUpdate")
@@ -33350,8 +33470,8 @@ func (a *ExtrasAPIService) ExtrasTagsUpdateExecute(r ApiExtrasTagsUpdateRequest)
 }
 
 type ApiExtrasWebhooksBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx            context.Context
+	ApiService     *ExtrasAPIService
 	webhookRequest *[]WebhookRequest
 }
 
@@ -33369,22 +33489,22 @@ ExtrasWebhooksBulkDestroy Method for ExtrasWebhooksBulkDestroy
 
 Delete a list of webhook objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasWebhooksBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasWebhooksBulkDestroyRequest
 */
 func (a *ExtrasAPIService) ExtrasWebhooksBulkDestroy(ctx context.Context) ApiExtrasWebhooksBulkDestroyRequest {
 	return ApiExtrasWebhooksBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *ExtrasAPIService) ExtrasWebhooksBulkDestroyExecute(r ApiExtrasWebhooksBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasWebhooksBulkDestroy")
@@ -33463,8 +33583,8 @@ func (a *ExtrasAPIService) ExtrasWebhooksBulkDestroyExecute(r ApiExtrasWebhooksB
 }
 
 type ApiExtrasWebhooksBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx            context.Context
+	ApiService     *ExtrasAPIService
 	webhookRequest *[]WebhookRequest
 }
 
@@ -33482,24 +33602,25 @@ ExtrasWebhooksBulkPartialUpdate Method for ExtrasWebhooksBulkPartialUpdate
 
 Patch a list of webhook objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasWebhooksBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasWebhooksBulkPartialUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasWebhooksBulkPartialUpdate(ctx context.Context) ApiExtrasWebhooksBulkPartialUpdateRequest {
 	return ApiExtrasWebhooksBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []Webhook
+//
+//	@return []Webhook
 func (a *ExtrasAPIService) ExtrasWebhooksBulkPartialUpdateExecute(r ApiExtrasWebhooksBulkPartialUpdateRequest) ([]Webhook, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []Webhook
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []Webhook
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasWebhooksBulkPartialUpdate")
@@ -33587,8 +33708,8 @@ func (a *ExtrasAPIService) ExtrasWebhooksBulkPartialUpdateExecute(r ApiExtrasWeb
 }
 
 type ApiExtrasWebhooksBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx            context.Context
+	ApiService     *ExtrasAPIService
 	webhookRequest *[]WebhookRequest
 }
 
@@ -33606,24 +33727,25 @@ ExtrasWebhooksBulkUpdate Method for ExtrasWebhooksBulkUpdate
 
 Put a list of webhook objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasWebhooksBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasWebhooksBulkUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasWebhooksBulkUpdate(ctx context.Context) ApiExtrasWebhooksBulkUpdateRequest {
 	return ApiExtrasWebhooksBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []Webhook
+//
+//	@return []Webhook
 func (a *ExtrasAPIService) ExtrasWebhooksBulkUpdateExecute(r ApiExtrasWebhooksBulkUpdateRequest) ([]Webhook, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []Webhook
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []Webhook
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasWebhooksBulkUpdate")
@@ -33711,8 +33833,8 @@ func (a *ExtrasAPIService) ExtrasWebhooksBulkUpdateExecute(r ApiExtrasWebhooksBu
 }
 
 type ApiExtrasWebhooksCreateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
+	ctx            context.Context
+	ApiService     *ExtrasAPIService
 	webhookRequest *WebhookRequest
 }
 
@@ -33730,24 +33852,25 @@ ExtrasWebhooksCreate Method for ExtrasWebhooksCreate
 
 Post a list of webhook objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasWebhooksCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasWebhooksCreateRequest
 */
 func (a *ExtrasAPIService) ExtrasWebhooksCreate(ctx context.Context) ApiExtrasWebhooksCreateRequest {
 	return ApiExtrasWebhooksCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return Webhook
+//
+//	@return Webhook
 func (a *ExtrasAPIService) ExtrasWebhooksCreateExecute(r ApiExtrasWebhooksCreateRequest) (*Webhook, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Webhook
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Webhook
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasWebhooksCreate")
@@ -33835,9 +33958,9 @@ func (a *ExtrasAPIService) ExtrasWebhooksCreateExecute(r ApiExtrasWebhooksCreate
 }
 
 type ApiExtrasWebhooksDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiExtrasWebhooksDestroyRequest) Execute() (*http.Response, error) {
@@ -33849,24 +33972,24 @@ ExtrasWebhooksDestroy Method for ExtrasWebhooksDestroy
 
 Delete a webhook object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this webhook.
- @return ApiExtrasWebhooksDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this webhook.
+	@return ApiExtrasWebhooksDestroyRequest
 */
 func (a *ExtrasAPIService) ExtrasWebhooksDestroy(ctx context.Context, id int32) ApiExtrasWebhooksDestroyRequest {
 	return ApiExtrasWebhooksDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *ExtrasAPIService) ExtrasWebhooksDestroyExecute(r ApiExtrasWebhooksDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasWebhooksDestroy")
@@ -33941,106 +34064,106 @@ func (a *ExtrasAPIService) ExtrasWebhooksDestroyExecute(r ApiExtrasWebhooksDestr
 }
 
 type ApiExtrasWebhooksListRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	caFilePath *[]string
-	caFilePathEmpty *bool
-	caFilePathIc *[]string
-	caFilePathIe *[]string
-	caFilePathIew *[]string
-	caFilePathIsw *[]string
-	caFilePathN *[]string
-	caFilePathNic *[]string
-	caFilePathNie *[]string
-	caFilePathNiew *[]string
-	caFilePathNisw *[]string
-	created *[]time.Time
-	createdEmpty *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
-	createdByRequest *string
-	description *[]string
-	descriptionEmpty *bool
-	descriptionIc *[]string
-	descriptionIe *[]string
-	descriptionIew *[]string
-	descriptionIsw *[]string
-	descriptionN *[]string
-	descriptionNic *[]string
-	descriptionNie *[]string
-	descriptionNiew *[]string
-	descriptionNisw *[]string
-	httpContentType *[]string
+	ctx                  context.Context
+	ApiService           *ExtrasAPIService
+	caFilePath           *[]string
+	caFilePathEmpty      *bool
+	caFilePathIc         *[]string
+	caFilePathIe         *[]string
+	caFilePathIew        *[]string
+	caFilePathIsw        *[]string
+	caFilePathN          *[]string
+	caFilePathNic        *[]string
+	caFilePathNie        *[]string
+	caFilePathNiew       *[]string
+	caFilePathNisw       *[]string
+	created              *[]time.Time
+	createdEmpty         *[]time.Time
+	createdGt            *[]time.Time
+	createdGte           *[]time.Time
+	createdLt            *[]time.Time
+	createdLte           *[]time.Time
+	createdN             *[]time.Time
+	createdByRequest     *string
+	description          *[]string
+	descriptionEmpty     *bool
+	descriptionIc        *[]string
+	descriptionIe        *[]string
+	descriptionIew       *[]string
+	descriptionIsw       *[]string
+	descriptionN         *[]string
+	descriptionNic       *[]string
+	descriptionNie       *[]string
+	descriptionNiew      *[]string
+	descriptionNisw      *[]string
+	httpContentType      *[]string
 	httpContentTypeEmpty *bool
-	httpContentTypeIc *[]string
-	httpContentTypeIe *[]string
-	httpContentTypeIew *[]string
-	httpContentTypeIsw *[]string
-	httpContentTypeN *[]string
-	httpContentTypeNic *[]string
-	httpContentTypeNie *[]string
-	httpContentTypeNiew *[]string
-	httpContentTypeNisw *[]string
-	httpMethod *[]string
-	httpMethodEmpty *bool
-	httpMethodIc *[]string
-	httpMethodIe *[]string
-	httpMethodIew *[]string
-	httpMethodIsw *[]string
-	httpMethodN *[]string
-	httpMethodNic *[]string
-	httpMethodNie *[]string
-	httpMethodNiew *[]string
-	httpMethodNisw *[]string
-	id *[]int32
-	idEmpty *bool
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedEmpty *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	modifiedByRequest *string
-	name *[]string
-	nameEmpty *bool
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	offset *int32
-	ordering *string
-	payloadUrl *[]string
-	q *string
-	secret *[]string
-	secretEmpty *bool
-	secretIc *[]string
-	secretIe *[]string
-	secretIew *[]string
-	secretIsw *[]string
-	secretN *[]string
-	secretNic *[]string
-	secretNie *[]string
-	secretNiew *[]string
-	secretNisw *[]string
-	sslVerification *bool
-	tag *[]string
-	tagN *[]string
-	updatedByRequest *string
+	httpContentTypeIc    *[]string
+	httpContentTypeIe    *[]string
+	httpContentTypeIew   *[]string
+	httpContentTypeIsw   *[]string
+	httpContentTypeN     *[]string
+	httpContentTypeNic   *[]string
+	httpContentTypeNie   *[]string
+	httpContentTypeNiew  *[]string
+	httpContentTypeNisw  *[]string
+	httpMethod           *[]string
+	httpMethodEmpty      *bool
+	httpMethodIc         *[]string
+	httpMethodIe         *[]string
+	httpMethodIew        *[]string
+	httpMethodIsw        *[]string
+	httpMethodN          *[]string
+	httpMethodNic        *[]string
+	httpMethodNie        *[]string
+	httpMethodNiew       *[]string
+	httpMethodNisw       *[]string
+	id                   *[]int32
+	idEmpty              *bool
+	idGt                 *[]int32
+	idGte                *[]int32
+	idLt                 *[]int32
+	idLte                *[]int32
+	idN                  *[]int32
+	lastUpdated          *[]time.Time
+	lastUpdatedEmpty     *[]time.Time
+	lastUpdatedGt        *[]time.Time
+	lastUpdatedGte       *[]time.Time
+	lastUpdatedLt        *[]time.Time
+	lastUpdatedLte       *[]time.Time
+	lastUpdatedN         *[]time.Time
+	limit                *int32
+	modifiedByRequest    *string
+	name                 *[]string
+	nameEmpty            *bool
+	nameIc               *[]string
+	nameIe               *[]string
+	nameIew              *[]string
+	nameIsw              *[]string
+	nameN                *[]string
+	nameNic              *[]string
+	nameNie              *[]string
+	nameNiew             *[]string
+	nameNisw             *[]string
+	offset               *int32
+	ordering             *string
+	payloadUrl           *[]string
+	q                    *string
+	secret               *[]string
+	secretEmpty          *bool
+	secretIc             *[]string
+	secretIe             *[]string
+	secretIew            *[]string
+	secretIsw            *[]string
+	secretN              *[]string
+	secretNic            *[]string
+	secretNie            *[]string
+	secretNiew           *[]string
+	secretNisw           *[]string
+	sslVerification      *bool
+	tag                  *[]string
+	tagN                 *[]string
+	updatedByRequest     *string
 }
 
 func (r ApiExtrasWebhooksListRequest) CaFilePath(caFilePath []string) ApiExtrasWebhooksListRequest {
@@ -34546,24 +34669,25 @@ ExtrasWebhooksList Method for ExtrasWebhooksList
 
 Get a list of webhook objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtrasWebhooksListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasWebhooksListRequest
 */
 func (a *ExtrasAPIService) ExtrasWebhooksList(ctx context.Context) ApiExtrasWebhooksListRequest {
 	return ApiExtrasWebhooksListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedWebhookList
+//
+//	@return PaginatedWebhookList
 func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequest) (*PaginatedWebhookList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedWebhookList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedWebhookList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasWebhooksList")
@@ -34582,24 +34706,24 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path", t, "form", "multi")
 		}
 	}
 	if r.caFilePathEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__empty", r.caFilePathEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__empty", r.caFilePathEmpty, "form", "")
 	}
 	if r.caFilePathIc != nil {
 		t := *r.caFilePathIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__ic", t, "form", "multi")
 		}
 	}
 	if r.caFilePathIe != nil {
@@ -34607,10 +34731,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__ie", t, "form", "multi")
 		}
 	}
 	if r.caFilePathIew != nil {
@@ -34618,10 +34742,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__iew", t, "form", "multi")
 		}
 	}
 	if r.caFilePathIsw != nil {
@@ -34629,10 +34753,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__isw", t, "form", "multi")
 		}
 	}
 	if r.caFilePathN != nil {
@@ -34640,10 +34764,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__n", t, "form", "multi")
 		}
 	}
 	if r.caFilePathNic != nil {
@@ -34651,10 +34775,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__nic", t, "form", "multi")
 		}
 	}
 	if r.caFilePathNie != nil {
@@ -34662,10 +34786,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__nie", t, "form", "multi")
 		}
 	}
 	if r.caFilePathNiew != nil {
@@ -34673,10 +34797,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__niew", t, "form", "multi")
 		}
 	}
 	if r.caFilePathNisw != nil {
@@ -34684,10 +34808,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__nisw", t, "form", "multi")
 		}
 	}
 	if r.created != nil {
@@ -34695,10 +34819,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "form", "multi")
 		}
 	}
 	if r.createdEmpty != nil {
@@ -34706,10 +34830,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "form", "multi")
 		}
 	}
 	if r.createdGt != nil {
@@ -34717,10 +34841,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "form", "multi")
 		}
 	}
 	if r.createdGte != nil {
@@ -34728,10 +34852,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "form", "multi")
 		}
 	}
 	if r.createdLt != nil {
@@ -34739,10 +34863,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "form", "multi")
 		}
 	}
 	if r.createdLte != nil {
@@ -34750,10 +34874,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "form", "multi")
 		}
 	}
 	if r.createdN != nil {
@@ -34761,38 +34885,38 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "form", "multi")
 		}
 	}
 	if r.createdByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_request", r.createdByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_request", r.createdByRequest, "form", "")
 	}
 	if r.description != nil {
 		t := *r.description
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "form", "multi")
 		}
 	}
 	if r.descriptionEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "description__empty", r.descriptionEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "description__empty", r.descriptionEmpty, "form", "")
 	}
 	if r.descriptionIc != nil {
 		t := *r.descriptionIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "form", "multi")
 		}
 	}
 	if r.descriptionIe != nil {
@@ -34800,10 +34924,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "form", "multi")
 		}
 	}
 	if r.descriptionIew != nil {
@@ -34811,10 +34935,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "form", "multi")
 		}
 	}
 	if r.descriptionIsw != nil {
@@ -34822,10 +34946,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "form", "multi")
 		}
 	}
 	if r.descriptionN != nil {
@@ -34833,10 +34957,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "form", "multi")
 		}
 	}
 	if r.descriptionNic != nil {
@@ -34844,10 +34968,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "form", "multi")
 		}
 	}
 	if r.descriptionNie != nil {
@@ -34855,10 +34979,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "form", "multi")
 		}
 	}
 	if r.descriptionNiew != nil {
@@ -34866,10 +34990,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "form", "multi")
 		}
 	}
 	if r.descriptionNisw != nil {
@@ -34877,10 +35001,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "form", "multi")
 		}
 	}
 	if r.httpContentType != nil {
@@ -34888,24 +35012,24 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type", t, "form", "multi")
 		}
 	}
 	if r.httpContentTypeEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__empty", r.httpContentTypeEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__empty", r.httpContentTypeEmpty, "form", "")
 	}
 	if r.httpContentTypeIc != nil {
 		t := *r.httpContentTypeIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__ic", t, "form", "multi")
 		}
 	}
 	if r.httpContentTypeIe != nil {
@@ -34913,10 +35037,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__ie", t, "form", "multi")
 		}
 	}
 	if r.httpContentTypeIew != nil {
@@ -34924,10 +35048,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__iew", t, "form", "multi")
 		}
 	}
 	if r.httpContentTypeIsw != nil {
@@ -34935,10 +35059,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__isw", t, "form", "multi")
 		}
 	}
 	if r.httpContentTypeN != nil {
@@ -34946,10 +35070,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__n", t, "form", "multi")
 		}
 	}
 	if r.httpContentTypeNic != nil {
@@ -34957,10 +35081,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__nic", t, "form", "multi")
 		}
 	}
 	if r.httpContentTypeNie != nil {
@@ -34968,10 +35092,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__nie", t, "form", "multi")
 		}
 	}
 	if r.httpContentTypeNiew != nil {
@@ -34979,10 +35103,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__niew", t, "form", "multi")
 		}
 	}
 	if r.httpContentTypeNisw != nil {
@@ -34990,10 +35114,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__nisw", t, "form", "multi")
 		}
 	}
 	if r.httpMethod != nil {
@@ -35001,24 +35125,24 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "http_method", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_method", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "http_method", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "http_method", t, "form", "multi")
 		}
 	}
 	if r.httpMethodEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__empty", r.httpMethodEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__empty", r.httpMethodEmpty, "form", "")
 	}
 	if r.httpMethodIc != nil {
 		t := *r.httpMethodIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__ic", t, "form", "multi")
 		}
 	}
 	if r.httpMethodIe != nil {
@@ -35026,10 +35150,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__ie", t, "form", "multi")
 		}
 	}
 	if r.httpMethodIew != nil {
@@ -35037,10 +35161,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__iew", t, "form", "multi")
 		}
 	}
 	if r.httpMethodIsw != nil {
@@ -35048,10 +35172,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__isw", t, "form", "multi")
 		}
 	}
 	if r.httpMethodN != nil {
@@ -35059,10 +35183,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__n", t, "form", "multi")
 		}
 	}
 	if r.httpMethodNic != nil {
@@ -35070,10 +35194,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__nic", t, "form", "multi")
 		}
 	}
 	if r.httpMethodNie != nil {
@@ -35081,10 +35205,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__nie", t, "form", "multi")
 		}
 	}
 	if r.httpMethodNiew != nil {
@@ -35092,10 +35216,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__niew", t, "form", "multi")
 		}
 	}
 	if r.httpMethodNisw != nil {
@@ -35103,10 +35227,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__nisw", t, "form", "multi")
 		}
 	}
 	if r.id != nil {
@@ -35114,24 +35238,24 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "form", "multi")
 		}
 	}
 	if r.idEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "form", "")
 	}
 	if r.idGt != nil {
 		t := *r.idGt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "form", "multi")
 		}
 	}
 	if r.idGte != nil {
@@ -35139,10 +35263,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "form", "multi")
 		}
 	}
 	if r.idLt != nil {
@@ -35150,10 +35274,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "form", "multi")
 		}
 	}
 	if r.idLte != nil {
@@ -35161,10 +35285,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "form", "multi")
 		}
 	}
 	if r.idN != nil {
@@ -35172,10 +35296,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "form", "multi")
 		}
 	}
 	if r.lastUpdated != nil {
@@ -35183,10 +35307,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedEmpty != nil {
@@ -35194,10 +35318,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedGt != nil {
@@ -35205,10 +35329,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedGte != nil {
@@ -35216,10 +35340,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedLt != nil {
@@ -35227,10 +35351,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedLte != nil {
@@ -35238,10 +35362,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedN != nil {
@@ -35249,41 +35373,41 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "form", "multi")
 		}
 	}
 	if r.limit != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
 	}
 	if r.modifiedByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "modified_by_request", r.modifiedByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "modified_by_request", r.modifiedByRequest, "form", "")
 	}
 	if r.name != nil {
 		t := *r.name
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "form", "multi")
 		}
 	}
 	if r.nameEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "name__empty", r.nameEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "name__empty", r.nameEmpty, "form", "")
 	}
 	if r.nameIc != nil {
 		t := *r.nameIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "form", "multi")
 		}
 	}
 	if r.nameIe != nil {
@@ -35291,10 +35415,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "form", "multi")
 		}
 	}
 	if r.nameIew != nil {
@@ -35302,10 +35426,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "form", "multi")
 		}
 	}
 	if r.nameIsw != nil {
@@ -35313,10 +35437,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "form", "multi")
 		}
 	}
 	if r.nameN != nil {
@@ -35324,10 +35448,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "form", "multi")
 		}
 	}
 	if r.nameNic != nil {
@@ -35335,10 +35459,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "form", "multi")
 		}
 	}
 	if r.nameNie != nil {
@@ -35346,10 +35470,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "form", "multi")
 		}
 	}
 	if r.nameNiew != nil {
@@ -35357,10 +35481,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "form", "multi")
 		}
 	}
 	if r.nameNisw != nil {
@@ -35368,55 +35492,55 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "form", "multi")
 		}
 	}
 	if r.offset != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "form", "")
 	}
 	if r.ordering != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "form", "")
 	}
 	if r.payloadUrl != nil {
 		t := *r.payloadUrl
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "payload_url", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "payload_url", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "payload_url", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "payload_url", t, "form", "multi")
 		}
 	}
 	if r.q != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "form", "")
 	}
 	if r.secret != nil {
 		t := *r.secret
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "secret", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "secret", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "secret", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "secret", t, "form", "multi")
 		}
 	}
 	if r.secretEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "secret__empty", r.secretEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "secret__empty", r.secretEmpty, "form", "")
 	}
 	if r.secretIc != nil {
 		t := *r.secretIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "secret__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "secret__ic", t, "form", "multi")
 		}
 	}
 	if r.secretIe != nil {
@@ -35424,10 +35548,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "secret__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "secret__ie", t, "form", "multi")
 		}
 	}
 	if r.secretIew != nil {
@@ -35435,10 +35559,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "secret__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "secret__iew", t, "form", "multi")
 		}
 	}
 	if r.secretIsw != nil {
@@ -35446,10 +35570,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "secret__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "secret__isw", t, "form", "multi")
 		}
 	}
 	if r.secretN != nil {
@@ -35457,10 +35581,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "secret__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "secret__n", t, "form", "multi")
 		}
 	}
 	if r.secretNic != nil {
@@ -35468,10 +35592,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "secret__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "secret__nic", t, "form", "multi")
 		}
 	}
 	if r.secretNie != nil {
@@ -35479,10 +35603,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "secret__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "secret__nie", t, "form", "multi")
 		}
 	}
 	if r.secretNiew != nil {
@@ -35490,10 +35614,10 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "secret__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "secret__niew", t, "form", "multi")
 		}
 	}
 	if r.secretNisw != nil {
@@ -35501,24 +35625,24 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "secret__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "secret__nisw", t, "form", "multi")
 		}
 	}
 	if r.sslVerification != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ssl_verification", r.sslVerification, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ssl_verification", r.sslVerification, "form", "")
 	}
 	if r.tag != nil {
 		t := *r.tag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "form", "multi")
 		}
 	}
 	if r.tagN != nil {
@@ -35526,14 +35650,14 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "form", "multi")
 		}
 	}
 	if r.updatedByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "updated_by_request", r.updatedByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "updated_by_request", r.updatedByRequest, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -35604,9 +35728,9 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 }
 
 type ApiExtrasWebhooksPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	id int32
+	ctx                   context.Context
+	ApiService            *ExtrasAPIService
+	id                    int32
 	patchedWebhookRequest *PatchedWebhookRequest
 }
 
@@ -35624,26 +35748,27 @@ ExtrasWebhooksPartialUpdate Method for ExtrasWebhooksPartialUpdate
 
 Patch a webhook object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this webhook.
- @return ApiExtrasWebhooksPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this webhook.
+	@return ApiExtrasWebhooksPartialUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasWebhooksPartialUpdate(ctx context.Context, id int32) ApiExtrasWebhooksPartialUpdateRequest {
 	return ApiExtrasWebhooksPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Webhook
+//
+//	@return Webhook
 func (a *ExtrasAPIService) ExtrasWebhooksPartialUpdateExecute(r ApiExtrasWebhooksPartialUpdateRequest) (*Webhook, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Webhook
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Webhook
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasWebhooksPartialUpdate")
@@ -35729,9 +35854,9 @@ func (a *ExtrasAPIService) ExtrasWebhooksPartialUpdateExecute(r ApiExtrasWebhook
 }
 
 type ApiExtrasWebhooksRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExtrasAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiExtrasWebhooksRetrieveRequest) Execute() (*Webhook, *http.Response, error) {
@@ -35743,26 +35868,27 @@ ExtrasWebhooksRetrieve Method for ExtrasWebhooksRetrieve
 
 Get a webhook object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this webhook.
- @return ApiExtrasWebhooksRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this webhook.
+	@return ApiExtrasWebhooksRetrieveRequest
 */
 func (a *ExtrasAPIService) ExtrasWebhooksRetrieve(ctx context.Context, id int32) ApiExtrasWebhooksRetrieveRequest {
 	return ApiExtrasWebhooksRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Webhook
+//
+//	@return Webhook
 func (a *ExtrasAPIService) ExtrasWebhooksRetrieveExecute(r ApiExtrasWebhooksRetrieveRequest) (*Webhook, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Webhook
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Webhook
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasWebhooksRetrieve")
@@ -35846,9 +35972,9 @@ func (a *ExtrasAPIService) ExtrasWebhooksRetrieveExecute(r ApiExtrasWebhooksRetr
 }
 
 type ApiExtrasWebhooksUpdateRequest struct {
-	ctx context.Context
-	ApiService *ExtrasAPIService
-	id int32
+	ctx            context.Context
+	ApiService     *ExtrasAPIService
+	id             int32
 	webhookRequest *WebhookRequest
 }
 
@@ -35866,26 +35992,27 @@ ExtrasWebhooksUpdate Method for ExtrasWebhooksUpdate
 
 Put a webhook object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this webhook.
- @return ApiExtrasWebhooksUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this webhook.
+	@return ApiExtrasWebhooksUpdateRequest
 */
 func (a *ExtrasAPIService) ExtrasWebhooksUpdate(ctx context.Context, id int32) ApiExtrasWebhooksUpdateRequest {
 	return ApiExtrasWebhooksUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Webhook
+//
+//	@return Webhook
 func (a *ExtrasAPIService) ExtrasWebhooksUpdateExecute(r ApiExtrasWebhooksUpdateRequest) (*Webhook, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Webhook
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Webhook
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasWebhooksUpdate")

@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"time"
 	"fmt"
+	"time"
 )
 
 // checks if the JournalEntry type satisfies the MappedNullable interface at compile time
@@ -21,20 +21,20 @@ var _ MappedNullable = &JournalEntry{}
 
 // JournalEntry Adds support for custom fields and tags.
 type JournalEntry struct {
-	Id int32 `json:"id"`
-	Url string `json:"url"`
-	DisplayUrl string `json:"display_url"`
-	Display string `json:"display"`
-	AssignedObjectType string `json:"assigned_object_type"`
-	AssignedObjectId int64 `json:"assigned_object_id"`
-	AssignedObject interface{} `json:"assigned_object"`
-	Created NullableTime `json:"created"`
-	CreatedBy NullableInt32 `json:"created_by,omitempty"`
-	Kind *JournalEntryKind `json:"kind,omitempty"`
-	Comments string `json:"comments"`
-	Tags []NestedTag `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	LastUpdated NullableTime `json:"last_updated"`
+	Id                   int32                  `json:"id"`
+	Url                  string                 `json:"url"`
+	DisplayUrl           string                 `json:"display_url"`
+	Display              string                 `json:"display"`
+	AssignedObjectType   string                 `json:"assigned_object_type"`
+	AssignedObjectId     int64                  `json:"assigned_object_id"`
+	AssignedObject       interface{}            `json:"assigned_object"`
+	Created              NullableTime           `json:"created"`
+	CreatedBy            NullableInt32          `json:"created_by,omitempty"`
+	Kind                 *JournalEntryKind      `json:"kind,omitempty"`
+	Comments             string                 `json:"comments"`
+	Tags                 []NestedTag            `json:"tags,omitempty"`
+	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
+	LastUpdated          NullableTime           `json:"last_updated"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -295,6 +295,7 @@ func (o *JournalEntry) HasCreatedBy() bool {
 func (o *JournalEntry) SetCreatedBy(v int32) {
 	o.CreatedBy.Set(&v)
 }
+
 // SetCreatedByNil sets the value for CreatedBy to be an explicit nil
 func (o *JournalEntry) SetCreatedByNil() {
 	o.CreatedBy.Set(nil)
@@ -452,7 +453,7 @@ func (o *JournalEntry) SetLastUpdated(v time.Time) {
 }
 
 func (o JournalEntry) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -515,10 +516,10 @@ func (o *JournalEntry) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -592,5 +593,3 @@ func (v *NullableJournalEntry) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

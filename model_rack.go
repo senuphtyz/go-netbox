@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"time"
 	"fmt"
+	"time"
 )
 
 // checks if the Rack type satisfies the MappedNullable interface at compile time
@@ -21,49 +21,49 @@ var _ MappedNullable = &Rack{}
 
 // Rack Adds support for custom fields and tags.
 type Rack struct {
-	Id int32 `json:"id"`
-	Url string `json:"url"`
-	DisplayUrl string `json:"display_url"`
-	Display string `json:"display"`
-	Name string `json:"name"`
-	FacilityId NullableString `json:"facility_id,omitempty"`
-	Site BriefSite `json:"site"`
-	Location NullableBriefLocation `json:"location,omitempty"`
-	Tenant NullableBriefTenant `json:"tenant,omitempty"`
-	Status *RackStatus `json:"status,omitempty"`
-	Role NullableBriefRackRole `json:"role,omitempty"`
-	Serial *string `json:"serial,omitempty"`
+	Id         int32                 `json:"id"`
+	Url        string                `json:"url"`
+	DisplayUrl string                `json:"display_url"`
+	Display    string                `json:"display"`
+	Name       string                `json:"name"`
+	FacilityId NullableString        `json:"facility_id,omitempty"`
+	Site       BriefSite             `json:"site"`
+	Location   NullableBriefLocation `json:"location,omitempty"`
+	Tenant     NullableBriefTenant   `json:"tenant,omitempty"`
+	Status     *RackStatus           `json:"status,omitempty"`
+	Role       NullableBriefRackRole `json:"role,omitempty"`
+	Serial     *string               `json:"serial,omitempty"`
 	// A unique tag used to identify this rack
-	AssetTag NullableString `json:"asset_tag,omitempty"`
-	RackType NullableBriefRackType `json:"rack_type,omitempty"`
+	AssetTag   NullableString         `json:"asset_tag,omitempty"`
+	RackType   NullableBriefRackType  `json:"rack_type,omitempty"`
 	FormFactor NullableRackFormFactor `json:"form_factor,omitempty"`
-	Width *RackWidth `json:"width,omitempty"`
+	Width      *RackWidth             `json:"width,omitempty"`
 	// Height in rack units
 	UHeight *int32 `json:"u_height,omitempty"`
 	// Starting unit for rack
-	StartingUnit *int32 `json:"starting_unit,omitempty"`
-	Weight NullableFloat64 `json:"weight,omitempty"`
+	StartingUnit *int32          `json:"starting_unit,omitempty"`
+	Weight       NullableFloat64 `json:"weight,omitempty"`
 	// Maximum load capacity for the rack
-	MaxWeight NullableInt32 `json:"max_weight,omitempty"`
+	MaxWeight  NullableInt32                `json:"max_weight,omitempty"`
 	WeightUnit NullableDeviceTypeWeightUnit `json:"weight_unit,omitempty"`
 	// Units are numbered top-to-bottom
 	DescUnits *bool `json:"desc_units,omitempty"`
 	// Outer dimension of rack (width)
 	OuterWidth NullableInt32 `json:"outer_width,omitempty"`
 	// Outer dimension of rack (depth)
-	OuterDepth NullableInt32 `json:"outer_depth,omitempty"`
-	OuterUnit NullableRackOuterUnit `json:"outer_unit,omitempty"`
+	OuterDepth NullableInt32         `json:"outer_depth,omitempty"`
+	OuterUnit  NullableRackOuterUnit `json:"outer_unit,omitempty"`
 	// Maximum depth of a mounted device, in millimeters. For four-post racks, this is the distance between the front and rear rails.
-	MountingDepth NullableInt32 `json:"mounting_depth,omitempty"`
-	Airflow *RackAirflow `json:"airflow,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Comments *string `json:"comments,omitempty"`
-	Tags []NestedTag `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	Created NullableTime `json:"created"`
-	LastUpdated NullableTime `json:"last_updated"`
-	DeviceCount int64 `json:"device_count"`
-	PowerfeedCount int64 `json:"powerfeed_count"`
+	MountingDepth        NullableInt32          `json:"mounting_depth,omitempty"`
+	Airflow              *RackAirflow           `json:"airflow,omitempty"`
+	Description          *string                `json:"description,omitempty"`
+	Comments             *string                `json:"comments,omitempty"`
+	Tags                 []NestedTag            `json:"tags,omitempty"`
+	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
+	Created              NullableTime           `json:"created"`
+	LastUpdated          NullableTime           `json:"last_updated"`
+	DeviceCount          int64                  `json:"device_count"`
+	PowerfeedCount       int64                  `json:"powerfeed_count"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -248,6 +248,7 @@ func (o *Rack) HasFacilityId() bool {
 func (o *Rack) SetFacilityId(v string) {
 	o.FacilityId.Set(&v)
 }
+
 // SetFacilityIdNil sets the value for FacilityId to be an explicit nil
 func (o *Rack) SetFacilityIdNil() {
 	o.FacilityId.Set(nil)
@@ -314,6 +315,7 @@ func (o *Rack) HasLocation() bool {
 func (o *Rack) SetLocation(v BriefLocation) {
 	o.Location.Set(&v)
 }
+
 // SetLocationNil sets the value for Location to be an explicit nil
 func (o *Rack) SetLocationNil() {
 	o.Location.Set(nil)
@@ -356,6 +358,7 @@ func (o *Rack) HasTenant() bool {
 func (o *Rack) SetTenant(v BriefTenant) {
 	o.Tenant.Set(&v)
 }
+
 // SetTenantNil sets the value for Tenant to be an explicit nil
 func (o *Rack) SetTenantNil() {
 	o.Tenant.Set(nil)
@@ -430,6 +433,7 @@ func (o *Rack) HasRole() bool {
 func (o *Rack) SetRole(v BriefRackRole) {
 	o.Role.Set(&v)
 }
+
 // SetRoleNil sets the value for Role to be an explicit nil
 func (o *Rack) SetRoleNil() {
 	o.Role.Set(nil)
@@ -504,6 +508,7 @@ func (o *Rack) HasAssetTag() bool {
 func (o *Rack) SetAssetTag(v string) {
 	o.AssetTag.Set(&v)
 }
+
 // SetAssetTagNil sets the value for AssetTag to be an explicit nil
 func (o *Rack) SetAssetTagNil() {
 	o.AssetTag.Set(nil)
@@ -546,6 +551,7 @@ func (o *Rack) HasRackType() bool {
 func (o *Rack) SetRackType(v BriefRackType) {
 	o.RackType.Set(&v)
 }
+
 // SetRackTypeNil sets the value for RackType to be an explicit nil
 func (o *Rack) SetRackTypeNil() {
 	o.RackType.Set(nil)
@@ -588,6 +594,7 @@ func (o *Rack) HasFormFactor() bool {
 func (o *Rack) SetFormFactor(v RackFormFactor) {
 	o.FormFactor.Set(&v)
 }
+
 // SetFormFactorNil sets the value for FormFactor to be an explicit nil
 func (o *Rack) SetFormFactorNil() {
 	o.FormFactor.Set(nil)
@@ -726,6 +733,7 @@ func (o *Rack) HasWeight() bool {
 func (o *Rack) SetWeight(v float64) {
 	o.Weight.Set(&v)
 }
+
 // SetWeightNil sets the value for Weight to be an explicit nil
 func (o *Rack) SetWeightNil() {
 	o.Weight.Set(nil)
@@ -768,6 +776,7 @@ func (o *Rack) HasMaxWeight() bool {
 func (o *Rack) SetMaxWeight(v int32) {
 	o.MaxWeight.Set(&v)
 }
+
 // SetMaxWeightNil sets the value for MaxWeight to be an explicit nil
 func (o *Rack) SetMaxWeightNil() {
 	o.MaxWeight.Set(nil)
@@ -810,6 +819,7 @@ func (o *Rack) HasWeightUnit() bool {
 func (o *Rack) SetWeightUnit(v DeviceTypeWeightUnit) {
 	o.WeightUnit.Set(&v)
 }
+
 // SetWeightUnitNil sets the value for WeightUnit to be an explicit nil
 func (o *Rack) SetWeightUnitNil() {
 	o.WeightUnit.Set(nil)
@@ -884,6 +894,7 @@ func (o *Rack) HasOuterWidth() bool {
 func (o *Rack) SetOuterWidth(v int32) {
 	o.OuterWidth.Set(&v)
 }
+
 // SetOuterWidthNil sets the value for OuterWidth to be an explicit nil
 func (o *Rack) SetOuterWidthNil() {
 	o.OuterWidth.Set(nil)
@@ -926,6 +937,7 @@ func (o *Rack) HasOuterDepth() bool {
 func (o *Rack) SetOuterDepth(v int32) {
 	o.OuterDepth.Set(&v)
 }
+
 // SetOuterDepthNil sets the value for OuterDepth to be an explicit nil
 func (o *Rack) SetOuterDepthNil() {
 	o.OuterDepth.Set(nil)
@@ -968,6 +980,7 @@ func (o *Rack) HasOuterUnit() bool {
 func (o *Rack) SetOuterUnit(v RackOuterUnit) {
 	o.OuterUnit.Set(&v)
 }
+
 // SetOuterUnitNil sets the value for OuterUnit to be an explicit nil
 func (o *Rack) SetOuterUnitNil() {
 	o.OuterUnit.Set(nil)
@@ -1010,6 +1023,7 @@ func (o *Rack) HasMountingDepth() bool {
 func (o *Rack) SetMountingDepth(v int32) {
 	o.MountingDepth.Set(&v)
 }
+
 // SetMountingDepthNil sets the value for MountingDepth to be an explicit nil
 func (o *Rack) SetMountingDepthNil() {
 	o.MountingDepth.Set(nil)
@@ -1281,7 +1295,7 @@ func (o *Rack) SetPowerfeedCount(v int64) {
 }
 
 func (o Rack) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1405,10 +1419,10 @@ func (o *Rack) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -1503,5 +1517,3 @@ func (v *NullableRack) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

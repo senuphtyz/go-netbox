@@ -20,13 +20,13 @@ var _ MappedNullable = &WritableVirtualChassisRequest{}
 
 // WritableVirtualChassisRequest Adds support for custom fields and tags.
 type WritableVirtualChassisRequest struct {
-	Name string `json:"name"`
-	Domain *string `json:"domain,omitempty"`
-	Master NullableInt32 `json:"master,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Comments *string `json:"comments,omitempty"`
-	Tags []NestedTagRequest `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	Name                 string                 `json:"name"`
+	Domain               *string                `json:"domain,omitempty"`
+	Master               NullableInt32          `json:"master,omitempty"`
+	Description          *string                `json:"description,omitempty"`
+	Comments             *string                `json:"comments,omitempty"`
+	Tags                 []NestedTagRequest     `json:"tags,omitempty"`
+	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -138,6 +138,7 @@ func (o *WritableVirtualChassisRequest) HasMaster() bool {
 func (o *WritableVirtualChassisRequest) SetMaster(v int32) {
 	o.Master.Set(&v)
 }
+
 // SetMasterNil sets the value for Master to be an explicit nil
 func (o *WritableVirtualChassisRequest) SetMasterNil() {
 	o.Master.Set(nil)
@@ -277,7 +278,7 @@ func (o *WritableVirtualChassisRequest) SetCustomFields(v map[string]interface{}
 }
 
 func (o WritableVirtualChassisRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -326,10 +327,10 @@ func (o *WritableVirtualChassisRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -396,5 +397,3 @@ func (v *NullableWritableVirtualChassisRequest) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

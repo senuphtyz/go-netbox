@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"time"
 	"fmt"
+	"time"
 )
 
 // checks if the WirelessLAN type satisfies the MappedNullable interface at compile time
@@ -21,24 +21,24 @@ var _ MappedNullable = &WirelessLAN{}
 
 // WirelessLAN Adds support for custom fields and tags.
 type WirelessLAN struct {
-	Id int32 `json:"id"`
-	Url string `json:"url"`
-	DisplayUrl string `json:"display_url"`
-	Display string `json:"display"`
-	Ssid string `json:"ssid"`
-	Description *string `json:"description,omitempty"`
-	Group NullableBriefWirelessLANGroup `json:"group,omitempty"`
-	Status *WirelessLANStatus `json:"status,omitempty"`
-	Vlan NullableBriefVLAN `json:"vlan,omitempty"`
-	Tenant NullableBriefTenant `json:"tenant,omitempty"`
-	AuthType *WirelessLANAuthType `json:"auth_type,omitempty"`
-	AuthCipher *WirelessLANAuthCipher `json:"auth_cipher,omitempty"`
-	AuthPsk *string `json:"auth_psk,omitempty"`
-	Comments *string `json:"comments,omitempty"`
-	Tags []NestedTag `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	Created NullableTime `json:"created"`
-	LastUpdated NullableTime `json:"last_updated"`
+	Id                   int32                         `json:"id"`
+	Url                  string                        `json:"url"`
+	DisplayUrl           string                        `json:"display_url"`
+	Display              string                        `json:"display"`
+	Ssid                 string                        `json:"ssid"`
+	Description          *string                       `json:"description,omitempty"`
+	Group                NullableBriefWirelessLANGroup `json:"group,omitempty"`
+	Status               *WirelessLANStatus            `json:"status,omitempty"`
+	Vlan                 NullableBriefVLAN             `json:"vlan,omitempty"`
+	Tenant               NullableBriefTenant           `json:"tenant,omitempty"`
+	AuthType             *WirelessLANAuthType          `json:"auth_type,omitempty"`
+	AuthCipher           *WirelessLANAuthCipher        `json:"auth_cipher,omitempty"`
+	AuthPsk              *string                       `json:"auth_psk,omitempty"`
+	Comments             *string                       `json:"comments,omitempty"`
+	Tags                 []NestedTag                   `json:"tags,omitempty"`
+	CustomFields         map[string]interface{}        `json:"custom_fields,omitempty"`
+	Created              NullableTime                  `json:"created"`
+	LastUpdated          NullableTime                  `json:"last_updated"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -252,6 +252,7 @@ func (o *WirelessLAN) HasGroup() bool {
 func (o *WirelessLAN) SetGroup(v BriefWirelessLANGroup) {
 	o.Group.Set(&v)
 }
+
 // SetGroupNil sets the value for Group to be an explicit nil
 func (o *WirelessLAN) SetGroupNil() {
 	o.Group.Set(nil)
@@ -326,6 +327,7 @@ func (o *WirelessLAN) HasVlan() bool {
 func (o *WirelessLAN) SetVlan(v BriefVLAN) {
 	o.Vlan.Set(&v)
 }
+
 // SetVlanNil sets the value for Vlan to be an explicit nil
 func (o *WirelessLAN) SetVlanNil() {
 	o.Vlan.Set(nil)
@@ -368,6 +370,7 @@ func (o *WirelessLAN) HasTenant() bool {
 func (o *WirelessLAN) SetTenant(v BriefTenant) {
 	o.Tenant.Set(&v)
 }
+
 // SetTenantNil sets the value for Tenant to be an explicit nil
 func (o *WirelessLAN) SetTenantNil() {
 	o.Tenant.Set(nil)
@@ -623,7 +626,7 @@ func (o *WirelessLAN) SetLastUpdated(v time.Time) {
 }
 
 func (o WirelessLAN) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -699,10 +702,10 @@ func (o *WirelessLAN) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -780,5 +783,3 @@ func (v *NullableWirelessLAN) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

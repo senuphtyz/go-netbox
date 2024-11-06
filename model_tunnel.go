@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"time"
 	"fmt"
+	"time"
 )
 
 // checks if the Tunnel type satisfies the MappedNullable interface at compile time
@@ -21,24 +21,24 @@ var _ MappedNullable = &Tunnel{}
 
 // Tunnel Adds support for custom fields and tags.
 type Tunnel struct {
-	Id int32 `json:"id"`
-	Url string `json:"url"`
-	DisplayUrl string `json:"display_url"`
-	Display string `json:"display"`
-	Name string `json:"name"`
-	Status TunnelStatus `json:"status"`
-	Group NullableBriefTunnelGroup `json:"group,omitempty"`
-	Encapsulation TunnelEncapsulation `json:"encapsulation"`
-	IpsecProfile NullableBriefIPSecProfile `json:"ipsec_profile,omitempty"`
-	Tenant NullableBriefTenant `json:"tenant,omitempty"`
-	TunnelId NullableInt64 `json:"tunnel_id,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Comments *string `json:"comments,omitempty"`
-	Tags []NestedTag `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	Created NullableTime `json:"created"`
-	LastUpdated NullableTime `json:"last_updated"`
-	TerminationsCount int64 `json:"terminations_count"`
+	Id                   int32                     `json:"id"`
+	Url                  string                    `json:"url"`
+	DisplayUrl           string                    `json:"display_url"`
+	Display              string                    `json:"display"`
+	Name                 string                    `json:"name"`
+	Status               TunnelStatus              `json:"status"`
+	Group                NullableBriefTunnelGroup  `json:"group,omitempty"`
+	Encapsulation        TunnelEncapsulation       `json:"encapsulation"`
+	IpsecProfile         NullableBriefIPSecProfile `json:"ipsec_profile,omitempty"`
+	Tenant               NullableBriefTenant       `json:"tenant,omitempty"`
+	TunnelId             NullableInt64             `json:"tunnel_id,omitempty"`
+	Description          *string                   `json:"description,omitempty"`
+	Comments             *string                   `json:"comments,omitempty"`
+	Tags                 []NestedTag               `json:"tags,omitempty"`
+	CustomFields         map[string]interface{}    `json:"custom_fields,omitempty"`
+	Created              NullableTime              `json:"created"`
+	LastUpdated          NullableTime              `json:"last_updated"`
+	TerminationsCount    int64                     `json:"terminations_count"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -247,6 +247,7 @@ func (o *Tunnel) HasGroup() bool {
 func (o *Tunnel) SetGroup(v BriefTunnelGroup) {
 	o.Group.Set(&v)
 }
+
 // SetGroupNil sets the value for Group to be an explicit nil
 func (o *Tunnel) SetGroupNil() {
 	o.Group.Set(nil)
@@ -313,6 +314,7 @@ func (o *Tunnel) HasIpsecProfile() bool {
 func (o *Tunnel) SetIpsecProfile(v BriefIPSecProfile) {
 	o.IpsecProfile.Set(&v)
 }
+
 // SetIpsecProfileNil sets the value for IpsecProfile to be an explicit nil
 func (o *Tunnel) SetIpsecProfileNil() {
 	o.IpsecProfile.Set(nil)
@@ -355,6 +357,7 @@ func (o *Tunnel) HasTenant() bool {
 func (o *Tunnel) SetTenant(v BriefTenant) {
 	o.Tenant.Set(&v)
 }
+
 // SetTenantNil sets the value for Tenant to be an explicit nil
 func (o *Tunnel) SetTenantNil() {
 	o.Tenant.Set(nil)
@@ -397,6 +400,7 @@ func (o *Tunnel) HasTunnelId() bool {
 func (o *Tunnel) SetTunnelId(v int64) {
 	o.TunnelId.Set(&v)
 }
+
 // SetTunnelIdNil sets the value for TunnelId to be an explicit nil
 func (o *Tunnel) SetTunnelIdNil() {
 	o.TunnelId.Set(nil)
@@ -612,7 +616,7 @@ func (o *Tunnel) SetTerminationsCount(v int64) {
 }
 
 func (o Tunnel) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -685,10 +689,10 @@ func (o *Tunnel) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -766,5 +770,3 @@ func (v *NullableTunnel) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,12 +20,12 @@ var _ MappedNullable = &TenantGroupRequest{}
 
 // TenantGroupRequest Extends PrimaryModelSerializer to include MPTT support.
 type TenantGroupRequest struct {
-	Name string `json:"name"`
-	Slug string `json:"slug"`
-	Parent NullableNestedTenantGroupRequest `json:"parent,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Tags []NestedTagRequest `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	Name                 string                           `json:"name"`
+	Slug                 string                           `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
+	Parent               NullableNestedTenantGroupRequest `json:"parent,omitempty"`
+	Description          *string                          `json:"description,omitempty"`
+	Tags                 []NestedTagRequest               `json:"tags,omitempty"`
+	CustomFields         map[string]interface{}           `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -130,6 +130,7 @@ func (o *TenantGroupRequest) HasParent() bool {
 func (o *TenantGroupRequest) SetParent(v NestedTenantGroupRequest) {
 	o.Parent.Set(&v)
 }
+
 // SetParentNil sets the value for Parent to be an explicit nil
 func (o *TenantGroupRequest) SetParentNil() {
 	o.Parent.Set(nil)
@@ -237,7 +238,7 @@ func (o *TenantGroupRequest) SetCustomFields(v map[string]interface{}) {
 }
 
 func (o TenantGroupRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -282,10 +283,10 @@ func (o *TenantGroupRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -351,5 +352,3 @@ func (v *NullableTenantGroupRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

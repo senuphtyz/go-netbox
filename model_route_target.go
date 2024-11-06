@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"time"
 	"fmt"
+	"time"
 )
 
 // checks if the RouteTarget type satisfies the MappedNullable interface at compile time
@@ -21,19 +21,19 @@ var _ MappedNullable = &RouteTarget{}
 
 // RouteTarget Adds support for custom fields and tags.
 type RouteTarget struct {
-	Id int32 `json:"id"`
-	Url string `json:"url"`
+	Id         int32  `json:"id"`
+	Url        string `json:"url"`
 	DisplayUrl string `json:"display_url"`
-	Display string `json:"display"`
+	Display    string `json:"display"`
 	// Route target value (formatted in accordance with RFC 4360)
-	Name string `json:"name"`
-	Tenant NullableBriefTenant `json:"tenant,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Comments *string `json:"comments,omitempty"`
-	Tags []NestedTag `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	Created NullableTime `json:"created"`
-	LastUpdated NullableTime `json:"last_updated"`
+	Name                 string                 `json:"name"`
+	Tenant               NullableBriefTenant    `json:"tenant,omitempty"`
+	Description          *string                `json:"description,omitempty"`
+	Comments             *string                `json:"comments,omitempty"`
+	Tags                 []NestedTag            `json:"tags,omitempty"`
+	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
+	Created              NullableTime           `json:"created"`
+	LastUpdated          NullableTime           `json:"last_updated"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -215,6 +215,7 @@ func (o *RouteTarget) HasTenant() bool {
 func (o *RouteTarget) SetTenant(v BriefTenant) {
 	o.Tenant.Set(&v)
 }
+
 // SetTenantNil sets the value for Tenant to be an explicit nil
 func (o *RouteTarget) SetTenantNil() {
 	o.Tenant.Set(nil)
@@ -406,7 +407,7 @@ func (o *RouteTarget) SetLastUpdated(v time.Time) {
 }
 
 func (o RouteTarget) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -464,10 +465,10 @@ func (o *RouteTarget) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -539,5 +540,3 @@ func (v *NullableRouteTarget) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

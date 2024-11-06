@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"os"
 	"fmt"
+	"os"
 )
 
 // checks if the ImageAttachmentRequest type satisfies the MappedNullable interface at compile time
@@ -21,10 +21,10 @@ var _ MappedNullable = &ImageAttachmentRequest{}
 
 // ImageAttachmentRequest Extends the built-in ModelSerializer to enforce calling full_clean() on a copy of the associated instance during validation. (DRF does not do this by default; see https://github.com/encode/django-rest-framework/issues/3144)
 type ImageAttachmentRequest struct {
-	ObjectType string `json:"object_type"`
-	ObjectId int64 `json:"object_id"`
-	Name *string `json:"name,omitempty"`
-	Image *os.File `json:"image"`
+	ObjectType           string   `json:"object_type"`
+	ObjectId             int64    `json:"object_id"`
+	Name                 *string  `json:"name,omitempty"`
+	Image                *os.File `json:"image"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -155,7 +155,7 @@ func (o *ImageAttachmentRequest) SetImage(v *os.File) {
 }
 
 func (o ImageAttachmentRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -193,10 +193,10 @@ func (o *ImageAttachmentRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -260,5 +260,3 @@ func (v *NullableImageAttachmentRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

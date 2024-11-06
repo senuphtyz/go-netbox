@@ -20,25 +20,25 @@ var _ MappedNullable = &WritableCustomFieldRequest{}
 
 // WritableCustomFieldRequest Extends the built-in ModelSerializer to enforce calling full_clean() on a copy of the associated instance during validation. (DRF does not do this by default; see https://github.com/encode/django-rest-framework/issues/3144)
 type WritableCustomFieldRequest struct {
-	ObjectTypes []string `json:"object_types"`
-	Type *PatchedWritableCustomFieldRequestType `json:"type,omitempty"`
-	RelatedObjectType NullableString `json:"related_object_type,omitempty"`
+	ObjectTypes       []string                               `json:"object_types"`
+	Type              *PatchedWritableCustomFieldRequestType `json:"type,omitempty"`
+	RelatedObjectType NullableString                         `json:"related_object_type,omitempty"`
 	// Internal field name
-	Name string `json:"name"`
+	Name string `json:"name" validate:"regexp=^[a-z0-9_]+$"`
 	// Name of the field as displayed to users (if not provided, 'the field's name will be used)
 	Label *string `json:"label,omitempty"`
 	// Custom fields within the same group will be displayed together
-	GroupName *string `json:"group_name,omitempty"`
+	GroupName   *string `json:"group_name,omitempty"`
 	Description *string `json:"description,omitempty"`
 	// This field is required when creating new objects or editing an existing object.
 	Required *bool `json:"required,omitempty"`
 	// The value of this field must be unique for the assigned object
 	Unique *bool `json:"unique,omitempty"`
 	// Weighting for search. Lower values are considered more important. Fields with a search weight of zero will be ignored.
-	SearchWeight *int32 `json:"search_weight,omitempty"`
-	FilterLogic *PatchedWritableCustomFieldRequestFilterLogic `json:"filter_logic,omitempty"`
-	UiVisible *PatchedWritableCustomFieldRequestUiVisible `json:"ui_visible,omitempty"`
-	UiEditable *PatchedWritableCustomFieldRequestUiEditable `json:"ui_editable,omitempty"`
+	SearchWeight *int32                                        `json:"search_weight,omitempty"`
+	FilterLogic  *PatchedWritableCustomFieldRequestFilterLogic `json:"filter_logic,omitempty"`
+	UiVisible    *PatchedWritableCustomFieldRequestUiVisible   `json:"ui_visible,omitempty"`
+	UiEditable   *PatchedWritableCustomFieldRequestUiEditable  `json:"ui_editable,omitempty"`
 	// Replicate this value when cloning objects
 	IsCloneable *bool `json:"is_cloneable,omitempty"`
 	// Default value for the field (must be a JSON value). Encapsulate strings with double quotes (e.g. \"Foo\").
@@ -52,9 +52,9 @@ type WritableCustomFieldRequest struct {
 	// Maximum allowed value (for numeric fields)
 	ValidationMaximum NullableInt64 `json:"validation_maximum,omitempty"`
 	// Regular expression to enforce on text field values. Use ^ and $ to force matching of entire string. For example, <code>^[A-Z]{3}$</code> will limit values to exactly three uppercase letters.
-	ValidationRegex *string `json:"validation_regex,omitempty"`
-	ChoiceSet NullableBriefCustomFieldChoiceSetRequest `json:"choice_set,omitempty"`
-	Comments *string `json:"comments,omitempty"`
+	ValidationRegex      *string                                  `json:"validation_regex,omitempty"`
+	ChoiceSet            NullableBriefCustomFieldChoiceSetRequest `json:"choice_set,omitempty"`
+	Comments             *string                                  `json:"comments,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -167,6 +167,7 @@ func (o *WritableCustomFieldRequest) HasRelatedObjectType() bool {
 func (o *WritableCustomFieldRequest) SetRelatedObjectType(v string) {
 	o.RelatedObjectType.Set(&v)
 }
+
 // SetRelatedObjectTypeNil sets the value for RelatedObjectType to be an explicit nil
 func (o *WritableCustomFieldRequest) SetRelatedObjectTypeNil() {
 	o.RelatedObjectType.Set(nil)
@@ -651,6 +652,7 @@ func (o *WritableCustomFieldRequest) HasValidationMinimum() bool {
 func (o *WritableCustomFieldRequest) SetValidationMinimum(v int64) {
 	o.ValidationMinimum.Set(&v)
 }
+
 // SetValidationMinimumNil sets the value for ValidationMinimum to be an explicit nil
 func (o *WritableCustomFieldRequest) SetValidationMinimumNil() {
 	o.ValidationMinimum.Set(nil)
@@ -693,6 +695,7 @@ func (o *WritableCustomFieldRequest) HasValidationMaximum() bool {
 func (o *WritableCustomFieldRequest) SetValidationMaximum(v int64) {
 	o.ValidationMaximum.Set(&v)
 }
+
 // SetValidationMaximumNil sets the value for ValidationMaximum to be an explicit nil
 func (o *WritableCustomFieldRequest) SetValidationMaximumNil() {
 	o.ValidationMaximum.Set(nil)
@@ -767,6 +770,7 @@ func (o *WritableCustomFieldRequest) HasChoiceSet() bool {
 func (o *WritableCustomFieldRequest) SetChoiceSet(v BriefCustomFieldChoiceSetRequest) {
 	o.ChoiceSet.Set(&v)
 }
+
 // SetChoiceSetNil sets the value for ChoiceSet to be an explicit nil
 func (o *WritableCustomFieldRequest) SetChoiceSetNil() {
 	o.ChoiceSet.Set(nil)
@@ -810,7 +814,7 @@ func (o *WritableCustomFieldRequest) SetComments(v string) {
 }
 
 func (o WritableCustomFieldRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -903,10 +907,10 @@ func (o *WritableCustomFieldRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -988,5 +992,3 @@ func (v *NullableWritableCustomFieldRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

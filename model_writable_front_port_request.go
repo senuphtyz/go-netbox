@@ -20,21 +20,21 @@ var _ MappedNullable = &WritableFrontPortRequest{}
 
 // WritableFrontPortRequest Adds support for custom fields and tags.
 type WritableFrontPortRequest struct {
-	Device BriefDeviceRequest `json:"device"`
+	Device BriefDeviceRequest         `json:"device"`
 	Module NullableBriefModuleRequest `json:"module,omitempty"`
-	Name string `json:"name"`
+	Name   string                     `json:"name"`
 	// Physical label
-	Label *string `json:"label,omitempty"`
-	Type FrontPortTypeValue `json:"type"`
-	Color *string `json:"color,omitempty"`
-	RearPort int32 `json:"rear_port"`
+	Label    *string            `json:"label,omitempty"`
+	Type     FrontPortTypeValue `json:"type"`
+	Color    *string            `json:"color,omitempty" validate:"regexp=^[0-9a-f]{6}$"`
+	RearPort int32              `json:"rear_port"`
 	// Mapped position on corresponding rear port
-	RearPortPosition *int32 `json:"rear_port_position,omitempty"`
-	Description *string `json:"description,omitempty"`
+	RearPortPosition *int32  `json:"rear_port_position,omitempty"`
+	Description      *string `json:"description,omitempty"`
 	// Treat as if a cable is connected
-	MarkConnected *bool `json:"mark_connected,omitempty"`
-	Tags []NestedTagRequest `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	MarkConnected        *bool                  `json:"mark_connected,omitempty"`
+	Tags                 []NestedTagRequest     `json:"tags,omitempty"`
+	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -121,6 +121,7 @@ func (o *WritableFrontPortRequest) HasModule() bool {
 func (o *WritableFrontPortRequest) SetModule(v BriefModuleRequest) {
 	o.Module.Set(&v)
 }
+
 // SetModuleNil sets the value for Module to be an explicit nil
 func (o *WritableFrontPortRequest) SetModuleNil() {
 	o.Module.Set(nil)
@@ -428,7 +429,7 @@ func (o *WritableFrontPortRequest) SetCustomFields(v map[string]interface{}) {
 }
 
 func (o WritableFrontPortRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -489,10 +490,10 @@ func (o *WritableFrontPortRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -564,5 +565,3 @@ func (v *NullableWritableFrontPortRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

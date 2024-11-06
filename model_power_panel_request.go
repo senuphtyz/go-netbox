@@ -20,13 +20,13 @@ var _ MappedNullable = &PowerPanelRequest{}
 
 // PowerPanelRequest Adds support for custom fields and tags.
 type PowerPanelRequest struct {
-	Site BriefSiteRequest `json:"site"`
-	Location NullableBriefLocationRequest `json:"location,omitempty"`
-	Name string `json:"name"`
-	Description *string `json:"description,omitempty"`
-	Comments *string `json:"comments,omitempty"`
-	Tags []NestedTagRequest `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	Site                 BriefSiteRequest             `json:"site"`
+	Location             NullableBriefLocationRequest `json:"location,omitempty"`
+	Name                 string                       `json:"name"`
+	Description          *string                      `json:"description,omitempty"`
+	Comments             *string                      `json:"comments,omitempty"`
+	Tags                 []NestedTagRequest           `json:"tags,omitempty"`
+	CustomFields         map[string]interface{}       `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -107,6 +107,7 @@ func (o *PowerPanelRequest) HasLocation() bool {
 func (o *PowerPanelRequest) SetLocation(v BriefLocationRequest) {
 	o.Location.Set(&v)
 }
+
 // SetLocationNil sets the value for Location to be an explicit nil
 func (o *PowerPanelRequest) SetLocationNil() {
 	o.Location.Set(nil)
@@ -270,7 +271,7 @@ func (o *PowerPanelRequest) SetCustomFields(v map[string]interface{}) {
 }
 
 func (o PowerPanelRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -318,10 +319,10 @@ func (o *PowerPanelRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -388,5 +389,3 @@ func (v *NullablePowerPanelRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

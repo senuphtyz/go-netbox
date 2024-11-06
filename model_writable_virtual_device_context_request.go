@@ -20,17 +20,17 @@ var _ MappedNullable = &WritableVirtualDeviceContextRequest{}
 
 // WritableVirtualDeviceContextRequest Adds support for custom fields and tags.
 type WritableVirtualDeviceContextRequest struct {
-	Name string `json:"name"`
-	Device BriefDeviceRequest `json:"device"`
-	Identifier NullableInt32 `json:"identifier,omitempty"`
-	Tenant NullableBriefTenantRequest `json:"tenant,omitempty"`
-	PrimaryIp4 NullableBriefIPAddressRequest `json:"primary_ip4,omitempty"`
-	PrimaryIp6 NullableBriefIPAddressRequest `json:"primary_ip6,omitempty"`
-	Status PatchedWritableVirtualDeviceContextRequestStatus `json:"status"`
-	Description *string `json:"description,omitempty"`
-	Comments *string `json:"comments,omitempty"`
-	Tags []NestedTagRequest `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	Name                 string                                           `json:"name"`
+	Device               BriefDeviceRequest                               `json:"device"`
+	Identifier           NullableInt32                                    `json:"identifier,omitempty"`
+	Tenant               NullableBriefTenantRequest                       `json:"tenant,omitempty"`
+	PrimaryIp4           NullableBriefIPAddressRequest                    `json:"primary_ip4,omitempty"`
+	PrimaryIp6           NullableBriefIPAddressRequest                    `json:"primary_ip6,omitempty"`
+	Status               PatchedWritableVirtualDeviceContextRequestStatus `json:"status"`
+	Description          *string                                          `json:"description,omitempty"`
+	Comments             *string                                          `json:"comments,omitempty"`
+	Tags                 []NestedTagRequest                               `json:"tags,omitempty"`
+	CustomFields         map[string]interface{}                           `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -136,6 +136,7 @@ func (o *WritableVirtualDeviceContextRequest) HasIdentifier() bool {
 func (o *WritableVirtualDeviceContextRequest) SetIdentifier(v int32) {
 	o.Identifier.Set(&v)
 }
+
 // SetIdentifierNil sets the value for Identifier to be an explicit nil
 func (o *WritableVirtualDeviceContextRequest) SetIdentifierNil() {
 	o.Identifier.Set(nil)
@@ -178,6 +179,7 @@ func (o *WritableVirtualDeviceContextRequest) HasTenant() bool {
 func (o *WritableVirtualDeviceContextRequest) SetTenant(v BriefTenantRequest) {
 	o.Tenant.Set(&v)
 }
+
 // SetTenantNil sets the value for Tenant to be an explicit nil
 func (o *WritableVirtualDeviceContextRequest) SetTenantNil() {
 	o.Tenant.Set(nil)
@@ -220,6 +222,7 @@ func (o *WritableVirtualDeviceContextRequest) HasPrimaryIp4() bool {
 func (o *WritableVirtualDeviceContextRequest) SetPrimaryIp4(v BriefIPAddressRequest) {
 	o.PrimaryIp4.Set(&v)
 }
+
 // SetPrimaryIp4Nil sets the value for PrimaryIp4 to be an explicit nil
 func (o *WritableVirtualDeviceContextRequest) SetPrimaryIp4Nil() {
 	o.PrimaryIp4.Set(nil)
@@ -262,6 +265,7 @@ func (o *WritableVirtualDeviceContextRequest) HasPrimaryIp6() bool {
 func (o *WritableVirtualDeviceContextRequest) SetPrimaryIp6(v BriefIPAddressRequest) {
 	o.PrimaryIp6.Set(&v)
 }
+
 // SetPrimaryIp6Nil sets the value for PrimaryIp6 to be an explicit nil
 func (o *WritableVirtualDeviceContextRequest) SetPrimaryIp6Nil() {
 	o.PrimaryIp6.Set(nil)
@@ -425,7 +429,7 @@ func (o *WritableVirtualDeviceContextRequest) SetCustomFields(v map[string]inter
 }
 
 func (o WritableVirtualDeviceContextRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -484,10 +488,10 @@ func (o *WritableVirtualDeviceContextRequest) UnmarshalJSON(data []byte) (err er
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -558,5 +562,3 @@ func (v *NullableWritableVirtualDeviceContextRequest) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

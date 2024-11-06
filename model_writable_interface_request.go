@@ -20,43 +20,43 @@ var _ MappedNullable = &WritableInterfaceRequest{}
 
 // WritableInterfaceRequest Adds support for custom fields and tags.
 type WritableInterfaceRequest struct {
-	Device BriefDeviceRequest `json:"device"`
-	Vdcs []int32 `json:"vdcs,omitempty"`
+	Device BriefDeviceRequest         `json:"device"`
+	Vdcs   []int32                    `json:"vdcs,omitempty"`
 	Module NullableBriefModuleRequest `json:"module,omitempty"`
-	Name string `json:"name"`
+	Name   string                     `json:"name"`
 	// Physical label
-	Label *string `json:"label,omitempty"`
-	Type InterfaceTypeValue `json:"type"`
-	Enabled *bool `json:"enabled,omitempty"`
-	Parent NullableInt32 `json:"parent,omitempty"`
-	Bridge NullableInt32 `json:"bridge,omitempty"`
-	Lag NullableInt32 `json:"lag,omitempty"`
-	Mtu NullableInt32 `json:"mtu,omitempty"`
-	MacAddress NullableString `json:"mac_address,omitempty"`
-	Speed NullableInt32 `json:"speed,omitempty"`
-	Duplex NullableInterfaceRequestDuplex `json:"duplex,omitempty"`
-	Wwn NullableString `json:"wwn,omitempty"`
+	Label      *string                        `json:"label,omitempty"`
+	Type       InterfaceTypeValue             `json:"type"`
+	Enabled    *bool                          `json:"enabled,omitempty"`
+	Parent     NullableInt32                  `json:"parent,omitempty"`
+	Bridge     NullableInt32                  `json:"bridge,omitempty"`
+	Lag        NullableInt32                  `json:"lag,omitempty"`
+	Mtu        NullableInt32                  `json:"mtu,omitempty"`
+	MacAddress NullableString                 `json:"mac_address,omitempty"`
+	Speed      NullableInt32                  `json:"speed,omitempty"`
+	Duplex     NullableInterfaceRequestDuplex `json:"duplex,omitempty"`
+	Wwn        NullableString                 `json:"wwn,omitempty"`
 	// This interface is used only for out-of-band management
-	MgmtOnly *bool `json:"mgmt_only,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Mode *PatchedWritableInterfaceRequestMode `json:"mode,omitempty"`
-	RfRole *WirelessRole `json:"rf_role,omitempty"`
-	RfChannel *WirelessChannel `json:"rf_channel,omitempty"`
-	PoeMode *InterfacePoeModeValue `json:"poe_mode,omitempty"`
-	PoeType *InterfacePoeTypeValue `json:"poe_type,omitempty"`
+	MgmtOnly    *bool                                `json:"mgmt_only,omitempty"`
+	Description *string                              `json:"description,omitempty"`
+	Mode        *PatchedWritableInterfaceRequestMode `json:"mode,omitempty"`
+	RfRole      *WirelessRole                        `json:"rf_role,omitempty"`
+	RfChannel   *WirelessChannel                     `json:"rf_channel,omitempty"`
+	PoeMode     *InterfacePoeModeValue               `json:"poe_mode,omitempty"`
+	PoeType     *InterfacePoeTypeValue               `json:"poe_type,omitempty"`
 	// Populated by selected channel (if set)
 	RfChannelFrequency NullableFloat64 `json:"rf_channel_frequency,omitempty"`
 	// Populated by selected channel (if set)
-	RfChannelWidth NullableFloat64 `json:"rf_channel_width,omitempty"`
-	TxPower NullableInt32 `json:"tx_power,omitempty"`
-	UntaggedVlan NullableBriefVLANRequest `json:"untagged_vlan,omitempty"`
-	TaggedVlans []int32 `json:"tagged_vlans,omitempty"`
+	RfChannelWidth NullableFloat64          `json:"rf_channel_width,omitempty"`
+	TxPower        NullableInt32            `json:"tx_power,omitempty"`
+	UntaggedVlan   NullableBriefVLANRequest `json:"untagged_vlan,omitempty"`
+	TaggedVlans    []int32                  `json:"tagged_vlans,omitempty"`
 	// Treat as if a cable is connected
-	MarkConnected *bool `json:"mark_connected,omitempty"`
-	WirelessLans []int32 `json:"wireless_lans,omitempty"`
-	Vrf NullableBriefVRFRequest `json:"vrf,omitempty"`
-	Tags []NestedTagRequest `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	MarkConnected        *bool                   `json:"mark_connected,omitempty"`
+	WirelessLans         []int32                 `json:"wireless_lans,omitempty"`
+	Vrf                  NullableBriefVRFRequest `json:"vrf,omitempty"`
+	Tags                 []NestedTagRequest      `json:"tags,omitempty"`
+	CustomFields         map[string]interface{}  `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -170,6 +170,7 @@ func (o *WritableInterfaceRequest) HasModule() bool {
 func (o *WritableInterfaceRequest) SetModule(v BriefModuleRequest) {
 	o.Module.Set(&v)
 }
+
 // SetModuleNil sets the value for Module to be an explicit nil
 func (o *WritableInterfaceRequest) SetModuleNil() {
 	o.Module.Set(nil)
@@ -324,6 +325,7 @@ func (o *WritableInterfaceRequest) HasParent() bool {
 func (o *WritableInterfaceRequest) SetParent(v int32) {
 	o.Parent.Set(&v)
 }
+
 // SetParentNil sets the value for Parent to be an explicit nil
 func (o *WritableInterfaceRequest) SetParentNil() {
 	o.Parent.Set(nil)
@@ -366,6 +368,7 @@ func (o *WritableInterfaceRequest) HasBridge() bool {
 func (o *WritableInterfaceRequest) SetBridge(v int32) {
 	o.Bridge.Set(&v)
 }
+
 // SetBridgeNil sets the value for Bridge to be an explicit nil
 func (o *WritableInterfaceRequest) SetBridgeNil() {
 	o.Bridge.Set(nil)
@@ -408,6 +411,7 @@ func (o *WritableInterfaceRequest) HasLag() bool {
 func (o *WritableInterfaceRequest) SetLag(v int32) {
 	o.Lag.Set(&v)
 }
+
 // SetLagNil sets the value for Lag to be an explicit nil
 func (o *WritableInterfaceRequest) SetLagNil() {
 	o.Lag.Set(nil)
@@ -450,6 +454,7 @@ func (o *WritableInterfaceRequest) HasMtu() bool {
 func (o *WritableInterfaceRequest) SetMtu(v int32) {
 	o.Mtu.Set(&v)
 }
+
 // SetMtuNil sets the value for Mtu to be an explicit nil
 func (o *WritableInterfaceRequest) SetMtuNil() {
 	o.Mtu.Set(nil)
@@ -492,6 +497,7 @@ func (o *WritableInterfaceRequest) HasMacAddress() bool {
 func (o *WritableInterfaceRequest) SetMacAddress(v string) {
 	o.MacAddress.Set(&v)
 }
+
 // SetMacAddressNil sets the value for MacAddress to be an explicit nil
 func (o *WritableInterfaceRequest) SetMacAddressNil() {
 	o.MacAddress.Set(nil)
@@ -534,6 +540,7 @@ func (o *WritableInterfaceRequest) HasSpeed() bool {
 func (o *WritableInterfaceRequest) SetSpeed(v int32) {
 	o.Speed.Set(&v)
 }
+
 // SetSpeedNil sets the value for Speed to be an explicit nil
 func (o *WritableInterfaceRequest) SetSpeedNil() {
 	o.Speed.Set(nil)
@@ -576,6 +583,7 @@ func (o *WritableInterfaceRequest) HasDuplex() bool {
 func (o *WritableInterfaceRequest) SetDuplex(v InterfaceRequestDuplex) {
 	o.Duplex.Set(&v)
 }
+
 // SetDuplexNil sets the value for Duplex to be an explicit nil
 func (o *WritableInterfaceRequest) SetDuplexNil() {
 	o.Duplex.Set(nil)
@@ -618,6 +626,7 @@ func (o *WritableInterfaceRequest) HasWwn() bool {
 func (o *WritableInterfaceRequest) SetWwn(v string) {
 	o.Wwn.Set(&v)
 }
+
 // SetWwnNil sets the value for Wwn to be an explicit nil
 func (o *WritableInterfaceRequest) SetWwnNil() {
 	o.Wwn.Set(nil)
@@ -884,6 +893,7 @@ func (o *WritableInterfaceRequest) HasRfChannelFrequency() bool {
 func (o *WritableInterfaceRequest) SetRfChannelFrequency(v float64) {
 	o.RfChannelFrequency.Set(&v)
 }
+
 // SetRfChannelFrequencyNil sets the value for RfChannelFrequency to be an explicit nil
 func (o *WritableInterfaceRequest) SetRfChannelFrequencyNil() {
 	o.RfChannelFrequency.Set(nil)
@@ -926,6 +936,7 @@ func (o *WritableInterfaceRequest) HasRfChannelWidth() bool {
 func (o *WritableInterfaceRequest) SetRfChannelWidth(v float64) {
 	o.RfChannelWidth.Set(&v)
 }
+
 // SetRfChannelWidthNil sets the value for RfChannelWidth to be an explicit nil
 func (o *WritableInterfaceRequest) SetRfChannelWidthNil() {
 	o.RfChannelWidth.Set(nil)
@@ -968,6 +979,7 @@ func (o *WritableInterfaceRequest) HasTxPower() bool {
 func (o *WritableInterfaceRequest) SetTxPower(v int32) {
 	o.TxPower.Set(&v)
 }
+
 // SetTxPowerNil sets the value for TxPower to be an explicit nil
 func (o *WritableInterfaceRequest) SetTxPowerNil() {
 	o.TxPower.Set(nil)
@@ -1010,6 +1022,7 @@ func (o *WritableInterfaceRequest) HasUntaggedVlan() bool {
 func (o *WritableInterfaceRequest) SetUntaggedVlan(v BriefVLANRequest) {
 	o.UntaggedVlan.Set(&v)
 }
+
 // SetUntaggedVlanNil sets the value for UntaggedVlan to be an explicit nil
 func (o *WritableInterfaceRequest) SetUntaggedVlanNil() {
 	o.UntaggedVlan.Set(nil)
@@ -1148,6 +1161,7 @@ func (o *WritableInterfaceRequest) HasVrf() bool {
 func (o *WritableInterfaceRequest) SetVrf(v BriefVRFRequest) {
 	o.Vrf.Set(&v)
 }
+
 // SetVrfNil sets the value for Vrf to be an explicit nil
 func (o *WritableInterfaceRequest) SetVrfNil() {
 	o.Vrf.Set(nil)
@@ -1223,7 +1237,7 @@ func (o *WritableInterfaceRequest) SetCustomFields(v map[string]interface{}) {
 }
 
 func (o WritableInterfaceRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1345,10 +1359,10 @@ func (o *WritableInterfaceRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -1440,5 +1454,3 @@ func (v *NullableWritableInterfaceRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,17 +20,17 @@ var _ MappedNullable = &ModuleRequest{}
 
 // ModuleRequest Adds support for custom fields and tags.
 type ModuleRequest struct {
-	Device BriefDeviceRequest `json:"device"`
-	ModuleBay NestedModuleBayRequest `json:"module_bay"`
+	Device     BriefDeviceRequest     `json:"device"`
+	ModuleBay  NestedModuleBayRequest `json:"module_bay"`
 	ModuleType BriefModuleTypeRequest `json:"module_type"`
-	Status *ModuleStatusValue `json:"status,omitempty"`
-	Serial *string `json:"serial,omitempty"`
+	Status     *ModuleStatusValue     `json:"status,omitempty"`
+	Serial     *string                `json:"serial,omitempty"`
 	// A unique tag used to identify this device
-	AssetTag NullableString `json:"asset_tag,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Comments *string `json:"comments,omitempty"`
-	Tags []NestedTagRequest `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	AssetTag             NullableString         `json:"asset_tag,omitempty"`
+	Description          *string                `json:"description,omitempty"`
+	Comments             *string                `json:"comments,omitempty"`
+	Tags                 []NestedTagRequest     `json:"tags,omitempty"`
+	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -224,6 +224,7 @@ func (o *ModuleRequest) HasAssetTag() bool {
 func (o *ModuleRequest) SetAssetTag(v string) {
 	o.AssetTag.Set(&v)
 }
+
 // SetAssetTagNil sets the value for AssetTag to be an explicit nil
 func (o *ModuleRequest) SetAssetTagNil() {
 	o.AssetTag.Set(nil)
@@ -363,7 +364,7 @@ func (o *ModuleRequest) SetCustomFields(v map[string]interface{}) {
 }
 
 func (o ModuleRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -419,10 +420,10 @@ func (o *ModuleRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -492,5 +493,3 @@ func (v *NullableModuleRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

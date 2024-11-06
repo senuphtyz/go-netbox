@@ -20,20 +20,20 @@ var _ MappedNullable = &IPAddressRequest{}
 
 // IPAddressRequest Adds support for custom fields and tags.
 type IPAddressRequest struct {
-	Address string `json:"address"`
-	Vrf NullableBriefVRFRequest `json:"vrf,omitempty"`
-	Tenant NullableBriefTenantRequest `json:"tenant,omitempty"`
-	Status *IPAddressStatusValue `json:"status,omitempty"`
-	Role *IPAddressRoleValue `json:"role,omitempty"`
-	AssignedObjectType NullableString `json:"assigned_object_type,omitempty"`
-	AssignedObjectId NullableInt64 `json:"assigned_object_id,omitempty"`
-	NatInside NullableNestedIPAddressRequest `json:"nat_inside,omitempty"`
+	Address            string                         `json:"address"`
+	Vrf                NullableBriefVRFRequest        `json:"vrf,omitempty"`
+	Tenant             NullableBriefTenantRequest     `json:"tenant,omitempty"`
+	Status             *IPAddressStatusValue          `json:"status,omitempty"`
+	Role               *IPAddressRoleValue            `json:"role,omitempty"`
+	AssignedObjectType NullableString                 `json:"assigned_object_type,omitempty"`
+	AssignedObjectId   NullableInt64                  `json:"assigned_object_id,omitempty"`
+	NatInside          NullableNestedIPAddressRequest `json:"nat_inside,omitempty"`
 	// Hostname or FQDN (not case-sensitive)
-	DnsName *string `json:"dns_name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Comments *string `json:"comments,omitempty"`
-	Tags []NestedTagRequest `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	DnsName              *string                `json:"dns_name,omitempty" validate:"regexp=^([0-9A-Za-z_-]+|\\\\*)(\\\\.[0-9A-Za-z_-]+)*\\\\.?$"`
+	Description          *string                `json:"description,omitempty"`
+	Comments             *string                `json:"comments,omitempty"`
+	Tags                 []NestedTagRequest     `json:"tags,omitempty"`
+	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -113,6 +113,7 @@ func (o *IPAddressRequest) HasVrf() bool {
 func (o *IPAddressRequest) SetVrf(v BriefVRFRequest) {
 	o.Vrf.Set(&v)
 }
+
 // SetVrfNil sets the value for Vrf to be an explicit nil
 func (o *IPAddressRequest) SetVrfNil() {
 	o.Vrf.Set(nil)
@@ -155,6 +156,7 @@ func (o *IPAddressRequest) HasTenant() bool {
 func (o *IPAddressRequest) SetTenant(v BriefTenantRequest) {
 	o.Tenant.Set(&v)
 }
+
 // SetTenantNil sets the value for Tenant to be an explicit nil
 func (o *IPAddressRequest) SetTenantNil() {
 	o.Tenant.Set(nil)
@@ -261,6 +263,7 @@ func (o *IPAddressRequest) HasAssignedObjectType() bool {
 func (o *IPAddressRequest) SetAssignedObjectType(v string) {
 	o.AssignedObjectType.Set(&v)
 }
+
 // SetAssignedObjectTypeNil sets the value for AssignedObjectType to be an explicit nil
 func (o *IPAddressRequest) SetAssignedObjectTypeNil() {
 	o.AssignedObjectType.Set(nil)
@@ -303,6 +306,7 @@ func (o *IPAddressRequest) HasAssignedObjectId() bool {
 func (o *IPAddressRequest) SetAssignedObjectId(v int64) {
 	o.AssignedObjectId.Set(&v)
 }
+
 // SetAssignedObjectIdNil sets the value for AssignedObjectId to be an explicit nil
 func (o *IPAddressRequest) SetAssignedObjectIdNil() {
 	o.AssignedObjectId.Set(nil)
@@ -345,6 +349,7 @@ func (o *IPAddressRequest) HasNatInside() bool {
 func (o *IPAddressRequest) SetNatInside(v NestedIPAddressRequest) {
 	o.NatInside.Set(&v)
 }
+
 // SetNatInsideNil sets the value for NatInside to be an explicit nil
 func (o *IPAddressRequest) SetNatInsideNil() {
 	o.NatInside.Set(nil)
@@ -516,7 +521,7 @@ func (o *IPAddressRequest) SetCustomFields(v map[string]interface{}) {
 }
 
 func (o IPAddressRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -583,10 +588,10 @@ func (o *IPAddressRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -659,5 +664,3 @@ func (v *NullableIPAddressRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

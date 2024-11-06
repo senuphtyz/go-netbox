@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"time"
 	"fmt"
+	"time"
 )
 
 // checks if the Site type satisfies the MappedNullable interface at compile time
@@ -21,21 +21,21 @@ var _ MappedNullable = &Site{}
 
 // Site Adds support for custom fields and tags.
 type Site struct {
-	Id int32 `json:"id"`
-	Url string `json:"url"`
+	Id         int32  `json:"id"`
+	Url        string `json:"url"`
 	DisplayUrl string `json:"display_url"`
-	Display string `json:"display"`
+	Display    string `json:"display"`
 	// Full name of the site
-	Name string `json:"name"`
-	Slug string `json:"slug"`
-	Status *LocationStatus `json:"status,omitempty"`
-	Region NullableBriefRegion `json:"region,omitempty"`
-	Group NullableBriefSiteGroup `json:"group,omitempty"`
-	Tenant NullableBriefTenant `json:"tenant,omitempty"`
+	Name   string                 `json:"name"`
+	Slug   string                 `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
+	Status *LocationStatus        `json:"status,omitempty"`
+	Region NullableBriefRegion    `json:"region,omitempty"`
+	Group  NullableBriefSiteGroup `json:"group,omitempty"`
+	Tenant NullableBriefTenant    `json:"tenant,omitempty"`
 	// Local facility ID or description
-	Facility *string `json:"facility,omitempty"`
-	TimeZone NullableString `json:"time_zone,omitempty"`
-	Description *string `json:"description,omitempty"`
+	Facility    *string        `json:"facility,omitempty"`
+	TimeZone    NullableString `json:"time_zone,omitempty"`
+	Description *string        `json:"description,omitempty"`
 	// Physical location of the building
 	PhysicalAddress *string `json:"physical_address,omitempty"`
 	// If different from the physical address
@@ -43,19 +43,19 @@ type Site struct {
 	// GPS coordinate in decimal format (xx.yyyyyy)
 	Latitude NullableFloat64 `json:"latitude,omitempty"`
 	// GPS coordinate in decimal format (xx.yyyyyy)
-	Longitude NullableFloat64 `json:"longitude,omitempty"`
-	Comments *string `json:"comments,omitempty"`
-	Asns []ASN `json:"asns,omitempty"`
-	Tags []NestedTag `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	Created NullableTime `json:"created"`
-	LastUpdated NullableTime `json:"last_updated"`
-	CircuitCount int64 `json:"circuit_count"`
-	DeviceCount int64 `json:"device_count"`
-	PrefixCount int64 `json:"prefix_count"`
-	RackCount int64 `json:"rack_count"`
-	VirtualmachineCount int64 `json:"virtualmachine_count"`
-	VlanCount int64 `json:"vlan_count"`
+	Longitude            NullableFloat64        `json:"longitude,omitempty"`
+	Comments             *string                `json:"comments,omitempty"`
+	Asns                 []ASN                  `json:"asns,omitempty"`
+	Tags                 []NestedTag            `json:"tags,omitempty"`
+	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
+	Created              NullableTime           `json:"created"`
+	LastUpdated          NullableTime           `json:"last_updated"`
+	CircuitCount         int64                  `json:"circuit_count"`
+	DeviceCount          int64                  `json:"device_count"`
+	PrefixCount          int64                  `json:"prefix_count"`
+	RackCount            int64                  `json:"rack_count"`
+	VirtualmachineCount  int64                  `json:"virtualmachine_count"`
+	VlanCount            int64                  `json:"vlan_count"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -300,6 +300,7 @@ func (o *Site) HasRegion() bool {
 func (o *Site) SetRegion(v BriefRegion) {
 	o.Region.Set(&v)
 }
+
 // SetRegionNil sets the value for Region to be an explicit nil
 func (o *Site) SetRegionNil() {
 	o.Region.Set(nil)
@@ -342,6 +343,7 @@ func (o *Site) HasGroup() bool {
 func (o *Site) SetGroup(v BriefSiteGroup) {
 	o.Group.Set(&v)
 }
+
 // SetGroupNil sets the value for Group to be an explicit nil
 func (o *Site) SetGroupNil() {
 	o.Group.Set(nil)
@@ -384,6 +386,7 @@ func (o *Site) HasTenant() bool {
 func (o *Site) SetTenant(v BriefTenant) {
 	o.Tenant.Set(&v)
 }
+
 // SetTenantNil sets the value for Tenant to be an explicit nil
 func (o *Site) SetTenantNil() {
 	o.Tenant.Set(nil)
@@ -458,6 +461,7 @@ func (o *Site) HasTimeZone() bool {
 func (o *Site) SetTimeZone(v string) {
 	o.TimeZone.Set(&v)
 }
+
 // SetTimeZoneNil sets the value for TimeZone to be an explicit nil
 func (o *Site) SetTimeZoneNil() {
 	o.TimeZone.Set(nil)
@@ -596,6 +600,7 @@ func (o *Site) HasLatitude() bool {
 func (o *Site) SetLatitude(v float64) {
 	o.Latitude.Set(&v)
 }
+
 // SetLatitudeNil sets the value for Latitude to be an explicit nil
 func (o *Site) SetLatitudeNil() {
 	o.Latitude.Set(nil)
@@ -638,6 +643,7 @@ func (o *Site) HasLongitude() bool {
 func (o *Site) SetLongitude(v float64) {
 	o.Longitude.Set(&v)
 }
+
 // SetLongitudeNil sets the value for Longitude to be an explicit nil
 func (o *Site) SetLongitudeNil() {
 	o.Longitude.Set(nil)
@@ -973,7 +979,7 @@ func (o *Site) SetVlanCount(v int64) {
 }
 
 func (o Site) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1075,10 +1081,10 @@ func (o *Site) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -1167,5 +1173,3 @@ func (v *NullableSite) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,10 +20,10 @@ var _ MappedNullable = &PaginatedVirtualDeviceContextList{}
 
 // PaginatedVirtualDeviceContextList struct for PaginatedVirtualDeviceContextList
 type PaginatedVirtualDeviceContextList struct {
-	Count int32 `json:"count"`
-	Next NullableString `json:"next,omitempty"`
-	Previous NullableString `json:"previous,omitempty"`
-	Results []VirtualDeviceContext `json:"results"`
+	Count                int32                  `json:"count"`
+	Next                 NullableString         `json:"next,omitempty"`
+	Previous             NullableString         `json:"previous,omitempty"`
+	Results              []VirtualDeviceContext `json:"results"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -104,6 +104,7 @@ func (o *PaginatedVirtualDeviceContextList) HasNext() bool {
 func (o *PaginatedVirtualDeviceContextList) SetNext(v string) {
 	o.Next.Set(&v)
 }
+
 // SetNextNil sets the value for Next to be an explicit nil
 func (o *PaginatedVirtualDeviceContextList) SetNextNil() {
 	o.Next.Set(nil)
@@ -146,6 +147,7 @@ func (o *PaginatedVirtualDeviceContextList) HasPrevious() bool {
 func (o *PaginatedVirtualDeviceContextList) SetPrevious(v string) {
 	o.Previous.Set(&v)
 }
+
 // SetPreviousNil sets the value for Previous to be an explicit nil
 func (o *PaginatedVirtualDeviceContextList) SetPreviousNil() {
 	o.Previous.Set(nil)
@@ -181,7 +183,7 @@ func (o *PaginatedVirtualDeviceContextList) SetResults(v []VirtualDeviceContext)
 }
 
 func (o PaginatedVirtualDeviceContextList) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -220,10 +222,10 @@ func (o *PaginatedVirtualDeviceContextList) UnmarshalJSON(data []byte) (err erro
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -287,5 +289,3 @@ func (v *NullablePaginatedVirtualDeviceContextList) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

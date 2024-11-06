@@ -25,9 +25,9 @@ type ConsoleServerPortTemplateRequest struct {
 	// {module} is accepted as a substitution for the module bay position when attached to a module type.
 	Name string `json:"name"`
 	// Physical label
-	Label *string `json:"label,omitempty"`
-	Type *ConsolePortTypeValue `json:"type,omitempty"`
-	Description *string `json:"description,omitempty"`
+	Label                *string               `json:"label,omitempty"`
+	Type                 *ConsolePortTypeValue `json:"type,omitempty"`
+	Description          *string               `json:"description,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -83,6 +83,7 @@ func (o *ConsoleServerPortTemplateRequest) HasDeviceType() bool {
 func (o *ConsoleServerPortTemplateRequest) SetDeviceType(v BriefDeviceTypeRequest) {
 	o.DeviceType.Set(&v)
 }
+
 // SetDeviceTypeNil sets the value for DeviceType to be an explicit nil
 func (o *ConsoleServerPortTemplateRequest) SetDeviceTypeNil() {
 	o.DeviceType.Set(nil)
@@ -125,6 +126,7 @@ func (o *ConsoleServerPortTemplateRequest) HasModuleType() bool {
 func (o *ConsoleServerPortTemplateRequest) SetModuleType(v BriefModuleTypeRequest) {
 	o.ModuleType.Set(&v)
 }
+
 // SetModuleTypeNil sets the value for ModuleType to be an explicit nil
 func (o *ConsoleServerPortTemplateRequest) SetModuleTypeNil() {
 	o.ModuleType.Set(nil)
@@ -256,7 +258,7 @@ func (o *ConsoleServerPortTemplateRequest) SetDescription(v string) {
 }
 
 func (o ConsoleServerPortTemplateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -302,10 +304,10 @@ func (o *ConsoleServerPortTemplateRequest) UnmarshalJSON(data []byte) (err error
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -371,5 +373,3 @@ func (v *NullableConsoleServerPortTemplateRequest) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

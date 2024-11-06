@@ -21,18 +21,18 @@ var _ MappedNullable = &EventRuleRequest{}
 // EventRuleRequest Adds support for custom fields and tags.
 type EventRuleRequest struct {
 	ObjectTypes []string `json:"object_types"`
-	Name string `json:"name"`
-	Enabled *bool `json:"enabled,omitempty"`
+	Name        string   `json:"name"`
+	Enabled     *bool    `json:"enabled,omitempty"`
 	// The types of event which will trigger this rule.
 	EventTypes []EventRuleEventTypesInner `json:"event_types"`
 	// A set of conditions which determine whether the event will be generated.
-	Conditions interface{} `json:"conditions,omitempty"`
-	ActionType EventRuleActionTypeValue `json:"action_type"`
-	ActionObjectType string `json:"action_object_type"`
-	ActionObjectId NullableInt64 `json:"action_object_id,omitempty"`
-	Description *string `json:"description,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	Tags []NestedTagRequest `json:"tags,omitempty"`
+	Conditions           interface{}              `json:"conditions,omitempty"`
+	ActionType           EventRuleActionTypeValue `json:"action_type"`
+	ActionObjectType     string                   `json:"action_object_type"`
+	ActionObjectId       NullableInt64            `json:"action_object_id,omitempty"`
+	Description          *string                  `json:"description,omitempty"`
+	CustomFields         map[string]interface{}   `json:"custom_fields,omitempty"`
+	Tags                 []NestedTagRequest       `json:"tags,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -277,6 +277,7 @@ func (o *EventRuleRequest) HasActionObjectId() bool {
 func (o *EventRuleRequest) SetActionObjectId(v int64) {
 	o.ActionObjectId.Set(&v)
 }
+
 // SetActionObjectIdNil sets the value for ActionObjectId to be an explicit nil
 func (o *EventRuleRequest) SetActionObjectIdNil() {
 	o.ActionObjectId.Set(nil)
@@ -384,7 +385,7 @@ func (o *EventRuleRequest) SetTags(v []NestedTagRequest) {
 }
 
 func (o EventRuleRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -441,10 +442,10 @@ func (o *EventRuleRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -515,5 +516,3 @@ func (v *NullableEventRuleRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

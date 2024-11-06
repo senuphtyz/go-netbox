@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"time"
 	"fmt"
+	"time"
 )
 
 // checks if the IKEProposal type satisfies the MappedNullable interface at compile time
@@ -21,23 +21,23 @@ var _ MappedNullable = &IKEProposal{}
 
 // IKEProposal Adds support for custom fields and tags.
 type IKEProposal struct {
-	Id int32 `json:"id"`
-	Url string `json:"url"`
-	DisplayUrl string `json:"display_url"`
-	Display string `json:"display"`
-	Name string `json:"name"`
-	Description *string `json:"description,omitempty"`
-	AuthenticationMethod IKEProposalAuthenticationMethod `json:"authentication_method"`
-	EncryptionAlgorithm IKEProposalEncryptionAlgorithm `json:"encryption_algorithm"`
+	Id                      int32                               `json:"id"`
+	Url                     string                              `json:"url"`
+	DisplayUrl              string                              `json:"display_url"`
+	Display                 string                              `json:"display"`
+	Name                    string                              `json:"name"`
+	Description             *string                             `json:"description,omitempty"`
+	AuthenticationMethod    IKEProposalAuthenticationMethod     `json:"authentication_method"`
+	EncryptionAlgorithm     IKEProposalEncryptionAlgorithm      `json:"encryption_algorithm"`
 	AuthenticationAlgorithm *IKEProposalAuthenticationAlgorithm `json:"authentication_algorithm,omitempty"`
-	Group IKEProposalGroup `json:"group"`
+	Group                   IKEProposalGroup                    `json:"group"`
 	// Security association lifetime (in seconds)
-	SaLifetime NullableInt32 `json:"sa_lifetime,omitempty"`
-	Comments *string `json:"comments,omitempty"`
-	Tags []NestedTag `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	Created NullableTime `json:"created"`
-	LastUpdated NullableTime `json:"last_updated"`
+	SaLifetime           NullableInt32          `json:"sa_lifetime,omitempty"`
+	Comments             *string                `json:"comments,omitempty"`
+	Tags                 []NestedTag            `json:"tags,omitempty"`
+	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
+	Created              NullableTime           `json:"created"`
+	LastUpdated          NullableTime           `json:"last_updated"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -358,6 +358,7 @@ func (o *IKEProposal) HasSaLifetime() bool {
 func (o *IKEProposal) SetSaLifetime(v int32) {
 	o.SaLifetime.Set(&v)
 }
+
 // SetSaLifetimeNil sets the value for SaLifetime to be an explicit nil
 func (o *IKEProposal) SetSaLifetimeNil() {
 	o.SaLifetime.Set(nil)
@@ -517,7 +518,7 @@ func (o *IKEProposal) SetLastUpdated(v time.Time) {
 }
 
 func (o IKEProposal) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -584,10 +585,10 @@ func (o *IKEProposal) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -663,5 +664,3 @@ func (v *NullableIKEProposal) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

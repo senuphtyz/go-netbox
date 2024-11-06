@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"time"
 	"fmt"
+	"time"
 )
 
 // checks if the PowerPort type satisfies the MappedNullable interface at compile time
@@ -21,37 +21,37 @@ var _ MappedNullable = &PowerPort{}
 
 // PowerPort Adds support for custom fields and tags.
 type PowerPort struct {
-	Id int32 `json:"id"`
-	Url string `json:"url"`
-	DisplayUrl string `json:"display_url"`
-	Display string `json:"display"`
-	Device BriefDevice `json:"device"`
-	Module NullableBriefModule `json:"module,omitempty"`
-	Name string `json:"name"`
+	Id         int32               `json:"id"`
+	Url        string              `json:"url"`
+	DisplayUrl string              `json:"display_url"`
+	Display    string              `json:"display"`
+	Device     BriefDevice         `json:"device"`
+	Module     NullableBriefModule `json:"module,omitempty"`
+	Name       string              `json:"name"`
 	// Physical label
-	Label *string `json:"label,omitempty"`
-	Type NullablePowerPortType `json:"type,omitempty"`
+	Label *string               `json:"label,omitempty"`
+	Type  NullablePowerPortType `json:"type,omitempty"`
 	// Maximum power draw (watts)
 	MaximumDraw NullableInt32 `json:"maximum_draw,omitempty"`
 	// Allocated power draw (watts)
 	AllocatedDraw NullableInt32 `json:"allocated_draw,omitempty"`
-	Description *string `json:"description,omitempty"`
+	Description   *string       `json:"description,omitempty"`
 	// Treat as if a cable is connected
-	MarkConnected *bool `json:"mark_connected,omitempty"`
-	Cable NullableBriefCable `json:"cable"`
-	CableEnd string `json:"cable_end"`
-	LinkPeers []interface{} `json:"link_peers"`
+	MarkConnected *bool              `json:"mark_connected,omitempty"`
+	Cable         NullableBriefCable `json:"cable"`
+	CableEnd      string             `json:"cable_end"`
+	LinkPeers     []interface{}      `json:"link_peers"`
 	// Return the type of the peer link terminations, or None.
-	LinkPeersType NullableString `json:"link_peers_type"`
-	ConnectedEndpoints []interface{} `json:"connected_endpoints"`
-	ConnectedEndpointsType NullableString `json:"connected_endpoints_type"`
-	ConnectedEndpointsReachable bool `json:"connected_endpoints_reachable"`
-	Tags []NestedTag `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	Created NullableTime `json:"created"`
-	LastUpdated NullableTime `json:"last_updated"`
-	Occupied bool `json:"_occupied"`
-	AdditionalProperties map[string]interface{}
+	LinkPeersType               NullableString         `json:"link_peers_type"`
+	ConnectedEndpoints          []interface{}          `json:"connected_endpoints"`
+	ConnectedEndpointsType      NullableString         `json:"connected_endpoints_type"`
+	ConnectedEndpointsReachable bool                   `json:"connected_endpoints_reachable"`
+	Tags                        []NestedTag            `json:"tags,omitempty"`
+	CustomFields                map[string]interface{} `json:"custom_fields,omitempty"`
+	Created                     NullableTime           `json:"created"`
+	LastUpdated                 NullableTime           `json:"last_updated"`
+	Occupied                    bool                   `json:"_occupied"`
+	AdditionalProperties        map[string]interface{}
 }
 
 type _PowerPort PowerPort
@@ -241,6 +241,7 @@ func (o *PowerPort) HasModule() bool {
 func (o *PowerPort) SetModule(v BriefModule) {
 	o.Module.Set(&v)
 }
+
 // SetModuleNil sets the value for Module to be an explicit nil
 func (o *PowerPort) SetModuleNil() {
 	o.Module.Set(nil)
@@ -339,6 +340,7 @@ func (o *PowerPort) HasType() bool {
 func (o *PowerPort) SetType(v PowerPortType) {
 	o.Type.Set(&v)
 }
+
 // SetTypeNil sets the value for Type to be an explicit nil
 func (o *PowerPort) SetTypeNil() {
 	o.Type.Set(nil)
@@ -381,6 +383,7 @@ func (o *PowerPort) HasMaximumDraw() bool {
 func (o *PowerPort) SetMaximumDraw(v int32) {
 	o.MaximumDraw.Set(&v)
 }
+
 // SetMaximumDrawNil sets the value for MaximumDraw to be an explicit nil
 func (o *PowerPort) SetMaximumDrawNil() {
 	o.MaximumDraw.Set(nil)
@@ -423,6 +426,7 @@ func (o *PowerPort) HasAllocatedDraw() bool {
 func (o *PowerPort) SetAllocatedDraw(v int32) {
 	o.AllocatedDraw.Set(&v)
 }
+
 // SetAllocatedDrawNil sets the value for AllocatedDraw to be an explicit nil
 func (o *PowerPort) SetAllocatedDrawNil() {
 	o.AllocatedDraw.Set(nil)
@@ -814,7 +818,7 @@ func (o *PowerPort) SetOccupied(v bool) {
 }
 
 func (o PowerPort) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -904,10 +908,10 @@ func (o *PowerPort) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -992,5 +996,3 @@ func (v *NullablePowerPort) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

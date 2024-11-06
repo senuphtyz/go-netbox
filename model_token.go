@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"time"
 	"fmt"
+	"time"
 )
 
 // checks if the Token type satisfies the MappedNullable interface at compile time
@@ -21,17 +21,17 @@ var _ MappedNullable = &Token{}
 
 // Token Extends the built-in ModelSerializer to enforce calling full_clean() on a copy of the associated instance during validation. (DRF does not do this by default; see https://github.com/encode/django-rest-framework/issues/3144)
 type Token struct {
-	Id int32 `json:"id"`
-	Url string `json:"url"`
-	DisplayUrl string `json:"display_url"`
-	Display string `json:"display"`
-	User BriefUser `json:"user"`
-	Created time.Time `json:"created"`
-	Expires NullableTime `json:"expires,omitempty"`
-	LastUsed NullableTime `json:"last_used,omitempty"`
+	Id         int32        `json:"id"`
+	Url        string       `json:"url"`
+	DisplayUrl string       `json:"display_url"`
+	Display    string       `json:"display"`
+	User       BriefUser    `json:"user"`
+	Created    time.Time    `json:"created"`
+	Expires    NullableTime `json:"expires,omitempty"`
+	LastUsed   NullableTime `json:"last_used,omitempty"`
 	// Permit create/update/delete operations using this key
-	WriteEnabled *bool `json:"write_enabled,omitempty"`
-	Description *string `json:"description,omitempty"`
+	WriteEnabled         *bool   `json:"write_enabled,omitempty"`
+	Description          *string `json:"description,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -236,6 +236,7 @@ func (o *Token) HasExpires() bool {
 func (o *Token) SetExpires(v time.Time) {
 	o.Expires.Set(&v)
 }
+
 // SetExpiresNil sets the value for Expires to be an explicit nil
 func (o *Token) SetExpiresNil() {
 	o.Expires.Set(nil)
@@ -278,6 +279,7 @@ func (o *Token) HasLastUsed() bool {
 func (o *Token) SetLastUsed(v time.Time) {
 	o.LastUsed.Set(&v)
 }
+
 // SetLastUsedNil sets the value for LastUsed to be an explicit nil
 func (o *Token) SetLastUsedNil() {
 	o.LastUsed.Set(nil)
@@ -353,7 +355,7 @@ func (o *Token) SetDescription(v string) {
 }
 
 func (o Token) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -406,10 +408,10 @@ func (o *Token) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -479,5 +481,3 @@ func (v *NullableToken) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

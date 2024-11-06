@@ -11,22 +11,22 @@ API version: 4.1.4 (4.1)
 package netbox
 
 import (
+        "time"
 	"bytes"
 	"context"
 	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"reflect"
+	"strings"
 )
-
 
 // CircuitsAPIService CircuitsAPI service
 type CircuitsAPIService service
 
 type ApiCircuitsCircuitGroupAssignmentsBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
+	ctx                           context.Context
+	ApiService                    *CircuitsAPIService
 	circuitGroupAssignmentRequest *[]CircuitGroupAssignmentRequest
 }
 
@@ -44,22 +44,22 @@ CircuitsCircuitGroupAssignmentsBulkDestroy Method for CircuitsCircuitGroupAssign
 
 Delete a list of Circuit group assignment objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCircuitsCircuitGroupAssignmentsBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitGroupAssignmentsBulkDestroyRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsBulkDestroy(ctx context.Context) ApiCircuitsCircuitGroupAssignmentsBulkDestroyRequest {
 	return ApiCircuitsCircuitGroupAssignmentsBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsBulkDestroyExecute(r ApiCircuitsCircuitGroupAssignmentsBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitGroupAssignmentsBulkDestroy")
@@ -138,8 +138,8 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsBulkDestroyExecute(r
 }
 
 type ApiCircuitsCircuitGroupAssignmentsBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
+	ctx                           context.Context
+	ApiService                    *CircuitsAPIService
 	circuitGroupAssignmentRequest *[]CircuitGroupAssignmentRequest
 }
 
@@ -157,24 +157,25 @@ CircuitsCircuitGroupAssignmentsBulkPartialUpdate Method for CircuitsCircuitGroup
 
 Patch a list of Circuit group assignment objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCircuitsCircuitGroupAssignmentsBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitGroupAssignmentsBulkPartialUpdateRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsBulkPartialUpdate(ctx context.Context) ApiCircuitsCircuitGroupAssignmentsBulkPartialUpdateRequest {
 	return ApiCircuitsCircuitGroupAssignmentsBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []CircuitGroupAssignment
+//
+//	@return []CircuitGroupAssignment
 func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsBulkPartialUpdateExecute(r ApiCircuitsCircuitGroupAssignmentsBulkPartialUpdateRequest) ([]CircuitGroupAssignment, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []CircuitGroupAssignment
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []CircuitGroupAssignment
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitGroupAssignmentsBulkPartialUpdate")
@@ -262,8 +263,8 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsBulkPartialUpdateExe
 }
 
 type ApiCircuitsCircuitGroupAssignmentsBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
+	ctx                           context.Context
+	ApiService                    *CircuitsAPIService
 	circuitGroupAssignmentRequest *[]CircuitGroupAssignmentRequest
 }
 
@@ -281,24 +282,25 @@ CircuitsCircuitGroupAssignmentsBulkUpdate Method for CircuitsCircuitGroupAssignm
 
 Put a list of Circuit group assignment objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCircuitsCircuitGroupAssignmentsBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitGroupAssignmentsBulkUpdateRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsBulkUpdate(ctx context.Context) ApiCircuitsCircuitGroupAssignmentsBulkUpdateRequest {
 	return ApiCircuitsCircuitGroupAssignmentsBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []CircuitGroupAssignment
+//
+//	@return []CircuitGroupAssignment
 func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsBulkUpdateExecute(r ApiCircuitsCircuitGroupAssignmentsBulkUpdateRequest) ([]CircuitGroupAssignment, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []CircuitGroupAssignment
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []CircuitGroupAssignment
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitGroupAssignmentsBulkUpdate")
@@ -386,8 +388,8 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsBulkUpdateExecute(r 
 }
 
 type ApiCircuitsCircuitGroupAssignmentsCreateRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
+	ctx                                   context.Context
+	ApiService                            *CircuitsAPIService
 	writableCircuitGroupAssignmentRequest *WritableCircuitGroupAssignmentRequest
 }
 
@@ -405,24 +407,25 @@ CircuitsCircuitGroupAssignmentsCreate Method for CircuitsCircuitGroupAssignments
 
 Post a list of Circuit group assignment objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCircuitsCircuitGroupAssignmentsCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitGroupAssignmentsCreateRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsCreate(ctx context.Context) ApiCircuitsCircuitGroupAssignmentsCreateRequest {
 	return ApiCircuitsCircuitGroupAssignmentsCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return CircuitGroupAssignment
+//
+//	@return CircuitGroupAssignment
 func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsCreateExecute(r ApiCircuitsCircuitGroupAssignmentsCreateRequest) (*CircuitGroupAssignment, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CircuitGroupAssignment
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CircuitGroupAssignment
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitGroupAssignmentsCreate")
@@ -510,9 +513,9 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsCreateExecute(r ApiC
 }
 
 type ApiCircuitsCircuitGroupAssignmentsDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CircuitsAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiCircuitsCircuitGroupAssignmentsDestroyRequest) Execute() (*http.Response, error) {
@@ -524,24 +527,24 @@ CircuitsCircuitGroupAssignmentsDestroy Method for CircuitsCircuitGroupAssignment
 
 Delete a Circuit group assignment object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this Circuit group assignment.
- @return ApiCircuitsCircuitGroupAssignmentsDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this Circuit group assignment.
+	@return ApiCircuitsCircuitGroupAssignmentsDestroyRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsDestroy(ctx context.Context, id int32) ApiCircuitsCircuitGroupAssignmentsDestroyRequest {
 	return ApiCircuitsCircuitGroupAssignmentsDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsDestroyExecute(r ApiCircuitsCircuitGroupAssignmentsDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitGroupAssignmentsDestroy")
@@ -616,51 +619,51 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsDestroyExecute(r Api
 }
 
 type ApiCircuitsCircuitGroupAssignmentsListRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
-	circuit *[]string
-	circuitN *[]string
-	circuitId *[]int32
-	circuitIdN *[]int32
-	created *[]time.Time
-	createdEmpty *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
-	createdByRequest *string
-	group *[]string
-	groupN *[]string
-	groupId *[]int32
-	groupIdN *[]int32
-	id *[]int32
-	idEmpty *bool
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedEmpty *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
+	ctx               context.Context
+	ApiService        *CircuitsAPIService
+	circuit           *[]string
+	circuitN          *[]string
+	circuitId         *[]int32
+	circuitIdN        *[]int32
+	created           *[]time.Time
+	createdEmpty      *[]time.Time
+	createdGt         *[]time.Time
+	createdGte        *[]time.Time
+	createdLt         *[]time.Time
+	createdLte        *[]time.Time
+	createdN          *[]time.Time
+	createdByRequest  *string
+	group             *[]string
+	groupN            *[]string
+	groupId           *[]int32
+	groupIdN          *[]int32
+	id                *[]int32
+	idEmpty           *bool
+	idGt              *[]int32
+	idGte             *[]int32
+	idLt              *[]int32
+	idLte             *[]int32
+	idN               *[]int32
+	lastUpdated       *[]time.Time
+	lastUpdatedEmpty  *[]time.Time
+	lastUpdatedGt     *[]time.Time
+	lastUpdatedGte    *[]time.Time
+	lastUpdatedLt     *[]time.Time
+	lastUpdatedLte    *[]time.Time
+	lastUpdatedN      *[]time.Time
+	limit             *int32
 	modifiedByRequest *string
-	offset *int32
-	ordering *string
-	priority *CircuitsCircuitGroupAssignmentsListPriorityParameter
-	provider *[]string
-	providerN *[]string
-	providerId *[]int32
-	providerIdN *[]int32
-	q *string
-	tag *[]string
-	tagN *[]string
-	updatedByRequest *string
+	offset            *int32
+	ordering          *string
+	priority          *CircuitsCircuitGroupAssignmentsListPriorityParameter
+	provider          *[]string
+	providerN         *[]string
+	providerId        *[]int32
+	providerIdN       *[]int32
+	q                 *string
+	tag               *[]string
+	tagN              *[]string
+	updatedByRequest  *string
 }
 
 // Circuit (CID)
@@ -904,24 +907,25 @@ CircuitsCircuitGroupAssignmentsList Method for CircuitsCircuitGroupAssignmentsLi
 
 Get a list of Circuit group assignment objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCircuitsCircuitGroupAssignmentsListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitGroupAssignmentsListRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsList(ctx context.Context) ApiCircuitsCircuitGroupAssignmentsListRequest {
 	return ApiCircuitsCircuitGroupAssignmentsListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedCircuitGroupAssignmentList
+//
+//	@return PaginatedCircuitGroupAssignmentList
 func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsListExecute(r ApiCircuitsCircuitGroupAssignmentsListRequest) (*PaginatedCircuitGroupAssignmentList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedCircuitGroupAssignmentList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedCircuitGroupAssignmentList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitGroupAssignmentsList")
@@ -940,10 +944,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsListExecute(r ApiCir
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "circuit", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "circuit", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "circuit", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "circuit", t, "form", "multi")
 		}
 	}
 	if r.circuitN != nil {
@@ -951,10 +955,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsListExecute(r ApiCir
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "circuit__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "circuit__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "circuit__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "circuit__n", t, "form", "multi")
 		}
 	}
 	if r.circuitId != nil {
@@ -962,10 +966,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsListExecute(r ApiCir
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "circuit_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "circuit_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "circuit_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "circuit_id", t, "form", "multi")
 		}
 	}
 	if r.circuitIdN != nil {
@@ -973,10 +977,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsListExecute(r ApiCir
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "circuit_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "circuit_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "circuit_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "circuit_id__n", t, "form", "multi")
 		}
 	}
 	if r.created != nil {
@@ -984,10 +988,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsListExecute(r ApiCir
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "form", "multi")
 		}
 	}
 	if r.createdEmpty != nil {
@@ -995,10 +999,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsListExecute(r ApiCir
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "form", "multi")
 		}
 	}
 	if r.createdGt != nil {
@@ -1006,10 +1010,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsListExecute(r ApiCir
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "form", "multi")
 		}
 	}
 	if r.createdGte != nil {
@@ -1017,10 +1021,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsListExecute(r ApiCir
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "form", "multi")
 		}
 	}
 	if r.createdLt != nil {
@@ -1028,10 +1032,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsListExecute(r ApiCir
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "form", "multi")
 		}
 	}
 	if r.createdLte != nil {
@@ -1039,10 +1043,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsListExecute(r ApiCir
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "form", "multi")
 		}
 	}
 	if r.createdN != nil {
@@ -1050,24 +1054,24 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsListExecute(r ApiCir
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "form", "multi")
 		}
 	}
 	if r.createdByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_request", r.createdByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_request", r.createdByRequest, "form", "")
 	}
 	if r.group != nil {
 		t := *r.group
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "group", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "group", t, "form", "multi")
 		}
 	}
 	if r.groupN != nil {
@@ -1075,10 +1079,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsListExecute(r ApiCir
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "group__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "group__n", t, "form", "multi")
 		}
 	}
 	if r.groupId != nil {
@@ -1086,10 +1090,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsListExecute(r ApiCir
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "group_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "group_id", t, "form", "multi")
 		}
 	}
 	if r.groupIdN != nil {
@@ -1097,10 +1101,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsListExecute(r ApiCir
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "group_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "group_id__n", t, "form", "multi")
 		}
 	}
 	if r.id != nil {
@@ -1108,24 +1112,24 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsListExecute(r ApiCir
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "form", "multi")
 		}
 	}
 	if r.idEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "form", "")
 	}
 	if r.idGt != nil {
 		t := *r.idGt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "form", "multi")
 		}
 	}
 	if r.idGte != nil {
@@ -1133,10 +1137,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsListExecute(r ApiCir
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "form", "multi")
 		}
 	}
 	if r.idLt != nil {
@@ -1144,10 +1148,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsListExecute(r ApiCir
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "form", "multi")
 		}
 	}
 	if r.idLte != nil {
@@ -1155,10 +1159,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsListExecute(r ApiCir
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "form", "multi")
 		}
 	}
 	if r.idN != nil {
@@ -1166,10 +1170,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsListExecute(r ApiCir
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "form", "multi")
 		}
 	}
 	if r.lastUpdated != nil {
@@ -1177,10 +1181,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsListExecute(r ApiCir
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedEmpty != nil {
@@ -1188,10 +1192,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsListExecute(r ApiCir
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedGt != nil {
@@ -1199,10 +1203,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsListExecute(r ApiCir
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedGte != nil {
@@ -1210,10 +1214,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsListExecute(r ApiCir
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedLt != nil {
@@ -1221,10 +1225,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsListExecute(r ApiCir
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedLte != nil {
@@ -1232,10 +1236,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsListExecute(r ApiCir
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedN != nil {
@@ -1243,36 +1247,36 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsListExecute(r ApiCir
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "form", "multi")
 		}
 	}
 	if r.limit != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
 	}
 	if r.modifiedByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "modified_by_request", r.modifiedByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "modified_by_request", r.modifiedByRequest, "form", "")
 	}
 	if r.offset != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "form", "")
 	}
 	if r.ordering != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "form", "")
 	}
 	if r.priority != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "priority", r.priority, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "priority", r.priority, "form", "")
 	}
 	if r.provider != nil {
 		t := *r.provider
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "provider", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "provider", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "provider", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "provider", t, "form", "multi")
 		}
 	}
 	if r.providerN != nil {
@@ -1280,10 +1284,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsListExecute(r ApiCir
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "provider__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "provider__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "provider__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "provider__n", t, "form", "multi")
 		}
 	}
 	if r.providerId != nil {
@@ -1291,10 +1295,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsListExecute(r ApiCir
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "provider_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "provider_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "provider_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "provider_id", t, "form", "multi")
 		}
 	}
 	if r.providerIdN != nil {
@@ -1302,24 +1306,24 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsListExecute(r ApiCir
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "provider_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "provider_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "provider_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "provider_id__n", t, "form", "multi")
 		}
 	}
 	if r.q != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "form", "")
 	}
 	if r.tag != nil {
 		t := *r.tag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "form", "multi")
 		}
 	}
 	if r.tagN != nil {
@@ -1327,14 +1331,14 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsListExecute(r ApiCir
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "form", "multi")
 		}
 	}
 	if r.updatedByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "updated_by_request", r.updatedByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "updated_by_request", r.updatedByRequest, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1405,9 +1409,9 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsListExecute(r ApiCir
 }
 
 type ApiCircuitsCircuitGroupAssignmentsPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
-	id int32
+	ctx                                          context.Context
+	ApiService                                   *CircuitsAPIService
+	id                                           int32
 	patchedWritableCircuitGroupAssignmentRequest *PatchedWritableCircuitGroupAssignmentRequest
 }
 
@@ -1425,26 +1429,27 @@ CircuitsCircuitGroupAssignmentsPartialUpdate Method for CircuitsCircuitGroupAssi
 
 Patch a Circuit group assignment object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this Circuit group assignment.
- @return ApiCircuitsCircuitGroupAssignmentsPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this Circuit group assignment.
+	@return ApiCircuitsCircuitGroupAssignmentsPartialUpdateRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsPartialUpdate(ctx context.Context, id int32) ApiCircuitsCircuitGroupAssignmentsPartialUpdateRequest {
 	return ApiCircuitsCircuitGroupAssignmentsPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return CircuitGroupAssignment
+//
+//	@return CircuitGroupAssignment
 func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsPartialUpdateExecute(r ApiCircuitsCircuitGroupAssignmentsPartialUpdateRequest) (*CircuitGroupAssignment, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CircuitGroupAssignment
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CircuitGroupAssignment
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitGroupAssignmentsPartialUpdate")
@@ -1530,9 +1535,9 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsPartialUpdateExecute
 }
 
 type ApiCircuitsCircuitGroupAssignmentsRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CircuitsAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiCircuitsCircuitGroupAssignmentsRetrieveRequest) Execute() (*CircuitGroupAssignment, *http.Response, error) {
@@ -1544,26 +1549,27 @@ CircuitsCircuitGroupAssignmentsRetrieve Method for CircuitsCircuitGroupAssignmen
 
 Get a Circuit group assignment object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this Circuit group assignment.
- @return ApiCircuitsCircuitGroupAssignmentsRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this Circuit group assignment.
+	@return ApiCircuitsCircuitGroupAssignmentsRetrieveRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsRetrieve(ctx context.Context, id int32) ApiCircuitsCircuitGroupAssignmentsRetrieveRequest {
 	return ApiCircuitsCircuitGroupAssignmentsRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return CircuitGroupAssignment
+//
+//	@return CircuitGroupAssignment
 func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsRetrieveExecute(r ApiCircuitsCircuitGroupAssignmentsRetrieveRequest) (*CircuitGroupAssignment, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CircuitGroupAssignment
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CircuitGroupAssignment
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitGroupAssignmentsRetrieve")
@@ -1647,9 +1653,9 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsRetrieveExecute(r Ap
 }
 
 type ApiCircuitsCircuitGroupAssignmentsUpdateRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
-	id int32
+	ctx                                   context.Context
+	ApiService                            *CircuitsAPIService
+	id                                    int32
 	writableCircuitGroupAssignmentRequest *WritableCircuitGroupAssignmentRequest
 }
 
@@ -1667,26 +1673,27 @@ CircuitsCircuitGroupAssignmentsUpdate Method for CircuitsCircuitGroupAssignments
 
 Put a Circuit group assignment object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this Circuit group assignment.
- @return ApiCircuitsCircuitGroupAssignmentsUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this Circuit group assignment.
+	@return ApiCircuitsCircuitGroupAssignmentsUpdateRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsUpdate(ctx context.Context, id int32) ApiCircuitsCircuitGroupAssignmentsUpdateRequest {
 	return ApiCircuitsCircuitGroupAssignmentsUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return CircuitGroupAssignment
+//
+//	@return CircuitGroupAssignment
 func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsUpdateExecute(r ApiCircuitsCircuitGroupAssignmentsUpdateRequest) (*CircuitGroupAssignment, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CircuitGroupAssignment
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CircuitGroupAssignment
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitGroupAssignmentsUpdate")
@@ -1775,8 +1782,8 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsUpdateExecute(r ApiC
 }
 
 type ApiCircuitsCircuitGroupsBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
+	ctx                 context.Context
+	ApiService          *CircuitsAPIService
 	circuitGroupRequest *[]CircuitGroupRequest
 }
 
@@ -1794,22 +1801,22 @@ CircuitsCircuitGroupsBulkDestroy Method for CircuitsCircuitGroupsBulkDestroy
 
 Delete a list of circuit group objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCircuitsCircuitGroupsBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitGroupsBulkDestroyRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitGroupsBulkDestroy(ctx context.Context) ApiCircuitsCircuitGroupsBulkDestroyRequest {
 	return ApiCircuitsCircuitGroupsBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *CircuitsAPIService) CircuitsCircuitGroupsBulkDestroyExecute(r ApiCircuitsCircuitGroupsBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitGroupsBulkDestroy")
@@ -1888,8 +1895,8 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsBulkDestroyExecute(r ApiCircui
 }
 
 type ApiCircuitsCircuitGroupsBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
+	ctx                 context.Context
+	ApiService          *CircuitsAPIService
 	circuitGroupRequest *[]CircuitGroupRequest
 }
 
@@ -1907,24 +1914,25 @@ CircuitsCircuitGroupsBulkPartialUpdate Method for CircuitsCircuitGroupsBulkParti
 
 Patch a list of circuit group objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCircuitsCircuitGroupsBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitGroupsBulkPartialUpdateRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitGroupsBulkPartialUpdate(ctx context.Context) ApiCircuitsCircuitGroupsBulkPartialUpdateRequest {
 	return ApiCircuitsCircuitGroupsBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []CircuitGroup
+//
+//	@return []CircuitGroup
 func (a *CircuitsAPIService) CircuitsCircuitGroupsBulkPartialUpdateExecute(r ApiCircuitsCircuitGroupsBulkPartialUpdateRequest) ([]CircuitGroup, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []CircuitGroup
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []CircuitGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitGroupsBulkPartialUpdate")
@@ -2012,8 +2020,8 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsBulkPartialUpdateExecute(r Api
 }
 
 type ApiCircuitsCircuitGroupsBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
+	ctx                 context.Context
+	ApiService          *CircuitsAPIService
 	circuitGroupRequest *[]CircuitGroupRequest
 }
 
@@ -2031,24 +2039,25 @@ CircuitsCircuitGroupsBulkUpdate Method for CircuitsCircuitGroupsBulkUpdate
 
 Put a list of circuit group objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCircuitsCircuitGroupsBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitGroupsBulkUpdateRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitGroupsBulkUpdate(ctx context.Context) ApiCircuitsCircuitGroupsBulkUpdateRequest {
 	return ApiCircuitsCircuitGroupsBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []CircuitGroup
+//
+//	@return []CircuitGroup
 func (a *CircuitsAPIService) CircuitsCircuitGroupsBulkUpdateExecute(r ApiCircuitsCircuitGroupsBulkUpdateRequest) ([]CircuitGroup, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []CircuitGroup
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []CircuitGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitGroupsBulkUpdate")
@@ -2136,8 +2145,8 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsBulkUpdateExecute(r ApiCircuit
 }
 
 type ApiCircuitsCircuitGroupsCreateRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
+	ctx                 context.Context
+	ApiService          *CircuitsAPIService
 	circuitGroupRequest *CircuitGroupRequest
 }
 
@@ -2155,24 +2164,25 @@ CircuitsCircuitGroupsCreate Method for CircuitsCircuitGroupsCreate
 
 Post a list of circuit group objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCircuitsCircuitGroupsCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitGroupsCreateRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitGroupsCreate(ctx context.Context) ApiCircuitsCircuitGroupsCreateRequest {
 	return ApiCircuitsCircuitGroupsCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return CircuitGroup
+//
+//	@return CircuitGroup
 func (a *CircuitsAPIService) CircuitsCircuitGroupsCreateExecute(r ApiCircuitsCircuitGroupsCreateRequest) (*CircuitGroup, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CircuitGroup
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CircuitGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitGroupsCreate")
@@ -2260,9 +2270,9 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsCreateExecute(r ApiCircuitsCir
 }
 
 type ApiCircuitsCircuitGroupsDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CircuitsAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiCircuitsCircuitGroupsDestroyRequest) Execute() (*http.Response, error) {
@@ -2274,24 +2284,24 @@ CircuitsCircuitGroupsDestroy Method for CircuitsCircuitGroupsDestroy
 
 Delete a circuit group object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this circuit group.
- @return ApiCircuitsCircuitGroupsDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this circuit group.
+	@return ApiCircuitsCircuitGroupsDestroyRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitGroupsDestroy(ctx context.Context, id int32) ApiCircuitsCircuitGroupsDestroyRequest {
 	return ApiCircuitsCircuitGroupsDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *CircuitsAPIService) CircuitsCircuitGroupsDestroyExecute(r ApiCircuitsCircuitGroupsDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitGroupsDestroy")
@@ -2366,79 +2376,79 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsDestroyExecute(r ApiCircuitsCi
 }
 
 type ApiCircuitsCircuitGroupsListRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
-	created *[]time.Time
-	createdEmpty *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
-	createdByRequest *string
-	description *[]string
-	descriptionEmpty *bool
-	descriptionIc *[]string
-	descriptionIe *[]string
-	descriptionIew *[]string
-	descriptionIsw *[]string
-	descriptionN *[]string
-	descriptionNic *[]string
-	descriptionNie *[]string
-	descriptionNiew *[]string
-	descriptionNisw *[]string
-	id *[]int32
-	idEmpty *bool
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedEmpty *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
+	ctx               context.Context
+	ApiService        *CircuitsAPIService
+	created           *[]time.Time
+	createdEmpty      *[]time.Time
+	createdGt         *[]time.Time
+	createdGte        *[]time.Time
+	createdLt         *[]time.Time
+	createdLte        *[]time.Time
+	createdN          *[]time.Time
+	createdByRequest  *string
+	description       *[]string
+	descriptionEmpty  *bool
+	descriptionIc     *[]string
+	descriptionIe     *[]string
+	descriptionIew    *[]string
+	descriptionIsw    *[]string
+	descriptionN      *[]string
+	descriptionNic    *[]string
+	descriptionNie    *[]string
+	descriptionNiew   *[]string
+	descriptionNisw   *[]string
+	id                *[]int32
+	idEmpty           *bool
+	idGt              *[]int32
+	idGte             *[]int32
+	idLt              *[]int32
+	idLte             *[]int32
+	idN               *[]int32
+	lastUpdated       *[]time.Time
+	lastUpdatedEmpty  *[]time.Time
+	lastUpdatedGt     *[]time.Time
+	lastUpdatedGte    *[]time.Time
+	lastUpdatedLt     *[]time.Time
+	lastUpdatedLte    *[]time.Time
+	lastUpdatedN      *[]time.Time
+	limit             *int32
 	modifiedByRequest *string
-	name *[]string
-	nameEmpty *bool
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	offset *int32
-	ordering *string
-	q *string
-	slug *[]string
-	slugEmpty *bool
-	slugIc *[]string
-	slugIe *[]string
-	slugIew *[]string
-	slugIsw *[]string
-	slugN *[]string
-	slugNic *[]string
-	slugNie *[]string
-	slugNiew *[]string
-	slugNisw *[]string
-	tag *[]string
-	tagN *[]string
-	tenant *[]string
-	tenantN *[]string
-	tenantGroup *[]string
-	tenantGroupN *[]string
-	tenantGroupId *[]string
-	tenantGroupIdN *[]string
-	tenantId *[]*int32
-	tenantIdN *[]*int32
-	updatedByRequest *string
+	name              *[]string
+	nameEmpty         *bool
+	nameIc            *[]string
+	nameIe            *[]string
+	nameIew           *[]string
+	nameIsw           *[]string
+	nameN             *[]string
+	nameNic           *[]string
+	nameNie           *[]string
+	nameNiew          *[]string
+	nameNisw          *[]string
+	offset            *int32
+	ordering          *string
+	q                 *string
+	slug              *[]string
+	slugEmpty         *bool
+	slugIc            *[]string
+	slugIe            *[]string
+	slugIew           *[]string
+	slugIsw           *[]string
+	slugN             *[]string
+	slugNic           *[]string
+	slugNie           *[]string
+	slugNiew          *[]string
+	slugNisw          *[]string
+	tag               *[]string
+	tagN              *[]string
+	tenant            *[]string
+	tenantN           *[]string
+	tenantGroup       *[]string
+	tenantGroupN      *[]string
+	tenantGroupId     *[]string
+	tenantGroupIdN    *[]string
+	tenantId          *[]*int32
+	tenantIdN         *[]*int32
+	updatedByRequest  *string
 }
 
 func (r ApiCircuitsCircuitGroupsListRequest) Created(created []time.Time) ApiCircuitsCircuitGroupsListRequest {
@@ -2813,24 +2823,25 @@ CircuitsCircuitGroupsList Method for CircuitsCircuitGroupsList
 
 Get a list of circuit group objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCircuitsCircuitGroupsListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitGroupsListRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitGroupsList(ctx context.Context) ApiCircuitsCircuitGroupsListRequest {
 	return ApiCircuitsCircuitGroupsListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedCircuitGroupList
+//
+//	@return PaginatedCircuitGroupList
 func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircuitGroupsListRequest) (*PaginatedCircuitGroupList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedCircuitGroupList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedCircuitGroupList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitGroupsList")
@@ -2849,10 +2860,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "form", "multi")
 		}
 	}
 	if r.createdEmpty != nil {
@@ -2860,10 +2871,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "form", "multi")
 		}
 	}
 	if r.createdGt != nil {
@@ -2871,10 +2882,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "form", "multi")
 		}
 	}
 	if r.createdGte != nil {
@@ -2882,10 +2893,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "form", "multi")
 		}
 	}
 	if r.createdLt != nil {
@@ -2893,10 +2904,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "form", "multi")
 		}
 	}
 	if r.createdLte != nil {
@@ -2904,10 +2915,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "form", "multi")
 		}
 	}
 	if r.createdN != nil {
@@ -2915,38 +2926,38 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "form", "multi")
 		}
 	}
 	if r.createdByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_request", r.createdByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_request", r.createdByRequest, "form", "")
 	}
 	if r.description != nil {
 		t := *r.description
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "form", "multi")
 		}
 	}
 	if r.descriptionEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "description__empty", r.descriptionEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "description__empty", r.descriptionEmpty, "form", "")
 	}
 	if r.descriptionIc != nil {
 		t := *r.descriptionIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "form", "multi")
 		}
 	}
 	if r.descriptionIe != nil {
@@ -2954,10 +2965,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "form", "multi")
 		}
 	}
 	if r.descriptionIew != nil {
@@ -2965,10 +2976,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "form", "multi")
 		}
 	}
 	if r.descriptionIsw != nil {
@@ -2976,10 +2987,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "form", "multi")
 		}
 	}
 	if r.descriptionN != nil {
@@ -2987,10 +2998,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "form", "multi")
 		}
 	}
 	if r.descriptionNic != nil {
@@ -2998,10 +3009,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "form", "multi")
 		}
 	}
 	if r.descriptionNie != nil {
@@ -3009,10 +3020,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "form", "multi")
 		}
 	}
 	if r.descriptionNiew != nil {
@@ -3020,10 +3031,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "form", "multi")
 		}
 	}
 	if r.descriptionNisw != nil {
@@ -3031,10 +3042,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "form", "multi")
 		}
 	}
 	if r.id != nil {
@@ -3042,24 +3053,24 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "form", "multi")
 		}
 	}
 	if r.idEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "form", "")
 	}
 	if r.idGt != nil {
 		t := *r.idGt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "form", "multi")
 		}
 	}
 	if r.idGte != nil {
@@ -3067,10 +3078,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "form", "multi")
 		}
 	}
 	if r.idLt != nil {
@@ -3078,10 +3089,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "form", "multi")
 		}
 	}
 	if r.idLte != nil {
@@ -3089,10 +3100,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "form", "multi")
 		}
 	}
 	if r.idN != nil {
@@ -3100,10 +3111,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "form", "multi")
 		}
 	}
 	if r.lastUpdated != nil {
@@ -3111,10 +3122,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedEmpty != nil {
@@ -3122,10 +3133,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedGt != nil {
@@ -3133,10 +3144,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedGte != nil {
@@ -3144,10 +3155,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedLt != nil {
@@ -3155,10 +3166,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedLte != nil {
@@ -3166,10 +3177,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedN != nil {
@@ -3177,41 +3188,41 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "form", "multi")
 		}
 	}
 	if r.limit != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
 	}
 	if r.modifiedByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "modified_by_request", r.modifiedByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "modified_by_request", r.modifiedByRequest, "form", "")
 	}
 	if r.name != nil {
 		t := *r.name
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "form", "multi")
 		}
 	}
 	if r.nameEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "name__empty", r.nameEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "name__empty", r.nameEmpty, "form", "")
 	}
 	if r.nameIc != nil {
 		t := *r.nameIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "form", "multi")
 		}
 	}
 	if r.nameIe != nil {
@@ -3219,10 +3230,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "form", "multi")
 		}
 	}
 	if r.nameIew != nil {
@@ -3230,10 +3241,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "form", "multi")
 		}
 	}
 	if r.nameIsw != nil {
@@ -3241,10 +3252,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "form", "multi")
 		}
 	}
 	if r.nameN != nil {
@@ -3252,10 +3263,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "form", "multi")
 		}
 	}
 	if r.nameNic != nil {
@@ -3263,10 +3274,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "form", "multi")
 		}
 	}
 	if r.nameNie != nil {
@@ -3274,10 +3285,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "form", "multi")
 		}
 	}
 	if r.nameNiew != nil {
@@ -3285,10 +3296,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "form", "multi")
 		}
 	}
 	if r.nameNisw != nil {
@@ -3296,44 +3307,44 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "form", "multi")
 		}
 	}
 	if r.offset != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "form", "")
 	}
 	if r.ordering != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "form", "")
 	}
 	if r.q != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "form", "")
 	}
 	if r.slug != nil {
 		t := *r.slug
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug", t, "form", "multi")
 		}
 	}
 	if r.slugEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "slug__empty", r.slugEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "slug__empty", r.slugEmpty, "form", "")
 	}
 	if r.slugIc != nil {
 		t := *r.slugIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", t, "form", "multi")
 		}
 	}
 	if r.slugIe != nil {
@@ -3341,10 +3352,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", t, "form", "multi")
 		}
 	}
 	if r.slugIew != nil {
@@ -3352,10 +3363,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", t, "form", "multi")
 		}
 	}
 	if r.slugIsw != nil {
@@ -3363,10 +3374,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", t, "form", "multi")
 		}
 	}
 	if r.slugN != nil {
@@ -3374,10 +3385,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", t, "form", "multi")
 		}
 	}
 	if r.slugNic != nil {
@@ -3385,10 +3396,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", t, "form", "multi")
 		}
 	}
 	if r.slugNie != nil {
@@ -3396,10 +3407,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", t, "form", "multi")
 		}
 	}
 	if r.slugNiew != nil {
@@ -3407,10 +3418,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", t, "form", "multi")
 		}
 	}
 	if r.slugNisw != nil {
@@ -3418,10 +3429,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", t, "form", "multi")
 		}
 	}
 	if r.tag != nil {
@@ -3429,10 +3440,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "form", "multi")
 		}
 	}
 	if r.tagN != nil {
@@ -3440,10 +3451,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "form", "multi")
 		}
 	}
 	if r.tenant != nil {
@@ -3451,10 +3462,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", t, "form", "multi")
 		}
 	}
 	if r.tenantN != nil {
@@ -3462,10 +3473,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", t, "form", "multi")
 		}
 	}
 	if r.tenantGroup != nil {
@@ -3473,10 +3484,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", t, "form", "multi")
 		}
 	}
 	if r.tenantGroupN != nil {
@@ -3484,10 +3495,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", t, "form", "multi")
 		}
 	}
 	if r.tenantGroupId != nil {
@@ -3495,10 +3506,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", t, "form", "multi")
 		}
 	}
 	if r.tenantGroupIdN != nil {
@@ -3506,10 +3517,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", t, "form", "multi")
 		}
 	}
 	if r.tenantId != nil {
@@ -3517,10 +3528,10 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", t, "form", "multi")
 		}
 	}
 	if r.tenantIdN != nil {
@@ -3528,14 +3539,14 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", t, "form", "multi")
 		}
 	}
 	if r.updatedByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "updated_by_request", r.updatedByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "updated_by_request", r.updatedByRequest, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -3606,9 +3617,9 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 }
 
 type ApiCircuitsCircuitGroupsPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
-	id int32
+	ctx                        context.Context
+	ApiService                 *CircuitsAPIService
+	id                         int32
 	patchedCircuitGroupRequest *PatchedCircuitGroupRequest
 }
 
@@ -3626,26 +3637,27 @@ CircuitsCircuitGroupsPartialUpdate Method for CircuitsCircuitGroupsPartialUpdate
 
 Patch a circuit group object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this circuit group.
- @return ApiCircuitsCircuitGroupsPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this circuit group.
+	@return ApiCircuitsCircuitGroupsPartialUpdateRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitGroupsPartialUpdate(ctx context.Context, id int32) ApiCircuitsCircuitGroupsPartialUpdateRequest {
 	return ApiCircuitsCircuitGroupsPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return CircuitGroup
+//
+//	@return CircuitGroup
 func (a *CircuitsAPIService) CircuitsCircuitGroupsPartialUpdateExecute(r ApiCircuitsCircuitGroupsPartialUpdateRequest) (*CircuitGroup, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CircuitGroup
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CircuitGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitGroupsPartialUpdate")
@@ -3731,9 +3743,9 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsPartialUpdateExecute(r ApiCirc
 }
 
 type ApiCircuitsCircuitGroupsRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CircuitsAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiCircuitsCircuitGroupsRetrieveRequest) Execute() (*CircuitGroup, *http.Response, error) {
@@ -3745,26 +3757,27 @@ CircuitsCircuitGroupsRetrieve Method for CircuitsCircuitGroupsRetrieve
 
 Get a circuit group object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this circuit group.
- @return ApiCircuitsCircuitGroupsRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this circuit group.
+	@return ApiCircuitsCircuitGroupsRetrieveRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitGroupsRetrieve(ctx context.Context, id int32) ApiCircuitsCircuitGroupsRetrieveRequest {
 	return ApiCircuitsCircuitGroupsRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return CircuitGroup
+//
+//	@return CircuitGroup
 func (a *CircuitsAPIService) CircuitsCircuitGroupsRetrieveExecute(r ApiCircuitsCircuitGroupsRetrieveRequest) (*CircuitGroup, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CircuitGroup
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CircuitGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitGroupsRetrieve")
@@ -3848,9 +3861,9 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsRetrieveExecute(r ApiCircuitsC
 }
 
 type ApiCircuitsCircuitGroupsUpdateRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
-	id int32
+	ctx                 context.Context
+	ApiService          *CircuitsAPIService
+	id                  int32
 	circuitGroupRequest *CircuitGroupRequest
 }
 
@@ -3868,26 +3881,27 @@ CircuitsCircuitGroupsUpdate Method for CircuitsCircuitGroupsUpdate
 
 Put a circuit group object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this circuit group.
- @return ApiCircuitsCircuitGroupsUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this circuit group.
+	@return ApiCircuitsCircuitGroupsUpdateRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitGroupsUpdate(ctx context.Context, id int32) ApiCircuitsCircuitGroupsUpdateRequest {
 	return ApiCircuitsCircuitGroupsUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return CircuitGroup
+//
+//	@return CircuitGroup
 func (a *CircuitsAPIService) CircuitsCircuitGroupsUpdateExecute(r ApiCircuitsCircuitGroupsUpdateRequest) (*CircuitGroup, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CircuitGroup
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CircuitGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitGroupsUpdate")
@@ -3976,8 +3990,8 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsUpdateExecute(r ApiCircuitsCir
 }
 
 type ApiCircuitsCircuitTerminationsBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
+	ctx                       context.Context
+	ApiService                *CircuitsAPIService
 	circuitTerminationRequest *[]CircuitTerminationRequest
 }
 
@@ -3995,22 +4009,22 @@ CircuitsCircuitTerminationsBulkDestroy Method for CircuitsCircuitTerminationsBul
 
 Delete a list of circuit termination objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCircuitsCircuitTerminationsBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitTerminationsBulkDestroyRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitTerminationsBulkDestroy(ctx context.Context) ApiCircuitsCircuitTerminationsBulkDestroyRequest {
 	return ApiCircuitsCircuitTerminationsBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *CircuitsAPIService) CircuitsCircuitTerminationsBulkDestroyExecute(r ApiCircuitsCircuitTerminationsBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitTerminationsBulkDestroy")
@@ -4089,8 +4103,8 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsBulkDestroyExecute(r Api
 }
 
 type ApiCircuitsCircuitTerminationsBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
+	ctx                       context.Context
+	ApiService                *CircuitsAPIService
 	circuitTerminationRequest *[]CircuitTerminationRequest
 }
 
@@ -4108,24 +4122,25 @@ CircuitsCircuitTerminationsBulkPartialUpdate Method for CircuitsCircuitTerminati
 
 Patch a list of circuit termination objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCircuitsCircuitTerminationsBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitTerminationsBulkPartialUpdateRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitTerminationsBulkPartialUpdate(ctx context.Context) ApiCircuitsCircuitTerminationsBulkPartialUpdateRequest {
 	return ApiCircuitsCircuitTerminationsBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []CircuitTermination
+//
+//	@return []CircuitTermination
 func (a *CircuitsAPIService) CircuitsCircuitTerminationsBulkPartialUpdateExecute(r ApiCircuitsCircuitTerminationsBulkPartialUpdateRequest) ([]CircuitTermination, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []CircuitTermination
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []CircuitTermination
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitTerminationsBulkPartialUpdate")
@@ -4213,8 +4228,8 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsBulkPartialUpdateExecute
 }
 
 type ApiCircuitsCircuitTerminationsBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
+	ctx                       context.Context
+	ApiService                *CircuitsAPIService
 	circuitTerminationRequest *[]CircuitTerminationRequest
 }
 
@@ -4232,24 +4247,25 @@ CircuitsCircuitTerminationsBulkUpdate Method for CircuitsCircuitTerminationsBulk
 
 Put a list of circuit termination objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCircuitsCircuitTerminationsBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitTerminationsBulkUpdateRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitTerminationsBulkUpdate(ctx context.Context) ApiCircuitsCircuitTerminationsBulkUpdateRequest {
 	return ApiCircuitsCircuitTerminationsBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []CircuitTermination
+//
+//	@return []CircuitTermination
 func (a *CircuitsAPIService) CircuitsCircuitTerminationsBulkUpdateExecute(r ApiCircuitsCircuitTerminationsBulkUpdateRequest) ([]CircuitTermination, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []CircuitTermination
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []CircuitTermination
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitTerminationsBulkUpdate")
@@ -4337,8 +4353,8 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsBulkUpdateExecute(r ApiC
 }
 
 type ApiCircuitsCircuitTerminationsCreateRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
+	ctx                       context.Context
+	ApiService                *CircuitsAPIService
 	circuitTerminationRequest *CircuitTerminationRequest
 }
 
@@ -4356,24 +4372,25 @@ CircuitsCircuitTerminationsCreate Method for CircuitsCircuitTerminationsCreate
 
 Post a list of circuit termination objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCircuitsCircuitTerminationsCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitTerminationsCreateRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitTerminationsCreate(ctx context.Context) ApiCircuitsCircuitTerminationsCreateRequest {
 	return ApiCircuitsCircuitTerminationsCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return CircuitTermination
+//
+//	@return CircuitTermination
 func (a *CircuitsAPIService) CircuitsCircuitTerminationsCreateExecute(r ApiCircuitsCircuitTerminationsCreateRequest) (*CircuitTermination, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CircuitTermination
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CircuitTermination
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitTerminationsCreate")
@@ -4461,9 +4478,9 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsCreateExecute(r ApiCircu
 }
 
 type ApiCircuitsCircuitTerminationsDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CircuitsAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiCircuitsCircuitTerminationsDestroyRequest) Execute() (*http.Response, error) {
@@ -4475,24 +4492,24 @@ CircuitsCircuitTerminationsDestroy Method for CircuitsCircuitTerminationsDestroy
 
 Delete a circuit termination object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this circuit termination.
- @return ApiCircuitsCircuitTerminationsDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this circuit termination.
+	@return ApiCircuitsCircuitTerminationsDestroyRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitTerminationsDestroy(ctx context.Context, id int32) ApiCircuitsCircuitTerminationsDestroyRequest {
 	return ApiCircuitsCircuitTerminationsDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *CircuitsAPIService) CircuitsCircuitTerminationsDestroyExecute(r ApiCircuitsCircuitTerminationsDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitTerminationsDestroy")
@@ -4567,104 +4584,104 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsDestroyExecute(r ApiCirc
 }
 
 type ApiCircuitsCircuitTerminationsListRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
-	cableEnd *CircuitsCircuitTerminationsListCableEndParameter
-	cableId *[]*int32
-	cableIdN *[]*int32
-	cabled *bool
-	circuitId *[]int32
-	circuitIdN *[]int32
-	created *[]time.Time
-	createdEmpty *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
-	createdByRequest *string
-	description *[]string
-	descriptionEmpty *bool
-	descriptionIc *[]string
-	descriptionIe *[]string
-	descriptionIew *[]string
-	descriptionIsw *[]string
-	descriptionN *[]string
-	descriptionNic *[]string
-	descriptionNie *[]string
-	descriptionNiew *[]string
-	descriptionNisw *[]string
-	id *[]int32
-	idEmpty *bool
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedEmpty *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	markConnected *bool
-	modifiedByRequest *string
-	occupied *bool
-	offset *int32
-	ordering *string
-	portSpeed *[]int32
-	portSpeedEmpty *bool
-	portSpeedGt *[]int32
-	portSpeedGte *[]int32
-	portSpeedLt *[]int32
-	portSpeedLte *[]int32
-	portSpeedN *[]int32
-	ppInfo *[]string
-	ppInfoEmpty *bool
-	ppInfoIc *[]string
-	ppInfoIe *[]string
-	ppInfoIew *[]string
-	ppInfoIsw *[]string
-	ppInfoN *[]string
-	ppInfoNic *[]string
-	ppInfoNie *[]string
-	ppInfoNiew *[]string
-	ppInfoNisw *[]string
-	provider *[]string
-	providerN *[]string
-	providerId *[]int32
-	providerIdN *[]int32
-	providerNetworkId *[]*int32
+	ctx                context.Context
+	ApiService         *CircuitsAPIService
+	cableEnd           *CircuitsCircuitTerminationsListCableEndParameter
+	cableId            *[]*int32
+	cableIdN           *[]*int32
+	cabled             *bool
+	circuitId          *[]int32
+	circuitIdN         *[]int32
+	created            *[]time.Time
+	createdEmpty       *[]time.Time
+	createdGt          *[]time.Time
+	createdGte         *[]time.Time
+	createdLt          *[]time.Time
+	createdLte         *[]time.Time
+	createdN           *[]time.Time
+	createdByRequest   *string
+	description        *[]string
+	descriptionEmpty   *bool
+	descriptionIc      *[]string
+	descriptionIe      *[]string
+	descriptionIew     *[]string
+	descriptionIsw     *[]string
+	descriptionN       *[]string
+	descriptionNic     *[]string
+	descriptionNie     *[]string
+	descriptionNiew    *[]string
+	descriptionNisw    *[]string
+	id                 *[]int32
+	idEmpty            *bool
+	idGt               *[]int32
+	idGte              *[]int32
+	idLt               *[]int32
+	idLte              *[]int32
+	idN                *[]int32
+	lastUpdated        *[]time.Time
+	lastUpdatedEmpty   *[]time.Time
+	lastUpdatedGt      *[]time.Time
+	lastUpdatedGte     *[]time.Time
+	lastUpdatedLt      *[]time.Time
+	lastUpdatedLte     *[]time.Time
+	lastUpdatedN       *[]time.Time
+	limit              *int32
+	markConnected      *bool
+	modifiedByRequest  *string
+	occupied           *bool
+	offset             *int32
+	ordering           *string
+	portSpeed          *[]int32
+	portSpeedEmpty     *bool
+	portSpeedGt        *[]int32
+	portSpeedGte       *[]int32
+	portSpeedLt        *[]int32
+	portSpeedLte       *[]int32
+	portSpeedN         *[]int32
+	ppInfo             *[]string
+	ppInfoEmpty        *bool
+	ppInfoIc           *[]string
+	ppInfoIe           *[]string
+	ppInfoIew          *[]string
+	ppInfoIsw          *[]string
+	ppInfoN            *[]string
+	ppInfoNic          *[]string
+	ppInfoNie          *[]string
+	ppInfoNiew         *[]string
+	ppInfoNisw         *[]string
+	provider           *[]string
+	providerN          *[]string
+	providerId         *[]int32
+	providerIdN        *[]int32
+	providerNetworkId  *[]*int32
 	providerNetworkIdN *[]*int32
-	q *string
-	site *[]string
-	siteN *[]string
-	siteId *[]*int32
-	siteIdN *[]*int32
-	tag *[]string
-	tagN *[]string
-	termSide *Termination
-	updatedByRequest *string
-	upstreamSpeed *[]int32
+	q                  *string
+	site               *[]string
+	siteN              *[]string
+	siteId             *[]*int32
+	siteIdN            *[]*int32
+	tag                *[]string
+	tagN               *[]string
+	termSide           *Termination
+	updatedByRequest   *string
+	upstreamSpeed      *[]int32
 	upstreamSpeedEmpty *bool
-	upstreamSpeedGt *[]int32
-	upstreamSpeedGte *[]int32
-	upstreamSpeedLt *[]int32
-	upstreamSpeedLte *[]int32
-	upstreamSpeedN *[]int32
-	xconnectId *[]string
-	xconnectIdEmpty *bool
-	xconnectIdIc *[]string
-	xconnectIdIe *[]string
-	xconnectIdIew *[]string
-	xconnectIdIsw *[]string
-	xconnectIdN *[]string
-	xconnectIdNic *[]string
-	xconnectIdNie *[]string
-	xconnectIdNiew *[]string
-	xconnectIdNisw *[]string
+	upstreamSpeedGt    *[]int32
+	upstreamSpeedGte   *[]int32
+	upstreamSpeedLt    *[]int32
+	upstreamSpeedLte   *[]int32
+	upstreamSpeedN     *[]int32
+	xconnectId         *[]string
+	xconnectIdEmpty    *bool
+	xconnectIdIc       *[]string
+	xconnectIdIe       *[]string
+	xconnectIdIew      *[]string
+	xconnectIdIsw      *[]string
+	xconnectIdN        *[]string
+	xconnectIdNic      *[]string
+	xconnectIdNie      *[]string
+	xconnectIdNiew     *[]string
+	xconnectIdNisw     *[]string
 }
 
 // * &#x60;A&#x60; - A * &#x60;B&#x60; - B
@@ -5176,24 +5193,25 @@ CircuitsCircuitTerminationsList Method for CircuitsCircuitTerminationsList
 
 Get a list of circuit termination objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCircuitsCircuitTerminationsListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitTerminationsListRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitTerminationsList(ctx context.Context) ApiCircuitsCircuitTerminationsListRequest {
 	return ApiCircuitsCircuitTerminationsListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedCircuitTerminationList
+//
+//	@return PaginatedCircuitTerminationList
 func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuitsCircuitTerminationsListRequest) (*PaginatedCircuitTerminationList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedCircuitTerminationList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedCircuitTerminationList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitTerminationsList")
@@ -5208,17 +5226,17 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 	localVarFormParams := url.Values{}
 
 	if r.cableEnd != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "cable_end", r.cableEnd, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "cable_end", r.cableEnd, "form", "")
 	}
 	if r.cableId != nil {
 		t := *r.cableId
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cable_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cable_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "cable_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cable_id", t, "form", "multi")
 		}
 	}
 	if r.cableIdN != nil {
@@ -5226,24 +5244,24 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cable_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cable_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "cable_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cable_id__n", t, "form", "multi")
 		}
 	}
 	if r.cabled != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "cabled", r.cabled, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "cabled", r.cabled, "form", "")
 	}
 	if r.circuitId != nil {
 		t := *r.circuitId
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "circuit_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "circuit_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "circuit_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "circuit_id", t, "form", "multi")
 		}
 	}
 	if r.circuitIdN != nil {
@@ -5251,10 +5269,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "circuit_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "circuit_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "circuit_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "circuit_id__n", t, "form", "multi")
 		}
 	}
 	if r.created != nil {
@@ -5262,10 +5280,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "form", "multi")
 		}
 	}
 	if r.createdEmpty != nil {
@@ -5273,10 +5291,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "form", "multi")
 		}
 	}
 	if r.createdGt != nil {
@@ -5284,10 +5302,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "form", "multi")
 		}
 	}
 	if r.createdGte != nil {
@@ -5295,10 +5313,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "form", "multi")
 		}
 	}
 	if r.createdLt != nil {
@@ -5306,10 +5324,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "form", "multi")
 		}
 	}
 	if r.createdLte != nil {
@@ -5317,10 +5335,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "form", "multi")
 		}
 	}
 	if r.createdN != nil {
@@ -5328,38 +5346,38 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "form", "multi")
 		}
 	}
 	if r.createdByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_request", r.createdByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_request", r.createdByRequest, "form", "")
 	}
 	if r.description != nil {
 		t := *r.description
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "form", "multi")
 		}
 	}
 	if r.descriptionEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "description__empty", r.descriptionEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "description__empty", r.descriptionEmpty, "form", "")
 	}
 	if r.descriptionIc != nil {
 		t := *r.descriptionIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "form", "multi")
 		}
 	}
 	if r.descriptionIe != nil {
@@ -5367,10 +5385,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "form", "multi")
 		}
 	}
 	if r.descriptionIew != nil {
@@ -5378,10 +5396,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "form", "multi")
 		}
 	}
 	if r.descriptionIsw != nil {
@@ -5389,10 +5407,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "form", "multi")
 		}
 	}
 	if r.descriptionN != nil {
@@ -5400,10 +5418,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "form", "multi")
 		}
 	}
 	if r.descriptionNic != nil {
@@ -5411,10 +5429,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "form", "multi")
 		}
 	}
 	if r.descriptionNie != nil {
@@ -5422,10 +5440,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "form", "multi")
 		}
 	}
 	if r.descriptionNiew != nil {
@@ -5433,10 +5451,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "form", "multi")
 		}
 	}
 	if r.descriptionNisw != nil {
@@ -5444,10 +5462,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "form", "multi")
 		}
 	}
 	if r.id != nil {
@@ -5455,24 +5473,24 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "form", "multi")
 		}
 	}
 	if r.idEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "form", "")
 	}
 	if r.idGt != nil {
 		t := *r.idGt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "form", "multi")
 		}
 	}
 	if r.idGte != nil {
@@ -5480,10 +5498,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "form", "multi")
 		}
 	}
 	if r.idLt != nil {
@@ -5491,10 +5509,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "form", "multi")
 		}
 	}
 	if r.idLte != nil {
@@ -5502,10 +5520,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "form", "multi")
 		}
 	}
 	if r.idN != nil {
@@ -5513,10 +5531,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "form", "multi")
 		}
 	}
 	if r.lastUpdated != nil {
@@ -5524,10 +5542,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedEmpty != nil {
@@ -5535,10 +5553,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedGt != nil {
@@ -5546,10 +5564,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedGte != nil {
@@ -5557,10 +5575,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedLt != nil {
@@ -5568,10 +5586,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedLte != nil {
@@ -5579,10 +5597,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedN != nil {
@@ -5590,53 +5608,53 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "form", "multi")
 		}
 	}
 	if r.limit != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
 	}
 	if r.markConnected != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "mark_connected", r.markConnected, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "mark_connected", r.markConnected, "form", "")
 	}
 	if r.modifiedByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "modified_by_request", r.modifiedByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "modified_by_request", r.modifiedByRequest, "form", "")
 	}
 	if r.occupied != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "occupied", r.occupied, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "occupied", r.occupied, "form", "")
 	}
 	if r.offset != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "form", "")
 	}
 	if r.ordering != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "form", "")
 	}
 	if r.portSpeed != nil {
 		t := *r.portSpeed
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "port_speed", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "port_speed", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "port_speed", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "port_speed", t, "form", "multi")
 		}
 	}
 	if r.portSpeedEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "port_speed__empty", r.portSpeedEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "port_speed__empty", r.portSpeedEmpty, "form", "")
 	}
 	if r.portSpeedGt != nil {
 		t := *r.portSpeedGt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "port_speed__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "port_speed__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "port_speed__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "port_speed__gt", t, "form", "multi")
 		}
 	}
 	if r.portSpeedGte != nil {
@@ -5644,10 +5662,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "port_speed__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "port_speed__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "port_speed__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "port_speed__gte", t, "form", "multi")
 		}
 	}
 	if r.portSpeedLt != nil {
@@ -5655,10 +5673,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "port_speed__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "port_speed__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "port_speed__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "port_speed__lt", t, "form", "multi")
 		}
 	}
 	if r.portSpeedLte != nil {
@@ -5666,10 +5684,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "port_speed__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "port_speed__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "port_speed__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "port_speed__lte", t, "form", "multi")
 		}
 	}
 	if r.portSpeedN != nil {
@@ -5677,10 +5695,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "port_speed__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "port_speed__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "port_speed__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "port_speed__n", t, "form", "multi")
 		}
 	}
 	if r.ppInfo != nil {
@@ -5688,24 +5706,24 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "pp_info", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "pp_info", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "pp_info", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "pp_info", t, "form", "multi")
 		}
 	}
 	if r.ppInfoEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "pp_info__empty", r.ppInfoEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "pp_info__empty", r.ppInfoEmpty, "form", "")
 	}
 	if r.ppInfoIc != nil {
 		t := *r.ppInfoIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "pp_info__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "pp_info__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "pp_info__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "pp_info__ic", t, "form", "multi")
 		}
 	}
 	if r.ppInfoIe != nil {
@@ -5713,10 +5731,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "pp_info__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "pp_info__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "pp_info__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "pp_info__ie", t, "form", "multi")
 		}
 	}
 	if r.ppInfoIew != nil {
@@ -5724,10 +5742,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "pp_info__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "pp_info__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "pp_info__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "pp_info__iew", t, "form", "multi")
 		}
 	}
 	if r.ppInfoIsw != nil {
@@ -5735,10 +5753,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "pp_info__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "pp_info__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "pp_info__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "pp_info__isw", t, "form", "multi")
 		}
 	}
 	if r.ppInfoN != nil {
@@ -5746,10 +5764,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "pp_info__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "pp_info__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "pp_info__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "pp_info__n", t, "form", "multi")
 		}
 	}
 	if r.ppInfoNic != nil {
@@ -5757,10 +5775,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "pp_info__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "pp_info__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "pp_info__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "pp_info__nic", t, "form", "multi")
 		}
 	}
 	if r.ppInfoNie != nil {
@@ -5768,10 +5786,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "pp_info__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "pp_info__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "pp_info__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "pp_info__nie", t, "form", "multi")
 		}
 	}
 	if r.ppInfoNiew != nil {
@@ -5779,10 +5797,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "pp_info__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "pp_info__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "pp_info__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "pp_info__niew", t, "form", "multi")
 		}
 	}
 	if r.ppInfoNisw != nil {
@@ -5790,10 +5808,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "pp_info__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "pp_info__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "pp_info__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "pp_info__nisw", t, "form", "multi")
 		}
 	}
 	if r.provider != nil {
@@ -5801,10 +5819,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "provider", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "provider", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "provider", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "provider", t, "form", "multi")
 		}
 	}
 	if r.providerN != nil {
@@ -5812,10 +5830,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "provider__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "provider__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "provider__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "provider__n", t, "form", "multi")
 		}
 	}
 	if r.providerId != nil {
@@ -5823,10 +5841,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "provider_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "provider_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "provider_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "provider_id", t, "form", "multi")
 		}
 	}
 	if r.providerIdN != nil {
@@ -5834,10 +5852,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "provider_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "provider_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "provider_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "provider_id__n", t, "form", "multi")
 		}
 	}
 	if r.providerNetworkId != nil {
@@ -5845,10 +5863,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "provider_network_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "provider_network_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "provider_network_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "provider_network_id", t, "form", "multi")
 		}
 	}
 	if r.providerNetworkIdN != nil {
@@ -5856,24 +5874,24 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "provider_network_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "provider_network_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "provider_network_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "provider_network_id__n", t, "form", "multi")
 		}
 	}
 	if r.q != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "form", "")
 	}
 	if r.site != nil {
 		t := *r.site
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "site", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "site", t, "form", "multi")
 		}
 	}
 	if r.siteN != nil {
@@ -5881,10 +5899,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "site__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "site__n", t, "form", "multi")
 		}
 	}
 	if r.siteId != nil {
@@ -5892,10 +5910,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "site_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "site_id", t, "form", "multi")
 		}
 	}
 	if r.siteIdN != nil {
@@ -5903,10 +5921,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "site_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "site_id__n", t, "form", "multi")
 		}
 	}
 	if r.tag != nil {
@@ -5914,10 +5932,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "form", "multi")
 		}
 	}
 	if r.tagN != nil {
@@ -5925,41 +5943,41 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "form", "multi")
 		}
 	}
 	if r.termSide != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "term_side", r.termSide, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "term_side", r.termSide, "form", "")
 	}
 	if r.updatedByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "updated_by_request", r.updatedByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "updated_by_request", r.updatedByRequest, "form", "")
 	}
 	if r.upstreamSpeed != nil {
 		t := *r.upstreamSpeed
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "upstream_speed", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "upstream_speed", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "upstream_speed", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "upstream_speed", t, "form", "multi")
 		}
 	}
 	if r.upstreamSpeedEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "upstream_speed__empty", r.upstreamSpeedEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "upstream_speed__empty", r.upstreamSpeedEmpty, "form", "")
 	}
 	if r.upstreamSpeedGt != nil {
 		t := *r.upstreamSpeedGt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "upstream_speed__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "upstream_speed__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "upstream_speed__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "upstream_speed__gt", t, "form", "multi")
 		}
 	}
 	if r.upstreamSpeedGte != nil {
@@ -5967,10 +5985,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "upstream_speed__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "upstream_speed__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "upstream_speed__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "upstream_speed__gte", t, "form", "multi")
 		}
 	}
 	if r.upstreamSpeedLt != nil {
@@ -5978,10 +5996,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "upstream_speed__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "upstream_speed__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "upstream_speed__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "upstream_speed__lt", t, "form", "multi")
 		}
 	}
 	if r.upstreamSpeedLte != nil {
@@ -5989,10 +6007,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "upstream_speed__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "upstream_speed__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "upstream_speed__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "upstream_speed__lte", t, "form", "multi")
 		}
 	}
 	if r.upstreamSpeedN != nil {
@@ -6000,10 +6018,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "upstream_speed__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "upstream_speed__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "upstream_speed__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "upstream_speed__n", t, "form", "multi")
 		}
 	}
 	if r.xconnectId != nil {
@@ -6011,24 +6029,24 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "xconnect_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "xconnect_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "xconnect_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "xconnect_id", t, "form", "multi")
 		}
 	}
 	if r.xconnectIdEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "xconnect_id__empty", r.xconnectIdEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "xconnect_id__empty", r.xconnectIdEmpty, "form", "")
 	}
 	if r.xconnectIdIc != nil {
 		t := *r.xconnectIdIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "xconnect_id__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "xconnect_id__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "xconnect_id__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "xconnect_id__ic", t, "form", "multi")
 		}
 	}
 	if r.xconnectIdIe != nil {
@@ -6036,10 +6054,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "xconnect_id__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "xconnect_id__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "xconnect_id__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "xconnect_id__ie", t, "form", "multi")
 		}
 	}
 	if r.xconnectIdIew != nil {
@@ -6047,10 +6065,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "xconnect_id__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "xconnect_id__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "xconnect_id__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "xconnect_id__iew", t, "form", "multi")
 		}
 	}
 	if r.xconnectIdIsw != nil {
@@ -6058,10 +6076,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "xconnect_id__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "xconnect_id__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "xconnect_id__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "xconnect_id__isw", t, "form", "multi")
 		}
 	}
 	if r.xconnectIdN != nil {
@@ -6069,10 +6087,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "xconnect_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "xconnect_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "xconnect_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "xconnect_id__n", t, "form", "multi")
 		}
 	}
 	if r.xconnectIdNic != nil {
@@ -6080,10 +6098,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "xconnect_id__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "xconnect_id__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "xconnect_id__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "xconnect_id__nic", t, "form", "multi")
 		}
 	}
 	if r.xconnectIdNie != nil {
@@ -6091,10 +6109,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "xconnect_id__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "xconnect_id__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "xconnect_id__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "xconnect_id__nie", t, "form", "multi")
 		}
 	}
 	if r.xconnectIdNiew != nil {
@@ -6102,10 +6120,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "xconnect_id__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "xconnect_id__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "xconnect_id__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "xconnect_id__niew", t, "form", "multi")
 		}
 	}
 	if r.xconnectIdNisw != nil {
@@ -6113,10 +6131,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "xconnect_id__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "xconnect_id__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "xconnect_id__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "xconnect_id__nisw", t, "form", "multi")
 		}
 	}
 	// to determine the Content-Type header
@@ -6188,9 +6206,9 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 }
 
 type ApiCircuitsCircuitTerminationsPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
-	id int32
+	ctx                              context.Context
+	ApiService                       *CircuitsAPIService
+	id                               int32
 	patchedCircuitTerminationRequest *PatchedCircuitTerminationRequest
 }
 
@@ -6208,26 +6226,27 @@ CircuitsCircuitTerminationsPartialUpdate Method for CircuitsCircuitTerminationsP
 
 Patch a circuit termination object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this circuit termination.
- @return ApiCircuitsCircuitTerminationsPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this circuit termination.
+	@return ApiCircuitsCircuitTerminationsPartialUpdateRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitTerminationsPartialUpdate(ctx context.Context, id int32) ApiCircuitsCircuitTerminationsPartialUpdateRequest {
 	return ApiCircuitsCircuitTerminationsPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return CircuitTermination
+//
+//	@return CircuitTermination
 func (a *CircuitsAPIService) CircuitsCircuitTerminationsPartialUpdateExecute(r ApiCircuitsCircuitTerminationsPartialUpdateRequest) (*CircuitTermination, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CircuitTermination
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CircuitTermination
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitTerminationsPartialUpdate")
@@ -6313,9 +6332,9 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsPartialUpdateExecute(r A
 }
 
 type ApiCircuitsCircuitTerminationsPathsRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CircuitsAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiCircuitsCircuitTerminationsPathsRetrieveRequest) Execute() (*CircuitTermination, *http.Response, error) {
@@ -6327,26 +6346,27 @@ CircuitsCircuitTerminationsPathsRetrieve Method for CircuitsCircuitTerminationsP
 
 Return all CablePaths which traverse a given pass-through port.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this circuit termination.
- @return ApiCircuitsCircuitTerminationsPathsRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this circuit termination.
+	@return ApiCircuitsCircuitTerminationsPathsRetrieveRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitTerminationsPathsRetrieve(ctx context.Context, id int32) ApiCircuitsCircuitTerminationsPathsRetrieveRequest {
 	return ApiCircuitsCircuitTerminationsPathsRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return CircuitTermination
+//
+//	@return CircuitTermination
 func (a *CircuitsAPIService) CircuitsCircuitTerminationsPathsRetrieveExecute(r ApiCircuitsCircuitTerminationsPathsRetrieveRequest) (*CircuitTermination, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CircuitTermination
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CircuitTermination
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitTerminationsPathsRetrieve")
@@ -6430,9 +6450,9 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsPathsRetrieveExecute(r A
 }
 
 type ApiCircuitsCircuitTerminationsRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CircuitsAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiCircuitsCircuitTerminationsRetrieveRequest) Execute() (*CircuitTermination, *http.Response, error) {
@@ -6444,26 +6464,27 @@ CircuitsCircuitTerminationsRetrieve Method for CircuitsCircuitTerminationsRetrie
 
 Get a circuit termination object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this circuit termination.
- @return ApiCircuitsCircuitTerminationsRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this circuit termination.
+	@return ApiCircuitsCircuitTerminationsRetrieveRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitTerminationsRetrieve(ctx context.Context, id int32) ApiCircuitsCircuitTerminationsRetrieveRequest {
 	return ApiCircuitsCircuitTerminationsRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return CircuitTermination
+//
+//	@return CircuitTermination
 func (a *CircuitsAPIService) CircuitsCircuitTerminationsRetrieveExecute(r ApiCircuitsCircuitTerminationsRetrieveRequest) (*CircuitTermination, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CircuitTermination
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CircuitTermination
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitTerminationsRetrieve")
@@ -6547,9 +6568,9 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsRetrieveExecute(r ApiCir
 }
 
 type ApiCircuitsCircuitTerminationsUpdateRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
-	id int32
+	ctx                       context.Context
+	ApiService                *CircuitsAPIService
+	id                        int32
 	circuitTerminationRequest *CircuitTerminationRequest
 }
 
@@ -6567,26 +6588,27 @@ CircuitsCircuitTerminationsUpdate Method for CircuitsCircuitTerminationsUpdate
 
 Put a circuit termination object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this circuit termination.
- @return ApiCircuitsCircuitTerminationsUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this circuit termination.
+	@return ApiCircuitsCircuitTerminationsUpdateRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitTerminationsUpdate(ctx context.Context, id int32) ApiCircuitsCircuitTerminationsUpdateRequest {
 	return ApiCircuitsCircuitTerminationsUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return CircuitTermination
+//
+//	@return CircuitTermination
 func (a *CircuitsAPIService) CircuitsCircuitTerminationsUpdateExecute(r ApiCircuitsCircuitTerminationsUpdateRequest) (*CircuitTermination, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CircuitTermination
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CircuitTermination
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitTerminationsUpdate")
@@ -6675,8 +6697,8 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsUpdateExecute(r ApiCircu
 }
 
 type ApiCircuitsCircuitTypesBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
+	ctx                context.Context
+	ApiService         *CircuitsAPIService
 	circuitTypeRequest *[]CircuitTypeRequest
 }
 
@@ -6694,22 +6716,22 @@ CircuitsCircuitTypesBulkDestroy Method for CircuitsCircuitTypesBulkDestroy
 
 Delete a list of circuit type objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCircuitsCircuitTypesBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitTypesBulkDestroyRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitTypesBulkDestroy(ctx context.Context) ApiCircuitsCircuitTypesBulkDestroyRequest {
 	return ApiCircuitsCircuitTypesBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *CircuitsAPIService) CircuitsCircuitTypesBulkDestroyExecute(r ApiCircuitsCircuitTypesBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitTypesBulkDestroy")
@@ -6788,8 +6810,8 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesBulkDestroyExecute(r ApiCircuit
 }
 
 type ApiCircuitsCircuitTypesBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
+	ctx                context.Context
+	ApiService         *CircuitsAPIService
 	circuitTypeRequest *[]CircuitTypeRequest
 }
 
@@ -6807,24 +6829,25 @@ CircuitsCircuitTypesBulkPartialUpdate Method for CircuitsCircuitTypesBulkPartial
 
 Patch a list of circuit type objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCircuitsCircuitTypesBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitTypesBulkPartialUpdateRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitTypesBulkPartialUpdate(ctx context.Context) ApiCircuitsCircuitTypesBulkPartialUpdateRequest {
 	return ApiCircuitsCircuitTypesBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []CircuitType
+//
+//	@return []CircuitType
 func (a *CircuitsAPIService) CircuitsCircuitTypesBulkPartialUpdateExecute(r ApiCircuitsCircuitTypesBulkPartialUpdateRequest) ([]CircuitType, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []CircuitType
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []CircuitType
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitTypesBulkPartialUpdate")
@@ -6912,8 +6935,8 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesBulkPartialUpdateExecute(r ApiC
 }
 
 type ApiCircuitsCircuitTypesBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
+	ctx                context.Context
+	ApiService         *CircuitsAPIService
 	circuitTypeRequest *[]CircuitTypeRequest
 }
 
@@ -6931,24 +6954,25 @@ CircuitsCircuitTypesBulkUpdate Method for CircuitsCircuitTypesBulkUpdate
 
 Put a list of circuit type objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCircuitsCircuitTypesBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitTypesBulkUpdateRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitTypesBulkUpdate(ctx context.Context) ApiCircuitsCircuitTypesBulkUpdateRequest {
 	return ApiCircuitsCircuitTypesBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []CircuitType
+//
+//	@return []CircuitType
 func (a *CircuitsAPIService) CircuitsCircuitTypesBulkUpdateExecute(r ApiCircuitsCircuitTypesBulkUpdateRequest) ([]CircuitType, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []CircuitType
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []CircuitType
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitTypesBulkUpdate")
@@ -7036,8 +7060,8 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesBulkUpdateExecute(r ApiCircuits
 }
 
 type ApiCircuitsCircuitTypesCreateRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
+	ctx                context.Context
+	ApiService         *CircuitsAPIService
 	circuitTypeRequest *CircuitTypeRequest
 }
 
@@ -7055,24 +7079,25 @@ CircuitsCircuitTypesCreate Method for CircuitsCircuitTypesCreate
 
 Post a list of circuit type objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCircuitsCircuitTypesCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitTypesCreateRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitTypesCreate(ctx context.Context) ApiCircuitsCircuitTypesCreateRequest {
 	return ApiCircuitsCircuitTypesCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return CircuitType
+//
+//	@return CircuitType
 func (a *CircuitsAPIService) CircuitsCircuitTypesCreateExecute(r ApiCircuitsCircuitTypesCreateRequest) (*CircuitType, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CircuitType
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CircuitType
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitTypesCreate")
@@ -7160,9 +7185,9 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesCreateExecute(r ApiCircuitsCirc
 }
 
 type ApiCircuitsCircuitTypesDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CircuitsAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiCircuitsCircuitTypesDestroyRequest) Execute() (*http.Response, error) {
@@ -7174,24 +7199,24 @@ CircuitsCircuitTypesDestroy Method for CircuitsCircuitTypesDestroy
 
 Delete a circuit type object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this circuit type.
- @return ApiCircuitsCircuitTypesDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this circuit type.
+	@return ApiCircuitsCircuitTypesDestroyRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitTypesDestroy(ctx context.Context, id int32) ApiCircuitsCircuitTypesDestroyRequest {
 	return ApiCircuitsCircuitTypesDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *CircuitsAPIService) CircuitsCircuitTypesDestroyExecute(r ApiCircuitsCircuitTypesDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitTypesDestroy")
@@ -7266,82 +7291,82 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesDestroyExecute(r ApiCircuitsCir
 }
 
 type ApiCircuitsCircuitTypesListRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
-	color *[]string
-	colorEmpty *bool
-	colorIc *[]string
-	colorIe *[]string
-	colorIew *[]string
-	colorIsw *[]string
-	colorN *[]string
-	colorNic *[]string
-	colorNie *[]string
-	colorNiew *[]string
-	colorNisw *[]string
-	created *[]time.Time
-	createdEmpty *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
-	createdByRequest *string
-	description *[]string
-	descriptionEmpty *bool
-	descriptionIc *[]string
-	descriptionIe *[]string
-	descriptionIew *[]string
-	descriptionIsw *[]string
-	descriptionN *[]string
-	descriptionNic *[]string
-	descriptionNie *[]string
-	descriptionNiew *[]string
-	descriptionNisw *[]string
-	id *[]int32
-	idEmpty *bool
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedEmpty *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
+	ctx               context.Context
+	ApiService        *CircuitsAPIService
+	color             *[]string
+	colorEmpty        *bool
+	colorIc           *[]string
+	colorIe           *[]string
+	colorIew          *[]string
+	colorIsw          *[]string
+	colorN            *[]string
+	colorNic          *[]string
+	colorNie          *[]string
+	colorNiew         *[]string
+	colorNisw         *[]string
+	created           *[]time.Time
+	createdEmpty      *[]time.Time
+	createdGt         *[]time.Time
+	createdGte        *[]time.Time
+	createdLt         *[]time.Time
+	createdLte        *[]time.Time
+	createdN          *[]time.Time
+	createdByRequest  *string
+	description       *[]string
+	descriptionEmpty  *bool
+	descriptionIc     *[]string
+	descriptionIe     *[]string
+	descriptionIew    *[]string
+	descriptionIsw    *[]string
+	descriptionN      *[]string
+	descriptionNic    *[]string
+	descriptionNie    *[]string
+	descriptionNiew   *[]string
+	descriptionNisw   *[]string
+	id                *[]int32
+	idEmpty           *bool
+	idGt              *[]int32
+	idGte             *[]int32
+	idLt              *[]int32
+	idLte             *[]int32
+	idN               *[]int32
+	lastUpdated       *[]time.Time
+	lastUpdatedEmpty  *[]time.Time
+	lastUpdatedGt     *[]time.Time
+	lastUpdatedGte    *[]time.Time
+	lastUpdatedLt     *[]time.Time
+	lastUpdatedLte    *[]time.Time
+	lastUpdatedN      *[]time.Time
+	limit             *int32
 	modifiedByRequest *string
-	name *[]string
-	nameEmpty *bool
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	offset *int32
-	ordering *string
-	q *string
-	slug *[]string
-	slugEmpty *bool
-	slugIc *[]string
-	slugIe *[]string
-	slugIew *[]string
-	slugIsw *[]string
-	slugN *[]string
-	slugNic *[]string
-	slugNie *[]string
-	slugNiew *[]string
-	slugNisw *[]string
-	tag *[]string
-	tagN *[]string
-	updatedByRequest *string
+	name              *[]string
+	nameEmpty         *bool
+	nameIc            *[]string
+	nameIe            *[]string
+	nameIew           *[]string
+	nameIsw           *[]string
+	nameN             *[]string
+	nameNic           *[]string
+	nameNie           *[]string
+	nameNiew          *[]string
+	nameNisw          *[]string
+	offset            *int32
+	ordering          *string
+	q                 *string
+	slug              *[]string
+	slugEmpty         *bool
+	slugIc            *[]string
+	slugIe            *[]string
+	slugIew           *[]string
+	slugIsw           *[]string
+	slugN             *[]string
+	slugNic           *[]string
+	slugNie           *[]string
+	slugNiew          *[]string
+	slugNisw          *[]string
+	tag               *[]string
+	tagN              *[]string
+	updatedByRequest  *string
 }
 
 func (r ApiCircuitsCircuitTypesListRequest) Color(color []string) ApiCircuitsCircuitTypesListRequest {
@@ -7727,24 +7752,25 @@ CircuitsCircuitTypesList Method for CircuitsCircuitTypesList
 
 Get a list of circuit type objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCircuitsCircuitTypesListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitTypesListRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitTypesList(ctx context.Context) ApiCircuitsCircuitTypesListRequest {
 	return ApiCircuitsCircuitTypesListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedCircuitTypeList
+//
+//	@return PaginatedCircuitTypeList
 func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircuitTypesListRequest) (*PaginatedCircuitTypeList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedCircuitTypeList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedCircuitTypeList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitTypesList")
@@ -7763,24 +7789,24 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "color", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "color", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "color", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "color", t, "form", "multi")
 		}
 	}
 	if r.colorEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "color__empty", r.colorEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "color__empty", r.colorEmpty, "form", "")
 	}
 	if r.colorIc != nil {
 		t := *r.colorIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "color__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "color__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "color__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "color__ic", t, "form", "multi")
 		}
 	}
 	if r.colorIe != nil {
@@ -7788,10 +7814,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "color__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "color__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "color__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "color__ie", t, "form", "multi")
 		}
 	}
 	if r.colorIew != nil {
@@ -7799,10 +7825,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "color__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "color__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "color__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "color__iew", t, "form", "multi")
 		}
 	}
 	if r.colorIsw != nil {
@@ -7810,10 +7836,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "color__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "color__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "color__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "color__isw", t, "form", "multi")
 		}
 	}
 	if r.colorN != nil {
@@ -7821,10 +7847,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "color__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "color__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "color__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "color__n", t, "form", "multi")
 		}
 	}
 	if r.colorNic != nil {
@@ -7832,10 +7858,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "color__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "color__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "color__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "color__nic", t, "form", "multi")
 		}
 	}
 	if r.colorNie != nil {
@@ -7843,10 +7869,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "color__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "color__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "color__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "color__nie", t, "form", "multi")
 		}
 	}
 	if r.colorNiew != nil {
@@ -7854,10 +7880,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "color__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "color__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "color__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "color__niew", t, "form", "multi")
 		}
 	}
 	if r.colorNisw != nil {
@@ -7865,10 +7891,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "color__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "color__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "color__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "color__nisw", t, "form", "multi")
 		}
 	}
 	if r.created != nil {
@@ -7876,10 +7902,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "form", "multi")
 		}
 	}
 	if r.createdEmpty != nil {
@@ -7887,10 +7913,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "form", "multi")
 		}
 	}
 	if r.createdGt != nil {
@@ -7898,10 +7924,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "form", "multi")
 		}
 	}
 	if r.createdGte != nil {
@@ -7909,10 +7935,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "form", "multi")
 		}
 	}
 	if r.createdLt != nil {
@@ -7920,10 +7946,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "form", "multi")
 		}
 	}
 	if r.createdLte != nil {
@@ -7931,10 +7957,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "form", "multi")
 		}
 	}
 	if r.createdN != nil {
@@ -7942,38 +7968,38 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "form", "multi")
 		}
 	}
 	if r.createdByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_request", r.createdByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_request", r.createdByRequest, "form", "")
 	}
 	if r.description != nil {
 		t := *r.description
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "form", "multi")
 		}
 	}
 	if r.descriptionEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "description__empty", r.descriptionEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "description__empty", r.descriptionEmpty, "form", "")
 	}
 	if r.descriptionIc != nil {
 		t := *r.descriptionIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "form", "multi")
 		}
 	}
 	if r.descriptionIe != nil {
@@ -7981,10 +8007,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "form", "multi")
 		}
 	}
 	if r.descriptionIew != nil {
@@ -7992,10 +8018,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "form", "multi")
 		}
 	}
 	if r.descriptionIsw != nil {
@@ -8003,10 +8029,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "form", "multi")
 		}
 	}
 	if r.descriptionN != nil {
@@ -8014,10 +8040,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "form", "multi")
 		}
 	}
 	if r.descriptionNic != nil {
@@ -8025,10 +8051,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "form", "multi")
 		}
 	}
 	if r.descriptionNie != nil {
@@ -8036,10 +8062,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "form", "multi")
 		}
 	}
 	if r.descriptionNiew != nil {
@@ -8047,10 +8073,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "form", "multi")
 		}
 	}
 	if r.descriptionNisw != nil {
@@ -8058,10 +8084,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "form", "multi")
 		}
 	}
 	if r.id != nil {
@@ -8069,24 +8095,24 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "form", "multi")
 		}
 	}
 	if r.idEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "form", "")
 	}
 	if r.idGt != nil {
 		t := *r.idGt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "form", "multi")
 		}
 	}
 	if r.idGte != nil {
@@ -8094,10 +8120,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "form", "multi")
 		}
 	}
 	if r.idLt != nil {
@@ -8105,10 +8131,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "form", "multi")
 		}
 	}
 	if r.idLte != nil {
@@ -8116,10 +8142,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "form", "multi")
 		}
 	}
 	if r.idN != nil {
@@ -8127,10 +8153,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "form", "multi")
 		}
 	}
 	if r.lastUpdated != nil {
@@ -8138,10 +8164,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedEmpty != nil {
@@ -8149,10 +8175,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedGt != nil {
@@ -8160,10 +8186,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedGte != nil {
@@ -8171,10 +8197,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedLt != nil {
@@ -8182,10 +8208,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedLte != nil {
@@ -8193,10 +8219,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedN != nil {
@@ -8204,41 +8230,41 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "form", "multi")
 		}
 	}
 	if r.limit != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
 	}
 	if r.modifiedByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "modified_by_request", r.modifiedByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "modified_by_request", r.modifiedByRequest, "form", "")
 	}
 	if r.name != nil {
 		t := *r.name
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "form", "multi")
 		}
 	}
 	if r.nameEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "name__empty", r.nameEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "name__empty", r.nameEmpty, "form", "")
 	}
 	if r.nameIc != nil {
 		t := *r.nameIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "form", "multi")
 		}
 	}
 	if r.nameIe != nil {
@@ -8246,10 +8272,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "form", "multi")
 		}
 	}
 	if r.nameIew != nil {
@@ -8257,10 +8283,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "form", "multi")
 		}
 	}
 	if r.nameIsw != nil {
@@ -8268,10 +8294,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "form", "multi")
 		}
 	}
 	if r.nameN != nil {
@@ -8279,10 +8305,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "form", "multi")
 		}
 	}
 	if r.nameNic != nil {
@@ -8290,10 +8316,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "form", "multi")
 		}
 	}
 	if r.nameNie != nil {
@@ -8301,10 +8327,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "form", "multi")
 		}
 	}
 	if r.nameNiew != nil {
@@ -8312,10 +8338,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "form", "multi")
 		}
 	}
 	if r.nameNisw != nil {
@@ -8323,44 +8349,44 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "form", "multi")
 		}
 	}
 	if r.offset != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "form", "")
 	}
 	if r.ordering != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "form", "")
 	}
 	if r.q != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "form", "")
 	}
 	if r.slug != nil {
 		t := *r.slug
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug", t, "form", "multi")
 		}
 	}
 	if r.slugEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "slug__empty", r.slugEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "slug__empty", r.slugEmpty, "form", "")
 	}
 	if r.slugIc != nil {
 		t := *r.slugIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", t, "form", "multi")
 		}
 	}
 	if r.slugIe != nil {
@@ -8368,10 +8394,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", t, "form", "multi")
 		}
 	}
 	if r.slugIew != nil {
@@ -8379,10 +8405,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", t, "form", "multi")
 		}
 	}
 	if r.slugIsw != nil {
@@ -8390,10 +8416,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", t, "form", "multi")
 		}
 	}
 	if r.slugN != nil {
@@ -8401,10 +8427,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", t, "form", "multi")
 		}
 	}
 	if r.slugNic != nil {
@@ -8412,10 +8438,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", t, "form", "multi")
 		}
 	}
 	if r.slugNie != nil {
@@ -8423,10 +8449,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", t, "form", "multi")
 		}
 	}
 	if r.slugNiew != nil {
@@ -8434,10 +8460,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", t, "form", "multi")
 		}
 	}
 	if r.slugNisw != nil {
@@ -8445,10 +8471,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", t, "form", "multi")
 		}
 	}
 	if r.tag != nil {
@@ -8456,10 +8482,10 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "form", "multi")
 		}
 	}
 	if r.tagN != nil {
@@ -8467,14 +8493,14 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "form", "multi")
 		}
 	}
 	if r.updatedByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "updated_by_request", r.updatedByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "updated_by_request", r.updatedByRequest, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -8545,9 +8571,9 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 }
 
 type ApiCircuitsCircuitTypesPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
-	id int32
+	ctx                       context.Context
+	ApiService                *CircuitsAPIService
+	id                        int32
 	patchedCircuitTypeRequest *PatchedCircuitTypeRequest
 }
 
@@ -8565,26 +8591,27 @@ CircuitsCircuitTypesPartialUpdate Method for CircuitsCircuitTypesPartialUpdate
 
 Patch a circuit type object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this circuit type.
- @return ApiCircuitsCircuitTypesPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this circuit type.
+	@return ApiCircuitsCircuitTypesPartialUpdateRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitTypesPartialUpdate(ctx context.Context, id int32) ApiCircuitsCircuitTypesPartialUpdateRequest {
 	return ApiCircuitsCircuitTypesPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return CircuitType
+//
+//	@return CircuitType
 func (a *CircuitsAPIService) CircuitsCircuitTypesPartialUpdateExecute(r ApiCircuitsCircuitTypesPartialUpdateRequest) (*CircuitType, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CircuitType
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CircuitType
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitTypesPartialUpdate")
@@ -8670,9 +8697,9 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesPartialUpdateExecute(r ApiCircu
 }
 
 type ApiCircuitsCircuitTypesRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CircuitsAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiCircuitsCircuitTypesRetrieveRequest) Execute() (*CircuitType, *http.Response, error) {
@@ -8684,26 +8711,27 @@ CircuitsCircuitTypesRetrieve Method for CircuitsCircuitTypesRetrieve
 
 Get a circuit type object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this circuit type.
- @return ApiCircuitsCircuitTypesRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this circuit type.
+	@return ApiCircuitsCircuitTypesRetrieveRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitTypesRetrieve(ctx context.Context, id int32) ApiCircuitsCircuitTypesRetrieveRequest {
 	return ApiCircuitsCircuitTypesRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return CircuitType
+//
+//	@return CircuitType
 func (a *CircuitsAPIService) CircuitsCircuitTypesRetrieveExecute(r ApiCircuitsCircuitTypesRetrieveRequest) (*CircuitType, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CircuitType
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CircuitType
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitTypesRetrieve")
@@ -8787,9 +8815,9 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesRetrieveExecute(r ApiCircuitsCi
 }
 
 type ApiCircuitsCircuitTypesUpdateRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
-	id int32
+	ctx                context.Context
+	ApiService         *CircuitsAPIService
+	id                 int32
 	circuitTypeRequest *CircuitTypeRequest
 }
 
@@ -8807,26 +8835,27 @@ CircuitsCircuitTypesUpdate Method for CircuitsCircuitTypesUpdate
 
 Put a circuit type object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this circuit type.
- @return ApiCircuitsCircuitTypesUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this circuit type.
+	@return ApiCircuitsCircuitTypesUpdateRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitTypesUpdate(ctx context.Context, id int32) ApiCircuitsCircuitTypesUpdateRequest {
 	return ApiCircuitsCircuitTypesUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return CircuitType
+//
+//	@return CircuitType
 func (a *CircuitsAPIService) CircuitsCircuitTypesUpdateExecute(r ApiCircuitsCircuitTypesUpdateRequest) (*CircuitType, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CircuitType
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CircuitType
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitTypesUpdate")
@@ -8915,8 +8944,8 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesUpdateExecute(r ApiCircuitsCirc
 }
 
 type ApiCircuitsCircuitsBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
+	ctx            context.Context
+	ApiService     *CircuitsAPIService
 	circuitRequest *[]CircuitRequest
 }
 
@@ -8934,22 +8963,22 @@ CircuitsCircuitsBulkDestroy Method for CircuitsCircuitsBulkDestroy
 
 Delete a list of circuit objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCircuitsCircuitsBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitsBulkDestroyRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitsBulkDestroy(ctx context.Context) ApiCircuitsCircuitsBulkDestroyRequest {
 	return ApiCircuitsCircuitsBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *CircuitsAPIService) CircuitsCircuitsBulkDestroyExecute(r ApiCircuitsCircuitsBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitsBulkDestroy")
@@ -9028,8 +9057,8 @@ func (a *CircuitsAPIService) CircuitsCircuitsBulkDestroyExecute(r ApiCircuitsCir
 }
 
 type ApiCircuitsCircuitsBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
+	ctx            context.Context
+	ApiService     *CircuitsAPIService
 	circuitRequest *[]CircuitRequest
 }
 
@@ -9047,24 +9076,25 @@ CircuitsCircuitsBulkPartialUpdate Method for CircuitsCircuitsBulkPartialUpdate
 
 Patch a list of circuit objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCircuitsCircuitsBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitsBulkPartialUpdateRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitsBulkPartialUpdate(ctx context.Context) ApiCircuitsCircuitsBulkPartialUpdateRequest {
 	return ApiCircuitsCircuitsBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []Circuit
+//
+//	@return []Circuit
 func (a *CircuitsAPIService) CircuitsCircuitsBulkPartialUpdateExecute(r ApiCircuitsCircuitsBulkPartialUpdateRequest) ([]Circuit, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []Circuit
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []Circuit
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitsBulkPartialUpdate")
@@ -9152,8 +9182,8 @@ func (a *CircuitsAPIService) CircuitsCircuitsBulkPartialUpdateExecute(r ApiCircu
 }
 
 type ApiCircuitsCircuitsBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
+	ctx            context.Context
+	ApiService     *CircuitsAPIService
 	circuitRequest *[]CircuitRequest
 }
 
@@ -9171,24 +9201,25 @@ CircuitsCircuitsBulkUpdate Method for CircuitsCircuitsBulkUpdate
 
 Put a list of circuit objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCircuitsCircuitsBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitsBulkUpdateRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitsBulkUpdate(ctx context.Context) ApiCircuitsCircuitsBulkUpdateRequest {
 	return ApiCircuitsCircuitsBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []Circuit
+//
+//	@return []Circuit
 func (a *CircuitsAPIService) CircuitsCircuitsBulkUpdateExecute(r ApiCircuitsCircuitsBulkUpdateRequest) ([]Circuit, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []Circuit
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []Circuit
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitsBulkUpdate")
@@ -9276,8 +9307,8 @@ func (a *CircuitsAPIService) CircuitsCircuitsBulkUpdateExecute(r ApiCircuitsCirc
 }
 
 type ApiCircuitsCircuitsCreateRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
+	ctx                    context.Context
+	ApiService             *CircuitsAPIService
 	writableCircuitRequest *WritableCircuitRequest
 }
 
@@ -9295,24 +9326,25 @@ CircuitsCircuitsCreate Method for CircuitsCircuitsCreate
 
 Post a list of circuit objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCircuitsCircuitsCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitsCreateRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitsCreate(ctx context.Context) ApiCircuitsCircuitsCreateRequest {
 	return ApiCircuitsCircuitsCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return Circuit
+//
+//	@return Circuit
 func (a *CircuitsAPIService) CircuitsCircuitsCreateExecute(r ApiCircuitsCircuitsCreateRequest) (*Circuit, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Circuit
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Circuit
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitsCreate")
@@ -9400,9 +9432,9 @@ func (a *CircuitsAPIService) CircuitsCircuitsCreateExecute(r ApiCircuitsCircuits
 }
 
 type ApiCircuitsCircuitsDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CircuitsAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiCircuitsCircuitsDestroyRequest) Execute() (*http.Response, error) {
@@ -9414,24 +9446,24 @@ CircuitsCircuitsDestroy Method for CircuitsCircuitsDestroy
 
 Delete a circuit object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this circuit.
- @return ApiCircuitsCircuitsDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this circuit.
+	@return ApiCircuitsCircuitsDestroyRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitsDestroy(ctx context.Context, id int32) ApiCircuitsCircuitsDestroyRequest {
 	return ApiCircuitsCircuitsDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *CircuitsAPIService) CircuitsCircuitsDestroyExecute(r ApiCircuitsCircuitsDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitsDestroy")
@@ -9506,136 +9538,136 @@ func (a *CircuitsAPIService) CircuitsCircuitsDestroyExecute(r ApiCircuitsCircuit
 }
 
 type ApiCircuitsCircuitsListRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
-	cid *[]string
-	cidEmpty *bool
-	cidIc *[]string
-	cidIe *[]string
-	cidIew *[]string
-	cidIsw *[]string
-	cidN *[]string
-	cidNic *[]string
-	cidNie *[]string
-	cidNiew *[]string
-	cidNisw *[]string
-	commitRate *[]int32
-	commitRateEmpty *bool
-	commitRateGt *[]int32
-	commitRateGte *[]int32
-	commitRateLt *[]int32
-	commitRateLte *[]int32
-	commitRateN *[]int32
-	contact *[]int32
-	contactN *[]int32
-	contactGroup *[]string
-	contactGroupN *[]string
-	contactRole *[]int32
-	contactRoleN *[]int32
-	created *[]time.Time
-	createdEmpty *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
-	createdByRequest *string
-	description *[]string
-	descriptionEmpty *bool
-	descriptionIc *[]string
-	descriptionIe *[]string
-	descriptionIew *[]string
-	descriptionIsw *[]string
-	descriptionN *[]string
-	descriptionNic *[]string
-	descriptionNie *[]string
-	descriptionNiew *[]string
-	descriptionNisw *[]string
-	id *[]int32
-	idEmpty *bool
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	installDate *[]string
-	installDateEmpty *bool
-	installDateGt *[]string
-	installDateGte *[]string
-	installDateLt *[]string
-	installDateLte *[]string
-	installDateN *[]string
-	lastUpdated *[]time.Time
-	lastUpdatedEmpty *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	modifiedByRequest *string
-	offset *int32
-	ordering *string
-	provider *[]string
-	providerN *[]string
-	providerAccount *[]string
-	providerAccountN *[]string
-	providerAccountId *[]int32
-	providerAccountIdN *[]int32
-	providerId *[]int32
-	providerIdN *[]int32
-	providerNetworkId *[]int32
-	providerNetworkIdN *[]int32
-	q *string
-	region *[]string
-	regionN *[]string
-	regionId *[]string
-	regionIdN *[]string
-	site *[]string
-	siteN *[]string
-	siteGroup *[]string
-	siteGroupN *[]string
-	siteGroupId *[]string
-	siteGroupIdN *[]string
-	siteId *[]int32
-	siteIdN *[]int32
-	status *[]string
-	statusEmpty *bool
-	statusIc *[]string
-	statusIe *[]string
-	statusIew *[]string
-	statusIsw *[]string
-	statusN *[]string
-	statusNic *[]string
-	statusNie *[]string
-	statusNiew *[]string
-	statusNisw *[]string
-	tag *[]string
-	tagN *[]string
-	tenant *[]string
-	tenantN *[]string
-	tenantGroup *[]string
-	tenantGroupN *[]string
-	tenantGroupId *[]string
-	tenantGroupIdN *[]string
-	tenantId *[]*int32
-	tenantIdN *[]*int32
-	terminationAId *[]*int32
-	terminationAIdN *[]*int32
-	terminationDate *[]string
+	ctx                  context.Context
+	ApiService           *CircuitsAPIService
+	cid                  *[]string
+	cidEmpty             *bool
+	cidIc                *[]string
+	cidIe                *[]string
+	cidIew               *[]string
+	cidIsw               *[]string
+	cidN                 *[]string
+	cidNic               *[]string
+	cidNie               *[]string
+	cidNiew              *[]string
+	cidNisw              *[]string
+	commitRate           *[]int32
+	commitRateEmpty      *bool
+	commitRateGt         *[]int32
+	commitRateGte        *[]int32
+	commitRateLt         *[]int32
+	commitRateLte        *[]int32
+	commitRateN          *[]int32
+	contact              *[]int32
+	contactN             *[]int32
+	contactGroup         *[]string
+	contactGroupN        *[]string
+	contactRole          *[]int32
+	contactRoleN         *[]int32
+	created              *[]time.Time
+	createdEmpty         *[]time.Time
+	createdGt            *[]time.Time
+	createdGte           *[]time.Time
+	createdLt            *[]time.Time
+	createdLte           *[]time.Time
+	createdN             *[]time.Time
+	createdByRequest     *string
+	description          *[]string
+	descriptionEmpty     *bool
+	descriptionIc        *[]string
+	descriptionIe        *[]string
+	descriptionIew       *[]string
+	descriptionIsw       *[]string
+	descriptionN         *[]string
+	descriptionNic       *[]string
+	descriptionNie       *[]string
+	descriptionNiew      *[]string
+	descriptionNisw      *[]string
+	id                   *[]int32
+	idEmpty              *bool
+	idGt                 *[]int32
+	idGte                *[]int32
+	idLt                 *[]int32
+	idLte                *[]int32
+	idN                  *[]int32
+	installDate          *[]string
+	installDateEmpty     *bool
+	installDateGt        *[]string
+	installDateGte       *[]string
+	installDateLt        *[]string
+	installDateLte       *[]string
+	installDateN         *[]string
+	lastUpdated          *[]time.Time
+	lastUpdatedEmpty     *[]time.Time
+	lastUpdatedGt        *[]time.Time
+	lastUpdatedGte       *[]time.Time
+	lastUpdatedLt        *[]time.Time
+	lastUpdatedLte       *[]time.Time
+	lastUpdatedN         *[]time.Time
+	limit                *int32
+	modifiedByRequest    *string
+	offset               *int32
+	ordering             *string
+	provider             *[]string
+	providerN            *[]string
+	providerAccount      *[]string
+	providerAccountN     *[]string
+	providerAccountId    *[]int32
+	providerAccountIdN   *[]int32
+	providerId           *[]int32
+	providerIdN          *[]int32
+	providerNetworkId    *[]int32
+	providerNetworkIdN   *[]int32
+	q                    *string
+	region               *[]string
+	regionN              *[]string
+	regionId             *[]string
+	regionIdN            *[]string
+	site                 *[]string
+	siteN                *[]string
+	siteGroup            *[]string
+	siteGroupN           *[]string
+	siteGroupId          *[]string
+	siteGroupIdN         *[]string
+	siteId               *[]int32
+	siteIdN              *[]int32
+	status               *[]string
+	statusEmpty          *bool
+	statusIc             *[]string
+	statusIe             *[]string
+	statusIew            *[]string
+	statusIsw            *[]string
+	statusN              *[]string
+	statusNic            *[]string
+	statusNie            *[]string
+	statusNiew           *[]string
+	statusNisw           *[]string
+	tag                  *[]string
+	tagN                 *[]string
+	tenant               *[]string
+	tenantN              *[]string
+	tenantGroup          *[]string
+	tenantGroupN         *[]string
+	tenantGroupId        *[]string
+	tenantGroupIdN       *[]string
+	tenantId             *[]*int32
+	tenantIdN            *[]*int32
+	terminationAId       *[]*int32
+	terminationAIdN      *[]*int32
+	terminationDate      *[]string
 	terminationDateEmpty *bool
-	terminationDateGt *[]string
-	terminationDateGte *[]string
-	terminationDateLt *[]string
-	terminationDateLte *[]string
-	terminationDateN *[]string
-	terminationZId *[]*int32
-	terminationZIdN *[]*int32
-	type_ *[]string
-	typeN *[]string
-	typeId *[]int32
-	typeIdN *[]int32
-	updatedByRequest *string
+	terminationDateGt    *[]string
+	terminationDateGte   *[]string
+	terminationDateLt    *[]string
+	terminationDateLte   *[]string
+	terminationDateN     *[]string
+	terminationZId       *[]*int32
+	terminationZIdN      *[]*int32
+	type_                *[]string
+	typeN                *[]string
+	typeId               *[]int32
+	typeIdN              *[]int32
+	updatedByRequest     *string
 }
 
 func (r ApiCircuitsCircuitsListRequest) Cid(cid []string) ApiCircuitsCircuitsListRequest {
@@ -10321,24 +10353,25 @@ CircuitsCircuitsList Method for CircuitsCircuitsList
 
 Get a list of circuit objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCircuitsCircuitsListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitsListRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitsList(ctx context.Context) ApiCircuitsCircuitsListRequest {
 	return ApiCircuitsCircuitsListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedCircuitList
+//
+//	@return PaginatedCircuitList
 func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsListRequest) (*PaginatedCircuitList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedCircuitList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedCircuitList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitsList")
@@ -10357,24 +10390,24 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cid", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cid", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "cid", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cid", t, "form", "multi")
 		}
 	}
 	if r.cidEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "cid__empty", r.cidEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "cid__empty", r.cidEmpty, "form", "")
 	}
 	if r.cidIc != nil {
 		t := *r.cidIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cid__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cid__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "cid__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cid__ic", t, "form", "multi")
 		}
 	}
 	if r.cidIe != nil {
@@ -10382,10 +10415,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cid__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cid__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "cid__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cid__ie", t, "form", "multi")
 		}
 	}
 	if r.cidIew != nil {
@@ -10393,10 +10426,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cid__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cid__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "cid__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cid__iew", t, "form", "multi")
 		}
 	}
 	if r.cidIsw != nil {
@@ -10404,10 +10437,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cid__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cid__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "cid__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cid__isw", t, "form", "multi")
 		}
 	}
 	if r.cidN != nil {
@@ -10415,10 +10448,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cid__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cid__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "cid__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cid__n", t, "form", "multi")
 		}
 	}
 	if r.cidNic != nil {
@@ -10426,10 +10459,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cid__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cid__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "cid__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cid__nic", t, "form", "multi")
 		}
 	}
 	if r.cidNie != nil {
@@ -10437,10 +10470,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cid__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cid__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "cid__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cid__nie", t, "form", "multi")
 		}
 	}
 	if r.cidNiew != nil {
@@ -10448,10 +10481,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cid__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cid__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "cid__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cid__niew", t, "form", "multi")
 		}
 	}
 	if r.cidNisw != nil {
@@ -10459,10 +10492,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cid__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cid__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "cid__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cid__nisw", t, "form", "multi")
 		}
 	}
 	if r.commitRate != nil {
@@ -10470,24 +10503,24 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "commit_rate", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "commit_rate", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "commit_rate", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "commit_rate", t, "form", "multi")
 		}
 	}
 	if r.commitRateEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "commit_rate__empty", r.commitRateEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "commit_rate__empty", r.commitRateEmpty, "form", "")
 	}
 	if r.commitRateGt != nil {
 		t := *r.commitRateGt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "commit_rate__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "commit_rate__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "commit_rate__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "commit_rate__gt", t, "form", "multi")
 		}
 	}
 	if r.commitRateGte != nil {
@@ -10495,10 +10528,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "commit_rate__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "commit_rate__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "commit_rate__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "commit_rate__gte", t, "form", "multi")
 		}
 	}
 	if r.commitRateLt != nil {
@@ -10506,10 +10539,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "commit_rate__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "commit_rate__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "commit_rate__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "commit_rate__lt", t, "form", "multi")
 		}
 	}
 	if r.commitRateLte != nil {
@@ -10517,10 +10550,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "commit_rate__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "commit_rate__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "commit_rate__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "commit_rate__lte", t, "form", "multi")
 		}
 	}
 	if r.commitRateN != nil {
@@ -10528,10 +10561,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "commit_rate__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "commit_rate__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "commit_rate__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "commit_rate__n", t, "form", "multi")
 		}
 	}
 	if r.contact != nil {
@@ -10539,10 +10572,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "contact", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "contact", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "contact", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "contact", t, "form", "multi")
 		}
 	}
 	if r.contactN != nil {
@@ -10550,10 +10583,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "contact__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "contact__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "contact__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "contact__n", t, "form", "multi")
 		}
 	}
 	if r.contactGroup != nil {
@@ -10561,10 +10594,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_group", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_group", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "contact_group", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "contact_group", t, "form", "multi")
 		}
 	}
 	if r.contactGroupN != nil {
@@ -10572,10 +10605,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_group__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_group__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "contact_group__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "contact_group__n", t, "form", "multi")
 		}
 	}
 	if r.contactRole != nil {
@@ -10583,10 +10616,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_role", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_role", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "contact_role", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "contact_role", t, "form", "multi")
 		}
 	}
 	if r.contactRoleN != nil {
@@ -10594,10 +10627,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_role__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_role__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "contact_role__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "contact_role__n", t, "form", "multi")
 		}
 	}
 	if r.created != nil {
@@ -10605,10 +10638,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "form", "multi")
 		}
 	}
 	if r.createdEmpty != nil {
@@ -10616,10 +10649,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "form", "multi")
 		}
 	}
 	if r.createdGt != nil {
@@ -10627,10 +10660,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "form", "multi")
 		}
 	}
 	if r.createdGte != nil {
@@ -10638,10 +10671,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "form", "multi")
 		}
 	}
 	if r.createdLt != nil {
@@ -10649,10 +10682,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "form", "multi")
 		}
 	}
 	if r.createdLte != nil {
@@ -10660,10 +10693,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "form", "multi")
 		}
 	}
 	if r.createdN != nil {
@@ -10671,38 +10704,38 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "form", "multi")
 		}
 	}
 	if r.createdByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_request", r.createdByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_request", r.createdByRequest, "form", "")
 	}
 	if r.description != nil {
 		t := *r.description
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "form", "multi")
 		}
 	}
 	if r.descriptionEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "description__empty", r.descriptionEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "description__empty", r.descriptionEmpty, "form", "")
 	}
 	if r.descriptionIc != nil {
 		t := *r.descriptionIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "form", "multi")
 		}
 	}
 	if r.descriptionIe != nil {
@@ -10710,10 +10743,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "form", "multi")
 		}
 	}
 	if r.descriptionIew != nil {
@@ -10721,10 +10754,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "form", "multi")
 		}
 	}
 	if r.descriptionIsw != nil {
@@ -10732,10 +10765,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "form", "multi")
 		}
 	}
 	if r.descriptionN != nil {
@@ -10743,10 +10776,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "form", "multi")
 		}
 	}
 	if r.descriptionNic != nil {
@@ -10754,10 +10787,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "form", "multi")
 		}
 	}
 	if r.descriptionNie != nil {
@@ -10765,10 +10798,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "form", "multi")
 		}
 	}
 	if r.descriptionNiew != nil {
@@ -10776,10 +10809,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "form", "multi")
 		}
 	}
 	if r.descriptionNisw != nil {
@@ -10787,10 +10820,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "form", "multi")
 		}
 	}
 	if r.id != nil {
@@ -10798,24 +10831,24 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "form", "multi")
 		}
 	}
 	if r.idEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "form", "")
 	}
 	if r.idGt != nil {
 		t := *r.idGt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "form", "multi")
 		}
 	}
 	if r.idGte != nil {
@@ -10823,10 +10856,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "form", "multi")
 		}
 	}
 	if r.idLt != nil {
@@ -10834,10 +10867,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "form", "multi")
 		}
 	}
 	if r.idLte != nil {
@@ -10845,10 +10878,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "form", "multi")
 		}
 	}
 	if r.idN != nil {
@@ -10856,10 +10889,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "form", "multi")
 		}
 	}
 	if r.installDate != nil {
@@ -10867,24 +10900,24 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "install_date", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "install_date", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "install_date", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "install_date", t, "form", "multi")
 		}
 	}
 	if r.installDateEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "install_date__empty", r.installDateEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "install_date__empty", r.installDateEmpty, "form", "")
 	}
 	if r.installDateGt != nil {
 		t := *r.installDateGt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "install_date__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "install_date__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "install_date__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "install_date__gt", t, "form", "multi")
 		}
 	}
 	if r.installDateGte != nil {
@@ -10892,10 +10925,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "install_date__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "install_date__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "install_date__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "install_date__gte", t, "form", "multi")
 		}
 	}
 	if r.installDateLt != nil {
@@ -10903,10 +10936,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "install_date__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "install_date__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "install_date__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "install_date__lt", t, "form", "multi")
 		}
 	}
 	if r.installDateLte != nil {
@@ -10914,10 +10947,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "install_date__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "install_date__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "install_date__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "install_date__lte", t, "form", "multi")
 		}
 	}
 	if r.installDateN != nil {
@@ -10925,10 +10958,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "install_date__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "install_date__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "install_date__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "install_date__n", t, "form", "multi")
 		}
 	}
 	if r.lastUpdated != nil {
@@ -10936,10 +10969,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedEmpty != nil {
@@ -10947,10 +10980,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedGt != nil {
@@ -10958,10 +10991,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedGte != nil {
@@ -10969,10 +11002,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedLt != nil {
@@ -10980,10 +11013,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedLte != nil {
@@ -10991,10 +11024,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedN != nil {
@@ -11002,33 +11035,33 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "form", "multi")
 		}
 	}
 	if r.limit != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
 	}
 	if r.modifiedByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "modified_by_request", r.modifiedByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "modified_by_request", r.modifiedByRequest, "form", "")
 	}
 	if r.offset != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "form", "")
 	}
 	if r.ordering != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "form", "")
 	}
 	if r.provider != nil {
 		t := *r.provider
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "provider", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "provider", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "provider", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "provider", t, "form", "multi")
 		}
 	}
 	if r.providerN != nil {
@@ -11036,10 +11069,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "provider__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "provider__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "provider__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "provider__n", t, "form", "multi")
 		}
 	}
 	if r.providerAccount != nil {
@@ -11047,10 +11080,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "provider_account", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "provider_account", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "provider_account", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "provider_account", t, "form", "multi")
 		}
 	}
 	if r.providerAccountN != nil {
@@ -11058,10 +11091,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "provider_account__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "provider_account__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "provider_account__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "provider_account__n", t, "form", "multi")
 		}
 	}
 	if r.providerAccountId != nil {
@@ -11069,10 +11102,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "provider_account_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "provider_account_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "provider_account_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "provider_account_id", t, "form", "multi")
 		}
 	}
 	if r.providerAccountIdN != nil {
@@ -11080,10 +11113,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "provider_account_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "provider_account_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "provider_account_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "provider_account_id__n", t, "form", "multi")
 		}
 	}
 	if r.providerId != nil {
@@ -11091,10 +11124,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "provider_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "provider_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "provider_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "provider_id", t, "form", "multi")
 		}
 	}
 	if r.providerIdN != nil {
@@ -11102,10 +11135,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "provider_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "provider_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "provider_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "provider_id__n", t, "form", "multi")
 		}
 	}
 	if r.providerNetworkId != nil {
@@ -11113,10 +11146,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "provider_network_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "provider_network_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "provider_network_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "provider_network_id", t, "form", "multi")
 		}
 	}
 	if r.providerNetworkIdN != nil {
@@ -11124,24 +11157,24 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "provider_network_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "provider_network_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "provider_network_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "provider_network_id__n", t, "form", "multi")
 		}
 	}
 	if r.q != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "form", "")
 	}
 	if r.region != nil {
 		t := *r.region
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "region", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "region", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "region", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "region", t, "form", "multi")
 		}
 	}
 	if r.regionN != nil {
@@ -11149,10 +11182,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "region__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "region__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "region__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "region__n", t, "form", "multi")
 		}
 	}
 	if r.regionId != nil {
@@ -11160,10 +11193,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "region_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "region_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "region_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "region_id", t, "form", "multi")
 		}
 	}
 	if r.regionIdN != nil {
@@ -11171,10 +11204,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "region_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "region_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "region_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "region_id__n", t, "form", "multi")
 		}
 	}
 	if r.site != nil {
@@ -11182,10 +11215,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "site", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "site", t, "form", "multi")
 		}
 	}
 	if r.siteN != nil {
@@ -11193,10 +11226,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "site__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "site__n", t, "form", "multi")
 		}
 	}
 	if r.siteGroup != nil {
@@ -11204,10 +11237,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "site_group", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "site_group", t, "form", "multi")
 		}
 	}
 	if r.siteGroupN != nil {
@@ -11215,10 +11248,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "site_group__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "site_group__n", t, "form", "multi")
 		}
 	}
 	if r.siteGroupId != nil {
@@ -11226,10 +11259,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id", t, "form", "multi")
 		}
 	}
 	if r.siteGroupIdN != nil {
@@ -11237,10 +11270,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id__n", t, "form", "multi")
 		}
 	}
 	if r.siteId != nil {
@@ -11248,10 +11281,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "site_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "site_id", t, "form", "multi")
 		}
 	}
 	if r.siteIdN != nil {
@@ -11259,10 +11292,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "site_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "site_id__n", t, "form", "multi")
 		}
 	}
 	if r.status != nil {
@@ -11270,24 +11303,24 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "status", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "status", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "status", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "status", t, "form", "multi")
 		}
 	}
 	if r.statusEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "status__empty", r.statusEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "status__empty", r.statusEmpty, "form", "")
 	}
 	if r.statusIc != nil {
 		t := *r.statusIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "status__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "status__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "status__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "status__ic", t, "form", "multi")
 		}
 	}
 	if r.statusIe != nil {
@@ -11295,10 +11328,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "status__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "status__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "status__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "status__ie", t, "form", "multi")
 		}
 	}
 	if r.statusIew != nil {
@@ -11306,10 +11339,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "status__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "status__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "status__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "status__iew", t, "form", "multi")
 		}
 	}
 	if r.statusIsw != nil {
@@ -11317,10 +11350,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "status__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "status__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "status__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "status__isw", t, "form", "multi")
 		}
 	}
 	if r.statusN != nil {
@@ -11328,10 +11361,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "status__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "status__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "status__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "status__n", t, "form", "multi")
 		}
 	}
 	if r.statusNic != nil {
@@ -11339,10 +11372,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "status__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "status__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "status__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "status__nic", t, "form", "multi")
 		}
 	}
 	if r.statusNie != nil {
@@ -11350,10 +11383,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "status__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "status__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "status__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "status__nie", t, "form", "multi")
 		}
 	}
 	if r.statusNiew != nil {
@@ -11361,10 +11394,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "status__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "status__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "status__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "status__niew", t, "form", "multi")
 		}
 	}
 	if r.statusNisw != nil {
@@ -11372,10 +11405,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "status__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "status__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "status__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "status__nisw", t, "form", "multi")
 		}
 	}
 	if r.tag != nil {
@@ -11383,10 +11416,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "form", "multi")
 		}
 	}
 	if r.tagN != nil {
@@ -11394,10 +11427,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "form", "multi")
 		}
 	}
 	if r.tenant != nil {
@@ -11405,10 +11438,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", t, "form", "multi")
 		}
 	}
 	if r.tenantN != nil {
@@ -11416,10 +11449,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", t, "form", "multi")
 		}
 	}
 	if r.tenantGroup != nil {
@@ -11427,10 +11460,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", t, "form", "multi")
 		}
 	}
 	if r.tenantGroupN != nil {
@@ -11438,10 +11471,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", t, "form", "multi")
 		}
 	}
 	if r.tenantGroupId != nil {
@@ -11449,10 +11482,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", t, "form", "multi")
 		}
 	}
 	if r.tenantGroupIdN != nil {
@@ -11460,10 +11493,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", t, "form", "multi")
 		}
 	}
 	if r.tenantId != nil {
@@ -11471,10 +11504,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", t, "form", "multi")
 		}
 	}
 	if r.tenantIdN != nil {
@@ -11482,10 +11515,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", t, "form", "multi")
 		}
 	}
 	if r.terminationAId != nil {
@@ -11493,10 +11526,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "termination_a_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "termination_a_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "termination_a_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "termination_a_id", t, "form", "multi")
 		}
 	}
 	if r.terminationAIdN != nil {
@@ -11504,10 +11537,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "termination_a_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "termination_a_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "termination_a_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "termination_a_id__n", t, "form", "multi")
 		}
 	}
 	if r.terminationDate != nil {
@@ -11515,24 +11548,24 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "termination_date", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "termination_date", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "termination_date", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "termination_date", t, "form", "multi")
 		}
 	}
 	if r.terminationDateEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "termination_date__empty", r.terminationDateEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "termination_date__empty", r.terminationDateEmpty, "form", "")
 	}
 	if r.terminationDateGt != nil {
 		t := *r.terminationDateGt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "termination_date__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "termination_date__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "termination_date__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "termination_date__gt", t, "form", "multi")
 		}
 	}
 	if r.terminationDateGte != nil {
@@ -11540,10 +11573,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "termination_date__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "termination_date__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "termination_date__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "termination_date__gte", t, "form", "multi")
 		}
 	}
 	if r.terminationDateLt != nil {
@@ -11551,10 +11584,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "termination_date__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "termination_date__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "termination_date__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "termination_date__lt", t, "form", "multi")
 		}
 	}
 	if r.terminationDateLte != nil {
@@ -11562,10 +11595,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "termination_date__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "termination_date__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "termination_date__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "termination_date__lte", t, "form", "multi")
 		}
 	}
 	if r.terminationDateN != nil {
@@ -11573,10 +11606,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "termination_date__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "termination_date__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "termination_date__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "termination_date__n", t, "form", "multi")
 		}
 	}
 	if r.terminationZId != nil {
@@ -11584,10 +11617,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "termination_z_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "termination_z_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "termination_z_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "termination_z_id", t, "form", "multi")
 		}
 	}
 	if r.terminationZIdN != nil {
@@ -11595,10 +11628,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "termination_z_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "termination_z_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "termination_z_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "termination_z_id__n", t, "form", "multi")
 		}
 	}
 	if r.type_ != nil {
@@ -11606,10 +11639,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "type", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "type", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "type", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "type", t, "form", "multi")
 		}
 	}
 	if r.typeN != nil {
@@ -11617,10 +11650,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "type__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "type__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "type__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "type__n", t, "form", "multi")
 		}
 	}
 	if r.typeId != nil {
@@ -11628,10 +11661,10 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "type_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "type_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "type_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "type_id", t, "form", "multi")
 		}
 	}
 	if r.typeIdN != nil {
@@ -11639,14 +11672,14 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "type_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "type_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "type_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "type_id__n", t, "form", "multi")
 		}
 	}
 	if r.updatedByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "updated_by_request", r.updatedByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "updated_by_request", r.updatedByRequest, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -11717,9 +11750,9 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 }
 
 type ApiCircuitsCircuitsPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
-	id int32
+	ctx                           context.Context
+	ApiService                    *CircuitsAPIService
+	id                            int32
 	patchedWritableCircuitRequest *PatchedWritableCircuitRequest
 }
 
@@ -11737,26 +11770,27 @@ CircuitsCircuitsPartialUpdate Method for CircuitsCircuitsPartialUpdate
 
 Patch a circuit object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this circuit.
- @return ApiCircuitsCircuitsPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this circuit.
+	@return ApiCircuitsCircuitsPartialUpdateRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitsPartialUpdate(ctx context.Context, id int32) ApiCircuitsCircuitsPartialUpdateRequest {
 	return ApiCircuitsCircuitsPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Circuit
+//
+//	@return Circuit
 func (a *CircuitsAPIService) CircuitsCircuitsPartialUpdateExecute(r ApiCircuitsCircuitsPartialUpdateRequest) (*Circuit, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Circuit
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Circuit
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitsPartialUpdate")
@@ -11842,9 +11876,9 @@ func (a *CircuitsAPIService) CircuitsCircuitsPartialUpdateExecute(r ApiCircuitsC
 }
 
 type ApiCircuitsCircuitsRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CircuitsAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiCircuitsCircuitsRetrieveRequest) Execute() (*Circuit, *http.Response, error) {
@@ -11856,26 +11890,27 @@ CircuitsCircuitsRetrieve Method for CircuitsCircuitsRetrieve
 
 Get a circuit object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this circuit.
- @return ApiCircuitsCircuitsRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this circuit.
+	@return ApiCircuitsCircuitsRetrieveRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitsRetrieve(ctx context.Context, id int32) ApiCircuitsCircuitsRetrieveRequest {
 	return ApiCircuitsCircuitsRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Circuit
+//
+//	@return Circuit
 func (a *CircuitsAPIService) CircuitsCircuitsRetrieveExecute(r ApiCircuitsCircuitsRetrieveRequest) (*Circuit, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Circuit
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Circuit
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitsRetrieve")
@@ -11959,9 +11994,9 @@ func (a *CircuitsAPIService) CircuitsCircuitsRetrieveExecute(r ApiCircuitsCircui
 }
 
 type ApiCircuitsCircuitsUpdateRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
-	id int32
+	ctx                    context.Context
+	ApiService             *CircuitsAPIService
+	id                     int32
 	writableCircuitRequest *WritableCircuitRequest
 }
 
@@ -11979,26 +12014,27 @@ CircuitsCircuitsUpdate Method for CircuitsCircuitsUpdate
 
 Put a circuit object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this circuit.
- @return ApiCircuitsCircuitsUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this circuit.
+	@return ApiCircuitsCircuitsUpdateRequest
 */
 func (a *CircuitsAPIService) CircuitsCircuitsUpdate(ctx context.Context, id int32) ApiCircuitsCircuitsUpdateRequest {
 	return ApiCircuitsCircuitsUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Circuit
+//
+//	@return Circuit
 func (a *CircuitsAPIService) CircuitsCircuitsUpdateExecute(r ApiCircuitsCircuitsUpdateRequest) (*Circuit, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Circuit
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Circuit
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsCircuitsUpdate")
@@ -12087,8 +12123,8 @@ func (a *CircuitsAPIService) CircuitsCircuitsUpdateExecute(r ApiCircuitsCircuits
 }
 
 type ApiCircuitsProviderAccountsBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
+	ctx                    context.Context
+	ApiService             *CircuitsAPIService
 	providerAccountRequest *[]ProviderAccountRequest
 }
 
@@ -12106,22 +12142,22 @@ CircuitsProviderAccountsBulkDestroy Method for CircuitsProviderAccountsBulkDestr
 
 Delete a list of provider account objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCircuitsProviderAccountsBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsProviderAccountsBulkDestroyRequest
 */
 func (a *CircuitsAPIService) CircuitsProviderAccountsBulkDestroy(ctx context.Context) ApiCircuitsProviderAccountsBulkDestroyRequest {
 	return ApiCircuitsProviderAccountsBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *CircuitsAPIService) CircuitsProviderAccountsBulkDestroyExecute(r ApiCircuitsProviderAccountsBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsProviderAccountsBulkDestroy")
@@ -12200,8 +12236,8 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsBulkDestroyExecute(r ApiCir
 }
 
 type ApiCircuitsProviderAccountsBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
+	ctx                    context.Context
+	ApiService             *CircuitsAPIService
 	providerAccountRequest *[]ProviderAccountRequest
 }
 
@@ -12219,24 +12255,25 @@ CircuitsProviderAccountsBulkPartialUpdate Method for CircuitsProviderAccountsBul
 
 Patch a list of provider account objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCircuitsProviderAccountsBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsProviderAccountsBulkPartialUpdateRequest
 */
 func (a *CircuitsAPIService) CircuitsProviderAccountsBulkPartialUpdate(ctx context.Context) ApiCircuitsProviderAccountsBulkPartialUpdateRequest {
 	return ApiCircuitsProviderAccountsBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []ProviderAccount
+//
+//	@return []ProviderAccount
 func (a *CircuitsAPIService) CircuitsProviderAccountsBulkPartialUpdateExecute(r ApiCircuitsProviderAccountsBulkPartialUpdateRequest) ([]ProviderAccount, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ProviderAccount
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ProviderAccount
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsProviderAccountsBulkPartialUpdate")
@@ -12324,8 +12361,8 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsBulkPartialUpdateExecute(r 
 }
 
 type ApiCircuitsProviderAccountsBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
+	ctx                    context.Context
+	ApiService             *CircuitsAPIService
 	providerAccountRequest *[]ProviderAccountRequest
 }
 
@@ -12343,24 +12380,25 @@ CircuitsProviderAccountsBulkUpdate Method for CircuitsProviderAccountsBulkUpdate
 
 Put a list of provider account objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCircuitsProviderAccountsBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsProviderAccountsBulkUpdateRequest
 */
 func (a *CircuitsAPIService) CircuitsProviderAccountsBulkUpdate(ctx context.Context) ApiCircuitsProviderAccountsBulkUpdateRequest {
 	return ApiCircuitsProviderAccountsBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []ProviderAccount
+//
+//	@return []ProviderAccount
 func (a *CircuitsAPIService) CircuitsProviderAccountsBulkUpdateExecute(r ApiCircuitsProviderAccountsBulkUpdateRequest) ([]ProviderAccount, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ProviderAccount
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ProviderAccount
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsProviderAccountsBulkUpdate")
@@ -12448,8 +12486,8 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsBulkUpdateExecute(r ApiCirc
 }
 
 type ApiCircuitsProviderAccountsCreateRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
+	ctx                    context.Context
+	ApiService             *CircuitsAPIService
 	providerAccountRequest *ProviderAccountRequest
 }
 
@@ -12467,24 +12505,25 @@ CircuitsProviderAccountsCreate Method for CircuitsProviderAccountsCreate
 
 Post a list of provider account objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCircuitsProviderAccountsCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsProviderAccountsCreateRequest
 */
 func (a *CircuitsAPIService) CircuitsProviderAccountsCreate(ctx context.Context) ApiCircuitsProviderAccountsCreateRequest {
 	return ApiCircuitsProviderAccountsCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ProviderAccount
+//
+//	@return ProviderAccount
 func (a *CircuitsAPIService) CircuitsProviderAccountsCreateExecute(r ApiCircuitsProviderAccountsCreateRequest) (*ProviderAccount, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ProviderAccount
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ProviderAccount
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsProviderAccountsCreate")
@@ -12572,9 +12611,9 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsCreateExecute(r ApiCircuits
 }
 
 type ApiCircuitsProviderAccountsDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CircuitsAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiCircuitsProviderAccountsDestroyRequest) Execute() (*http.Response, error) {
@@ -12586,24 +12625,24 @@ CircuitsProviderAccountsDestroy Method for CircuitsProviderAccountsDestroy
 
 Delete a provider account object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this provider account.
- @return ApiCircuitsProviderAccountsDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this provider account.
+	@return ApiCircuitsProviderAccountsDestroyRequest
 */
 func (a *CircuitsAPIService) CircuitsProviderAccountsDestroy(ctx context.Context, id int32) ApiCircuitsProviderAccountsDestroyRequest {
 	return ApiCircuitsProviderAccountsDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *CircuitsAPIService) CircuitsProviderAccountsDestroyExecute(r ApiCircuitsProviderAccountsDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsProviderAccountsDestroy")
@@ -12678,75 +12717,75 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsDestroyExecute(r ApiCircuit
 }
 
 type ApiCircuitsProviderAccountsListRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
-	account *[]string
-	accountEmpty *bool
-	accountIc *[]string
-	accountIe *[]string
-	accountIew *[]string
-	accountIsw *[]string
-	accountN *[]string
-	accountNic *[]string
-	accountNie *[]string
-	accountNiew *[]string
-	accountNisw *[]string
-	created *[]time.Time
-	createdEmpty *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
-	createdByRequest *string
-	description *[]string
-	descriptionEmpty *bool
-	descriptionIc *[]string
-	descriptionIe *[]string
-	descriptionIew *[]string
-	descriptionIsw *[]string
-	descriptionN *[]string
-	descriptionNic *[]string
-	descriptionNie *[]string
-	descriptionNiew *[]string
-	descriptionNisw *[]string
-	id *[]int32
-	idEmpty *bool
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedEmpty *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
+	ctx               context.Context
+	ApiService        *CircuitsAPIService
+	account           *[]string
+	accountEmpty      *bool
+	accountIc         *[]string
+	accountIe         *[]string
+	accountIew        *[]string
+	accountIsw        *[]string
+	accountN          *[]string
+	accountNic        *[]string
+	accountNie        *[]string
+	accountNiew       *[]string
+	accountNisw       *[]string
+	created           *[]time.Time
+	createdEmpty      *[]time.Time
+	createdGt         *[]time.Time
+	createdGte        *[]time.Time
+	createdLt         *[]time.Time
+	createdLte        *[]time.Time
+	createdN          *[]time.Time
+	createdByRequest  *string
+	description       *[]string
+	descriptionEmpty  *bool
+	descriptionIc     *[]string
+	descriptionIe     *[]string
+	descriptionIew    *[]string
+	descriptionIsw    *[]string
+	descriptionN      *[]string
+	descriptionNic    *[]string
+	descriptionNie    *[]string
+	descriptionNiew   *[]string
+	descriptionNisw   *[]string
+	id                *[]int32
+	idEmpty           *bool
+	idGt              *[]int32
+	idGte             *[]int32
+	idLt              *[]int32
+	idLte             *[]int32
+	idN               *[]int32
+	lastUpdated       *[]time.Time
+	lastUpdatedEmpty  *[]time.Time
+	lastUpdatedGt     *[]time.Time
+	lastUpdatedGte    *[]time.Time
+	lastUpdatedLt     *[]time.Time
+	lastUpdatedLte    *[]time.Time
+	lastUpdatedN      *[]time.Time
+	limit             *int32
 	modifiedByRequest *string
-	name *[]string
-	nameEmpty *bool
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	offset *int32
-	ordering *string
-	provider *[]string
-	providerN *[]string
-	providerId *[]int32
-	providerIdN *[]int32
-	q *string
-	tag *[]string
-	tagN *[]string
-	updatedByRequest *string
+	name              *[]string
+	nameEmpty         *bool
+	nameIc            *[]string
+	nameIe            *[]string
+	nameIew           *[]string
+	nameIsw           *[]string
+	nameN             *[]string
+	nameNic           *[]string
+	nameNie           *[]string
+	nameNiew          *[]string
+	nameNisw          *[]string
+	offset            *int32
+	ordering          *string
+	provider          *[]string
+	providerN         *[]string
+	providerId        *[]int32
+	providerIdN       *[]int32
+	q                 *string
+	tag               *[]string
+	tagN              *[]string
+	updatedByRequest  *string
 }
 
 func (r ApiCircuitsProviderAccountsListRequest) Account(account []string) ApiCircuitsProviderAccountsListRequest {
@@ -13101,24 +13140,25 @@ CircuitsProviderAccountsList Method for CircuitsProviderAccountsList
 
 Get a list of provider account objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCircuitsProviderAccountsListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsProviderAccountsListRequest
 */
 func (a *CircuitsAPIService) CircuitsProviderAccountsList(ctx context.Context) ApiCircuitsProviderAccountsListRequest {
 	return ApiCircuitsProviderAccountsListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedProviderAccountList
+//
+//	@return PaginatedProviderAccountList
 func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsProviderAccountsListRequest) (*PaginatedProviderAccountList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedProviderAccountList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedProviderAccountList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsProviderAccountsList")
@@ -13137,24 +13177,24 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "account", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "account", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "account", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "account", t, "form", "multi")
 		}
 	}
 	if r.accountEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "account__empty", r.accountEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "account__empty", r.accountEmpty, "form", "")
 	}
 	if r.accountIc != nil {
 		t := *r.accountIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "account__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "account__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "account__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "account__ic", t, "form", "multi")
 		}
 	}
 	if r.accountIe != nil {
@@ -13162,10 +13202,10 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "account__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "account__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "account__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "account__ie", t, "form", "multi")
 		}
 	}
 	if r.accountIew != nil {
@@ -13173,10 +13213,10 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "account__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "account__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "account__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "account__iew", t, "form", "multi")
 		}
 	}
 	if r.accountIsw != nil {
@@ -13184,10 +13224,10 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "account__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "account__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "account__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "account__isw", t, "form", "multi")
 		}
 	}
 	if r.accountN != nil {
@@ -13195,10 +13235,10 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "account__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "account__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "account__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "account__n", t, "form", "multi")
 		}
 	}
 	if r.accountNic != nil {
@@ -13206,10 +13246,10 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "account__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "account__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "account__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "account__nic", t, "form", "multi")
 		}
 	}
 	if r.accountNie != nil {
@@ -13217,10 +13257,10 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "account__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "account__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "account__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "account__nie", t, "form", "multi")
 		}
 	}
 	if r.accountNiew != nil {
@@ -13228,10 +13268,10 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "account__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "account__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "account__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "account__niew", t, "form", "multi")
 		}
 	}
 	if r.accountNisw != nil {
@@ -13239,10 +13279,10 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "account__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "account__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "account__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "account__nisw", t, "form", "multi")
 		}
 	}
 	if r.created != nil {
@@ -13250,10 +13290,10 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "form", "multi")
 		}
 	}
 	if r.createdEmpty != nil {
@@ -13261,10 +13301,10 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "form", "multi")
 		}
 	}
 	if r.createdGt != nil {
@@ -13272,10 +13312,10 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "form", "multi")
 		}
 	}
 	if r.createdGte != nil {
@@ -13283,10 +13323,10 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "form", "multi")
 		}
 	}
 	if r.createdLt != nil {
@@ -13294,10 +13334,10 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "form", "multi")
 		}
 	}
 	if r.createdLte != nil {
@@ -13305,10 +13345,10 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "form", "multi")
 		}
 	}
 	if r.createdN != nil {
@@ -13316,38 +13356,38 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "form", "multi")
 		}
 	}
 	if r.createdByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_request", r.createdByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_request", r.createdByRequest, "form", "")
 	}
 	if r.description != nil {
 		t := *r.description
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "form", "multi")
 		}
 	}
 	if r.descriptionEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "description__empty", r.descriptionEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "description__empty", r.descriptionEmpty, "form", "")
 	}
 	if r.descriptionIc != nil {
 		t := *r.descriptionIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "form", "multi")
 		}
 	}
 	if r.descriptionIe != nil {
@@ -13355,10 +13395,10 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "form", "multi")
 		}
 	}
 	if r.descriptionIew != nil {
@@ -13366,10 +13406,10 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "form", "multi")
 		}
 	}
 	if r.descriptionIsw != nil {
@@ -13377,10 +13417,10 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "form", "multi")
 		}
 	}
 	if r.descriptionN != nil {
@@ -13388,10 +13428,10 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "form", "multi")
 		}
 	}
 	if r.descriptionNic != nil {
@@ -13399,10 +13439,10 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "form", "multi")
 		}
 	}
 	if r.descriptionNie != nil {
@@ -13410,10 +13450,10 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "form", "multi")
 		}
 	}
 	if r.descriptionNiew != nil {
@@ -13421,10 +13461,10 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "form", "multi")
 		}
 	}
 	if r.descriptionNisw != nil {
@@ -13432,10 +13472,10 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "form", "multi")
 		}
 	}
 	if r.id != nil {
@@ -13443,24 +13483,24 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "form", "multi")
 		}
 	}
 	if r.idEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "form", "")
 	}
 	if r.idGt != nil {
 		t := *r.idGt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "form", "multi")
 		}
 	}
 	if r.idGte != nil {
@@ -13468,10 +13508,10 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "form", "multi")
 		}
 	}
 	if r.idLt != nil {
@@ -13479,10 +13519,10 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "form", "multi")
 		}
 	}
 	if r.idLte != nil {
@@ -13490,10 +13530,10 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "form", "multi")
 		}
 	}
 	if r.idN != nil {
@@ -13501,10 +13541,10 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "form", "multi")
 		}
 	}
 	if r.lastUpdated != nil {
@@ -13512,10 +13552,10 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedEmpty != nil {
@@ -13523,10 +13563,10 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedGt != nil {
@@ -13534,10 +13574,10 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedGte != nil {
@@ -13545,10 +13585,10 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedLt != nil {
@@ -13556,10 +13596,10 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedLte != nil {
@@ -13567,10 +13607,10 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedN != nil {
@@ -13578,41 +13618,41 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "form", "multi")
 		}
 	}
 	if r.limit != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
 	}
 	if r.modifiedByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "modified_by_request", r.modifiedByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "modified_by_request", r.modifiedByRequest, "form", "")
 	}
 	if r.name != nil {
 		t := *r.name
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "form", "multi")
 		}
 	}
 	if r.nameEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "name__empty", r.nameEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "name__empty", r.nameEmpty, "form", "")
 	}
 	if r.nameIc != nil {
 		t := *r.nameIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "form", "multi")
 		}
 	}
 	if r.nameIe != nil {
@@ -13620,10 +13660,10 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "form", "multi")
 		}
 	}
 	if r.nameIew != nil {
@@ -13631,10 +13671,10 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "form", "multi")
 		}
 	}
 	if r.nameIsw != nil {
@@ -13642,10 +13682,10 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "form", "multi")
 		}
 	}
 	if r.nameN != nil {
@@ -13653,10 +13693,10 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "form", "multi")
 		}
 	}
 	if r.nameNic != nil {
@@ -13664,10 +13704,10 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "form", "multi")
 		}
 	}
 	if r.nameNie != nil {
@@ -13675,10 +13715,10 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "form", "multi")
 		}
 	}
 	if r.nameNiew != nil {
@@ -13686,10 +13726,10 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "form", "multi")
 		}
 	}
 	if r.nameNisw != nil {
@@ -13697,27 +13737,27 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "form", "multi")
 		}
 	}
 	if r.offset != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "form", "")
 	}
 	if r.ordering != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "form", "")
 	}
 	if r.provider != nil {
 		t := *r.provider
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "provider", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "provider", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "provider", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "provider", t, "form", "multi")
 		}
 	}
 	if r.providerN != nil {
@@ -13725,10 +13765,10 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "provider__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "provider__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "provider__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "provider__n", t, "form", "multi")
 		}
 	}
 	if r.providerId != nil {
@@ -13736,10 +13776,10 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "provider_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "provider_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "provider_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "provider_id", t, "form", "multi")
 		}
 	}
 	if r.providerIdN != nil {
@@ -13747,24 +13787,24 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "provider_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "provider_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "provider_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "provider_id__n", t, "form", "multi")
 		}
 	}
 	if r.q != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "form", "")
 	}
 	if r.tag != nil {
 		t := *r.tag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "form", "multi")
 		}
 	}
 	if r.tagN != nil {
@@ -13772,14 +13812,14 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "form", "multi")
 		}
 	}
 	if r.updatedByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "updated_by_request", r.updatedByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "updated_by_request", r.updatedByRequest, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -13850,9 +13890,9 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 }
 
 type ApiCircuitsProviderAccountsPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
-	id int32
+	ctx                           context.Context
+	ApiService                    *CircuitsAPIService
+	id                            int32
 	patchedProviderAccountRequest *PatchedProviderAccountRequest
 }
 
@@ -13870,26 +13910,27 @@ CircuitsProviderAccountsPartialUpdate Method for CircuitsProviderAccountsPartial
 
 Patch a provider account object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this provider account.
- @return ApiCircuitsProviderAccountsPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this provider account.
+	@return ApiCircuitsProviderAccountsPartialUpdateRequest
 */
 func (a *CircuitsAPIService) CircuitsProviderAccountsPartialUpdate(ctx context.Context, id int32) ApiCircuitsProviderAccountsPartialUpdateRequest {
 	return ApiCircuitsProviderAccountsPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ProviderAccount
+//
+//	@return ProviderAccount
 func (a *CircuitsAPIService) CircuitsProviderAccountsPartialUpdateExecute(r ApiCircuitsProviderAccountsPartialUpdateRequest) (*ProviderAccount, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ProviderAccount
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ProviderAccount
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsProviderAccountsPartialUpdate")
@@ -13975,9 +14016,9 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsPartialUpdateExecute(r ApiC
 }
 
 type ApiCircuitsProviderAccountsRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CircuitsAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiCircuitsProviderAccountsRetrieveRequest) Execute() (*ProviderAccount, *http.Response, error) {
@@ -13989,26 +14030,27 @@ CircuitsProviderAccountsRetrieve Method for CircuitsProviderAccountsRetrieve
 
 Get a provider account object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this provider account.
- @return ApiCircuitsProviderAccountsRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this provider account.
+	@return ApiCircuitsProviderAccountsRetrieveRequest
 */
 func (a *CircuitsAPIService) CircuitsProviderAccountsRetrieve(ctx context.Context, id int32) ApiCircuitsProviderAccountsRetrieveRequest {
 	return ApiCircuitsProviderAccountsRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ProviderAccount
+//
+//	@return ProviderAccount
 func (a *CircuitsAPIService) CircuitsProviderAccountsRetrieveExecute(r ApiCircuitsProviderAccountsRetrieveRequest) (*ProviderAccount, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ProviderAccount
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ProviderAccount
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsProviderAccountsRetrieve")
@@ -14092,9 +14134,9 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsRetrieveExecute(r ApiCircui
 }
 
 type ApiCircuitsProviderAccountsUpdateRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
-	id int32
+	ctx                    context.Context
+	ApiService             *CircuitsAPIService
+	id                     int32
 	providerAccountRequest *ProviderAccountRequest
 }
 
@@ -14112,26 +14154,27 @@ CircuitsProviderAccountsUpdate Method for CircuitsProviderAccountsUpdate
 
 Put a provider account object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this provider account.
- @return ApiCircuitsProviderAccountsUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this provider account.
+	@return ApiCircuitsProviderAccountsUpdateRequest
 */
 func (a *CircuitsAPIService) CircuitsProviderAccountsUpdate(ctx context.Context, id int32) ApiCircuitsProviderAccountsUpdateRequest {
 	return ApiCircuitsProviderAccountsUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ProviderAccount
+//
+//	@return ProviderAccount
 func (a *CircuitsAPIService) CircuitsProviderAccountsUpdateExecute(r ApiCircuitsProviderAccountsUpdateRequest) (*ProviderAccount, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ProviderAccount
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ProviderAccount
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsProviderAccountsUpdate")
@@ -14220,8 +14263,8 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsUpdateExecute(r ApiCircuits
 }
 
 type ApiCircuitsProviderNetworksBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
+	ctx                    context.Context
+	ApiService             *CircuitsAPIService
 	providerNetworkRequest *[]ProviderNetworkRequest
 }
 
@@ -14239,22 +14282,22 @@ CircuitsProviderNetworksBulkDestroy Method for CircuitsProviderNetworksBulkDestr
 
 Delete a list of provider network objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCircuitsProviderNetworksBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsProviderNetworksBulkDestroyRequest
 */
 func (a *CircuitsAPIService) CircuitsProviderNetworksBulkDestroy(ctx context.Context) ApiCircuitsProviderNetworksBulkDestroyRequest {
 	return ApiCircuitsProviderNetworksBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *CircuitsAPIService) CircuitsProviderNetworksBulkDestroyExecute(r ApiCircuitsProviderNetworksBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsProviderNetworksBulkDestroy")
@@ -14333,8 +14376,8 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksBulkDestroyExecute(r ApiCir
 }
 
 type ApiCircuitsProviderNetworksBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
+	ctx                    context.Context
+	ApiService             *CircuitsAPIService
 	providerNetworkRequest *[]ProviderNetworkRequest
 }
 
@@ -14352,24 +14395,25 @@ CircuitsProviderNetworksBulkPartialUpdate Method for CircuitsProviderNetworksBul
 
 Patch a list of provider network objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCircuitsProviderNetworksBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsProviderNetworksBulkPartialUpdateRequest
 */
 func (a *CircuitsAPIService) CircuitsProviderNetworksBulkPartialUpdate(ctx context.Context) ApiCircuitsProviderNetworksBulkPartialUpdateRequest {
 	return ApiCircuitsProviderNetworksBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []ProviderNetwork
+//
+//	@return []ProviderNetwork
 func (a *CircuitsAPIService) CircuitsProviderNetworksBulkPartialUpdateExecute(r ApiCircuitsProviderNetworksBulkPartialUpdateRequest) ([]ProviderNetwork, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ProviderNetwork
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ProviderNetwork
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsProviderNetworksBulkPartialUpdate")
@@ -14457,8 +14501,8 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksBulkPartialUpdateExecute(r 
 }
 
 type ApiCircuitsProviderNetworksBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
+	ctx                    context.Context
+	ApiService             *CircuitsAPIService
 	providerNetworkRequest *[]ProviderNetworkRequest
 }
 
@@ -14476,24 +14520,25 @@ CircuitsProviderNetworksBulkUpdate Method for CircuitsProviderNetworksBulkUpdate
 
 Put a list of provider network objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCircuitsProviderNetworksBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsProviderNetworksBulkUpdateRequest
 */
 func (a *CircuitsAPIService) CircuitsProviderNetworksBulkUpdate(ctx context.Context) ApiCircuitsProviderNetworksBulkUpdateRequest {
 	return ApiCircuitsProviderNetworksBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []ProviderNetwork
+//
+//	@return []ProviderNetwork
 func (a *CircuitsAPIService) CircuitsProviderNetworksBulkUpdateExecute(r ApiCircuitsProviderNetworksBulkUpdateRequest) ([]ProviderNetwork, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ProviderNetwork
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ProviderNetwork
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsProviderNetworksBulkUpdate")
@@ -14581,8 +14626,8 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksBulkUpdateExecute(r ApiCirc
 }
 
 type ApiCircuitsProviderNetworksCreateRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
+	ctx                    context.Context
+	ApiService             *CircuitsAPIService
 	providerNetworkRequest *ProviderNetworkRequest
 }
 
@@ -14600,24 +14645,25 @@ CircuitsProviderNetworksCreate Method for CircuitsProviderNetworksCreate
 
 Post a list of provider network objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCircuitsProviderNetworksCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsProviderNetworksCreateRequest
 */
 func (a *CircuitsAPIService) CircuitsProviderNetworksCreate(ctx context.Context) ApiCircuitsProviderNetworksCreateRequest {
 	return ApiCircuitsProviderNetworksCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ProviderNetwork
+//
+//	@return ProviderNetwork
 func (a *CircuitsAPIService) CircuitsProviderNetworksCreateExecute(r ApiCircuitsProviderNetworksCreateRequest) (*ProviderNetwork, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ProviderNetwork
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ProviderNetwork
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsProviderNetworksCreate")
@@ -14705,9 +14751,9 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksCreateExecute(r ApiCircuits
 }
 
 type ApiCircuitsProviderNetworksDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CircuitsAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiCircuitsProviderNetworksDestroyRequest) Execute() (*http.Response, error) {
@@ -14719,24 +14765,24 @@ CircuitsProviderNetworksDestroy Method for CircuitsProviderNetworksDestroy
 
 Delete a provider network object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this provider network.
- @return ApiCircuitsProviderNetworksDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this provider network.
+	@return ApiCircuitsProviderNetworksDestroyRequest
 */
 func (a *CircuitsAPIService) CircuitsProviderNetworksDestroy(ctx context.Context, id int32) ApiCircuitsProviderNetworksDestroyRequest {
 	return ApiCircuitsProviderNetworksDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *CircuitsAPIService) CircuitsProviderNetworksDestroyExecute(r ApiCircuitsProviderNetworksDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsProviderNetworksDestroy")
@@ -14811,75 +14857,75 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksDestroyExecute(r ApiCircuit
 }
 
 type ApiCircuitsProviderNetworksListRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
-	created *[]time.Time
-	createdEmpty *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
-	createdByRequest *string
-	description *[]string
-	descriptionEmpty *bool
-	descriptionIc *[]string
-	descriptionIe *[]string
-	descriptionIew *[]string
-	descriptionIsw *[]string
-	descriptionN *[]string
-	descriptionNic *[]string
-	descriptionNie *[]string
-	descriptionNiew *[]string
-	descriptionNisw *[]string
-	id *[]int32
-	idEmpty *bool
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedEmpty *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
+	ctx               context.Context
+	ApiService        *CircuitsAPIService
+	created           *[]time.Time
+	createdEmpty      *[]time.Time
+	createdGt         *[]time.Time
+	createdGte        *[]time.Time
+	createdLt         *[]time.Time
+	createdLte        *[]time.Time
+	createdN          *[]time.Time
+	createdByRequest  *string
+	description       *[]string
+	descriptionEmpty  *bool
+	descriptionIc     *[]string
+	descriptionIe     *[]string
+	descriptionIew    *[]string
+	descriptionIsw    *[]string
+	descriptionN      *[]string
+	descriptionNic    *[]string
+	descriptionNie    *[]string
+	descriptionNiew   *[]string
+	descriptionNisw   *[]string
+	id                *[]int32
+	idEmpty           *bool
+	idGt              *[]int32
+	idGte             *[]int32
+	idLt              *[]int32
+	idLte             *[]int32
+	idN               *[]int32
+	lastUpdated       *[]time.Time
+	lastUpdatedEmpty  *[]time.Time
+	lastUpdatedGt     *[]time.Time
+	lastUpdatedGte    *[]time.Time
+	lastUpdatedLt     *[]time.Time
+	lastUpdatedLte    *[]time.Time
+	lastUpdatedN      *[]time.Time
+	limit             *int32
 	modifiedByRequest *string
-	name *[]string
-	nameEmpty *bool
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	offset *int32
-	ordering *string
-	provider *[]string
-	providerN *[]string
-	providerId *[]int32
-	providerIdN *[]int32
-	q *string
-	serviceId *[]string
-	serviceIdEmpty *bool
-	serviceIdIc *[]string
-	serviceIdIe *[]string
-	serviceIdIew *[]string
-	serviceIdIsw *[]string
-	serviceIdN *[]string
-	serviceIdNic *[]string
-	serviceIdNie *[]string
-	serviceIdNiew *[]string
-	serviceIdNisw *[]string
-	tag *[]string
-	tagN *[]string
-	updatedByRequest *string
+	name              *[]string
+	nameEmpty         *bool
+	nameIc            *[]string
+	nameIe            *[]string
+	nameIew           *[]string
+	nameIsw           *[]string
+	nameN             *[]string
+	nameNic           *[]string
+	nameNie           *[]string
+	nameNiew          *[]string
+	nameNisw          *[]string
+	offset            *int32
+	ordering          *string
+	provider          *[]string
+	providerN         *[]string
+	providerId        *[]int32
+	providerIdN       *[]int32
+	q                 *string
+	serviceId         *[]string
+	serviceIdEmpty    *bool
+	serviceIdIc       *[]string
+	serviceIdIe       *[]string
+	serviceIdIew      *[]string
+	serviceIdIsw      *[]string
+	serviceIdN        *[]string
+	serviceIdNic      *[]string
+	serviceIdNie      *[]string
+	serviceIdNiew     *[]string
+	serviceIdNisw     *[]string
+	tag               *[]string
+	tagN              *[]string
+	updatedByRequest  *string
 }
 
 func (r ApiCircuitsProviderNetworksListRequest) Created(created []time.Time) ApiCircuitsProviderNetworksListRequest {
@@ -15234,24 +15280,25 @@ CircuitsProviderNetworksList Method for CircuitsProviderNetworksList
 
 Get a list of provider network objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCircuitsProviderNetworksListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsProviderNetworksListRequest
 */
 func (a *CircuitsAPIService) CircuitsProviderNetworksList(ctx context.Context) ApiCircuitsProviderNetworksListRequest {
 	return ApiCircuitsProviderNetworksListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedProviderNetworkList
+//
+//	@return PaginatedProviderNetworkList
 func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsProviderNetworksListRequest) (*PaginatedProviderNetworkList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedProviderNetworkList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedProviderNetworkList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsProviderNetworksList")
@@ -15270,10 +15317,10 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "form", "multi")
 		}
 	}
 	if r.createdEmpty != nil {
@@ -15281,10 +15328,10 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "form", "multi")
 		}
 	}
 	if r.createdGt != nil {
@@ -15292,10 +15339,10 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "form", "multi")
 		}
 	}
 	if r.createdGte != nil {
@@ -15303,10 +15350,10 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "form", "multi")
 		}
 	}
 	if r.createdLt != nil {
@@ -15314,10 +15361,10 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "form", "multi")
 		}
 	}
 	if r.createdLte != nil {
@@ -15325,10 +15372,10 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "form", "multi")
 		}
 	}
 	if r.createdN != nil {
@@ -15336,38 +15383,38 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "form", "multi")
 		}
 	}
 	if r.createdByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_request", r.createdByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_request", r.createdByRequest, "form", "")
 	}
 	if r.description != nil {
 		t := *r.description
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "form", "multi")
 		}
 	}
 	if r.descriptionEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "description__empty", r.descriptionEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "description__empty", r.descriptionEmpty, "form", "")
 	}
 	if r.descriptionIc != nil {
 		t := *r.descriptionIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "form", "multi")
 		}
 	}
 	if r.descriptionIe != nil {
@@ -15375,10 +15422,10 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "form", "multi")
 		}
 	}
 	if r.descriptionIew != nil {
@@ -15386,10 +15433,10 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "form", "multi")
 		}
 	}
 	if r.descriptionIsw != nil {
@@ -15397,10 +15444,10 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "form", "multi")
 		}
 	}
 	if r.descriptionN != nil {
@@ -15408,10 +15455,10 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "form", "multi")
 		}
 	}
 	if r.descriptionNic != nil {
@@ -15419,10 +15466,10 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "form", "multi")
 		}
 	}
 	if r.descriptionNie != nil {
@@ -15430,10 +15477,10 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "form", "multi")
 		}
 	}
 	if r.descriptionNiew != nil {
@@ -15441,10 +15488,10 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "form", "multi")
 		}
 	}
 	if r.descriptionNisw != nil {
@@ -15452,10 +15499,10 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "form", "multi")
 		}
 	}
 	if r.id != nil {
@@ -15463,24 +15510,24 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "form", "multi")
 		}
 	}
 	if r.idEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "form", "")
 	}
 	if r.idGt != nil {
 		t := *r.idGt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "form", "multi")
 		}
 	}
 	if r.idGte != nil {
@@ -15488,10 +15535,10 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "form", "multi")
 		}
 	}
 	if r.idLt != nil {
@@ -15499,10 +15546,10 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "form", "multi")
 		}
 	}
 	if r.idLte != nil {
@@ -15510,10 +15557,10 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "form", "multi")
 		}
 	}
 	if r.idN != nil {
@@ -15521,10 +15568,10 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "form", "multi")
 		}
 	}
 	if r.lastUpdated != nil {
@@ -15532,10 +15579,10 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedEmpty != nil {
@@ -15543,10 +15590,10 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedGt != nil {
@@ -15554,10 +15601,10 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedGte != nil {
@@ -15565,10 +15612,10 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedLt != nil {
@@ -15576,10 +15623,10 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedLte != nil {
@@ -15587,10 +15634,10 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedN != nil {
@@ -15598,41 +15645,41 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "form", "multi")
 		}
 	}
 	if r.limit != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
 	}
 	if r.modifiedByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "modified_by_request", r.modifiedByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "modified_by_request", r.modifiedByRequest, "form", "")
 	}
 	if r.name != nil {
 		t := *r.name
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "form", "multi")
 		}
 	}
 	if r.nameEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "name__empty", r.nameEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "name__empty", r.nameEmpty, "form", "")
 	}
 	if r.nameIc != nil {
 		t := *r.nameIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "form", "multi")
 		}
 	}
 	if r.nameIe != nil {
@@ -15640,10 +15687,10 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "form", "multi")
 		}
 	}
 	if r.nameIew != nil {
@@ -15651,10 +15698,10 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "form", "multi")
 		}
 	}
 	if r.nameIsw != nil {
@@ -15662,10 +15709,10 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "form", "multi")
 		}
 	}
 	if r.nameN != nil {
@@ -15673,10 +15720,10 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "form", "multi")
 		}
 	}
 	if r.nameNic != nil {
@@ -15684,10 +15731,10 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "form", "multi")
 		}
 	}
 	if r.nameNie != nil {
@@ -15695,10 +15742,10 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "form", "multi")
 		}
 	}
 	if r.nameNiew != nil {
@@ -15706,10 +15753,10 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "form", "multi")
 		}
 	}
 	if r.nameNisw != nil {
@@ -15717,27 +15764,27 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "form", "multi")
 		}
 	}
 	if r.offset != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "form", "")
 	}
 	if r.ordering != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "form", "")
 	}
 	if r.provider != nil {
 		t := *r.provider
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "provider", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "provider", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "provider", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "provider", t, "form", "multi")
 		}
 	}
 	if r.providerN != nil {
@@ -15745,10 +15792,10 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "provider__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "provider__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "provider__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "provider__n", t, "form", "multi")
 		}
 	}
 	if r.providerId != nil {
@@ -15756,10 +15803,10 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "provider_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "provider_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "provider_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "provider_id", t, "form", "multi")
 		}
 	}
 	if r.providerIdN != nil {
@@ -15767,38 +15814,38 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "provider_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "provider_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "provider_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "provider_id__n", t, "form", "multi")
 		}
 	}
 	if r.q != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "form", "")
 	}
 	if r.serviceId != nil {
 		t := *r.serviceId
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "service_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "service_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "service_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "service_id", t, "form", "multi")
 		}
 	}
 	if r.serviceIdEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "service_id__empty", r.serviceIdEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "service_id__empty", r.serviceIdEmpty, "form", "")
 	}
 	if r.serviceIdIc != nil {
 		t := *r.serviceIdIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "service_id__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "service_id__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "service_id__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "service_id__ic", t, "form", "multi")
 		}
 	}
 	if r.serviceIdIe != nil {
@@ -15806,10 +15853,10 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "service_id__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "service_id__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "service_id__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "service_id__ie", t, "form", "multi")
 		}
 	}
 	if r.serviceIdIew != nil {
@@ -15817,10 +15864,10 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "service_id__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "service_id__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "service_id__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "service_id__iew", t, "form", "multi")
 		}
 	}
 	if r.serviceIdIsw != nil {
@@ -15828,10 +15875,10 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "service_id__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "service_id__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "service_id__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "service_id__isw", t, "form", "multi")
 		}
 	}
 	if r.serviceIdN != nil {
@@ -15839,10 +15886,10 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "service_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "service_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "service_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "service_id__n", t, "form", "multi")
 		}
 	}
 	if r.serviceIdNic != nil {
@@ -15850,10 +15897,10 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "service_id__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "service_id__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "service_id__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "service_id__nic", t, "form", "multi")
 		}
 	}
 	if r.serviceIdNie != nil {
@@ -15861,10 +15908,10 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "service_id__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "service_id__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "service_id__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "service_id__nie", t, "form", "multi")
 		}
 	}
 	if r.serviceIdNiew != nil {
@@ -15872,10 +15919,10 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "service_id__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "service_id__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "service_id__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "service_id__niew", t, "form", "multi")
 		}
 	}
 	if r.serviceIdNisw != nil {
@@ -15883,10 +15930,10 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "service_id__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "service_id__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "service_id__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "service_id__nisw", t, "form", "multi")
 		}
 	}
 	if r.tag != nil {
@@ -15894,10 +15941,10 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "form", "multi")
 		}
 	}
 	if r.tagN != nil {
@@ -15905,14 +15952,14 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "form", "multi")
 		}
 	}
 	if r.updatedByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "updated_by_request", r.updatedByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "updated_by_request", r.updatedByRequest, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -15983,9 +16030,9 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 }
 
 type ApiCircuitsProviderNetworksPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
-	id int32
+	ctx                           context.Context
+	ApiService                    *CircuitsAPIService
+	id                            int32
 	patchedProviderNetworkRequest *PatchedProviderNetworkRequest
 }
 
@@ -16003,26 +16050,27 @@ CircuitsProviderNetworksPartialUpdate Method for CircuitsProviderNetworksPartial
 
 Patch a provider network object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this provider network.
- @return ApiCircuitsProviderNetworksPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this provider network.
+	@return ApiCircuitsProviderNetworksPartialUpdateRequest
 */
 func (a *CircuitsAPIService) CircuitsProviderNetworksPartialUpdate(ctx context.Context, id int32) ApiCircuitsProviderNetworksPartialUpdateRequest {
 	return ApiCircuitsProviderNetworksPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ProviderNetwork
+//
+//	@return ProviderNetwork
 func (a *CircuitsAPIService) CircuitsProviderNetworksPartialUpdateExecute(r ApiCircuitsProviderNetworksPartialUpdateRequest) (*ProviderNetwork, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ProviderNetwork
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ProviderNetwork
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsProviderNetworksPartialUpdate")
@@ -16108,9 +16156,9 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksPartialUpdateExecute(r ApiC
 }
 
 type ApiCircuitsProviderNetworksRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CircuitsAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiCircuitsProviderNetworksRetrieveRequest) Execute() (*ProviderNetwork, *http.Response, error) {
@@ -16122,26 +16170,27 @@ CircuitsProviderNetworksRetrieve Method for CircuitsProviderNetworksRetrieve
 
 Get a provider network object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this provider network.
- @return ApiCircuitsProviderNetworksRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this provider network.
+	@return ApiCircuitsProviderNetworksRetrieveRequest
 */
 func (a *CircuitsAPIService) CircuitsProviderNetworksRetrieve(ctx context.Context, id int32) ApiCircuitsProviderNetworksRetrieveRequest {
 	return ApiCircuitsProviderNetworksRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ProviderNetwork
+//
+//	@return ProviderNetwork
 func (a *CircuitsAPIService) CircuitsProviderNetworksRetrieveExecute(r ApiCircuitsProviderNetworksRetrieveRequest) (*ProviderNetwork, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ProviderNetwork
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ProviderNetwork
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsProviderNetworksRetrieve")
@@ -16225,9 +16274,9 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksRetrieveExecute(r ApiCircui
 }
 
 type ApiCircuitsProviderNetworksUpdateRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
-	id int32
+	ctx                    context.Context
+	ApiService             *CircuitsAPIService
+	id                     int32
 	providerNetworkRequest *ProviderNetworkRequest
 }
 
@@ -16245,26 +16294,27 @@ CircuitsProviderNetworksUpdate Method for CircuitsProviderNetworksUpdate
 
 Put a provider network object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this provider network.
- @return ApiCircuitsProviderNetworksUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this provider network.
+	@return ApiCircuitsProviderNetworksUpdateRequest
 */
 func (a *CircuitsAPIService) CircuitsProviderNetworksUpdate(ctx context.Context, id int32) ApiCircuitsProviderNetworksUpdateRequest {
 	return ApiCircuitsProviderNetworksUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ProviderNetwork
+//
+//	@return ProviderNetwork
 func (a *CircuitsAPIService) CircuitsProviderNetworksUpdateExecute(r ApiCircuitsProviderNetworksUpdateRequest) (*ProviderNetwork, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ProviderNetwork
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ProviderNetwork
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsProviderNetworksUpdate")
@@ -16353,8 +16403,8 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksUpdateExecute(r ApiCircuits
 }
 
 type ApiCircuitsProvidersBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
+	ctx             context.Context
+	ApiService      *CircuitsAPIService
 	providerRequest *[]ProviderRequest
 }
 
@@ -16372,22 +16422,22 @@ CircuitsProvidersBulkDestroy Method for CircuitsProvidersBulkDestroy
 
 Delete a list of provider objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCircuitsProvidersBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsProvidersBulkDestroyRequest
 */
 func (a *CircuitsAPIService) CircuitsProvidersBulkDestroy(ctx context.Context) ApiCircuitsProvidersBulkDestroyRequest {
 	return ApiCircuitsProvidersBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *CircuitsAPIService) CircuitsProvidersBulkDestroyExecute(r ApiCircuitsProvidersBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsProvidersBulkDestroy")
@@ -16466,8 +16516,8 @@ func (a *CircuitsAPIService) CircuitsProvidersBulkDestroyExecute(r ApiCircuitsPr
 }
 
 type ApiCircuitsProvidersBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
+	ctx             context.Context
+	ApiService      *CircuitsAPIService
 	providerRequest *[]ProviderRequest
 }
 
@@ -16485,24 +16535,25 @@ CircuitsProvidersBulkPartialUpdate Method for CircuitsProvidersBulkPartialUpdate
 
 Patch a list of provider objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCircuitsProvidersBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsProvidersBulkPartialUpdateRequest
 */
 func (a *CircuitsAPIService) CircuitsProvidersBulkPartialUpdate(ctx context.Context) ApiCircuitsProvidersBulkPartialUpdateRequest {
 	return ApiCircuitsProvidersBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []Provider
+//
+//	@return []Provider
 func (a *CircuitsAPIService) CircuitsProvidersBulkPartialUpdateExecute(r ApiCircuitsProvidersBulkPartialUpdateRequest) ([]Provider, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []Provider
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []Provider
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsProvidersBulkPartialUpdate")
@@ -16590,8 +16641,8 @@ func (a *CircuitsAPIService) CircuitsProvidersBulkPartialUpdateExecute(r ApiCirc
 }
 
 type ApiCircuitsProvidersBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
+	ctx             context.Context
+	ApiService      *CircuitsAPIService
 	providerRequest *[]ProviderRequest
 }
 
@@ -16609,24 +16660,25 @@ CircuitsProvidersBulkUpdate Method for CircuitsProvidersBulkUpdate
 
 Put a list of provider objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCircuitsProvidersBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsProvidersBulkUpdateRequest
 */
 func (a *CircuitsAPIService) CircuitsProvidersBulkUpdate(ctx context.Context) ApiCircuitsProvidersBulkUpdateRequest {
 	return ApiCircuitsProvidersBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []Provider
+//
+//	@return []Provider
 func (a *CircuitsAPIService) CircuitsProvidersBulkUpdateExecute(r ApiCircuitsProvidersBulkUpdateRequest) ([]Provider, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []Provider
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []Provider
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsProvidersBulkUpdate")
@@ -16714,8 +16766,8 @@ func (a *CircuitsAPIService) CircuitsProvidersBulkUpdateExecute(r ApiCircuitsPro
 }
 
 type ApiCircuitsProvidersCreateRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
+	ctx             context.Context
+	ApiService      *CircuitsAPIService
 	providerRequest *ProviderRequest
 }
 
@@ -16733,24 +16785,25 @@ CircuitsProvidersCreate Method for CircuitsProvidersCreate
 
 Post a list of provider objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCircuitsProvidersCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsProvidersCreateRequest
 */
 func (a *CircuitsAPIService) CircuitsProvidersCreate(ctx context.Context) ApiCircuitsProvidersCreateRequest {
 	return ApiCircuitsProvidersCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return Provider
+//
+//	@return Provider
 func (a *CircuitsAPIService) CircuitsProvidersCreateExecute(r ApiCircuitsProvidersCreateRequest) (*Provider, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Provider
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Provider
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsProvidersCreate")
@@ -16838,9 +16891,9 @@ func (a *CircuitsAPIService) CircuitsProvidersCreateExecute(r ApiCircuitsProvide
 }
 
 type ApiCircuitsProvidersDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CircuitsAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiCircuitsProvidersDestroyRequest) Execute() (*http.Response, error) {
@@ -16852,24 +16905,24 @@ CircuitsProvidersDestroy Method for CircuitsProvidersDestroy
 
 Delete a provider object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this provider.
- @return ApiCircuitsProvidersDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this provider.
+	@return ApiCircuitsProvidersDestroyRequest
 */
 func (a *CircuitsAPIService) CircuitsProvidersDestroy(ctx context.Context, id int32) ApiCircuitsProvidersDestroyRequest {
 	return ApiCircuitsProvidersDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *CircuitsAPIService) CircuitsProvidersDestroyExecute(r ApiCircuitsProvidersDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsProvidersDestroy")
@@ -16944,93 +16997,93 @@ func (a *CircuitsAPIService) CircuitsProvidersDestroyExecute(r ApiCircuitsProvid
 }
 
 type ApiCircuitsProvidersListRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
-	asn *[]int64
-	asnN *[]int64
-	asnId *[]int32
-	asnIdN *[]int32
-	contact *[]int32
-	contactN *[]int32
-	contactGroup *[]string
-	contactGroupN *[]string
-	contactRole *[]int32
-	contactRoleN *[]int32
-	created *[]time.Time
-	createdEmpty *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
-	createdByRequest *string
-	description *[]string
-	descriptionEmpty *bool
-	descriptionIc *[]string
-	descriptionIe *[]string
-	descriptionIew *[]string
-	descriptionIsw *[]string
-	descriptionN *[]string
-	descriptionNic *[]string
-	descriptionNie *[]string
-	descriptionNiew *[]string
-	descriptionNisw *[]string
-	id *[]int32
-	idEmpty *bool
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedEmpty *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
+	ctx               context.Context
+	ApiService        *CircuitsAPIService
+	asn               *[]int64
+	asnN              *[]int64
+	asnId             *[]int32
+	asnIdN            *[]int32
+	contact           *[]int32
+	contactN          *[]int32
+	contactGroup      *[]string
+	contactGroupN     *[]string
+	contactRole       *[]int32
+	contactRoleN      *[]int32
+	created           *[]time.Time
+	createdEmpty      *[]time.Time
+	createdGt         *[]time.Time
+	createdGte        *[]time.Time
+	createdLt         *[]time.Time
+	createdLte        *[]time.Time
+	createdN          *[]time.Time
+	createdByRequest  *string
+	description       *[]string
+	descriptionEmpty  *bool
+	descriptionIc     *[]string
+	descriptionIe     *[]string
+	descriptionIew    *[]string
+	descriptionIsw    *[]string
+	descriptionN      *[]string
+	descriptionNic    *[]string
+	descriptionNie    *[]string
+	descriptionNiew   *[]string
+	descriptionNisw   *[]string
+	id                *[]int32
+	idEmpty           *bool
+	idGt              *[]int32
+	idGte             *[]int32
+	idLt              *[]int32
+	idLte             *[]int32
+	idN               *[]int32
+	lastUpdated       *[]time.Time
+	lastUpdatedEmpty  *[]time.Time
+	lastUpdatedGt     *[]time.Time
+	lastUpdatedGte    *[]time.Time
+	lastUpdatedLt     *[]time.Time
+	lastUpdatedLte    *[]time.Time
+	lastUpdatedN      *[]time.Time
+	limit             *int32
 	modifiedByRequest *string
-	name *[]string
-	nameEmpty *bool
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	offset *int32
-	ordering *string
-	q *string
-	region *[]string
-	regionN *[]string
-	regionId *[]string
-	regionIdN *[]string
-	site *[]string
-	siteN *[]string
-	siteGroup *[]string
-	siteGroupN *[]string
-	siteGroupId *[]string
-	siteGroupIdN *[]string
-	siteId *[]int32
-	siteIdN *[]int32
-	slug *[]string
-	slugEmpty *bool
-	slugIc *[]string
-	slugIe *[]string
-	slugIew *[]string
-	slugIsw *[]string
-	slugN *[]string
-	slugNic *[]string
-	slugNie *[]string
-	slugNiew *[]string
-	slugNisw *[]string
-	tag *[]string
-	tagN *[]string
-	updatedByRequest *string
+	name              *[]string
+	nameEmpty         *bool
+	nameIc            *[]string
+	nameIe            *[]string
+	nameIew           *[]string
+	nameIsw           *[]string
+	nameN             *[]string
+	nameNic           *[]string
+	nameNie           *[]string
+	nameNiew          *[]string
+	nameNisw          *[]string
+	offset            *int32
+	ordering          *string
+	q                 *string
+	region            *[]string
+	regionN           *[]string
+	regionId          *[]string
+	regionIdN         *[]string
+	site              *[]string
+	siteN             *[]string
+	siteGroup         *[]string
+	siteGroupN        *[]string
+	siteGroupId       *[]string
+	siteGroupIdN      *[]string
+	siteId            *[]int32
+	siteIdN           *[]int32
+	slug              *[]string
+	slugEmpty         *bool
+	slugIc            *[]string
+	slugIe            *[]string
+	slugIew           *[]string
+	slugIsw           *[]string
+	slugN             *[]string
+	slugNic           *[]string
+	slugNie           *[]string
+	slugNiew          *[]string
+	slugNisw          *[]string
+	tag               *[]string
+	tagN              *[]string
+	updatedByRequest  *string
 }
 
 // ASN
@@ -17483,24 +17536,25 @@ CircuitsProvidersList Method for CircuitsProvidersList
 
 Get a list of provider objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCircuitsProvidersListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsProvidersListRequest
 */
 func (a *CircuitsAPIService) CircuitsProvidersList(ctx context.Context) ApiCircuitsProvidersListRequest {
 	return ApiCircuitsProvidersListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedProviderList
+//
+//	@return PaginatedProviderList
 func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProvidersListRequest) (*PaginatedProviderList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedProviderList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedProviderList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsProvidersList")
@@ -17519,10 +17573,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "asn", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "asn", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "asn", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "asn", t, "form", "multi")
 		}
 	}
 	if r.asnN != nil {
@@ -17530,10 +17584,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "asn__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "asn__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "asn__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "asn__n", t, "form", "multi")
 		}
 	}
 	if r.asnId != nil {
@@ -17541,10 +17595,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "asn_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "asn_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "asn_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "asn_id", t, "form", "multi")
 		}
 	}
 	if r.asnIdN != nil {
@@ -17552,10 +17606,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "asn_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "asn_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "asn_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "asn_id__n", t, "form", "multi")
 		}
 	}
 	if r.contact != nil {
@@ -17563,10 +17617,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "contact", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "contact", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "contact", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "contact", t, "form", "multi")
 		}
 	}
 	if r.contactN != nil {
@@ -17574,10 +17628,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "contact__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "contact__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "contact__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "contact__n", t, "form", "multi")
 		}
 	}
 	if r.contactGroup != nil {
@@ -17585,10 +17639,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_group", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_group", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "contact_group", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "contact_group", t, "form", "multi")
 		}
 	}
 	if r.contactGroupN != nil {
@@ -17596,10 +17650,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_group__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_group__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "contact_group__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "contact_group__n", t, "form", "multi")
 		}
 	}
 	if r.contactRole != nil {
@@ -17607,10 +17661,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_role", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_role", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "contact_role", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "contact_role", t, "form", "multi")
 		}
 	}
 	if r.contactRoleN != nil {
@@ -17618,10 +17672,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_role__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_role__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "contact_role__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "contact_role__n", t, "form", "multi")
 		}
 	}
 	if r.created != nil {
@@ -17629,10 +17683,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "form", "multi")
 		}
 	}
 	if r.createdEmpty != nil {
@@ -17640,10 +17694,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "form", "multi")
 		}
 	}
 	if r.createdGt != nil {
@@ -17651,10 +17705,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "form", "multi")
 		}
 	}
 	if r.createdGte != nil {
@@ -17662,10 +17716,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "form", "multi")
 		}
 	}
 	if r.createdLt != nil {
@@ -17673,10 +17727,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "form", "multi")
 		}
 	}
 	if r.createdLte != nil {
@@ -17684,10 +17738,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "form", "multi")
 		}
 	}
 	if r.createdN != nil {
@@ -17695,38 +17749,38 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "form", "multi")
 		}
 	}
 	if r.createdByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_request", r.createdByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_request", r.createdByRequest, "form", "")
 	}
 	if r.description != nil {
 		t := *r.description
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "form", "multi")
 		}
 	}
 	if r.descriptionEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "description__empty", r.descriptionEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "description__empty", r.descriptionEmpty, "form", "")
 	}
 	if r.descriptionIc != nil {
 		t := *r.descriptionIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "form", "multi")
 		}
 	}
 	if r.descriptionIe != nil {
@@ -17734,10 +17788,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "form", "multi")
 		}
 	}
 	if r.descriptionIew != nil {
@@ -17745,10 +17799,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "form", "multi")
 		}
 	}
 	if r.descriptionIsw != nil {
@@ -17756,10 +17810,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "form", "multi")
 		}
 	}
 	if r.descriptionN != nil {
@@ -17767,10 +17821,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "form", "multi")
 		}
 	}
 	if r.descriptionNic != nil {
@@ -17778,10 +17832,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "form", "multi")
 		}
 	}
 	if r.descriptionNie != nil {
@@ -17789,10 +17843,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "form", "multi")
 		}
 	}
 	if r.descriptionNiew != nil {
@@ -17800,10 +17854,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "form", "multi")
 		}
 	}
 	if r.descriptionNisw != nil {
@@ -17811,10 +17865,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "form", "multi")
 		}
 	}
 	if r.id != nil {
@@ -17822,24 +17876,24 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "form", "multi")
 		}
 	}
 	if r.idEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "form", "")
 	}
 	if r.idGt != nil {
 		t := *r.idGt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "form", "multi")
 		}
 	}
 	if r.idGte != nil {
@@ -17847,10 +17901,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "form", "multi")
 		}
 	}
 	if r.idLt != nil {
@@ -17858,10 +17912,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "form", "multi")
 		}
 	}
 	if r.idLte != nil {
@@ -17869,10 +17923,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "form", "multi")
 		}
 	}
 	if r.idN != nil {
@@ -17880,10 +17934,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "form", "multi")
 		}
 	}
 	if r.lastUpdated != nil {
@@ -17891,10 +17945,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedEmpty != nil {
@@ -17902,10 +17956,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedGt != nil {
@@ -17913,10 +17967,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedGte != nil {
@@ -17924,10 +17978,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedLt != nil {
@@ -17935,10 +17989,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedLte != nil {
@@ -17946,10 +18000,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "form", "multi")
 		}
 	}
 	if r.lastUpdatedN != nil {
@@ -17957,41 +18011,41 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "form", "multi")
 		}
 	}
 	if r.limit != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
 	}
 	if r.modifiedByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "modified_by_request", r.modifiedByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "modified_by_request", r.modifiedByRequest, "form", "")
 	}
 	if r.name != nil {
 		t := *r.name
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "form", "multi")
 		}
 	}
 	if r.nameEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "name__empty", r.nameEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "name__empty", r.nameEmpty, "form", "")
 	}
 	if r.nameIc != nil {
 		t := *r.nameIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "form", "multi")
 		}
 	}
 	if r.nameIe != nil {
@@ -17999,10 +18053,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "form", "multi")
 		}
 	}
 	if r.nameIew != nil {
@@ -18010,10 +18064,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "form", "multi")
 		}
 	}
 	if r.nameIsw != nil {
@@ -18021,10 +18075,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "form", "multi")
 		}
 	}
 	if r.nameN != nil {
@@ -18032,10 +18086,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "form", "multi")
 		}
 	}
 	if r.nameNic != nil {
@@ -18043,10 +18097,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "form", "multi")
 		}
 	}
 	if r.nameNie != nil {
@@ -18054,10 +18108,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "form", "multi")
 		}
 	}
 	if r.nameNiew != nil {
@@ -18065,10 +18119,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "form", "multi")
 		}
 	}
 	if r.nameNisw != nil {
@@ -18076,30 +18130,30 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "form", "multi")
 		}
 	}
 	if r.offset != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "form", "")
 	}
 	if r.ordering != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "form", "")
 	}
 	if r.q != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "form", "")
 	}
 	if r.region != nil {
 		t := *r.region
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "region", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "region", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "region", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "region", t, "form", "multi")
 		}
 	}
 	if r.regionN != nil {
@@ -18107,10 +18161,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "region__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "region__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "region__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "region__n", t, "form", "multi")
 		}
 	}
 	if r.regionId != nil {
@@ -18118,10 +18172,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "region_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "region_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "region_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "region_id", t, "form", "multi")
 		}
 	}
 	if r.regionIdN != nil {
@@ -18129,10 +18183,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "region_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "region_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "region_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "region_id__n", t, "form", "multi")
 		}
 	}
 	if r.site != nil {
@@ -18140,10 +18194,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "site", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "site", t, "form", "multi")
 		}
 	}
 	if r.siteN != nil {
@@ -18151,10 +18205,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "site__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "site__n", t, "form", "multi")
 		}
 	}
 	if r.siteGroup != nil {
@@ -18162,10 +18216,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "site_group", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "site_group", t, "form", "multi")
 		}
 	}
 	if r.siteGroupN != nil {
@@ -18173,10 +18227,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "site_group__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "site_group__n", t, "form", "multi")
 		}
 	}
 	if r.siteGroupId != nil {
@@ -18184,10 +18238,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id", t, "form", "multi")
 		}
 	}
 	if r.siteGroupIdN != nil {
@@ -18195,10 +18249,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id__n", t, "form", "multi")
 		}
 	}
 	if r.siteId != nil {
@@ -18206,10 +18260,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_id", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_id", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "site_id", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "site_id", t, "form", "multi")
 		}
 	}
 	if r.siteIdN != nil {
@@ -18217,10 +18271,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_id__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_id__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "site_id__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "site_id__n", t, "form", "multi")
 		}
 	}
 	if r.slug != nil {
@@ -18228,24 +18282,24 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug", t, "form", "multi")
 		}
 	}
 	if r.slugEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "slug__empty", r.slugEmpty, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "slug__empty", r.slugEmpty, "form", "")
 	}
 	if r.slugIc != nil {
 		t := *r.slugIc
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", t, "form", "multi")
 		}
 	}
 	if r.slugIe != nil {
@@ -18253,10 +18307,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", t, "form", "multi")
 		}
 	}
 	if r.slugIew != nil {
@@ -18264,10 +18318,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", t, "form", "multi")
 		}
 	}
 	if r.slugIsw != nil {
@@ -18275,10 +18329,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", t, "form", "multi")
 		}
 	}
 	if r.slugN != nil {
@@ -18286,10 +18340,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", t, "form", "multi")
 		}
 	}
 	if r.slugNic != nil {
@@ -18297,10 +18351,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", t, "form", "multi")
 		}
 	}
 	if r.slugNie != nil {
@@ -18308,10 +18362,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", t, "form", "multi")
 		}
 	}
 	if r.slugNiew != nil {
@@ -18319,10 +18373,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", t, "form", "multi")
 		}
 	}
 	if r.slugNisw != nil {
@@ -18330,10 +18384,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", t, "form", "multi")
 		}
 	}
 	if r.tag != nil {
@@ -18341,10 +18395,10 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "form", "multi")
 		}
 	}
 	if r.tagN != nil {
@@ -18352,14 +18406,14 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "form", "multi")
 		}
 	}
 	if r.updatedByRequest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "updated_by_request", r.updatedByRequest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "updated_by_request", r.updatedByRequest, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -18430,9 +18484,9 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 }
 
 type ApiCircuitsProvidersPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
-	id int32
+	ctx                    context.Context
+	ApiService             *CircuitsAPIService
+	id                     int32
 	patchedProviderRequest *PatchedProviderRequest
 }
 
@@ -18450,26 +18504,27 @@ CircuitsProvidersPartialUpdate Method for CircuitsProvidersPartialUpdate
 
 Patch a provider object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this provider.
- @return ApiCircuitsProvidersPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this provider.
+	@return ApiCircuitsProvidersPartialUpdateRequest
 */
 func (a *CircuitsAPIService) CircuitsProvidersPartialUpdate(ctx context.Context, id int32) ApiCircuitsProvidersPartialUpdateRequest {
 	return ApiCircuitsProvidersPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Provider
+//
+//	@return Provider
 func (a *CircuitsAPIService) CircuitsProvidersPartialUpdateExecute(r ApiCircuitsProvidersPartialUpdateRequest) (*Provider, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Provider
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Provider
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsProvidersPartialUpdate")
@@ -18555,9 +18610,9 @@ func (a *CircuitsAPIService) CircuitsProvidersPartialUpdateExecute(r ApiCircuits
 }
 
 type ApiCircuitsProvidersRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CircuitsAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiCircuitsProvidersRetrieveRequest) Execute() (*Provider, *http.Response, error) {
@@ -18569,26 +18624,27 @@ CircuitsProvidersRetrieve Method for CircuitsProvidersRetrieve
 
 Get a provider object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this provider.
- @return ApiCircuitsProvidersRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this provider.
+	@return ApiCircuitsProvidersRetrieveRequest
 */
 func (a *CircuitsAPIService) CircuitsProvidersRetrieve(ctx context.Context, id int32) ApiCircuitsProvidersRetrieveRequest {
 	return ApiCircuitsProvidersRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Provider
+//
+//	@return Provider
 func (a *CircuitsAPIService) CircuitsProvidersRetrieveExecute(r ApiCircuitsProvidersRetrieveRequest) (*Provider, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Provider
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Provider
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsProvidersRetrieve")
@@ -18672,9 +18728,9 @@ func (a *CircuitsAPIService) CircuitsProvidersRetrieveExecute(r ApiCircuitsProvi
 }
 
 type ApiCircuitsProvidersUpdateRequest struct {
-	ctx context.Context
-	ApiService *CircuitsAPIService
-	id int32
+	ctx             context.Context
+	ApiService      *CircuitsAPIService
+	id              int32
 	providerRequest *ProviderRequest
 }
 
@@ -18692,26 +18748,27 @@ CircuitsProvidersUpdate Method for CircuitsProvidersUpdate
 
 Put a provider object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this provider.
- @return ApiCircuitsProvidersUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this provider.
+	@return ApiCircuitsProvidersUpdateRequest
 */
 func (a *CircuitsAPIService) CircuitsProvidersUpdate(ctx context.Context, id int32) ApiCircuitsProvidersUpdateRequest {
 	return ApiCircuitsProvidersUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Provider
+//
+//	@return Provider
 func (a *CircuitsAPIService) CircuitsProvidersUpdateExecute(r ApiCircuitsProvidersUpdateRequest) (*Provider, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Provider
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Provider
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CircuitsAPIService.CircuitsProvidersUpdate")

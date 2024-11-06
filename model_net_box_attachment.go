@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"time"
 	"fmt"
+	"time"
 )
 
 // checks if the NetBoxAttachment type satisfies the MappedNullable interface at compile time
@@ -21,18 +21,18 @@ var _ MappedNullable = &NetBoxAttachment{}
 
 // NetBoxAttachment Adds support for custom fields and tags.
 type NetBoxAttachment struct {
-	Id int32 `json:"id"`
-	Url string `json:"url"`
-	Display string `json:"display"`
-	ObjectType string `json:"object_type"`
-	ObjectId int64 `json:"object_id"`
-	Parent string `json:"parent"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	File string `json:"file"`
-	Created NullableTime `json:"created"`
-	LastUpdated NullableTime `json:"last_updated"`
-	Comments *string `json:"comments,omitempty"`
+	Id                   int32        `json:"id"`
+	Url                  string       `json:"url"`
+	Display              string       `json:"display"`
+	ObjectType           string       `json:"object_type"`
+	ObjectId             int64        `json:"object_id"`
+	Parent               string       `json:"parent"`
+	Name                 *string      `json:"name,omitempty"`
+	Description          *string      `json:"description,omitempty"`
+	File                 string       `json:"file"`
+	Created              NullableTime `json:"created"`
+	LastUpdated          NullableTime `json:"last_updated"`
+	Comments             *string      `json:"comments,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -381,7 +381,7 @@ func (o *NetBoxAttachment) SetComments(v string) {
 }
 
 func (o NetBoxAttachment) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -437,10 +437,10 @@ func (o *NetBoxAttachment) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -512,5 +512,3 @@ func (v *NullableNetBoxAttachment) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

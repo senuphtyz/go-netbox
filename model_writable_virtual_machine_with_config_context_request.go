@@ -20,27 +20,27 @@ var _ MappedNullable = &WritableVirtualMachineWithConfigContextRequest{}
 
 // WritableVirtualMachineWithConfigContextRequest Adds support for custom fields and tags.
 type WritableVirtualMachineWithConfigContextRequest struct {
-	Name string `json:"name"`
-	Status *ModuleStatusValue `json:"status,omitempty"`
-	Site NullableBriefSiteRequest `json:"site,omitempty"`
-	Cluster NullableBriefClusterRequest `json:"cluster,omitempty"`
-	Device NullableBriefDeviceRequest `json:"device,omitempty"`
-	Serial *string `json:"serial,omitempty"`
-	Role NullableBriefDeviceRoleRequest `json:"role,omitempty"`
-	Tenant NullableBriefTenantRequest `json:"tenant,omitempty"`
-	Platform NullableBriefPlatformRequest `json:"platform,omitempty"`
-	PrimaryIp4 NullableBriefIPAddressRequest `json:"primary_ip4,omitempty"`
-	PrimaryIp6 NullableBriefIPAddressRequest `json:"primary_ip6,omitempty"`
-	Vcpus NullableFloat64 `json:"vcpus,omitempty"`
-	Memory NullableInt32 `json:"memory,omitempty"`
-	Disk NullableInt32 `json:"disk,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Comments *string `json:"comments,omitempty"`
+	Name           string                             `json:"name"`
+	Status         *ModuleStatusValue                 `json:"status,omitempty"`
+	Site           NullableBriefSiteRequest           `json:"site,omitempty"`
+	Cluster        NullableBriefClusterRequest        `json:"cluster,omitempty"`
+	Device         NullableBriefDeviceRequest         `json:"device,omitempty"`
+	Serial         *string                            `json:"serial,omitempty"`
+	Role           NullableBriefDeviceRoleRequest     `json:"role,omitempty"`
+	Tenant         NullableBriefTenantRequest         `json:"tenant,omitempty"`
+	Platform       NullableBriefPlatformRequest       `json:"platform,omitempty"`
+	PrimaryIp4     NullableBriefIPAddressRequest      `json:"primary_ip4,omitempty"`
+	PrimaryIp6     NullableBriefIPAddressRequest      `json:"primary_ip6,omitempty"`
+	Vcpus          NullableFloat64                    `json:"vcpus,omitempty"`
+	Memory         NullableInt32                      `json:"memory,omitempty"`
+	Disk           NullableInt32                      `json:"disk,omitempty"`
+	Description    *string                            `json:"description,omitempty"`
+	Comments       *string                            `json:"comments,omitempty"`
 	ConfigTemplate NullableBriefConfigTemplateRequest `json:"config_template,omitempty"`
 	// Local config context data takes precedence over source contexts in the final rendered config context
-	LocalContextData interface{} `json:"local_context_data,omitempty"`
-	Tags []NestedTagRequest `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	LocalContextData     interface{}            `json:"local_context_data,omitempty"`
+	Tags                 []NestedTagRequest     `json:"tags,omitempty"`
+	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -152,6 +152,7 @@ func (o *WritableVirtualMachineWithConfigContextRequest) HasSite() bool {
 func (o *WritableVirtualMachineWithConfigContextRequest) SetSite(v BriefSiteRequest) {
 	o.Site.Set(&v)
 }
+
 // SetSiteNil sets the value for Site to be an explicit nil
 func (o *WritableVirtualMachineWithConfigContextRequest) SetSiteNil() {
 	o.Site.Set(nil)
@@ -194,6 +195,7 @@ func (o *WritableVirtualMachineWithConfigContextRequest) HasCluster() bool {
 func (o *WritableVirtualMachineWithConfigContextRequest) SetCluster(v BriefClusterRequest) {
 	o.Cluster.Set(&v)
 }
+
 // SetClusterNil sets the value for Cluster to be an explicit nil
 func (o *WritableVirtualMachineWithConfigContextRequest) SetClusterNil() {
 	o.Cluster.Set(nil)
@@ -236,6 +238,7 @@ func (o *WritableVirtualMachineWithConfigContextRequest) HasDevice() bool {
 func (o *WritableVirtualMachineWithConfigContextRequest) SetDevice(v BriefDeviceRequest) {
 	o.Device.Set(&v)
 }
+
 // SetDeviceNil sets the value for Device to be an explicit nil
 func (o *WritableVirtualMachineWithConfigContextRequest) SetDeviceNil() {
 	o.Device.Set(nil)
@@ -310,6 +313,7 @@ func (o *WritableVirtualMachineWithConfigContextRequest) HasRole() bool {
 func (o *WritableVirtualMachineWithConfigContextRequest) SetRole(v BriefDeviceRoleRequest) {
 	o.Role.Set(&v)
 }
+
 // SetRoleNil sets the value for Role to be an explicit nil
 func (o *WritableVirtualMachineWithConfigContextRequest) SetRoleNil() {
 	o.Role.Set(nil)
@@ -352,6 +356,7 @@ func (o *WritableVirtualMachineWithConfigContextRequest) HasTenant() bool {
 func (o *WritableVirtualMachineWithConfigContextRequest) SetTenant(v BriefTenantRequest) {
 	o.Tenant.Set(&v)
 }
+
 // SetTenantNil sets the value for Tenant to be an explicit nil
 func (o *WritableVirtualMachineWithConfigContextRequest) SetTenantNil() {
 	o.Tenant.Set(nil)
@@ -394,6 +399,7 @@ func (o *WritableVirtualMachineWithConfigContextRequest) HasPlatform() bool {
 func (o *WritableVirtualMachineWithConfigContextRequest) SetPlatform(v BriefPlatformRequest) {
 	o.Platform.Set(&v)
 }
+
 // SetPlatformNil sets the value for Platform to be an explicit nil
 func (o *WritableVirtualMachineWithConfigContextRequest) SetPlatformNil() {
 	o.Platform.Set(nil)
@@ -436,6 +442,7 @@ func (o *WritableVirtualMachineWithConfigContextRequest) HasPrimaryIp4() bool {
 func (o *WritableVirtualMachineWithConfigContextRequest) SetPrimaryIp4(v BriefIPAddressRequest) {
 	o.PrimaryIp4.Set(&v)
 }
+
 // SetPrimaryIp4Nil sets the value for PrimaryIp4 to be an explicit nil
 func (o *WritableVirtualMachineWithConfigContextRequest) SetPrimaryIp4Nil() {
 	o.PrimaryIp4.Set(nil)
@@ -478,6 +485,7 @@ func (o *WritableVirtualMachineWithConfigContextRequest) HasPrimaryIp6() bool {
 func (o *WritableVirtualMachineWithConfigContextRequest) SetPrimaryIp6(v BriefIPAddressRequest) {
 	o.PrimaryIp6.Set(&v)
 }
+
 // SetPrimaryIp6Nil sets the value for PrimaryIp6 to be an explicit nil
 func (o *WritableVirtualMachineWithConfigContextRequest) SetPrimaryIp6Nil() {
 	o.PrimaryIp6.Set(nil)
@@ -520,6 +528,7 @@ func (o *WritableVirtualMachineWithConfigContextRequest) HasVcpus() bool {
 func (o *WritableVirtualMachineWithConfigContextRequest) SetVcpus(v float64) {
 	o.Vcpus.Set(&v)
 }
+
 // SetVcpusNil sets the value for Vcpus to be an explicit nil
 func (o *WritableVirtualMachineWithConfigContextRequest) SetVcpusNil() {
 	o.Vcpus.Set(nil)
@@ -562,6 +571,7 @@ func (o *WritableVirtualMachineWithConfigContextRequest) HasMemory() bool {
 func (o *WritableVirtualMachineWithConfigContextRequest) SetMemory(v int32) {
 	o.Memory.Set(&v)
 }
+
 // SetMemoryNil sets the value for Memory to be an explicit nil
 func (o *WritableVirtualMachineWithConfigContextRequest) SetMemoryNil() {
 	o.Memory.Set(nil)
@@ -604,6 +614,7 @@ func (o *WritableVirtualMachineWithConfigContextRequest) HasDisk() bool {
 func (o *WritableVirtualMachineWithConfigContextRequest) SetDisk(v int32) {
 	o.Disk.Set(&v)
 }
+
 // SetDiskNil sets the value for Disk to be an explicit nil
 func (o *WritableVirtualMachineWithConfigContextRequest) SetDiskNil() {
 	o.Disk.Set(nil)
@@ -710,6 +721,7 @@ func (o *WritableVirtualMachineWithConfigContextRequest) HasConfigTemplate() boo
 func (o *WritableVirtualMachineWithConfigContextRequest) SetConfigTemplate(v BriefConfigTemplateRequest) {
 	o.ConfigTemplate.Set(&v)
 }
+
 // SetConfigTemplateNil sets the value for ConfigTemplate to be an explicit nil
 func (o *WritableVirtualMachineWithConfigContextRequest) SetConfigTemplateNil() {
 	o.ConfigTemplate.Set(nil)
@@ -818,7 +830,7 @@ func (o *WritableVirtualMachineWithConfigContextRequest) SetCustomFields(v map[s
 }
 
 func (o WritableVirtualMachineWithConfigContextRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -906,10 +918,10 @@ func (o *WritableVirtualMachineWithConfigContextRequest) UnmarshalJSON(data []by
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -989,5 +1001,3 @@ func (v *NullableWritableVirtualMachineWithConfigContextRequest) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

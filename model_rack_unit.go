@@ -20,12 +20,12 @@ var _ MappedNullable = &RackUnit{}
 
 // RackUnit A rack unit is an abstraction formed by the set (rack, position, face); it does not exist as a row in the database.
 type RackUnit struct {
-	Id float64 `json:"id"`
-	Name string `json:"name"`
-	Face RackUnitFace `json:"face"`
-	Device BriefDevice `json:"device"`
-	Occupied bool `json:"occupied"`
-	Display string `json:"display"`
+	Id                   float64      `json:"id"`
+	Name                 string       `json:"name"`
+	Face                 RackUnitFace `json:"face"`
+	Device               BriefDevice  `json:"device"`
+	Occupied             bool         `json:"occupied"`
+	Display              string       `json:"display"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -199,7 +199,7 @@ func (o *RackUnit) SetDisplay(v string) {
 }
 
 func (o RackUnit) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -240,10 +240,10 @@ func (o *RackUnit) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -309,5 +309,3 @@ func (v *NullableRackUnit) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

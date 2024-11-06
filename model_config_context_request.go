@@ -20,25 +20,25 @@ var _ MappedNullable = &ConfigContextRequest{}
 
 // ConfigContextRequest Extends the built-in ModelSerializer to enforce calling full_clean() on a copy of the associated instance during validation. (DRF does not do this by default; see https://github.com/encode/django-rest-framework/issues/3144)
 type ConfigContextRequest struct {
-	Name string `json:"name"`
-	Weight *int32 `json:"weight,omitempty"`
-	Description *string `json:"description,omitempty"`
-	IsActive *bool `json:"is_active,omitempty"`
-	Regions []int32 `json:"regions,omitempty"`
-	SiteGroups []int32 `json:"site_groups,omitempty"`
-	Sites []int32 `json:"sites,omitempty"`
-	Locations []int32 `json:"locations,omitempty"`
-	DeviceTypes []int32 `json:"device_types,omitempty"`
-	Roles []int32 `json:"roles,omitempty"`
-	Platforms []int32 `json:"platforms,omitempty"`
-	ClusterTypes []int32 `json:"cluster_types,omitempty"`
-	ClusterGroups []int32 `json:"cluster_groups,omitempty"`
-	Clusters []int32 `json:"clusters,omitempty"`
-	TenantGroups []int32 `json:"tenant_groups,omitempty"`
-	Tenants []int32 `json:"tenants,omitempty"`
-	Tags []string `json:"tags,omitempty"`
-	DataSource *BriefDataSourceRequest `json:"data_source,omitempty"`
-	Data interface{} `json:"data"`
+	Name                 string                  `json:"name"`
+	Weight               *int32                  `json:"weight,omitempty"`
+	Description          *string                 `json:"description,omitempty"`
+	IsActive             *bool                   `json:"is_active,omitempty"`
+	Regions              []int32                 `json:"regions,omitempty"`
+	SiteGroups           []int32                 `json:"site_groups,omitempty"`
+	Sites                []int32                 `json:"sites,omitempty"`
+	Locations            []int32                 `json:"locations,omitempty"`
+	DeviceTypes          []int32                 `json:"device_types,omitempty"`
+	Roles                []int32                 `json:"roles,omitempty"`
+	Platforms            []int32                 `json:"platforms,omitempty"`
+	ClusterTypes         []int32                 `json:"cluster_types,omitempty"`
+	ClusterGroups        []int32                 `json:"cluster_groups,omitempty"`
+	Clusters             []int32                 `json:"clusters,omitempty"`
+	TenantGroups         []int32                 `json:"tenant_groups,omitempty"`
+	Tenants              []int32                 `json:"tenants,omitempty"`
+	Tags                 []string                `json:"tags,omitempty"`
+	DataSource           *BriefDataSourceRequest `json:"data_source,omitempty"`
+	Data                 interface{}             `json:"data"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -658,7 +658,7 @@ func (o *ConfigContextRequest) SetData(v interface{}) {
 }
 
 func (o ConfigContextRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -744,10 +744,10 @@ func (o *ConfigContextRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -826,5 +826,3 @@ func (v *NullableConfigContextRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

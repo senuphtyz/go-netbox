@@ -21,13 +21,13 @@ var _ MappedNullable = &DeviceBayRequest{}
 // DeviceBayRequest Adds support for custom fields and tags.
 type DeviceBayRequest struct {
 	Device BriefDeviceRequest `json:"device"`
-	Name string `json:"name"`
+	Name   string             `json:"name"`
 	// Physical label
-	Label *string `json:"label,omitempty"`
-	Description *string `json:"description,omitempty"`
-	InstalledDevice NullableBriefDeviceRequest `json:"installed_device,omitempty"`
-	Tags []NestedTagRequest `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	Label                *string                    `json:"label,omitempty"`
+	Description          *string                    `json:"description,omitempty"`
+	InstalledDevice      NullableBriefDeviceRequest `json:"installed_device,omitempty"`
+	Tags                 []NestedTagRequest         `json:"tags,omitempty"`
+	CustomFields         map[string]interface{}     `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -196,6 +196,7 @@ func (o *DeviceBayRequest) HasInstalledDevice() bool {
 func (o *DeviceBayRequest) SetInstalledDevice(v BriefDeviceRequest) {
 	o.InstalledDevice.Set(&v)
 }
+
 // SetInstalledDeviceNil sets the value for InstalledDevice to be an explicit nil
 func (o *DeviceBayRequest) SetInstalledDeviceNil() {
 	o.InstalledDevice.Set(nil)
@@ -271,7 +272,7 @@ func (o *DeviceBayRequest) SetCustomFields(v map[string]interface{}) {
 }
 
 func (o DeviceBayRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -319,10 +320,10 @@ func (o *DeviceBayRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -389,5 +390,3 @@ func (v *NullableDeviceBayRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

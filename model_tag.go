@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"time"
 	"fmt"
+	"time"
 )
 
 // checks if the Tag type satisfies the MappedNullable interface at compile time
@@ -21,18 +21,18 @@ var _ MappedNullable = &Tag{}
 
 // Tag Extends the built-in ModelSerializer to enforce calling full_clean() on a copy of the associated instance during validation. (DRF does not do this by default; see https://github.com/encode/django-rest-framework/issues/3144)
 type Tag struct {
-	Id int32 `json:"id"`
-	Url string `json:"url"`
-	DisplayUrl string `json:"display_url"`
-	Display string `json:"display"`
-	Name string `json:"name"`
-	Slug string `json:"slug"`
-	Color *string `json:"color,omitempty"`
-	Description *string `json:"description,omitempty"`
-	ObjectTypes []string `json:"object_types,omitempty"`
-	TaggedItems int64 `json:"tagged_items"`
-	Created NullableTime `json:"created"`
-	LastUpdated NullableTime `json:"last_updated"`
+	Id                   int32        `json:"id"`
+	Url                  string       `json:"url"`
+	DisplayUrl           string       `json:"display_url"`
+	Display              string       `json:"display"`
+	Name                 string       `json:"name"`
+	Slug                 string       `json:"slug" validate:"regexp=^[-\\\\w]+$"`
+	Color                *string      `json:"color,omitempty" validate:"regexp=^[0-9a-f]{6}$"`
+	Description          *string      `json:"description,omitempty"`
+	ObjectTypes          []string     `json:"object_types,omitempty"`
+	TaggedItems          int64        `json:"tagged_items"`
+	Created              NullableTime `json:"created"`
+	LastUpdated          NullableTime `json:"last_updated"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -381,7 +381,7 @@ func (o *Tag) SetLastUpdated(v time.Time) {
 }
 
 func (o Tag) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -437,10 +437,10 @@ func (o *Tag) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -512,5 +512,3 @@ func (v *NullableTag) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

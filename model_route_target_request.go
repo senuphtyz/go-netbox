@@ -21,12 +21,12 @@ var _ MappedNullable = &RouteTargetRequest{}
 // RouteTargetRequest Adds support for custom fields and tags.
 type RouteTargetRequest struct {
 	// Route target value (formatted in accordance with RFC 4360)
-	Name string `json:"name"`
-	Tenant NullableBriefTenantRequest `json:"tenant,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Comments *string `json:"comments,omitempty"`
-	Tags []NestedTagRequest `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	Name                 string                     `json:"name"`
+	Tenant               NullableBriefTenantRequest `json:"tenant,omitempty"`
+	Description          *string                    `json:"description,omitempty"`
+	Comments             *string                    `json:"comments,omitempty"`
+	Tags                 []NestedTagRequest         `json:"tags,omitempty"`
+	CustomFields         map[string]interface{}     `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -106,6 +106,7 @@ func (o *RouteTargetRequest) HasTenant() bool {
 func (o *RouteTargetRequest) SetTenant(v BriefTenantRequest) {
 	o.Tenant.Set(&v)
 }
+
 // SetTenantNil sets the value for Tenant to be an explicit nil
 func (o *RouteTargetRequest) SetTenantNil() {
 	o.Tenant.Set(nil)
@@ -245,7 +246,7 @@ func (o *RouteTargetRequest) SetCustomFields(v map[string]interface{}) {
 }
 
 func (o RouteTargetRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -291,10 +292,10 @@ func (o *RouteTargetRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -360,5 +361,3 @@ func (v *NullableRouteTargetRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

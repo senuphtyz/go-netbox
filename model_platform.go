@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"time"
 	"fmt"
+	"time"
 )
 
 // checks if the Platform type satisfies the MappedNullable interface at compile time
@@ -21,21 +21,21 @@ var _ MappedNullable = &Platform{}
 
 // Platform Adds support for custom fields and tags.
 type Platform struct {
-	Id int32 `json:"id"`
-	Url string `json:"url"`
-	DisplayUrl string `json:"display_url"`
-	Display string `json:"display"`
-	Name string `json:"name"`
-	Slug string `json:"slug"`
-	Manufacturer NullableBriefManufacturer `json:"manufacturer,omitempty"`
-	ConfigTemplate NullableBriefConfigTemplate `json:"config_template,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Tags []NestedTag `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	Created NullableTime `json:"created"`
-	LastUpdated NullableTime `json:"last_updated"`
-	DeviceCount int64 `json:"device_count"`
-	VirtualmachineCount int64 `json:"virtualmachine_count"`
+	Id                   int32                       `json:"id"`
+	Url                  string                      `json:"url"`
+	DisplayUrl           string                      `json:"display_url"`
+	Display              string                      `json:"display"`
+	Name                 string                      `json:"name"`
+	Slug                 string                      `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
+	Manufacturer         NullableBriefManufacturer   `json:"manufacturer,omitempty"`
+	ConfigTemplate       NullableBriefConfigTemplate `json:"config_template,omitempty"`
+	Description          *string                     `json:"description,omitempty"`
+	Tags                 []NestedTag                 `json:"tags,omitempty"`
+	CustomFields         map[string]interface{}      `json:"custom_fields,omitempty"`
+	Created              NullableTime                `json:"created"`
+	LastUpdated          NullableTime                `json:"last_updated"`
+	DeviceCount          int64                       `json:"device_count"`
+	VirtualmachineCount  int64                       `json:"virtualmachine_count"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -244,6 +244,7 @@ func (o *Platform) HasManufacturer() bool {
 func (o *Platform) SetManufacturer(v BriefManufacturer) {
 	o.Manufacturer.Set(&v)
 }
+
 // SetManufacturerNil sets the value for Manufacturer to be an explicit nil
 func (o *Platform) SetManufacturerNil() {
 	o.Manufacturer.Set(nil)
@@ -286,6 +287,7 @@ func (o *Platform) HasConfigTemplate() bool {
 func (o *Platform) SetConfigTemplate(v BriefConfigTemplate) {
 	o.ConfigTemplate.Set(&v)
 }
+
 // SetConfigTemplateNil sets the value for ConfigTemplate to be an explicit nil
 func (o *Platform) SetConfigTemplateNil() {
 	o.ConfigTemplate.Set(nil)
@@ -493,7 +495,7 @@ func (o *Platform) SetVirtualmachineCount(v int64) {
 }
 
 func (o Platform) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -557,10 +559,10 @@ func (o *Platform) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -635,5 +637,3 @@ func (v *NullablePlatform) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

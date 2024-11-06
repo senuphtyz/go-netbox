@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"time"
 	"fmt"
+	"time"
 )
 
 // checks if the IPSecProposal type satisfies the MappedNullable interface at compile time
@@ -21,23 +21,23 @@ var _ MappedNullable = &IPSecProposal{}
 
 // IPSecProposal Adds support for custom fields and tags.
 type IPSecProposal struct {
-	Id int32 `json:"id"`
-	Url string `json:"url"`
-	DisplayUrl string `json:"display_url"`
-	Display string `json:"display"`
-	Name string `json:"name"`
-	Description *string `json:"description,omitempty"`
-	EncryptionAlgorithm IKEProposalEncryptionAlgorithm `json:"encryption_algorithm"`
+	Id                      int32                              `json:"id"`
+	Url                     string                             `json:"url"`
+	DisplayUrl              string                             `json:"display_url"`
+	Display                 string                             `json:"display"`
+	Name                    string                             `json:"name"`
+	Description             *string                            `json:"description,omitempty"`
+	EncryptionAlgorithm     IKEProposalEncryptionAlgorithm     `json:"encryption_algorithm"`
 	AuthenticationAlgorithm IKEProposalAuthenticationAlgorithm `json:"authentication_algorithm"`
 	// Security association lifetime (seconds)
 	SaLifetimeSeconds NullableInt32 `json:"sa_lifetime_seconds,omitempty"`
 	// Security association lifetime (in kilobytes)
-	SaLifetimeData NullableInt32 `json:"sa_lifetime_data,omitempty"`
-	Comments *string `json:"comments,omitempty"`
-	Tags []NestedTag `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	Created NullableTime `json:"created"`
-	LastUpdated NullableTime `json:"last_updated"`
+	SaLifetimeData       NullableInt32          `json:"sa_lifetime_data,omitempty"`
+	Comments             *string                `json:"comments,omitempty"`
+	Tags                 []NestedTag            `json:"tags,omitempty"`
+	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
+	Created              NullableTime           `json:"created"`
+	LastUpdated          NullableTime           `json:"last_updated"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -301,6 +301,7 @@ func (o *IPSecProposal) HasSaLifetimeSeconds() bool {
 func (o *IPSecProposal) SetSaLifetimeSeconds(v int32) {
 	o.SaLifetimeSeconds.Set(&v)
 }
+
 // SetSaLifetimeSecondsNil sets the value for SaLifetimeSeconds to be an explicit nil
 func (o *IPSecProposal) SetSaLifetimeSecondsNil() {
 	o.SaLifetimeSeconds.Set(nil)
@@ -343,6 +344,7 @@ func (o *IPSecProposal) HasSaLifetimeData() bool {
 func (o *IPSecProposal) SetSaLifetimeData(v int32) {
 	o.SaLifetimeData.Set(&v)
 }
+
 // SetSaLifetimeDataNil sets the value for SaLifetimeData to be an explicit nil
 func (o *IPSecProposal) SetSaLifetimeDataNil() {
 	o.SaLifetimeData.Set(nil)
@@ -502,7 +504,7 @@ func (o *IPSecProposal) SetLastUpdated(v time.Time) {
 }
 
 func (o IPSecProposal) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -567,10 +569,10 @@ func (o *IPSecProposal) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -645,5 +647,3 @@ func (v *NullableIPSecProposal) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

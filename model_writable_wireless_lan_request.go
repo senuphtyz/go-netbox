@@ -20,18 +20,18 @@ var _ MappedNullable = &WritableWirelessLANRequest{}
 
 // WritableWirelessLANRequest Adds support for custom fields and tags.
 type WritableWirelessLANRequest struct {
-	Ssid string `json:"ssid"`
-	Description *string `json:"description,omitempty"`
-	Group NullableBriefWirelessLANGroupRequest `json:"group,omitempty"`
-	Status *PatchedWritableWirelessLANRequestStatus `json:"status,omitempty"`
-	Vlan NullableBriefVLANRequest `json:"vlan,omitempty"`
-	Tenant NullableBriefTenantRequest `json:"tenant,omitempty"`
-	AuthType *AuthenticationType1 `json:"auth_type,omitempty"`
-	AuthCipher *AuthenticationCipher `json:"auth_cipher,omitempty"`
-	AuthPsk *string `json:"auth_psk,omitempty"`
-	Comments *string `json:"comments,omitempty"`
-	Tags []NestedTagRequest `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	Ssid                 string                                   `json:"ssid"`
+	Description          *string                                  `json:"description,omitempty"`
+	Group                NullableBriefWirelessLANGroupRequest     `json:"group,omitempty"`
+	Status               *PatchedWritableWirelessLANRequestStatus `json:"status,omitempty"`
+	Vlan                 NullableBriefVLANRequest                 `json:"vlan,omitempty"`
+	Tenant               NullableBriefTenantRequest               `json:"tenant,omitempty"`
+	AuthType             *AuthenticationType1                     `json:"auth_type,omitempty"`
+	AuthCipher           *AuthenticationCipher                    `json:"auth_cipher,omitempty"`
+	AuthPsk              *string                                  `json:"auth_psk,omitempty"`
+	Comments             *string                                  `json:"comments,omitempty"`
+	Tags                 []NestedTagRequest                       `json:"tags,omitempty"`
+	CustomFields         map[string]interface{}                   `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -143,6 +143,7 @@ func (o *WritableWirelessLANRequest) HasGroup() bool {
 func (o *WritableWirelessLANRequest) SetGroup(v BriefWirelessLANGroupRequest) {
 	o.Group.Set(&v)
 }
+
 // SetGroupNil sets the value for Group to be an explicit nil
 func (o *WritableWirelessLANRequest) SetGroupNil() {
 	o.Group.Set(nil)
@@ -217,6 +218,7 @@ func (o *WritableWirelessLANRequest) HasVlan() bool {
 func (o *WritableWirelessLANRequest) SetVlan(v BriefVLANRequest) {
 	o.Vlan.Set(&v)
 }
+
 // SetVlanNil sets the value for Vlan to be an explicit nil
 func (o *WritableWirelessLANRequest) SetVlanNil() {
 	o.Vlan.Set(nil)
@@ -259,6 +261,7 @@ func (o *WritableWirelessLANRequest) HasTenant() bool {
 func (o *WritableWirelessLANRequest) SetTenant(v BriefTenantRequest) {
 	o.Tenant.Set(&v)
 }
+
 // SetTenantNil sets the value for Tenant to be an explicit nil
 func (o *WritableWirelessLANRequest) SetTenantNil() {
 	o.Tenant.Set(nil)
@@ -462,7 +465,7 @@ func (o *WritableWirelessLANRequest) SetCustomFields(v map[string]interface{}) {
 }
 
 func (o WritableWirelessLANRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -526,10 +529,10 @@ func (o *WritableWirelessLANRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -601,5 +604,3 @@ func (v *NullableWritableWirelessLANRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

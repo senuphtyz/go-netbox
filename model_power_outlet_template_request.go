@@ -25,11 +25,11 @@ type PowerOutletTemplateRequest struct {
 	// {module} is accepted as a substitution for the module bay position when attached to a module type.
 	Name string `json:"name"`
 	// Physical label
-	Label *string `json:"label,omitempty"`
-	Type NullablePowerOutletRequestType `json:"type,omitempty"`
-	PowerPort NullableBriefPowerPortTemplateRequest `json:"power_port,omitempty"`
-	FeedLeg NullablePowerOutletRequestFeedLeg `json:"feed_leg,omitempty"`
-	Description *string `json:"description,omitempty"`
+	Label                *string                               `json:"label,omitempty"`
+	Type                 NullablePowerOutletRequestType        `json:"type,omitempty"`
+	PowerPort            NullableBriefPowerPortTemplateRequest `json:"power_port,omitempty"`
+	FeedLeg              NullablePowerOutletRequestFeedLeg     `json:"feed_leg,omitempty"`
+	Description          *string                               `json:"description,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -85,6 +85,7 @@ func (o *PowerOutletTemplateRequest) HasDeviceType() bool {
 func (o *PowerOutletTemplateRequest) SetDeviceType(v BriefDeviceTypeRequest) {
 	o.DeviceType.Set(&v)
 }
+
 // SetDeviceTypeNil sets the value for DeviceType to be an explicit nil
 func (o *PowerOutletTemplateRequest) SetDeviceTypeNil() {
 	o.DeviceType.Set(nil)
@@ -127,6 +128,7 @@ func (o *PowerOutletTemplateRequest) HasModuleType() bool {
 func (o *PowerOutletTemplateRequest) SetModuleType(v BriefModuleTypeRequest) {
 	o.ModuleType.Set(&v)
 }
+
 // SetModuleTypeNil sets the value for ModuleType to be an explicit nil
 func (o *PowerOutletTemplateRequest) SetModuleTypeNil() {
 	o.ModuleType.Set(nil)
@@ -225,6 +227,7 @@ func (o *PowerOutletTemplateRequest) HasType() bool {
 func (o *PowerOutletTemplateRequest) SetType(v PowerOutletRequestType) {
 	o.Type.Set(&v)
 }
+
 // SetTypeNil sets the value for Type to be an explicit nil
 func (o *PowerOutletTemplateRequest) SetTypeNil() {
 	o.Type.Set(nil)
@@ -267,6 +270,7 @@ func (o *PowerOutletTemplateRequest) HasPowerPort() bool {
 func (o *PowerOutletTemplateRequest) SetPowerPort(v BriefPowerPortTemplateRequest) {
 	o.PowerPort.Set(&v)
 }
+
 // SetPowerPortNil sets the value for PowerPort to be an explicit nil
 func (o *PowerOutletTemplateRequest) SetPowerPortNil() {
 	o.PowerPort.Set(nil)
@@ -309,6 +313,7 @@ func (o *PowerOutletTemplateRequest) HasFeedLeg() bool {
 func (o *PowerOutletTemplateRequest) SetFeedLeg(v PowerOutletRequestFeedLeg) {
 	o.FeedLeg.Set(&v)
 }
+
 // SetFeedLegNil sets the value for FeedLeg to be an explicit nil
 func (o *PowerOutletTemplateRequest) SetFeedLegNil() {
 	o.FeedLeg.Set(nil)
@@ -352,7 +357,7 @@ func (o *PowerOutletTemplateRequest) SetDescription(v string) {
 }
 
 func (o PowerOutletTemplateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -404,10 +409,10 @@ func (o *PowerOutletTemplateRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -475,5 +480,3 @@ func (v *NullablePowerOutletTemplateRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

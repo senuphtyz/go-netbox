@@ -20,17 +20,17 @@ var _ MappedNullable = &LocationRequest{}
 
 // LocationRequest Extends PrimaryModelSerializer to include MPTT support.
 type LocationRequest struct {
-	Name string `json:"name"`
-	Slug string `json:"slug"`
-	Site BriefSiteRequest `json:"site"`
+	Name   string                        `json:"name"`
+	Slug   string                        `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
+	Site   BriefSiteRequest              `json:"site"`
 	Parent NullableNestedLocationRequest `json:"parent,omitempty"`
-	Status *LocationStatusValue `json:"status,omitempty"`
-	Tenant NullableBriefTenantRequest `json:"tenant,omitempty"`
+	Status *LocationStatusValue          `json:"status,omitempty"`
+	Tenant NullableBriefTenantRequest    `json:"tenant,omitempty"`
 	// Local facility ID or description
-	Facility *string `json:"facility,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Tags []NestedTagRequest `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	Facility             *string                `json:"facility,omitempty"`
+	Description          *string                `json:"description,omitempty"`
+	Tags                 []NestedTagRequest     `json:"tags,omitempty"`
+	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -160,6 +160,7 @@ func (o *LocationRequest) HasParent() bool {
 func (o *LocationRequest) SetParent(v NestedLocationRequest) {
 	o.Parent.Set(&v)
 }
+
 // SetParentNil sets the value for Parent to be an explicit nil
 func (o *LocationRequest) SetParentNil() {
 	o.Parent.Set(nil)
@@ -234,6 +235,7 @@ func (o *LocationRequest) HasTenant() bool {
 func (o *LocationRequest) SetTenant(v BriefTenantRequest) {
 	o.Tenant.Set(&v)
 }
+
 // SetTenantNil sets the value for Tenant to be an explicit nil
 func (o *LocationRequest) SetTenantNil() {
 	o.Tenant.Set(nil)
@@ -373,7 +375,7 @@ func (o *LocationRequest) SetCustomFields(v map[string]interface{}) {
 }
 
 func (o LocationRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -429,10 +431,10 @@ func (o *LocationRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -502,5 +504,3 @@ func (v *NullableLocationRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

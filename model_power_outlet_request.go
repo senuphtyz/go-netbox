@@ -20,19 +20,19 @@ var _ MappedNullable = &PowerOutletRequest{}
 
 // PowerOutletRequest Adds support for custom fields and tags.
 type PowerOutletRequest struct {
-	Device BriefDeviceRequest `json:"device"`
+	Device BriefDeviceRequest         `json:"device"`
 	Module NullableBriefModuleRequest `json:"module,omitempty"`
-	Name string `json:"name"`
+	Name   string                     `json:"name"`
 	// Physical label
-	Label *string `json:"label,omitempty"`
-	Type NullablePowerOutletRequestType `json:"type,omitempty"`
-	PowerPort NullableBriefPowerPortRequest `json:"power_port,omitempty"`
-	FeedLeg NullablePowerOutletRequestFeedLeg `json:"feed_leg,omitempty"`
-	Description *string `json:"description,omitempty"`
+	Label       *string                           `json:"label,omitempty"`
+	Type        NullablePowerOutletRequestType    `json:"type,omitempty"`
+	PowerPort   NullableBriefPowerPortRequest     `json:"power_port,omitempty"`
+	FeedLeg     NullablePowerOutletRequestFeedLeg `json:"feed_leg,omitempty"`
+	Description *string                           `json:"description,omitempty"`
 	// Treat as if a cable is connected
-	MarkConnected *bool `json:"mark_connected,omitempty"`
-	Tags []NestedTagRequest `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	MarkConnected        *bool                  `json:"mark_connected,omitempty"`
+	Tags                 []NestedTagRequest     `json:"tags,omitempty"`
+	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -113,6 +113,7 @@ func (o *PowerOutletRequest) HasModule() bool {
 func (o *PowerOutletRequest) SetModule(v BriefModuleRequest) {
 	o.Module.Set(&v)
 }
+
 // SetModuleNil sets the value for Module to be an explicit nil
 func (o *PowerOutletRequest) SetModuleNil() {
 	o.Module.Set(nil)
@@ -211,6 +212,7 @@ func (o *PowerOutletRequest) HasType() bool {
 func (o *PowerOutletRequest) SetType(v PowerOutletRequestType) {
 	o.Type.Set(&v)
 }
+
 // SetTypeNil sets the value for Type to be an explicit nil
 func (o *PowerOutletRequest) SetTypeNil() {
 	o.Type.Set(nil)
@@ -253,6 +255,7 @@ func (o *PowerOutletRequest) HasPowerPort() bool {
 func (o *PowerOutletRequest) SetPowerPort(v BriefPowerPortRequest) {
 	o.PowerPort.Set(&v)
 }
+
 // SetPowerPortNil sets the value for PowerPort to be an explicit nil
 func (o *PowerOutletRequest) SetPowerPortNil() {
 	o.PowerPort.Set(nil)
@@ -295,6 +298,7 @@ func (o *PowerOutletRequest) HasFeedLeg() bool {
 func (o *PowerOutletRequest) SetFeedLeg(v PowerOutletRequestFeedLeg) {
 	o.FeedLeg.Set(&v)
 }
+
 // SetFeedLegNil sets the value for FeedLeg to be an explicit nil
 func (o *PowerOutletRequest) SetFeedLegNil() {
 	o.FeedLeg.Set(nil)
@@ -434,7 +438,7 @@ func (o *PowerOutletRequest) SetCustomFields(v map[string]interface{}) {
 }
 
 func (o PowerOutletRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -494,10 +498,10 @@ func (o *PowerOutletRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -568,5 +572,3 @@ func (v *NullablePowerOutletRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

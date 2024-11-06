@@ -20,13 +20,13 @@ var _ MappedNullable = &VLANGroupRequest{}
 
 // VLANGroupRequest Adds support for custom fields and tags.
 type VLANGroupRequest struct {
-	Name string `json:"name"`
-	Slug string `json:"slug"`
-	ScopeType NullableString `json:"scope_type,omitempty"`
-	ScopeId NullableInt32 `json:"scope_id,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Tags []NestedTagRequest `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	Name                 string                 `json:"name"`
+	Slug                 string                 `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
+	ScopeType            NullableString         `json:"scope_type,omitempty"`
+	ScopeId              NullableInt32          `json:"scope_id,omitempty"`
+	Description          *string                `json:"description,omitempty"`
+	Tags                 []NestedTagRequest     `json:"tags,omitempty"`
+	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -131,6 +131,7 @@ func (o *VLANGroupRequest) HasScopeType() bool {
 func (o *VLANGroupRequest) SetScopeType(v string) {
 	o.ScopeType.Set(&v)
 }
+
 // SetScopeTypeNil sets the value for ScopeType to be an explicit nil
 func (o *VLANGroupRequest) SetScopeTypeNil() {
 	o.ScopeType.Set(nil)
@@ -173,6 +174,7 @@ func (o *VLANGroupRequest) HasScopeId() bool {
 func (o *VLANGroupRequest) SetScopeId(v int32) {
 	o.ScopeId.Set(&v)
 }
+
 // SetScopeIdNil sets the value for ScopeId to be an explicit nil
 func (o *VLANGroupRequest) SetScopeIdNil() {
 	o.ScopeId.Set(nil)
@@ -280,7 +282,7 @@ func (o *VLANGroupRequest) SetCustomFields(v map[string]interface{}) {
 }
 
 func (o VLANGroupRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -328,10 +330,10 @@ func (o *VLANGroupRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -398,5 +400,3 @@ func (v *NullableVLANGroupRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

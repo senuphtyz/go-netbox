@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"time"
 	"fmt"
+	"time"
 )
 
 // checks if the ConsoleServerPort type satisfies the MappedNullable interface at compile time
@@ -21,34 +21,34 @@ var _ MappedNullable = &ConsoleServerPort{}
 
 // ConsoleServerPort Adds support for custom fields and tags.
 type ConsoleServerPort struct {
-	Id int32 `json:"id"`
-	Url string `json:"url"`
-	DisplayUrl string `json:"display_url"`
-	Display string `json:"display"`
-	Device BriefDevice `json:"device"`
-	Module NullableBriefModule `json:"module,omitempty"`
-	Name string `json:"name"`
+	Id         int32               `json:"id"`
+	Url        string              `json:"url"`
+	DisplayUrl string              `json:"display_url"`
+	Display    string              `json:"display"`
+	Device     BriefDevice         `json:"device"`
+	Module     NullableBriefModule `json:"module,omitempty"`
+	Name       string              `json:"name"`
 	// Physical label
-	Label *string `json:"label,omitempty"`
-	Type *ConsolePortType `json:"type,omitempty"`
-	Speed NullableConsolePortSpeed `json:"speed,omitempty"`
-	Description *string `json:"description,omitempty"`
+	Label       *string                  `json:"label,omitempty"`
+	Type        *ConsolePortType         `json:"type,omitempty"`
+	Speed       NullableConsolePortSpeed `json:"speed,omitempty"`
+	Description *string                  `json:"description,omitempty"`
 	// Treat as if a cable is connected
-	MarkConnected *bool `json:"mark_connected,omitempty"`
-	Cable NullableBriefCable `json:"cable"`
-	CableEnd string `json:"cable_end"`
-	LinkPeers []interface{} `json:"link_peers"`
+	MarkConnected *bool              `json:"mark_connected,omitempty"`
+	Cable         NullableBriefCable `json:"cable"`
+	CableEnd      string             `json:"cable_end"`
+	LinkPeers     []interface{}      `json:"link_peers"`
 	// Return the type of the peer link terminations, or None.
-	LinkPeersType NullableString `json:"link_peers_type"`
-	ConnectedEndpoints []interface{} `json:"connected_endpoints"`
-	ConnectedEndpointsType NullableString `json:"connected_endpoints_type"`
-	ConnectedEndpointsReachable bool `json:"connected_endpoints_reachable"`
-	Tags []NestedTag `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	Created NullableTime `json:"created"`
-	LastUpdated NullableTime `json:"last_updated"`
-	Occupied bool `json:"_occupied"`
-	AdditionalProperties map[string]interface{}
+	LinkPeersType               NullableString         `json:"link_peers_type"`
+	ConnectedEndpoints          []interface{}          `json:"connected_endpoints"`
+	ConnectedEndpointsType      NullableString         `json:"connected_endpoints_type"`
+	ConnectedEndpointsReachable bool                   `json:"connected_endpoints_reachable"`
+	Tags                        []NestedTag            `json:"tags,omitempty"`
+	CustomFields                map[string]interface{} `json:"custom_fields,omitempty"`
+	Created                     NullableTime           `json:"created"`
+	LastUpdated                 NullableTime           `json:"last_updated"`
+	Occupied                    bool                   `json:"_occupied"`
+	AdditionalProperties        map[string]interface{}
 }
 
 type _ConsoleServerPort ConsoleServerPort
@@ -238,6 +238,7 @@ func (o *ConsoleServerPort) HasModule() bool {
 func (o *ConsoleServerPort) SetModule(v BriefModule) {
 	o.Module.Set(&v)
 }
+
 // SetModuleNil sets the value for Module to be an explicit nil
 func (o *ConsoleServerPort) SetModuleNil() {
 	o.Module.Set(nil)
@@ -368,6 +369,7 @@ func (o *ConsoleServerPort) HasSpeed() bool {
 func (o *ConsoleServerPort) SetSpeed(v ConsolePortSpeed) {
 	o.Speed.Set(&v)
 }
+
 // SetSpeedNil sets the value for Speed to be an explicit nil
 func (o *ConsoleServerPort) SetSpeedNil() {
 	o.Speed.Set(nil)
@@ -759,7 +761,7 @@ func (o *ConsoleServerPort) SetOccupied(v bool) {
 }
 
 func (o ConsoleServerPort) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -846,10 +848,10 @@ func (o *ConsoleServerPort) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -933,5 +935,3 @@ func (v *NullableConsoleServerPort) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

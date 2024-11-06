@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"time"
 	"fmt"
+	"time"
 )
 
 // checks if the Webhook type satisfies the MappedNullable interface at compile time
@@ -21,14 +21,14 @@ var _ MappedNullable = &Webhook{}
 
 // Webhook Adds support for custom fields and tags.
 type Webhook struct {
-	Id int32 `json:"id"`
-	Url string `json:"url"`
-	DisplayUrl string `json:"display_url"`
-	Display string `json:"display"`
-	Name string `json:"name"`
+	Id          int32   `json:"id"`
+	Url         string  `json:"url"`
+	DisplayUrl  string  `json:"display_url"`
+	Display     string  `json:"display"`
+	Name        string  `json:"name"`
 	Description *string `json:"description,omitempty"`
 	// This URL will be called using the HTTP method defined when the webhook is called. Jinja2 template processing is supported with the same context as the request body.
-	PayloadUrl string `json:"payload_url"`
+	PayloadUrl string                           `json:"payload_url"`
 	HttpMethod *PatchedWebhookRequestHttpMethod `json:"http_method,omitempty"`
 	// The complete list of official content types is available <a href=\"https://www.iana.org/assignments/media-types/media-types.xhtml\">here</a>.
 	HttpContentType *string `json:"http_content_type,omitempty"`
@@ -41,11 +41,11 @@ type Webhook struct {
 	// Enable SSL certificate verification. Disable with caution!
 	SslVerification *bool `json:"ssl_verification,omitempty"`
 	// The specific CA certificate file to use for SSL verification. Leave blank to use the system defaults.
-	CaFilePath NullableString `json:"ca_file_path,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	Tags []NestedTag `json:"tags,omitempty"`
-	Created NullableTime `json:"created"`
-	LastUpdated NullableTime `json:"last_updated"`
+	CaFilePath           NullableString         `json:"ca_file_path,omitempty"`
+	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
+	Tags                 []NestedTag            `json:"tags,omitempty"`
+	Created              NullableTime           `json:"created"`
+	LastUpdated          NullableTime           `json:"last_updated"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -476,6 +476,7 @@ func (o *Webhook) HasCaFilePath() bool {
 func (o *Webhook) SetCaFilePath(v string) {
 	o.CaFilePath.Set(&v)
 }
+
 // SetCaFilePathNil sets the value for CaFilePath to be an explicit nil
 func (o *Webhook) SetCaFilePathNil() {
 	o.CaFilePath.Set(nil)
@@ -603,7 +604,7 @@ func (o *Webhook) SetLastUpdated(v time.Time) {
 }
 
 func (o Webhook) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -678,10 +679,10 @@ func (o *Webhook) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -759,5 +760,3 @@ func (v *NullableWebhook) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

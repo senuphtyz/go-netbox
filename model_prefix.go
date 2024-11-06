@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"time"
 	"fmt"
+	"time"
 )
 
 // checks if the Prefix type satisfies the MappedNullable interface at compile time
@@ -21,30 +21,30 @@ var _ MappedNullable = &Prefix{}
 
 // Prefix Adds support for custom fields and tags.
 type Prefix struct {
-	Id int32 `json:"id"`
-	Url string `json:"url"`
-	DisplayUrl string `json:"display_url"`
-	Display string `json:"display"`
-	Family AggregateFamily `json:"family"`
-	Prefix string `json:"prefix"`
-	Site NullableBriefSite `json:"site,omitempty"`
-	Vrf NullableBriefVRF `json:"vrf,omitempty"`
-	Tenant NullableBriefTenant `json:"tenant,omitempty"`
-	Vlan NullableBriefVLAN `json:"vlan,omitempty"`
-	Status *PrefixStatus `json:"status,omitempty"`
-	Role NullableBriefRole `json:"role,omitempty"`
+	Id         int32               `json:"id"`
+	Url        string              `json:"url"`
+	DisplayUrl string              `json:"display_url"`
+	Display    string              `json:"display"`
+	Family     AggregateFamily     `json:"family"`
+	Prefix     string              `json:"prefix"`
+	Site       NullableBriefSite   `json:"site,omitempty"`
+	Vrf        NullableBriefVRF    `json:"vrf,omitempty"`
+	Tenant     NullableBriefTenant `json:"tenant,omitempty"`
+	Vlan       NullableBriefVLAN   `json:"vlan,omitempty"`
+	Status     *PrefixStatus       `json:"status,omitempty"`
+	Role       NullableBriefRole   `json:"role,omitempty"`
 	// All IP addresses within this prefix are considered usable
 	IsPool *bool `json:"is_pool,omitempty"`
 	// Treat as fully utilized
-	MarkUtilized *bool `json:"mark_utilized,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Comments *string `json:"comments,omitempty"`
-	Tags []NestedTag `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	Created NullableTime `json:"created"`
-	LastUpdated NullableTime `json:"last_updated"`
-	Children int32 `json:"children"`
-	Depth int32 `json:"_depth"`
+	MarkUtilized         *bool                  `json:"mark_utilized,omitempty"`
+	Description          *string                `json:"description,omitempty"`
+	Comments             *string                `json:"comments,omitempty"`
+	Tags                 []NestedTag            `json:"tags,omitempty"`
+	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
+	Created              NullableTime           `json:"created"`
+	LastUpdated          NullableTime           `json:"last_updated"`
+	Children             int32                  `json:"children"`
+	Depth                int32                  `json:"_depth"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -253,6 +253,7 @@ func (o *Prefix) HasSite() bool {
 func (o *Prefix) SetSite(v BriefSite) {
 	o.Site.Set(&v)
 }
+
 // SetSiteNil sets the value for Site to be an explicit nil
 func (o *Prefix) SetSiteNil() {
 	o.Site.Set(nil)
@@ -295,6 +296,7 @@ func (o *Prefix) HasVrf() bool {
 func (o *Prefix) SetVrf(v BriefVRF) {
 	o.Vrf.Set(&v)
 }
+
 // SetVrfNil sets the value for Vrf to be an explicit nil
 func (o *Prefix) SetVrfNil() {
 	o.Vrf.Set(nil)
@@ -337,6 +339,7 @@ func (o *Prefix) HasTenant() bool {
 func (o *Prefix) SetTenant(v BriefTenant) {
 	o.Tenant.Set(&v)
 }
+
 // SetTenantNil sets the value for Tenant to be an explicit nil
 func (o *Prefix) SetTenantNil() {
 	o.Tenant.Set(nil)
@@ -379,6 +382,7 @@ func (o *Prefix) HasVlan() bool {
 func (o *Prefix) SetVlan(v BriefVLAN) {
 	o.Vlan.Set(&v)
 }
+
 // SetVlanNil sets the value for Vlan to be an explicit nil
 func (o *Prefix) SetVlanNil() {
 	o.Vlan.Set(nil)
@@ -453,6 +457,7 @@ func (o *Prefix) HasRole() bool {
 func (o *Prefix) SetRole(v BriefRole) {
 	o.Role.Set(&v)
 }
+
 // SetRoleNil sets the value for Role to be an explicit nil
 func (o *Prefix) SetRoleNil() {
 	o.Role.Set(nil)
@@ -756,7 +761,7 @@ func (o *Prefix) SetDepth(v int32) {
 }
 
 func (o Prefix) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -841,10 +846,10 @@ func (o *Prefix) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -926,5 +931,3 @@ func (v *NullablePrefix) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

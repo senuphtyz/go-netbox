@@ -20,13 +20,13 @@ var _ MappedNullable = &TenantRequest{}
 
 // TenantRequest Adds support for custom fields and tags.
 type TenantRequest struct {
-	Name string `json:"name"`
-	Slug string `json:"slug"`
-	Group NullableBriefTenantGroupRequest `json:"group,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Comments *string `json:"comments,omitempty"`
-	Tags []NestedTagRequest `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	Name                 string                          `json:"name"`
+	Slug                 string                          `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
+	Group                NullableBriefTenantGroupRequest `json:"group,omitempty"`
+	Description          *string                         `json:"description,omitempty"`
+	Comments             *string                         `json:"comments,omitempty"`
+	Tags                 []NestedTagRequest              `json:"tags,omitempty"`
+	CustomFields         map[string]interface{}          `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -131,6 +131,7 @@ func (o *TenantRequest) HasGroup() bool {
 func (o *TenantRequest) SetGroup(v BriefTenantGroupRequest) {
 	o.Group.Set(&v)
 }
+
 // SetGroupNil sets the value for Group to be an explicit nil
 func (o *TenantRequest) SetGroupNil() {
 	o.Group.Set(nil)
@@ -270,7 +271,7 @@ func (o *TenantRequest) SetCustomFields(v map[string]interface{}) {
 }
 
 func (o TenantRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -318,10 +319,10 @@ func (o *TenantRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -388,5 +389,3 @@ func (v *NullableTenantRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

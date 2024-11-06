@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"time"
 	"fmt"
+	"time"
 )
 
 // checks if the ObjectChange type satisfies the MappedNullable interface at compile time
@@ -21,20 +21,20 @@ var _ MappedNullable = &ObjectChange{}
 
 // ObjectChange struct for ObjectChange
 type ObjectChange struct {
-	Id int32 `json:"id"`
-	Url string `json:"url"`
-	DisplayUrl string `json:"display_url"`
-	Display string `json:"display"`
-	Time time.Time `json:"time"`
-	User BriefUser `json:"user"`
-	UserName string `json:"user_name"`
-	RequestId string `json:"request_id"`
-	Action ObjectChangeAction `json:"action"`
-	ChangedObjectType string `json:"changed_object_type"`
-	ChangedObjectId int64 `json:"changed_object_id"`
-	ChangedObject interface{} `json:"changed_object"`
-	PrechangeData interface{} `json:"prechange_data"`
-	PostchangeData interface{} `json:"postchange_data"`
+	Id                   int32              `json:"id"`
+	Url                  string             `json:"url"`
+	DisplayUrl           string             `json:"display_url"`
+	Display              string             `json:"display"`
+	Time                 time.Time          `json:"time"`
+	User                 BriefUser          `json:"user"`
+	UserName             string             `json:"user_name"`
+	RequestId            string             `json:"request_id"`
+	Action               ObjectChangeAction `json:"action"`
+	ChangedObjectType    string             `json:"changed_object_type"`
+	ChangedObjectId      int64              `json:"changed_object_id"`
+	ChangedObject        interface{}        `json:"changed_object"`
+	PrechangeData        interface{}        `json:"prechange_data"`
+	PostchangeData       interface{}        `json:"postchange_data"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -414,7 +414,7 @@ func (o *ObjectChange) SetPostchangeData(v interface{}) {
 }
 
 func (o ObjectChange) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -477,10 +477,10 @@ func (o *ObjectChange) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -554,5 +554,3 @@ func (v *NullableObjectChange) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

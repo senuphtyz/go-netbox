@@ -20,14 +20,14 @@ var _ MappedNullable = &Group{}
 
 // Group Extends the built-in ModelSerializer to enforce calling full_clean() on a copy of the associated instance during validation. (DRF does not do this by default; see https://github.com/encode/django-rest-framework/issues/3144)
 type Group struct {
-	Id int32 `json:"id"`
-	Url string `json:"url"`
-	DisplayUrl string `json:"display_url"`
-	Display string `json:"display"`
-	Name string `json:"name"`
-	Description *string `json:"description,omitempty"`
-	Permissions []ObjectPermission `json:"permissions,omitempty"`
-	UserCount int32 `json:"user_count"`
+	Id                   int32              `json:"id"`
+	Url                  string             `json:"url"`
+	DisplayUrl           string             `json:"display_url"`
+	Display              string             `json:"display"`
+	Name                 string             `json:"name"`
+	Description          *string            `json:"description,omitempty"`
+	Permissions          []ObjectPermission `json:"permissions,omitempty"`
+	UserCount            int32              `json:"user_count"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -265,7 +265,7 @@ func (o *Group) SetUserCount(v int32) {
 }
 
 func (o Group) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -312,10 +312,10 @@ func (o *Group) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -383,5 +383,3 @@ func (v *NullableGroup) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

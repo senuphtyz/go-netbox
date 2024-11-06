@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"time"
 	"fmt"
+	"time"
 )
 
 // checks if the ConfigTemplate type satisfies the MappedNullable interface at compile time
@@ -21,24 +21,24 @@ var _ MappedNullable = &ConfigTemplate{}
 
 // ConfigTemplate Introduces support for Tag assignment. Adds `tags` serialization, and handles tag assignment on create() and update().
 type ConfigTemplate struct {
-	Id int32 `json:"id"`
-	Url string `json:"url"`
-	DisplayUrl string `json:"display_url"`
-	Display string `json:"display"`
-	Name string `json:"name"`
+	Id          int32   `json:"id"`
+	Url         string  `json:"url"`
+	DisplayUrl  string  `json:"display_url"`
+	Display     string  `json:"display"`
+	Name        string  `json:"name"`
 	Description *string `json:"description,omitempty"`
 	// Any <a href=\"https://jinja.palletsprojects.com/en/3.1.x/api/#jinja2.Environment\">additional parameters</a> to pass when constructing the Jinja2 environment.
 	EnvironmentParams interface{} `json:"environment_params,omitempty"`
 	// Jinja2 template code.
-	TemplateCode string `json:"template_code"`
-	DataSource *BriefDataSource `json:"data_source,omitempty"`
+	TemplateCode string           `json:"template_code"`
+	DataSource   *BriefDataSource `json:"data_source,omitempty"`
 	// Path to remote file (relative to data source root)
-	DataPath string `json:"data_path"`
-	DataFile *BriefDataFile `json:"data_file,omitempty"`
-	DataSynced NullableTime `json:"data_synced"`
-	Tags []NestedTag `json:"tags,omitempty"`
-	Created NullableTime `json:"created"`
-	LastUpdated NullableTime `json:"last_updated"`
+	DataPath             string         `json:"data_path"`
+	DataFile             *BriefDataFile `json:"data_file,omitempty"`
+	DataSynced           NullableTime   `json:"data_synced"`
+	Tags                 []NestedTag    `json:"tags,omitempty"`
+	Created              NullableTime   `json:"created"`
+	LastUpdated          NullableTime   `json:"last_updated"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -479,7 +479,7 @@ func (o *ConfigTemplate) SetLastUpdated(v time.Time) {
 }
 
 func (o ConfigTemplate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -543,10 +543,10 @@ func (o *ConfigTemplate) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -621,5 +621,3 @@ func (v *NullableConfigTemplate) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

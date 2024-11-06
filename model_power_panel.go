@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"time"
 	"fmt"
+	"time"
 )
 
 // checks if the PowerPanel type satisfies the MappedNullable interface at compile time
@@ -21,20 +21,20 @@ var _ MappedNullable = &PowerPanel{}
 
 // PowerPanel Adds support for custom fields and tags.
 type PowerPanel struct {
-	Id int32 `json:"id"`
-	Url string `json:"url"`
-	DisplayUrl string `json:"display_url"`
-	Display string `json:"display"`
-	Site BriefSite `json:"site"`
-	Location NullableBriefLocation `json:"location,omitempty"`
-	Name string `json:"name"`
-	Description *string `json:"description,omitempty"`
-	Comments *string `json:"comments,omitempty"`
-	Tags []NestedTag `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	PowerfeedCount int64 `json:"powerfeed_count"`
-	Created NullableTime `json:"created"`
-	LastUpdated NullableTime `json:"last_updated"`
+	Id                   int32                  `json:"id"`
+	Url                  string                 `json:"url"`
+	DisplayUrl           string                 `json:"display_url"`
+	Display              string                 `json:"display"`
+	Site                 BriefSite              `json:"site"`
+	Location             NullableBriefLocation  `json:"location,omitempty"`
+	Name                 string                 `json:"name"`
+	Description          *string                `json:"description,omitempty"`
+	Comments             *string                `json:"comments,omitempty"`
+	Tags                 []NestedTag            `json:"tags,omitempty"`
+	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
+	PowerfeedCount       int64                  `json:"powerfeed_count"`
+	Created              NullableTime           `json:"created"`
+	LastUpdated          NullableTime           `json:"last_updated"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -218,6 +218,7 @@ func (o *PowerPanel) HasLocation() bool {
 func (o *PowerPanel) SetLocation(v BriefLocation) {
 	o.Location.Set(&v)
 }
+
 // SetLocationNil sets the value for Location to be an explicit nil
 func (o *PowerPanel) SetLocationNil() {
 	o.Location.Set(nil)
@@ -457,7 +458,7 @@ func (o *PowerPanel) SetLastUpdated(v time.Time) {
 }
 
 func (o PowerPanel) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -519,10 +520,10 @@ func (o *PowerPanel) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -596,5 +597,3 @@ func (v *NullablePowerPanel) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

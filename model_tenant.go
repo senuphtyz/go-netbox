@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"time"
 	"fmt"
+	"time"
 )
 
 // checks if the Tenant type satisfies the MappedNullable interface at compile time
@@ -21,29 +21,29 @@ var _ MappedNullable = &Tenant{}
 
 // Tenant Adds support for custom fields and tags.
 type Tenant struct {
-	Id int32 `json:"id"`
-	Url string `json:"url"`
-	DisplayUrl string `json:"display_url"`
-	Display string `json:"display"`
-	Name string `json:"name"`
-	Slug string `json:"slug"`
-	Group NullableBriefTenantGroup `json:"group,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Comments *string `json:"comments,omitempty"`
-	Tags []NestedTag `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	Created NullableTime `json:"created"`
-	LastUpdated NullableTime `json:"last_updated"`
-	CircuitCount int64 `json:"circuit_count"`
-	DeviceCount int64 `json:"device_count"`
-	IpaddressCount int64 `json:"ipaddress_count"`
-	PrefixCount int64 `json:"prefix_count"`
-	RackCount int64 `json:"rack_count"`
-	SiteCount int64 `json:"site_count"`
-	VirtualmachineCount int64 `json:"virtualmachine_count"`
-	VlanCount int64 `json:"vlan_count"`
-	VrfCount int64 `json:"vrf_count"`
-	ClusterCount int64 `json:"cluster_count"`
+	Id                   int32                    `json:"id"`
+	Url                  string                   `json:"url"`
+	DisplayUrl           string                   `json:"display_url"`
+	Display              string                   `json:"display"`
+	Name                 string                   `json:"name"`
+	Slug                 string                   `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
+	Group                NullableBriefTenantGroup `json:"group,omitempty"`
+	Description          *string                  `json:"description,omitempty"`
+	Comments             *string                  `json:"comments,omitempty"`
+	Tags                 []NestedTag              `json:"tags,omitempty"`
+	CustomFields         map[string]interface{}   `json:"custom_fields,omitempty"`
+	Created              NullableTime             `json:"created"`
+	LastUpdated          NullableTime             `json:"last_updated"`
+	CircuitCount         int64                    `json:"circuit_count"`
+	DeviceCount          int64                    `json:"device_count"`
+	IpaddressCount       int64                    `json:"ipaddress_count"`
+	PrefixCount          int64                    `json:"prefix_count"`
+	RackCount            int64                    `json:"rack_count"`
+	SiteCount            int64                    `json:"site_count"`
+	VirtualmachineCount  int64                    `json:"virtualmachine_count"`
+	VlanCount            int64                    `json:"vlan_count"`
+	VrfCount             int64                    `json:"vrf_count"`
+	ClusterCount         int64                    `json:"cluster_count"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -260,6 +260,7 @@ func (o *Tenant) HasGroup() bool {
 func (o *Tenant) SetGroup(v BriefTenantGroup) {
 	o.Group.Set(&v)
 }
+
 // SetGroupNil sets the value for Group to be an explicit nil
 func (o *Tenant) SetGroupNil() {
 	o.Group.Set(nil)
@@ -691,7 +692,7 @@ func (o *Tenant) SetClusterCount(v int64) {
 }
 
 func (o Tenant) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -771,10 +772,10 @@ func (o *Tenant) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -857,5 +858,3 @@ func (v *NullableTenant) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

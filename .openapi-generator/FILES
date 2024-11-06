@@ -2023,5 +2023,4 @@ model_writable_wireless_lan_group_request.go
 model_writable_wireless_lan_request.go
 model_writable_wireless_link_request.go
 response.go
-test/api_plugins_test.go
 utils.go

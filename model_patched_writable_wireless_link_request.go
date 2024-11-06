@@ -19,20 +19,20 @@ var _ MappedNullable = &PatchedWritableWirelessLinkRequest{}
 
 // PatchedWritableWirelessLinkRequest Adds support for custom fields and tags.
 type PatchedWritableWirelessLinkRequest struct {
-	InterfaceA *BriefInterfaceRequest `json:"interface_a,omitempty"`
-	InterfaceB *BriefInterfaceRequest `json:"interface_b,omitempty"`
-	Ssid *string `json:"ssid,omitempty"`
-	Status *CableStatusValue `json:"status,omitempty"`
-	Tenant NullableBriefTenantRequest `json:"tenant,omitempty"`
-	AuthType *AuthenticationType1 `json:"auth_type,omitempty"`
-	AuthCipher *AuthenticationCipher `json:"auth_cipher,omitempty"`
-	AuthPsk *string `json:"auth_psk,omitempty"`
-	Distance NullableFloat64 `json:"distance,omitempty"`
-	DistanceUnit *PatchedWritableWirelessLinkRequestDistanceUnit `json:"distance_unit,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Comments *string `json:"comments,omitempty"`
-	Tags []NestedTagRequest `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	InterfaceA           *BriefInterfaceRequest                          `json:"interface_a,omitempty"`
+	InterfaceB           *BriefInterfaceRequest                          `json:"interface_b,omitempty"`
+	Ssid                 *string                                         `json:"ssid,omitempty"`
+	Status               *CableStatusValue                               `json:"status,omitempty"`
+	Tenant               NullableBriefTenantRequest                      `json:"tenant,omitempty"`
+	AuthType             *AuthenticationType1                            `json:"auth_type,omitempty"`
+	AuthCipher           *AuthenticationCipher                           `json:"auth_cipher,omitempty"`
+	AuthPsk              *string                                         `json:"auth_psk,omitempty"`
+	Distance             NullableFloat64                                 `json:"distance,omitempty"`
+	DistanceUnit         *PatchedWritableWirelessLinkRequestDistanceUnit `json:"distance_unit,omitempty"`
+	Description          *string                                         `json:"description,omitempty"`
+	Comments             *string                                         `json:"comments,omitempty"`
+	Tags                 []NestedTagRequest                              `json:"tags,omitempty"`
+	CustomFields         map[string]interface{}                          `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -215,6 +215,7 @@ func (o *PatchedWritableWirelessLinkRequest) HasTenant() bool {
 func (o *PatchedWritableWirelessLinkRequest) SetTenant(v BriefTenantRequest) {
 	o.Tenant.Set(&v)
 }
+
 // SetTenantNil sets the value for Tenant to be an explicit nil
 func (o *PatchedWritableWirelessLinkRequest) SetTenantNil() {
 	o.Tenant.Set(nil)
@@ -353,6 +354,7 @@ func (o *PatchedWritableWirelessLinkRequest) HasDistance() bool {
 func (o *PatchedWritableWirelessLinkRequest) SetDistance(v float64) {
 	o.Distance.Set(&v)
 }
+
 // SetDistanceNil sets the value for Distance to be an explicit nil
 func (o *PatchedWritableWirelessLinkRequest) SetDistanceNil() {
 	o.Distance.Set(nil)
@@ -524,7 +526,7 @@ func (o *PatchedWritableWirelessLinkRequest) SetCustomFields(v map[string]interf
 }
 
 func (o PatchedWritableWirelessLinkRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -652,5 +654,3 @@ func (v *NullablePatchedWritableWirelessLinkRequest) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

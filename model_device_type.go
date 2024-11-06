@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"time"
 	"fmt"
+	"time"
 )
 
 // checks if the DeviceType type satisfies the MappedNullable interface at compile time
@@ -21,45 +21,45 @@ var _ MappedNullable = &DeviceType{}
 
 // DeviceType Adds support for custom fields and tags.
 type DeviceType struct {
-	Id int32 `json:"id"`
-	Url string `json:"url"`
-	DisplayUrl string `json:"display_url"`
-	Display string `json:"display"`
-	Manufacturer BriefManufacturer `json:"manufacturer"`
+	Id              int32                 `json:"id"`
+	Url             string                `json:"url"`
+	DisplayUrl      string                `json:"display_url"`
+	Display         string                `json:"display"`
+	Manufacturer    BriefManufacturer     `json:"manufacturer"`
 	DefaultPlatform NullableBriefPlatform `json:"default_platform,omitempty"`
-	Model string `json:"model"`
-	Slug string `json:"slug"`
+	Model           string                `json:"model"`
+	Slug            string                `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
 	// Discrete part number (optional)
-	PartNumber *string `json:"part_number,omitempty"`
-	UHeight *float64 `json:"u_height,omitempty"`
+	PartNumber *string  `json:"part_number,omitempty"`
+	UHeight    *float64 `json:"u_height,omitempty"`
 	// Devices of this type are excluded when calculating rack utilization.
 	ExcludeFromUtilization *bool `json:"exclude_from_utilization,omitempty"`
 	// Device consumes both front and rear rack faces.
-	IsFullDepth *bool `json:"is_full_depth,omitempty"`
-	SubdeviceRole NullableDeviceTypeSubdeviceRole `json:"subdevice_role,omitempty"`
-	Airflow NullableDeviceTypeAirflow `json:"airflow,omitempty"`
-	Weight NullableFloat64 `json:"weight,omitempty"`
-	WeightUnit NullableDeviceTypeWeightUnit `json:"weight_unit,omitempty"`
-	FrontImage NullableString `json:"front_image,omitempty"`
-	RearImage NullableString `json:"rear_image,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Comments *string `json:"comments,omitempty"`
-	Tags []NestedTag `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	Created NullableTime `json:"created"`
-	LastUpdated NullableTime `json:"last_updated"`
-	DeviceCount int64 `json:"device_count"`
-	ConsolePortTemplateCount int32 `json:"console_port_template_count"`
-	ConsoleServerPortTemplateCount int32 `json:"console_server_port_template_count"`
-	PowerPortTemplateCount int32 `json:"power_port_template_count"`
-	PowerOutletTemplateCount int32 `json:"power_outlet_template_count"`
-	InterfaceTemplateCount int32 `json:"interface_template_count"`
-	FrontPortTemplateCount int32 `json:"front_port_template_count"`
-	RearPortTemplateCount int32 `json:"rear_port_template_count"`
-	DeviceBayTemplateCount int32 `json:"device_bay_template_count"`
-	ModuleBayTemplateCount int32 `json:"module_bay_template_count"`
-	InventoryItemTemplateCount int32 `json:"inventory_item_template_count"`
-	AdditionalProperties map[string]interface{}
+	IsFullDepth                    *bool                           `json:"is_full_depth,omitempty"`
+	SubdeviceRole                  NullableDeviceTypeSubdeviceRole `json:"subdevice_role,omitempty"`
+	Airflow                        NullableDeviceTypeAirflow       `json:"airflow,omitempty"`
+	Weight                         NullableFloat64                 `json:"weight,omitempty"`
+	WeightUnit                     NullableDeviceTypeWeightUnit    `json:"weight_unit,omitempty"`
+	FrontImage                     NullableString                  `json:"front_image,omitempty"`
+	RearImage                      NullableString                  `json:"rear_image,omitempty"`
+	Description                    *string                         `json:"description,omitempty"`
+	Comments                       *string                         `json:"comments,omitempty"`
+	Tags                           []NestedTag                     `json:"tags,omitempty"`
+	CustomFields                   map[string]interface{}          `json:"custom_fields,omitempty"`
+	Created                        NullableTime                    `json:"created"`
+	LastUpdated                    NullableTime                    `json:"last_updated"`
+	DeviceCount                    int64                           `json:"device_count"`
+	ConsolePortTemplateCount       int32                           `json:"console_port_template_count"`
+	ConsoleServerPortTemplateCount int32                           `json:"console_server_port_template_count"`
+	PowerPortTemplateCount         int32                           `json:"power_port_template_count"`
+	PowerOutletTemplateCount       int32                           `json:"power_outlet_template_count"`
+	InterfaceTemplateCount         int32                           `json:"interface_template_count"`
+	FrontPortTemplateCount         int32                           `json:"front_port_template_count"`
+	RearPortTemplateCount          int32                           `json:"rear_port_template_count"`
+	DeviceBayTemplateCount         int32                           `json:"device_bay_template_count"`
+	ModuleBayTemplateCount         int32                           `json:"module_bay_template_count"`
+	InventoryItemTemplateCount     int32                           `json:"inventory_item_template_count"`
+	AdditionalProperties           map[string]interface{}
 }
 
 type _DeviceType DeviceType
@@ -257,6 +257,7 @@ func (o *DeviceType) HasDefaultPlatform() bool {
 func (o *DeviceType) SetDefaultPlatform(v BriefPlatform) {
 	o.DefaultPlatform.Set(&v)
 }
+
 // SetDefaultPlatformNil sets the value for DefaultPlatform to be an explicit nil
 func (o *DeviceType) SetDefaultPlatformNil() {
 	o.DefaultPlatform.Set(nil)
@@ -475,6 +476,7 @@ func (o *DeviceType) HasSubdeviceRole() bool {
 func (o *DeviceType) SetSubdeviceRole(v DeviceTypeSubdeviceRole) {
 	o.SubdeviceRole.Set(&v)
 }
+
 // SetSubdeviceRoleNil sets the value for SubdeviceRole to be an explicit nil
 func (o *DeviceType) SetSubdeviceRoleNil() {
 	o.SubdeviceRole.Set(nil)
@@ -517,6 +519,7 @@ func (o *DeviceType) HasAirflow() bool {
 func (o *DeviceType) SetAirflow(v DeviceTypeAirflow) {
 	o.Airflow.Set(&v)
 }
+
 // SetAirflowNil sets the value for Airflow to be an explicit nil
 func (o *DeviceType) SetAirflowNil() {
 	o.Airflow.Set(nil)
@@ -559,6 +562,7 @@ func (o *DeviceType) HasWeight() bool {
 func (o *DeviceType) SetWeight(v float64) {
 	o.Weight.Set(&v)
 }
+
 // SetWeightNil sets the value for Weight to be an explicit nil
 func (o *DeviceType) SetWeightNil() {
 	o.Weight.Set(nil)
@@ -601,6 +605,7 @@ func (o *DeviceType) HasWeightUnit() bool {
 func (o *DeviceType) SetWeightUnit(v DeviceTypeWeightUnit) {
 	o.WeightUnit.Set(&v)
 }
+
 // SetWeightUnitNil sets the value for WeightUnit to be an explicit nil
 func (o *DeviceType) SetWeightUnitNil() {
 	o.WeightUnit.Set(nil)
@@ -643,6 +648,7 @@ func (o *DeviceType) HasFrontImage() bool {
 func (o *DeviceType) SetFrontImage(v string) {
 	o.FrontImage.Set(&v)
 }
+
 // SetFrontImageNil sets the value for FrontImage to be an explicit nil
 func (o *DeviceType) SetFrontImageNil() {
 	o.FrontImage.Set(nil)
@@ -685,6 +691,7 @@ func (o *DeviceType) HasRearImage() bool {
 func (o *DeviceType) SetRearImage(v string) {
 	o.RearImage.Set(&v)
 }
+
 // SetRearImageNil sets the value for RearImage to be an explicit nil
 func (o *DeviceType) SetRearImageNil() {
 	o.RearImage.Set(nil)
@@ -1140,7 +1147,7 @@ func (o *DeviceType) SetInventoryItemTemplateCount(v int32) {
 }
 
 func (o DeviceType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1254,10 +1261,10 @@ func (o *DeviceType) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -1352,5 +1359,3 @@ func (v *NullableDeviceType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

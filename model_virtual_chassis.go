@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"time"
 	"fmt"
+	"time"
 )
 
 // checks if the VirtualChassis type satisfies the MappedNullable interface at compile time
@@ -21,21 +21,21 @@ var _ MappedNullable = &VirtualChassis{}
 
 // VirtualChassis Adds support for custom fields and tags.
 type VirtualChassis struct {
-	Id int32 `json:"id"`
-	Url string `json:"url"`
-	DisplayUrl string `json:"display_url"`
-	Display string `json:"display"`
-	Name string `json:"name"`
-	Domain *string `json:"domain,omitempty"`
-	Master NullableNestedDevice `json:"master,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Comments *string `json:"comments,omitempty"`
-	Tags []NestedTag `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	Created NullableTime `json:"created"`
-	LastUpdated NullableTime `json:"last_updated"`
-	MemberCount int32 `json:"member_count"`
-	Members []NestedDevice `json:"members"`
+	Id                   int32                  `json:"id"`
+	Url                  string                 `json:"url"`
+	DisplayUrl           string                 `json:"display_url"`
+	Display              string                 `json:"display"`
+	Name                 string                 `json:"name"`
+	Domain               *string                `json:"domain,omitempty"`
+	Master               NullableNestedDevice   `json:"master,omitempty"`
+	Description          *string                `json:"description,omitempty"`
+	Comments             *string                `json:"comments,omitempty"`
+	Tags                 []NestedTag            `json:"tags,omitempty"`
+	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
+	Created              NullableTime           `json:"created"`
+	LastUpdated          NullableTime           `json:"last_updated"`
+	MemberCount          int32                  `json:"member_count"`
+	Members              []NestedDevice         `json:"members"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -251,6 +251,7 @@ func (o *VirtualChassis) HasMaster() bool {
 func (o *VirtualChassis) SetMaster(v NestedDevice) {
 	o.Master.Set(&v)
 }
+
 // SetMasterNil sets the value for Master to be an explicit nil
 func (o *VirtualChassis) SetMasterNil() {
 	o.Master.Set(nil)
@@ -490,7 +491,7 @@ func (o *VirtualChassis) SetMembers(v []NestedDevice) {
 }
 
 func (o VirtualChassis) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -555,10 +556,10 @@ func (o *VirtualChassis) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -633,5 +634,3 @@ func (v *NullableVirtualChassis) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

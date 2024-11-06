@@ -20,10 +20,10 @@ var _ MappedNullable = &PaginatedRackReservationList{}
 
 // PaginatedRackReservationList struct for PaginatedRackReservationList
 type PaginatedRackReservationList struct {
-	Count int32 `json:"count"`
-	Next NullableString `json:"next,omitempty"`
-	Previous NullableString `json:"previous,omitempty"`
-	Results []RackReservation `json:"results"`
+	Count                int32             `json:"count"`
+	Next                 NullableString    `json:"next,omitempty"`
+	Previous             NullableString    `json:"previous,omitempty"`
+	Results              []RackReservation `json:"results"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -104,6 +104,7 @@ func (o *PaginatedRackReservationList) HasNext() bool {
 func (o *PaginatedRackReservationList) SetNext(v string) {
 	o.Next.Set(&v)
 }
+
 // SetNextNil sets the value for Next to be an explicit nil
 func (o *PaginatedRackReservationList) SetNextNil() {
 	o.Next.Set(nil)
@@ -146,6 +147,7 @@ func (o *PaginatedRackReservationList) HasPrevious() bool {
 func (o *PaginatedRackReservationList) SetPrevious(v string) {
 	o.Previous.Set(&v)
 }
+
 // SetPreviousNil sets the value for Previous to be an explicit nil
 func (o *PaginatedRackReservationList) SetPreviousNil() {
 	o.Previous.Set(nil)
@@ -181,7 +183,7 @@ func (o *PaginatedRackReservationList) SetResults(v []RackReservation) {
 }
 
 func (o PaginatedRackReservationList) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -220,10 +222,10 @@ func (o *PaginatedRackReservationList) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -287,5 +289,3 @@ func (v *NullablePaginatedRackReservationList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

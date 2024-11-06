@@ -20,9 +20,9 @@ type IKEProposalGroupLabel string
 
 // List of IKEProposal_group_label
 const (
-	IKEPROPOSALGROUPLABEL__1 IKEProposalGroupLabel = "Group 1"
-	IKEPROPOSALGROUPLABEL__2 IKEProposalGroupLabel = "Group 2"
-	IKEPROPOSALGROUPLABEL__5 IKEProposalGroupLabel = "Group 5"
+	IKEPROPOSALGROUPLABEL__1  IKEProposalGroupLabel = "Group 1"
+	IKEPROPOSALGROUPLABEL__2  IKEProposalGroupLabel = "Group 2"
+	IKEPROPOSALGROUPLABEL__5  IKEProposalGroupLabel = "Group 5"
 	IKEPROPOSALGROUPLABEL__14 IKEProposalGroupLabel = "Group 14"
 	IKEPROPOSALGROUPLABEL__15 IKEProposalGroupLabel = "Group 15"
 	IKEPROPOSALGROUPLABEL__16 IKEProposalGroupLabel = "Group 16"
@@ -152,4 +152,3 @@ func (v *NullableIKEProposalGroupLabel) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

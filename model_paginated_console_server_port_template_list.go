@@ -20,10 +20,10 @@ var _ MappedNullable = &PaginatedConsoleServerPortTemplateList{}
 
 // PaginatedConsoleServerPortTemplateList struct for PaginatedConsoleServerPortTemplateList
 type PaginatedConsoleServerPortTemplateList struct {
-	Count int32 `json:"count"`
-	Next NullableString `json:"next,omitempty"`
-	Previous NullableString `json:"previous,omitempty"`
-	Results []ConsoleServerPortTemplate `json:"results"`
+	Count                int32                       `json:"count"`
+	Next                 NullableString              `json:"next,omitempty"`
+	Previous             NullableString              `json:"previous,omitempty"`
+	Results              []ConsoleServerPortTemplate `json:"results"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -104,6 +104,7 @@ func (o *PaginatedConsoleServerPortTemplateList) HasNext() bool {
 func (o *PaginatedConsoleServerPortTemplateList) SetNext(v string) {
 	o.Next.Set(&v)
 }
+
 // SetNextNil sets the value for Next to be an explicit nil
 func (o *PaginatedConsoleServerPortTemplateList) SetNextNil() {
 	o.Next.Set(nil)
@@ -146,6 +147,7 @@ func (o *PaginatedConsoleServerPortTemplateList) HasPrevious() bool {
 func (o *PaginatedConsoleServerPortTemplateList) SetPrevious(v string) {
 	o.Previous.Set(&v)
 }
+
 // SetPreviousNil sets the value for Previous to be an explicit nil
 func (o *PaginatedConsoleServerPortTemplateList) SetPreviousNil() {
 	o.Previous.Set(nil)
@@ -181,7 +183,7 @@ func (o *PaginatedConsoleServerPortTemplateList) SetResults(v []ConsoleServerPor
 }
 
 func (o PaginatedConsoleServerPortTemplateList) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -220,10 +222,10 @@ func (o *PaginatedConsoleServerPortTemplateList) UnmarshalJSON(data []byte) (err
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -287,5 +289,3 @@ func (v *NullablePaginatedConsoleServerPortTemplateList) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-
