@@ -32,9 +32,9 @@ type Manufacturer struct {
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
-	DevicetypeCount int64 `json:"devicetype_count"`
-	InventoryitemCount int64 `json:"inventoryitem_count"`
-	PlatformCount int64 `json:"platform_count"`
+	DevicetypeCount int64 `json:"devicetype_count,omitempty"`
+	InventoryitemCount int64 `json:"inventoryitem_count,omitempty"`
+	PlatformCount int64 `json:"platform_count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
