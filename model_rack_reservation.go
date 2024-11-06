@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"fmt"
 	"time"
+	"fmt"
 )
 
 // checks if the RackReservation type satisfies the MappedNullable interface at compile time
@@ -21,20 +21,20 @@ var _ MappedNullable = &RackReservation{}
 
 // RackReservation Adds support for custom fields and tags.
 type RackReservation struct {
-	Id                   int32                  `json:"id"`
-	Url                  string                 `json:"url"`
-	DisplayUrl           string                 `json:"display_url"`
-	Display              string                 `json:"display"`
-	Rack                 BriefRack              `json:"rack"`
-	Units                []int32                `json:"units"`
-	Created              NullableTime           `json:"created"`
-	LastUpdated          NullableTime           `json:"last_updated"`
-	User                 BriefUser              `json:"user"`
-	Tenant               NullableBriefTenant    `json:"tenant,omitempty"`
-	Description          string                 `json:"description"`
-	Comments             *string                `json:"comments,omitempty"`
-	Tags                 []NestedTag            `json:"tags,omitempty"`
-	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
+	Id int32 `json:"id"`
+	Url string `json:"url"`
+	DisplayUrl string `json:"display_url"`
+	Display string `json:"display"`
+	Rack BriefRack `json:"rack"`
+	Units []int32 `json:"units"`
+	Created NullableTime `json:"created"`
+	LastUpdated NullableTime `json:"last_updated"`
+	User BriefUser `json:"user"`
+	Tenant NullableBriefTenant `json:"tenant,omitempty"`
+	Description string `json:"description"`
+	Comments *string `json:"comments,omitempty"`
+	Tags []NestedTag `json:"tags,omitempty"`
+	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -319,7 +319,6 @@ func (o *RackReservation) HasTenant() bool {
 func (o *RackReservation) SetTenant(v BriefTenant) {
 	o.Tenant.Set(&v)
 }
-
 // SetTenantNil sets the value for Tenant to be an explicit nil
 func (o *RackReservation) SetTenantNil() {
 	o.Tenant.Set(nil)
@@ -451,7 +450,7 @@ func (o *RackReservation) SetCustomFields(v map[string]interface{}) {
 }
 
 func (o RackReservation) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -512,10 +511,10 @@ func (o *RackReservation) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -589,3 +588,5 @@ func (v *NullableRackReservation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

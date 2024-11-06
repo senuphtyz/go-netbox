@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"fmt"
 	"time"
+	"fmt"
 )
 
 // checks if the TunnelTermination type satisfies the MappedNullable interface at compile time
@@ -21,20 +21,20 @@ var _ MappedNullable = &TunnelTermination{}
 
 // TunnelTermination Adds support for custom fields and tags.
 type TunnelTermination struct {
-	Id                   int32                  `json:"id"`
-	Url                  string                 `json:"url"`
-	DisplayUrl           string                 `json:"display_url"`
-	Display              string                 `json:"display"`
-	Tunnel               BriefTunnel            `json:"tunnel"`
-	Role                 TunnelTerminationRole  `json:"role"`
-	TerminationType      string                 `json:"termination_type"`
-	TerminationId        NullableInt64          `json:"termination_id"`
-	Termination          interface{}            `json:"termination"`
-	OutsideIp            NullableBriefIPAddress `json:"outside_ip,omitempty"`
-	Tags                 []NestedTag            `json:"tags,omitempty"`
-	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
-	Created              NullableTime           `json:"created"`
-	LastUpdated          NullableTime           `json:"last_updated"`
+	Id int32 `json:"id"`
+	Url string `json:"url"`
+	DisplayUrl string `json:"display_url"`
+	Display string `json:"display"`
+	Tunnel BriefTunnel `json:"tunnel"`
+	Role TunnelTerminationRole `json:"role"`
+	TerminationType string `json:"termination_type"`
+	TerminationId NullableInt64 `json:"termination_id"`
+	Termination interface{} `json:"termination"`
+	OutsideIp NullableBriefIPAddress `json:"outside_ip,omitempty"`
+	Tags []NestedTag `json:"tags,omitempty"`
+	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	Created NullableTime `json:"created"`
+	LastUpdated NullableTime `json:"last_updated"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -320,7 +320,6 @@ func (o *TunnelTermination) HasOutsideIp() bool {
 func (o *TunnelTermination) SetOutsideIp(v BriefIPAddress) {
 	o.OutsideIp.Set(&v)
 }
-
 // SetOutsideIpNil sets the value for OutsideIp to be an explicit nil
 func (o *TunnelTermination) SetOutsideIpNil() {
 	o.OutsideIp.Set(nil)
@@ -448,7 +447,7 @@ func (o *TunnelTermination) SetLastUpdated(v time.Time) {
 }
 
 func (o TunnelTermination) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -510,10 +509,10 @@ func (o *TunnelTermination) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -587,3 +586,5 @@ func (v *NullableTunnelTermination) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

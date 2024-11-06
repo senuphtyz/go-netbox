@@ -27,8 +27,8 @@ type ModuleBayTemplateRequest struct {
 	// Physical label
 	Label *string `json:"label,omitempty"`
 	// Identifier to reference when renaming installed components
-	Position             *string `json:"position,omitempty"`
-	Description          *string `json:"description,omitempty"`
+	Position *string `json:"position,omitempty"`
+	Description *string `json:"description,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -84,7 +84,6 @@ func (o *ModuleBayTemplateRequest) HasDeviceType() bool {
 func (o *ModuleBayTemplateRequest) SetDeviceType(v BriefDeviceTypeRequest) {
 	o.DeviceType.Set(&v)
 }
-
 // SetDeviceTypeNil sets the value for DeviceType to be an explicit nil
 func (o *ModuleBayTemplateRequest) SetDeviceTypeNil() {
 	o.DeviceType.Set(nil)
@@ -127,7 +126,6 @@ func (o *ModuleBayTemplateRequest) HasModuleType() bool {
 func (o *ModuleBayTemplateRequest) SetModuleType(v BriefModuleTypeRequest) {
 	o.ModuleType.Set(&v)
 }
-
 // SetModuleTypeNil sets the value for ModuleType to be an explicit nil
 func (o *ModuleBayTemplateRequest) SetModuleTypeNil() {
 	o.ModuleType.Set(nil)
@@ -259,7 +257,7 @@ func (o *ModuleBayTemplateRequest) SetDescription(v string) {
 }
 
 func (o ModuleBayTemplateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -305,10 +303,10 @@ func (o *ModuleBayTemplateRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -374,3 +372,5 @@ func (v *NullableModuleBayTemplateRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

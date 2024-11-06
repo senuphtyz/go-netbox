@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"fmt"
 	"time"
+	"fmt"
 )
 
 // checks if the DeviceWithConfigContext type satisfies the MappedNullable interface at compile time
@@ -21,61 +21,61 @@ var _ MappedNullable = &DeviceWithConfigContext{}
 
 // DeviceWithConfigContext Adds support for custom fields and tags.
 type DeviceWithConfigContext struct {
-	Id         int32                 `json:"id"`
-	Url        string                `json:"url"`
-	DisplayUrl string                `json:"display_url"`
-	Display    string                `json:"display"`
-	Name       NullableString        `json:"name,omitempty"`
-	DeviceType BriefDeviceType       `json:"device_type"`
-	Role       BriefDeviceRole       `json:"role"`
-	Tenant     NullableBriefTenant   `json:"tenant,omitempty"`
-	Platform   NullableBriefPlatform `json:"platform,omitempty"`
+	Id int32 `json:"id"`
+	Url string `json:"url"`
+	DisplayUrl string `json:"display_url"`
+	Display string `json:"display"`
+	Name NullableString `json:"name,omitempty"`
+	DeviceType BriefDeviceType `json:"device_type"`
+	Role BriefDeviceRole `json:"role"`
+	Tenant NullableBriefTenant `json:"tenant,omitempty"`
+	Platform NullableBriefPlatform `json:"platform,omitempty"`
 	// Chassis serial number, assigned by the manufacturer
 	Serial *string `json:"serial,omitempty"`
 	// A unique tag used to identify this device
-	AssetTag NullableString        `json:"asset_tag,omitempty"`
-	Site     BriefSite             `json:"site"`
+	AssetTag NullableString `json:"asset_tag,omitempty"`
+	Site BriefSite `json:"site"`
 	Location NullableBriefLocation `json:"location,omitempty"`
-	Rack     NullableBriefRack     `json:"rack,omitempty"`
-	Position NullableFloat64       `json:"position,omitempty"`
-	Face     *DeviceFace           `json:"face,omitempty"`
+	Rack NullableBriefRack `json:"rack,omitempty"`
+	Position NullableFloat64 `json:"position,omitempty"`
+	Face *DeviceFace `json:"face,omitempty"`
 	// GPS coordinate in decimal format (xx.yyyyyy)
 	Latitude NullableFloat64 `json:"latitude,omitempty"`
 	// GPS coordinate in decimal format (xx.yyyyyy)
-	Longitude      NullableFloat64             `json:"longitude,omitempty"`
-	ParentDevice   NullableNestedDevice        `json:"parent_device"`
-	Status         *DeviceStatus               `json:"status,omitempty"`
-	Airflow        *DeviceAirflow              `json:"airflow,omitempty"`
-	PrimaryIp      NullableBriefIPAddress      `json:"primary_ip"`
-	PrimaryIp4     NullableBriefIPAddress      `json:"primary_ip4,omitempty"`
-	PrimaryIp6     NullableBriefIPAddress      `json:"primary_ip6,omitempty"`
-	OobIp          NullableBriefIPAddress      `json:"oob_ip,omitempty"`
-	Cluster        NullableBriefCluster        `json:"cluster,omitempty"`
+	Longitude NullableFloat64 `json:"longitude,omitempty"`
+	ParentDevice NullableNestedDevice `json:"parent_device"`
+	Status *DeviceStatus `json:"status,omitempty"`
+	Airflow *DeviceAirflow `json:"airflow,omitempty"`
+	PrimaryIp NullableBriefIPAddress `json:"primary_ip"`
+	PrimaryIp4 NullableBriefIPAddress `json:"primary_ip4,omitempty"`
+	PrimaryIp6 NullableBriefIPAddress `json:"primary_ip6,omitempty"`
+	OobIp NullableBriefIPAddress `json:"oob_ip,omitempty"`
+	Cluster NullableBriefCluster `json:"cluster,omitempty"`
 	VirtualChassis NullableBriefVirtualChassis `json:"virtual_chassis,omitempty"`
-	VcPosition     NullableInt32               `json:"vc_position,omitempty"`
+	VcPosition NullableInt32 `json:"vc_position,omitempty"`
 	// Virtual chassis master election priority
-	VcPriority     NullableInt32               `json:"vc_priority,omitempty"`
-	Description    *string                     `json:"description,omitempty"`
-	Comments       *string                     `json:"comments,omitempty"`
+	VcPriority NullableInt32 `json:"vc_priority,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Comments *string `json:"comments,omitempty"`
 	ConfigTemplate NullableBriefConfigTemplate `json:"config_template,omitempty"`
-	ConfigContext  interface{}                 `json:"config_context"`
+	ConfigContext interface{} `json:"config_context"`
 	// Local config context data takes precedence over source contexts in the final rendered config context
-	LocalContextData       interface{}            `json:"local_context_data,omitempty"`
-	Tags                   []NestedTag            `json:"tags,omitempty"`
-	CustomFields           map[string]interface{} `json:"custom_fields,omitempty"`
-	Created                NullableTime           `json:"created"`
-	LastUpdated            NullableTime           `json:"last_updated"`
-	ConsolePortCount       int32                  `json:"console_port_count"`
-	ConsoleServerPortCount int32                  `json:"console_server_port_count"`
-	PowerPortCount         int32                  `json:"power_port_count"`
-	PowerOutletCount       int32                  `json:"power_outlet_count"`
-	InterfaceCount         int32                  `json:"interface_count"`
-	FrontPortCount         int32                  `json:"front_port_count"`
-	RearPortCount          int32                  `json:"rear_port_count"`
-	DeviceBayCount         int32                  `json:"device_bay_count"`
-	ModuleBayCount         int32                  `json:"module_bay_count"`
-	InventoryItemCount     int32                  `json:"inventory_item_count"`
-	AdditionalProperties   map[string]interface{}
+	LocalContextData interface{} `json:"local_context_data,omitempty"`
+	Tags []NestedTag `json:"tags,omitempty"`
+	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	Created NullableTime `json:"created"`
+	LastUpdated NullableTime `json:"last_updated"`
+	ConsolePortCount int32 `json:"console_port_count"`
+	ConsoleServerPortCount int32 `json:"console_server_port_count"`
+	PowerPortCount int32 `json:"power_port_count"`
+	PowerOutletCount int32 `json:"power_outlet_count"`
+	InterfaceCount int32 `json:"interface_count"`
+	FrontPortCount int32 `json:"front_port_count"`
+	RearPortCount int32 `json:"rear_port_count"`
+	DeviceBayCount int32 `json:"device_bay_count"`
+	ModuleBayCount int32 `json:"module_bay_count"`
+	InventoryItemCount int32 `json:"inventory_item_count"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _DeviceWithConfigContext DeviceWithConfigContext
@@ -247,7 +247,6 @@ func (o *DeviceWithConfigContext) HasName() bool {
 func (o *DeviceWithConfigContext) SetName(v string) {
 	o.Name.Set(&v)
 }
-
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *DeviceWithConfigContext) SetNameNil() {
 	o.Name.Set(nil)
@@ -338,7 +337,6 @@ func (o *DeviceWithConfigContext) HasTenant() bool {
 func (o *DeviceWithConfigContext) SetTenant(v BriefTenant) {
 	o.Tenant.Set(&v)
 }
-
 // SetTenantNil sets the value for Tenant to be an explicit nil
 func (o *DeviceWithConfigContext) SetTenantNil() {
 	o.Tenant.Set(nil)
@@ -381,7 +379,6 @@ func (o *DeviceWithConfigContext) HasPlatform() bool {
 func (o *DeviceWithConfigContext) SetPlatform(v BriefPlatform) {
 	o.Platform.Set(&v)
 }
-
 // SetPlatformNil sets the value for Platform to be an explicit nil
 func (o *DeviceWithConfigContext) SetPlatformNil() {
 	o.Platform.Set(nil)
@@ -456,7 +453,6 @@ func (o *DeviceWithConfigContext) HasAssetTag() bool {
 func (o *DeviceWithConfigContext) SetAssetTag(v string) {
 	o.AssetTag.Set(&v)
 }
-
 // SetAssetTagNil sets the value for AssetTag to be an explicit nil
 func (o *DeviceWithConfigContext) SetAssetTagNil() {
 	o.AssetTag.Set(nil)
@@ -523,7 +519,6 @@ func (o *DeviceWithConfigContext) HasLocation() bool {
 func (o *DeviceWithConfigContext) SetLocation(v BriefLocation) {
 	o.Location.Set(&v)
 }
-
 // SetLocationNil sets the value for Location to be an explicit nil
 func (o *DeviceWithConfigContext) SetLocationNil() {
 	o.Location.Set(nil)
@@ -566,7 +561,6 @@ func (o *DeviceWithConfigContext) HasRack() bool {
 func (o *DeviceWithConfigContext) SetRack(v BriefRack) {
 	o.Rack.Set(&v)
 }
-
 // SetRackNil sets the value for Rack to be an explicit nil
 func (o *DeviceWithConfigContext) SetRackNil() {
 	o.Rack.Set(nil)
@@ -609,7 +603,6 @@ func (o *DeviceWithConfigContext) HasPosition() bool {
 func (o *DeviceWithConfigContext) SetPosition(v float64) {
 	o.Position.Set(&v)
 }
-
 // SetPositionNil sets the value for Position to be an explicit nil
 func (o *DeviceWithConfigContext) SetPositionNil() {
 	o.Position.Set(nil)
@@ -684,7 +677,6 @@ func (o *DeviceWithConfigContext) HasLatitude() bool {
 func (o *DeviceWithConfigContext) SetLatitude(v float64) {
 	o.Latitude.Set(&v)
 }
-
 // SetLatitudeNil sets the value for Latitude to be an explicit nil
 func (o *DeviceWithConfigContext) SetLatitudeNil() {
 	o.Latitude.Set(nil)
@@ -727,7 +719,6 @@ func (o *DeviceWithConfigContext) HasLongitude() bool {
 func (o *DeviceWithConfigContext) SetLongitude(v float64) {
 	o.Longitude.Set(&v)
 }
-
 // SetLongitudeNil sets the value for Longitude to be an explicit nil
 func (o *DeviceWithConfigContext) SetLongitudeNil() {
 	o.Longitude.Set(nil)
@@ -886,7 +877,6 @@ func (o *DeviceWithConfigContext) HasPrimaryIp4() bool {
 func (o *DeviceWithConfigContext) SetPrimaryIp4(v BriefIPAddress) {
 	o.PrimaryIp4.Set(&v)
 }
-
 // SetPrimaryIp4Nil sets the value for PrimaryIp4 to be an explicit nil
 func (o *DeviceWithConfigContext) SetPrimaryIp4Nil() {
 	o.PrimaryIp4.Set(nil)
@@ -929,7 +919,6 @@ func (o *DeviceWithConfigContext) HasPrimaryIp6() bool {
 func (o *DeviceWithConfigContext) SetPrimaryIp6(v BriefIPAddress) {
 	o.PrimaryIp6.Set(&v)
 }
-
 // SetPrimaryIp6Nil sets the value for PrimaryIp6 to be an explicit nil
 func (o *DeviceWithConfigContext) SetPrimaryIp6Nil() {
 	o.PrimaryIp6.Set(nil)
@@ -972,7 +961,6 @@ func (o *DeviceWithConfigContext) HasOobIp() bool {
 func (o *DeviceWithConfigContext) SetOobIp(v BriefIPAddress) {
 	o.OobIp.Set(&v)
 }
-
 // SetOobIpNil sets the value for OobIp to be an explicit nil
 func (o *DeviceWithConfigContext) SetOobIpNil() {
 	o.OobIp.Set(nil)
@@ -1015,7 +1003,6 @@ func (o *DeviceWithConfigContext) HasCluster() bool {
 func (o *DeviceWithConfigContext) SetCluster(v BriefCluster) {
 	o.Cluster.Set(&v)
 }
-
 // SetClusterNil sets the value for Cluster to be an explicit nil
 func (o *DeviceWithConfigContext) SetClusterNil() {
 	o.Cluster.Set(nil)
@@ -1058,7 +1045,6 @@ func (o *DeviceWithConfigContext) HasVirtualChassis() bool {
 func (o *DeviceWithConfigContext) SetVirtualChassis(v BriefVirtualChassis) {
 	o.VirtualChassis.Set(&v)
 }
-
 // SetVirtualChassisNil sets the value for VirtualChassis to be an explicit nil
 func (o *DeviceWithConfigContext) SetVirtualChassisNil() {
 	o.VirtualChassis.Set(nil)
@@ -1101,7 +1087,6 @@ func (o *DeviceWithConfigContext) HasVcPosition() bool {
 func (o *DeviceWithConfigContext) SetVcPosition(v int32) {
 	o.VcPosition.Set(&v)
 }
-
 // SetVcPositionNil sets the value for VcPosition to be an explicit nil
 func (o *DeviceWithConfigContext) SetVcPositionNil() {
 	o.VcPosition.Set(nil)
@@ -1144,7 +1129,6 @@ func (o *DeviceWithConfigContext) HasVcPriority() bool {
 func (o *DeviceWithConfigContext) SetVcPriority(v int32) {
 	o.VcPriority.Set(&v)
 }
-
 // SetVcPriorityNil sets the value for VcPriority to be an explicit nil
 func (o *DeviceWithConfigContext) SetVcPriorityNil() {
 	o.VcPriority.Set(nil)
@@ -1251,7 +1235,6 @@ func (o *DeviceWithConfigContext) HasConfigTemplate() bool {
 func (o *DeviceWithConfigContext) SetConfigTemplate(v BriefConfigTemplate) {
 	o.ConfigTemplate.Set(&v)
 }
-
 // SetConfigTemplateNil sets the value for ConfigTemplate to be an explicit nil
 func (o *DeviceWithConfigContext) SetConfigTemplateNil() {
 	o.ConfigTemplate.Set(nil)
@@ -1678,7 +1661,7 @@ func (o *DeviceWithConfigContext) SetInventoryItemCount(v int32) {
 }
 
 func (o DeviceWithConfigContext) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1831,10 +1814,10 @@ func (o *DeviceWithConfigContext) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -1942,3 +1925,5 @@ func (v *NullableDeviceWithConfigContext) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

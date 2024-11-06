@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"fmt"
 	"time"
+	"fmt"
 )
 
 // checks if the Cable type satisfies the MappedNullable interface at compile time
@@ -21,25 +21,25 @@ var _ MappedNullable = &Cable{}
 
 // Cable Adds support for custom fields and tags.
 type Cable struct {
-	Id                   int32                   `json:"id"`
-	Url                  string                  `json:"url"`
-	DisplayUrl           string                  `json:"display_url"`
-	Display              string                  `json:"display"`
-	Type                 *CableType              `json:"type,omitempty"`
-	ATerminations        []GenericObject         `json:"a_terminations,omitempty"`
-	BTerminations        []GenericObject         `json:"b_terminations,omitempty"`
-	Status               *CableStatus            `json:"status,omitempty"`
-	Tenant               NullableBriefTenant     `json:"tenant,omitempty"`
-	Label                *string                 `json:"label,omitempty"`
-	Color                *string                 `json:"color,omitempty" validate:"regexp=^[0-9a-f]{6}$"`
-	Length               NullableFloat64         `json:"length,omitempty"`
-	LengthUnit           NullableCableLengthUnit `json:"length_unit,omitempty"`
-	Description          *string                 `json:"description,omitempty"`
-	Comments             *string                 `json:"comments,omitempty"`
-	Tags                 []NestedTag             `json:"tags,omitempty"`
-	CustomFields         map[string]interface{}  `json:"custom_fields,omitempty"`
-	Created              NullableTime            `json:"created"`
-	LastUpdated          NullableTime            `json:"last_updated"`
+	Id int32 `json:"id"`
+	Url string `json:"url"`
+	DisplayUrl string `json:"display_url"`
+	Display string `json:"display"`
+	Type *CableType `json:"type,omitempty"`
+	ATerminations []GenericObject `json:"a_terminations,omitempty"`
+	BTerminations []GenericObject `json:"b_terminations,omitempty"`
+	Status *CableStatus `json:"status,omitempty"`
+	Tenant NullableBriefTenant `json:"tenant,omitempty"`
+	Label *string `json:"label,omitempty"`
+	Color *string `json:"color,omitempty" validate:"regexp=^[0-9a-f]{6}$"`
+	Length NullableFloat64 `json:"length,omitempty"`
+	LengthUnit NullableCableLengthUnit `json:"length_unit,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Comments *string `json:"comments,omitempty"`
+	Tags []NestedTag `json:"tags,omitempty"`
+	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	Created NullableTime `json:"created"`
+	LastUpdated NullableTime `json:"last_updated"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -324,7 +324,6 @@ func (o *Cable) HasTenant() bool {
 func (o *Cable) SetTenant(v BriefTenant) {
 	o.Tenant.Set(&v)
 }
-
 // SetTenantNil sets the value for Tenant to be an explicit nil
 func (o *Cable) SetTenantNil() {
 	o.Tenant.Set(nil)
@@ -431,7 +430,6 @@ func (o *Cable) HasLength() bool {
 func (o *Cable) SetLength(v float64) {
 	o.Length.Set(&v)
 }
-
 // SetLengthNil sets the value for Length to be an explicit nil
 func (o *Cable) SetLengthNil() {
 	o.Length.Set(nil)
@@ -474,7 +472,6 @@ func (o *Cable) HasLengthUnit() bool {
 func (o *Cable) SetLengthUnit(v CableLengthUnit) {
 	o.LengthUnit.Set(&v)
 }
-
 // SetLengthUnitNil sets the value for LengthUnit to be an explicit nil
 func (o *Cable) SetLengthUnitNil() {
 	o.LengthUnit.Set(nil)
@@ -666,7 +663,7 @@ func (o *Cable) SetLastUpdated(v time.Time) {
 }
 
 func (o Cable) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -746,10 +743,10 @@ func (o *Cable) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -828,3 +825,5 @@ func (v *NullableCable) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

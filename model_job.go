@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"fmt"
 	"time"
+	"fmt"
 )
 
 // checks if the Job type satisfies the MappedNullable interface at compile time
@@ -21,24 +21,24 @@ var _ MappedNullable = &Job{}
 
 // Job struct for Job
 type Job struct {
-	Id         int32          `json:"id"`
-	Url        string         `json:"url"`
-	DisplayUrl string         `json:"display_url"`
-	Display    string         `json:"display"`
-	ObjectType string         `json:"object_type"`
-	ObjectId   NullableInt64  `json:"object_id,omitempty"`
-	Name       string         `json:"name"`
-	Status     BriefJobStatus `json:"status"`
-	Created    time.Time      `json:"created"`
-	Scheduled  NullableTime   `json:"scheduled,omitempty"`
+	Id int32 `json:"id"`
+	Url string `json:"url"`
+	DisplayUrl string `json:"display_url"`
+	Display string `json:"display"`
+	ObjectType string `json:"object_type"`
+	ObjectId NullableInt64 `json:"object_id,omitempty"`
+	Name string `json:"name"`
+	Status BriefJobStatus `json:"status"`
+	Created time.Time `json:"created"`
+	Scheduled NullableTime `json:"scheduled,omitempty"`
 	// Recurrence interval (in minutes)
-	Interval             NullableInt32 `json:"interval,omitempty"`
-	Started              NullableTime  `json:"started,omitempty"`
-	Completed            NullableTime  `json:"completed,omitempty"`
-	User                 BriefUser     `json:"user"`
-	Data                 interface{}   `json:"data,omitempty"`
-	Error                string        `json:"error"`
-	JobId                string        `json:"job_id"`
+	Interval NullableInt32 `json:"interval,omitempty"`
+	Started NullableTime `json:"started,omitempty"`
+	Completed NullableTime `json:"completed,omitempty"`
+	User BriefUser `json:"user"`
+	Data interface{} `json:"data,omitempty"`
+	Error string `json:"error"`
+	JobId string `json:"job_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -224,7 +224,6 @@ func (o *Job) HasObjectId() bool {
 func (o *Job) SetObjectId(v int64) {
 	o.ObjectId.Set(&v)
 }
-
 // SetObjectIdNil sets the value for ObjectId to be an explicit nil
 func (o *Job) SetObjectIdNil() {
 	o.ObjectId.Set(nil)
@@ -339,7 +338,6 @@ func (o *Job) HasScheduled() bool {
 func (o *Job) SetScheduled(v time.Time) {
 	o.Scheduled.Set(&v)
 }
-
 // SetScheduledNil sets the value for Scheduled to be an explicit nil
 func (o *Job) SetScheduledNil() {
 	o.Scheduled.Set(nil)
@@ -382,7 +380,6 @@ func (o *Job) HasInterval() bool {
 func (o *Job) SetInterval(v int32) {
 	o.Interval.Set(&v)
 }
-
 // SetIntervalNil sets the value for Interval to be an explicit nil
 func (o *Job) SetIntervalNil() {
 	o.Interval.Set(nil)
@@ -425,7 +422,6 @@ func (o *Job) HasStarted() bool {
 func (o *Job) SetStarted(v time.Time) {
 	o.Started.Set(&v)
 }
-
 // SetStartedNil sets the value for Started to be an explicit nil
 func (o *Job) SetStartedNil() {
 	o.Started.Set(nil)
@@ -468,7 +464,6 @@ func (o *Job) HasCompleted() bool {
 func (o *Job) SetCompleted(v time.Time) {
 	o.Completed.Set(&v)
 }
-
 // SetCompletedNil sets the value for Completed to be an explicit nil
 func (o *Job) SetCompletedNil() {
 	o.Completed.Set(nil)
@@ -585,7 +580,7 @@ func (o *Job) SetJobId(v string) {
 }
 
 func (o Job) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -654,10 +649,10 @@ func (o *Job) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -734,3 +729,5 @@ func (v *NullableJob) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

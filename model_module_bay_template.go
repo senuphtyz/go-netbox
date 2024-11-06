@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"fmt"
 	"time"
+	"fmt"
 )
 
 // checks if the ModuleBayTemplate type satisfies the MappedNullable interface at compile time
@@ -21,9 +21,9 @@ var _ MappedNullable = &ModuleBayTemplate{}
 
 // ModuleBayTemplate Extends the built-in ModelSerializer to enforce calling full_clean() on a copy of the associated instance during validation. (DRF does not do this by default; see https://github.com/encode/django-rest-framework/issues/3144)
 type ModuleBayTemplate struct {
-	Id         int32                   `json:"id"`
-	Url        string                  `json:"url"`
-	Display    string                  `json:"display"`
+	Id int32 `json:"id"`
+	Url string `json:"url"`
+	Display string `json:"display"`
 	DeviceType NullableBriefDeviceType `json:"device_type,omitempty"`
 	ModuleType NullableBriefModuleType `json:"module_type,omitempty"`
 	// {module} is accepted as a substitution for the module bay position when attached to a module type.
@@ -31,10 +31,10 @@ type ModuleBayTemplate struct {
 	// Physical label
 	Label *string `json:"label,omitempty"`
 	// Identifier to reference when renaming installed components
-	Position             *string      `json:"position,omitempty"`
-	Description          *string      `json:"description,omitempty"`
-	Created              NullableTime `json:"created"`
-	LastUpdated          NullableTime `json:"last_updated"`
+	Position *string `json:"position,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Created NullableTime `json:"created"`
+	LastUpdated NullableTime `json:"last_updated"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -167,7 +167,6 @@ func (o *ModuleBayTemplate) HasDeviceType() bool {
 func (o *ModuleBayTemplate) SetDeviceType(v BriefDeviceType) {
 	o.DeviceType.Set(&v)
 }
-
 // SetDeviceTypeNil sets the value for DeviceType to be an explicit nil
 func (o *ModuleBayTemplate) SetDeviceTypeNil() {
 	o.DeviceType.Set(nil)
@@ -210,7 +209,6 @@ func (o *ModuleBayTemplate) HasModuleType() bool {
 func (o *ModuleBayTemplate) SetModuleType(v BriefModuleType) {
 	o.ModuleType.Set(&v)
 }
-
 // SetModuleTypeNil sets the value for ModuleType to be an explicit nil
 func (o *ModuleBayTemplate) SetModuleTypeNil() {
 	o.ModuleType.Set(nil)
@@ -394,7 +392,7 @@ func (o *ModuleBayTemplate) SetLastUpdated(v time.Time) {
 }
 
 func (o ModuleBayTemplate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -450,10 +448,10 @@ func (o *ModuleBayTemplate) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -524,3 +522,5 @@ func (v *NullableModuleBayTemplate) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

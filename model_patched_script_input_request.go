@@ -20,10 +20,10 @@ var _ MappedNullable = &PatchedScriptInputRequest{}
 
 // PatchedScriptInputRequest struct for PatchedScriptInputRequest
 type PatchedScriptInputRequest struct {
-	Data                 interface{}   `json:"data,omitempty"`
-	Commit               *bool         `json:"commit,omitempty"`
-	ScheduleAt           NullableTime  `json:"schedule_at,omitempty"`
-	Interval             NullableInt32 `json:"interval,omitempty"`
+	Data interface{} `json:"data,omitempty"`
+	Commit *bool `json:"commit,omitempty"`
+	ScheduleAt NullableTime `json:"schedule_at,omitempty"`
+	Interval NullableInt32 `json:"interval,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -143,7 +143,6 @@ func (o *PatchedScriptInputRequest) HasScheduleAt() bool {
 func (o *PatchedScriptInputRequest) SetScheduleAt(v time.Time) {
 	o.ScheduleAt.Set(&v)
 }
-
 // SetScheduleAtNil sets the value for ScheduleAt to be an explicit nil
 func (o *PatchedScriptInputRequest) SetScheduleAtNil() {
 	o.ScheduleAt.Set(nil)
@@ -186,7 +185,6 @@ func (o *PatchedScriptInputRequest) HasInterval() bool {
 func (o *PatchedScriptInputRequest) SetInterval(v int32) {
 	o.Interval.Set(&v)
 }
-
 // SetIntervalNil sets the value for Interval to be an explicit nil
 func (o *PatchedScriptInputRequest) SetIntervalNil() {
 	o.Interval.Set(nil)
@@ -198,7 +196,7 @@ func (o *PatchedScriptInputRequest) UnsetInterval() {
 }
 
 func (o PatchedScriptInputRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -286,3 +284,5 @@ func (v *NullablePatchedScriptInputRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

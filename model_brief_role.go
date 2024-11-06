@@ -20,14 +20,14 @@ var _ MappedNullable = &BriefRole{}
 
 // BriefRole Adds support for custom fields and tags.
 type BriefRole struct {
-	Id                   int32   `json:"id"`
-	Url                  string  `json:"url"`
-	Display              string  `json:"display"`
-	Name                 string  `json:"name"`
-	Slug                 string  `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
-	Description          *string `json:"description,omitempty"`
-	PrefixCount          int64   `json:"prefix_count"`
-	VlanCount            int64   `json:"vlan_count"`
+	Id int32 `json:"id"`
+	Url string `json:"url"`
+	Display string `json:"display"`
+	Name string `json:"name"`
+	Slug string `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
+	Description *string `json:"description,omitempty"`
+	PrefixCount int64 `json:"prefix_count"`
+	VlanCount int64 `json:"vlan_count"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -258,7 +258,7 @@ func (o *BriefRole) SetVlanCount(v int64) {
 }
 
 func (o BriefRole) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -304,10 +304,10 @@ func (o *BriefRole) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -375,3 +375,5 @@ func (v *NullableBriefRole) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

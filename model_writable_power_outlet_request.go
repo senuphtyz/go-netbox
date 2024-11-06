@@ -20,19 +20,19 @@ var _ MappedNullable = &WritablePowerOutletRequest{}
 
 // WritablePowerOutletRequest Adds support for custom fields and tags.
 type WritablePowerOutletRequest struct {
-	Device BriefDeviceRequest         `json:"device"`
+	Device BriefDeviceRequest `json:"device"`
 	Module NullableBriefModuleRequest `json:"module,omitempty"`
-	Name   string                     `json:"name"`
+	Name string `json:"name"`
 	// Physical label
-	Label       *string                                   `json:"label,omitempty"`
-	Type        *PatchedWritablePowerOutletRequestType    `json:"type,omitempty"`
-	PowerPort   NullableBriefPowerPortRequest             `json:"power_port,omitempty"`
-	FeedLeg     *PatchedWritablePowerOutletRequestFeedLeg `json:"feed_leg,omitempty"`
-	Description *string                                   `json:"description,omitempty"`
+	Label *string `json:"label,omitempty"`
+	Type *PatchedWritablePowerOutletRequestType `json:"type,omitempty"`
+	PowerPort NullableBriefPowerPortRequest `json:"power_port,omitempty"`
+	FeedLeg *PatchedWritablePowerOutletRequestFeedLeg `json:"feed_leg,omitempty"`
+	Description *string `json:"description,omitempty"`
 	// Treat as if a cable is connected
-	MarkConnected        *bool                  `json:"mark_connected,omitempty"`
-	Tags                 []NestedTagRequest     `json:"tags,omitempty"`
-	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
+	MarkConnected *bool `json:"mark_connected,omitempty"`
+	Tags []NestedTagRequest `json:"tags,omitempty"`
+	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -113,7 +113,6 @@ func (o *WritablePowerOutletRequest) HasModule() bool {
 func (o *WritablePowerOutletRequest) SetModule(v BriefModuleRequest) {
 	o.Module.Set(&v)
 }
-
 // SetModuleNil sets the value for Module to be an explicit nil
 func (o *WritablePowerOutletRequest) SetModuleNil() {
 	o.Module.Set(nil)
@@ -244,7 +243,6 @@ func (o *WritablePowerOutletRequest) HasPowerPort() bool {
 func (o *WritablePowerOutletRequest) SetPowerPort(v BriefPowerPortRequest) {
 	o.PowerPort.Set(&v)
 }
-
 // SetPowerPortNil sets the value for PowerPort to be an explicit nil
 func (o *WritablePowerOutletRequest) SetPowerPortNil() {
 	o.PowerPort.Set(nil)
@@ -416,7 +414,7 @@ func (o *WritablePowerOutletRequest) SetCustomFields(v map[string]interface{}) {
 }
 
 func (o WritablePowerOutletRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -476,10 +474,10 @@ func (o *WritablePowerOutletRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -550,3 +548,5 @@ func (v *NullableWritablePowerOutletRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

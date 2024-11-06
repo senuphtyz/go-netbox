@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"fmt"
 	"time"
+	"fmt"
 )
 
 // checks if the Role type satisfies the MappedNullable interface at compile time
@@ -21,20 +21,20 @@ var _ MappedNullable = &Role{}
 
 // Role Adds support for custom fields and tags.
 type Role struct {
-	Id                   int32                  `json:"id"`
-	Url                  string                 `json:"url"`
-	DisplayUrl           string                 `json:"display_url"`
-	Display              string                 `json:"display"`
-	Name                 string                 `json:"name"`
-	Slug                 string                 `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
-	Weight               *int32                 `json:"weight,omitempty"`
-	Description          *string                `json:"description,omitempty"`
-	Tags                 []NestedTag            `json:"tags,omitempty"`
-	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
-	Created              NullableTime           `json:"created"`
-	LastUpdated          NullableTime           `json:"last_updated"`
-	PrefixCount          int64                  `json:"prefix_count"`
-	VlanCount            int64                  `json:"vlan_count"`
+	Id int32 `json:"id"`
+	Url string `json:"url"`
+	DisplayUrl string `json:"display_url"`
+	Display string `json:"display"`
+	Name string `json:"name"`
+	Slug string `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
+	Weight *int32 `json:"weight,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Tags []NestedTag `json:"tags,omitempty"`
+	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	Created NullableTime `json:"created"`
+	LastUpdated NullableTime `json:"last_updated"`
+	PrefixCount int64 `json:"prefix_count"`
+	VlanCount int64 `json:"vlan_count"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -440,7 +440,7 @@ func (o *Role) SetVlanCount(v int64) {
 }
 
 func (o Role) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -501,10 +501,10 @@ func (o *Role) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -578,3 +578,5 @@ func (v *NullableRole) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"fmt"
 	"time"
+	"fmt"
 )
 
 // checks if the RIR type satisfies the MappedNullable interface at compile time
@@ -21,20 +21,20 @@ var _ MappedNullable = &RIR{}
 
 // RIR Adds support for custom fields and tags.
 type RIR struct {
-	Id         int32  `json:"id"`
-	Url        string `json:"url"`
+	Id int32 `json:"id"`
+	Url string `json:"url"`
 	DisplayUrl string `json:"display_url"`
-	Display    string `json:"display"`
-	Name       string `json:"name"`
-	Slug       string `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
+	Display string `json:"display"`
+	Name string `json:"name"`
+	Slug string `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
 	// IP space managed by this RIR is considered private
-	IsPrivate            *bool                  `json:"is_private,omitempty"`
-	Description          *string                `json:"description,omitempty"`
-	Tags                 []NestedTag            `json:"tags,omitempty"`
-	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
-	Created              NullableTime           `json:"created"`
-	LastUpdated          NullableTime           `json:"last_updated"`
-	AggregateCount       int64                  `json:"aggregate_count"`
+	IsPrivate *bool `json:"is_private,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Tags []NestedTag `json:"tags,omitempty"`
+	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	Created NullableTime `json:"created"`
+	LastUpdated NullableTime `json:"last_updated"`
+	AggregateCount int64 `json:"aggregate_count"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -415,7 +415,7 @@ func (o *RIR) SetAggregateCount(v int64) {
 }
 
 func (o RIR) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -474,10 +474,10 @@ func (o *RIR) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -550,3 +550,5 @@ func (v *NullableRIR) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

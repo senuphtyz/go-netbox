@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"fmt"
 	"time"
+	"fmt"
 )
 
 // checks if the ASN type satisfies the MappedNullable interface at compile time
@@ -21,22 +21,22 @@ var _ MappedNullable = &ASN{}
 
 // ASN Adds support for custom fields and tags.
 type ASN struct {
-	Id         int32  `json:"id"`
-	Url        string `json:"url"`
+	Id int32 `json:"id"`
+	Url string `json:"url"`
 	DisplayUrl string `json:"display_url"`
-	Display    string `json:"display"`
+	Display string `json:"display"`
 	// 16- or 32-bit autonomous system number
-	Asn                  int64                  `json:"asn"`
-	Rir                  NullableBriefRIR       `json:"rir,omitempty"`
-	Tenant               NullableBriefTenant    `json:"tenant,omitempty"`
-	Description          *string                `json:"description,omitempty"`
-	Comments             *string                `json:"comments,omitempty"`
-	Tags                 []NestedTag            `json:"tags,omitempty"`
-	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
-	Created              NullableTime           `json:"created"`
-	LastUpdated          NullableTime           `json:"last_updated"`
-	SiteCount            int64                  `json:"site_count"`
-	ProviderCount        int64                  `json:"provider_count"`
+	Asn int64 `json:"asn"`
+	Rir NullableBriefRIR `json:"rir,omitempty"`
+	Tenant NullableBriefTenant `json:"tenant,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Comments *string `json:"comments,omitempty"`
+	Tags []NestedTag `json:"tags,omitempty"`
+	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	Created NullableTime `json:"created"`
+	LastUpdated NullableTime `json:"last_updated"`
+	SiteCount int64 `json:"site_count"`
+	ProviderCount int64 `json:"provider_count"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -220,7 +220,6 @@ func (o *ASN) HasRir() bool {
 func (o *ASN) SetRir(v BriefRIR) {
 	o.Rir.Set(&v)
 }
-
 // SetRirNil sets the value for Rir to be an explicit nil
 func (o *ASN) SetRirNil() {
 	o.Rir.Set(nil)
@@ -263,7 +262,6 @@ func (o *ASN) HasTenant() bool {
 func (o *ASN) SetTenant(v BriefTenant) {
 	o.Tenant.Set(&v)
 }
-
 // SetTenantNil sets the value for Tenant to be an explicit nil
 func (o *ASN) SetTenantNil() {
 	o.Tenant.Set(nil)
@@ -503,7 +501,7 @@ func (o *ASN) SetProviderCount(v int64) {
 }
 
 func (o ASN) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -568,10 +566,10 @@ func (o *ASN) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -646,3 +644,5 @@ func (v *NullableASN) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

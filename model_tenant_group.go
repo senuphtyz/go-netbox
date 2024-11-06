@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"fmt"
 	"time"
+	"fmt"
 )
 
 // checks if the TenantGroup type satisfies the MappedNullable interface at compile time
@@ -21,20 +21,20 @@ var _ MappedNullable = &TenantGroup{}
 
 // TenantGroup Extends PrimaryModelSerializer to include MPTT support.
 type TenantGroup struct {
-	Id                   int32                     `json:"id"`
-	Url                  string                    `json:"url"`
-	DisplayUrl           string                    `json:"display_url"`
-	Display              string                    `json:"display"`
-	Name                 string                    `json:"name"`
-	Slug                 string                    `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
-	Parent               NullableNestedTenantGroup `json:"parent,omitempty"`
-	Description          *string                   `json:"description,omitempty"`
-	Tags                 []NestedTag               `json:"tags,omitempty"`
-	CustomFields         map[string]interface{}    `json:"custom_fields,omitempty"`
-	Created              NullableTime              `json:"created"`
-	LastUpdated          NullableTime              `json:"last_updated"`
-	TenantCount          int32                     `json:"tenant_count"`
-	Depth                int32                     `json:"_depth"`
+	Id int32 `json:"id"`
+	Url string `json:"url"`
+	DisplayUrl string `json:"display_url"`
+	Display string `json:"display"`
+	Name string `json:"name"`
+	Slug string `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
+	Parent NullableNestedTenantGroup `json:"parent,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Tags []NestedTag `json:"tags,omitempty"`
+	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	Created NullableTime `json:"created"`
+	LastUpdated NullableTime `json:"last_updated"`
+	TenantCount int32 `json:"tenant_count"`
+	Depth int32 `json:"_depth"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -243,7 +243,6 @@ func (o *TenantGroup) HasParent() bool {
 func (o *TenantGroup) SetParent(v NestedTenantGroup) {
 	o.Parent.Set(&v)
 }
-
 // SetParentNil sets the value for Parent to be an explicit nil
 func (o *TenantGroup) SetParentNil() {
 	o.Parent.Set(nil)
@@ -451,7 +450,7 @@ func (o *TenantGroup) SetDepth(v int32) {
 }
 
 func (o TenantGroup) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -512,10 +511,10 @@ func (o *TenantGroup) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -589,3 +588,5 @@ func (v *NullableTenantGroup) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

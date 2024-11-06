@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"fmt"
 	"time"
+	"fmt"
 )
 
 // checks if the DataSource type satisfies the MappedNullable interface at compile time
@@ -21,25 +21,25 @@ var _ MappedNullable = &DataSource{}
 
 // DataSource Adds support for custom fields and tags.
 type DataSource struct {
-	Id          int32            `json:"id"`
-	Url         string           `json:"url"`
-	DisplayUrl  string           `json:"display_url"`
-	Display     string           `json:"display"`
-	Name        string           `json:"name"`
-	Type        DataSourceType   `json:"type"`
-	SourceUrl   string           `json:"source_url"`
-	Enabled     *bool            `json:"enabled,omitempty"`
-	Status      DataSourceStatus `json:"status"`
-	Description *string          `json:"description,omitempty"`
-	Parameters  interface{}      `json:"parameters,omitempty"`
+	Id int32 `json:"id"`
+	Url string `json:"url"`
+	DisplayUrl string `json:"display_url"`
+	Display string `json:"display"`
+	Name string `json:"name"`
+	Type DataSourceType `json:"type"`
+	SourceUrl string `json:"source_url"`
+	Enabled *bool `json:"enabled,omitempty"`
+	Status DataSourceStatus `json:"status"`
+	Description *string `json:"description,omitempty"`
+	Parameters interface{} `json:"parameters,omitempty"`
 	// Patterns (one per line) matching files to ignore when syncing
-	IgnoreRules          *string                `json:"ignore_rules,omitempty"`
-	Comments             *string                `json:"comments,omitempty"`
-	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
-	Created              NullableTime           `json:"created"`
-	LastUpdated          NullableTime           `json:"last_updated"`
-	LastSynced           NullableTime           `json:"last_synced"`
-	FileCount            int64                  `json:"file_count"`
+	IgnoreRules *string `json:"ignore_rules,omitempty"`
+	Comments *string `json:"comments,omitempty"`
+	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	Created NullableTime `json:"created"`
+	LastUpdated NullableTime `json:"last_updated"`
+	LastSynced NullableTime `json:"last_synced"`
+	FileCount int64 `json:"file_count"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -562,7 +562,7 @@ func (o *DataSource) SetFileCount(v int64) {
 }
 
 func (o DataSource) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -633,10 +633,10 @@ func (o *DataSource) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -714,3 +714,5 @@ func (v *NullableDataSource) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

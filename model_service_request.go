@@ -20,16 +20,16 @@ var _ MappedNullable = &ServiceRequest{}
 
 // ServiceRequest Adds support for custom fields and tags.
 type ServiceRequest struct {
-	Device               NullableBriefDeviceRequest             `json:"device,omitempty"`
-	VirtualMachine       NullableBriefVirtualMachineRequest     `json:"virtual_machine,omitempty"`
-	Name                 string                                 `json:"name"`
-	Protocol             *PatchedWritableServiceRequestProtocol `json:"protocol,omitempty"`
-	Ports                []int32                                `json:"ports"`
-	Ipaddresses          []int32                                `json:"ipaddresses,omitempty"`
-	Description          *string                                `json:"description,omitempty"`
-	Comments             *string                                `json:"comments,omitempty"`
-	Tags                 []NestedTagRequest                     `json:"tags,omitempty"`
-	CustomFields         map[string]interface{}                 `json:"custom_fields,omitempty"`
+	Device NullableBriefDeviceRequest `json:"device,omitempty"`
+	VirtualMachine NullableBriefVirtualMachineRequest `json:"virtual_machine,omitempty"`
+	Name string `json:"name"`
+	Protocol *PatchedWritableServiceRequestProtocol `json:"protocol,omitempty"`
+	Ports []int32 `json:"ports"`
+	Ipaddresses []int32 `json:"ipaddresses,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Comments *string `json:"comments,omitempty"`
+	Tags []NestedTagRequest `json:"tags,omitempty"`
+	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -86,7 +86,6 @@ func (o *ServiceRequest) HasDevice() bool {
 func (o *ServiceRequest) SetDevice(v BriefDeviceRequest) {
 	o.Device.Set(&v)
 }
-
 // SetDeviceNil sets the value for Device to be an explicit nil
 func (o *ServiceRequest) SetDeviceNil() {
 	o.Device.Set(nil)
@@ -129,7 +128,6 @@ func (o *ServiceRequest) HasVirtualMachine() bool {
 func (o *ServiceRequest) SetVirtualMachine(v BriefVirtualMachineRequest) {
 	o.VirtualMachine.Set(&v)
 }
-
 // SetVirtualMachineNil sets the value for VirtualMachine to be an explicit nil
 func (o *ServiceRequest) SetVirtualMachineNil() {
 	o.VirtualMachine.Set(nil)
@@ -381,7 +379,7 @@ func (o *ServiceRequest) SetCustomFields(v map[string]interface{}) {
 }
 
 func (o ServiceRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -438,10 +436,10 @@ func (o *ServiceRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -511,3 +509,5 @@ func (v *NullableServiceRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

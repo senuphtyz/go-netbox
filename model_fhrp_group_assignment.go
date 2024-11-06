@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"fmt"
 	"time"
+	"fmt"
 )
 
 // checks if the FHRPGroupAssignment type satisfies the MappedNullable interface at compile time
@@ -21,16 +21,16 @@ var _ MappedNullable = &FHRPGroupAssignment{}
 
 // FHRPGroupAssignment Adds support for custom fields and tags.
 type FHRPGroupAssignment struct {
-	Id                   int32          `json:"id"`
-	Url                  string         `json:"url"`
-	Display              string         `json:"display"`
-	Group                BriefFHRPGroup `json:"group"`
-	InterfaceType        string         `json:"interface_type"`
-	InterfaceId          int64          `json:"interface_id"`
-	Interface            interface{}    `json:"interface"`
-	Priority             int32          `json:"priority"`
-	Created              NullableTime   `json:"created"`
-	LastUpdated          NullableTime   `json:"last_updated"`
+	Id int32 `json:"id"`
+	Url string `json:"url"`
+	Display string `json:"display"`
+	Group BriefFHRPGroup `json:"group"`
+	InterfaceType string `json:"interface_type"`
+	InterfaceId int64 `json:"interface_id"`
+	Interface interface{} `json:"interface"`
+	Priority int32 `json:"priority"`
+	Created NullableTime `json:"created"`
+	LastUpdated NullableTime `json:"last_updated"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -310,7 +310,7 @@ func (o *FHRPGroupAssignment) SetLastUpdated(v time.Time) {
 }
 
 func (o FHRPGroupAssignment) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -361,10 +361,10 @@ func (o *FHRPGroupAssignment) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -434,3 +434,5 @@ func (v *NullableFHRPGroupAssignment) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

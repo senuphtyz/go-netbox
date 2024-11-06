@@ -20,8 +20,8 @@ type CustomFieldUiEditableLabel string
 
 // List of CustomField_ui_editable_label
 const (
-	CUSTOMFIELDUIEDITABLELABEL_YES    CustomFieldUiEditableLabel = "Yes"
-	CUSTOMFIELDUIEDITABLELABEL_NO     CustomFieldUiEditableLabel = "No"
+	CUSTOMFIELDUIEDITABLELABEL_YES CustomFieldUiEditableLabel = "Yes"
+	CUSTOMFIELDUIEDITABLELABEL_NO CustomFieldUiEditableLabel = "No"
 	CUSTOMFIELDUIEDITABLELABEL_HIDDEN CustomFieldUiEditableLabel = "Hidden"
 )
 
@@ -110,3 +110,4 @@ func (v *NullableCustomFieldUiEditableLabel) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+

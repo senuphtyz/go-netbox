@@ -20,15 +20,15 @@ var _ MappedNullable = &DeviceRoleRequest{}
 
 // DeviceRoleRequest Adds support for custom fields and tags.
 type DeviceRoleRequest struct {
-	Name  string  `json:"name"`
-	Slug  string  `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
+	Name string `json:"name"`
+	Slug string `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
 	Color *string `json:"color,omitempty" validate:"regexp=^[0-9a-f]{6}$"`
 	// Virtual machines may be assigned to this role
-	VmRole               *bool                              `json:"vm_role,omitempty"`
-	ConfigTemplate       NullableBriefConfigTemplateRequest `json:"config_template,omitempty"`
-	Description          *string                            `json:"description,omitempty"`
-	Tags                 []NestedTagRequest                 `json:"tags,omitempty"`
-	CustomFields         map[string]interface{}             `json:"custom_fields,omitempty"`
+	VmRole *bool `json:"vm_role,omitempty"`
+	ConfigTemplate NullableBriefConfigTemplateRequest `json:"config_template,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Tags []NestedTagRequest `json:"tags,omitempty"`
+	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -197,7 +197,6 @@ func (o *DeviceRoleRequest) HasConfigTemplate() bool {
 func (o *DeviceRoleRequest) SetConfigTemplate(v BriefConfigTemplateRequest) {
 	o.ConfigTemplate.Set(&v)
 }
-
 // SetConfigTemplateNil sets the value for ConfigTemplate to be an explicit nil
 func (o *DeviceRoleRequest) SetConfigTemplateNil() {
 	o.ConfigTemplate.Set(nil)
@@ -305,7 +304,7 @@ func (o *DeviceRoleRequest) SetCustomFields(v map[string]interface{}) {
 }
 
 func (o DeviceRoleRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -356,10 +355,10 @@ func (o *DeviceRoleRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -427,3 +426,5 @@ func (v *NullableDeviceRoleRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

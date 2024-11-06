@@ -20,16 +20,16 @@ var _ MappedNullable = &Script{}
 
 // Script Extends the built-in ModelSerializer to enforce calling full_clean() on a copy of the associated instance during validation. (DRF does not do this by default; see https://github.com/encode/django-rest-framework/issues/3144)
 type Script struct {
-	Id                   int32          `json:"id"`
-	Url                  string         `json:"url"`
-	DisplayUrl           string         `json:"display_url"`
-	Module               int32          `json:"module"`
-	Name                 string         `json:"name"`
-	Description          NullableString `json:"description"`
-	Vars                 interface{}    `json:"vars"`
-	Result               BriefJob       `json:"result"`
-	Display              string         `json:"display"`
-	IsExecutable         bool           `json:"is_executable"`
+	Id int32 `json:"id"`
+	Url string `json:"url"`
+	DisplayUrl string `json:"display_url"`
+	Module int32 `json:"module"`
+	Name string `json:"name"`
+	Description NullableString `json:"description"`
+	Vars interface{} `json:"vars"`
+	Result BriefJob `json:"result"`
+	Display string `json:"display"`
+	IsExecutable bool `json:"is_executable"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -307,7 +307,7 @@ func (o *Script) SetIsExecutable(v bool) {
 }
 
 func (o Script) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -358,10 +358,10 @@ func (o *Script) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -431,3 +431,5 @@ func (v *NullableScript) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

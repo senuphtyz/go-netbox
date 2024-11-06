@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"fmt"
 	"time"
+	"fmt"
 )
 
 // checks if the User type satisfies the MappedNullable interface at compile time
@@ -21,23 +21,23 @@ var _ MappedNullable = &User{}
 
 // User Extends the built-in ModelSerializer to enforce calling full_clean() on a copy of the associated instance during validation. (DRF does not do this by default; see https://github.com/encode/django-rest-framework/issues/3144)
 type User struct {
-	Id         int32  `json:"id"`
-	Url        string `json:"url"`
+	Id int32 `json:"id"`
+	Url string `json:"url"`
 	DisplayUrl string `json:"display_url"`
-	Display    string `json:"display"`
+	Display string `json:"display"`
 	// Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.
-	Username  string  `json:"username" validate:"regexp=^[\\\\w.@+-]+$"`
+	Username string `json:"username" validate:"regexp=^[\\\\w.@+-]+$"`
 	FirstName *string `json:"first_name,omitempty"`
-	LastName  *string `json:"last_name,omitempty"`
-	Email     *string `json:"email,omitempty"`
+	LastName *string `json:"last_name,omitempty"`
+	Email *string `json:"email,omitempty"`
 	// Designates whether the user can log into this admin site.
 	IsStaff *bool `json:"is_staff,omitempty"`
 	// Designates whether this user should be treated as active. Unselect this instead of deleting accounts.
-	IsActive             *bool              `json:"is_active,omitempty"`
-	DateJoined           *time.Time         `json:"date_joined,omitempty"`
-	LastLogin            NullableTime       `json:"last_login,omitempty"`
-	Groups               []Group            `json:"groups,omitempty"`
-	Permissions          []ObjectPermission `json:"permissions,omitempty"`
+	IsActive *bool `json:"is_active,omitempty"`
+	DateJoined *time.Time `json:"date_joined,omitempty"`
+	LastLogin NullableTime `json:"last_login,omitempty"`
+	Groups []Group `json:"groups,omitempty"`
+	Permissions []ObjectPermission `json:"permissions,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -409,7 +409,6 @@ func (o *User) HasLastLogin() bool {
 func (o *User) SetLastLogin(v time.Time) {
 	o.LastLogin.Set(&v)
 }
-
 // SetLastLoginNil sets the value for LastLogin to be an explicit nil
 func (o *User) SetLastLoginNil() {
 	o.LastLogin.Set(nil)
@@ -485,7 +484,7 @@ func (o *User) SetPermissions(v []ObjectPermission) {
 }
 
 func (o User) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -551,10 +550,10 @@ func (o *User) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -628,3 +627,5 @@ func (v *NullableUser) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

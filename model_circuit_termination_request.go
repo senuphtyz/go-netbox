@@ -20,9 +20,9 @@ var _ MappedNullable = &CircuitTerminationRequest{}
 
 // CircuitTerminationRequest Adds support for custom fields and tags.
 type CircuitTerminationRequest struct {
-	Circuit         BriefCircuitRequest                 `json:"circuit"`
-	TermSide        Termination1                        `json:"term_side"`
-	Site            NullableBriefSiteRequest            `json:"site,omitempty"`
+	Circuit BriefCircuitRequest `json:"circuit"`
+	TermSide Termination1 `json:"term_side"`
+	Site NullableBriefSiteRequest `json:"site,omitempty"`
 	ProviderNetwork NullableBriefProviderNetworkRequest `json:"provider_network,omitempty"`
 	// Physical circuit speed
 	PortSpeed NullableInt32 `json:"port_speed,omitempty"`
@@ -31,12 +31,12 @@ type CircuitTerminationRequest struct {
 	// ID of the local cross-connect
 	XconnectId *string `json:"xconnect_id,omitempty"`
 	// Patch panel ID and port number(s)
-	PpInfo      *string `json:"pp_info,omitempty"`
+	PpInfo *string `json:"pp_info,omitempty"`
 	Description *string `json:"description,omitempty"`
 	// Treat as if a cable is connected
-	MarkConnected        *bool                  `json:"mark_connected,omitempty"`
-	Tags                 []NestedTagRequest     `json:"tags,omitempty"`
-	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
+	MarkConnected *bool `json:"mark_connected,omitempty"`
+	Tags []NestedTagRequest `json:"tags,omitempty"`
+	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -141,7 +141,6 @@ func (o *CircuitTerminationRequest) HasSite() bool {
 func (o *CircuitTerminationRequest) SetSite(v BriefSiteRequest) {
 	o.Site.Set(&v)
 }
-
 // SetSiteNil sets the value for Site to be an explicit nil
 func (o *CircuitTerminationRequest) SetSiteNil() {
 	o.Site.Set(nil)
@@ -184,7 +183,6 @@ func (o *CircuitTerminationRequest) HasProviderNetwork() bool {
 func (o *CircuitTerminationRequest) SetProviderNetwork(v BriefProviderNetworkRequest) {
 	o.ProviderNetwork.Set(&v)
 }
-
 // SetProviderNetworkNil sets the value for ProviderNetwork to be an explicit nil
 func (o *CircuitTerminationRequest) SetProviderNetworkNil() {
 	o.ProviderNetwork.Set(nil)
@@ -227,7 +225,6 @@ func (o *CircuitTerminationRequest) HasPortSpeed() bool {
 func (o *CircuitTerminationRequest) SetPortSpeed(v int32) {
 	o.PortSpeed.Set(&v)
 }
-
 // SetPortSpeedNil sets the value for PortSpeed to be an explicit nil
 func (o *CircuitTerminationRequest) SetPortSpeedNil() {
 	o.PortSpeed.Set(nil)
@@ -270,7 +267,6 @@ func (o *CircuitTerminationRequest) HasUpstreamSpeed() bool {
 func (o *CircuitTerminationRequest) SetUpstreamSpeed(v int32) {
 	o.UpstreamSpeed.Set(&v)
 }
-
 // SetUpstreamSpeedNil sets the value for UpstreamSpeed to be an explicit nil
 func (o *CircuitTerminationRequest) SetUpstreamSpeedNil() {
 	o.UpstreamSpeed.Set(nil)
@@ -474,7 +470,7 @@ func (o *CircuitTerminationRequest) SetCustomFields(v map[string]interface{}) {
 }
 
 func (o CircuitTerminationRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -537,10 +533,10 @@ func (o *CircuitTerminationRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -612,3 +608,5 @@ func (v *NullableCircuitTerminationRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

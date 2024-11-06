@@ -20,8 +20,8 @@ var _ MappedNullable = &TopologyDummy{}
 
 // TopologyDummy struct for TopologyDummy
 type TopologyDummy struct {
-	Id                   int32          `json:"id"`
-	Name                 NullableString `json:"name,omitempty"`
+	Id int32 `json:"id"`
+	Name NullableString `json:"name,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -101,7 +101,6 @@ func (o *TopologyDummy) HasName() bool {
 func (o *TopologyDummy) SetName(v string) {
 	o.Name.Set(&v)
 }
-
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *TopologyDummy) SetNameNil() {
 	o.Name.Set(nil)
@@ -113,7 +112,7 @@ func (o *TopologyDummy) UnsetName() {
 }
 
 func (o TopologyDummy) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -147,10 +146,10 @@ func (o *TopologyDummy) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -212,3 +211,5 @@ func (v *NullableTopologyDummy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

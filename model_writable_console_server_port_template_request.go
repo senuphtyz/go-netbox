@@ -25,9 +25,9 @@ type WritableConsoleServerPortTemplateRequest struct {
 	// {module} is accepted as a substitution for the module bay position when attached to a module type.
 	Name string `json:"name"`
 	// Physical label
-	Label                *string               `json:"label,omitempty"`
-	Type                 *ConsolePortTypeValue `json:"type,omitempty"`
-	Description          *string               `json:"description,omitempty"`
+	Label *string `json:"label,omitempty"`
+	Type *ConsolePortTypeValue `json:"type,omitempty"`
+	Description *string `json:"description,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -83,7 +83,6 @@ func (o *WritableConsoleServerPortTemplateRequest) HasDeviceType() bool {
 func (o *WritableConsoleServerPortTemplateRequest) SetDeviceType(v BriefDeviceTypeRequest) {
 	o.DeviceType.Set(&v)
 }
-
 // SetDeviceTypeNil sets the value for DeviceType to be an explicit nil
 func (o *WritableConsoleServerPortTemplateRequest) SetDeviceTypeNil() {
 	o.DeviceType.Set(nil)
@@ -126,7 +125,6 @@ func (o *WritableConsoleServerPortTemplateRequest) HasModuleType() bool {
 func (o *WritableConsoleServerPortTemplateRequest) SetModuleType(v BriefModuleTypeRequest) {
 	o.ModuleType.Set(&v)
 }
-
 // SetModuleTypeNil sets the value for ModuleType to be an explicit nil
 func (o *WritableConsoleServerPortTemplateRequest) SetModuleTypeNil() {
 	o.ModuleType.Set(nil)
@@ -258,7 +256,7 @@ func (o *WritableConsoleServerPortTemplateRequest) SetDescription(v string) {
 }
 
 func (o WritableConsoleServerPortTemplateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -304,10 +302,10 @@ func (o *WritableConsoleServerPortTemplateRequest) UnmarshalJSON(data []byte) (e
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -373,3 +371,5 @@ func (v *NullableWritableConsoleServerPortTemplateRequest) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

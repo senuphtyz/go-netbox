@@ -21,21 +21,21 @@ var _ MappedNullable = &CircuitRequest{}
 // CircuitRequest Adds support for custom fields and tags.
 type CircuitRequest struct {
 	// Unique circuit ID
-	Cid             string                              `json:"cid"`
-	Provider        BriefProviderRequest                `json:"provider"`
+	Cid string `json:"cid"`
+	Provider BriefProviderRequest `json:"provider"`
 	ProviderAccount NullableBriefProviderAccountRequest `json:"provider_account,omitempty"`
-	Type            BriefCircuitTypeRequest             `json:"type"`
-	Status          *CircuitStatusValue                 `json:"status,omitempty"`
-	Tenant          NullableBriefTenantRequest          `json:"tenant,omitempty"`
-	InstallDate     NullableString                      `json:"install_date,omitempty"`
-	TerminationDate NullableString                      `json:"termination_date,omitempty"`
+	Type BriefCircuitTypeRequest `json:"type"`
+	Status *CircuitStatusValue `json:"status,omitempty"`
+	Tenant NullableBriefTenantRequest `json:"tenant,omitempty"`
+	InstallDate NullableString `json:"install_date,omitempty"`
+	TerminationDate NullableString `json:"termination_date,omitempty"`
 	// Committed rate
-	CommitRate           NullableInt32                                  `json:"commit_rate,omitempty"`
-	Description          *string                                        `json:"description,omitempty"`
-	Comments             *string                                        `json:"comments,omitempty"`
-	Tags                 []NestedTagRequest                             `json:"tags,omitempty"`
-	CustomFields         map[string]interface{}                         `json:"custom_fields,omitempty"`
-	Assignments          []BriefCircuitGroupAssignmentSerializerRequest `json:"assignments,omitempty"`
+	CommitRate NullableInt32 `json:"commit_rate,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Comments *string `json:"comments,omitempty"`
+	Tags []NestedTagRequest `json:"tags,omitempty"`
+	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	Assignments []BriefCircuitGroupAssignmentSerializerRequest `json:"assignments,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -141,7 +141,6 @@ func (o *CircuitRequest) HasProviderAccount() bool {
 func (o *CircuitRequest) SetProviderAccount(v BriefProviderAccountRequest) {
 	o.ProviderAccount.Set(&v)
 }
-
 // SetProviderAccountNil sets the value for ProviderAccount to be an explicit nil
 func (o *CircuitRequest) SetProviderAccountNil() {
 	o.ProviderAccount.Set(nil)
@@ -240,7 +239,6 @@ func (o *CircuitRequest) HasTenant() bool {
 func (o *CircuitRequest) SetTenant(v BriefTenantRequest) {
 	o.Tenant.Set(&v)
 }
-
 // SetTenantNil sets the value for Tenant to be an explicit nil
 func (o *CircuitRequest) SetTenantNil() {
 	o.Tenant.Set(nil)
@@ -283,7 +281,6 @@ func (o *CircuitRequest) HasInstallDate() bool {
 func (o *CircuitRequest) SetInstallDate(v string) {
 	o.InstallDate.Set(&v)
 }
-
 // SetInstallDateNil sets the value for InstallDate to be an explicit nil
 func (o *CircuitRequest) SetInstallDateNil() {
 	o.InstallDate.Set(nil)
@@ -326,7 +323,6 @@ func (o *CircuitRequest) HasTerminationDate() bool {
 func (o *CircuitRequest) SetTerminationDate(v string) {
 	o.TerminationDate.Set(&v)
 }
-
 // SetTerminationDateNil sets the value for TerminationDate to be an explicit nil
 func (o *CircuitRequest) SetTerminationDateNil() {
 	o.TerminationDate.Set(nil)
@@ -369,7 +365,6 @@ func (o *CircuitRequest) HasCommitRate() bool {
 func (o *CircuitRequest) SetCommitRate(v int32) {
 	o.CommitRate.Set(&v)
 }
-
 // SetCommitRateNil sets the value for CommitRate to be an explicit nil
 func (o *CircuitRequest) SetCommitRateNil() {
 	o.CommitRate.Set(nil)
@@ -541,7 +536,7 @@ func (o *CircuitRequest) SetAssignments(v []BriefCircuitGroupAssignmentSerialize
 }
 
 func (o CircuitRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -609,10 +604,10 @@ func (o *CircuitRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -686,3 +681,5 @@ func (v *NullableCircuitRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

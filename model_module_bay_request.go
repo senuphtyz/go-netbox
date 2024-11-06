@@ -20,17 +20,17 @@ var _ MappedNullable = &ModuleBayRequest{}
 
 // ModuleBayRequest Adds support for custom fields and tags.
 type ModuleBayRequest struct {
-	Device          BriefDeviceRequest         `json:"device"`
-	Module          NullableBriefModuleRequest `json:"module,omitempty"`
-	Name            string                     `json:"name"`
+	Device BriefDeviceRequest `json:"device"`
+	Module NullableBriefModuleRequest `json:"module,omitempty"`
+	Name string `json:"name"`
 	InstalledModule NullableBriefModuleRequest `json:"installed_module,omitempty"`
 	// Physical label
 	Label *string `json:"label,omitempty"`
 	// Identifier to reference when renaming installed components
-	Position             *string                `json:"position,omitempty"`
-	Description          *string                `json:"description,omitempty"`
-	Tags                 []NestedTagRequest     `json:"tags,omitempty"`
-	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
+	Position *string `json:"position,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Tags []NestedTagRequest `json:"tags,omitempty"`
+	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -111,7 +111,6 @@ func (o *ModuleBayRequest) HasModule() bool {
 func (o *ModuleBayRequest) SetModule(v BriefModuleRequest) {
 	o.Module.Set(&v)
 }
-
 // SetModuleNil sets the value for Module to be an explicit nil
 func (o *ModuleBayRequest) SetModuleNil() {
 	o.Module.Set(nil)
@@ -178,7 +177,6 @@ func (o *ModuleBayRequest) HasInstalledModule() bool {
 func (o *ModuleBayRequest) SetInstalledModule(v BriefModuleRequest) {
 	o.InstalledModule.Set(&v)
 }
-
 // SetInstalledModuleNil sets the value for InstalledModule to be an explicit nil
 func (o *ModuleBayRequest) SetInstalledModuleNil() {
 	o.InstalledModule.Set(nil)
@@ -350,7 +348,7 @@ func (o *ModuleBayRequest) SetCustomFields(v map[string]interface{}) {
 }
 
 func (o ModuleBayRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -404,10 +402,10 @@ func (o *ModuleBayRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -476,3 +474,5 @@ func (v *NullableModuleBayRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

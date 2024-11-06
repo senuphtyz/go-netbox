@@ -20,14 +20,14 @@ var _ MappedNullable = &FrontPortRearPort{}
 
 // FrontPortRearPort NestedRearPortSerializer but with parent device omitted (since front and rear ports must belong to same device)
 type FrontPortRearPort struct {
-	Id         int32  `json:"id"`
-	Url        string `json:"url"`
+	Id int32 `json:"id"`
+	Url string `json:"url"`
 	DisplayUrl string `json:"display_url"`
-	Display    string `json:"display"`
-	Name       string `json:"name"`
+	Display string `json:"display"`
+	Name string `json:"name"`
 	// Physical label
-	Label                *string `json:"label,omitempty"`
-	Description          *string `json:"description,omitempty"`
+	Label *string `json:"label,omitempty"`
+	Description *string `json:"description,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -240,7 +240,7 @@ func (o *FrontPortRearPort) SetDescription(v string) {
 }
 
 func (o FrontPortRearPort) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -285,10 +285,10 @@ func (o *FrontPortRearPort) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -355,3 +355,5 @@ func (v *NullableFrontPortRearPort) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

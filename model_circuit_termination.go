@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"fmt"
 	"time"
+	"fmt"
 )
 
 // checks if the CircuitTermination type satisfies the MappedNullable interface at compile time
@@ -21,13 +21,13 @@ var _ MappedNullable = &CircuitTermination{}
 
 // CircuitTermination Adds support for custom fields and tags.
 type CircuitTermination struct {
-	Id              int32                        `json:"id"`
-	Url             string                       `json:"url"`
-	DisplayUrl      string                       `json:"display_url"`
-	Display         string                       `json:"display"`
-	Circuit         BriefCircuit                 `json:"circuit"`
-	TermSide        Termination1                 `json:"term_side"`
-	Site            NullableBriefSite            `json:"site,omitempty"`
+	Id int32 `json:"id"`
+	Url string `json:"url"`
+	DisplayUrl string `json:"display_url"`
+	Display string `json:"display"`
+	Circuit BriefCircuit `json:"circuit"`
+	TermSide Termination1 `json:"term_side"`
+	Site NullableBriefSite `json:"site,omitempty"`
 	ProviderNetwork NullableBriefProviderNetwork `json:"provider_network,omitempty"`
 	// Physical circuit speed
 	PortSpeed NullableInt32 `json:"port_speed,omitempty"`
@@ -36,20 +36,20 @@ type CircuitTermination struct {
 	// ID of the local cross-connect
 	XconnectId *string `json:"xconnect_id,omitempty"`
 	// Patch panel ID and port number(s)
-	PpInfo      *string `json:"pp_info,omitempty"`
+	PpInfo *string `json:"pp_info,omitempty"`
 	Description *string `json:"description,omitempty"`
 	// Treat as if a cable is connected
-	MarkConnected *bool              `json:"mark_connected,omitempty"`
-	Cable         NullableBriefCable `json:"cable"`
-	CableEnd      string             `json:"cable_end"`
-	LinkPeers     []interface{}      `json:"link_peers"`
+	MarkConnected *bool `json:"mark_connected,omitempty"`
+	Cable NullableBriefCable `json:"cable"`
+	CableEnd string `json:"cable_end"`
+	LinkPeers []interface{} `json:"link_peers"`
 	// Return the type of the peer link terminations, or None.
-	LinkPeersType        NullableString         `json:"link_peers_type"`
-	Tags                 []NestedTag            `json:"tags,omitempty"`
-	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
-	Created              NullableTime           `json:"created"`
-	LastUpdated          NullableTime           `json:"last_updated"`
-	Occupied             bool                   `json:"_occupied"`
+	LinkPeersType NullableString `json:"link_peers_type"`
+	Tags []NestedTag `json:"tags,omitempty"`
+	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	Created NullableTime `json:"created"`
+	LastUpdated NullableTime `json:"last_updated"`
+	Occupied bool `json:"_occupied"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -261,7 +261,6 @@ func (o *CircuitTermination) HasSite() bool {
 func (o *CircuitTermination) SetSite(v BriefSite) {
 	o.Site.Set(&v)
 }
-
 // SetSiteNil sets the value for Site to be an explicit nil
 func (o *CircuitTermination) SetSiteNil() {
 	o.Site.Set(nil)
@@ -304,7 +303,6 @@ func (o *CircuitTermination) HasProviderNetwork() bool {
 func (o *CircuitTermination) SetProviderNetwork(v BriefProviderNetwork) {
 	o.ProviderNetwork.Set(&v)
 }
-
 // SetProviderNetworkNil sets the value for ProviderNetwork to be an explicit nil
 func (o *CircuitTermination) SetProviderNetworkNil() {
 	o.ProviderNetwork.Set(nil)
@@ -347,7 +345,6 @@ func (o *CircuitTermination) HasPortSpeed() bool {
 func (o *CircuitTermination) SetPortSpeed(v int32) {
 	o.PortSpeed.Set(&v)
 }
-
 // SetPortSpeedNil sets the value for PortSpeed to be an explicit nil
 func (o *CircuitTermination) SetPortSpeedNil() {
 	o.PortSpeed.Set(nil)
@@ -390,7 +387,6 @@ func (o *CircuitTermination) HasUpstreamSpeed() bool {
 func (o *CircuitTermination) SetUpstreamSpeed(v int32) {
 	o.UpstreamSpeed.Set(&v)
 }
-
 // SetUpstreamSpeedNil sets the value for UpstreamSpeed to be an explicit nil
 func (o *CircuitTermination) SetUpstreamSpeedNil() {
 	o.UpstreamSpeed.Set(nil)
@@ -770,7 +766,7 @@ func (o *CircuitTermination) SetOccupied(v bool) {
 }
 
 func (o CircuitTermination) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -855,10 +851,10 @@ func (o *CircuitTermination) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -941,3 +937,5 @@ func (v *NullableCircuitTermination) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

@@ -20,24 +20,24 @@ var _ MappedNullable = &PowerFeedRequest{}
 
 // PowerFeedRequest Adds support for custom fields and tags.
 type PowerFeedRequest struct {
-	PowerPanel BriefPowerPanelRequest                 `json:"power_panel"`
-	Rack       NullableBriefRackRequest               `json:"rack,omitempty"`
-	Name       string                                 `json:"name"`
-	Status     *PatchedWritablePowerFeedRequestStatus `json:"status,omitempty"`
-	Type       *PatchedWritablePowerFeedRequestType   `json:"type,omitempty"`
-	Supply     *PatchedWritablePowerFeedRequestSupply `json:"supply,omitempty"`
-	Phase      *PatchedWritablePowerFeedRequestPhase  `json:"phase,omitempty"`
-	Voltage    *int32                                 `json:"voltage,omitempty"`
-	Amperage   *int32                                 `json:"amperage,omitempty"`
+	PowerPanel BriefPowerPanelRequest `json:"power_panel"`
+	Rack NullableBriefRackRequest `json:"rack,omitempty"`
+	Name string `json:"name"`
+	Status *PatchedWritablePowerFeedRequestStatus `json:"status,omitempty"`
+	Type *PatchedWritablePowerFeedRequestType `json:"type,omitempty"`
+	Supply *PatchedWritablePowerFeedRequestSupply `json:"supply,omitempty"`
+	Phase *PatchedWritablePowerFeedRequestPhase `json:"phase,omitempty"`
+	Voltage *int32 `json:"voltage,omitempty"`
+	Amperage *int32 `json:"amperage,omitempty"`
 	// Maximum permissible draw (percentage)
 	MaxUtilization *int32 `json:"max_utilization,omitempty"`
 	// Treat as if a cable is connected
-	MarkConnected        *bool                      `json:"mark_connected,omitempty"`
-	Description          *string                    `json:"description,omitempty"`
-	Tenant               NullableBriefTenantRequest `json:"tenant,omitempty"`
-	Comments             *string                    `json:"comments,omitempty"`
-	Tags                 []NestedTagRequest         `json:"tags,omitempty"`
-	CustomFields         map[string]interface{}     `json:"custom_fields,omitempty"`
+	MarkConnected *bool `json:"mark_connected,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Tenant NullableBriefTenantRequest `json:"tenant,omitempty"`
+	Comments *string `json:"comments,omitempty"`
+	Tags []NestedTagRequest `json:"tags,omitempty"`
+	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -118,7 +118,6 @@ func (o *PowerFeedRequest) HasRack() bool {
 func (o *PowerFeedRequest) SetRack(v BriefRackRequest) {
 	o.Rack.Set(&v)
 }
-
 // SetRackNil sets the value for Rack to be an explicit nil
 func (o *PowerFeedRequest) SetRackNil() {
 	o.Rack.Set(nil)
@@ -473,7 +472,6 @@ func (o *PowerFeedRequest) HasTenant() bool {
 func (o *PowerFeedRequest) SetTenant(v BriefTenantRequest) {
 	o.Tenant.Set(&v)
 }
-
 // SetTenantNil sets the value for Tenant to be an explicit nil
 func (o *PowerFeedRequest) SetTenantNil() {
 	o.Tenant.Set(nil)
@@ -581,7 +579,7 @@ func (o *PowerFeedRequest) SetCustomFields(v map[string]interface{}) {
 }
 
 func (o PowerFeedRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -656,10 +654,10 @@ func (o *PowerFeedRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -735,3 +733,5 @@ func (v *NullablePowerFeedRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

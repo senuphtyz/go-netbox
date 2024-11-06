@@ -11,84 +11,84 @@ API version: 4.1.4 (4.1)
 package netbox
 
 import (
-        "time"
 	"bytes"
 	"context"
 	"io"
 	"net/http"
 	"net/url"
-	"reflect"
 	"strings"
+	"reflect"
 	"time"
 )
+
 
 // CoreAPIService CoreAPI service
 type CoreAPIService service
 
 type ApiCoreDataFilesListRequest struct {
-	ctx               context.Context
-	ApiService        *CoreAPIService
-	created           *[]time.Time
-	createdEmpty      *[]time.Time
-	createdGt         *[]time.Time
-	createdGte        *[]time.Time
-	createdLt         *[]time.Time
-	createdLte        *[]time.Time
-	createdN          *[]time.Time
-	createdByRequest  *string
-	hash              *[]string
-	hashEmpty         *bool
-	hashIc            *[]string
-	hashIe            *[]string
-	hashIew           *[]string
-	hashIsw           *[]string
-	hashN             *[]string
-	hashNic           *[]string
-	hashNie           *[]string
-	hashNiew          *[]string
-	hashNisw          *[]string
-	id                *[]int32
-	idEmpty           *bool
-	idGt              *[]int32
-	idGte             *[]int32
-	idLt              *[]int32
-	idLte             *[]int32
-	idN               *[]int32
-	lastUpdated       *[]time.Time
-	lastUpdatedEmpty  *[]time.Time
-	lastUpdatedGt     *[]time.Time
-	lastUpdatedGte    *[]time.Time
-	lastUpdatedLt     *[]time.Time
-	lastUpdatedLte    *[]time.Time
-	lastUpdatedN      *[]time.Time
-	limit             *int32
+	ctx context.Context
+	ApiService *CoreAPIService
+	created *[]time.Time
+	createdEmpty *[]time.Time
+	createdGt *[]time.Time
+	createdGte *[]time.Time
+	createdLt *[]time.Time
+	createdLte *[]time.Time
+	createdN *[]time.Time
+	createdByRequest *string
+	hash *[]string
+	hashEmpty *bool
+	hashIc *[]string
+	hashIe *[]string
+	hashIew *[]string
+	hashIsw *[]string
+	hashN *[]string
+	hashNic *[]string
+	hashNie *[]string
+	hashNiew *[]string
+	hashNisw *[]string
+	id *[]int32
+	idEmpty *bool
+	idGt *[]int32
+	idGte *[]int32
+	idLt *[]int32
+	idLte *[]int32
+	idN *[]int32
+	lastUpdated *[]time.Time
+	lastUpdatedEmpty *[]time.Time
+	lastUpdatedGt *[]time.Time
+	lastUpdatedGte *[]time.Time
+	lastUpdatedLt *[]time.Time
+	lastUpdatedLte *[]time.Time
+	lastUpdatedN *[]time.Time
+	limit *int32
 	modifiedByRequest *string
-	offset            *int32
-	ordering          *string
-	path              *[]string
-	pathEmpty         *bool
-	pathIc            *[]string
-	pathIe            *[]string
-	pathIew           *[]string
-	pathIsw           *[]string
-	pathN             *[]string
-	pathNic           *[]string
-	pathNie           *[]string
-	pathNiew          *[]string
-	pathNisw          *[]string
-	q                 *string
-	size              *[]int32
-	sizeEmpty         *bool
-	sizeGt            *[]int32
-	sizeGte           *[]int32
-	sizeLt            *[]int32
-	sizeLte           *[]int32
-	sizeN             *[]int32
-	source            *[]string
-	sourceN           *[]string
-	sourceId          *[]int32
-	sourceIdN         *[]int32
-	updatedByRequest  *string
+	offset *int32
+	ordering *string
+	path *[]string
+	pathEmpty *bool
+	pathIc *[]string
+	pathIe *[]string
+	pathIew *[]string
+	pathIsw *[]string
+	pathN *[]string
+	pathNic *[]string
+	pathNie *[]string
+	pathNiew *[]string
+	pathNisw *[]string
+	q *string
+	size *[]int32
+	sizeEmpty *bool
+	sizeGt *[]int32
+	sizeGte *[]int32
+	sizeLt *[]int32
+	sizeLte *[]int32
+	sizeN *[]int32
+	source *[]string
+	sourceN *[]string
+	sourceId *[]int32
+	sourceIdN *[]int32
+	updatedByRequest *string
 }
 
 func (r ApiCoreDataFilesListRequest) Created(created []time.Time) ApiCoreDataFilesListRequest {
@@ -412,25 +412,24 @@ CoreDataFilesList Method for CoreDataFilesList
 
 Get a list of data file objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiCoreDataFilesListRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiCoreDataFilesListRequest
 */
 func (a *CoreAPIService) CoreDataFilesList(ctx context.Context) ApiCoreDataFilesListRequest {
 	return ApiCoreDataFilesListRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return PaginatedDataFileList
+//  @return PaginatedDataFileList
 func (a *CoreAPIService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest) (*PaginatedDataFileList, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PaginatedDataFileList
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PaginatedDataFileList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CoreAPIService.CoreDataFilesList")
@@ -1096,9 +1095,9 @@ func (a *CoreAPIService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 }
 
 type ApiCoreDataFilesRetrieveRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *CoreAPIService
-	id         int32
+	id int32
 }
 
 func (r ApiCoreDataFilesRetrieveRequest) Execute() (*DataFile, *http.Response, error) {
@@ -1110,27 +1109,26 @@ CoreDataFilesRetrieve Method for CoreDataFilesRetrieve
 
 Get a data file object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this data file.
-	@return ApiCoreDataFilesRetrieveRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this data file.
+ @return ApiCoreDataFilesRetrieveRequest
 */
 func (a *CoreAPIService) CoreDataFilesRetrieve(ctx context.Context, id int32) ApiCoreDataFilesRetrieveRequest {
 	return ApiCoreDataFilesRetrieveRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return DataFile
+//  @return DataFile
 func (a *CoreAPIService) CoreDataFilesRetrieveExecute(r ApiCoreDataFilesRetrieveRequest) (*DataFile, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *DataFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *DataFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CoreAPIService.CoreDataFilesRetrieve")
@@ -1214,8 +1212,8 @@ func (a *CoreAPIService) CoreDataFilesRetrieveExecute(r ApiCoreDataFilesRetrieve
 }
 
 type ApiCoreDataSourcesBulkDestroyRequest struct {
-	ctx               context.Context
-	ApiService        *CoreAPIService
+	ctx context.Context
+	ApiService *CoreAPIService
 	dataSourceRequest *[]DataSourceRequest
 }
 
@@ -1233,22 +1231,22 @@ CoreDataSourcesBulkDestroy Method for CoreDataSourcesBulkDestroy
 
 Delete a list of data source objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiCoreDataSourcesBulkDestroyRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiCoreDataSourcesBulkDestroyRequest
 */
 func (a *CoreAPIService) CoreDataSourcesBulkDestroy(ctx context.Context) ApiCoreDataSourcesBulkDestroyRequest {
 	return ApiCoreDataSourcesBulkDestroyRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
 func (a *CoreAPIService) CoreDataSourcesBulkDestroyExecute(r ApiCoreDataSourcesBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CoreAPIService.CoreDataSourcesBulkDestroy")
@@ -1327,8 +1325,8 @@ func (a *CoreAPIService) CoreDataSourcesBulkDestroyExecute(r ApiCoreDataSourcesB
 }
 
 type ApiCoreDataSourcesBulkPartialUpdateRequest struct {
-	ctx               context.Context
-	ApiService        *CoreAPIService
+	ctx context.Context
+	ApiService *CoreAPIService
 	dataSourceRequest *[]DataSourceRequest
 }
 
@@ -1346,25 +1344,24 @@ CoreDataSourcesBulkPartialUpdate Method for CoreDataSourcesBulkPartialUpdate
 
 Patch a list of data source objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiCoreDataSourcesBulkPartialUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiCoreDataSourcesBulkPartialUpdateRequest
 */
 func (a *CoreAPIService) CoreDataSourcesBulkPartialUpdate(ctx context.Context) ApiCoreDataSourcesBulkPartialUpdateRequest {
 	return ApiCoreDataSourcesBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []DataSource
+//  @return []DataSource
 func (a *CoreAPIService) CoreDataSourcesBulkPartialUpdateExecute(r ApiCoreDataSourcesBulkPartialUpdateRequest) ([]DataSource, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []DataSource
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []DataSource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CoreAPIService.CoreDataSourcesBulkPartialUpdate")
@@ -1452,8 +1449,8 @@ func (a *CoreAPIService) CoreDataSourcesBulkPartialUpdateExecute(r ApiCoreDataSo
 }
 
 type ApiCoreDataSourcesBulkUpdateRequest struct {
-	ctx               context.Context
-	ApiService        *CoreAPIService
+	ctx context.Context
+	ApiService *CoreAPIService
 	dataSourceRequest *[]DataSourceRequest
 }
 
@@ -1471,25 +1468,24 @@ CoreDataSourcesBulkUpdate Method for CoreDataSourcesBulkUpdate
 
 Put a list of data source objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiCoreDataSourcesBulkUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiCoreDataSourcesBulkUpdateRequest
 */
 func (a *CoreAPIService) CoreDataSourcesBulkUpdate(ctx context.Context) ApiCoreDataSourcesBulkUpdateRequest {
 	return ApiCoreDataSourcesBulkUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []DataSource
+//  @return []DataSource
 func (a *CoreAPIService) CoreDataSourcesBulkUpdateExecute(r ApiCoreDataSourcesBulkUpdateRequest) ([]DataSource, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPut
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []DataSource
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []DataSource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CoreAPIService.CoreDataSourcesBulkUpdate")
@@ -1577,8 +1573,8 @@ func (a *CoreAPIService) CoreDataSourcesBulkUpdateExecute(r ApiCoreDataSourcesBu
 }
 
 type ApiCoreDataSourcesCreateRequest struct {
-	ctx                       context.Context
-	ApiService                *CoreAPIService
+	ctx context.Context
+	ApiService *CoreAPIService
 	writableDataSourceRequest *WritableDataSourceRequest
 }
 
@@ -1596,25 +1592,24 @@ CoreDataSourcesCreate Method for CoreDataSourcesCreate
 
 Post a list of data source objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiCoreDataSourcesCreateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiCoreDataSourcesCreateRequest
 */
 func (a *CoreAPIService) CoreDataSourcesCreate(ctx context.Context) ApiCoreDataSourcesCreateRequest {
 	return ApiCoreDataSourcesCreateRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return DataSource
+//  @return DataSource
 func (a *CoreAPIService) CoreDataSourcesCreateExecute(r ApiCoreDataSourcesCreateRequest) (*DataSource, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *DataSource
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *DataSource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CoreAPIService.CoreDataSourcesCreate")
@@ -1702,9 +1697,9 @@ func (a *CoreAPIService) CoreDataSourcesCreateExecute(r ApiCoreDataSourcesCreate
 }
 
 type ApiCoreDataSourcesDestroyRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *CoreAPIService
-	id         int32
+	id int32
 }
 
 func (r ApiCoreDataSourcesDestroyRequest) Execute() (*http.Response, error) {
@@ -1716,24 +1711,24 @@ CoreDataSourcesDestroy Method for CoreDataSourcesDestroy
 
 Delete a data source object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this data source.
-	@return ApiCoreDataSourcesDestroyRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this data source.
+ @return ApiCoreDataSourcesDestroyRequest
 */
 func (a *CoreAPIService) CoreDataSourcesDestroy(ctx context.Context, id int32) ApiCoreDataSourcesDestroyRequest {
 	return ApiCoreDataSourcesDestroyRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
 func (a *CoreAPIService) CoreDataSourcesDestroyExecute(r ApiCoreDataSourcesDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CoreAPIService.CoreDataSourcesDestroy")
@@ -1808,101 +1803,101 @@ func (a *CoreAPIService) CoreDataSourcesDestroyExecute(r ApiCoreDataSourcesDestr
 }
 
 type ApiCoreDataSourcesListRequest struct {
-	ctx               context.Context
-	ApiService        *CoreAPIService
-	created           *[]time.Time
-	createdEmpty      *[]time.Time
-	createdGt         *[]time.Time
-	createdGte        *[]time.Time
-	createdLt         *[]time.Time
-	createdLte        *[]time.Time
-	createdN          *[]time.Time
-	createdByRequest  *string
-	description       *[]string
-	descriptionEmpty  *bool
-	descriptionIc     *[]string
-	descriptionIe     *[]string
-	descriptionIew    *[]string
-	descriptionIsw    *[]string
-	descriptionN      *[]string
-	descriptionNic    *[]string
-	descriptionNie    *[]string
-	descriptionNiew   *[]string
-	descriptionNisw   *[]string
-	enabled           *bool
-	id                *[]int32
-	idEmpty           *bool
-	idGt              *[]int32
-	idGte             *[]int32
-	idLt              *[]int32
-	idLte             *[]int32
-	idN               *[]int32
-	lastSynced        *[]time.Time
-	lastSyncedEmpty   *bool
-	lastSyncedGt      *[]time.Time
-	lastSyncedGte     *[]time.Time
-	lastSyncedLt      *[]time.Time
-	lastSyncedLte     *[]time.Time
-	lastSyncedN       *[]time.Time
-	lastUpdated       *[]time.Time
-	lastUpdatedEmpty  *[]time.Time
-	lastUpdatedGt     *[]time.Time
-	lastUpdatedGte    *[]time.Time
-	lastUpdatedLt     *[]time.Time
-	lastUpdatedLte    *[]time.Time
-	lastUpdatedN      *[]time.Time
-	limit             *int32
+	ctx context.Context
+	ApiService *CoreAPIService
+	created *[]time.Time
+	createdEmpty *[]time.Time
+	createdGt *[]time.Time
+	createdGte *[]time.Time
+	createdLt *[]time.Time
+	createdLte *[]time.Time
+	createdN *[]time.Time
+	createdByRequest *string
+	description *[]string
+	descriptionEmpty *bool
+	descriptionIc *[]string
+	descriptionIe *[]string
+	descriptionIew *[]string
+	descriptionIsw *[]string
+	descriptionN *[]string
+	descriptionNic *[]string
+	descriptionNie *[]string
+	descriptionNiew *[]string
+	descriptionNisw *[]string
+	enabled *bool
+	id *[]int32
+	idEmpty *bool
+	idGt *[]int32
+	idGte *[]int32
+	idLt *[]int32
+	idLte *[]int32
+	idN *[]int32
+	lastSynced *[]time.Time
+	lastSyncedEmpty *bool
+	lastSyncedGt *[]time.Time
+	lastSyncedGte *[]time.Time
+	lastSyncedLt *[]time.Time
+	lastSyncedLte *[]time.Time
+	lastSyncedN *[]time.Time
+	lastUpdated *[]time.Time
+	lastUpdatedEmpty *[]time.Time
+	lastUpdatedGt *[]time.Time
+	lastUpdatedGte *[]time.Time
+	lastUpdatedLt *[]time.Time
+	lastUpdatedLte *[]time.Time
+	lastUpdatedN *[]time.Time
+	limit *int32
 	modifiedByRequest *string
-	name              *[]string
-	nameEmpty         *bool
-	nameIc            *[]string
-	nameIe            *[]string
-	nameIew           *[]string
-	nameIsw           *[]string
-	nameN             *[]string
-	nameNic           *[]string
-	nameNie           *[]string
-	nameNiew          *[]string
-	nameNisw          *[]string
-	offset            *int32
-	ordering          *string
-	q                 *string
-	sourceUrl         *[]string
-	sourceUrlEmpty    *bool
-	sourceUrlIc       *[]string
-	sourceUrlIe       *[]string
-	sourceUrlIew      *[]string
-	sourceUrlIsw      *[]string
-	sourceUrlN        *[]string
-	sourceUrlNic      *[]string
-	sourceUrlNie      *[]string
-	sourceUrlNiew     *[]string
-	sourceUrlNisw     *[]string
-	status            *[]string
-	statusEmpty       *bool
-	statusIc          *[]string
-	statusIe          *[]string
-	statusIew         *[]string
-	statusIsw         *[]string
-	statusN           *[]string
-	statusNic         *[]string
-	statusNie         *[]string
-	statusNiew        *[]string
-	statusNisw        *[]string
-	tag               *[]string
-	tagN              *[]string
-	type_             *[]string
-	typeEmpty         *bool
-	typeIc            *[]string
-	typeIe            *[]string
-	typeIew           *[]string
-	typeIsw           *[]string
-	typeN             *[]string
-	typeNic           *[]string
-	typeNie           *[]string
-	typeNiew          *[]string
-	typeNisw          *[]string
-	updatedByRequest  *string
+	name *[]string
+	nameEmpty *bool
+	nameIc *[]string
+	nameIe *[]string
+	nameIew *[]string
+	nameIsw *[]string
+	nameN *[]string
+	nameNic *[]string
+	nameNie *[]string
+	nameNiew *[]string
+	nameNisw *[]string
+	offset *int32
+	ordering *string
+	q *string
+	sourceUrl *[]string
+	sourceUrlEmpty *bool
+	sourceUrlIc *[]string
+	sourceUrlIe *[]string
+	sourceUrlIew *[]string
+	sourceUrlIsw *[]string
+	sourceUrlN *[]string
+	sourceUrlNic *[]string
+	sourceUrlNie *[]string
+	sourceUrlNiew *[]string
+	sourceUrlNisw *[]string
+	status *[]string
+	statusEmpty *bool
+	statusIc *[]string
+	statusIe *[]string
+	statusIew *[]string
+	statusIsw *[]string
+	statusN *[]string
+	statusNic *[]string
+	statusNie *[]string
+	statusNiew *[]string
+	statusNisw *[]string
+	tag *[]string
+	tagN *[]string
+	type_ *[]string
+	typeEmpty *bool
+	typeIc *[]string
+	typeIe *[]string
+	typeIew *[]string
+	typeIsw *[]string
+	typeN *[]string
+	typeNic *[]string
+	typeNie *[]string
+	typeNiew *[]string
+	typeNisw *[]string
+	updatedByRequest *string
 }
 
 func (r ApiCoreDataSourcesListRequest) Created(created []time.Time) ApiCoreDataSourcesListRequest {
@@ -2383,25 +2378,24 @@ CoreDataSourcesList Method for CoreDataSourcesList
 
 Get a list of data source objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiCoreDataSourcesListRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiCoreDataSourcesListRequest
 */
 func (a *CoreAPIService) CoreDataSourcesList(ctx context.Context) ApiCoreDataSourcesListRequest {
 	return ApiCoreDataSourcesListRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return PaginatedDataSourceList
+//  @return PaginatedDataSourceList
 func (a *CoreAPIService) CoreDataSourcesListExecute(r ApiCoreDataSourcesListRequest) (*PaginatedDataSourceList, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PaginatedDataSourceList
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PaginatedDataSourceList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CoreAPIService.CoreDataSourcesList")
@@ -3387,9 +3381,9 @@ func (a *CoreAPIService) CoreDataSourcesListExecute(r ApiCoreDataSourcesListRequ
 }
 
 type ApiCoreDataSourcesPartialUpdateRequest struct {
-	ctx                              context.Context
-	ApiService                       *CoreAPIService
-	id                               int32
+	ctx context.Context
+	ApiService *CoreAPIService
+	id int32
 	patchedWritableDataSourceRequest *PatchedWritableDataSourceRequest
 }
 
@@ -3407,27 +3401,26 @@ CoreDataSourcesPartialUpdate Method for CoreDataSourcesPartialUpdate
 
 Patch a data source object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this data source.
-	@return ApiCoreDataSourcesPartialUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this data source.
+ @return ApiCoreDataSourcesPartialUpdateRequest
 */
 func (a *CoreAPIService) CoreDataSourcesPartialUpdate(ctx context.Context, id int32) ApiCoreDataSourcesPartialUpdateRequest {
 	return ApiCoreDataSourcesPartialUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return DataSource
+//  @return DataSource
 func (a *CoreAPIService) CoreDataSourcesPartialUpdateExecute(r ApiCoreDataSourcesPartialUpdateRequest) (*DataSource, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *DataSource
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *DataSource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CoreAPIService.CoreDataSourcesPartialUpdate")
@@ -3513,9 +3506,9 @@ func (a *CoreAPIService) CoreDataSourcesPartialUpdateExecute(r ApiCoreDataSource
 }
 
 type ApiCoreDataSourcesRetrieveRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *CoreAPIService
-	id         int32
+	id int32
 }
 
 func (r ApiCoreDataSourcesRetrieveRequest) Execute() (*DataSource, *http.Response, error) {
@@ -3527,27 +3520,26 @@ CoreDataSourcesRetrieve Method for CoreDataSourcesRetrieve
 
 Get a data source object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this data source.
-	@return ApiCoreDataSourcesRetrieveRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this data source.
+ @return ApiCoreDataSourcesRetrieveRequest
 */
 func (a *CoreAPIService) CoreDataSourcesRetrieve(ctx context.Context, id int32) ApiCoreDataSourcesRetrieveRequest {
 	return ApiCoreDataSourcesRetrieveRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return DataSource
+//  @return DataSource
 func (a *CoreAPIService) CoreDataSourcesRetrieveExecute(r ApiCoreDataSourcesRetrieveRequest) (*DataSource, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *DataSource
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *DataSource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CoreAPIService.CoreDataSourcesRetrieve")
@@ -3631,9 +3623,9 @@ func (a *CoreAPIService) CoreDataSourcesRetrieveExecute(r ApiCoreDataSourcesRetr
 }
 
 type ApiCoreDataSourcesSyncCreateRequest struct {
-	ctx                       context.Context
-	ApiService                *CoreAPIService
-	id                        int32
+	ctx context.Context
+	ApiService *CoreAPIService
+	id int32
 	writableDataSourceRequest *WritableDataSourceRequest
 }
 
@@ -3651,27 +3643,26 @@ CoreDataSourcesSyncCreate Method for CoreDataSourcesSyncCreate
 
 Enqueue a job to synchronize the DataSource.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this data source.
-	@return ApiCoreDataSourcesSyncCreateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this data source.
+ @return ApiCoreDataSourcesSyncCreateRequest
 */
 func (a *CoreAPIService) CoreDataSourcesSyncCreate(ctx context.Context, id int32) ApiCoreDataSourcesSyncCreateRequest {
 	return ApiCoreDataSourcesSyncCreateRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return DataSource
+//  @return DataSource
 func (a *CoreAPIService) CoreDataSourcesSyncCreateExecute(r ApiCoreDataSourcesSyncCreateRequest) (*DataSource, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *DataSource
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *DataSource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CoreAPIService.CoreDataSourcesSyncCreate")
@@ -3760,9 +3751,9 @@ func (a *CoreAPIService) CoreDataSourcesSyncCreateExecute(r ApiCoreDataSourcesSy
 }
 
 type ApiCoreDataSourcesUpdateRequest struct {
-	ctx                       context.Context
-	ApiService                *CoreAPIService
-	id                        int32
+	ctx context.Context
+	ApiService *CoreAPIService
+	id int32
 	writableDataSourceRequest *WritableDataSourceRequest
 }
 
@@ -3780,27 +3771,26 @@ CoreDataSourcesUpdate Method for CoreDataSourcesUpdate
 
 Put a data source object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this data source.
-	@return ApiCoreDataSourcesUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this data source.
+ @return ApiCoreDataSourcesUpdateRequest
 */
 func (a *CoreAPIService) CoreDataSourcesUpdate(ctx context.Context, id int32) ApiCoreDataSourcesUpdateRequest {
 	return ApiCoreDataSourcesUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return DataSource
+//  @return DataSource
 func (a *CoreAPIService) CoreDataSourcesUpdateExecute(r ApiCoreDataSourcesUpdateRequest) (*DataSource, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPut
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *DataSource
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *DataSource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CoreAPIService.CoreDataSourcesUpdate")
@@ -3889,72 +3879,72 @@ func (a *CoreAPIService) CoreDataSourcesUpdateExecute(r ApiCoreDataSourcesUpdate
 }
 
 type ApiCoreJobsListRequest struct {
-	ctx             context.Context
-	ApiService      *CoreAPIService
-	completed       *time.Time
-	completedAfter  *time.Time
+	ctx context.Context
+	ApiService *CoreAPIService
+	completed *time.Time
+	completedAfter *time.Time
 	completedBefore *time.Time
-	created         *time.Time
-	createdAfter    *time.Time
-	createdBefore   *time.Time
-	id              *[]int32
-	idEmpty         *bool
-	idGt            *[]int32
-	idGte           *[]int32
-	idLt            *[]int32
-	idLte           *[]int32
-	idN             *[]int32
-	interval        *[]int32
-	intervalEmpty   *bool
-	intervalGt      *[]int32
-	intervalGte     *[]int32
-	intervalLt      *[]int32
-	intervalLte     *[]int32
-	intervalN       *[]int32
-	jobId           *string
-	limit           *int32
-	name            *[]string
-	nameEmpty       *bool
-	nameIc          *[]string
-	nameIe          *[]string
-	nameIew         *[]string
-	nameIsw         *[]string
-	nameN           *[]string
-	nameNic         *[]string
-	nameNie         *[]string
-	nameNiew        *[]string
-	nameNisw        *[]string
-	objectId        *[]int32
-	objectIdEmpty   *bool
-	objectIdGt      *[]int32
-	objectIdGte     *[]int32
-	objectIdLt      *[]int32
-	objectIdLte     *[]int32
-	objectIdN       *[]int32
-	objectType      *int32
-	objectTypeN     *int32
-	offset          *int32
-	ordering        *string
-	q               *string
-	scheduled       *time.Time
-	scheduledAfter  *time.Time
+	created *time.Time
+	createdAfter *time.Time
+	createdBefore *time.Time
+	id *[]int32
+	idEmpty *bool
+	idGt *[]int32
+	idGte *[]int32
+	idLt *[]int32
+	idLte *[]int32
+	idN *[]int32
+	interval *[]int32
+	intervalEmpty *bool
+	intervalGt *[]int32
+	intervalGte *[]int32
+	intervalLt *[]int32
+	intervalLte *[]int32
+	intervalN *[]int32
+	jobId *string
+	limit *int32
+	name *[]string
+	nameEmpty *bool
+	nameIc *[]string
+	nameIe *[]string
+	nameIew *[]string
+	nameIsw *[]string
+	nameN *[]string
+	nameNic *[]string
+	nameNie *[]string
+	nameNiew *[]string
+	nameNisw *[]string
+	objectId *[]int32
+	objectIdEmpty *bool
+	objectIdGt *[]int32
+	objectIdGte *[]int32
+	objectIdLt *[]int32
+	objectIdLte *[]int32
+	objectIdN *[]int32
+	objectType *int32
+	objectTypeN *int32
+	offset *int32
+	ordering *string
+	q *string
+	scheduled *time.Time
+	scheduledAfter *time.Time
 	scheduledBefore *time.Time
-	started         *time.Time
-	startedAfter    *time.Time
-	startedBefore   *time.Time
-	status          *[]string
-	statusEmpty     *bool
-	statusIc        *[]string
-	statusIe        *[]string
-	statusIew       *[]string
-	statusIsw       *[]string
-	statusN         *[]string
-	statusNic       *[]string
-	statusNie       *[]string
-	statusNiew      *[]string
-	statusNisw      *[]string
-	user            *int32
-	userN           *int32
+	started *time.Time
+	startedAfter *time.Time
+	startedBefore *time.Time
+	status *[]string
+	statusEmpty *bool
+	statusIc *[]string
+	statusIe *[]string
+	statusIew *[]string
+	statusIsw *[]string
+	statusN *[]string
+	statusNic *[]string
+	statusNie *[]string
+	statusNiew *[]string
+	statusNisw *[]string
+	user *int32
+	userN *int32
 }
 
 func (r ApiCoreJobsListRequest) Completed(completed time.Time) ApiCoreJobsListRequest {
@@ -4290,25 +4280,24 @@ CoreJobsList Method for CoreJobsList
 
 Retrieve a list of job results
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiCoreJobsListRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiCoreJobsListRequest
 */
 func (a *CoreAPIService) CoreJobsList(ctx context.Context) ApiCoreJobsListRequest {
 	return ApiCoreJobsListRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return PaginatedJobList
+//  @return PaginatedJobList
 func (a *CoreAPIService) CoreJobsListExecute(r ApiCoreJobsListRequest) (*PaginatedJobList, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PaginatedJobList
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PaginatedJobList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CoreAPIService.CoreJobsList")
@@ -4887,9 +4876,9 @@ func (a *CoreAPIService) CoreJobsListExecute(r ApiCoreJobsListRequest) (*Paginat
 }
 
 type ApiCoreJobsRetrieveRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *CoreAPIService
-	id         int32
+	id int32
 }
 
 func (r ApiCoreJobsRetrieveRequest) Execute() (*Job, *http.Response, error) {
@@ -4901,27 +4890,26 @@ CoreJobsRetrieve Method for CoreJobsRetrieve
 
 Retrieve a list of job results
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this job.
-	@return ApiCoreJobsRetrieveRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this job.
+ @return ApiCoreJobsRetrieveRequest
 */
 func (a *CoreAPIService) CoreJobsRetrieve(ctx context.Context, id int32) ApiCoreJobsRetrieveRequest {
 	return ApiCoreJobsRetrieveRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return Job
+//  @return Job
 func (a *CoreAPIService) CoreJobsRetrieveExecute(r ApiCoreJobsRetrieveRequest) (*Job, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *Job
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *Job
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CoreAPIService.CoreJobsRetrieve")
@@ -5005,69 +4993,69 @@ func (a *CoreAPIService) CoreJobsRetrieveExecute(r ApiCoreJobsRetrieveRequest) (
 }
 
 type ApiCoreObjectChangesListRequest struct {
-	ctx                  context.Context
-	ApiService           *CoreAPIService
-	action               *CoreObjectChangesListActionParameter
-	changedObjectId      *[]int32
+	ctx context.Context
+	ApiService *CoreAPIService
+	action *CoreObjectChangesListActionParameter
+	changedObjectId *[]int32
 	changedObjectIdEmpty *bool
-	changedObjectIdGt    *[]int32
-	changedObjectIdGte   *[]int32
-	changedObjectIdLt    *[]int32
-	changedObjectIdLte   *[]int32
-	changedObjectIdN     *[]int32
-	changedObjectType    *string
-	changedObjectTypeN   *string
-	changedObjectTypeId  *[]int32
+	changedObjectIdGt *[]int32
+	changedObjectIdGte *[]int32
+	changedObjectIdLt *[]int32
+	changedObjectIdLte *[]int32
+	changedObjectIdN *[]int32
+	changedObjectType *string
+	changedObjectTypeN *string
+	changedObjectTypeId *[]int32
 	changedObjectTypeIdN *[]int32
-	id                   *[]int32
-	idEmpty              *bool
-	idGt                 *[]int32
-	idGte                *[]int32
-	idLt                 *[]int32
-	idLte                *[]int32
-	idN                  *[]int32
-	limit                *int32
-	objectRepr           *[]string
-	objectReprEmpty      *bool
-	objectReprIc         *[]string
-	objectReprIe         *[]string
-	objectReprIew        *[]string
-	objectReprIsw        *[]string
-	objectReprN          *[]string
-	objectReprNic        *[]string
-	objectReprNie        *[]string
-	objectReprNiew       *[]string
-	objectReprNisw       *[]string
-	offset               *int32
-	ordering             *string
-	q                    *string
-	relatedObjectId      *[]int32
+	id *[]int32
+	idEmpty *bool
+	idGt *[]int32
+	idGte *[]int32
+	idLt *[]int32
+	idLte *[]int32
+	idN *[]int32
+	limit *int32
+	objectRepr *[]string
+	objectReprEmpty *bool
+	objectReprIc *[]string
+	objectReprIe *[]string
+	objectReprIew *[]string
+	objectReprIsw *[]string
+	objectReprN *[]string
+	objectReprNic *[]string
+	objectReprNie *[]string
+	objectReprNiew *[]string
+	objectReprNisw *[]string
+	offset *int32
+	ordering *string
+	q *string
+	relatedObjectId *[]int32
 	relatedObjectIdEmpty *bool
-	relatedObjectIdGt    *[]int32
-	relatedObjectIdGte   *[]int32
-	relatedObjectIdLt    *[]int32
-	relatedObjectIdLte   *[]int32
-	relatedObjectIdN     *[]int32
-	relatedObjectType    *int32
-	relatedObjectTypeN   *int32
-	requestId            *string
-	timeAfter            *time.Time
-	timeBefore           *time.Time
-	user                 *[]string
-	userN                *[]string
-	userId               *[]*int32
-	userIdN              *[]*int32
-	userName             *[]string
-	userNameEmpty        *bool
-	userNameIc           *[]string
-	userNameIe           *[]string
-	userNameIew          *[]string
-	userNameIsw          *[]string
-	userNameN            *[]string
-	userNameNic          *[]string
-	userNameNie          *[]string
-	userNameNiew         *[]string
-	userNameNisw         *[]string
+	relatedObjectIdGt *[]int32
+	relatedObjectIdGte *[]int32
+	relatedObjectIdLt *[]int32
+	relatedObjectIdLte *[]int32
+	relatedObjectIdN *[]int32
+	relatedObjectType *int32
+	relatedObjectTypeN *int32
+	requestId *string
+	timeAfter *time.Time
+	timeBefore *time.Time
+	user *[]string
+	userN *[]string
+	userId *[]*int32
+	userIdN *[]*int32
+	userName *[]string
+	userNameEmpty *bool
+	userNameIc *[]string
+	userNameIe *[]string
+	userNameIew *[]string
+	userNameIsw *[]string
+	userNameN *[]string
+	userNameNic *[]string
+	userNameNie *[]string
+	userNameNiew *[]string
+	userNameNisw *[]string
 }
 
 // * &#x60;create&#x60; - Created * &#x60;update&#x60; - Updated * &#x60;delete&#x60; - Deleted
@@ -5393,25 +5381,24 @@ CoreObjectChangesList Method for CoreObjectChangesList
 
 Retrieve a list of recent changes.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiCoreObjectChangesListRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiCoreObjectChangesListRequest
 */
 func (a *CoreAPIService) CoreObjectChangesList(ctx context.Context) ApiCoreObjectChangesListRequest {
 	return ApiCoreObjectChangesListRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return PaginatedObjectChangeList
+//  @return PaginatedObjectChangeList
 func (a *CoreAPIService) CoreObjectChangesListExecute(r ApiCoreObjectChangesListRequest) (*PaginatedObjectChangeList, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PaginatedObjectChangeList
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PaginatedObjectChangeList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CoreAPIService.CoreObjectChangesList")
@@ -6029,9 +6016,9 @@ func (a *CoreAPIService) CoreObjectChangesListExecute(r ApiCoreObjectChangesList
 }
 
 type ApiCoreObjectChangesRetrieveRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *CoreAPIService
-	id         int32
+	id int32
 }
 
 func (r ApiCoreObjectChangesRetrieveRequest) Execute() (*ObjectChange, *http.Response, error) {
@@ -6043,27 +6030,26 @@ CoreObjectChangesRetrieve Method for CoreObjectChangesRetrieve
 
 Retrieve a list of recent changes.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this object change.
-	@return ApiCoreObjectChangesRetrieveRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this object change.
+ @return ApiCoreObjectChangesRetrieveRequest
 */
 func (a *CoreAPIService) CoreObjectChangesRetrieve(ctx context.Context, id int32) ApiCoreObjectChangesRetrieveRequest {
 	return ApiCoreObjectChangesRetrieveRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return ObjectChange
+//  @return ObjectChange
 func (a *CoreAPIService) CoreObjectChangesRetrieveExecute(r ApiCoreObjectChangesRetrieveRequest) (*ObjectChange, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *ObjectChange
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ObjectChange
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CoreAPIService.CoreObjectChangesRetrieve")

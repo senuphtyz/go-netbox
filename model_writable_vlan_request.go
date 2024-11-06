@@ -20,18 +20,18 @@ var _ MappedNullable = &WritableVLANRequest{}
 
 // WritableVLANRequest Adds support for custom fields and tags.
 type WritableVLANRequest struct {
-	Site  NullableBriefSiteRequest      `json:"site,omitempty"`
+	Site NullableBriefSiteRequest `json:"site,omitempty"`
 	Group NullableBriefVLANGroupRequest `json:"group,omitempty"`
 	// Numeric VLAN ID (1-4094)
-	Vid                  int32                             `json:"vid"`
-	Name                 string                            `json:"name"`
-	Tenant               NullableBriefTenantRequest        `json:"tenant,omitempty"`
-	Status               *PatchedWritableVLANRequestStatus `json:"status,omitempty"`
-	Role                 NullableBriefRoleRequest          `json:"role,omitempty"`
-	Description          *string                           `json:"description,omitempty"`
-	Comments             *string                           `json:"comments,omitempty"`
-	Tags                 []NestedTagRequest                `json:"tags,omitempty"`
-	CustomFields         map[string]interface{}            `json:"custom_fields,omitempty"`
+	Vid int32 `json:"vid"`
+	Name string `json:"name"`
+	Tenant NullableBriefTenantRequest `json:"tenant,omitempty"`
+	Status *PatchedWritableVLANRequestStatus `json:"status,omitempty"`
+	Role NullableBriefRoleRequest `json:"role,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Comments *string `json:"comments,omitempty"`
+	Tags []NestedTagRequest `json:"tags,omitempty"`
+	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -88,7 +88,6 @@ func (o *WritableVLANRequest) HasSite() bool {
 func (o *WritableVLANRequest) SetSite(v BriefSiteRequest) {
 	o.Site.Set(&v)
 }
-
 // SetSiteNil sets the value for Site to be an explicit nil
 func (o *WritableVLANRequest) SetSiteNil() {
 	o.Site.Set(nil)
@@ -131,7 +130,6 @@ func (o *WritableVLANRequest) HasGroup() bool {
 func (o *WritableVLANRequest) SetGroup(v BriefVLANGroupRequest) {
 	o.Group.Set(&v)
 }
-
 // SetGroupNil sets the value for Group to be an explicit nil
 func (o *WritableVLANRequest) SetGroupNil() {
 	o.Group.Set(nil)
@@ -222,7 +220,6 @@ func (o *WritableVLANRequest) HasTenant() bool {
 func (o *WritableVLANRequest) SetTenant(v BriefTenantRequest) {
 	o.Tenant.Set(&v)
 }
-
 // SetTenantNil sets the value for Tenant to be an explicit nil
 func (o *WritableVLANRequest) SetTenantNil() {
 	o.Tenant.Set(nil)
@@ -297,7 +294,6 @@ func (o *WritableVLANRequest) HasRole() bool {
 func (o *WritableVLANRequest) SetRole(v BriefRoleRequest) {
 	o.Role.Set(&v)
 }
-
 // SetRoleNil sets the value for Role to be an explicit nil
 func (o *WritableVLANRequest) SetRoleNil() {
 	o.Role.Set(nil)
@@ -437,7 +433,7 @@ func (o *WritableVLANRequest) SetCustomFields(v map[string]interface{}) {
 }
 
 func (o WritableVLANRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -497,10 +493,10 @@ func (o *WritableVLANRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -571,3 +567,5 @@ func (v *NullableWritableVLANRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

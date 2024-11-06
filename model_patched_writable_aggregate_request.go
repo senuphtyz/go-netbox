@@ -19,14 +19,14 @@ var _ MappedNullable = &PatchedWritableAggregateRequest{}
 
 // PatchedWritableAggregateRequest Adds support for custom fields and tags.
 type PatchedWritableAggregateRequest struct {
-	Prefix               *string                    `json:"prefix,omitempty"`
-	Rir                  *BriefRIRRequest           `json:"rir,omitempty"`
-	Tenant               NullableBriefTenantRequest `json:"tenant,omitempty"`
-	DateAdded            NullableString             `json:"date_added,omitempty"`
-	Description          *string                    `json:"description,omitempty"`
-	Comments             *string                    `json:"comments,omitempty"`
-	Tags                 []NestedTagRequest         `json:"tags,omitempty"`
-	CustomFields         map[string]interface{}     `json:"custom_fields,omitempty"`
+	Prefix *string `json:"prefix,omitempty"`
+	Rir *BriefRIRRequest `json:"rir,omitempty"`
+	Tenant NullableBriefTenantRequest `json:"tenant,omitempty"`
+	DateAdded NullableString `json:"date_added,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Comments *string `json:"comments,omitempty"`
+	Tags []NestedTagRequest `json:"tags,omitempty"`
+	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -145,7 +145,6 @@ func (o *PatchedWritableAggregateRequest) HasTenant() bool {
 func (o *PatchedWritableAggregateRequest) SetTenant(v BriefTenantRequest) {
 	o.Tenant.Set(&v)
 }
-
 // SetTenantNil sets the value for Tenant to be an explicit nil
 func (o *PatchedWritableAggregateRequest) SetTenantNil() {
 	o.Tenant.Set(nil)
@@ -188,7 +187,6 @@ func (o *PatchedWritableAggregateRequest) HasDateAdded() bool {
 func (o *PatchedWritableAggregateRequest) SetDateAdded(v string) {
 	o.DateAdded.Set(&v)
 }
-
 // SetDateAddedNil sets the value for DateAdded to be an explicit nil
 func (o *PatchedWritableAggregateRequest) SetDateAddedNil() {
 	o.DateAdded.Set(nil)
@@ -328,7 +326,7 @@ func (o *PatchedWritableAggregateRequest) SetCustomFields(v map[string]interface
 }
 
 func (o PatchedWritableAggregateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -432,3 +430,5 @@ func (v *NullablePatchedWritableAggregateRequest) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

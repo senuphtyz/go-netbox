@@ -20,7 +20,7 @@ type PatchedWritableVirtualDeviceContextRequestStatus string
 
 // List of PatchedWritableVirtualDeviceContextRequest_status
 const (
-	PATCHEDWRITABLEVIRTUALDEVICECONTEXTREQUESTSTATUS_ACTIVE  PatchedWritableVirtualDeviceContextRequestStatus = "active"
+	PATCHEDWRITABLEVIRTUALDEVICECONTEXTREQUESTSTATUS_ACTIVE PatchedWritableVirtualDeviceContextRequestStatus = "active"
 	PATCHEDWRITABLEVIRTUALDEVICECONTEXTREQUESTSTATUS_PLANNED PatchedWritableVirtualDeviceContextRequestStatus = "planned"
 	PATCHEDWRITABLEVIRTUALDEVICECONTEXTREQUESTSTATUS_OFFLINE PatchedWritableVirtualDeviceContextRequestStatus = "offline"
 )
@@ -110,3 +110,4 @@ func (v *NullablePatchedWritableVirtualDeviceContextRequestStatus) UnmarshalJSON
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+

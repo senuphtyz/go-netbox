@@ -11,23 +11,23 @@ API version: 4.1.4 (4.1)
 package netbox
 
 import (
-        "time"
 	"bytes"
 	"context"
 	"io"
 	"net/http"
 	"net/url"
-	"reflect"
 	"strings"
 	"time"
+	"reflect"
 )
+
 
 // PluginsAPIService PluginsAPI service
 type PluginsAPIService service
 
 type ApiPluginsNetboxAttachmentsNetboxAttachmentsBulkDestroyRequest struct {
-	ctx                     context.Context
-	ApiService              *PluginsAPIService
+	ctx context.Context
+	ApiService *PluginsAPIService
 	netBoxAttachmentRequest *[]NetBoxAttachmentRequest
 }
 
@@ -45,22 +45,22 @@ PluginsNetboxAttachmentsNetboxAttachmentsBulkDestroy Method for PluginsNetboxAtt
 
 Delete a list of NetBox Attachment objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiPluginsNetboxAttachmentsNetboxAttachmentsBulkDestroyRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiPluginsNetboxAttachmentsNetboxAttachmentsBulkDestroyRequest
 */
 func (a *PluginsAPIService) PluginsNetboxAttachmentsNetboxAttachmentsBulkDestroy(ctx context.Context) ApiPluginsNetboxAttachmentsNetboxAttachmentsBulkDestroyRequest {
 	return ApiPluginsNetboxAttachmentsNetboxAttachmentsBulkDestroyRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
 func (a *PluginsAPIService) PluginsNetboxAttachmentsNetboxAttachmentsBulkDestroyExecute(r ApiPluginsNetboxAttachmentsNetboxAttachmentsBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsNetboxAttachmentsNetboxAttachmentsBulkDestroy")
@@ -139,8 +139,8 @@ func (a *PluginsAPIService) PluginsNetboxAttachmentsNetboxAttachmentsBulkDestroy
 }
 
 type ApiPluginsNetboxAttachmentsNetboxAttachmentsBulkPartialUpdateRequest struct {
-	ctx                     context.Context
-	ApiService              *PluginsAPIService
+	ctx context.Context
+	ApiService *PluginsAPIService
 	netBoxAttachmentRequest *[]NetBoxAttachmentRequest
 }
 
@@ -158,25 +158,24 @@ PluginsNetboxAttachmentsNetboxAttachmentsBulkPartialUpdate Method for PluginsNet
 
 Patch a list of NetBox Attachment objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiPluginsNetboxAttachmentsNetboxAttachmentsBulkPartialUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiPluginsNetboxAttachmentsNetboxAttachmentsBulkPartialUpdateRequest
 */
 func (a *PluginsAPIService) PluginsNetboxAttachmentsNetboxAttachmentsBulkPartialUpdate(ctx context.Context) ApiPluginsNetboxAttachmentsNetboxAttachmentsBulkPartialUpdateRequest {
 	return ApiPluginsNetboxAttachmentsNetboxAttachmentsBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []NetBoxAttachment
+//  @return []NetBoxAttachment
 func (a *PluginsAPIService) PluginsNetboxAttachmentsNetboxAttachmentsBulkPartialUpdateExecute(r ApiPluginsNetboxAttachmentsNetboxAttachmentsBulkPartialUpdateRequest) ([]NetBoxAttachment, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []NetBoxAttachment
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []NetBoxAttachment
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsNetboxAttachmentsNetboxAttachmentsBulkPartialUpdate")
@@ -264,8 +263,8 @@ func (a *PluginsAPIService) PluginsNetboxAttachmentsNetboxAttachmentsBulkPartial
 }
 
 type ApiPluginsNetboxAttachmentsNetboxAttachmentsBulkUpdateRequest struct {
-	ctx                     context.Context
-	ApiService              *PluginsAPIService
+	ctx context.Context
+	ApiService *PluginsAPIService
 	netBoxAttachmentRequest *[]NetBoxAttachmentRequest
 }
 
@@ -283,25 +282,24 @@ PluginsNetboxAttachmentsNetboxAttachmentsBulkUpdate Method for PluginsNetboxAtta
 
 Put a list of NetBox Attachment objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiPluginsNetboxAttachmentsNetboxAttachmentsBulkUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiPluginsNetboxAttachmentsNetboxAttachmentsBulkUpdateRequest
 */
 func (a *PluginsAPIService) PluginsNetboxAttachmentsNetboxAttachmentsBulkUpdate(ctx context.Context) ApiPluginsNetboxAttachmentsNetboxAttachmentsBulkUpdateRequest {
 	return ApiPluginsNetboxAttachmentsNetboxAttachmentsBulkUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []NetBoxAttachment
+//  @return []NetBoxAttachment
 func (a *PluginsAPIService) PluginsNetboxAttachmentsNetboxAttachmentsBulkUpdateExecute(r ApiPluginsNetboxAttachmentsNetboxAttachmentsBulkUpdateRequest) ([]NetBoxAttachment, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPut
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []NetBoxAttachment
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []NetBoxAttachment
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsNetboxAttachmentsNetboxAttachmentsBulkUpdate")
@@ -389,8 +387,8 @@ func (a *PluginsAPIService) PluginsNetboxAttachmentsNetboxAttachmentsBulkUpdateE
 }
 
 type ApiPluginsNetboxAttachmentsNetboxAttachmentsCreateRequest struct {
-	ctx                     context.Context
-	ApiService              *PluginsAPIService
+	ctx context.Context
+	ApiService *PluginsAPIService
 	netBoxAttachmentRequest *NetBoxAttachmentRequest
 }
 
@@ -408,25 +406,24 @@ PluginsNetboxAttachmentsNetboxAttachmentsCreate Method for PluginsNetboxAttachme
 
 Post a list of NetBox Attachment objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiPluginsNetboxAttachmentsNetboxAttachmentsCreateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiPluginsNetboxAttachmentsNetboxAttachmentsCreateRequest
 */
 func (a *PluginsAPIService) PluginsNetboxAttachmentsNetboxAttachmentsCreate(ctx context.Context) ApiPluginsNetboxAttachmentsNetboxAttachmentsCreateRequest {
 	return ApiPluginsNetboxAttachmentsNetboxAttachmentsCreateRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return NetBoxAttachment
+//  @return NetBoxAttachment
 func (a *PluginsAPIService) PluginsNetboxAttachmentsNetboxAttachmentsCreateExecute(r ApiPluginsNetboxAttachmentsNetboxAttachmentsCreateRequest) (*NetBoxAttachment, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *NetBoxAttachment
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *NetBoxAttachment
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsNetboxAttachmentsNetboxAttachmentsCreate")
@@ -514,9 +511,9 @@ func (a *PluginsAPIService) PluginsNetboxAttachmentsNetboxAttachmentsCreateExecu
 }
 
 type ApiPluginsNetboxAttachmentsNetboxAttachmentsDestroyRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *PluginsAPIService
-	id         int32
+	id int32
 }
 
 func (r ApiPluginsNetboxAttachmentsNetboxAttachmentsDestroyRequest) Execute() (*http.Response, error) {
@@ -528,24 +525,24 @@ PluginsNetboxAttachmentsNetboxAttachmentsDestroy Method for PluginsNetboxAttachm
 
 Delete a NetBox Attachment object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this NetBox Attachment.
-	@return ApiPluginsNetboxAttachmentsNetboxAttachmentsDestroyRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this NetBox Attachment.
+ @return ApiPluginsNetboxAttachmentsNetboxAttachmentsDestroyRequest
 */
 func (a *PluginsAPIService) PluginsNetboxAttachmentsNetboxAttachmentsDestroy(ctx context.Context, id int32) ApiPluginsNetboxAttachmentsNetboxAttachmentsDestroyRequest {
 	return ApiPluginsNetboxAttachmentsNetboxAttachmentsDestroyRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
 func (a *PluginsAPIService) PluginsNetboxAttachmentsNetboxAttachmentsDestroyExecute(r ApiPluginsNetboxAttachmentsNetboxAttachmentsDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsNetboxAttachmentsNetboxAttachmentsDestroy")
@@ -620,45 +617,45 @@ func (a *PluginsAPIService) PluginsNetboxAttachmentsNetboxAttachmentsDestroyExec
 }
 
 type ApiPluginsNetboxAttachmentsNetboxAttachmentsListRequest struct {
-	ctx               context.Context
-	ApiService        *PluginsAPIService
-	created           *time.Time
-	createdByRequest  *string
-	description       *string
-	id                *[]int32
-	idEmpty           *bool
-	idGt              *[]int32
-	idGte             *[]int32
-	idLt              *[]int32
-	idLte             *[]int32
-	idN               *[]int32
-	lastUpdated       *[]time.Time
-	lastUpdatedEmpty  *[]time.Time
-	lastUpdatedGt     *[]time.Time
-	lastUpdatedGte    *[]time.Time
-	lastUpdatedLt     *[]time.Time
-	lastUpdatedLte    *[]time.Time
-	lastUpdatedN      *[]time.Time
-	limit             *int32
+	ctx context.Context
+	ApiService *PluginsAPIService
+	created *time.Time
+	createdByRequest *string
+	description *string
+	id *[]int32
+	idEmpty *bool
+	idGt *[]int32
+	idGte *[]int32
+	idLt *[]int32
+	idLte *[]int32
+	idN *[]int32
+	lastUpdated *[]time.Time
+	lastUpdatedEmpty *[]time.Time
+	lastUpdatedGt *[]time.Time
+	lastUpdatedGte *[]time.Time
+	lastUpdatedLt *[]time.Time
+	lastUpdatedLte *[]time.Time
+	lastUpdatedN *[]time.Time
+	limit *int32
 	modifiedByRequest *string
-	name              *string
-	objectId          *[]int32
-	objectIdEmpty     *bool
-	objectIdGt        *[]int32
-	objectIdGte       *[]int32
-	objectIdLt        *[]int32
-	objectIdLte       *[]int32
-	objectIdN         *[]int32
-	objectType        *string
-	objectTypeN       *string
-	objectTypeId      *int32
-	objectTypeIdN     *int32
-	offset            *int32
-	ordering          *string
-	q                 *string
-	tag               *[]string
-	tagN              *[]string
-	updatedByRequest  *string
+	name *string
+	objectId *[]int32
+	objectIdEmpty *bool
+	objectIdGt *[]int32
+	objectIdGte *[]int32
+	objectIdLt *[]int32
+	objectIdLte *[]int32
+	objectIdN *[]int32
+	objectType *string
+	objectTypeN *string
+	objectTypeId *int32
+	objectTypeIdN *int32
+	offset *int32
+	ordering *string
+	q *string
+	tag *[]string
+	tagN *[]string
+	updatedByRequest *string
 }
 
 func (r ApiPluginsNetboxAttachmentsNetboxAttachmentsListRequest) Created(created time.Time) ApiPluginsNetboxAttachmentsNetboxAttachmentsListRequest {
@@ -859,25 +856,24 @@ PluginsNetboxAttachmentsNetboxAttachmentsList Method for PluginsNetboxAttachment
 
 Get a list of NetBox Attachment objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiPluginsNetboxAttachmentsNetboxAttachmentsListRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiPluginsNetboxAttachmentsNetboxAttachmentsListRequest
 */
 func (a *PluginsAPIService) PluginsNetboxAttachmentsNetboxAttachmentsList(ctx context.Context) ApiPluginsNetboxAttachmentsNetboxAttachmentsListRequest {
 	return ApiPluginsNetboxAttachmentsNetboxAttachmentsListRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return PaginatedNetBoxAttachmentList
+//  @return PaginatedNetBoxAttachmentList
 func (a *PluginsAPIService) PluginsNetboxAttachmentsNetboxAttachmentsListExecute(r ApiPluginsNetboxAttachmentsNetboxAttachmentsListRequest) (*PaginatedNetBoxAttachmentList, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PaginatedNetBoxAttachmentList
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PaginatedNetBoxAttachmentList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsNetboxAttachmentsNetboxAttachmentsList")
@@ -1239,9 +1235,9 @@ func (a *PluginsAPIService) PluginsNetboxAttachmentsNetboxAttachmentsListExecute
 }
 
 type ApiPluginsNetboxAttachmentsNetboxAttachmentsPartialUpdateRequest struct {
-	ctx                            context.Context
-	ApiService                     *PluginsAPIService
-	id                             int32
+	ctx context.Context
+	ApiService *PluginsAPIService
+	id int32
 	patchedNetBoxAttachmentRequest *PatchedNetBoxAttachmentRequest
 }
 
@@ -1259,27 +1255,26 @@ PluginsNetboxAttachmentsNetboxAttachmentsPartialUpdate Method for PluginsNetboxA
 
 Patch a NetBox Attachment object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this NetBox Attachment.
-	@return ApiPluginsNetboxAttachmentsNetboxAttachmentsPartialUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this NetBox Attachment.
+ @return ApiPluginsNetboxAttachmentsNetboxAttachmentsPartialUpdateRequest
 */
 func (a *PluginsAPIService) PluginsNetboxAttachmentsNetboxAttachmentsPartialUpdate(ctx context.Context, id int32) ApiPluginsNetboxAttachmentsNetboxAttachmentsPartialUpdateRequest {
 	return ApiPluginsNetboxAttachmentsNetboxAttachmentsPartialUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return NetBoxAttachment
+//  @return NetBoxAttachment
 func (a *PluginsAPIService) PluginsNetboxAttachmentsNetboxAttachmentsPartialUpdateExecute(r ApiPluginsNetboxAttachmentsNetboxAttachmentsPartialUpdateRequest) (*NetBoxAttachment, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *NetBoxAttachment
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *NetBoxAttachment
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsNetboxAttachmentsNetboxAttachmentsPartialUpdate")
@@ -1365,9 +1360,9 @@ func (a *PluginsAPIService) PluginsNetboxAttachmentsNetboxAttachmentsPartialUpda
 }
 
 type ApiPluginsNetboxAttachmentsNetboxAttachmentsRetrieveRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *PluginsAPIService
-	id         int32
+	id int32
 }
 
 func (r ApiPluginsNetboxAttachmentsNetboxAttachmentsRetrieveRequest) Execute() (*NetBoxAttachment, *http.Response, error) {
@@ -1379,27 +1374,26 @@ PluginsNetboxAttachmentsNetboxAttachmentsRetrieve Method for PluginsNetboxAttach
 
 Get a NetBox Attachment object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this NetBox Attachment.
-	@return ApiPluginsNetboxAttachmentsNetboxAttachmentsRetrieveRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this NetBox Attachment.
+ @return ApiPluginsNetboxAttachmentsNetboxAttachmentsRetrieveRequest
 */
 func (a *PluginsAPIService) PluginsNetboxAttachmentsNetboxAttachmentsRetrieve(ctx context.Context, id int32) ApiPluginsNetboxAttachmentsNetboxAttachmentsRetrieveRequest {
 	return ApiPluginsNetboxAttachmentsNetboxAttachmentsRetrieveRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return NetBoxAttachment
+//  @return NetBoxAttachment
 func (a *PluginsAPIService) PluginsNetboxAttachmentsNetboxAttachmentsRetrieveExecute(r ApiPluginsNetboxAttachmentsNetboxAttachmentsRetrieveRequest) (*NetBoxAttachment, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *NetBoxAttachment
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *NetBoxAttachment
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsNetboxAttachmentsNetboxAttachmentsRetrieve")
@@ -1483,9 +1477,9 @@ func (a *PluginsAPIService) PluginsNetboxAttachmentsNetboxAttachmentsRetrieveExe
 }
 
 type ApiPluginsNetboxAttachmentsNetboxAttachmentsUpdateRequest struct {
-	ctx                     context.Context
-	ApiService              *PluginsAPIService
-	id                      int32
+	ctx context.Context
+	ApiService *PluginsAPIService
+	id int32
 	netBoxAttachmentRequest *NetBoxAttachmentRequest
 }
 
@@ -1503,27 +1497,26 @@ PluginsNetboxAttachmentsNetboxAttachmentsUpdate Method for PluginsNetboxAttachme
 
 Put a NetBox Attachment object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this NetBox Attachment.
-	@return ApiPluginsNetboxAttachmentsNetboxAttachmentsUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this NetBox Attachment.
+ @return ApiPluginsNetboxAttachmentsNetboxAttachmentsUpdateRequest
 */
 func (a *PluginsAPIService) PluginsNetboxAttachmentsNetboxAttachmentsUpdate(ctx context.Context, id int32) ApiPluginsNetboxAttachmentsNetboxAttachmentsUpdateRequest {
 	return ApiPluginsNetboxAttachmentsNetboxAttachmentsUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return NetBoxAttachment
+//  @return NetBoxAttachment
 func (a *PluginsAPIService) PluginsNetboxAttachmentsNetboxAttachmentsUpdateExecute(r ApiPluginsNetboxAttachmentsNetboxAttachmentsUpdateRequest) (*NetBoxAttachment, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPut
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *NetBoxAttachment
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *NetBoxAttachment
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsNetboxAttachmentsNetboxAttachmentsUpdate")
@@ -1612,11 +1605,11 @@ func (a *PluginsAPIService) PluginsNetboxAttachmentsNetboxAttachmentsUpdateExecu
 }
 
 type ApiPluginsNetboxTopologyViewsImagesListRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *PluginsAPIService
-	limit      *int32
-	offset     *int32
-	ordering   *string
+	limit *int32
+	offset *int32
+	ordering *string
 }
 
 // Number of results to return per page.
@@ -1646,25 +1639,24 @@ PluginsNetboxTopologyViewsImagesList Method for PluginsNetboxTopologyViewsImages
 
 Get a list of device role objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiPluginsNetboxTopologyViewsImagesListRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiPluginsNetboxTopologyViewsImagesListRequest
 */
 func (a *PluginsAPIService) PluginsNetboxTopologyViewsImagesList(ctx context.Context) ApiPluginsNetboxTopologyViewsImagesListRequest {
 	return ApiPluginsNetboxTopologyViewsImagesListRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return PaginatedRoleImageList
+//  @return PaginatedRoleImageList
 func (a *PluginsAPIService) PluginsNetboxTopologyViewsImagesListExecute(r ApiPluginsNetboxTopologyViewsImagesListRequest) (*PaginatedRoleImageList, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PaginatedRoleImageList
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PaginatedRoleImageList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsNetboxTopologyViewsImagesList")
@@ -1756,9 +1748,9 @@ func (a *PluginsAPIService) PluginsNetboxTopologyViewsImagesListExecute(r ApiPlu
 }
 
 type ApiPluginsNetboxTopologyViewsImagesRetrieveRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *PluginsAPIService
-	id         int32
+	id int32
 }
 
 func (r ApiPluginsNetboxTopologyViewsImagesRetrieveRequest) Execute() (*RoleImage, *http.Response, error) {
@@ -1770,27 +1762,26 @@ PluginsNetboxTopologyViewsImagesRetrieve Method for PluginsNetboxTopologyViewsIm
 
 Get a device role object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this device role.
-	@return ApiPluginsNetboxTopologyViewsImagesRetrieveRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this device role.
+ @return ApiPluginsNetboxTopologyViewsImagesRetrieveRequest
 */
 func (a *PluginsAPIService) PluginsNetboxTopologyViewsImagesRetrieve(ctx context.Context, id int32) ApiPluginsNetboxTopologyViewsImagesRetrieveRequest {
 	return ApiPluginsNetboxTopologyViewsImagesRetrieveRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return RoleImage
+//  @return RoleImage
 func (a *PluginsAPIService) PluginsNetboxTopologyViewsImagesRetrieveExecute(r ApiPluginsNetboxTopologyViewsImagesRetrieveRequest) (*RoleImage, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *RoleImage
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *RoleImage
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsNetboxTopologyViewsImagesRetrieve")
@@ -1874,8 +1865,8 @@ func (a *PluginsAPIService) PluginsNetboxTopologyViewsImagesRetrieveExecute(r Ap
 }
 
 type ApiPluginsNetboxTopologyViewsImagesSaveCreateRequest struct {
-	ctx              context.Context
-	ApiService       *PluginsAPIService
+	ctx context.Context
+	ApiService *PluginsAPIService
 	roleImageRequest *RoleImageRequest
 }
 
@@ -1893,25 +1884,24 @@ PluginsNetboxTopologyViewsImagesSaveCreate Method for PluginsNetboxTopologyViews
 
 Post a list of device role objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiPluginsNetboxTopologyViewsImagesSaveCreateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiPluginsNetboxTopologyViewsImagesSaveCreateRequest
 */
 func (a *PluginsAPIService) PluginsNetboxTopologyViewsImagesSaveCreate(ctx context.Context) ApiPluginsNetboxTopologyViewsImagesSaveCreateRequest {
 	return ApiPluginsNetboxTopologyViewsImagesSaveCreateRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return RoleImage
+//  @return RoleImage
 func (a *PluginsAPIService) PluginsNetboxTopologyViewsImagesSaveCreateExecute(r ApiPluginsNetboxTopologyViewsImagesSaveCreateRequest) (*RoleImage, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *RoleImage
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *RoleImage
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsNetboxTopologyViewsImagesSaveCreate")
@@ -1999,11 +1989,11 @@ func (a *PluginsAPIService) PluginsNetboxTopologyViewsImagesSaveCreateExecute(r 
 }
 
 type ApiPluginsNetboxTopologyViewsSaveCoordsListRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *PluginsAPIService
-	limit      *int32
-	offset     *int32
-	ordering   *string
+	limit *int32
+	offset *int32
+	ordering *string
 }
 
 // Number of results to return per page.
@@ -2033,25 +2023,24 @@ PluginsNetboxTopologyViewsSaveCoordsList Method for PluginsNetboxTopologyViewsSa
 
 Get a list of device objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiPluginsNetboxTopologyViewsSaveCoordsListRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiPluginsNetboxTopologyViewsSaveCoordsListRequest
 */
 func (a *PluginsAPIService) PluginsNetboxTopologyViewsSaveCoordsList(ctx context.Context) ApiPluginsNetboxTopologyViewsSaveCoordsListRequest {
 	return ApiPluginsNetboxTopologyViewsSaveCoordsListRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return PaginatedTopologyDummyList
+//  @return PaginatedTopologyDummyList
 func (a *PluginsAPIService) PluginsNetboxTopologyViewsSaveCoordsListExecute(r ApiPluginsNetboxTopologyViewsSaveCoordsListRequest) (*PaginatedTopologyDummyList, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PaginatedTopologyDummyList
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PaginatedTopologyDummyList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsNetboxTopologyViewsSaveCoordsList")
@@ -2143,9 +2132,9 @@ func (a *PluginsAPIService) PluginsNetboxTopologyViewsSaveCoordsListExecute(r Ap
 }
 
 type ApiPluginsNetboxTopologyViewsSaveCoordsRetrieveRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *PluginsAPIService
-	id         int32
+	id int32
 }
 
 func (r ApiPluginsNetboxTopologyViewsSaveCoordsRetrieveRequest) Execute() (*TopologyDummy, *http.Response, error) {
@@ -2157,27 +2146,26 @@ PluginsNetboxTopologyViewsSaveCoordsRetrieve Method for PluginsNetboxTopologyVie
 
 Get a device object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this device.
-	@return ApiPluginsNetboxTopologyViewsSaveCoordsRetrieveRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this device.
+ @return ApiPluginsNetboxTopologyViewsSaveCoordsRetrieveRequest
 */
 func (a *PluginsAPIService) PluginsNetboxTopologyViewsSaveCoordsRetrieve(ctx context.Context, id int32) ApiPluginsNetboxTopologyViewsSaveCoordsRetrieveRequest {
 	return ApiPluginsNetboxTopologyViewsSaveCoordsRetrieveRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return TopologyDummy
+//  @return TopologyDummy
 func (a *PluginsAPIService) PluginsNetboxTopologyViewsSaveCoordsRetrieveExecute(r ApiPluginsNetboxTopologyViewsSaveCoordsRetrieveRequest) (*TopologyDummy, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *TopologyDummy
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *TopologyDummy
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsNetboxTopologyViewsSaveCoordsRetrieve")
@@ -2261,8 +2249,8 @@ func (a *PluginsAPIService) PluginsNetboxTopologyViewsSaveCoordsRetrieveExecute(
 }
 
 type ApiPluginsNetboxTopologyViewsSaveCoordsSaveCoordsPartialUpdateRequest struct {
-	ctx                         context.Context
-	ApiService                  *PluginsAPIService
+	ctx context.Context
+	ApiService *PluginsAPIService
 	patchedTopologyDummyRequest *PatchedTopologyDummyRequest
 }
 
@@ -2280,25 +2268,24 @@ PluginsNetboxTopologyViewsSaveCoordsSaveCoordsPartialUpdate Method for PluginsNe
 
 Patch a list of device objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiPluginsNetboxTopologyViewsSaveCoordsSaveCoordsPartialUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiPluginsNetboxTopologyViewsSaveCoordsSaveCoordsPartialUpdateRequest
 */
 func (a *PluginsAPIService) PluginsNetboxTopologyViewsSaveCoordsSaveCoordsPartialUpdate(ctx context.Context) ApiPluginsNetboxTopologyViewsSaveCoordsSaveCoordsPartialUpdateRequest {
 	return ApiPluginsNetboxTopologyViewsSaveCoordsSaveCoordsPartialUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return TopologyDummy
+//  @return TopologyDummy
 func (a *PluginsAPIService) PluginsNetboxTopologyViewsSaveCoordsSaveCoordsPartialUpdateExecute(r ApiPluginsNetboxTopologyViewsSaveCoordsSaveCoordsPartialUpdateRequest) (*TopologyDummy, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *TopologyDummy
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *TopologyDummy
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsNetboxTopologyViewsSaveCoordsSaveCoordsPartialUpdate")
@@ -2383,11 +2370,11 @@ func (a *PluginsAPIService) PluginsNetboxTopologyViewsSaveCoordsSaveCoordsPartia
 }
 
 type ApiPluginsNetboxTopologyViewsXmlExportListRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *PluginsAPIService
-	limit      *int32
-	offset     *int32
-	ordering   *string
+	limit *int32
+	offset *int32
+	ordering *string
 }
 
 // Number of results to return per page.
@@ -2417,25 +2404,24 @@ PluginsNetboxTopologyViewsXmlExportList Method for PluginsNetboxTopologyViewsXml
 
 Get a list of device objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiPluginsNetboxTopologyViewsXmlExportListRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiPluginsNetboxTopologyViewsXmlExportListRequest
 */
 func (a *PluginsAPIService) PluginsNetboxTopologyViewsXmlExportList(ctx context.Context) ApiPluginsNetboxTopologyViewsXmlExportListRequest {
 	return ApiPluginsNetboxTopologyViewsXmlExportListRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return PaginatedTopologyDummyList
+//  @return PaginatedTopologyDummyList
 func (a *PluginsAPIService) PluginsNetboxTopologyViewsXmlExportListExecute(r ApiPluginsNetboxTopologyViewsXmlExportListRequest) (*PaginatedTopologyDummyList, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PaginatedTopologyDummyList
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PaginatedTopologyDummyList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsNetboxTopologyViewsXmlExportList")

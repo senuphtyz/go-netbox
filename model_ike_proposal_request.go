@@ -20,17 +20,17 @@ var _ MappedNullable = &IKEProposalRequest{}
 
 // IKEProposalRequest Adds support for custom fields and tags.
 type IKEProposalRequest struct {
-	Name                    string                                   `json:"name"`
-	Description             *string                                  `json:"description,omitempty"`
-	AuthenticationMethod    IKEProposalAuthenticationMethodValue     `json:"authentication_method"`
-	EncryptionAlgorithm     IKEProposalEncryptionAlgorithmValue      `json:"encryption_algorithm"`
+	Name string `json:"name"`
+	Description *string `json:"description,omitempty"`
+	AuthenticationMethod IKEProposalAuthenticationMethodValue `json:"authentication_method"`
+	EncryptionAlgorithm IKEProposalEncryptionAlgorithmValue `json:"encryption_algorithm"`
 	AuthenticationAlgorithm *IKEProposalAuthenticationAlgorithmValue `json:"authentication_algorithm,omitempty"`
-	Group                   IKEProposalGroupValue                    `json:"group"`
+	Group IKEProposalGroupValue `json:"group"`
 	// Security association lifetime (in seconds)
-	SaLifetime           NullableInt32          `json:"sa_lifetime,omitempty"`
-	Comments             *string                `json:"comments,omitempty"`
-	Tags                 []NestedTagRequest     `json:"tags,omitempty"`
-	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
+	SaLifetime NullableInt32 `json:"sa_lifetime,omitempty"`
+	Comments *string `json:"comments,omitempty"`
+	Tags []NestedTagRequest `json:"tags,omitempty"`
+	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -249,7 +249,6 @@ func (o *IKEProposalRequest) HasSaLifetime() bool {
 func (o *IKEProposalRequest) SetSaLifetime(v int32) {
 	o.SaLifetime.Set(&v)
 }
-
 // SetSaLifetimeNil sets the value for SaLifetime to be an explicit nil
 func (o *IKEProposalRequest) SetSaLifetimeNil() {
 	o.SaLifetime.Set(nil)
@@ -357,7 +356,7 @@ func (o *IKEProposalRequest) SetCustomFields(v map[string]interface{}) {
 }
 
 func (o IKEProposalRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -412,10 +411,10 @@ func (o *IKEProposalRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -485,3 +484,5 @@ func (v *NullableIKEProposalRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

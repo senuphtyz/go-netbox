@@ -20,11 +20,11 @@ var _ MappedNullable = &L2VPNTerminationRequest{}
 
 // L2VPNTerminationRequest Adds support for custom fields and tags.
 type L2VPNTerminationRequest struct {
-	L2vpn                BriefL2VPNRequest      `json:"l2vpn"`
-	AssignedObjectType   string                 `json:"assigned_object_type"`
-	AssignedObjectId     int64                  `json:"assigned_object_id"`
-	Tags                 []NestedTagRequest     `json:"tags,omitempty"`
-	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
+	L2vpn BriefL2VPNRequest `json:"l2vpn"`
+	AssignedObjectType string `json:"assigned_object_type"`
+	AssignedObjectId int64 `json:"assigned_object_id"`
+	Tags []NestedTagRequest `json:"tags,omitempty"`
+	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -187,7 +187,7 @@ func (o *L2VPNTerminationRequest) SetCustomFields(v map[string]interface{}) {
 }
 
 func (o L2VPNTerminationRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -228,10 +228,10 @@ func (o *L2VPNTerminationRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -296,3 +296,5 @@ func (v *NullableL2VPNTerminationRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

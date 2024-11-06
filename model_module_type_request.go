@@ -21,16 +21,16 @@ var _ MappedNullable = &ModuleTypeRequest{}
 // ModuleTypeRequest Adds support for custom fields and tags.
 type ModuleTypeRequest struct {
 	Manufacturer BriefManufacturerRequest `json:"manufacturer"`
-	Model        string                   `json:"model"`
+	Model string `json:"model"`
 	// Discrete part number (optional)
-	PartNumber           *string                             `json:"part_number,omitempty"`
-	Airflow              NullableModuleTypeRequestAirflow    `json:"airflow,omitempty"`
-	Weight               NullableFloat64                     `json:"weight,omitempty"`
-	WeightUnit           NullableDeviceTypeRequestWeightUnit `json:"weight_unit,omitempty"`
-	Description          *string                             `json:"description,omitempty"`
-	Comments             *string                             `json:"comments,omitempty"`
-	Tags                 []NestedTagRequest                  `json:"tags,omitempty"`
-	CustomFields         map[string]interface{}              `json:"custom_fields,omitempty"`
+	PartNumber *string `json:"part_number,omitempty"`
+	Airflow NullableModuleTypeRequestAirflow `json:"airflow,omitempty"`
+	Weight NullableFloat64 `json:"weight,omitempty"`
+	WeightUnit NullableDeviceTypeRequestWeightUnit `json:"weight_unit,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Comments *string `json:"comments,omitempty"`
+	Tags []NestedTagRequest `json:"tags,omitempty"`
+	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -167,7 +167,6 @@ func (o *ModuleTypeRequest) HasAirflow() bool {
 func (o *ModuleTypeRequest) SetAirflow(v ModuleTypeRequestAirflow) {
 	o.Airflow.Set(&v)
 }
-
 // SetAirflowNil sets the value for Airflow to be an explicit nil
 func (o *ModuleTypeRequest) SetAirflowNil() {
 	o.Airflow.Set(nil)
@@ -210,7 +209,6 @@ func (o *ModuleTypeRequest) HasWeight() bool {
 func (o *ModuleTypeRequest) SetWeight(v float64) {
 	o.Weight.Set(&v)
 }
-
 // SetWeightNil sets the value for Weight to be an explicit nil
 func (o *ModuleTypeRequest) SetWeightNil() {
 	o.Weight.Set(nil)
@@ -253,7 +251,6 @@ func (o *ModuleTypeRequest) HasWeightUnit() bool {
 func (o *ModuleTypeRequest) SetWeightUnit(v DeviceTypeRequestWeightUnit) {
 	o.WeightUnit.Set(&v)
 }
-
 // SetWeightUnitNil sets the value for WeightUnit to be an explicit nil
 func (o *ModuleTypeRequest) SetWeightUnitNil() {
 	o.WeightUnit.Set(nil)
@@ -393,7 +390,7 @@ func (o *ModuleTypeRequest) SetCustomFields(v map[string]interface{}) {
 }
 
 func (o ModuleTypeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -450,10 +447,10 @@ func (o *ModuleTypeRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -523,3 +520,5 @@ func (v *NullableModuleTypeRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

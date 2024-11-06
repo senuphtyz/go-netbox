@@ -20,12 +20,12 @@ var _ MappedNullable = &VirtualDiskRequest{}
 
 // VirtualDiskRequest Adds support for custom fields and tags.
 type VirtualDiskRequest struct {
-	VirtualMachine       BriefVirtualMachineRequest `json:"virtual_machine"`
-	Name                 string                     `json:"name"`
-	Description          *string                    `json:"description,omitempty"`
-	Size                 int32                      `json:"size"`
-	Tags                 []NestedTagRequest         `json:"tags,omitempty"`
-	CustomFields         map[string]interface{}     `json:"custom_fields,omitempty"`
+	VirtualMachine BriefVirtualMachineRequest `json:"virtual_machine"`
+	Name string `json:"name"`
+	Description *string `json:"description,omitempty"`
+	Size int32 `json:"size"`
+	Tags []NestedTagRequest `json:"tags,omitempty"`
+	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -220,7 +220,7 @@ func (o *VirtualDiskRequest) SetCustomFields(v map[string]interface{}) {
 }
 
 func (o VirtualDiskRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -264,10 +264,10 @@ func (o *VirtualDiskRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -333,3 +333,5 @@ func (v *NullableVirtualDiskRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

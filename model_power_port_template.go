@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"fmt"
 	"time"
+	"fmt"
 )
 
 // checks if the PowerPortTemplate type satisfies the MappedNullable interface at compile time
@@ -21,23 +21,23 @@ var _ MappedNullable = &PowerPortTemplate{}
 
 // PowerPortTemplate Extends the built-in ModelSerializer to enforce calling full_clean() on a copy of the associated instance during validation. (DRF does not do this by default; see https://github.com/encode/django-rest-framework/issues/3144)
 type PowerPortTemplate struct {
-	Id         int32                   `json:"id"`
-	Url        string                  `json:"url"`
-	Display    string                  `json:"display"`
+	Id int32 `json:"id"`
+	Url string `json:"url"`
+	Display string `json:"display"`
 	DeviceType NullableBriefDeviceType `json:"device_type,omitempty"`
 	ModuleType NullableBriefModuleType `json:"module_type,omitempty"`
 	// {module} is accepted as a substitution for the module bay position when attached to a module type.
 	Name string `json:"name"`
 	// Physical label
-	Label *string               `json:"label,omitempty"`
-	Type  NullablePowerPortType `json:"type,omitempty"`
+	Label *string `json:"label,omitempty"`
+	Type NullablePowerPortType `json:"type,omitempty"`
 	// Maximum power draw (watts)
 	MaximumDraw NullableInt32 `json:"maximum_draw,omitempty"`
 	// Allocated power draw (watts)
-	AllocatedDraw        NullableInt32 `json:"allocated_draw,omitempty"`
-	Description          *string       `json:"description,omitempty"`
-	Created              NullableTime  `json:"created"`
-	LastUpdated          NullableTime  `json:"last_updated"`
+	AllocatedDraw NullableInt32 `json:"allocated_draw,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Created NullableTime `json:"created"`
+	LastUpdated NullableTime `json:"last_updated"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -170,7 +170,6 @@ func (o *PowerPortTemplate) HasDeviceType() bool {
 func (o *PowerPortTemplate) SetDeviceType(v BriefDeviceType) {
 	o.DeviceType.Set(&v)
 }
-
 // SetDeviceTypeNil sets the value for DeviceType to be an explicit nil
 func (o *PowerPortTemplate) SetDeviceTypeNil() {
 	o.DeviceType.Set(nil)
@@ -213,7 +212,6 @@ func (o *PowerPortTemplate) HasModuleType() bool {
 func (o *PowerPortTemplate) SetModuleType(v BriefModuleType) {
 	o.ModuleType.Set(&v)
 }
-
 // SetModuleTypeNil sets the value for ModuleType to be an explicit nil
 func (o *PowerPortTemplate) SetModuleTypeNil() {
 	o.ModuleType.Set(nil)
@@ -312,7 +310,6 @@ func (o *PowerPortTemplate) HasType() bool {
 func (o *PowerPortTemplate) SetType(v PowerPortType) {
 	o.Type.Set(&v)
 }
-
 // SetTypeNil sets the value for Type to be an explicit nil
 func (o *PowerPortTemplate) SetTypeNil() {
 	o.Type.Set(nil)
@@ -355,7 +352,6 @@ func (o *PowerPortTemplate) HasMaximumDraw() bool {
 func (o *PowerPortTemplate) SetMaximumDraw(v int32) {
 	o.MaximumDraw.Set(&v)
 }
-
 // SetMaximumDrawNil sets the value for MaximumDraw to be an explicit nil
 func (o *PowerPortTemplate) SetMaximumDrawNil() {
 	o.MaximumDraw.Set(nil)
@@ -398,7 +394,6 @@ func (o *PowerPortTemplate) HasAllocatedDraw() bool {
 func (o *PowerPortTemplate) SetAllocatedDraw(v int32) {
 	o.AllocatedDraw.Set(&v)
 }
-
 // SetAllocatedDrawNil sets the value for AllocatedDraw to be an explicit nil
 func (o *PowerPortTemplate) SetAllocatedDrawNil() {
 	o.AllocatedDraw.Set(nil)
@@ -494,7 +489,7 @@ func (o *PowerPortTemplate) SetLastUpdated(v time.Time) {
 }
 
 func (o PowerPortTemplate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -556,10 +551,10 @@ func (o *PowerPortTemplate) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -632,3 +627,5 @@ func (v *NullablePowerPortTemplate) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

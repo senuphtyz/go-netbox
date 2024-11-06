@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"fmt"
 	"time"
+	"fmt"
 )
 
 // checks if the DeviceRole type satisfies the MappedNullable interface at compile time
@@ -21,23 +21,23 @@ var _ MappedNullable = &DeviceRole{}
 
 // DeviceRole Adds support for custom fields and tags.
 type DeviceRole struct {
-	Id         int32   `json:"id"`
-	Url        string  `json:"url"`
-	DisplayUrl string  `json:"display_url"`
-	Display    string  `json:"display"`
-	Name       string  `json:"name"`
-	Slug       string  `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
-	Color      *string `json:"color,omitempty" validate:"regexp=^[0-9a-f]{6}$"`
+	Id int32 `json:"id"`
+	Url string `json:"url"`
+	DisplayUrl string `json:"display_url"`
+	Display string `json:"display"`
+	Name string `json:"name"`
+	Slug string `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
+	Color *string `json:"color,omitempty" validate:"regexp=^[0-9a-f]{6}$"`
 	// Virtual machines may be assigned to this role
-	VmRole               *bool                       `json:"vm_role,omitempty"`
-	ConfigTemplate       NullableBriefConfigTemplate `json:"config_template,omitempty"`
-	Description          *string                     `json:"description,omitempty"`
-	Tags                 []NestedTag                 `json:"tags,omitempty"`
-	CustomFields         map[string]interface{}      `json:"custom_fields,omitempty"`
-	Created              NullableTime                `json:"created"`
-	LastUpdated          NullableTime                `json:"last_updated"`
-	DeviceCount          int64                       `json:"device_count"`
-	VirtualmachineCount  int64                       `json:"virtualmachine_count"`
+	VmRole *bool `json:"vm_role,omitempty"`
+	ConfigTemplate NullableBriefConfigTemplate `json:"config_template,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Tags []NestedTag `json:"tags,omitempty"`
+	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	Created NullableTime `json:"created"`
+	LastUpdated NullableTime `json:"last_updated"`
+	DeviceCount int64 `json:"device_count"`
+	VirtualmachineCount int64 `json:"virtualmachine_count"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -310,7 +310,6 @@ func (o *DeviceRole) HasConfigTemplate() bool {
 func (o *DeviceRole) SetConfigTemplate(v BriefConfigTemplate) {
 	o.ConfigTemplate.Set(&v)
 }
-
 // SetConfigTemplateNil sets the value for ConfigTemplate to be an explicit nil
 func (o *DeviceRole) SetConfigTemplateNil() {
 	o.ConfigTemplate.Set(nil)
@@ -518,7 +517,7 @@ func (o *DeviceRole) SetVirtualmachineCount(v int64) {
 }
 
 func (o DeviceRole) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -585,10 +584,10 @@ func (o *DeviceRole) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -664,3 +663,5 @@ func (v *NullableDeviceRole) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

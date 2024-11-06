@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"fmt"
 	"time"
+	"fmt"
 )
 
 // checks if the PowerOutletTemplate type satisfies the MappedNullable interface at compile time
@@ -21,21 +21,21 @@ var _ MappedNullable = &PowerOutletTemplate{}
 
 // PowerOutletTemplate Extends the built-in ModelSerializer to enforce calling full_clean() on a copy of the associated instance during validation. (DRF does not do this by default; see https://github.com/encode/django-rest-framework/issues/3144)
 type PowerOutletTemplate struct {
-	Id         int32                   `json:"id"`
-	Url        string                  `json:"url"`
-	Display    string                  `json:"display"`
+	Id int32 `json:"id"`
+	Url string `json:"url"`
+	Display string `json:"display"`
 	DeviceType NullableBriefDeviceType `json:"device_type,omitempty"`
 	ModuleType NullableBriefModuleType `json:"module_type,omitempty"`
 	// {module} is accepted as a substitution for the module bay position when attached to a module type.
 	Name string `json:"name"`
 	// Physical label
-	Label                *string                        `json:"label,omitempty"`
-	Type                 NullablePowerOutletType        `json:"type,omitempty"`
-	PowerPort            NullableBriefPowerPortTemplate `json:"power_port,omitempty"`
-	FeedLeg              NullablePowerOutletFeedLeg     `json:"feed_leg,omitempty"`
-	Description          *string                        `json:"description,omitempty"`
-	Created              NullableTime                   `json:"created"`
-	LastUpdated          NullableTime                   `json:"last_updated"`
+	Label *string `json:"label,omitempty"`
+	Type NullablePowerOutletType `json:"type,omitempty"`
+	PowerPort NullableBriefPowerPortTemplate `json:"power_port,omitempty"`
+	FeedLeg NullablePowerOutletFeedLeg `json:"feed_leg,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Created NullableTime `json:"created"`
+	LastUpdated NullableTime `json:"last_updated"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -168,7 +168,6 @@ func (o *PowerOutletTemplate) HasDeviceType() bool {
 func (o *PowerOutletTemplate) SetDeviceType(v BriefDeviceType) {
 	o.DeviceType.Set(&v)
 }
-
 // SetDeviceTypeNil sets the value for DeviceType to be an explicit nil
 func (o *PowerOutletTemplate) SetDeviceTypeNil() {
 	o.DeviceType.Set(nil)
@@ -211,7 +210,6 @@ func (o *PowerOutletTemplate) HasModuleType() bool {
 func (o *PowerOutletTemplate) SetModuleType(v BriefModuleType) {
 	o.ModuleType.Set(&v)
 }
-
 // SetModuleTypeNil sets the value for ModuleType to be an explicit nil
 func (o *PowerOutletTemplate) SetModuleTypeNil() {
 	o.ModuleType.Set(nil)
@@ -310,7 +308,6 @@ func (o *PowerOutletTemplate) HasType() bool {
 func (o *PowerOutletTemplate) SetType(v PowerOutletType) {
 	o.Type.Set(&v)
 }
-
 // SetTypeNil sets the value for Type to be an explicit nil
 func (o *PowerOutletTemplate) SetTypeNil() {
 	o.Type.Set(nil)
@@ -353,7 +350,6 @@ func (o *PowerOutletTemplate) HasPowerPort() bool {
 func (o *PowerOutletTemplate) SetPowerPort(v BriefPowerPortTemplate) {
 	o.PowerPort.Set(&v)
 }
-
 // SetPowerPortNil sets the value for PowerPort to be an explicit nil
 func (o *PowerOutletTemplate) SetPowerPortNil() {
 	o.PowerPort.Set(nil)
@@ -396,7 +392,6 @@ func (o *PowerOutletTemplate) HasFeedLeg() bool {
 func (o *PowerOutletTemplate) SetFeedLeg(v PowerOutletFeedLeg) {
 	o.FeedLeg.Set(&v)
 }
-
 // SetFeedLegNil sets the value for FeedLeg to be an explicit nil
 func (o *PowerOutletTemplate) SetFeedLegNil() {
 	o.FeedLeg.Set(nil)
@@ -492,7 +487,7 @@ func (o *PowerOutletTemplate) SetLastUpdated(v time.Time) {
 }
 
 func (o PowerOutletTemplate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -554,10 +549,10 @@ func (o *PowerOutletTemplate) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -630,3 +625,5 @@ func (v *NullablePowerOutletTemplate) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

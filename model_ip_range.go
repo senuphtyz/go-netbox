@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"fmt"
 	"time"
+	"fmt"
 )
 
 // checks if the IPRange type satisfies the MappedNullable interface at compile time
@@ -21,26 +21,26 @@ var _ MappedNullable = &IPRange{}
 
 // IPRange Adds support for custom fields and tags.
 type IPRange struct {
-	Id           int32                  `json:"id"`
-	Url          string                 `json:"url"`
-	DisplayUrl   string                 `json:"display_url"`
-	Display      string                 `json:"display"`
-	Family       AggregateFamily        `json:"family"`
-	StartAddress string                 `json:"start_address"`
-	EndAddress   string                 `json:"end_address"`
-	Size         int32                  `json:"size"`
-	Vrf          NullableBriefVRF       `json:"vrf,omitempty"`
-	Tenant       NullableBriefTenant    `json:"tenant,omitempty"`
-	Status       *IPRangeStatus         `json:"status,omitempty"`
-	Role         NullableBriefRole      `json:"role,omitempty"`
-	Description  *string                `json:"description,omitempty"`
-	Comments     *string                `json:"comments,omitempty"`
-	Tags         []NestedTag            `json:"tags,omitempty"`
+	Id int32 `json:"id"`
+	Url string `json:"url"`
+	DisplayUrl string `json:"display_url"`
+	Display string `json:"display"`
+	Family AggregateFamily `json:"family"`
+	StartAddress string `json:"start_address"`
+	EndAddress string `json:"end_address"`
+	Size int32 `json:"size"`
+	Vrf NullableBriefVRF `json:"vrf,omitempty"`
+	Tenant NullableBriefTenant `json:"tenant,omitempty"`
+	Status *IPRangeStatus `json:"status,omitempty"`
+	Role NullableBriefRole `json:"role,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Comments *string `json:"comments,omitempty"`
+	Tags []NestedTag `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	Created      NullableTime           `json:"created"`
-	LastUpdated  NullableTime           `json:"last_updated"`
+	Created NullableTime `json:"created"`
+	LastUpdated NullableTime `json:"last_updated"`
 	// Treat as fully utilized
-	MarkUtilized         *bool `json:"mark_utilized,omitempty"`
+	MarkUtilized *bool `json:"mark_utilized,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -297,7 +297,6 @@ func (o *IPRange) HasVrf() bool {
 func (o *IPRange) SetVrf(v BriefVRF) {
 	o.Vrf.Set(&v)
 }
-
 // SetVrfNil sets the value for Vrf to be an explicit nil
 func (o *IPRange) SetVrfNil() {
 	o.Vrf.Set(nil)
@@ -340,7 +339,6 @@ func (o *IPRange) HasTenant() bool {
 func (o *IPRange) SetTenant(v BriefTenant) {
 	o.Tenant.Set(&v)
 }
-
 // SetTenantNil sets the value for Tenant to be an explicit nil
 func (o *IPRange) SetTenantNil() {
 	o.Tenant.Set(nil)
@@ -415,7 +413,6 @@ func (o *IPRange) HasRole() bool {
 func (o *IPRange) SetRole(v BriefRole) {
 	o.Role.Set(&v)
 }
-
 // SetRoleNil sets the value for Role to be an explicit nil
 func (o *IPRange) SetRoleNil() {
 	o.Role.Set(nil)
@@ -639,7 +636,7 @@ func (o *IPRange) SetMarkUtilized(v bool) {
 }
 
 func (o IPRange) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -715,10 +712,10 @@ func (o *IPRange) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -797,3 +794,5 @@ func (v *NullableIPRange) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

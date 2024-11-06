@@ -20,9 +20,9 @@ type PatchedWritablePrefixRequestStatus string
 
 // List of PatchedWritablePrefixRequest_status
 const (
-	PATCHEDWRITABLEPREFIXREQUESTSTATUS_CONTAINER  PatchedWritablePrefixRequestStatus = "container"
-	PATCHEDWRITABLEPREFIXREQUESTSTATUS_ACTIVE     PatchedWritablePrefixRequestStatus = "active"
-	PATCHEDWRITABLEPREFIXREQUESTSTATUS_RESERVED   PatchedWritablePrefixRequestStatus = "reserved"
+	PATCHEDWRITABLEPREFIXREQUESTSTATUS_CONTAINER PatchedWritablePrefixRequestStatus = "container"
+	PATCHEDWRITABLEPREFIXREQUESTSTATUS_ACTIVE PatchedWritablePrefixRequestStatus = "active"
+	PATCHEDWRITABLEPREFIXREQUESTSTATUS_RESERVED PatchedWritablePrefixRequestStatus = "reserved"
 	PATCHEDWRITABLEPREFIXREQUESTSTATUS_DEPRECATED PatchedWritablePrefixRequestStatus = "deprecated"
 )
 
@@ -112,3 +112,4 @@ func (v *NullablePatchedWritablePrefixRequestStatus) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+

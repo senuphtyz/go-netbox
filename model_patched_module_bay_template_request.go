@@ -26,8 +26,8 @@ type PatchedModuleBayTemplateRequest struct {
 	// Physical label
 	Label *string `json:"label,omitempty"`
 	// Identifier to reference when renaming installed components
-	Position             *string `json:"position,omitempty"`
-	Description          *string `json:"description,omitempty"`
+	Position *string `json:"position,omitempty"`
+	Description *string `json:"description,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -82,7 +82,6 @@ func (o *PatchedModuleBayTemplateRequest) HasDeviceType() bool {
 func (o *PatchedModuleBayTemplateRequest) SetDeviceType(v BriefDeviceTypeRequest) {
 	o.DeviceType.Set(&v)
 }
-
 // SetDeviceTypeNil sets the value for DeviceType to be an explicit nil
 func (o *PatchedModuleBayTemplateRequest) SetDeviceTypeNil() {
 	o.DeviceType.Set(nil)
@@ -125,7 +124,6 @@ func (o *PatchedModuleBayTemplateRequest) HasModuleType() bool {
 func (o *PatchedModuleBayTemplateRequest) SetModuleType(v BriefModuleTypeRequest) {
 	o.ModuleType.Set(&v)
 }
-
 // SetModuleTypeNil sets the value for ModuleType to be an explicit nil
 func (o *PatchedModuleBayTemplateRequest) SetModuleTypeNil() {
 	o.ModuleType.Set(nil)
@@ -265,7 +263,7 @@ func (o *PatchedModuleBayTemplateRequest) SetDescription(v string) {
 }
 
 func (o PatchedModuleBayTemplateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -361,3 +359,5 @@ func (v *NullablePatchedModuleBayTemplateRequest) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

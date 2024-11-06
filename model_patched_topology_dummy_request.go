@@ -19,7 +19,7 @@ var _ MappedNullable = &PatchedTopologyDummyRequest{}
 
 // PatchedTopologyDummyRequest struct for PatchedTopologyDummyRequest
 type PatchedTopologyDummyRequest struct {
-	Name                 NullableString `json:"name,omitempty"`
+	Name NullableString `json:"name,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,6 @@ func (o *PatchedTopologyDummyRequest) HasName() bool {
 func (o *PatchedTopologyDummyRequest) SetName(v string) {
 	o.Name.Set(&v)
 }
-
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *PatchedTopologyDummyRequest) SetNameNil() {
 	o.Name.Set(nil)
@@ -86,7 +85,7 @@ func (o *PatchedTopologyDummyRequest) UnsetName() {
 }
 
 func (o PatchedTopologyDummyRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -162,3 +161,5 @@ func (v *NullablePatchedTopologyDummyRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

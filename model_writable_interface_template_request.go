@@ -25,15 +25,15 @@ type WritableInterfaceTemplateRequest struct {
 	// {module} is accepted as a substitution for the module bay position when attached to a module type.
 	Name string `json:"name"`
 	// Physical label
-	Label                *string                `json:"label,omitempty"`
-	Type                 InterfaceTypeValue     `json:"type"`
-	Enabled              *bool                  `json:"enabled,omitempty"`
-	MgmtOnly             *bool                  `json:"mgmt_only,omitempty"`
-	Description          *string                `json:"description,omitempty"`
-	Bridge               NullableInt32          `json:"bridge,omitempty"`
-	PoeMode              *InterfacePoeModeValue `json:"poe_mode,omitempty"`
-	PoeType              *InterfacePoeTypeValue `json:"poe_type,omitempty"`
-	RfRole               *WirelessRole          `json:"rf_role,omitempty"`
+	Label *string `json:"label,omitempty"`
+	Type InterfaceTypeValue `json:"type"`
+	Enabled *bool `json:"enabled,omitempty"`
+	MgmtOnly *bool `json:"mgmt_only,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Bridge NullableInt32 `json:"bridge,omitempty"`
+	PoeMode *InterfacePoeModeValue `json:"poe_mode,omitempty"`
+	PoeType *InterfacePoeTypeValue `json:"poe_type,omitempty"`
+	RfRole *WirelessRole `json:"rf_role,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -90,7 +90,6 @@ func (o *WritableInterfaceTemplateRequest) HasDeviceType() bool {
 func (o *WritableInterfaceTemplateRequest) SetDeviceType(v BriefDeviceTypeRequest) {
 	o.DeviceType.Set(&v)
 }
-
 // SetDeviceTypeNil sets the value for DeviceType to be an explicit nil
 func (o *WritableInterfaceTemplateRequest) SetDeviceTypeNil() {
 	o.DeviceType.Set(nil)
@@ -133,7 +132,6 @@ func (o *WritableInterfaceTemplateRequest) HasModuleType() bool {
 func (o *WritableInterfaceTemplateRequest) SetModuleType(v BriefModuleTypeRequest) {
 	o.ModuleType.Set(&v)
 }
-
 // SetModuleTypeNil sets the value for ModuleType to be an explicit nil
 func (o *WritableInterfaceTemplateRequest) SetModuleTypeNil() {
 	o.ModuleType.Set(nil)
@@ -352,7 +350,6 @@ func (o *WritableInterfaceTemplateRequest) HasBridge() bool {
 func (o *WritableInterfaceTemplateRequest) SetBridge(v int32) {
 	o.Bridge.Set(&v)
 }
-
 // SetBridgeNil sets the value for Bridge to be an explicit nil
 func (o *WritableInterfaceTemplateRequest) SetBridgeNil() {
 	o.Bridge.Set(nil)
@@ -460,7 +457,7 @@ func (o *WritableInterfaceTemplateRequest) SetRfRole(v WirelessRole) {
 }
 
 func (o WritableInterfaceTemplateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -523,10 +520,10 @@ func (o *WritableInterfaceTemplateRequest) UnmarshalJSON(data []byte) (err error
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -598,3 +595,5 @@ func (v *NullableWritableInterfaceTemplateRequest) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

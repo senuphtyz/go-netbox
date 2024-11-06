@@ -20,18 +20,18 @@ var _ MappedNullable = &IPRangeRequest{}
 
 // IPRangeRequest Adds support for custom fields and tags.
 type IPRangeRequest struct {
-	StartAddress string                     `json:"start_address"`
-	EndAddress   string                     `json:"end_address"`
-	Vrf          NullableBriefVRFRequest    `json:"vrf,omitempty"`
-	Tenant       NullableBriefTenantRequest `json:"tenant,omitempty"`
-	Status       *IPRangeStatusValue        `json:"status,omitempty"`
-	Role         NullableBriefRoleRequest   `json:"role,omitempty"`
-	Description  *string                    `json:"description,omitempty"`
-	Comments     *string                    `json:"comments,omitempty"`
-	Tags         []NestedTagRequest         `json:"tags,omitempty"`
-	CustomFields map[string]interface{}     `json:"custom_fields,omitempty"`
+	StartAddress string `json:"start_address"`
+	EndAddress string `json:"end_address"`
+	Vrf NullableBriefVRFRequest `json:"vrf,omitempty"`
+	Tenant NullableBriefTenantRequest `json:"tenant,omitempty"`
+	Status *IPRangeStatusValue `json:"status,omitempty"`
+	Role NullableBriefRoleRequest `json:"role,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Comments *string `json:"comments,omitempty"`
+	Tags []NestedTagRequest `json:"tags,omitempty"`
+	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	// Treat as fully utilized
-	MarkUtilized         *bool `json:"mark_utilized,omitempty"`
+	MarkUtilized *bool `json:"mark_utilized,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -136,7 +136,6 @@ func (o *IPRangeRequest) HasVrf() bool {
 func (o *IPRangeRequest) SetVrf(v BriefVRFRequest) {
 	o.Vrf.Set(&v)
 }
-
 // SetVrfNil sets the value for Vrf to be an explicit nil
 func (o *IPRangeRequest) SetVrfNil() {
 	o.Vrf.Set(nil)
@@ -179,7 +178,6 @@ func (o *IPRangeRequest) HasTenant() bool {
 func (o *IPRangeRequest) SetTenant(v BriefTenantRequest) {
 	o.Tenant.Set(&v)
 }
-
 // SetTenantNil sets the value for Tenant to be an explicit nil
 func (o *IPRangeRequest) SetTenantNil() {
 	o.Tenant.Set(nil)
@@ -254,7 +252,6 @@ func (o *IPRangeRequest) HasRole() bool {
 func (o *IPRangeRequest) SetRole(v BriefRoleRequest) {
 	o.Role.Set(&v)
 }
-
 // SetRoleNil sets the value for Role to be an explicit nil
 func (o *IPRangeRequest) SetRoleNil() {
 	o.Role.Set(nil)
@@ -426,7 +423,7 @@ func (o *IPRangeRequest) SetMarkUtilized(v bool) {
 }
 
 func (o IPRangeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -486,10 +483,10 @@ func (o *IPRangeRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -560,3 +557,5 @@ func (v *NullableIPRangeRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

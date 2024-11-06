@@ -20,16 +20,16 @@ var _ MappedNullable = &WritableClusterRequest{}
 
 // WritableClusterRequest Adds support for custom fields and tags.
 type WritableClusterRequest struct {
-	Name                 string                           `json:"name"`
-	Type                 BriefClusterTypeRequest          `json:"type"`
-	Group                NullableBriefClusterGroupRequest `json:"group,omitempty"`
-	Status               *ClusterStatusValue              `json:"status,omitempty"`
-	Tenant               NullableBriefTenantRequest       `json:"tenant,omitempty"`
-	Site                 NullableBriefSiteRequest         `json:"site,omitempty"`
-	Description          *string                          `json:"description,omitempty"`
-	Comments             *string                          `json:"comments,omitempty"`
-	Tags                 []NestedTagRequest               `json:"tags,omitempty"`
-	CustomFields         map[string]interface{}           `json:"custom_fields,omitempty"`
+	Name string `json:"name"`
+	Type BriefClusterTypeRequest `json:"type"`
+	Group NullableBriefClusterGroupRequest `json:"group,omitempty"`
+	Status *ClusterStatusValue `json:"status,omitempty"`
+	Tenant NullableBriefTenantRequest `json:"tenant,omitempty"`
+	Site NullableBriefSiteRequest `json:"site,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Comments *string `json:"comments,omitempty"`
+	Tags []NestedTagRequest `json:"tags,omitempty"`
+	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -134,7 +134,6 @@ func (o *WritableClusterRequest) HasGroup() bool {
 func (o *WritableClusterRequest) SetGroup(v BriefClusterGroupRequest) {
 	o.Group.Set(&v)
 }
-
 // SetGroupNil sets the value for Group to be an explicit nil
 func (o *WritableClusterRequest) SetGroupNil() {
 	o.Group.Set(nil)
@@ -209,7 +208,6 @@ func (o *WritableClusterRequest) HasTenant() bool {
 func (o *WritableClusterRequest) SetTenant(v BriefTenantRequest) {
 	o.Tenant.Set(&v)
 }
-
 // SetTenantNil sets the value for Tenant to be an explicit nil
 func (o *WritableClusterRequest) SetTenantNil() {
 	o.Tenant.Set(nil)
@@ -252,7 +250,6 @@ func (o *WritableClusterRequest) HasSite() bool {
 func (o *WritableClusterRequest) SetSite(v BriefSiteRequest) {
 	o.Site.Set(&v)
 }
-
 // SetSiteNil sets the value for Site to be an explicit nil
 func (o *WritableClusterRequest) SetSiteNil() {
 	o.Site.Set(nil)
@@ -392,7 +389,7 @@ func (o *WritableClusterRequest) SetCustomFields(v map[string]interface{}) {
 }
 
 func (o WritableClusterRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -449,10 +446,10 @@ func (o *WritableClusterRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -522,3 +519,5 @@ func (v *NullableWritableClusterRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

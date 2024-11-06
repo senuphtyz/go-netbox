@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"fmt"
 	"time"
+	"fmt"
 )
 
 // checks if the Cluster type satisfies the MappedNullable interface at compile time
@@ -21,24 +21,24 @@ var _ MappedNullable = &Cluster{}
 
 // Cluster Adds support for custom fields and tags.
 type Cluster struct {
-	Id                   int32                     `json:"id"`
-	Url                  string                    `json:"url"`
-	DisplayUrl           string                    `json:"display_url"`
-	Display              string                    `json:"display"`
-	Name                 string                    `json:"name"`
-	Type                 BriefClusterType          `json:"type"`
-	Group                NullableBriefClusterGroup `json:"group,omitempty"`
-	Status               *ClusterStatus            `json:"status,omitempty"`
-	Tenant               NullableBriefTenant       `json:"tenant,omitempty"`
-	Site                 NullableBriefSite         `json:"site,omitempty"`
-	Description          *string                   `json:"description,omitempty"`
-	Comments             *string                   `json:"comments,omitempty"`
-	Tags                 []NestedTag               `json:"tags,omitempty"`
-	CustomFields         map[string]interface{}    `json:"custom_fields,omitempty"`
-	Created              NullableTime              `json:"created"`
-	LastUpdated          NullableTime              `json:"last_updated"`
-	DeviceCount          int64                     `json:"device_count"`
-	VirtualmachineCount  int64                     `json:"virtualmachine_count"`
+	Id int32 `json:"id"`
+	Url string `json:"url"`
+	DisplayUrl string `json:"display_url"`
+	Display string `json:"display"`
+	Name string `json:"name"`
+	Type BriefClusterType `json:"type"`
+	Group NullableBriefClusterGroup `json:"group,omitempty"`
+	Status *ClusterStatus `json:"status,omitempty"`
+	Tenant NullableBriefTenant `json:"tenant,omitempty"`
+	Site NullableBriefSite `json:"site,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Comments *string `json:"comments,omitempty"`
+	Tags []NestedTag `json:"tags,omitempty"`
+	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	Created NullableTime `json:"created"`
+	LastUpdated NullableTime `json:"last_updated"`
+	DeviceCount int64 `json:"device_count"`
+	VirtualmachineCount int64 `json:"virtualmachine_count"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -247,7 +247,6 @@ func (o *Cluster) HasGroup() bool {
 func (o *Cluster) SetGroup(v BriefClusterGroup) {
 	o.Group.Set(&v)
 }
-
 // SetGroupNil sets the value for Group to be an explicit nil
 func (o *Cluster) SetGroupNil() {
 	o.Group.Set(nil)
@@ -322,7 +321,6 @@ func (o *Cluster) HasTenant() bool {
 func (o *Cluster) SetTenant(v BriefTenant) {
 	o.Tenant.Set(&v)
 }
-
 // SetTenantNil sets the value for Tenant to be an explicit nil
 func (o *Cluster) SetTenantNil() {
 	o.Tenant.Set(nil)
@@ -365,7 +363,6 @@ func (o *Cluster) HasSite() bool {
 func (o *Cluster) SetSite(v BriefSite) {
 	o.Site.Set(&v)
 }
-
 // SetSiteNil sets the value for Site to be an explicit nil
 func (o *Cluster) SetSiteNil() {
 	o.Site.Set(nil)
@@ -605,7 +602,7 @@ func (o *Cluster) SetVirtualmachineCount(v int64) {
 }
 
 func (o Cluster) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -678,10 +675,10 @@ func (o *Cluster) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -759,3 +756,5 @@ func (v *NullableCluster) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

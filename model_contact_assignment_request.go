@@ -20,13 +20,13 @@ var _ MappedNullable = &ContactAssignmentRequest{}
 
 // ContactAssignmentRequest Adds support for custom fields and tags.
 type ContactAssignmentRequest struct {
-	ObjectType           string                                              `json:"object_type"`
-	ObjectId             int64                                               `json:"object_id"`
-	Contact              BriefContactRequest                                 `json:"contact"`
-	Role                 NullableBriefContactRoleRequest                     `json:"role,omitempty"`
-	Priority             *BriefCircuitGroupAssignmentSerializerPriorityValue `json:"priority,omitempty"`
-	Tags                 []NestedTagRequest                                  `json:"tags,omitempty"`
-	CustomFields         map[string]interface{}                              `json:"custom_fields,omitempty"`
+	ObjectType string `json:"object_type"`
+	ObjectId int64 `json:"object_id"`
+	Contact BriefContactRequest `json:"contact"`
+	Role NullableBriefContactRoleRequest `json:"role,omitempty"`
+	Priority *BriefCircuitGroupAssignmentSerializerPriorityValue `json:"priority,omitempty"`
+	Tags []NestedTagRequest `json:"tags,omitempty"`
+	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -156,7 +156,6 @@ func (o *ContactAssignmentRequest) HasRole() bool {
 func (o *ContactAssignmentRequest) SetRole(v BriefContactRoleRequest) {
 	o.Role.Set(&v)
 }
-
 // SetRoleNil sets the value for Role to be an explicit nil
 func (o *ContactAssignmentRequest) SetRoleNil() {
 	o.Role.Set(nil)
@@ -264,7 +263,7 @@ func (o *ContactAssignmentRequest) SetCustomFields(v map[string]interface{}) {
 }
 
 func (o ContactAssignmentRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -311,10 +310,10 @@ func (o *ContactAssignmentRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -381,3 +380,5 @@ func (v *NullableContactAssignmentRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

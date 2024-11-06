@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"fmt"
 	"time"
+	"fmt"
 )
 
 // checks if the ModuleType type satisfies the MappedNullable interface at compile time
@@ -21,23 +21,23 @@ var _ MappedNullable = &ModuleType{}
 
 // ModuleType Adds support for custom fields and tags.
 type ModuleType struct {
-	Id           int32             `json:"id"`
-	Url          string            `json:"url"`
-	DisplayUrl   string            `json:"display_url"`
-	Display      string            `json:"display"`
+	Id int32 `json:"id"`
+	Url string `json:"url"`
+	DisplayUrl string `json:"display_url"`
+	Display string `json:"display"`
 	Manufacturer BriefManufacturer `json:"manufacturer"`
-	Model        string            `json:"model"`
+	Model string `json:"model"`
 	// Discrete part number (optional)
-	PartNumber           *string                      `json:"part_number,omitempty"`
-	Airflow              NullableModuleTypeAirflow    `json:"airflow,omitempty"`
-	Weight               NullableFloat64              `json:"weight,omitempty"`
-	WeightUnit           NullableDeviceTypeWeightUnit `json:"weight_unit,omitempty"`
-	Description          *string                      `json:"description,omitempty"`
-	Comments             *string                      `json:"comments,omitempty"`
-	Tags                 []NestedTag                  `json:"tags,omitempty"`
-	CustomFields         map[string]interface{}       `json:"custom_fields,omitempty"`
-	Created              NullableTime                 `json:"created"`
-	LastUpdated          NullableTime                 `json:"last_updated"`
+	PartNumber *string `json:"part_number,omitempty"`
+	Airflow NullableModuleTypeAirflow `json:"airflow,omitempty"`
+	Weight NullableFloat64 `json:"weight,omitempty"`
+	WeightUnit NullableDeviceTypeWeightUnit `json:"weight_unit,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Comments *string `json:"comments,omitempty"`
+	Tags []NestedTag `json:"tags,omitempty"`
+	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	Created NullableTime `json:"created"`
+	LastUpdated NullableTime `json:"last_updated"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -276,7 +276,6 @@ func (o *ModuleType) HasAirflow() bool {
 func (o *ModuleType) SetAirflow(v ModuleTypeAirflow) {
 	o.Airflow.Set(&v)
 }
-
 // SetAirflowNil sets the value for Airflow to be an explicit nil
 func (o *ModuleType) SetAirflowNil() {
 	o.Airflow.Set(nil)
@@ -319,7 +318,6 @@ func (o *ModuleType) HasWeight() bool {
 func (o *ModuleType) SetWeight(v float64) {
 	o.Weight.Set(&v)
 }
-
 // SetWeightNil sets the value for Weight to be an explicit nil
 func (o *ModuleType) SetWeightNil() {
 	o.Weight.Set(nil)
@@ -362,7 +360,6 @@ func (o *ModuleType) HasWeightUnit() bool {
 func (o *ModuleType) SetWeightUnit(v DeviceTypeWeightUnit) {
 	o.WeightUnit.Set(&v)
 }
-
 // SetWeightUnitNil sets the value for WeightUnit to be an explicit nil
 func (o *ModuleType) SetWeightUnitNil() {
 	o.WeightUnit.Set(nil)
@@ -554,7 +551,7 @@ func (o *ModuleType) SetLastUpdated(v time.Time) {
 }
 
 func (o ModuleType) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -623,10 +620,10 @@ func (o *ModuleType) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -702,3 +699,5 @@ func (v *NullableModuleType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

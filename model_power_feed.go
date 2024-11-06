@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"fmt"
 	"time"
+	"fmt"
 )
 
 // checks if the PowerFeed type satisfies the MappedNullable interface at compile time
@@ -21,40 +21,40 @@ var _ MappedNullable = &PowerFeed{}
 
 // PowerFeed Adds support for custom fields and tags.
 type PowerFeed struct {
-	Id         int32             `json:"id"`
-	Url        string            `json:"url"`
-	DisplayUrl string            `json:"display_url"`
-	Display    string            `json:"display"`
-	PowerPanel BriefPowerPanel   `json:"power_panel"`
-	Rack       NullableBriefRack `json:"rack,omitempty"`
-	Name       string            `json:"name"`
-	Status     *PowerFeedStatus  `json:"status,omitempty"`
-	Type       *PowerFeedType    `json:"type,omitempty"`
-	Supply     *PowerFeedSupply  `json:"supply,omitempty"`
-	Phase      *PowerFeedPhase   `json:"phase,omitempty"`
-	Voltage    *int32            `json:"voltage,omitempty"`
-	Amperage   *int32            `json:"amperage,omitempty"`
+	Id int32 `json:"id"`
+	Url string `json:"url"`
+	DisplayUrl string `json:"display_url"`
+	Display string `json:"display"`
+	PowerPanel BriefPowerPanel `json:"power_panel"`
+	Rack NullableBriefRack `json:"rack,omitempty"`
+	Name string `json:"name"`
+	Status *PowerFeedStatus `json:"status,omitempty"`
+	Type *PowerFeedType `json:"type,omitempty"`
+	Supply *PowerFeedSupply `json:"supply,omitempty"`
+	Phase *PowerFeedPhase `json:"phase,omitempty"`
+	Voltage *int32 `json:"voltage,omitempty"`
+	Amperage *int32 `json:"amperage,omitempty"`
 	// Maximum permissible draw (percentage)
 	MaxUtilization *int32 `json:"max_utilization,omitempty"`
 	// Treat as if a cable is connected
-	MarkConnected *bool              `json:"mark_connected,omitempty"`
-	Cable         NullableBriefCable `json:"cable"`
-	CableEnd      string             `json:"cable_end"`
-	LinkPeers     []interface{}      `json:"link_peers"`
+	MarkConnected *bool `json:"mark_connected,omitempty"`
+	Cable NullableBriefCable `json:"cable"`
+	CableEnd string `json:"cable_end"`
+	LinkPeers []interface{} `json:"link_peers"`
 	// Return the type of the peer link terminations, or None.
-	LinkPeersType               NullableString         `json:"link_peers_type"`
-	ConnectedEndpoints          []interface{}          `json:"connected_endpoints"`
-	ConnectedEndpointsType      NullableString         `json:"connected_endpoints_type"`
-	ConnectedEndpointsReachable bool                   `json:"connected_endpoints_reachable"`
-	Description                 *string                `json:"description,omitempty"`
-	Tenant                      NullableBriefTenant    `json:"tenant,omitempty"`
-	Comments                    *string                `json:"comments,omitempty"`
-	Tags                        []NestedTag            `json:"tags,omitempty"`
-	CustomFields                map[string]interface{} `json:"custom_fields,omitempty"`
-	Created                     NullableTime           `json:"created"`
-	LastUpdated                 NullableTime           `json:"last_updated"`
-	Occupied                    bool                   `json:"_occupied"`
-	AdditionalProperties        map[string]interface{}
+	LinkPeersType NullableString `json:"link_peers_type"`
+	ConnectedEndpoints []interface{} `json:"connected_endpoints"`
+	ConnectedEndpointsType NullableString `json:"connected_endpoints_type"`
+	ConnectedEndpointsReachable bool `json:"connected_endpoints_reachable"`
+	Description *string `json:"description,omitempty"`
+	Tenant NullableBriefTenant `json:"tenant,omitempty"`
+	Comments *string `json:"comments,omitempty"`
+	Tags []NestedTag `json:"tags,omitempty"`
+	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	Created NullableTime `json:"created"`
+	LastUpdated NullableTime `json:"last_updated"`
+	Occupied bool `json:"_occupied"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _PowerFeed PowerFeed
@@ -244,7 +244,6 @@ func (o *PowerFeed) HasRack() bool {
 func (o *PowerFeed) SetRack(v BriefRack) {
 	o.Rack.Set(&v)
 }
-
 // SetRackNil sets the value for Rack to be an explicit nil
 func (o *PowerFeed) SetRackNil() {
 	o.Rack.Set(nil)
@@ -775,7 +774,6 @@ func (o *PowerFeed) HasTenant() bool {
 func (o *PowerFeed) SetTenant(v BriefTenant) {
 	o.Tenant.Set(&v)
 }
-
 // SetTenantNil sets the value for Tenant to be an explicit nil
 func (o *PowerFeed) SetTenantNil() {
 	o.Tenant.Set(nil)
@@ -959,7 +957,7 @@ func (o *PowerFeed) SetOccupied(v bool) {
 }
 
 func (o PowerFeed) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1064,10 +1062,10 @@ func (o *PowerFeed) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -1157,3 +1155,5 @@ func (v *NullablePowerFeed) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

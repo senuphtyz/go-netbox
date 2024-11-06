@@ -20,13 +20,13 @@ var _ MappedNullable = &WritableServiceTemplateRequest{}
 
 // WritableServiceTemplateRequest Adds support for custom fields and tags.
 type WritableServiceTemplateRequest struct {
-	Name                 string                                `json:"name"`
-	Protocol             PatchedWritableServiceRequestProtocol `json:"protocol"`
-	Ports                []int32                               `json:"ports"`
-	Description          *string                               `json:"description,omitempty"`
-	Comments             *string                               `json:"comments,omitempty"`
-	Tags                 []NestedTagRequest                    `json:"tags,omitempty"`
-	CustomFields         map[string]interface{}                `json:"custom_fields,omitempty"`
+	Name string `json:"name"`
+	Protocol PatchedWritableServiceRequestProtocol `json:"protocol"`
+	Ports []int32 `json:"ports"`
+	Description *string `json:"description,omitempty"`
+	Comments *string `json:"comments,omitempty"`
+	Tags []NestedTagRequest `json:"tags,omitempty"`
+	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -253,7 +253,7 @@ func (o *WritableServiceTemplateRequest) SetCustomFields(v map[string]interface{
 }
 
 func (o WritableServiceTemplateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -300,10 +300,10 @@ func (o *WritableServiceTemplateRequest) UnmarshalJSON(data []byte) (err error) 
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -370,3 +370,5 @@ func (v *NullableWritableServiceTemplateRequest) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

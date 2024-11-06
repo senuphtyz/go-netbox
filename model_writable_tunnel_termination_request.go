@@ -20,13 +20,13 @@ var _ MappedNullable = &WritableTunnelTerminationRequest{}
 
 // WritableTunnelTerminationRequest Adds support for custom fields and tags.
 type WritableTunnelTerminationRequest struct {
-	Tunnel               BriefTunnelRequest                           `json:"tunnel"`
-	Role                 *PatchedWritableTunnelTerminationRequestRole `json:"role,omitempty"`
-	TerminationType      string                                       `json:"termination_type"`
-	TerminationId        NullableInt64                                `json:"termination_id"`
-	OutsideIp            NullableBriefIPAddressRequest                `json:"outside_ip,omitempty"`
-	Tags                 []NestedTagRequest                           `json:"tags,omitempty"`
-	CustomFields         map[string]interface{}                       `json:"custom_fields,omitempty"`
+	Tunnel BriefTunnelRequest `json:"tunnel"`
+	Role *PatchedWritableTunnelTerminationRequestRole `json:"role,omitempty"`
+	TerminationType string `json:"termination_type"`
+	TerminationId NullableInt64 `json:"termination_id"`
+	OutsideIp NullableBriefIPAddressRequest `json:"outside_ip,omitempty"`
+	Tags []NestedTagRequest `json:"tags,omitempty"`
+	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -190,7 +190,6 @@ func (o *WritableTunnelTerminationRequest) HasOutsideIp() bool {
 func (o *WritableTunnelTerminationRequest) SetOutsideIp(v BriefIPAddressRequest) {
 	o.OutsideIp.Set(&v)
 }
-
 // SetOutsideIpNil sets the value for OutsideIp to be an explicit nil
 func (o *WritableTunnelTerminationRequest) SetOutsideIpNil() {
 	o.OutsideIp.Set(nil)
@@ -266,7 +265,7 @@ func (o *WritableTunnelTerminationRequest) SetCustomFields(v map[string]interfac
 }
 
 func (o WritableTunnelTerminationRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -313,10 +312,10 @@ func (o *WritableTunnelTerminationRequest) UnmarshalJSON(data []byte) (err error
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -383,3 +382,5 @@ func (v *NullableWritableTunnelTerminationRequest) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

@@ -20,9 +20,9 @@ type WirelessLANStatusLabel string
 
 // List of WirelessLAN_status_label
 const (
-	WIRELESSLANSTATUSLABEL_ACTIVE     WirelessLANStatusLabel = "Active"
-	WIRELESSLANSTATUSLABEL_RESERVED   WirelessLANStatusLabel = "Reserved"
-	WIRELESSLANSTATUSLABEL_DISABLED   WirelessLANStatusLabel = "Disabled"
+	WIRELESSLANSTATUSLABEL_ACTIVE WirelessLANStatusLabel = "Active"
+	WIRELESSLANSTATUSLABEL_RESERVED WirelessLANStatusLabel = "Reserved"
+	WIRELESSLANSTATUSLABEL_DISABLED WirelessLANStatusLabel = "Disabled"
 	WIRELESSLANSTATUSLABEL_DEPRECATED WirelessLANStatusLabel = "Deprecated"
 )
 
@@ -112,3 +112,4 @@ func (v *NullableWirelessLANStatusLabel) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+

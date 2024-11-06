@@ -11,7 +11,6 @@ API version: 4.1.4 (4.1)
 package netbox
 
 import (
-        "time"
 	"bytes"
 	"context"
 	"io"
@@ -19,14 +18,15 @@ import (
 	"net/url"
 )
 
+
 // SchemaAPIService SchemaAPI service
 type SchemaAPIService service
 
 type ApiSchemaRetrieveRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *SchemaAPIService
-	format     *SchemaRetrieveFormatParameter
-	lang       *SchemaRetrieveLangParameter
+	format *SchemaRetrieveFormatParameter
+	lang *SchemaRetrieveLangParameter
 }
 
 func (r ApiSchemaRetrieveRequest) Format(format SchemaRetrieveFormatParameter) ApiSchemaRetrieveRequest {
@@ -51,25 +51,24 @@ OpenApi3 schema for this API. Format can be selected via content negotiation.
 - YAML: application/vnd.oai.openapi
 - JSON: application/vnd.oai.openapi+json
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSchemaRetrieveRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiSchemaRetrieveRequest
 */
 func (a *SchemaAPIService) SchemaRetrieve(ctx context.Context) ApiSchemaRetrieveRequest {
 	return ApiSchemaRetrieveRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return map[string]interface{}
+//  @return map[string]interface{}
 func (a *SchemaAPIService) SchemaRetrieveExecute(r ApiSchemaRetrieveRequest) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue map[string]interface{}
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  map[string]interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SchemaAPIService.SchemaRetrieve")

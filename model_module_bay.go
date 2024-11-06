@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"fmt"
 	"time"
+	"fmt"
 )
 
 // checks if the ModuleBay type satisfies the MappedNullable interface at compile time
@@ -21,23 +21,23 @@ var _ MappedNullable = &ModuleBay{}
 
 // ModuleBay Adds support for custom fields and tags.
 type ModuleBay struct {
-	Id              int32               `json:"id"`
-	Url             string              `json:"url"`
-	DisplayUrl      string              `json:"display_url"`
-	Display         string              `json:"display"`
-	Device          BriefDevice         `json:"device"`
-	Module          NullableBriefModule `json:"module,omitempty"`
-	Name            string              `json:"name"`
+	Id int32 `json:"id"`
+	Url string `json:"url"`
+	DisplayUrl string `json:"display_url"`
+	Display string `json:"display"`
+	Device BriefDevice `json:"device"`
+	Module NullableBriefModule `json:"module,omitempty"`
+	Name string `json:"name"`
 	InstalledModule NullableBriefModule `json:"installed_module,omitempty"`
 	// Physical label
 	Label *string `json:"label,omitempty"`
 	// Identifier to reference when renaming installed components
-	Position             *string                `json:"position,omitempty"`
-	Description          *string                `json:"description,omitempty"`
-	Tags                 []NestedTag            `json:"tags,omitempty"`
-	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
-	Created              NullableTime           `json:"created"`
-	LastUpdated          NullableTime           `json:"last_updated"`
+	Position *string `json:"position,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Tags []NestedTag `json:"tags,omitempty"`
+	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	Created NullableTime `json:"created"`
+	LastUpdated NullableTime `json:"last_updated"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -220,7 +220,6 @@ func (o *ModuleBay) HasModule() bool {
 func (o *ModuleBay) SetModule(v BriefModule) {
 	o.Module.Set(&v)
 }
-
 // SetModuleNil sets the value for Module to be an explicit nil
 func (o *ModuleBay) SetModuleNil() {
 	o.Module.Set(nil)
@@ -287,7 +286,6 @@ func (o *ModuleBay) HasInstalledModule() bool {
 func (o *ModuleBay) SetInstalledModule(v BriefModule) {
 	o.InstalledModule.Set(&v)
 }
-
 // SetInstalledModuleNil sets the value for InstalledModule to be an explicit nil
 func (o *ModuleBay) SetInstalledModuleNil() {
 	o.InstalledModule.Set(nil)
@@ -511,7 +509,7 @@ func (o *ModuleBay) SetLastUpdated(v time.Time) {
 }
 
 func (o ModuleBay) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -577,10 +575,10 @@ func (o *ModuleBay) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -655,3 +653,5 @@ func (v *NullableModuleBay) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

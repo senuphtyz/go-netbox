@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"fmt"
 	"time"
+	"fmt"
 )
 
 // checks if the ConfigContext type satisfies the MappedNullable interface at compile time
@@ -21,35 +21,35 @@ var _ MappedNullable = &ConfigContext{}
 
 // ConfigContext Extends the built-in ModelSerializer to enforce calling full_clean() on a copy of the associated instance during validation. (DRF does not do this by default; see https://github.com/encode/django-rest-framework/issues/3144)
 type ConfigContext struct {
-	Id            int32            `json:"id"`
-	Url           string           `json:"url"`
-	DisplayUrl    string           `json:"display_url"`
-	Display       string           `json:"display"`
-	Name          string           `json:"name"`
-	Weight        *int32           `json:"weight,omitempty"`
-	Description   *string          `json:"description,omitempty"`
-	IsActive      *bool            `json:"is_active,omitempty"`
-	Regions       []Region         `json:"regions,omitempty"`
-	SiteGroups    []SiteGroup      `json:"site_groups,omitempty"`
-	Sites         []Site           `json:"sites,omitempty"`
-	Locations     []Location       `json:"locations,omitempty"`
-	DeviceTypes   []DeviceType     `json:"device_types,omitempty"`
-	Roles         []DeviceRole     `json:"roles,omitempty"`
-	Platforms     []Platform       `json:"platforms,omitempty"`
-	ClusterTypes  []ClusterType    `json:"cluster_types,omitempty"`
-	ClusterGroups []ClusterGroup   `json:"cluster_groups,omitempty"`
-	Clusters      []Cluster        `json:"clusters,omitempty"`
-	TenantGroups  []TenantGroup    `json:"tenant_groups,omitempty"`
-	Tenants       []Tenant         `json:"tenants,omitempty"`
-	Tags          []string         `json:"tags,omitempty"`
-	DataSource    *BriefDataSource `json:"data_source,omitempty"`
+	Id int32 `json:"id"`
+	Url string `json:"url"`
+	DisplayUrl string `json:"display_url"`
+	Display string `json:"display"`
+	Name string `json:"name"`
+	Weight *int32 `json:"weight,omitempty"`
+	Description *string `json:"description,omitempty"`
+	IsActive *bool `json:"is_active,omitempty"`
+	Regions []Region `json:"regions,omitempty"`
+	SiteGroups []SiteGroup `json:"site_groups,omitempty"`
+	Sites []Site `json:"sites,omitempty"`
+	Locations []Location `json:"locations,omitempty"`
+	DeviceTypes []DeviceType `json:"device_types,omitempty"`
+	Roles []DeviceRole `json:"roles,omitempty"`
+	Platforms []Platform `json:"platforms,omitempty"`
+	ClusterTypes []ClusterType `json:"cluster_types,omitempty"`
+	ClusterGroups []ClusterGroup `json:"cluster_groups,omitempty"`
+	Clusters []Cluster `json:"clusters,omitempty"`
+	TenantGroups []TenantGroup `json:"tenant_groups,omitempty"`
+	Tenants []Tenant `json:"tenants,omitempty"`
+	Tags []string `json:"tags,omitempty"`
+	DataSource *BriefDataSource `json:"data_source,omitempty"`
 	// Path to remote file (relative to data source root)
-	DataPath             string        `json:"data_path"`
-	DataFile             BriefDataFile `json:"data_file"`
-	DataSynced           NullableTime  `json:"data_synced"`
-	Data                 interface{}   `json:"data"`
-	Created              NullableTime  `json:"created"`
-	LastUpdated          NullableTime  `json:"last_updated"`
+	DataPath string `json:"data_path"`
+	DataFile BriefDataFile `json:"data_file"`
+	DataSynced NullableTime `json:"data_synced"`
+	Data interface{} `json:"data"`
+	Created NullableTime `json:"created"`
+	LastUpdated NullableTime `json:"last_updated"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -900,7 +900,7 @@ func (o *ConfigContext) SetLastUpdated(v time.Time) {
 }
 
 func (o ConfigContext) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1004,10 +1004,10 @@ func (o *ConfigContext) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -1095,3 +1095,5 @@ func (v *NullableConfigContext) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

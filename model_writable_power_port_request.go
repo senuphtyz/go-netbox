@@ -20,21 +20,21 @@ var _ MappedNullable = &WritablePowerPortRequest{}
 
 // WritablePowerPortRequest Adds support for custom fields and tags.
 type WritablePowerPortRequest struct {
-	Device BriefDeviceRequest         `json:"device"`
+	Device BriefDeviceRequest `json:"device"`
 	Module NullableBriefModuleRequest `json:"module,omitempty"`
-	Name   string                     `json:"name"`
+	Name string `json:"name"`
 	// Physical label
-	Label *string                              `json:"label,omitempty"`
-	Type  *PatchedWritablePowerPortRequestType `json:"type,omitempty"`
+	Label *string `json:"label,omitempty"`
+	Type *PatchedWritablePowerPortRequestType `json:"type,omitempty"`
 	// Maximum power draw (watts)
 	MaximumDraw NullableInt32 `json:"maximum_draw,omitempty"`
 	// Allocated power draw (watts)
 	AllocatedDraw NullableInt32 `json:"allocated_draw,omitempty"`
-	Description   *string       `json:"description,omitempty"`
+	Description *string `json:"description,omitempty"`
 	// Treat as if a cable is connected
-	MarkConnected        *bool                  `json:"mark_connected,omitempty"`
-	Tags                 []NestedTagRequest     `json:"tags,omitempty"`
-	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
+	MarkConnected *bool `json:"mark_connected,omitempty"`
+	Tags []NestedTagRequest `json:"tags,omitempty"`
+	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -115,7 +115,6 @@ func (o *WritablePowerPortRequest) HasModule() bool {
 func (o *WritablePowerPortRequest) SetModule(v BriefModuleRequest) {
 	o.Module.Set(&v)
 }
-
 // SetModuleNil sets the value for Module to be an explicit nil
 func (o *WritablePowerPortRequest) SetModuleNil() {
 	o.Module.Set(nil)
@@ -246,7 +245,6 @@ func (o *WritablePowerPortRequest) HasMaximumDraw() bool {
 func (o *WritablePowerPortRequest) SetMaximumDraw(v int32) {
 	o.MaximumDraw.Set(&v)
 }
-
 // SetMaximumDrawNil sets the value for MaximumDraw to be an explicit nil
 func (o *WritablePowerPortRequest) SetMaximumDrawNil() {
 	o.MaximumDraw.Set(nil)
@@ -289,7 +287,6 @@ func (o *WritablePowerPortRequest) HasAllocatedDraw() bool {
 func (o *WritablePowerPortRequest) SetAllocatedDraw(v int32) {
 	o.AllocatedDraw.Set(&v)
 }
-
 // SetAllocatedDrawNil sets the value for AllocatedDraw to be an explicit nil
 func (o *WritablePowerPortRequest) SetAllocatedDrawNil() {
 	o.AllocatedDraw.Set(nil)
@@ -429,7 +426,7 @@ func (o *WritablePowerPortRequest) SetCustomFields(v map[string]interface{}) {
 }
 
 func (o WritablePowerPortRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -489,10 +486,10 @@ func (o *WritablePowerPortRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -563,3 +560,5 @@ func (v *NullableWritablePowerPortRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

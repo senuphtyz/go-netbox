@@ -21,16 +21,16 @@ var _ MappedNullable = &WritableModuleTypeRequest{}
 // WritableModuleTypeRequest Adds support for custom fields and tags.
 type WritableModuleTypeRequest struct {
 	Manufacturer BriefManufacturerRequest `json:"manufacturer"`
-	Model        string                   `json:"model"`
+	Model string `json:"model"`
 	// Discrete part number (optional)
-	PartNumber           *string                    `json:"part_number,omitempty"`
-	Airflow              *ModuleTypeAirflowValue    `json:"airflow,omitempty"`
-	Weight               NullableFloat64            `json:"weight,omitempty"`
-	WeightUnit           *DeviceTypeWeightUnitValue `json:"weight_unit,omitempty"`
-	Description          *string                    `json:"description,omitempty"`
-	Comments             *string                    `json:"comments,omitempty"`
-	Tags                 []NestedTagRequest         `json:"tags,omitempty"`
-	CustomFields         map[string]interface{}     `json:"custom_fields,omitempty"`
+	PartNumber *string `json:"part_number,omitempty"`
+	Airflow *ModuleTypeAirflowValue `json:"airflow,omitempty"`
+	Weight NullableFloat64 `json:"weight,omitempty"`
+	WeightUnit *DeviceTypeWeightUnitValue `json:"weight_unit,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Comments *string `json:"comments,omitempty"`
+	Tags []NestedTagRequest `json:"tags,omitempty"`
+	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -199,7 +199,6 @@ func (o *WritableModuleTypeRequest) HasWeight() bool {
 func (o *WritableModuleTypeRequest) SetWeight(v float64) {
 	o.Weight.Set(&v)
 }
-
 // SetWeightNil sets the value for Weight to be an explicit nil
 func (o *WritableModuleTypeRequest) SetWeightNil() {
 	o.Weight.Set(nil)
@@ -371,7 +370,7 @@ func (o *WritableModuleTypeRequest) SetCustomFields(v map[string]interface{}) {
 }
 
 func (o WritableModuleTypeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -428,10 +427,10 @@ func (o *WritableModuleTypeRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -501,3 +500,5 @@ func (v *NullableWritableModuleTypeRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

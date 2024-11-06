@@ -20,20 +20,20 @@ var _ MappedNullable = &WirelessLinkRequest{}
 
 // WirelessLinkRequest Adds support for custom fields and tags.
 type WirelessLinkRequest struct {
-	InterfaceA           BriefInterfaceRequest                   `json:"interface_a"`
-	InterfaceB           BriefInterfaceRequest                   `json:"interface_b"`
-	Ssid                 *string                                 `json:"ssid,omitempty"`
-	Status               *CableStatusValue                       `json:"status,omitempty"`
-	Tenant               NullableBriefTenantRequest              `json:"tenant,omitempty"`
-	AuthType             *WirelessLANAuthTypeValue               `json:"auth_type,omitempty"`
-	AuthCipher           *WirelessLANAuthCipherValue             `json:"auth_cipher,omitempty"`
-	AuthPsk              *string                                 `json:"auth_psk,omitempty"`
-	Distance             NullableFloat64                         `json:"distance,omitempty"`
-	DistanceUnit         NullableWirelessLinkRequestDistanceUnit `json:"distance_unit,omitempty"`
-	Description          *string                                 `json:"description,omitempty"`
-	Comments             *string                                 `json:"comments,omitempty"`
-	Tags                 []NestedTagRequest                      `json:"tags,omitempty"`
-	CustomFields         map[string]interface{}                  `json:"custom_fields,omitempty"`
+	InterfaceA BriefInterfaceRequest `json:"interface_a"`
+	InterfaceB BriefInterfaceRequest `json:"interface_b"`
+	Ssid *string `json:"ssid,omitempty"`
+	Status *CableStatusValue `json:"status,omitempty"`
+	Tenant NullableBriefTenantRequest `json:"tenant,omitempty"`
+	AuthType *WirelessLANAuthTypeValue `json:"auth_type,omitempty"`
+	AuthCipher *WirelessLANAuthCipherValue `json:"auth_cipher,omitempty"`
+	AuthPsk *string `json:"auth_psk,omitempty"`
+	Distance NullableFloat64 `json:"distance,omitempty"`
+	DistanceUnit NullableWirelessLinkRequestDistanceUnit `json:"distance_unit,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Comments *string `json:"comments,omitempty"`
+	Tags []NestedTagRequest `json:"tags,omitempty"`
+	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -202,7 +202,6 @@ func (o *WirelessLinkRequest) HasTenant() bool {
 func (o *WirelessLinkRequest) SetTenant(v BriefTenantRequest) {
 	o.Tenant.Set(&v)
 }
-
 // SetTenantNil sets the value for Tenant to be an explicit nil
 func (o *WirelessLinkRequest) SetTenantNil() {
 	o.Tenant.Set(nil)
@@ -341,7 +340,6 @@ func (o *WirelessLinkRequest) HasDistance() bool {
 func (o *WirelessLinkRequest) SetDistance(v float64) {
 	o.Distance.Set(&v)
 }
-
 // SetDistanceNil sets the value for Distance to be an explicit nil
 func (o *WirelessLinkRequest) SetDistanceNil() {
 	o.Distance.Set(nil)
@@ -384,7 +382,6 @@ func (o *WirelessLinkRequest) HasDistanceUnit() bool {
 func (o *WirelessLinkRequest) SetDistanceUnit(v WirelessLinkRequestDistanceUnit) {
 	o.DistanceUnit.Set(&v)
 }
-
 // SetDistanceUnitNil sets the value for DistanceUnit to be an explicit nil
 func (o *WirelessLinkRequest) SetDistanceUnitNil() {
 	o.DistanceUnit.Set(nil)
@@ -524,7 +521,7 @@ func (o *WirelessLinkRequest) SetCustomFields(v map[string]interface{}) {
 }
 
 func (o WirelessLinkRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -593,10 +590,10 @@ func (o *WirelessLinkRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -670,3 +667,5 @@ func (v *NullableWirelessLinkRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

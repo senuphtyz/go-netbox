@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"fmt"
 	"time"
+	"fmt"
 )
 
 // checks if the CustomLink type satisfies the MappedNullable interface at compile time
@@ -21,25 +21,25 @@ var _ MappedNullable = &CustomLink{}
 
 // CustomLink Extends the built-in ModelSerializer to enforce calling full_clean() on a copy of the associated instance during validation. (DRF does not do this by default; see https://github.com/encode/django-rest-framework/issues/3144)
 type CustomLink struct {
-	Id          int32    `json:"id"`
-	Url         string   `json:"url"`
-	DisplayUrl  string   `json:"display_url"`
-	Display     string   `json:"display"`
+	Id int32 `json:"id"`
+	Url string `json:"url"`
+	DisplayUrl string `json:"display_url"`
+	Display string `json:"display"`
 	ObjectTypes []string `json:"object_types"`
-	Name        string   `json:"name"`
-	Enabled     *bool    `json:"enabled,omitempty"`
+	Name string `json:"name"`
+	Enabled *bool `json:"enabled,omitempty"`
 	// Jinja2 template code for link text
 	LinkText string `json:"link_text"`
 	// Jinja2 template code for link URL
 	LinkUrl string `json:"link_url"`
-	Weight  *int32 `json:"weight,omitempty"`
+	Weight *int32 `json:"weight,omitempty"`
 	// Links with the same group will appear as a dropdown menu
-	GroupName   *string                `json:"group_name,omitempty"`
+	GroupName *string `json:"group_name,omitempty"`
 	ButtonClass *CustomLinkButtonClass `json:"button_class,omitempty"`
 	// Force link to open in a new window
-	NewWindow            *bool        `json:"new_window,omitempty"`
-	Created              NullableTime `json:"created"`
-	LastUpdated          NullableTime `json:"last_updated"`
+	NewWindow *bool `json:"new_window,omitempty"`
+	Created NullableTime `json:"created"`
+	LastUpdated NullableTime `json:"last_updated"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -477,7 +477,7 @@ func (o *CustomLink) SetLastUpdated(v time.Time) {
 }
 
 func (o CustomLink) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -541,10 +541,10 @@ func (o *CustomLink) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -619,3 +619,5 @@ func (v *NullableCustomLink) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

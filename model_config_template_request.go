@@ -20,14 +20,14 @@ var _ MappedNullable = &ConfigTemplateRequest{}
 
 // ConfigTemplateRequest Introduces support for Tag assignment. Adds `tags` serialization, and handles tag assignment on create() and update().
 type ConfigTemplateRequest struct {
-	Name        string  `json:"name"`
+	Name string `json:"name"`
 	Description *string `json:"description,omitempty"`
 	// Any <a href=\"https://jinja.palletsprojects.com/en/3.1.x/api/#jinja2.Environment\">additional parameters</a> to pass when constructing the Jinja2 environment.
 	EnvironmentParams interface{} `json:"environment_params,omitempty"`
 	// Jinja2 template code.
-	TemplateCode         string                  `json:"template_code"`
-	DataSource           *BriefDataSourceRequest `json:"data_source,omitempty"`
-	Tags                 []NestedTagRequest      `json:"tags,omitempty"`
+	TemplateCode string `json:"template_code"`
+	DataSource *BriefDataSourceRequest `json:"data_source,omitempty"`
+	Tags []NestedTagRequest `json:"tags,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -230,7 +230,7 @@ func (o *ConfigTemplateRequest) SetTags(v []NestedTagRequest) {
 }
 
 func (o ConfigTemplateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -275,10 +275,10 @@ func (o *ConfigTemplateRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -344,3 +344,5 @@ func (v *NullableConfigTemplateRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

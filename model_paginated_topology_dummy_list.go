@@ -20,10 +20,10 @@ var _ MappedNullable = &PaginatedTopologyDummyList{}
 
 // PaginatedTopologyDummyList struct for PaginatedTopologyDummyList
 type PaginatedTopologyDummyList struct {
-	Count                int32           `json:"count"`
-	Next                 NullableString  `json:"next,omitempty"`
-	Previous             NullableString  `json:"previous,omitempty"`
-	Results              []TopologyDummy `json:"results"`
+	Count int32 `json:"count"`
+	Next NullableString `json:"next,omitempty"`
+	Previous NullableString `json:"previous,omitempty"`
+	Results []TopologyDummy `json:"results"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -104,7 +104,6 @@ func (o *PaginatedTopologyDummyList) HasNext() bool {
 func (o *PaginatedTopologyDummyList) SetNext(v string) {
 	o.Next.Set(&v)
 }
-
 // SetNextNil sets the value for Next to be an explicit nil
 func (o *PaginatedTopologyDummyList) SetNextNil() {
 	o.Next.Set(nil)
@@ -147,7 +146,6 @@ func (o *PaginatedTopologyDummyList) HasPrevious() bool {
 func (o *PaginatedTopologyDummyList) SetPrevious(v string) {
 	o.Previous.Set(&v)
 }
-
 // SetPreviousNil sets the value for Previous to be an explicit nil
 func (o *PaginatedTopologyDummyList) SetPreviousNil() {
 	o.Previous.Set(nil)
@@ -183,7 +181,7 @@ func (o *PaginatedTopologyDummyList) SetResults(v []TopologyDummy) {
 }
 
 func (o PaginatedTopologyDummyList) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -222,10 +220,10 @@ func (o *PaginatedTopologyDummyList) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -289,3 +287,5 @@ func (v *NullablePaginatedTopologyDummyList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

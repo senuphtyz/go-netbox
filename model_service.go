@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"fmt"
 	"time"
+	"fmt"
 )
 
 // checks if the Service type satisfies the MappedNullable interface at compile time
@@ -21,22 +21,22 @@ var _ MappedNullable = &Service{}
 
 // Service Adds support for custom fields and tags.
 type Service struct {
-	Id                   int32                       `json:"id"`
-	Url                  string                      `json:"url"`
-	DisplayUrl           string                      `json:"display_url"`
-	Display              string                      `json:"display"`
-	Device               NullableBriefDevice         `json:"device,omitempty"`
-	VirtualMachine       NullableBriefVirtualMachine `json:"virtual_machine,omitempty"`
-	Name                 string                      `json:"name"`
-	Protocol             *ServiceProtocol            `json:"protocol,omitempty"`
-	Ports                []int32                     `json:"ports"`
-	Ipaddresses          []IPAddress                 `json:"ipaddresses,omitempty"`
-	Description          *string                     `json:"description,omitempty"`
-	Comments             *string                     `json:"comments,omitempty"`
-	Tags                 []NestedTag                 `json:"tags,omitempty"`
-	CustomFields         map[string]interface{}      `json:"custom_fields,omitempty"`
-	Created              NullableTime                `json:"created"`
-	LastUpdated          NullableTime                `json:"last_updated"`
+	Id int32 `json:"id"`
+	Url string `json:"url"`
+	DisplayUrl string `json:"display_url"`
+	Display string `json:"display"`
+	Device NullableBriefDevice `json:"device,omitempty"`
+	VirtualMachine NullableBriefVirtualMachine `json:"virtual_machine,omitempty"`
+	Name string `json:"name"`
+	Protocol *ServiceProtocol `json:"protocol,omitempty"`
+	Ports []int32 `json:"ports"`
+	Ipaddresses []IPAddress `json:"ipaddresses,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Comments *string `json:"comments,omitempty"`
+	Tags []NestedTag `json:"tags,omitempty"`
+	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	Created NullableTime `json:"created"`
+	LastUpdated NullableTime `json:"last_updated"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -195,7 +195,6 @@ func (o *Service) HasDevice() bool {
 func (o *Service) SetDevice(v BriefDevice) {
 	o.Device.Set(&v)
 }
-
 // SetDeviceNil sets the value for Device to be an explicit nil
 func (o *Service) SetDeviceNil() {
 	o.Device.Set(nil)
@@ -238,7 +237,6 @@ func (o *Service) HasVirtualMachine() bool {
 func (o *Service) SetVirtualMachine(v BriefVirtualMachine) {
 	o.VirtualMachine.Set(&v)
 }
-
 // SetVirtualMachineNil sets the value for VirtualMachine to be an explicit nil
 func (o *Service) SetVirtualMachineNil() {
 	o.VirtualMachine.Set(nil)
@@ -542,7 +540,7 @@ func (o *Service) SetLastUpdated(v time.Time) {
 }
 
 func (o Service) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -611,10 +609,10 @@ func (o *Service) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -690,3 +688,5 @@ func (v *NullableService) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

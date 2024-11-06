@@ -21,8 +21,8 @@ type PatchedWritableIKEPolicyRequestMode string
 // List of PatchedWritableIKEPolicyRequest_mode
 const (
 	PATCHEDWRITABLEIKEPOLICYREQUESTMODE_AGGRESSIVE PatchedWritableIKEPolicyRequestMode = "aggressive"
-	PATCHEDWRITABLEIKEPOLICYREQUESTMODE_MAIN       PatchedWritableIKEPolicyRequestMode = "main"
-	PATCHEDWRITABLEIKEPOLICYREQUESTMODE_EMPTY      PatchedWritableIKEPolicyRequestMode = ""
+	PATCHEDWRITABLEIKEPOLICYREQUESTMODE_MAIN PatchedWritableIKEPolicyRequestMode = "main"
+	PATCHEDWRITABLEIKEPOLICYREQUESTMODE_EMPTY PatchedWritableIKEPolicyRequestMode = ""
 )
 
 // All allowed values of PatchedWritableIKEPolicyRequestMode enum
@@ -110,3 +110,4 @@ func (v *NullablePatchedWritableIKEPolicyRequestMode) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+

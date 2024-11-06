@@ -20,9 +20,9 @@ type InterfaceTemplateRequestRfRole string
 
 // List of InterfaceTemplateRequest_rf_role
 const (
-	INTERFACETEMPLATEREQUESTRFROLE_AP      InterfaceTemplateRequestRfRole = "ap"
+	INTERFACETEMPLATEREQUESTRFROLE_AP InterfaceTemplateRequestRfRole = "ap"
 	INTERFACETEMPLATEREQUESTRFROLE_STATION InterfaceTemplateRequestRfRole = "station"
-	INTERFACETEMPLATEREQUESTRFROLE_EMPTY   InterfaceTemplateRequestRfRole = ""
+	INTERFACETEMPLATEREQUESTRFROLE_EMPTY InterfaceTemplateRequestRfRole = ""
 )
 
 // All allowed values of InterfaceTemplateRequestRfRole enum
@@ -110,3 +110,4 @@ func (v *NullableInterfaceTemplateRequestRfRole) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+

@@ -20,14 +20,14 @@ var _ MappedNullable = &WritableAggregateRequest{}
 
 // WritableAggregateRequest Adds support for custom fields and tags.
 type WritableAggregateRequest struct {
-	Prefix               string                     `json:"prefix"`
-	Rir                  BriefRIRRequest            `json:"rir"`
-	Tenant               NullableBriefTenantRequest `json:"tenant,omitempty"`
-	DateAdded            NullableString             `json:"date_added,omitempty"`
-	Description          *string                    `json:"description,omitempty"`
-	Comments             *string                    `json:"comments,omitempty"`
-	Tags                 []NestedTagRequest         `json:"tags,omitempty"`
-	CustomFields         map[string]interface{}     `json:"custom_fields,omitempty"`
+	Prefix string `json:"prefix"`
+	Rir BriefRIRRequest `json:"rir"`
+	Tenant NullableBriefTenantRequest `json:"tenant,omitempty"`
+	DateAdded NullableString `json:"date_added,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Comments *string `json:"comments,omitempty"`
+	Tags []NestedTagRequest `json:"tags,omitempty"`
+	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -132,7 +132,6 @@ func (o *WritableAggregateRequest) HasTenant() bool {
 func (o *WritableAggregateRequest) SetTenant(v BriefTenantRequest) {
 	o.Tenant.Set(&v)
 }
-
 // SetTenantNil sets the value for Tenant to be an explicit nil
 func (o *WritableAggregateRequest) SetTenantNil() {
 	o.Tenant.Set(nil)
@@ -175,7 +174,6 @@ func (o *WritableAggregateRequest) HasDateAdded() bool {
 func (o *WritableAggregateRequest) SetDateAdded(v string) {
 	o.DateAdded.Set(&v)
 }
-
 // SetDateAddedNil sets the value for DateAdded to be an explicit nil
 func (o *WritableAggregateRequest) SetDateAddedNil() {
 	o.DateAdded.Set(nil)
@@ -315,7 +313,7 @@ func (o *WritableAggregateRequest) SetCustomFields(v map[string]interface{}) {
 }
 
 func (o WritableAggregateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -366,10 +364,10 @@ func (o *WritableAggregateRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -437,3 +435,5 @@ func (v *NullableWritableAggregateRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

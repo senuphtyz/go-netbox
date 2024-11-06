@@ -20,20 +20,20 @@ var _ MappedNullable = &VMInterfaceRequest{}
 
 // VMInterfaceRequest Adds support for custom fields and tags.
 type VMInterfaceRequest struct {
-	VirtualMachine       BriefVirtualMachineRequest       `json:"virtual_machine"`
-	Name                 string                           `json:"name"`
-	Enabled              *bool                            `json:"enabled,omitempty"`
-	Parent               NullableNestedVMInterfaceRequest `json:"parent,omitempty"`
-	Bridge               NullableNestedVMInterfaceRequest `json:"bridge,omitempty"`
-	Mtu                  NullableInt32                    `json:"mtu,omitempty"`
-	MacAddress           NullableString                   `json:"mac_address,omitempty"`
-	Description          *string                          `json:"description,omitempty"`
-	Mode                 *InterfaceModeValue              `json:"mode,omitempty"`
-	UntaggedVlan         NullableBriefVLANRequest         `json:"untagged_vlan,omitempty"`
-	TaggedVlans          []int32                          `json:"tagged_vlans,omitempty"`
-	Vrf                  NullableBriefVRFRequest          `json:"vrf,omitempty"`
-	Tags                 []NestedTagRequest               `json:"tags,omitempty"`
-	CustomFields         map[string]interface{}           `json:"custom_fields,omitempty"`
+	VirtualMachine BriefVirtualMachineRequest `json:"virtual_machine"`
+	Name string `json:"name"`
+	Enabled *bool `json:"enabled,omitempty"`
+	Parent NullableNestedVMInterfaceRequest `json:"parent,omitempty"`
+	Bridge NullableNestedVMInterfaceRequest `json:"bridge,omitempty"`
+	Mtu NullableInt32 `json:"mtu,omitempty"`
+	MacAddress NullableString `json:"mac_address,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Mode *InterfaceModeValue `json:"mode,omitempty"`
+	UntaggedVlan NullableBriefVLANRequest `json:"untagged_vlan,omitempty"`
+	TaggedVlans []int32 `json:"tagged_vlans,omitempty"`
+	Vrf NullableBriefVRFRequest `json:"vrf,omitempty"`
+	Tags []NestedTagRequest `json:"tags,omitempty"`
+	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -170,7 +170,6 @@ func (o *VMInterfaceRequest) HasParent() bool {
 func (o *VMInterfaceRequest) SetParent(v NestedVMInterfaceRequest) {
 	o.Parent.Set(&v)
 }
-
 // SetParentNil sets the value for Parent to be an explicit nil
 func (o *VMInterfaceRequest) SetParentNil() {
 	o.Parent.Set(nil)
@@ -213,7 +212,6 @@ func (o *VMInterfaceRequest) HasBridge() bool {
 func (o *VMInterfaceRequest) SetBridge(v NestedVMInterfaceRequest) {
 	o.Bridge.Set(&v)
 }
-
 // SetBridgeNil sets the value for Bridge to be an explicit nil
 func (o *VMInterfaceRequest) SetBridgeNil() {
 	o.Bridge.Set(nil)
@@ -256,7 +254,6 @@ func (o *VMInterfaceRequest) HasMtu() bool {
 func (o *VMInterfaceRequest) SetMtu(v int32) {
 	o.Mtu.Set(&v)
 }
-
 // SetMtuNil sets the value for Mtu to be an explicit nil
 func (o *VMInterfaceRequest) SetMtuNil() {
 	o.Mtu.Set(nil)
@@ -299,7 +296,6 @@ func (o *VMInterfaceRequest) HasMacAddress() bool {
 func (o *VMInterfaceRequest) SetMacAddress(v string) {
 	o.MacAddress.Set(&v)
 }
-
 // SetMacAddressNil sets the value for MacAddress to be an explicit nil
 func (o *VMInterfaceRequest) SetMacAddressNil() {
 	o.MacAddress.Set(nil)
@@ -406,7 +402,6 @@ func (o *VMInterfaceRequest) HasUntaggedVlan() bool {
 func (o *VMInterfaceRequest) SetUntaggedVlan(v BriefVLANRequest) {
 	o.UntaggedVlan.Set(&v)
 }
-
 // SetUntaggedVlanNil sets the value for UntaggedVlan to be an explicit nil
 func (o *VMInterfaceRequest) SetUntaggedVlanNil() {
 	o.UntaggedVlan.Set(nil)
@@ -481,7 +476,6 @@ func (o *VMInterfaceRequest) HasVrf() bool {
 func (o *VMInterfaceRequest) SetVrf(v BriefVRFRequest) {
 	o.Vrf.Set(&v)
 }
-
 // SetVrfNil sets the value for Vrf to be an explicit nil
 func (o *VMInterfaceRequest) SetVrfNil() {
 	o.Vrf.Set(nil)
@@ -557,7 +551,7 @@ func (o *VMInterfaceRequest) SetCustomFields(v map[string]interface{}) {
 }
 
 func (o VMInterfaceRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -626,10 +620,10 @@ func (o *VMInterfaceRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -703,3 +697,5 @@ func (v *NullableVMInterfaceRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

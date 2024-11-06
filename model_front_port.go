@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"fmt"
 	"time"
+	"fmt"
 )
 
 // checks if the FrontPort type satisfies the MappedNullable interface at compile time
@@ -21,33 +21,33 @@ var _ MappedNullable = &FrontPort{}
 
 // FrontPort Adds support for custom fields and tags.
 type FrontPort struct {
-	Id         int32               `json:"id"`
-	Url        string              `json:"url"`
-	DisplayUrl string              `json:"display_url"`
-	Display    string              `json:"display"`
-	Device     BriefDevice         `json:"device"`
-	Module     NullableBriefModule `json:"module,omitempty"`
-	Name       string              `json:"name"`
+	Id int32 `json:"id"`
+	Url string `json:"url"`
+	DisplayUrl string `json:"display_url"`
+	Display string `json:"display"`
+	Device BriefDevice `json:"device"`
+	Module NullableBriefModule `json:"module,omitempty"`
+	Name string `json:"name"`
 	// Physical label
-	Label    *string           `json:"label,omitempty"`
-	Type     FrontPortType     `json:"type"`
-	Color    *string           `json:"color,omitempty" validate:"regexp=^[0-9a-f]{6}$"`
+	Label *string `json:"label,omitempty"`
+	Type FrontPortType `json:"type"`
+	Color *string `json:"color,omitempty" validate:"regexp=^[0-9a-f]{6}$"`
 	RearPort FrontPortRearPort `json:"rear_port"`
 	// Mapped position on corresponding rear port
-	RearPortPosition *int32  `json:"rear_port_position,omitempty"`
-	Description      *string `json:"description,omitempty"`
+	RearPortPosition *int32 `json:"rear_port_position,omitempty"`
+	Description *string `json:"description,omitempty"`
 	// Treat as if a cable is connected
-	MarkConnected *bool              `json:"mark_connected,omitempty"`
-	Cable         NullableBriefCable `json:"cable"`
-	CableEnd      string             `json:"cable_end"`
-	LinkPeers     []interface{}      `json:"link_peers"`
+	MarkConnected *bool `json:"mark_connected,omitempty"`
+	Cable NullableBriefCable `json:"cable"`
+	CableEnd string `json:"cable_end"`
+	LinkPeers []interface{} `json:"link_peers"`
 	// Return the type of the peer link terminations, or None.
-	LinkPeersType        NullableString         `json:"link_peers_type"`
-	Tags                 []NestedTag            `json:"tags,omitempty"`
-	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
-	Created              NullableTime           `json:"created"`
-	LastUpdated          NullableTime           `json:"last_updated"`
-	Occupied             bool                   `json:"_occupied"`
+	LinkPeersType NullableString `json:"link_peers_type"`
+	Tags []NestedTag `json:"tags,omitempty"`
+	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	Created NullableTime `json:"created"`
+	LastUpdated NullableTime `json:"last_updated"`
+	Occupied bool `json:"_occupied"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -241,7 +241,6 @@ func (o *FrontPort) HasModule() bool {
 func (o *FrontPort) SetModule(v BriefModule) {
 	o.Module.Set(&v)
 }
-
 // SetModuleNil sets the value for Module to be an explicit nil
 func (o *FrontPort) SetModuleNil() {
 	o.Module.Set(nil)
@@ -725,7 +724,7 @@ func (o *FrontPort) SetOccupied(v bool) {
 }
 
 func (o FrontPort) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -808,10 +807,10 @@ func (o *FrontPort) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -894,3 +893,5 @@ func (v *NullableFrontPort) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

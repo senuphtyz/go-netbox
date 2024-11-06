@@ -22,16 +22,16 @@ var _ MappedNullable = &VRFRequest{}
 type VRFRequest struct {
 	Name string `json:"name"`
 	// Unique route distinguisher (as defined in RFC 4364)
-	Rd     NullableString             `json:"rd,omitempty"`
+	Rd NullableString `json:"rd,omitempty"`
 	Tenant NullableBriefTenantRequest `json:"tenant,omitempty"`
 	// Prevent duplicate prefixes/IP addresses within this VRF
-	EnforceUnique        *bool                  `json:"enforce_unique,omitempty"`
-	Description          *string                `json:"description,omitempty"`
-	Comments             *string                `json:"comments,omitempty"`
-	ImportTargets        []int32                `json:"import_targets,omitempty"`
-	ExportTargets        []int32                `json:"export_targets,omitempty"`
-	Tags                 []NestedTagRequest     `json:"tags,omitempty"`
-	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
+	EnforceUnique *bool `json:"enforce_unique,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Comments *string `json:"comments,omitempty"`
+	ImportTargets []int32 `json:"import_targets,omitempty"`
+	ExportTargets []int32 `json:"export_targets,omitempty"`
+	Tags []NestedTagRequest `json:"tags,omitempty"`
+	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -111,7 +111,6 @@ func (o *VRFRequest) HasRd() bool {
 func (o *VRFRequest) SetRd(v string) {
 	o.Rd.Set(&v)
 }
-
 // SetRdNil sets the value for Rd to be an explicit nil
 func (o *VRFRequest) SetRdNil() {
 	o.Rd.Set(nil)
@@ -154,7 +153,6 @@ func (o *VRFRequest) HasTenant() bool {
 func (o *VRFRequest) SetTenant(v BriefTenantRequest) {
 	o.Tenant.Set(&v)
 }
-
 // SetTenantNil sets the value for Tenant to be an explicit nil
 func (o *VRFRequest) SetTenantNil() {
 	o.Tenant.Set(nil)
@@ -390,7 +388,7 @@ func (o *VRFRequest) SetCustomFields(v map[string]interface{}) {
 }
 
 func (o VRFRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -448,10 +446,10 @@ func (o *VRFRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -521,3 +519,5 @@ func (v *NullableVRFRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

@@ -11,22 +11,22 @@ API version: 4.1.4 (4.1)
 package netbox
 
 import (
-        "time"
 	"bytes"
 	"context"
 	"io"
 	"net/http"
 	"net/url"
-	"reflect"
 	"strings"
+	"reflect"
 )
+
 
 // VpnAPIService VpnAPI service
 type VpnAPIService service
 
 type ApiVpnIkePoliciesBulkDestroyRequest struct {
-	ctx              context.Context
-	ApiService       *VpnAPIService
+	ctx context.Context
+	ApiService *VpnAPIService
 	iKEPolicyRequest *[]IKEPolicyRequest
 }
 
@@ -44,22 +44,22 @@ VpnIkePoliciesBulkDestroy Method for VpnIkePoliciesBulkDestroy
 
 Delete a list of IKE policy objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIkePoliciesBulkDestroyRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnIkePoliciesBulkDestroyRequest
 */
 func (a *VpnAPIService) VpnIkePoliciesBulkDestroy(ctx context.Context) ApiVpnIkePoliciesBulkDestroyRequest {
 	return ApiVpnIkePoliciesBulkDestroyRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
 func (a *VpnAPIService) VpnIkePoliciesBulkDestroyExecute(r ApiVpnIkePoliciesBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIkePoliciesBulkDestroy")
@@ -138,8 +138,8 @@ func (a *VpnAPIService) VpnIkePoliciesBulkDestroyExecute(r ApiVpnIkePoliciesBulk
 }
 
 type ApiVpnIkePoliciesBulkPartialUpdateRequest struct {
-	ctx              context.Context
-	ApiService       *VpnAPIService
+	ctx context.Context
+	ApiService *VpnAPIService
 	iKEPolicyRequest *[]IKEPolicyRequest
 }
 
@@ -157,25 +157,24 @@ VpnIkePoliciesBulkPartialUpdate Method for VpnIkePoliciesBulkPartialUpdate
 
 Patch a list of IKE policy objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIkePoliciesBulkPartialUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnIkePoliciesBulkPartialUpdateRequest
 */
 func (a *VpnAPIService) VpnIkePoliciesBulkPartialUpdate(ctx context.Context) ApiVpnIkePoliciesBulkPartialUpdateRequest {
 	return ApiVpnIkePoliciesBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []IKEPolicy
+//  @return []IKEPolicy
 func (a *VpnAPIService) VpnIkePoliciesBulkPartialUpdateExecute(r ApiVpnIkePoliciesBulkPartialUpdateRequest) ([]IKEPolicy, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []IKEPolicy
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []IKEPolicy
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIkePoliciesBulkPartialUpdate")
@@ -263,8 +262,8 @@ func (a *VpnAPIService) VpnIkePoliciesBulkPartialUpdateExecute(r ApiVpnIkePolici
 }
 
 type ApiVpnIkePoliciesBulkUpdateRequest struct {
-	ctx              context.Context
-	ApiService       *VpnAPIService
+	ctx context.Context
+	ApiService *VpnAPIService
 	iKEPolicyRequest *[]IKEPolicyRequest
 }
 
@@ -282,25 +281,24 @@ VpnIkePoliciesBulkUpdate Method for VpnIkePoliciesBulkUpdate
 
 Put a list of IKE policy objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIkePoliciesBulkUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnIkePoliciesBulkUpdateRequest
 */
 func (a *VpnAPIService) VpnIkePoliciesBulkUpdate(ctx context.Context) ApiVpnIkePoliciesBulkUpdateRequest {
 	return ApiVpnIkePoliciesBulkUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []IKEPolicy
+//  @return []IKEPolicy
 func (a *VpnAPIService) VpnIkePoliciesBulkUpdateExecute(r ApiVpnIkePoliciesBulkUpdateRequest) ([]IKEPolicy, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPut
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []IKEPolicy
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []IKEPolicy
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIkePoliciesBulkUpdate")
@@ -388,8 +386,8 @@ func (a *VpnAPIService) VpnIkePoliciesBulkUpdateExecute(r ApiVpnIkePoliciesBulkU
 }
 
 type ApiVpnIkePoliciesCreateRequest struct {
-	ctx                      context.Context
-	ApiService               *VpnAPIService
+	ctx context.Context
+	ApiService *VpnAPIService
 	writableIKEPolicyRequest *WritableIKEPolicyRequest
 }
 
@@ -407,25 +405,24 @@ VpnIkePoliciesCreate Method for VpnIkePoliciesCreate
 
 Post a list of IKE policy objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIkePoliciesCreateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnIkePoliciesCreateRequest
 */
 func (a *VpnAPIService) VpnIkePoliciesCreate(ctx context.Context) ApiVpnIkePoliciesCreateRequest {
 	return ApiVpnIkePoliciesCreateRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return IKEPolicy
+//  @return IKEPolicy
 func (a *VpnAPIService) VpnIkePoliciesCreateExecute(r ApiVpnIkePoliciesCreateRequest) (*IKEPolicy, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *IKEPolicy
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *IKEPolicy
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIkePoliciesCreate")
@@ -513,9 +510,9 @@ func (a *VpnAPIService) VpnIkePoliciesCreateExecute(r ApiVpnIkePoliciesCreateReq
 }
 
 type ApiVpnIkePoliciesDestroyRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *VpnAPIService
-	id         int32
+	id int32
 }
 
 func (r ApiVpnIkePoliciesDestroyRequest) Execute() (*http.Response, error) {
@@ -527,24 +524,24 @@ VpnIkePoliciesDestroy Method for VpnIkePoliciesDestroy
 
 Delete a IKE policy object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this IKE policy.
-	@return ApiVpnIkePoliciesDestroyRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this IKE policy.
+ @return ApiVpnIkePoliciesDestroyRequest
 */
 func (a *VpnAPIService) VpnIkePoliciesDestroy(ctx context.Context, id int32) ApiVpnIkePoliciesDestroyRequest {
 	return ApiVpnIkePoliciesDestroyRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
 func (a *VpnAPIService) VpnIkePoliciesDestroyExecute(r ApiVpnIkePoliciesDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIkePoliciesDestroy")
@@ -619,95 +616,95 @@ func (a *VpnAPIService) VpnIkePoliciesDestroyExecute(r ApiVpnIkePoliciesDestroyR
 }
 
 type ApiVpnIkePoliciesListRequest struct {
-	ctx               context.Context
-	ApiService        *VpnAPIService
-	created           *[]time.Time
-	createdEmpty      *[]time.Time
-	createdGt         *[]time.Time
-	createdGte        *[]time.Time
-	createdLt         *[]time.Time
-	createdLte        *[]time.Time
-	createdN          *[]time.Time
-	createdByRequest  *string
-	description       *[]string
-	descriptionEmpty  *bool
-	descriptionIc     *[]string
-	descriptionIe     *[]string
-	descriptionIew    *[]string
-	descriptionIsw    *[]string
-	descriptionN      *[]string
-	descriptionNic    *[]string
-	descriptionNie    *[]string
-	descriptionNiew   *[]string
-	descriptionNisw   *[]string
-	id                *[]int32
-	idEmpty           *bool
-	idGt              *[]int32
-	idGte             *[]int32
-	idLt              *[]int32
-	idLte             *[]int32
-	idN               *[]int32
-	ikeProposal       *[]string
-	ikeProposalN      *[]string
-	ikeProposalId     *[]int32
-	ikeProposalIdN    *[]int32
-	lastUpdated       *[]time.Time
-	lastUpdatedEmpty  *[]time.Time
-	lastUpdatedGt     *[]time.Time
-	lastUpdatedGte    *[]time.Time
-	lastUpdatedLt     *[]time.Time
-	lastUpdatedLte    *[]time.Time
-	lastUpdatedN      *[]time.Time
-	limit             *int32
-	mode              *[]string
-	modeEmpty         *bool
-	modeIc            *[]string
-	modeIe            *[]string
-	modeIew           *[]string
-	modeIsw           *[]string
-	modeN             *[]string
-	modeNic           *[]string
-	modeNie           *[]string
-	modeNiew          *[]string
-	modeNisw          *[]string
+	ctx context.Context
+	ApiService *VpnAPIService
+	created *[]time.Time
+	createdEmpty *[]time.Time
+	createdGt *[]time.Time
+	createdGte *[]time.Time
+	createdLt *[]time.Time
+	createdLte *[]time.Time
+	createdN *[]time.Time
+	createdByRequest *string
+	description *[]string
+	descriptionEmpty *bool
+	descriptionIc *[]string
+	descriptionIe *[]string
+	descriptionIew *[]string
+	descriptionIsw *[]string
+	descriptionN *[]string
+	descriptionNic *[]string
+	descriptionNie *[]string
+	descriptionNiew *[]string
+	descriptionNisw *[]string
+	id *[]int32
+	idEmpty *bool
+	idGt *[]int32
+	idGte *[]int32
+	idLt *[]int32
+	idLte *[]int32
+	idN *[]int32
+	ikeProposal *[]string
+	ikeProposalN *[]string
+	ikeProposalId *[]int32
+	ikeProposalIdN *[]int32
+	lastUpdated *[]time.Time
+	lastUpdatedEmpty *[]time.Time
+	lastUpdatedGt *[]time.Time
+	lastUpdatedGte *[]time.Time
+	lastUpdatedLt *[]time.Time
+	lastUpdatedLte *[]time.Time
+	lastUpdatedN *[]time.Time
+	limit *int32
+	mode *[]string
+	modeEmpty *bool
+	modeIc *[]string
+	modeIe *[]string
+	modeIew *[]string
+	modeIsw *[]string
+	modeN *[]string
+	modeNic *[]string
+	modeNie *[]string
+	modeNiew *[]string
+	modeNisw *[]string
 	modifiedByRequest *string
-	name              *[]string
-	nameEmpty         *bool
-	nameIc            *[]string
-	nameIe            *[]string
-	nameIew           *[]string
-	nameIsw           *[]string
-	nameN             *[]string
-	nameNic           *[]string
-	nameNie           *[]string
-	nameNiew          *[]string
-	nameNisw          *[]string
-	offset            *int32
-	ordering          *string
-	presharedKey      *string
-	presharedKeyIc    *string
-	presharedKeyIe    *string
-	presharedKeyIew   *string
-	presharedKeyIsw   *string
-	presharedKeyN     *string
-	presharedKeyNic   *string
-	presharedKeyNie   *string
-	presharedKeyNiew  *string
-	presharedKeyNisw  *string
-	q                 *string
-	tag               *[]string
-	tagN              *[]string
-	updatedByRequest  *string
-	version           *[]int32
-	versionIc         *[]int32
-	versionIe         *[]int32
-	versionIew        *[]int32
-	versionIsw        *[]int32
-	versionN          *[]int32
-	versionNic        *[]int32
-	versionNie        *[]int32
-	versionNiew       *[]int32
-	versionNisw       *[]int32
+	name *[]string
+	nameEmpty *bool
+	nameIc *[]string
+	nameIe *[]string
+	nameIew *[]string
+	nameIsw *[]string
+	nameN *[]string
+	nameNic *[]string
+	nameNie *[]string
+	nameNiew *[]string
+	nameNisw *[]string
+	offset *int32
+	ordering *string
+	presharedKey *string
+	presharedKeyIc *string
+	presharedKeyIe *string
+	presharedKeyIew *string
+	presharedKeyIsw *string
+	presharedKeyN *string
+	presharedKeyNic *string
+	presharedKeyNie *string
+	presharedKeyNiew *string
+	presharedKeyNisw *string
+	q *string
+	tag *[]string
+	tagN *[]string
+	updatedByRequest *string
+	version *[]int32
+	versionIc *[]int32
+	versionIe *[]int32
+	versionIew *[]int32
+	versionIsw *[]int32
+	versionN *[]int32
+	versionNic *[]int32
+	versionNie *[]int32
+	versionNiew *[]int32
+	versionNisw *[]int32
 }
 
 func (r ApiVpnIkePoliciesListRequest) Created(created []time.Time) ApiVpnIkePoliciesListRequest {
@@ -1158,25 +1155,24 @@ VpnIkePoliciesList Method for VpnIkePoliciesList
 
 Get a list of IKE policy objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIkePoliciesListRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnIkePoliciesListRequest
 */
 func (a *VpnAPIService) VpnIkePoliciesList(ctx context.Context) ApiVpnIkePoliciesListRequest {
 	return ApiVpnIkePoliciesListRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return PaginatedIKEPolicyList
+//  @return PaginatedIKEPolicyList
 func (a *VpnAPIService) VpnIkePoliciesListExecute(r ApiVpnIkePoliciesListRequest) (*PaginatedIKEPolicyList, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PaginatedIKEPolicyList
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PaginatedIKEPolicyList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIkePoliciesList")
@@ -2048,9 +2044,9 @@ func (a *VpnAPIService) VpnIkePoliciesListExecute(r ApiVpnIkePoliciesListRequest
 }
 
 type ApiVpnIkePoliciesPartialUpdateRequest struct {
-	ctx                             context.Context
-	ApiService                      *VpnAPIService
-	id                              int32
+	ctx context.Context
+	ApiService *VpnAPIService
+	id int32
 	patchedWritableIKEPolicyRequest *PatchedWritableIKEPolicyRequest
 }
 
@@ -2068,27 +2064,26 @@ VpnIkePoliciesPartialUpdate Method for VpnIkePoliciesPartialUpdate
 
 Patch a IKE policy object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this IKE policy.
-	@return ApiVpnIkePoliciesPartialUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this IKE policy.
+ @return ApiVpnIkePoliciesPartialUpdateRequest
 */
 func (a *VpnAPIService) VpnIkePoliciesPartialUpdate(ctx context.Context, id int32) ApiVpnIkePoliciesPartialUpdateRequest {
 	return ApiVpnIkePoliciesPartialUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return IKEPolicy
+//  @return IKEPolicy
 func (a *VpnAPIService) VpnIkePoliciesPartialUpdateExecute(r ApiVpnIkePoliciesPartialUpdateRequest) (*IKEPolicy, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *IKEPolicy
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *IKEPolicy
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIkePoliciesPartialUpdate")
@@ -2174,9 +2169,9 @@ func (a *VpnAPIService) VpnIkePoliciesPartialUpdateExecute(r ApiVpnIkePoliciesPa
 }
 
 type ApiVpnIkePoliciesRetrieveRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *VpnAPIService
-	id         int32
+	id int32
 }
 
 func (r ApiVpnIkePoliciesRetrieveRequest) Execute() (*IKEPolicy, *http.Response, error) {
@@ -2188,27 +2183,26 @@ VpnIkePoliciesRetrieve Method for VpnIkePoliciesRetrieve
 
 Get a IKE policy object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this IKE policy.
-	@return ApiVpnIkePoliciesRetrieveRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this IKE policy.
+ @return ApiVpnIkePoliciesRetrieveRequest
 */
 func (a *VpnAPIService) VpnIkePoliciesRetrieve(ctx context.Context, id int32) ApiVpnIkePoliciesRetrieveRequest {
 	return ApiVpnIkePoliciesRetrieveRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return IKEPolicy
+//  @return IKEPolicy
 func (a *VpnAPIService) VpnIkePoliciesRetrieveExecute(r ApiVpnIkePoliciesRetrieveRequest) (*IKEPolicy, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *IKEPolicy
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *IKEPolicy
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIkePoliciesRetrieve")
@@ -2292,9 +2286,9 @@ func (a *VpnAPIService) VpnIkePoliciesRetrieveExecute(r ApiVpnIkePoliciesRetriev
 }
 
 type ApiVpnIkePoliciesUpdateRequest struct {
-	ctx                      context.Context
-	ApiService               *VpnAPIService
-	id                       int32
+	ctx context.Context
+	ApiService *VpnAPIService
+	id int32
 	writableIKEPolicyRequest *WritableIKEPolicyRequest
 }
 
@@ -2312,27 +2306,26 @@ VpnIkePoliciesUpdate Method for VpnIkePoliciesUpdate
 
 Put a IKE policy object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this IKE policy.
-	@return ApiVpnIkePoliciesUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this IKE policy.
+ @return ApiVpnIkePoliciesUpdateRequest
 */
 func (a *VpnAPIService) VpnIkePoliciesUpdate(ctx context.Context, id int32) ApiVpnIkePoliciesUpdateRequest {
 	return ApiVpnIkePoliciesUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return IKEPolicy
+//  @return IKEPolicy
 func (a *VpnAPIService) VpnIkePoliciesUpdateExecute(r ApiVpnIkePoliciesUpdateRequest) (*IKEPolicy, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPut
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *IKEPolicy
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *IKEPolicy
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIkePoliciesUpdate")
@@ -2421,8 +2414,8 @@ func (a *VpnAPIService) VpnIkePoliciesUpdateExecute(r ApiVpnIkePoliciesUpdateReq
 }
 
 type ApiVpnIkeProposalsBulkDestroyRequest struct {
-	ctx                context.Context
-	ApiService         *VpnAPIService
+	ctx context.Context
+	ApiService *VpnAPIService
 	iKEProposalRequest *[]IKEProposalRequest
 }
 
@@ -2440,22 +2433,22 @@ VpnIkeProposalsBulkDestroy Method for VpnIkeProposalsBulkDestroy
 
 Delete a list of IKE proposal objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIkeProposalsBulkDestroyRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnIkeProposalsBulkDestroyRequest
 */
 func (a *VpnAPIService) VpnIkeProposalsBulkDestroy(ctx context.Context) ApiVpnIkeProposalsBulkDestroyRequest {
 	return ApiVpnIkeProposalsBulkDestroyRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
 func (a *VpnAPIService) VpnIkeProposalsBulkDestroyExecute(r ApiVpnIkeProposalsBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIkeProposalsBulkDestroy")
@@ -2534,8 +2527,8 @@ func (a *VpnAPIService) VpnIkeProposalsBulkDestroyExecute(r ApiVpnIkeProposalsBu
 }
 
 type ApiVpnIkeProposalsBulkPartialUpdateRequest struct {
-	ctx                context.Context
-	ApiService         *VpnAPIService
+	ctx context.Context
+	ApiService *VpnAPIService
 	iKEProposalRequest *[]IKEProposalRequest
 }
 
@@ -2553,25 +2546,24 @@ VpnIkeProposalsBulkPartialUpdate Method for VpnIkeProposalsBulkPartialUpdate
 
 Patch a list of IKE proposal objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIkeProposalsBulkPartialUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnIkeProposalsBulkPartialUpdateRequest
 */
 func (a *VpnAPIService) VpnIkeProposalsBulkPartialUpdate(ctx context.Context) ApiVpnIkeProposalsBulkPartialUpdateRequest {
 	return ApiVpnIkeProposalsBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []IKEProposal
+//  @return []IKEProposal
 func (a *VpnAPIService) VpnIkeProposalsBulkPartialUpdateExecute(r ApiVpnIkeProposalsBulkPartialUpdateRequest) ([]IKEProposal, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []IKEProposal
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []IKEProposal
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIkeProposalsBulkPartialUpdate")
@@ -2659,8 +2651,8 @@ func (a *VpnAPIService) VpnIkeProposalsBulkPartialUpdateExecute(r ApiVpnIkePropo
 }
 
 type ApiVpnIkeProposalsBulkUpdateRequest struct {
-	ctx                context.Context
-	ApiService         *VpnAPIService
+	ctx context.Context
+	ApiService *VpnAPIService
 	iKEProposalRequest *[]IKEProposalRequest
 }
 
@@ -2678,25 +2670,24 @@ VpnIkeProposalsBulkUpdate Method for VpnIkeProposalsBulkUpdate
 
 Put a list of IKE proposal objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIkeProposalsBulkUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnIkeProposalsBulkUpdateRequest
 */
 func (a *VpnAPIService) VpnIkeProposalsBulkUpdate(ctx context.Context) ApiVpnIkeProposalsBulkUpdateRequest {
 	return ApiVpnIkeProposalsBulkUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []IKEProposal
+//  @return []IKEProposal
 func (a *VpnAPIService) VpnIkeProposalsBulkUpdateExecute(r ApiVpnIkeProposalsBulkUpdateRequest) ([]IKEProposal, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPut
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []IKEProposal
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []IKEProposal
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIkeProposalsBulkUpdate")
@@ -2784,8 +2775,8 @@ func (a *VpnAPIService) VpnIkeProposalsBulkUpdateExecute(r ApiVpnIkeProposalsBul
 }
 
 type ApiVpnIkeProposalsCreateRequest struct {
-	ctx                        context.Context
-	ApiService                 *VpnAPIService
+	ctx context.Context
+	ApiService *VpnAPIService
 	writableIKEProposalRequest *WritableIKEProposalRequest
 }
 
@@ -2803,25 +2794,24 @@ VpnIkeProposalsCreate Method for VpnIkeProposalsCreate
 
 Post a list of IKE proposal objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIkeProposalsCreateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnIkeProposalsCreateRequest
 */
 func (a *VpnAPIService) VpnIkeProposalsCreate(ctx context.Context) ApiVpnIkeProposalsCreateRequest {
 	return ApiVpnIkeProposalsCreateRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return IKEProposal
+//  @return IKEProposal
 func (a *VpnAPIService) VpnIkeProposalsCreateExecute(r ApiVpnIkeProposalsCreateRequest) (*IKEProposal, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *IKEProposal
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *IKEProposal
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIkeProposalsCreate")
@@ -2909,9 +2899,9 @@ func (a *VpnAPIService) VpnIkeProposalsCreateExecute(r ApiVpnIkeProposalsCreateR
 }
 
 type ApiVpnIkeProposalsDestroyRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *VpnAPIService
-	id         int32
+	id int32
 }
 
 func (r ApiVpnIkeProposalsDestroyRequest) Execute() (*http.Response, error) {
@@ -2923,24 +2913,24 @@ VpnIkeProposalsDestroy Method for VpnIkeProposalsDestroy
 
 Delete a IKE proposal object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this IKE proposal.
-	@return ApiVpnIkeProposalsDestroyRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this IKE proposal.
+ @return ApiVpnIkeProposalsDestroyRequest
 */
 func (a *VpnAPIService) VpnIkeProposalsDestroy(ctx context.Context, id int32) ApiVpnIkeProposalsDestroyRequest {
 	return ApiVpnIkeProposalsDestroyRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
 func (a *VpnAPIService) VpnIkeProposalsDestroyExecute(r ApiVpnIkeProposalsDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIkeProposalsDestroy")
@@ -3015,114 +3005,114 @@ func (a *VpnAPIService) VpnIkeProposalsDestroyExecute(r ApiVpnIkeProposalsDestro
 }
 
 type ApiVpnIkeProposalsListRequest struct {
-	ctx                          context.Context
-	ApiService                   *VpnAPIService
-	authenticationAlgorithm      *[]string
+	ctx context.Context
+	ApiService *VpnAPIService
+	authenticationAlgorithm *[]string
 	authenticationAlgorithmEmpty *bool
-	authenticationAlgorithmIc    *[]string
-	authenticationAlgorithmIe    *[]string
-	authenticationAlgorithmIew   *[]string
-	authenticationAlgorithmIsw   *[]string
-	authenticationAlgorithmN     *[]string
-	authenticationAlgorithmNic   *[]string
-	authenticationAlgorithmNie   *[]string
-	authenticationAlgorithmNiew  *[]string
-	authenticationAlgorithmNisw  *[]string
-	authenticationMethod         *[]string
-	authenticationMethodEmpty    *bool
-	authenticationMethodIc       *[]string
-	authenticationMethodIe       *[]string
-	authenticationMethodIew      *[]string
-	authenticationMethodIsw      *[]string
-	authenticationMethodN        *[]string
-	authenticationMethodNic      *[]string
-	authenticationMethodNie      *[]string
-	authenticationMethodNiew     *[]string
-	authenticationMethodNisw     *[]string
-	created                      *[]time.Time
-	createdEmpty                 *[]time.Time
-	createdGt                    *[]time.Time
-	createdGte                   *[]time.Time
-	createdLt                    *[]time.Time
-	createdLte                   *[]time.Time
-	createdN                     *[]time.Time
-	createdByRequest             *string
-	description                  *[]string
-	descriptionEmpty             *bool
-	descriptionIc                *[]string
-	descriptionIe                *[]string
-	descriptionIew               *[]string
-	descriptionIsw               *[]string
-	descriptionN                 *[]string
-	descriptionNic               *[]string
-	descriptionNie               *[]string
-	descriptionNiew              *[]string
-	descriptionNisw              *[]string
-	encryptionAlgorithm          *[]string
-	encryptionAlgorithmEmpty     *bool
-	encryptionAlgorithmIc        *[]string
-	encryptionAlgorithmIe        *[]string
-	encryptionAlgorithmIew       *[]string
-	encryptionAlgorithmIsw       *[]string
-	encryptionAlgorithmN         *[]string
-	encryptionAlgorithmNic       *[]string
-	encryptionAlgorithmNie       *[]string
-	encryptionAlgorithmNiew      *[]string
-	encryptionAlgorithmNisw      *[]string
-	group                        *[]int32
-	groupIc                      *[]int32
-	groupIe                      *[]int32
-	groupIew                     *[]int32
-	groupIsw                     *[]int32
-	groupN                       *[]int32
-	groupNic                     *[]int32
-	groupNie                     *[]int32
-	groupNiew                    *[]int32
-	groupNisw                    *[]int32
-	id                           *[]int32
-	idEmpty                      *bool
-	idGt                         *[]int32
-	idGte                        *[]int32
-	idLt                         *[]int32
-	idLte                        *[]int32
-	idN                          *[]int32
-	ikePolicy                    *[]string
-	ikePolicyN                   *[]string
-	ikePolicyId                  *[]int32
-	ikePolicyIdN                 *[]int32
-	lastUpdated                  *[]time.Time
-	lastUpdatedEmpty             *[]time.Time
-	lastUpdatedGt                *[]time.Time
-	lastUpdatedGte               *[]time.Time
-	lastUpdatedLt                *[]time.Time
-	lastUpdatedLte               *[]time.Time
-	lastUpdatedN                 *[]time.Time
-	limit                        *int32
-	modifiedByRequest            *string
-	name                         *[]string
-	nameEmpty                    *bool
-	nameIc                       *[]string
-	nameIe                       *[]string
-	nameIew                      *[]string
-	nameIsw                      *[]string
-	nameN                        *[]string
-	nameNic                      *[]string
-	nameNie                      *[]string
-	nameNiew                     *[]string
-	nameNisw                     *[]string
-	offset                       *int32
-	ordering                     *string
-	q                            *string
-	saLifetime                   *[]int32
-	saLifetimeEmpty              *bool
-	saLifetimeGt                 *[]int32
-	saLifetimeGte                *[]int32
-	saLifetimeLt                 *[]int32
-	saLifetimeLte                *[]int32
-	saLifetimeN                  *[]int32
-	tag                          *[]string
-	tagN                         *[]string
-	updatedByRequest             *string
+	authenticationAlgorithmIc *[]string
+	authenticationAlgorithmIe *[]string
+	authenticationAlgorithmIew *[]string
+	authenticationAlgorithmIsw *[]string
+	authenticationAlgorithmN *[]string
+	authenticationAlgorithmNic *[]string
+	authenticationAlgorithmNie *[]string
+	authenticationAlgorithmNiew *[]string
+	authenticationAlgorithmNisw *[]string
+	authenticationMethod *[]string
+	authenticationMethodEmpty *bool
+	authenticationMethodIc *[]string
+	authenticationMethodIe *[]string
+	authenticationMethodIew *[]string
+	authenticationMethodIsw *[]string
+	authenticationMethodN *[]string
+	authenticationMethodNic *[]string
+	authenticationMethodNie *[]string
+	authenticationMethodNiew *[]string
+	authenticationMethodNisw *[]string
+	created *[]time.Time
+	createdEmpty *[]time.Time
+	createdGt *[]time.Time
+	createdGte *[]time.Time
+	createdLt *[]time.Time
+	createdLte *[]time.Time
+	createdN *[]time.Time
+	createdByRequest *string
+	description *[]string
+	descriptionEmpty *bool
+	descriptionIc *[]string
+	descriptionIe *[]string
+	descriptionIew *[]string
+	descriptionIsw *[]string
+	descriptionN *[]string
+	descriptionNic *[]string
+	descriptionNie *[]string
+	descriptionNiew *[]string
+	descriptionNisw *[]string
+	encryptionAlgorithm *[]string
+	encryptionAlgorithmEmpty *bool
+	encryptionAlgorithmIc *[]string
+	encryptionAlgorithmIe *[]string
+	encryptionAlgorithmIew *[]string
+	encryptionAlgorithmIsw *[]string
+	encryptionAlgorithmN *[]string
+	encryptionAlgorithmNic *[]string
+	encryptionAlgorithmNie *[]string
+	encryptionAlgorithmNiew *[]string
+	encryptionAlgorithmNisw *[]string
+	group *[]int32
+	groupIc *[]int32
+	groupIe *[]int32
+	groupIew *[]int32
+	groupIsw *[]int32
+	groupN *[]int32
+	groupNic *[]int32
+	groupNie *[]int32
+	groupNiew *[]int32
+	groupNisw *[]int32
+	id *[]int32
+	idEmpty *bool
+	idGt *[]int32
+	idGte *[]int32
+	idLt *[]int32
+	idLte *[]int32
+	idN *[]int32
+	ikePolicy *[]string
+	ikePolicyN *[]string
+	ikePolicyId *[]int32
+	ikePolicyIdN *[]int32
+	lastUpdated *[]time.Time
+	lastUpdatedEmpty *[]time.Time
+	lastUpdatedGt *[]time.Time
+	lastUpdatedGte *[]time.Time
+	lastUpdatedLt *[]time.Time
+	lastUpdatedLte *[]time.Time
+	lastUpdatedN *[]time.Time
+	limit *int32
+	modifiedByRequest *string
+	name *[]string
+	nameEmpty *bool
+	nameIc *[]string
+	nameIe *[]string
+	nameIew *[]string
+	nameIsw *[]string
+	nameN *[]string
+	nameNic *[]string
+	nameNie *[]string
+	nameNiew *[]string
+	nameNisw *[]string
+	offset *int32
+	ordering *string
+	q *string
+	saLifetime *[]int32
+	saLifetimeEmpty *bool
+	saLifetimeGt *[]int32
+	saLifetimeGte *[]int32
+	saLifetimeLt *[]int32
+	saLifetimeLte *[]int32
+	saLifetimeN *[]int32
+	tag *[]string
+	tagN *[]string
+	updatedByRequest *string
 }
 
 func (r ApiVpnIkeProposalsListRequest) AuthenticationAlgorithm(authenticationAlgorithm []string) ApiVpnIkeProposalsListRequest {
@@ -3682,25 +3672,24 @@ VpnIkeProposalsList Method for VpnIkeProposalsList
 
 Get a list of IKE proposal objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIkeProposalsListRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnIkeProposalsListRequest
 */
 func (a *VpnAPIService) VpnIkeProposalsList(ctx context.Context) ApiVpnIkeProposalsListRequest {
 	return ApiVpnIkeProposalsListRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return PaginatedIKEProposalList
+//  @return PaginatedIKEProposalList
 func (a *VpnAPIService) VpnIkeProposalsListExecute(r ApiVpnIkeProposalsListRequest) (*PaginatedIKEProposalList, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PaginatedIKEProposalList
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PaginatedIKEProposalList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIkeProposalsList")
@@ -4837,9 +4826,9 @@ func (a *VpnAPIService) VpnIkeProposalsListExecute(r ApiVpnIkeProposalsListReque
 }
 
 type ApiVpnIkeProposalsPartialUpdateRequest struct {
-	ctx                               context.Context
-	ApiService                        *VpnAPIService
-	id                                int32
+	ctx context.Context
+	ApiService *VpnAPIService
+	id int32
 	patchedWritableIKEProposalRequest *PatchedWritableIKEProposalRequest
 }
 
@@ -4857,27 +4846,26 @@ VpnIkeProposalsPartialUpdate Method for VpnIkeProposalsPartialUpdate
 
 Patch a IKE proposal object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this IKE proposal.
-	@return ApiVpnIkeProposalsPartialUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this IKE proposal.
+ @return ApiVpnIkeProposalsPartialUpdateRequest
 */
 func (a *VpnAPIService) VpnIkeProposalsPartialUpdate(ctx context.Context, id int32) ApiVpnIkeProposalsPartialUpdateRequest {
 	return ApiVpnIkeProposalsPartialUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return IKEProposal
+//  @return IKEProposal
 func (a *VpnAPIService) VpnIkeProposalsPartialUpdateExecute(r ApiVpnIkeProposalsPartialUpdateRequest) (*IKEProposal, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *IKEProposal
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *IKEProposal
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIkeProposalsPartialUpdate")
@@ -4963,9 +4951,9 @@ func (a *VpnAPIService) VpnIkeProposalsPartialUpdateExecute(r ApiVpnIkeProposals
 }
 
 type ApiVpnIkeProposalsRetrieveRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *VpnAPIService
-	id         int32
+	id int32
 }
 
 func (r ApiVpnIkeProposalsRetrieveRequest) Execute() (*IKEProposal, *http.Response, error) {
@@ -4977,27 +4965,26 @@ VpnIkeProposalsRetrieve Method for VpnIkeProposalsRetrieve
 
 Get a IKE proposal object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this IKE proposal.
-	@return ApiVpnIkeProposalsRetrieveRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this IKE proposal.
+ @return ApiVpnIkeProposalsRetrieveRequest
 */
 func (a *VpnAPIService) VpnIkeProposalsRetrieve(ctx context.Context, id int32) ApiVpnIkeProposalsRetrieveRequest {
 	return ApiVpnIkeProposalsRetrieveRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return IKEProposal
+//  @return IKEProposal
 func (a *VpnAPIService) VpnIkeProposalsRetrieveExecute(r ApiVpnIkeProposalsRetrieveRequest) (*IKEProposal, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *IKEProposal
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *IKEProposal
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIkeProposalsRetrieve")
@@ -5081,9 +5068,9 @@ func (a *VpnAPIService) VpnIkeProposalsRetrieveExecute(r ApiVpnIkeProposalsRetri
 }
 
 type ApiVpnIkeProposalsUpdateRequest struct {
-	ctx                        context.Context
-	ApiService                 *VpnAPIService
-	id                         int32
+	ctx context.Context
+	ApiService *VpnAPIService
+	id int32
 	writableIKEProposalRequest *WritableIKEProposalRequest
 }
 
@@ -5101,27 +5088,26 @@ VpnIkeProposalsUpdate Method for VpnIkeProposalsUpdate
 
 Put a IKE proposal object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this IKE proposal.
-	@return ApiVpnIkeProposalsUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this IKE proposal.
+ @return ApiVpnIkeProposalsUpdateRequest
 */
 func (a *VpnAPIService) VpnIkeProposalsUpdate(ctx context.Context, id int32) ApiVpnIkeProposalsUpdateRequest {
 	return ApiVpnIkeProposalsUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return IKEProposal
+//  @return IKEProposal
 func (a *VpnAPIService) VpnIkeProposalsUpdateExecute(r ApiVpnIkeProposalsUpdateRequest) (*IKEProposal, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPut
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *IKEProposal
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *IKEProposal
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIkeProposalsUpdate")
@@ -5210,8 +5196,8 @@ func (a *VpnAPIService) VpnIkeProposalsUpdateExecute(r ApiVpnIkeProposalsUpdateR
 }
 
 type ApiVpnIpsecPoliciesBulkDestroyRequest struct {
-	ctx                context.Context
-	ApiService         *VpnAPIService
+	ctx context.Context
+	ApiService *VpnAPIService
 	iPSecPolicyRequest *[]IPSecPolicyRequest
 }
 
@@ -5229,22 +5215,22 @@ VpnIpsecPoliciesBulkDestroy Method for VpnIpsecPoliciesBulkDestroy
 
 Delete a list of IPSec policy objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIpsecPoliciesBulkDestroyRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnIpsecPoliciesBulkDestroyRequest
 */
 func (a *VpnAPIService) VpnIpsecPoliciesBulkDestroy(ctx context.Context) ApiVpnIpsecPoliciesBulkDestroyRequest {
 	return ApiVpnIpsecPoliciesBulkDestroyRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
 func (a *VpnAPIService) VpnIpsecPoliciesBulkDestroyExecute(r ApiVpnIpsecPoliciesBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIpsecPoliciesBulkDestroy")
@@ -5323,8 +5309,8 @@ func (a *VpnAPIService) VpnIpsecPoliciesBulkDestroyExecute(r ApiVpnIpsecPolicies
 }
 
 type ApiVpnIpsecPoliciesBulkPartialUpdateRequest struct {
-	ctx                context.Context
-	ApiService         *VpnAPIService
+	ctx context.Context
+	ApiService *VpnAPIService
 	iPSecPolicyRequest *[]IPSecPolicyRequest
 }
 
@@ -5342,25 +5328,24 @@ VpnIpsecPoliciesBulkPartialUpdate Method for VpnIpsecPoliciesBulkPartialUpdate
 
 Patch a list of IPSec policy objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIpsecPoliciesBulkPartialUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnIpsecPoliciesBulkPartialUpdateRequest
 */
 func (a *VpnAPIService) VpnIpsecPoliciesBulkPartialUpdate(ctx context.Context) ApiVpnIpsecPoliciesBulkPartialUpdateRequest {
 	return ApiVpnIpsecPoliciesBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []IPSecPolicy
+//  @return []IPSecPolicy
 func (a *VpnAPIService) VpnIpsecPoliciesBulkPartialUpdateExecute(r ApiVpnIpsecPoliciesBulkPartialUpdateRequest) ([]IPSecPolicy, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []IPSecPolicy
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []IPSecPolicy
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIpsecPoliciesBulkPartialUpdate")
@@ -5448,8 +5433,8 @@ func (a *VpnAPIService) VpnIpsecPoliciesBulkPartialUpdateExecute(r ApiVpnIpsecPo
 }
 
 type ApiVpnIpsecPoliciesBulkUpdateRequest struct {
-	ctx                context.Context
-	ApiService         *VpnAPIService
+	ctx context.Context
+	ApiService *VpnAPIService
 	iPSecPolicyRequest *[]IPSecPolicyRequest
 }
 
@@ -5467,25 +5452,24 @@ VpnIpsecPoliciesBulkUpdate Method for VpnIpsecPoliciesBulkUpdate
 
 Put a list of IPSec policy objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIpsecPoliciesBulkUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnIpsecPoliciesBulkUpdateRequest
 */
 func (a *VpnAPIService) VpnIpsecPoliciesBulkUpdate(ctx context.Context) ApiVpnIpsecPoliciesBulkUpdateRequest {
 	return ApiVpnIpsecPoliciesBulkUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []IPSecPolicy
+//  @return []IPSecPolicy
 func (a *VpnAPIService) VpnIpsecPoliciesBulkUpdateExecute(r ApiVpnIpsecPoliciesBulkUpdateRequest) ([]IPSecPolicy, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPut
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []IPSecPolicy
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []IPSecPolicy
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIpsecPoliciesBulkUpdate")
@@ -5573,8 +5557,8 @@ func (a *VpnAPIService) VpnIpsecPoliciesBulkUpdateExecute(r ApiVpnIpsecPoliciesB
 }
 
 type ApiVpnIpsecPoliciesCreateRequest struct {
-	ctx                        context.Context
-	ApiService                 *VpnAPIService
+	ctx context.Context
+	ApiService *VpnAPIService
 	writableIPSecPolicyRequest *WritableIPSecPolicyRequest
 }
 
@@ -5592,25 +5576,24 @@ VpnIpsecPoliciesCreate Method for VpnIpsecPoliciesCreate
 
 Post a list of IPSec policy objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIpsecPoliciesCreateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnIpsecPoliciesCreateRequest
 */
 func (a *VpnAPIService) VpnIpsecPoliciesCreate(ctx context.Context) ApiVpnIpsecPoliciesCreateRequest {
 	return ApiVpnIpsecPoliciesCreateRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return IPSecPolicy
+//  @return IPSecPolicy
 func (a *VpnAPIService) VpnIpsecPoliciesCreateExecute(r ApiVpnIpsecPoliciesCreateRequest) (*IPSecPolicy, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *IPSecPolicy
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *IPSecPolicy
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIpsecPoliciesCreate")
@@ -5698,9 +5681,9 @@ func (a *VpnAPIService) VpnIpsecPoliciesCreateExecute(r ApiVpnIpsecPoliciesCreat
 }
 
 type ApiVpnIpsecPoliciesDestroyRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *VpnAPIService
-	id         int32
+	id int32
 }
 
 func (r ApiVpnIpsecPoliciesDestroyRequest) Execute() (*http.Response, error) {
@@ -5712,24 +5695,24 @@ VpnIpsecPoliciesDestroy Method for VpnIpsecPoliciesDestroy
 
 Delete a IPSec policy object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this IPSec policy.
-	@return ApiVpnIpsecPoliciesDestroyRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this IPSec policy.
+ @return ApiVpnIpsecPoliciesDestroyRequest
 */
 func (a *VpnAPIService) VpnIpsecPoliciesDestroy(ctx context.Context, id int32) ApiVpnIpsecPoliciesDestroyRequest {
 	return ApiVpnIpsecPoliciesDestroyRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
 func (a *VpnAPIService) VpnIpsecPoliciesDestroyExecute(r ApiVpnIpsecPoliciesDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIpsecPoliciesDestroy")
@@ -5804,74 +5787,74 @@ func (a *VpnAPIService) VpnIpsecPoliciesDestroyExecute(r ApiVpnIpsecPoliciesDest
 }
 
 type ApiVpnIpsecPoliciesListRequest struct {
-	ctx               context.Context
-	ApiService        *VpnAPIService
-	created           *[]time.Time
-	createdEmpty      *[]time.Time
-	createdGt         *[]time.Time
-	createdGte        *[]time.Time
-	createdLt         *[]time.Time
-	createdLte        *[]time.Time
-	createdN          *[]time.Time
-	createdByRequest  *string
-	description       *[]string
-	descriptionEmpty  *bool
-	descriptionIc     *[]string
-	descriptionIe     *[]string
-	descriptionIew    *[]string
-	descriptionIsw    *[]string
-	descriptionN      *[]string
-	descriptionNic    *[]string
-	descriptionNie    *[]string
-	descriptionNiew   *[]string
-	descriptionNisw   *[]string
-	id                *[]int32
-	idEmpty           *bool
-	idGt              *[]int32
-	idGte             *[]int32
-	idLt              *[]int32
-	idLte             *[]int32
-	idN               *[]int32
-	ipsecProposal     *[]string
-	ipsecProposalN    *[]string
-	ipsecProposalId   *[]int32
-	ipsecProposalIdN  *[]int32
-	lastUpdated       *[]time.Time
-	lastUpdatedEmpty  *[]time.Time
-	lastUpdatedGt     *[]time.Time
-	lastUpdatedGte    *[]time.Time
-	lastUpdatedLt     *[]time.Time
-	lastUpdatedLte    *[]time.Time
-	lastUpdatedN      *[]time.Time
-	limit             *int32
+	ctx context.Context
+	ApiService *VpnAPIService
+	created *[]time.Time
+	createdEmpty *[]time.Time
+	createdGt *[]time.Time
+	createdGte *[]time.Time
+	createdLt *[]time.Time
+	createdLte *[]time.Time
+	createdN *[]time.Time
+	createdByRequest *string
+	description *[]string
+	descriptionEmpty *bool
+	descriptionIc *[]string
+	descriptionIe *[]string
+	descriptionIew *[]string
+	descriptionIsw *[]string
+	descriptionN *[]string
+	descriptionNic *[]string
+	descriptionNie *[]string
+	descriptionNiew *[]string
+	descriptionNisw *[]string
+	id *[]int32
+	idEmpty *bool
+	idGt *[]int32
+	idGte *[]int32
+	idLt *[]int32
+	idLte *[]int32
+	idN *[]int32
+	ipsecProposal *[]string
+	ipsecProposalN *[]string
+	ipsecProposalId *[]int32
+	ipsecProposalIdN *[]int32
+	lastUpdated *[]time.Time
+	lastUpdatedEmpty *[]time.Time
+	lastUpdatedGt *[]time.Time
+	lastUpdatedGte *[]time.Time
+	lastUpdatedLt *[]time.Time
+	lastUpdatedLte *[]time.Time
+	lastUpdatedN *[]time.Time
+	limit *int32
 	modifiedByRequest *string
-	name              *[]string
-	nameEmpty         *bool
-	nameIc            *[]string
-	nameIe            *[]string
-	nameIew           *[]string
-	nameIsw           *[]string
-	nameN             *[]string
-	nameNic           *[]string
-	nameNie           *[]string
-	nameNiew          *[]string
-	nameNisw          *[]string
-	offset            *int32
-	ordering          *string
-	pfsGroup          *[]*int32
-	pfsGroupIc        *[]*int32
-	pfsGroupIe        *[]*int32
-	pfsGroupIew       *[]*int32
-	pfsGroupIsw       *[]*int32
-	pfsGroupN         *[]*int32
-	pfsGroupNic       *[]*int32
-	pfsGroupNie       *[]*int32
-	pfsGroupNiew      *[]*int32
-	pfsGroupNisw      *[]*int32
-	q                 *string
-	tag               *[]string
-	tagN              *[]string
-	updatedByRequest  *string
+	name *[]string
+	nameEmpty *bool
+	nameIc *[]string
+	nameIe *[]string
+	nameIew *[]string
+	nameIsw *[]string
+	nameN *[]string
+	nameNic *[]string
+	nameNie *[]string
+	nameNiew *[]string
+	nameNisw *[]string
+	offset *int32
+	ordering *string
+	pfsGroup *[]*int32
+	pfsGroupIc *[]*int32
+	pfsGroupIe *[]*int32
+	pfsGroupIew *[]*int32
+	pfsGroupIsw *[]*int32
+	pfsGroupN *[]*int32
+	pfsGroupNic *[]*int32
+	pfsGroupNie *[]*int32
+	pfsGroupNiew *[]*int32
+	pfsGroupNisw *[]*int32
+	q *string
+	tag *[]string
+	tagN *[]string
+	updatedByRequest *string
 }
 
 func (r ApiVpnIpsecPoliciesListRequest) Created(created []time.Time) ApiVpnIpsecPoliciesListRequest {
@@ -6227,25 +6210,24 @@ VpnIpsecPoliciesList Method for VpnIpsecPoliciesList
 
 Get a list of IPSec policy objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIpsecPoliciesListRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnIpsecPoliciesListRequest
 */
 func (a *VpnAPIService) VpnIpsecPoliciesList(ctx context.Context) ApiVpnIpsecPoliciesListRequest {
 	return ApiVpnIpsecPoliciesListRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return PaginatedIPSecPolicyList
+//  @return PaginatedIPSecPolicyList
 func (a *VpnAPIService) VpnIpsecPoliciesListExecute(r ApiVpnIpsecPoliciesListRequest) (*PaginatedIPSecPolicyList, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PaginatedIPSecPolicyList
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PaginatedIPSecPolicyList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIpsecPoliciesList")
@@ -6974,9 +6956,9 @@ func (a *VpnAPIService) VpnIpsecPoliciesListExecute(r ApiVpnIpsecPoliciesListReq
 }
 
 type ApiVpnIpsecPoliciesPartialUpdateRequest struct {
-	ctx                               context.Context
-	ApiService                        *VpnAPIService
-	id                                int32
+	ctx context.Context
+	ApiService *VpnAPIService
+	id int32
 	patchedWritableIPSecPolicyRequest *PatchedWritableIPSecPolicyRequest
 }
 
@@ -6994,27 +6976,26 @@ VpnIpsecPoliciesPartialUpdate Method for VpnIpsecPoliciesPartialUpdate
 
 Patch a IPSec policy object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this IPSec policy.
-	@return ApiVpnIpsecPoliciesPartialUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this IPSec policy.
+ @return ApiVpnIpsecPoliciesPartialUpdateRequest
 */
 func (a *VpnAPIService) VpnIpsecPoliciesPartialUpdate(ctx context.Context, id int32) ApiVpnIpsecPoliciesPartialUpdateRequest {
 	return ApiVpnIpsecPoliciesPartialUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return IPSecPolicy
+//  @return IPSecPolicy
 func (a *VpnAPIService) VpnIpsecPoliciesPartialUpdateExecute(r ApiVpnIpsecPoliciesPartialUpdateRequest) (*IPSecPolicy, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *IPSecPolicy
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *IPSecPolicy
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIpsecPoliciesPartialUpdate")
@@ -7100,9 +7081,9 @@ func (a *VpnAPIService) VpnIpsecPoliciesPartialUpdateExecute(r ApiVpnIpsecPolici
 }
 
 type ApiVpnIpsecPoliciesRetrieveRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *VpnAPIService
-	id         int32
+	id int32
 }
 
 func (r ApiVpnIpsecPoliciesRetrieveRequest) Execute() (*IPSecPolicy, *http.Response, error) {
@@ -7114,27 +7095,26 @@ VpnIpsecPoliciesRetrieve Method for VpnIpsecPoliciesRetrieve
 
 Get a IPSec policy object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this IPSec policy.
-	@return ApiVpnIpsecPoliciesRetrieveRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this IPSec policy.
+ @return ApiVpnIpsecPoliciesRetrieveRequest
 */
 func (a *VpnAPIService) VpnIpsecPoliciesRetrieve(ctx context.Context, id int32) ApiVpnIpsecPoliciesRetrieveRequest {
 	return ApiVpnIpsecPoliciesRetrieveRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return IPSecPolicy
+//  @return IPSecPolicy
 func (a *VpnAPIService) VpnIpsecPoliciesRetrieveExecute(r ApiVpnIpsecPoliciesRetrieveRequest) (*IPSecPolicy, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *IPSecPolicy
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *IPSecPolicy
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIpsecPoliciesRetrieve")
@@ -7218,9 +7198,9 @@ func (a *VpnAPIService) VpnIpsecPoliciesRetrieveExecute(r ApiVpnIpsecPoliciesRet
 }
 
 type ApiVpnIpsecPoliciesUpdateRequest struct {
-	ctx                        context.Context
-	ApiService                 *VpnAPIService
-	id                         int32
+	ctx context.Context
+	ApiService *VpnAPIService
+	id int32
 	writableIPSecPolicyRequest *WritableIPSecPolicyRequest
 }
 
@@ -7238,27 +7218,26 @@ VpnIpsecPoliciesUpdate Method for VpnIpsecPoliciesUpdate
 
 Put a IPSec policy object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this IPSec policy.
-	@return ApiVpnIpsecPoliciesUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this IPSec policy.
+ @return ApiVpnIpsecPoliciesUpdateRequest
 */
 func (a *VpnAPIService) VpnIpsecPoliciesUpdate(ctx context.Context, id int32) ApiVpnIpsecPoliciesUpdateRequest {
 	return ApiVpnIpsecPoliciesUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return IPSecPolicy
+//  @return IPSecPolicy
 func (a *VpnAPIService) VpnIpsecPoliciesUpdateExecute(r ApiVpnIpsecPoliciesUpdateRequest) (*IPSecPolicy, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPut
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *IPSecPolicy
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *IPSecPolicy
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIpsecPoliciesUpdate")
@@ -7347,8 +7326,8 @@ func (a *VpnAPIService) VpnIpsecPoliciesUpdateExecute(r ApiVpnIpsecPoliciesUpdat
 }
 
 type ApiVpnIpsecProfilesBulkDestroyRequest struct {
-	ctx                 context.Context
-	ApiService          *VpnAPIService
+	ctx context.Context
+	ApiService *VpnAPIService
 	iPSecProfileRequest *[]IPSecProfileRequest
 }
 
@@ -7366,22 +7345,22 @@ VpnIpsecProfilesBulkDestroy Method for VpnIpsecProfilesBulkDestroy
 
 Delete a list of IPSec profile objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIpsecProfilesBulkDestroyRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnIpsecProfilesBulkDestroyRequest
 */
 func (a *VpnAPIService) VpnIpsecProfilesBulkDestroy(ctx context.Context) ApiVpnIpsecProfilesBulkDestroyRequest {
 	return ApiVpnIpsecProfilesBulkDestroyRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
 func (a *VpnAPIService) VpnIpsecProfilesBulkDestroyExecute(r ApiVpnIpsecProfilesBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIpsecProfilesBulkDestroy")
@@ -7460,8 +7439,8 @@ func (a *VpnAPIService) VpnIpsecProfilesBulkDestroyExecute(r ApiVpnIpsecProfiles
 }
 
 type ApiVpnIpsecProfilesBulkPartialUpdateRequest struct {
-	ctx                 context.Context
-	ApiService          *VpnAPIService
+	ctx context.Context
+	ApiService *VpnAPIService
 	iPSecProfileRequest *[]IPSecProfileRequest
 }
 
@@ -7479,25 +7458,24 @@ VpnIpsecProfilesBulkPartialUpdate Method for VpnIpsecProfilesBulkPartialUpdate
 
 Patch a list of IPSec profile objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIpsecProfilesBulkPartialUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnIpsecProfilesBulkPartialUpdateRequest
 */
 func (a *VpnAPIService) VpnIpsecProfilesBulkPartialUpdate(ctx context.Context) ApiVpnIpsecProfilesBulkPartialUpdateRequest {
 	return ApiVpnIpsecProfilesBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []IPSecProfile
+//  @return []IPSecProfile
 func (a *VpnAPIService) VpnIpsecProfilesBulkPartialUpdateExecute(r ApiVpnIpsecProfilesBulkPartialUpdateRequest) ([]IPSecProfile, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []IPSecProfile
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []IPSecProfile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIpsecProfilesBulkPartialUpdate")
@@ -7585,8 +7563,8 @@ func (a *VpnAPIService) VpnIpsecProfilesBulkPartialUpdateExecute(r ApiVpnIpsecPr
 }
 
 type ApiVpnIpsecProfilesBulkUpdateRequest struct {
-	ctx                 context.Context
-	ApiService          *VpnAPIService
+	ctx context.Context
+	ApiService *VpnAPIService
 	iPSecProfileRequest *[]IPSecProfileRequest
 }
 
@@ -7604,25 +7582,24 @@ VpnIpsecProfilesBulkUpdate Method for VpnIpsecProfilesBulkUpdate
 
 Put a list of IPSec profile objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIpsecProfilesBulkUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnIpsecProfilesBulkUpdateRequest
 */
 func (a *VpnAPIService) VpnIpsecProfilesBulkUpdate(ctx context.Context) ApiVpnIpsecProfilesBulkUpdateRequest {
 	return ApiVpnIpsecProfilesBulkUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []IPSecProfile
+//  @return []IPSecProfile
 func (a *VpnAPIService) VpnIpsecProfilesBulkUpdateExecute(r ApiVpnIpsecProfilesBulkUpdateRequest) ([]IPSecProfile, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPut
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []IPSecProfile
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []IPSecProfile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIpsecProfilesBulkUpdate")
@@ -7710,8 +7687,8 @@ func (a *VpnAPIService) VpnIpsecProfilesBulkUpdateExecute(r ApiVpnIpsecProfilesB
 }
 
 type ApiVpnIpsecProfilesCreateRequest struct {
-	ctx                         context.Context
-	ApiService                  *VpnAPIService
+	ctx context.Context
+	ApiService *VpnAPIService
 	writableIPSecProfileRequest *WritableIPSecProfileRequest
 }
 
@@ -7729,25 +7706,24 @@ VpnIpsecProfilesCreate Method for VpnIpsecProfilesCreate
 
 Post a list of IPSec profile objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIpsecProfilesCreateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnIpsecProfilesCreateRequest
 */
 func (a *VpnAPIService) VpnIpsecProfilesCreate(ctx context.Context) ApiVpnIpsecProfilesCreateRequest {
 	return ApiVpnIpsecProfilesCreateRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return IPSecProfile
+//  @return IPSecProfile
 func (a *VpnAPIService) VpnIpsecProfilesCreateExecute(r ApiVpnIpsecProfilesCreateRequest) (*IPSecProfile, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *IPSecProfile
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *IPSecProfile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIpsecProfilesCreate")
@@ -7835,9 +7811,9 @@ func (a *VpnAPIService) VpnIpsecProfilesCreateExecute(r ApiVpnIpsecProfilesCreat
 }
 
 type ApiVpnIpsecProfilesDestroyRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *VpnAPIService
-	id         int32
+	id int32
 }
 
 func (r ApiVpnIpsecProfilesDestroyRequest) Execute() (*http.Response, error) {
@@ -7849,24 +7825,24 @@ VpnIpsecProfilesDestroy Method for VpnIpsecProfilesDestroy
 
 Delete a IPSec profile object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this IPSec profile.
-	@return ApiVpnIpsecProfilesDestroyRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this IPSec profile.
+ @return ApiVpnIpsecProfilesDestroyRequest
 */
 func (a *VpnAPIService) VpnIpsecProfilesDestroy(ctx context.Context, id int32) ApiVpnIpsecProfilesDestroyRequest {
 	return ApiVpnIpsecProfilesDestroyRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
 func (a *VpnAPIService) VpnIpsecProfilesDestroyExecute(r ApiVpnIpsecProfilesDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIpsecProfilesDestroy")
@@ -7941,79 +7917,79 @@ func (a *VpnAPIService) VpnIpsecProfilesDestroyExecute(r ApiVpnIpsecProfilesDest
 }
 
 type ApiVpnIpsecProfilesListRequest struct {
-	ctx               context.Context
-	ApiService        *VpnAPIService
-	created           *[]time.Time
-	createdEmpty      *[]time.Time
-	createdGt         *[]time.Time
-	createdGte        *[]time.Time
-	createdLt         *[]time.Time
-	createdLte        *[]time.Time
-	createdN          *[]time.Time
-	createdByRequest  *string
-	description       *[]string
-	descriptionEmpty  *bool
-	descriptionIc     *[]string
-	descriptionIe     *[]string
-	descriptionIew    *[]string
-	descriptionIsw    *[]string
-	descriptionN      *[]string
-	descriptionNic    *[]string
-	descriptionNie    *[]string
-	descriptionNiew   *[]string
-	descriptionNisw   *[]string
-	id                *[]int32
-	idEmpty           *bool
-	idGt              *[]int32
-	idGte             *[]int32
-	idLt              *[]int32
-	idLte             *[]int32
-	idN               *[]int32
-	ikePolicy         *[]string
-	ikePolicyN        *[]string
-	ikePolicyId       *[]int32
-	ikePolicyIdN      *[]int32
-	ipsecPolicy       *[]string
-	ipsecPolicyN      *[]string
-	ipsecPolicyId     *[]int32
-	ipsecPolicyIdN    *[]int32
-	lastUpdated       *[]time.Time
-	lastUpdatedEmpty  *[]time.Time
-	lastUpdatedGt     *[]time.Time
-	lastUpdatedGte    *[]time.Time
-	lastUpdatedLt     *[]time.Time
-	lastUpdatedLte    *[]time.Time
-	lastUpdatedN      *[]time.Time
-	limit             *int32
-	mode              *[]string
-	modeEmpty         *bool
-	modeIc            *[]string
-	modeIe            *[]string
-	modeIew           *[]string
-	modeIsw           *[]string
-	modeN             *[]string
-	modeNic           *[]string
-	modeNie           *[]string
-	modeNiew          *[]string
-	modeNisw          *[]string
+	ctx context.Context
+	ApiService *VpnAPIService
+	created *[]time.Time
+	createdEmpty *[]time.Time
+	createdGt *[]time.Time
+	createdGte *[]time.Time
+	createdLt *[]time.Time
+	createdLte *[]time.Time
+	createdN *[]time.Time
+	createdByRequest *string
+	description *[]string
+	descriptionEmpty *bool
+	descriptionIc *[]string
+	descriptionIe *[]string
+	descriptionIew *[]string
+	descriptionIsw *[]string
+	descriptionN *[]string
+	descriptionNic *[]string
+	descriptionNie *[]string
+	descriptionNiew *[]string
+	descriptionNisw *[]string
+	id *[]int32
+	idEmpty *bool
+	idGt *[]int32
+	idGte *[]int32
+	idLt *[]int32
+	idLte *[]int32
+	idN *[]int32
+	ikePolicy *[]string
+	ikePolicyN *[]string
+	ikePolicyId *[]int32
+	ikePolicyIdN *[]int32
+	ipsecPolicy *[]string
+	ipsecPolicyN *[]string
+	ipsecPolicyId *[]int32
+	ipsecPolicyIdN *[]int32
+	lastUpdated *[]time.Time
+	lastUpdatedEmpty *[]time.Time
+	lastUpdatedGt *[]time.Time
+	lastUpdatedGte *[]time.Time
+	lastUpdatedLt *[]time.Time
+	lastUpdatedLte *[]time.Time
+	lastUpdatedN *[]time.Time
+	limit *int32
+	mode *[]string
+	modeEmpty *bool
+	modeIc *[]string
+	modeIe *[]string
+	modeIew *[]string
+	modeIsw *[]string
+	modeN *[]string
+	modeNic *[]string
+	modeNie *[]string
+	modeNiew *[]string
+	modeNisw *[]string
 	modifiedByRequest *string
-	name              *[]string
-	nameEmpty         *bool
-	nameIc            *[]string
-	nameIe            *[]string
-	nameIew           *[]string
-	nameIsw           *[]string
-	nameN             *[]string
-	nameNic           *[]string
-	nameNie           *[]string
-	nameNiew          *[]string
-	nameNisw          *[]string
-	offset            *int32
-	ordering          *string
-	q                 *string
-	tag               *[]string
-	tagN              *[]string
-	updatedByRequest  *string
+	name *[]string
+	nameEmpty *bool
+	nameIc *[]string
+	nameIe *[]string
+	nameIew *[]string
+	nameIsw *[]string
+	nameN *[]string
+	nameNic *[]string
+	nameNie *[]string
+	nameNiew *[]string
+	nameNisw *[]string
+	offset *int32
+	ordering *string
+	q *string
+	tag *[]string
+	tagN *[]string
+	updatedByRequest *string
 }
 
 func (r ApiVpnIpsecProfilesListRequest) Created(created []time.Time) ApiVpnIpsecProfilesListRequest {
@@ -8392,25 +8368,24 @@ VpnIpsecProfilesList Method for VpnIpsecProfilesList
 
 Get a list of IPSec profile objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIpsecProfilesListRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnIpsecProfilesListRequest
 */
 func (a *VpnAPIService) VpnIpsecProfilesList(ctx context.Context) ApiVpnIpsecProfilesListRequest {
 	return ApiVpnIpsecProfilesListRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return PaginatedIPSecProfileList
+//  @return PaginatedIPSecProfileList
 func (a *VpnAPIService) VpnIpsecProfilesListExecute(r ApiVpnIpsecProfilesListRequest) (*PaginatedIPSecProfileList, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PaginatedIPSecProfileList
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PaginatedIPSecProfileList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIpsecProfilesList")
@@ -9186,9 +9161,9 @@ func (a *VpnAPIService) VpnIpsecProfilesListExecute(r ApiVpnIpsecProfilesListReq
 }
 
 type ApiVpnIpsecProfilesPartialUpdateRequest struct {
-	ctx                                context.Context
-	ApiService                         *VpnAPIService
-	id                                 int32
+	ctx context.Context
+	ApiService *VpnAPIService
+	id int32
 	patchedWritableIPSecProfileRequest *PatchedWritableIPSecProfileRequest
 }
 
@@ -9206,27 +9181,26 @@ VpnIpsecProfilesPartialUpdate Method for VpnIpsecProfilesPartialUpdate
 
 Patch a IPSec profile object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this IPSec profile.
-	@return ApiVpnIpsecProfilesPartialUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this IPSec profile.
+ @return ApiVpnIpsecProfilesPartialUpdateRequest
 */
 func (a *VpnAPIService) VpnIpsecProfilesPartialUpdate(ctx context.Context, id int32) ApiVpnIpsecProfilesPartialUpdateRequest {
 	return ApiVpnIpsecProfilesPartialUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return IPSecProfile
+//  @return IPSecProfile
 func (a *VpnAPIService) VpnIpsecProfilesPartialUpdateExecute(r ApiVpnIpsecProfilesPartialUpdateRequest) (*IPSecProfile, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *IPSecProfile
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *IPSecProfile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIpsecProfilesPartialUpdate")
@@ -9312,9 +9286,9 @@ func (a *VpnAPIService) VpnIpsecProfilesPartialUpdateExecute(r ApiVpnIpsecProfil
 }
 
 type ApiVpnIpsecProfilesRetrieveRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *VpnAPIService
-	id         int32
+	id int32
 }
 
 func (r ApiVpnIpsecProfilesRetrieveRequest) Execute() (*IPSecProfile, *http.Response, error) {
@@ -9326,27 +9300,26 @@ VpnIpsecProfilesRetrieve Method for VpnIpsecProfilesRetrieve
 
 Get a IPSec profile object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this IPSec profile.
-	@return ApiVpnIpsecProfilesRetrieveRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this IPSec profile.
+ @return ApiVpnIpsecProfilesRetrieveRequest
 */
 func (a *VpnAPIService) VpnIpsecProfilesRetrieve(ctx context.Context, id int32) ApiVpnIpsecProfilesRetrieveRequest {
 	return ApiVpnIpsecProfilesRetrieveRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return IPSecProfile
+//  @return IPSecProfile
 func (a *VpnAPIService) VpnIpsecProfilesRetrieveExecute(r ApiVpnIpsecProfilesRetrieveRequest) (*IPSecProfile, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *IPSecProfile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *IPSecProfile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIpsecProfilesRetrieve")
@@ -9430,9 +9403,9 @@ func (a *VpnAPIService) VpnIpsecProfilesRetrieveExecute(r ApiVpnIpsecProfilesRet
 }
 
 type ApiVpnIpsecProfilesUpdateRequest struct {
-	ctx                         context.Context
-	ApiService                  *VpnAPIService
-	id                          int32
+	ctx context.Context
+	ApiService *VpnAPIService
+	id int32
 	writableIPSecProfileRequest *WritableIPSecProfileRequest
 }
 
@@ -9450,27 +9423,26 @@ VpnIpsecProfilesUpdate Method for VpnIpsecProfilesUpdate
 
 Put a IPSec profile object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this IPSec profile.
-	@return ApiVpnIpsecProfilesUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this IPSec profile.
+ @return ApiVpnIpsecProfilesUpdateRequest
 */
 func (a *VpnAPIService) VpnIpsecProfilesUpdate(ctx context.Context, id int32) ApiVpnIpsecProfilesUpdateRequest {
 	return ApiVpnIpsecProfilesUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return IPSecProfile
+//  @return IPSecProfile
 func (a *VpnAPIService) VpnIpsecProfilesUpdateExecute(r ApiVpnIpsecProfilesUpdateRequest) (*IPSecProfile, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPut
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *IPSecProfile
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *IPSecProfile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIpsecProfilesUpdate")
@@ -9559,8 +9531,8 @@ func (a *VpnAPIService) VpnIpsecProfilesUpdateExecute(r ApiVpnIpsecProfilesUpdat
 }
 
 type ApiVpnIpsecProposalsBulkDestroyRequest struct {
-	ctx                  context.Context
-	ApiService           *VpnAPIService
+	ctx context.Context
+	ApiService *VpnAPIService
 	iPSecProposalRequest *[]IPSecProposalRequest
 }
 
@@ -9578,22 +9550,22 @@ VpnIpsecProposalsBulkDestroy Method for VpnIpsecProposalsBulkDestroy
 
 Delete a list of IPSec proposal objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIpsecProposalsBulkDestroyRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnIpsecProposalsBulkDestroyRequest
 */
 func (a *VpnAPIService) VpnIpsecProposalsBulkDestroy(ctx context.Context) ApiVpnIpsecProposalsBulkDestroyRequest {
 	return ApiVpnIpsecProposalsBulkDestroyRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
 func (a *VpnAPIService) VpnIpsecProposalsBulkDestroyExecute(r ApiVpnIpsecProposalsBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIpsecProposalsBulkDestroy")
@@ -9672,8 +9644,8 @@ func (a *VpnAPIService) VpnIpsecProposalsBulkDestroyExecute(r ApiVpnIpsecProposa
 }
 
 type ApiVpnIpsecProposalsBulkPartialUpdateRequest struct {
-	ctx                  context.Context
-	ApiService           *VpnAPIService
+	ctx context.Context
+	ApiService *VpnAPIService
 	iPSecProposalRequest *[]IPSecProposalRequest
 }
 
@@ -9691,25 +9663,24 @@ VpnIpsecProposalsBulkPartialUpdate Method for VpnIpsecProposalsBulkPartialUpdate
 
 Patch a list of IPSec proposal objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIpsecProposalsBulkPartialUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnIpsecProposalsBulkPartialUpdateRequest
 */
 func (a *VpnAPIService) VpnIpsecProposalsBulkPartialUpdate(ctx context.Context) ApiVpnIpsecProposalsBulkPartialUpdateRequest {
 	return ApiVpnIpsecProposalsBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []IPSecProposal
+//  @return []IPSecProposal
 func (a *VpnAPIService) VpnIpsecProposalsBulkPartialUpdateExecute(r ApiVpnIpsecProposalsBulkPartialUpdateRequest) ([]IPSecProposal, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []IPSecProposal
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []IPSecProposal
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIpsecProposalsBulkPartialUpdate")
@@ -9797,8 +9768,8 @@ func (a *VpnAPIService) VpnIpsecProposalsBulkPartialUpdateExecute(r ApiVpnIpsecP
 }
 
 type ApiVpnIpsecProposalsBulkUpdateRequest struct {
-	ctx                  context.Context
-	ApiService           *VpnAPIService
+	ctx context.Context
+	ApiService *VpnAPIService
 	iPSecProposalRequest *[]IPSecProposalRequest
 }
 
@@ -9816,25 +9787,24 @@ VpnIpsecProposalsBulkUpdate Method for VpnIpsecProposalsBulkUpdate
 
 Put a list of IPSec proposal objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIpsecProposalsBulkUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnIpsecProposalsBulkUpdateRequest
 */
 func (a *VpnAPIService) VpnIpsecProposalsBulkUpdate(ctx context.Context) ApiVpnIpsecProposalsBulkUpdateRequest {
 	return ApiVpnIpsecProposalsBulkUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []IPSecProposal
+//  @return []IPSecProposal
 func (a *VpnAPIService) VpnIpsecProposalsBulkUpdateExecute(r ApiVpnIpsecProposalsBulkUpdateRequest) ([]IPSecProposal, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPut
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []IPSecProposal
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []IPSecProposal
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIpsecProposalsBulkUpdate")
@@ -9922,8 +9892,8 @@ func (a *VpnAPIService) VpnIpsecProposalsBulkUpdateExecute(r ApiVpnIpsecProposal
 }
 
 type ApiVpnIpsecProposalsCreateRequest struct {
-	ctx                          context.Context
-	ApiService                   *VpnAPIService
+	ctx context.Context
+	ApiService *VpnAPIService
 	writableIPSecProposalRequest *WritableIPSecProposalRequest
 }
 
@@ -9941,25 +9911,24 @@ VpnIpsecProposalsCreate Method for VpnIpsecProposalsCreate
 
 Post a list of IPSec proposal objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIpsecProposalsCreateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnIpsecProposalsCreateRequest
 */
 func (a *VpnAPIService) VpnIpsecProposalsCreate(ctx context.Context) ApiVpnIpsecProposalsCreateRequest {
 	return ApiVpnIpsecProposalsCreateRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return IPSecProposal
+//  @return IPSecProposal
 func (a *VpnAPIService) VpnIpsecProposalsCreateExecute(r ApiVpnIpsecProposalsCreateRequest) (*IPSecProposal, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *IPSecProposal
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *IPSecProposal
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIpsecProposalsCreate")
@@ -10047,9 +10016,9 @@ func (a *VpnAPIService) VpnIpsecProposalsCreateExecute(r ApiVpnIpsecProposalsCre
 }
 
 type ApiVpnIpsecProposalsDestroyRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *VpnAPIService
-	id         int32
+	id int32
 }
 
 func (r ApiVpnIpsecProposalsDestroyRequest) Execute() (*http.Response, error) {
@@ -10061,24 +10030,24 @@ VpnIpsecProposalsDestroy Method for VpnIpsecProposalsDestroy
 
 Delete a IPSec proposal object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this IPSec proposal.
-	@return ApiVpnIpsecProposalsDestroyRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this IPSec proposal.
+ @return ApiVpnIpsecProposalsDestroyRequest
 */
 func (a *VpnAPIService) VpnIpsecProposalsDestroy(ctx context.Context, id int32) ApiVpnIpsecProposalsDestroyRequest {
 	return ApiVpnIpsecProposalsDestroyRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
 func (a *VpnAPIService) VpnIpsecProposalsDestroyExecute(r ApiVpnIpsecProposalsDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIpsecProposalsDestroy")
@@ -10153,100 +10122,100 @@ func (a *VpnAPIService) VpnIpsecProposalsDestroyExecute(r ApiVpnIpsecProposalsDe
 }
 
 type ApiVpnIpsecProposalsListRequest struct {
-	ctx                          context.Context
-	ApiService                   *VpnAPIService
-	authenticationAlgorithm      *[]string
+	ctx context.Context
+	ApiService *VpnAPIService
+	authenticationAlgorithm *[]string
 	authenticationAlgorithmEmpty *bool
-	authenticationAlgorithmIc    *[]string
-	authenticationAlgorithmIe    *[]string
-	authenticationAlgorithmIew   *[]string
-	authenticationAlgorithmIsw   *[]string
-	authenticationAlgorithmN     *[]string
-	authenticationAlgorithmNic   *[]string
-	authenticationAlgorithmNie   *[]string
-	authenticationAlgorithmNiew  *[]string
-	authenticationAlgorithmNisw  *[]string
-	created                      *[]time.Time
-	createdEmpty                 *[]time.Time
-	createdGt                    *[]time.Time
-	createdGte                   *[]time.Time
-	createdLt                    *[]time.Time
-	createdLte                   *[]time.Time
-	createdN                     *[]time.Time
-	createdByRequest             *string
-	description                  *[]string
-	descriptionEmpty             *bool
-	descriptionIc                *[]string
-	descriptionIe                *[]string
-	descriptionIew               *[]string
-	descriptionIsw               *[]string
-	descriptionN                 *[]string
-	descriptionNic               *[]string
-	descriptionNie               *[]string
-	descriptionNiew              *[]string
-	descriptionNisw              *[]string
-	encryptionAlgorithm          *[]string
-	encryptionAlgorithmEmpty     *bool
-	encryptionAlgorithmIc        *[]string
-	encryptionAlgorithmIe        *[]string
-	encryptionAlgorithmIew       *[]string
-	encryptionAlgorithmIsw       *[]string
-	encryptionAlgorithmN         *[]string
-	encryptionAlgorithmNic       *[]string
-	encryptionAlgorithmNie       *[]string
-	encryptionAlgorithmNiew      *[]string
-	encryptionAlgorithmNisw      *[]string
-	id                           *[]int32
-	idEmpty                      *bool
-	idGt                         *[]int32
-	idGte                        *[]int32
-	idLt                         *[]int32
-	idLte                        *[]int32
-	idN                          *[]int32
-	ipsecPolicy                  *[]string
-	ipsecPolicyN                 *[]string
-	ipsecPolicyId                *[]int32
-	ipsecPolicyIdN               *[]int32
-	lastUpdated                  *[]time.Time
-	lastUpdatedEmpty             *[]time.Time
-	lastUpdatedGt                *[]time.Time
-	lastUpdatedGte               *[]time.Time
-	lastUpdatedLt                *[]time.Time
-	lastUpdatedLte               *[]time.Time
-	lastUpdatedN                 *[]time.Time
-	limit                        *int32
-	modifiedByRequest            *string
-	name                         *[]string
-	nameEmpty                    *bool
-	nameIc                       *[]string
-	nameIe                       *[]string
-	nameIew                      *[]string
-	nameIsw                      *[]string
-	nameN                        *[]string
-	nameNic                      *[]string
-	nameNie                      *[]string
-	nameNiew                     *[]string
-	nameNisw                     *[]string
-	offset                       *int32
-	ordering                     *string
-	q                            *string
-	saLifetimeData               *[]int32
-	saLifetimeDataEmpty          *bool
-	saLifetimeDataGt             *[]int32
-	saLifetimeDataGte            *[]int32
-	saLifetimeDataLt             *[]int32
-	saLifetimeDataLte            *[]int32
-	saLifetimeDataN              *[]int32
-	saLifetimeSeconds            *[]int32
-	saLifetimeSecondsEmpty       *bool
-	saLifetimeSecondsGt          *[]int32
-	saLifetimeSecondsGte         *[]int32
-	saLifetimeSecondsLt          *[]int32
-	saLifetimeSecondsLte         *[]int32
-	saLifetimeSecondsN           *[]int32
-	tag                          *[]string
-	tagN                         *[]string
-	updatedByRequest             *string
+	authenticationAlgorithmIc *[]string
+	authenticationAlgorithmIe *[]string
+	authenticationAlgorithmIew *[]string
+	authenticationAlgorithmIsw *[]string
+	authenticationAlgorithmN *[]string
+	authenticationAlgorithmNic *[]string
+	authenticationAlgorithmNie *[]string
+	authenticationAlgorithmNiew *[]string
+	authenticationAlgorithmNisw *[]string
+	created *[]time.Time
+	createdEmpty *[]time.Time
+	createdGt *[]time.Time
+	createdGte *[]time.Time
+	createdLt *[]time.Time
+	createdLte *[]time.Time
+	createdN *[]time.Time
+	createdByRequest *string
+	description *[]string
+	descriptionEmpty *bool
+	descriptionIc *[]string
+	descriptionIe *[]string
+	descriptionIew *[]string
+	descriptionIsw *[]string
+	descriptionN *[]string
+	descriptionNic *[]string
+	descriptionNie *[]string
+	descriptionNiew *[]string
+	descriptionNisw *[]string
+	encryptionAlgorithm *[]string
+	encryptionAlgorithmEmpty *bool
+	encryptionAlgorithmIc *[]string
+	encryptionAlgorithmIe *[]string
+	encryptionAlgorithmIew *[]string
+	encryptionAlgorithmIsw *[]string
+	encryptionAlgorithmN *[]string
+	encryptionAlgorithmNic *[]string
+	encryptionAlgorithmNie *[]string
+	encryptionAlgorithmNiew *[]string
+	encryptionAlgorithmNisw *[]string
+	id *[]int32
+	idEmpty *bool
+	idGt *[]int32
+	idGte *[]int32
+	idLt *[]int32
+	idLte *[]int32
+	idN *[]int32
+	ipsecPolicy *[]string
+	ipsecPolicyN *[]string
+	ipsecPolicyId *[]int32
+	ipsecPolicyIdN *[]int32
+	lastUpdated *[]time.Time
+	lastUpdatedEmpty *[]time.Time
+	lastUpdatedGt *[]time.Time
+	lastUpdatedGte *[]time.Time
+	lastUpdatedLt *[]time.Time
+	lastUpdatedLte *[]time.Time
+	lastUpdatedN *[]time.Time
+	limit *int32
+	modifiedByRequest *string
+	name *[]string
+	nameEmpty *bool
+	nameIc *[]string
+	nameIe *[]string
+	nameIew *[]string
+	nameIsw *[]string
+	nameN *[]string
+	nameNic *[]string
+	nameNie *[]string
+	nameNiew *[]string
+	nameNisw *[]string
+	offset *int32
+	ordering *string
+	q *string
+	saLifetimeData *[]int32
+	saLifetimeDataEmpty *bool
+	saLifetimeDataGt *[]int32
+	saLifetimeDataGte *[]int32
+	saLifetimeDataLt *[]int32
+	saLifetimeDataLte *[]int32
+	saLifetimeDataN *[]int32
+	saLifetimeSeconds *[]int32
+	saLifetimeSecondsEmpty *bool
+	saLifetimeSecondsGt *[]int32
+	saLifetimeSecondsGte *[]int32
+	saLifetimeSecondsLt *[]int32
+	saLifetimeSecondsLte *[]int32
+	saLifetimeSecondsN *[]int32
+	tag *[]string
+	tagN *[]string
+	updatedByRequest *string
 }
 
 func (r ApiVpnIpsecProposalsListRequest) AuthenticationAlgorithm(authenticationAlgorithm []string) ApiVpnIpsecProposalsListRequest {
@@ -10726,25 +10695,24 @@ VpnIpsecProposalsList Method for VpnIpsecProposalsList
 
 Get a list of IPSec proposal objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIpsecProposalsListRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnIpsecProposalsListRequest
 */
 func (a *VpnAPIService) VpnIpsecProposalsList(ctx context.Context) ApiVpnIpsecProposalsListRequest {
 	return ApiVpnIpsecProposalsListRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return PaginatedIPSecProposalList
+//  @return PaginatedIPSecProposalList
 func (a *VpnAPIService) VpnIpsecProposalsListExecute(r ApiVpnIpsecProposalsListRequest) (*PaginatedIPSecProposalList, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PaginatedIPSecProposalList
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PaginatedIPSecProposalList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIpsecProposalsList")
@@ -11727,9 +11695,9 @@ func (a *VpnAPIService) VpnIpsecProposalsListExecute(r ApiVpnIpsecProposalsListR
 }
 
 type ApiVpnIpsecProposalsPartialUpdateRequest struct {
-	ctx                                 context.Context
-	ApiService                          *VpnAPIService
-	id                                  int32
+	ctx context.Context
+	ApiService *VpnAPIService
+	id int32
 	patchedWritableIPSecProposalRequest *PatchedWritableIPSecProposalRequest
 }
 
@@ -11747,27 +11715,26 @@ VpnIpsecProposalsPartialUpdate Method for VpnIpsecProposalsPartialUpdate
 
 Patch a IPSec proposal object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this IPSec proposal.
-	@return ApiVpnIpsecProposalsPartialUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this IPSec proposal.
+ @return ApiVpnIpsecProposalsPartialUpdateRequest
 */
 func (a *VpnAPIService) VpnIpsecProposalsPartialUpdate(ctx context.Context, id int32) ApiVpnIpsecProposalsPartialUpdateRequest {
 	return ApiVpnIpsecProposalsPartialUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return IPSecProposal
+//  @return IPSecProposal
 func (a *VpnAPIService) VpnIpsecProposalsPartialUpdateExecute(r ApiVpnIpsecProposalsPartialUpdateRequest) (*IPSecProposal, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *IPSecProposal
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *IPSecProposal
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIpsecProposalsPartialUpdate")
@@ -11853,9 +11820,9 @@ func (a *VpnAPIService) VpnIpsecProposalsPartialUpdateExecute(r ApiVpnIpsecPropo
 }
 
 type ApiVpnIpsecProposalsRetrieveRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *VpnAPIService
-	id         int32
+	id int32
 }
 
 func (r ApiVpnIpsecProposalsRetrieveRequest) Execute() (*IPSecProposal, *http.Response, error) {
@@ -11867,27 +11834,26 @@ VpnIpsecProposalsRetrieve Method for VpnIpsecProposalsRetrieve
 
 Get a IPSec proposal object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this IPSec proposal.
-	@return ApiVpnIpsecProposalsRetrieveRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this IPSec proposal.
+ @return ApiVpnIpsecProposalsRetrieveRequest
 */
 func (a *VpnAPIService) VpnIpsecProposalsRetrieve(ctx context.Context, id int32) ApiVpnIpsecProposalsRetrieveRequest {
 	return ApiVpnIpsecProposalsRetrieveRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return IPSecProposal
+//  @return IPSecProposal
 func (a *VpnAPIService) VpnIpsecProposalsRetrieveExecute(r ApiVpnIpsecProposalsRetrieveRequest) (*IPSecProposal, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *IPSecProposal
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *IPSecProposal
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIpsecProposalsRetrieve")
@@ -11971,9 +11937,9 @@ func (a *VpnAPIService) VpnIpsecProposalsRetrieveExecute(r ApiVpnIpsecProposalsR
 }
 
 type ApiVpnIpsecProposalsUpdateRequest struct {
-	ctx                          context.Context
-	ApiService                   *VpnAPIService
-	id                           int32
+	ctx context.Context
+	ApiService *VpnAPIService
+	id int32
 	writableIPSecProposalRequest *WritableIPSecProposalRequest
 }
 
@@ -11991,27 +11957,26 @@ VpnIpsecProposalsUpdate Method for VpnIpsecProposalsUpdate
 
 Put a IPSec proposal object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this IPSec proposal.
-	@return ApiVpnIpsecProposalsUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this IPSec proposal.
+ @return ApiVpnIpsecProposalsUpdateRequest
 */
 func (a *VpnAPIService) VpnIpsecProposalsUpdate(ctx context.Context, id int32) ApiVpnIpsecProposalsUpdateRequest {
 	return ApiVpnIpsecProposalsUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return IPSecProposal
+//  @return IPSecProposal
 func (a *VpnAPIService) VpnIpsecProposalsUpdateExecute(r ApiVpnIpsecProposalsUpdateRequest) (*IPSecProposal, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPut
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *IPSecProposal
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *IPSecProposal
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnIpsecProposalsUpdate")
@@ -12100,8 +12065,8 @@ func (a *VpnAPIService) VpnIpsecProposalsUpdateExecute(r ApiVpnIpsecProposalsUpd
 }
 
 type ApiVpnL2vpnTerminationsBulkDestroyRequest struct {
-	ctx                     context.Context
-	ApiService              *VpnAPIService
+	ctx context.Context
+	ApiService *VpnAPIService
 	l2VPNTerminationRequest *[]L2VPNTerminationRequest
 }
 
@@ -12119,22 +12084,22 @@ VpnL2vpnTerminationsBulkDestroy Method for VpnL2vpnTerminationsBulkDestroy
 
 Delete a list of L2VPN termination objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnL2vpnTerminationsBulkDestroyRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnL2vpnTerminationsBulkDestroyRequest
 */
 func (a *VpnAPIService) VpnL2vpnTerminationsBulkDestroy(ctx context.Context) ApiVpnL2vpnTerminationsBulkDestroyRequest {
 	return ApiVpnL2vpnTerminationsBulkDestroyRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
 func (a *VpnAPIService) VpnL2vpnTerminationsBulkDestroyExecute(r ApiVpnL2vpnTerminationsBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnL2vpnTerminationsBulkDestroy")
@@ -12213,8 +12178,8 @@ func (a *VpnAPIService) VpnL2vpnTerminationsBulkDestroyExecute(r ApiVpnL2vpnTerm
 }
 
 type ApiVpnL2vpnTerminationsBulkPartialUpdateRequest struct {
-	ctx                     context.Context
-	ApiService              *VpnAPIService
+	ctx context.Context
+	ApiService *VpnAPIService
 	l2VPNTerminationRequest *[]L2VPNTerminationRequest
 }
 
@@ -12232,25 +12197,24 @@ VpnL2vpnTerminationsBulkPartialUpdate Method for VpnL2vpnTerminationsBulkPartial
 
 Patch a list of L2VPN termination objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnL2vpnTerminationsBulkPartialUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnL2vpnTerminationsBulkPartialUpdateRequest
 */
 func (a *VpnAPIService) VpnL2vpnTerminationsBulkPartialUpdate(ctx context.Context) ApiVpnL2vpnTerminationsBulkPartialUpdateRequest {
 	return ApiVpnL2vpnTerminationsBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []L2VPNTermination
+//  @return []L2VPNTermination
 func (a *VpnAPIService) VpnL2vpnTerminationsBulkPartialUpdateExecute(r ApiVpnL2vpnTerminationsBulkPartialUpdateRequest) ([]L2VPNTermination, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []L2VPNTermination
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []L2VPNTermination
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnL2vpnTerminationsBulkPartialUpdate")
@@ -12338,8 +12302,8 @@ func (a *VpnAPIService) VpnL2vpnTerminationsBulkPartialUpdateExecute(r ApiVpnL2v
 }
 
 type ApiVpnL2vpnTerminationsBulkUpdateRequest struct {
-	ctx                     context.Context
-	ApiService              *VpnAPIService
+	ctx context.Context
+	ApiService *VpnAPIService
 	l2VPNTerminationRequest *[]L2VPNTerminationRequest
 }
 
@@ -12357,25 +12321,24 @@ VpnL2vpnTerminationsBulkUpdate Method for VpnL2vpnTerminationsBulkUpdate
 
 Put a list of L2VPN termination objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnL2vpnTerminationsBulkUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnL2vpnTerminationsBulkUpdateRequest
 */
 func (a *VpnAPIService) VpnL2vpnTerminationsBulkUpdate(ctx context.Context) ApiVpnL2vpnTerminationsBulkUpdateRequest {
 	return ApiVpnL2vpnTerminationsBulkUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []L2VPNTermination
+//  @return []L2VPNTermination
 func (a *VpnAPIService) VpnL2vpnTerminationsBulkUpdateExecute(r ApiVpnL2vpnTerminationsBulkUpdateRequest) ([]L2VPNTermination, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPut
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []L2VPNTermination
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []L2VPNTermination
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnL2vpnTerminationsBulkUpdate")
@@ -12463,8 +12426,8 @@ func (a *VpnAPIService) VpnL2vpnTerminationsBulkUpdateExecute(r ApiVpnL2vpnTermi
 }
 
 type ApiVpnL2vpnTerminationsCreateRequest struct {
-	ctx                     context.Context
-	ApiService              *VpnAPIService
+	ctx context.Context
+	ApiService *VpnAPIService
 	l2VPNTerminationRequest *L2VPNTerminationRequest
 }
 
@@ -12482,25 +12445,24 @@ VpnL2vpnTerminationsCreate Method for VpnL2vpnTerminationsCreate
 
 Post a list of L2VPN termination objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnL2vpnTerminationsCreateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnL2vpnTerminationsCreateRequest
 */
 func (a *VpnAPIService) VpnL2vpnTerminationsCreate(ctx context.Context) ApiVpnL2vpnTerminationsCreateRequest {
 	return ApiVpnL2vpnTerminationsCreateRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return L2VPNTermination
+//  @return L2VPNTermination
 func (a *VpnAPIService) VpnL2vpnTerminationsCreateExecute(r ApiVpnL2vpnTerminationsCreateRequest) (*L2VPNTermination, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *L2VPNTermination
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *L2VPNTermination
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnL2vpnTerminationsCreate")
@@ -12588,9 +12550,9 @@ func (a *VpnAPIService) VpnL2vpnTerminationsCreateExecute(r ApiVpnL2vpnTerminati
 }
 
 type ApiVpnL2vpnTerminationsDestroyRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *VpnAPIService
-	id         int32
+	id int32
 }
 
 func (r ApiVpnL2vpnTerminationsDestroyRequest) Execute() (*http.Response, error) {
@@ -12602,24 +12564,24 @@ VpnL2vpnTerminationsDestroy Method for VpnL2vpnTerminationsDestroy
 
 Delete a L2VPN termination object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this L2VPN termination.
-	@return ApiVpnL2vpnTerminationsDestroyRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this L2VPN termination.
+ @return ApiVpnL2vpnTerminationsDestroyRequest
 */
 func (a *VpnAPIService) VpnL2vpnTerminationsDestroy(ctx context.Context, id int32) ApiVpnL2vpnTerminationsDestroyRequest {
 	return ApiVpnL2vpnTerminationsDestroyRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
 func (a *VpnAPIService) VpnL2vpnTerminationsDestroyExecute(r ApiVpnL2vpnTerminationsDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnL2vpnTerminationsDestroy")
@@ -12694,82 +12656,82 @@ func (a *VpnAPIService) VpnL2vpnTerminationsDestroyExecute(r ApiVpnL2vpnTerminat
 }
 
 type ApiVpnL2vpnTerminationsListRequest struct {
-	ctx                   context.Context
-	ApiService            *VpnAPIService
-	assignedObjectId      *[]int32
+	ctx context.Context
+	ApiService *VpnAPIService
+	assignedObjectId *[]int32
 	assignedObjectIdEmpty *bool
-	assignedObjectIdGt    *[]int32
-	assignedObjectIdGte   *[]int32
-	assignedObjectIdLt    *[]int32
-	assignedObjectIdLte   *[]int32
-	assignedObjectIdN     *[]int32
-	assignedObjectType    *string
-	assignedObjectTypeN   *string
-	created               *[]time.Time
-	createdEmpty          *[]time.Time
-	createdGt             *[]time.Time
-	createdGte            *[]time.Time
-	createdLt             *[]time.Time
-	createdLte            *[]time.Time
-	createdN              *[]time.Time
-	createdByRequest      *string
-	device                *[]*string
-	deviceN               *[]*string
-	deviceId              *[]int32
-	deviceIdN             *[]int32
-	id                    *[]int32
-	idEmpty               *bool
-	idGt                  *[]int32
-	idGte                 *[]int32
-	idLt                  *[]int32
-	idLte                 *[]int32
-	idN                   *[]int32
-	interface_            *[]string
-	interfaceN            *[]string
-	interfaceId           *[]int32
-	interfaceIdN          *[]int32
-	l2vpn                 *[]string
-	l2vpnN                *[]string
-	l2vpnId               *[]int32
-	l2vpnIdN              *[]int32
-	lastUpdated           *[]time.Time
-	lastUpdatedEmpty      *[]time.Time
-	lastUpdatedGt         *[]time.Time
-	lastUpdatedGte        *[]time.Time
-	lastUpdatedLt         *[]time.Time
-	lastUpdatedLte        *[]time.Time
-	lastUpdatedN          *[]time.Time
-	limit                 *int32
-	modifiedByRequest     *string
-	offset                *int32
-	ordering              *string
-	q                     *string
-	region                *[]string
-	regionId              *[]int32
-	site                  *[]string
-	siteId                *[]int32
-	tag                   *[]string
-	tagN                  *[]string
-	updatedByRequest      *string
-	virtualMachine        *[]string
-	virtualMachineN       *[]string
-	virtualMachineId      *[]int32
-	virtualMachineIdN     *[]int32
-	vlan                  *[]string
-	vlanN                 *[]string
-	vlanId                *[]int32
-	vlanIdN               *[]int32
-	vlanVid               *int32
-	vlanVidEmpty          *int32
-	vlanVidGt             *int32
-	vlanVidGte            *int32
-	vlanVidLt             *int32
-	vlanVidLte            *int32
-	vlanVidN              *int32
-	vminterface           *[]string
-	vminterfaceN          *[]string
-	vminterfaceId         *[]int32
-	vminterfaceIdN        *[]int32
+	assignedObjectIdGt *[]int32
+	assignedObjectIdGte *[]int32
+	assignedObjectIdLt *[]int32
+	assignedObjectIdLte *[]int32
+	assignedObjectIdN *[]int32
+	assignedObjectType *string
+	assignedObjectTypeN *string
+	created *[]time.Time
+	createdEmpty *[]time.Time
+	createdGt *[]time.Time
+	createdGte *[]time.Time
+	createdLt *[]time.Time
+	createdLte *[]time.Time
+	createdN *[]time.Time
+	createdByRequest *string
+	device *[]*string
+	deviceN *[]*string
+	deviceId *[]int32
+	deviceIdN *[]int32
+	id *[]int32
+	idEmpty *bool
+	idGt *[]int32
+	idGte *[]int32
+	idLt *[]int32
+	idLte *[]int32
+	idN *[]int32
+	interface_ *[]string
+	interfaceN *[]string
+	interfaceId *[]int32
+	interfaceIdN *[]int32
+	l2vpn *[]string
+	l2vpnN *[]string
+	l2vpnId *[]int32
+	l2vpnIdN *[]int32
+	lastUpdated *[]time.Time
+	lastUpdatedEmpty *[]time.Time
+	lastUpdatedGt *[]time.Time
+	lastUpdatedGte *[]time.Time
+	lastUpdatedLt *[]time.Time
+	lastUpdatedLte *[]time.Time
+	lastUpdatedN *[]time.Time
+	limit *int32
+	modifiedByRequest *string
+	offset *int32
+	ordering *string
+	q *string
+	region *[]string
+	regionId *[]int32
+	site *[]string
+	siteId *[]int32
+	tag *[]string
+	tagN *[]string
+	updatedByRequest *string
+	virtualMachine *[]string
+	virtualMachineN *[]string
+	virtualMachineId *[]int32
+	virtualMachineIdN *[]int32
+	vlan *[]string
+	vlanN *[]string
+	vlanId *[]int32
+	vlanIdN *[]int32
+	vlanVid *int32
+	vlanVidEmpty *int32
+	vlanVidGt *int32
+	vlanVidGte *int32
+	vlanVidLt *int32
+	vlanVidLte *int32
+	vlanVidN *int32
+	vminterface *[]string
+	vminterfaceN *[]string
+	vminterfaceId *[]int32
+	vminterfaceIdN *[]int32
 }
 
 func (r ApiVpnL2vpnTerminationsListRequest) AssignedObjectId(assignedObjectId []int32) ApiVpnL2vpnTerminationsListRequest {
@@ -13186,25 +13148,24 @@ VpnL2vpnTerminationsList Method for VpnL2vpnTerminationsList
 
 Get a list of L2VPN termination objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnL2vpnTerminationsListRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnL2vpnTerminationsListRequest
 */
 func (a *VpnAPIService) VpnL2vpnTerminationsList(ctx context.Context) ApiVpnL2vpnTerminationsListRequest {
 	return ApiVpnL2vpnTerminationsListRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return PaginatedL2VPNTerminationList
+//  @return PaginatedL2VPNTerminationList
 func (a *VpnAPIService) VpnL2vpnTerminationsListExecute(r ApiVpnL2vpnTerminationsListRequest) (*PaginatedL2VPNTerminationList, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PaginatedL2VPNTerminationList
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PaginatedL2VPNTerminationList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnL2vpnTerminationsList")
@@ -13957,9 +13918,9 @@ func (a *VpnAPIService) VpnL2vpnTerminationsListExecute(r ApiVpnL2vpnTermination
 }
 
 type ApiVpnL2vpnTerminationsPartialUpdateRequest struct {
-	ctx                            context.Context
-	ApiService                     *VpnAPIService
-	id                             int32
+	ctx context.Context
+	ApiService *VpnAPIService
+	id int32
 	patchedL2VPNTerminationRequest *PatchedL2VPNTerminationRequest
 }
 
@@ -13977,27 +13938,26 @@ VpnL2vpnTerminationsPartialUpdate Method for VpnL2vpnTerminationsPartialUpdate
 
 Patch a L2VPN termination object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this L2VPN termination.
-	@return ApiVpnL2vpnTerminationsPartialUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this L2VPN termination.
+ @return ApiVpnL2vpnTerminationsPartialUpdateRequest
 */
 func (a *VpnAPIService) VpnL2vpnTerminationsPartialUpdate(ctx context.Context, id int32) ApiVpnL2vpnTerminationsPartialUpdateRequest {
 	return ApiVpnL2vpnTerminationsPartialUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return L2VPNTermination
+//  @return L2VPNTermination
 func (a *VpnAPIService) VpnL2vpnTerminationsPartialUpdateExecute(r ApiVpnL2vpnTerminationsPartialUpdateRequest) (*L2VPNTermination, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *L2VPNTermination
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *L2VPNTermination
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnL2vpnTerminationsPartialUpdate")
@@ -14083,9 +14043,9 @@ func (a *VpnAPIService) VpnL2vpnTerminationsPartialUpdateExecute(r ApiVpnL2vpnTe
 }
 
 type ApiVpnL2vpnTerminationsRetrieveRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *VpnAPIService
-	id         int32
+	id int32
 }
 
 func (r ApiVpnL2vpnTerminationsRetrieveRequest) Execute() (*L2VPNTermination, *http.Response, error) {
@@ -14097,27 +14057,26 @@ VpnL2vpnTerminationsRetrieve Method for VpnL2vpnTerminationsRetrieve
 
 Get a L2VPN termination object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this L2VPN termination.
-	@return ApiVpnL2vpnTerminationsRetrieveRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this L2VPN termination.
+ @return ApiVpnL2vpnTerminationsRetrieveRequest
 */
 func (a *VpnAPIService) VpnL2vpnTerminationsRetrieve(ctx context.Context, id int32) ApiVpnL2vpnTerminationsRetrieveRequest {
 	return ApiVpnL2vpnTerminationsRetrieveRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return L2VPNTermination
+//  @return L2VPNTermination
 func (a *VpnAPIService) VpnL2vpnTerminationsRetrieveExecute(r ApiVpnL2vpnTerminationsRetrieveRequest) (*L2VPNTermination, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *L2VPNTermination
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *L2VPNTermination
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnL2vpnTerminationsRetrieve")
@@ -14201,9 +14160,9 @@ func (a *VpnAPIService) VpnL2vpnTerminationsRetrieveExecute(r ApiVpnL2vpnTermina
 }
 
 type ApiVpnL2vpnTerminationsUpdateRequest struct {
-	ctx                     context.Context
-	ApiService              *VpnAPIService
-	id                      int32
+	ctx context.Context
+	ApiService *VpnAPIService
+	id int32
 	l2VPNTerminationRequest *L2VPNTerminationRequest
 }
 
@@ -14221,27 +14180,26 @@ VpnL2vpnTerminationsUpdate Method for VpnL2vpnTerminationsUpdate
 
 Put a L2VPN termination object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this L2VPN termination.
-	@return ApiVpnL2vpnTerminationsUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this L2VPN termination.
+ @return ApiVpnL2vpnTerminationsUpdateRequest
 */
 func (a *VpnAPIService) VpnL2vpnTerminationsUpdate(ctx context.Context, id int32) ApiVpnL2vpnTerminationsUpdateRequest {
 	return ApiVpnL2vpnTerminationsUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return L2VPNTermination
+//  @return L2VPNTermination
 func (a *VpnAPIService) VpnL2vpnTerminationsUpdateExecute(r ApiVpnL2vpnTerminationsUpdateRequest) (*L2VPNTermination, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPut
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *L2VPNTermination
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *L2VPNTermination
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnL2vpnTerminationsUpdate")
@@ -14330,8 +14288,8 @@ func (a *VpnAPIService) VpnL2vpnTerminationsUpdateExecute(r ApiVpnL2vpnTerminati
 }
 
 type ApiVpnL2vpnsBulkDestroyRequest struct {
-	ctx          context.Context
-	ApiService   *VpnAPIService
+	ctx context.Context
+	ApiService *VpnAPIService
 	l2VPNRequest *[]L2VPNRequest
 }
 
@@ -14349,22 +14307,22 @@ VpnL2vpnsBulkDestroy Method for VpnL2vpnsBulkDestroy
 
 Delete a list of L2VPN objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnL2vpnsBulkDestroyRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnL2vpnsBulkDestroyRequest
 */
 func (a *VpnAPIService) VpnL2vpnsBulkDestroy(ctx context.Context) ApiVpnL2vpnsBulkDestroyRequest {
 	return ApiVpnL2vpnsBulkDestroyRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
 func (a *VpnAPIService) VpnL2vpnsBulkDestroyExecute(r ApiVpnL2vpnsBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnL2vpnsBulkDestroy")
@@ -14443,8 +14401,8 @@ func (a *VpnAPIService) VpnL2vpnsBulkDestroyExecute(r ApiVpnL2vpnsBulkDestroyReq
 }
 
 type ApiVpnL2vpnsBulkPartialUpdateRequest struct {
-	ctx          context.Context
-	ApiService   *VpnAPIService
+	ctx context.Context
+	ApiService *VpnAPIService
 	l2VPNRequest *[]L2VPNRequest
 }
 
@@ -14462,25 +14420,24 @@ VpnL2vpnsBulkPartialUpdate Method for VpnL2vpnsBulkPartialUpdate
 
 Patch a list of L2VPN objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnL2vpnsBulkPartialUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnL2vpnsBulkPartialUpdateRequest
 */
 func (a *VpnAPIService) VpnL2vpnsBulkPartialUpdate(ctx context.Context) ApiVpnL2vpnsBulkPartialUpdateRequest {
 	return ApiVpnL2vpnsBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []L2VPN
+//  @return []L2VPN
 func (a *VpnAPIService) VpnL2vpnsBulkPartialUpdateExecute(r ApiVpnL2vpnsBulkPartialUpdateRequest) ([]L2VPN, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []L2VPN
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []L2VPN
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnL2vpnsBulkPartialUpdate")
@@ -14568,8 +14525,8 @@ func (a *VpnAPIService) VpnL2vpnsBulkPartialUpdateExecute(r ApiVpnL2vpnsBulkPart
 }
 
 type ApiVpnL2vpnsBulkUpdateRequest struct {
-	ctx          context.Context
-	ApiService   *VpnAPIService
+	ctx context.Context
+	ApiService *VpnAPIService
 	l2VPNRequest *[]L2VPNRequest
 }
 
@@ -14587,25 +14544,24 @@ VpnL2vpnsBulkUpdate Method for VpnL2vpnsBulkUpdate
 
 Put a list of L2VPN objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnL2vpnsBulkUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnL2vpnsBulkUpdateRequest
 */
 func (a *VpnAPIService) VpnL2vpnsBulkUpdate(ctx context.Context) ApiVpnL2vpnsBulkUpdateRequest {
 	return ApiVpnL2vpnsBulkUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []L2VPN
+//  @return []L2VPN
 func (a *VpnAPIService) VpnL2vpnsBulkUpdateExecute(r ApiVpnL2vpnsBulkUpdateRequest) ([]L2VPN, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPut
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []L2VPN
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []L2VPN
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnL2vpnsBulkUpdate")
@@ -14693,8 +14649,8 @@ func (a *VpnAPIService) VpnL2vpnsBulkUpdateExecute(r ApiVpnL2vpnsBulkUpdateReque
 }
 
 type ApiVpnL2vpnsCreateRequest struct {
-	ctx                  context.Context
-	ApiService           *VpnAPIService
+	ctx context.Context
+	ApiService *VpnAPIService
 	writableL2VPNRequest *WritableL2VPNRequest
 }
 
@@ -14712,25 +14668,24 @@ VpnL2vpnsCreate Method for VpnL2vpnsCreate
 
 Post a list of L2VPN objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnL2vpnsCreateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnL2vpnsCreateRequest
 */
 func (a *VpnAPIService) VpnL2vpnsCreate(ctx context.Context) ApiVpnL2vpnsCreateRequest {
 	return ApiVpnL2vpnsCreateRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return L2VPN
+//  @return L2VPN
 func (a *VpnAPIService) VpnL2vpnsCreateExecute(r ApiVpnL2vpnsCreateRequest) (*L2VPN, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *L2VPN
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *L2VPN
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnL2vpnsCreate")
@@ -14818,9 +14773,9 @@ func (a *VpnAPIService) VpnL2vpnsCreateExecute(r ApiVpnL2vpnsCreateRequest) (*L2
 }
 
 type ApiVpnL2vpnsDestroyRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *VpnAPIService
-	id         int32
+	id int32
 }
 
 func (r ApiVpnL2vpnsDestroyRequest) Execute() (*http.Response, error) {
@@ -14832,24 +14787,24 @@ VpnL2vpnsDestroy Method for VpnL2vpnsDestroy
 
 Delete a L2VPN object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this L2VPN.
-	@return ApiVpnL2vpnsDestroyRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this L2VPN.
+ @return ApiVpnL2vpnsDestroyRequest
 */
 func (a *VpnAPIService) VpnL2vpnsDestroy(ctx context.Context, id int32) ApiVpnL2vpnsDestroyRequest {
 	return ApiVpnL2vpnsDestroyRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
 func (a *VpnAPIService) VpnL2vpnsDestroyExecute(r ApiVpnL2vpnsDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnL2vpnsDestroy")
@@ -14924,105 +14879,105 @@ func (a *VpnAPIService) VpnL2vpnsDestroyExecute(r ApiVpnL2vpnsDestroyRequest) (*
 }
 
 type ApiVpnL2vpnsListRequest struct {
-	ctx               context.Context
-	ApiService        *VpnAPIService
-	created           *[]time.Time
-	createdEmpty      *[]time.Time
-	createdGt         *[]time.Time
-	createdGte        *[]time.Time
-	createdLt         *[]time.Time
-	createdLte        *[]time.Time
-	createdN          *[]time.Time
-	createdByRequest  *string
-	description       *[]string
-	descriptionEmpty  *bool
-	descriptionIc     *[]string
-	descriptionIe     *[]string
-	descriptionIew    *[]string
-	descriptionIsw    *[]string
-	descriptionN      *[]string
-	descriptionNic    *[]string
-	descriptionNie    *[]string
-	descriptionNiew   *[]string
-	descriptionNisw   *[]string
-	exportTarget      *[]string
-	exportTargetN     *[]string
-	exportTargetId    *[]int32
-	exportTargetIdN   *[]int32
-	id                *[]int32
-	idEmpty           *bool
-	idGt              *[]int32
-	idGte             *[]int32
-	idLt              *[]int32
-	idLte             *[]int32
-	idN               *[]int32
-	identifier        *[]int32
-	identifierEmpty   *bool
-	identifierGt      *[]int32
-	identifierGte     *[]int32
-	identifierLt      *[]int32
-	identifierLte     *[]int32
-	identifierN       *[]int32
-	importTarget      *[]string
-	importTargetN     *[]string
-	importTargetId    *[]int32
-	importTargetIdN   *[]int32
-	lastUpdated       *[]time.Time
-	lastUpdatedEmpty  *[]time.Time
-	lastUpdatedGt     *[]time.Time
-	lastUpdatedGte    *[]time.Time
-	lastUpdatedLt     *[]time.Time
-	lastUpdatedLte    *[]time.Time
-	lastUpdatedN      *[]time.Time
-	limit             *int32
+	ctx context.Context
+	ApiService *VpnAPIService
+	created *[]time.Time
+	createdEmpty *[]time.Time
+	createdGt *[]time.Time
+	createdGte *[]time.Time
+	createdLt *[]time.Time
+	createdLte *[]time.Time
+	createdN *[]time.Time
+	createdByRequest *string
+	description *[]string
+	descriptionEmpty *bool
+	descriptionIc *[]string
+	descriptionIe *[]string
+	descriptionIew *[]string
+	descriptionIsw *[]string
+	descriptionN *[]string
+	descriptionNic *[]string
+	descriptionNie *[]string
+	descriptionNiew *[]string
+	descriptionNisw *[]string
+	exportTarget *[]string
+	exportTargetN *[]string
+	exportTargetId *[]int32
+	exportTargetIdN *[]int32
+	id *[]int32
+	idEmpty *bool
+	idGt *[]int32
+	idGte *[]int32
+	idLt *[]int32
+	idLte *[]int32
+	idN *[]int32
+	identifier *[]int32
+	identifierEmpty *bool
+	identifierGt *[]int32
+	identifierGte *[]int32
+	identifierLt *[]int32
+	identifierLte *[]int32
+	identifierN *[]int32
+	importTarget *[]string
+	importTargetN *[]string
+	importTargetId *[]int32
+	importTargetIdN *[]int32
+	lastUpdated *[]time.Time
+	lastUpdatedEmpty *[]time.Time
+	lastUpdatedGt *[]time.Time
+	lastUpdatedGte *[]time.Time
+	lastUpdatedLt *[]time.Time
+	lastUpdatedLte *[]time.Time
+	lastUpdatedN *[]time.Time
+	limit *int32
 	modifiedByRequest *string
-	name              *[]string
-	nameEmpty         *bool
-	nameIc            *[]string
-	nameIe            *[]string
-	nameIew           *[]string
-	nameIsw           *[]string
-	nameN             *[]string
-	nameNic           *[]string
-	nameNie           *[]string
-	nameNiew          *[]string
-	nameNisw          *[]string
-	offset            *int32
-	ordering          *string
-	q                 *string
-	slug              *[]string
-	slugEmpty         *bool
-	slugIc            *[]string
-	slugIe            *[]string
-	slugIew           *[]string
-	slugIsw           *[]string
-	slugN             *[]string
-	slugNic           *[]string
-	slugNie           *[]string
-	slugNiew          *[]string
-	slugNisw          *[]string
-	tag               *[]string
-	tagN              *[]string
-	tenant            *[]string
-	tenantN           *[]string
-	tenantGroup       *[]string
-	tenantGroupN      *[]string
-	tenantGroupId     *[]string
-	tenantGroupIdN    *[]string
-	tenantId          *[]*int32
-	tenantIdN         *[]*int32
-	type_             *[]string
-	typeEmpty         *bool
-	typeIc            *[]string
-	typeIe            *[]string
-	typeIew           *[]string
-	typeIsw           *[]string
-	typeN             *[]string
-	typeNic           *[]string
-	typeNie           *[]string
-	typeNiew          *[]string
-	typeNisw          *[]string
-	updatedByRequest  *string
+	name *[]string
+	nameEmpty *bool
+	nameIc *[]string
+	nameIe *[]string
+	nameIew *[]string
+	nameIsw *[]string
+	nameN *[]string
+	nameNic *[]string
+	nameNie *[]string
+	nameNiew *[]string
+	nameNisw *[]string
+	offset *int32
+	ordering *string
+	q *string
+	slug *[]string
+	slugEmpty *bool
+	slugIc *[]string
+	slugIe *[]string
+	slugIew *[]string
+	slugIsw *[]string
+	slugN *[]string
+	slugNic *[]string
+	slugNie *[]string
+	slugNiew *[]string
+	slugNisw *[]string
+	tag *[]string
+	tagN *[]string
+	tenant *[]string
+	tenantN *[]string
+	tenantGroup *[]string
+	tenantGroupN *[]string
+	tenantGroupId *[]string
+	tenantGroupIdN *[]string
+	tenantId *[]*int32
+	tenantIdN *[]*int32
+	type_ *[]string
+	typeEmpty *bool
+	typeIc *[]string
+	typeIe *[]string
+	typeIew *[]string
+	typeIsw *[]string
+	typeN *[]string
+	typeNic *[]string
+	typeNie *[]string
+	typeNiew *[]string
+	typeNisw *[]string
+	updatedByRequest *string
 }
 
 func (r ApiVpnL2vpnsListRequest) Created(created []time.Time) ApiVpnL2vpnsListRequest {
@@ -15535,25 +15490,24 @@ VpnL2vpnsList Method for VpnL2vpnsList
 
 Get a list of L2VPN objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnL2vpnsListRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnL2vpnsListRequest
 */
 func (a *VpnAPIService) VpnL2vpnsList(ctx context.Context) ApiVpnL2vpnsListRequest {
 	return ApiVpnL2vpnsListRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return PaginatedL2VPNList
+//  @return PaginatedL2VPNList
 func (a *VpnAPIService) VpnL2vpnsListExecute(r ApiVpnL2vpnsListRequest) (*PaginatedL2VPNList, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PaginatedL2VPNList
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PaginatedL2VPNList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnL2vpnsList")
@@ -16599,9 +16553,9 @@ func (a *VpnAPIService) VpnL2vpnsListExecute(r ApiVpnL2vpnsListRequest) (*Pagina
 }
 
 type ApiVpnL2vpnsPartialUpdateRequest struct {
-	ctx                         context.Context
-	ApiService                  *VpnAPIService
-	id                          int32
+	ctx context.Context
+	ApiService *VpnAPIService
+	id int32
 	patchedWritableL2VPNRequest *PatchedWritableL2VPNRequest
 }
 
@@ -16619,27 +16573,26 @@ VpnL2vpnsPartialUpdate Method for VpnL2vpnsPartialUpdate
 
 Patch a L2VPN object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this L2VPN.
-	@return ApiVpnL2vpnsPartialUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this L2VPN.
+ @return ApiVpnL2vpnsPartialUpdateRequest
 */
 func (a *VpnAPIService) VpnL2vpnsPartialUpdate(ctx context.Context, id int32) ApiVpnL2vpnsPartialUpdateRequest {
 	return ApiVpnL2vpnsPartialUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return L2VPN
+//  @return L2VPN
 func (a *VpnAPIService) VpnL2vpnsPartialUpdateExecute(r ApiVpnL2vpnsPartialUpdateRequest) (*L2VPN, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *L2VPN
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *L2VPN
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnL2vpnsPartialUpdate")
@@ -16725,9 +16678,9 @@ func (a *VpnAPIService) VpnL2vpnsPartialUpdateExecute(r ApiVpnL2vpnsPartialUpdat
 }
 
 type ApiVpnL2vpnsRetrieveRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *VpnAPIService
-	id         int32
+	id int32
 }
 
 func (r ApiVpnL2vpnsRetrieveRequest) Execute() (*L2VPN, *http.Response, error) {
@@ -16739,27 +16692,26 @@ VpnL2vpnsRetrieve Method for VpnL2vpnsRetrieve
 
 Get a L2VPN object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this L2VPN.
-	@return ApiVpnL2vpnsRetrieveRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this L2VPN.
+ @return ApiVpnL2vpnsRetrieveRequest
 */
 func (a *VpnAPIService) VpnL2vpnsRetrieve(ctx context.Context, id int32) ApiVpnL2vpnsRetrieveRequest {
 	return ApiVpnL2vpnsRetrieveRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return L2VPN
+//  @return L2VPN
 func (a *VpnAPIService) VpnL2vpnsRetrieveExecute(r ApiVpnL2vpnsRetrieveRequest) (*L2VPN, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *L2VPN
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *L2VPN
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnL2vpnsRetrieve")
@@ -16843,9 +16795,9 @@ func (a *VpnAPIService) VpnL2vpnsRetrieveExecute(r ApiVpnL2vpnsRetrieveRequest) 
 }
 
 type ApiVpnL2vpnsUpdateRequest struct {
-	ctx                  context.Context
-	ApiService           *VpnAPIService
-	id                   int32
+	ctx context.Context
+	ApiService *VpnAPIService
+	id int32
 	writableL2VPNRequest *WritableL2VPNRequest
 }
 
@@ -16863,27 +16815,26 @@ VpnL2vpnsUpdate Method for VpnL2vpnsUpdate
 
 Put a L2VPN object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this L2VPN.
-	@return ApiVpnL2vpnsUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this L2VPN.
+ @return ApiVpnL2vpnsUpdateRequest
 */
 func (a *VpnAPIService) VpnL2vpnsUpdate(ctx context.Context, id int32) ApiVpnL2vpnsUpdateRequest {
 	return ApiVpnL2vpnsUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return L2VPN
+//  @return L2VPN
 func (a *VpnAPIService) VpnL2vpnsUpdateExecute(r ApiVpnL2vpnsUpdateRequest) (*L2VPN, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPut
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *L2VPN
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *L2VPN
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnL2vpnsUpdate")
@@ -16972,8 +16923,8 @@ func (a *VpnAPIService) VpnL2vpnsUpdateExecute(r ApiVpnL2vpnsUpdateRequest) (*L2
 }
 
 type ApiVpnTunnelGroupsBulkDestroyRequest struct {
-	ctx                context.Context
-	ApiService         *VpnAPIService
+	ctx context.Context
+	ApiService *VpnAPIService
 	tunnelGroupRequest *[]TunnelGroupRequest
 }
 
@@ -16991,22 +16942,22 @@ VpnTunnelGroupsBulkDestroy Method for VpnTunnelGroupsBulkDestroy
 
 Delete a list of tunnel group objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnTunnelGroupsBulkDestroyRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnTunnelGroupsBulkDestroyRequest
 */
 func (a *VpnAPIService) VpnTunnelGroupsBulkDestroy(ctx context.Context) ApiVpnTunnelGroupsBulkDestroyRequest {
 	return ApiVpnTunnelGroupsBulkDestroyRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
 func (a *VpnAPIService) VpnTunnelGroupsBulkDestroyExecute(r ApiVpnTunnelGroupsBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnTunnelGroupsBulkDestroy")
@@ -17085,8 +17036,8 @@ func (a *VpnAPIService) VpnTunnelGroupsBulkDestroyExecute(r ApiVpnTunnelGroupsBu
 }
 
 type ApiVpnTunnelGroupsBulkPartialUpdateRequest struct {
-	ctx                context.Context
-	ApiService         *VpnAPIService
+	ctx context.Context
+	ApiService *VpnAPIService
 	tunnelGroupRequest *[]TunnelGroupRequest
 }
 
@@ -17104,25 +17055,24 @@ VpnTunnelGroupsBulkPartialUpdate Method for VpnTunnelGroupsBulkPartialUpdate
 
 Patch a list of tunnel group objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnTunnelGroupsBulkPartialUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnTunnelGroupsBulkPartialUpdateRequest
 */
 func (a *VpnAPIService) VpnTunnelGroupsBulkPartialUpdate(ctx context.Context) ApiVpnTunnelGroupsBulkPartialUpdateRequest {
 	return ApiVpnTunnelGroupsBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []TunnelGroup
+//  @return []TunnelGroup
 func (a *VpnAPIService) VpnTunnelGroupsBulkPartialUpdateExecute(r ApiVpnTunnelGroupsBulkPartialUpdateRequest) ([]TunnelGroup, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []TunnelGroup
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []TunnelGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnTunnelGroupsBulkPartialUpdate")
@@ -17210,8 +17160,8 @@ func (a *VpnAPIService) VpnTunnelGroupsBulkPartialUpdateExecute(r ApiVpnTunnelGr
 }
 
 type ApiVpnTunnelGroupsBulkUpdateRequest struct {
-	ctx                context.Context
-	ApiService         *VpnAPIService
+	ctx context.Context
+	ApiService *VpnAPIService
 	tunnelGroupRequest *[]TunnelGroupRequest
 }
 
@@ -17229,25 +17179,24 @@ VpnTunnelGroupsBulkUpdate Method for VpnTunnelGroupsBulkUpdate
 
 Put a list of tunnel group objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnTunnelGroupsBulkUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnTunnelGroupsBulkUpdateRequest
 */
 func (a *VpnAPIService) VpnTunnelGroupsBulkUpdate(ctx context.Context) ApiVpnTunnelGroupsBulkUpdateRequest {
 	return ApiVpnTunnelGroupsBulkUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []TunnelGroup
+//  @return []TunnelGroup
 func (a *VpnAPIService) VpnTunnelGroupsBulkUpdateExecute(r ApiVpnTunnelGroupsBulkUpdateRequest) ([]TunnelGroup, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPut
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []TunnelGroup
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []TunnelGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnTunnelGroupsBulkUpdate")
@@ -17335,8 +17284,8 @@ func (a *VpnAPIService) VpnTunnelGroupsBulkUpdateExecute(r ApiVpnTunnelGroupsBul
 }
 
 type ApiVpnTunnelGroupsCreateRequest struct {
-	ctx                context.Context
-	ApiService         *VpnAPIService
+	ctx context.Context
+	ApiService *VpnAPIService
 	tunnelGroupRequest *TunnelGroupRequest
 }
 
@@ -17354,25 +17303,24 @@ VpnTunnelGroupsCreate Method for VpnTunnelGroupsCreate
 
 Post a list of tunnel group objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnTunnelGroupsCreateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnTunnelGroupsCreateRequest
 */
 func (a *VpnAPIService) VpnTunnelGroupsCreate(ctx context.Context) ApiVpnTunnelGroupsCreateRequest {
 	return ApiVpnTunnelGroupsCreateRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return TunnelGroup
+//  @return TunnelGroup
 func (a *VpnAPIService) VpnTunnelGroupsCreateExecute(r ApiVpnTunnelGroupsCreateRequest) (*TunnelGroup, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *TunnelGroup
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *TunnelGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnTunnelGroupsCreate")
@@ -17460,9 +17408,9 @@ func (a *VpnAPIService) VpnTunnelGroupsCreateExecute(r ApiVpnTunnelGroupsCreateR
 }
 
 type ApiVpnTunnelGroupsDestroyRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *VpnAPIService
-	id         int32
+	id int32
 }
 
 func (r ApiVpnTunnelGroupsDestroyRequest) Execute() (*http.Response, error) {
@@ -17474,24 +17422,24 @@ VpnTunnelGroupsDestroy Method for VpnTunnelGroupsDestroy
 
 Delete a tunnel group object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this tunnel group.
-	@return ApiVpnTunnelGroupsDestroyRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this tunnel group.
+ @return ApiVpnTunnelGroupsDestroyRequest
 */
 func (a *VpnAPIService) VpnTunnelGroupsDestroy(ctx context.Context, id int32) ApiVpnTunnelGroupsDestroyRequest {
 	return ApiVpnTunnelGroupsDestroyRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
 func (a *VpnAPIService) VpnTunnelGroupsDestroyExecute(r ApiVpnTunnelGroupsDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnTunnelGroupsDestroy")
@@ -17566,71 +17514,71 @@ func (a *VpnAPIService) VpnTunnelGroupsDestroyExecute(r ApiVpnTunnelGroupsDestro
 }
 
 type ApiVpnTunnelGroupsListRequest struct {
-	ctx               context.Context
-	ApiService        *VpnAPIService
-	created           *[]time.Time
-	createdEmpty      *[]time.Time
-	createdGt         *[]time.Time
-	createdGte        *[]time.Time
-	createdLt         *[]time.Time
-	createdLte        *[]time.Time
-	createdN          *[]time.Time
-	createdByRequest  *string
-	description       *[]string
-	descriptionEmpty  *bool
-	descriptionIc     *[]string
-	descriptionIe     *[]string
-	descriptionIew    *[]string
-	descriptionIsw    *[]string
-	descriptionN      *[]string
-	descriptionNic    *[]string
-	descriptionNie    *[]string
-	descriptionNiew   *[]string
-	descriptionNisw   *[]string
-	id                *[]int32
-	idEmpty           *bool
-	idGt              *[]int32
-	idGte             *[]int32
-	idLt              *[]int32
-	idLte             *[]int32
-	idN               *[]int32
-	lastUpdated       *[]time.Time
-	lastUpdatedEmpty  *[]time.Time
-	lastUpdatedGt     *[]time.Time
-	lastUpdatedGte    *[]time.Time
-	lastUpdatedLt     *[]time.Time
-	lastUpdatedLte    *[]time.Time
-	lastUpdatedN      *[]time.Time
-	limit             *int32
+	ctx context.Context
+	ApiService *VpnAPIService
+	created *[]time.Time
+	createdEmpty *[]time.Time
+	createdGt *[]time.Time
+	createdGte *[]time.Time
+	createdLt *[]time.Time
+	createdLte *[]time.Time
+	createdN *[]time.Time
+	createdByRequest *string
+	description *[]string
+	descriptionEmpty *bool
+	descriptionIc *[]string
+	descriptionIe *[]string
+	descriptionIew *[]string
+	descriptionIsw *[]string
+	descriptionN *[]string
+	descriptionNic *[]string
+	descriptionNie *[]string
+	descriptionNiew *[]string
+	descriptionNisw *[]string
+	id *[]int32
+	idEmpty *bool
+	idGt *[]int32
+	idGte *[]int32
+	idLt *[]int32
+	idLte *[]int32
+	idN *[]int32
+	lastUpdated *[]time.Time
+	lastUpdatedEmpty *[]time.Time
+	lastUpdatedGt *[]time.Time
+	lastUpdatedGte *[]time.Time
+	lastUpdatedLt *[]time.Time
+	lastUpdatedLte *[]time.Time
+	lastUpdatedN *[]time.Time
+	limit *int32
 	modifiedByRequest *string
-	name              *[]string
-	nameEmpty         *bool
-	nameIc            *[]string
-	nameIe            *[]string
-	nameIew           *[]string
-	nameIsw           *[]string
-	nameN             *[]string
-	nameNic           *[]string
-	nameNie           *[]string
-	nameNiew          *[]string
-	nameNisw          *[]string
-	offset            *int32
-	ordering          *string
-	q                 *string
-	slug              *[]string
-	slugEmpty         *bool
-	slugIc            *[]string
-	slugIe            *[]string
-	slugIew           *[]string
-	slugIsw           *[]string
-	slugN             *[]string
-	slugNic           *[]string
-	slugNie           *[]string
-	slugNiew          *[]string
-	slugNisw          *[]string
-	tag               *[]string
-	tagN              *[]string
-	updatedByRequest  *string
+	name *[]string
+	nameEmpty *bool
+	nameIc *[]string
+	nameIe *[]string
+	nameIew *[]string
+	nameIsw *[]string
+	nameN *[]string
+	nameNic *[]string
+	nameNie *[]string
+	nameNiew *[]string
+	nameNisw *[]string
+	offset *int32
+	ordering *string
+	q *string
+	slug *[]string
+	slugEmpty *bool
+	slugIc *[]string
+	slugIe *[]string
+	slugIew *[]string
+	slugIsw *[]string
+	slugN *[]string
+	slugNic *[]string
+	slugNie *[]string
+	slugNiew *[]string
+	slugNisw *[]string
+	tag *[]string
+	tagN *[]string
+	updatedByRequest *string
 }
 
 func (r ApiVpnTunnelGroupsListRequest) Created(created []time.Time) ApiVpnTunnelGroupsListRequest {
@@ -17961,25 +17909,24 @@ VpnTunnelGroupsList Method for VpnTunnelGroupsList
 
 Get a list of tunnel group objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnTunnelGroupsListRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnTunnelGroupsListRequest
 */
 func (a *VpnAPIService) VpnTunnelGroupsList(ctx context.Context) ApiVpnTunnelGroupsListRequest {
 	return ApiVpnTunnelGroupsListRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return PaginatedTunnelGroupList
+//  @return PaginatedTunnelGroupList
 func (a *VpnAPIService) VpnTunnelGroupsListExecute(r ApiVpnTunnelGroupsListRequest) (*PaginatedTunnelGroupList, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PaginatedTunnelGroupList
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PaginatedTunnelGroupList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnTunnelGroupsList")
@@ -18667,9 +18614,9 @@ func (a *VpnAPIService) VpnTunnelGroupsListExecute(r ApiVpnTunnelGroupsListReque
 }
 
 type ApiVpnTunnelGroupsPartialUpdateRequest struct {
-	ctx                       context.Context
-	ApiService                *VpnAPIService
-	id                        int32
+	ctx context.Context
+	ApiService *VpnAPIService
+	id int32
 	patchedTunnelGroupRequest *PatchedTunnelGroupRequest
 }
 
@@ -18687,27 +18634,26 @@ VpnTunnelGroupsPartialUpdate Method for VpnTunnelGroupsPartialUpdate
 
 Patch a tunnel group object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this tunnel group.
-	@return ApiVpnTunnelGroupsPartialUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this tunnel group.
+ @return ApiVpnTunnelGroupsPartialUpdateRequest
 */
 func (a *VpnAPIService) VpnTunnelGroupsPartialUpdate(ctx context.Context, id int32) ApiVpnTunnelGroupsPartialUpdateRequest {
 	return ApiVpnTunnelGroupsPartialUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return TunnelGroup
+//  @return TunnelGroup
 func (a *VpnAPIService) VpnTunnelGroupsPartialUpdateExecute(r ApiVpnTunnelGroupsPartialUpdateRequest) (*TunnelGroup, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *TunnelGroup
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *TunnelGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnTunnelGroupsPartialUpdate")
@@ -18793,9 +18739,9 @@ func (a *VpnAPIService) VpnTunnelGroupsPartialUpdateExecute(r ApiVpnTunnelGroups
 }
 
 type ApiVpnTunnelGroupsRetrieveRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *VpnAPIService
-	id         int32
+	id int32
 }
 
 func (r ApiVpnTunnelGroupsRetrieveRequest) Execute() (*TunnelGroup, *http.Response, error) {
@@ -18807,27 +18753,26 @@ VpnTunnelGroupsRetrieve Method for VpnTunnelGroupsRetrieve
 
 Get a tunnel group object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this tunnel group.
-	@return ApiVpnTunnelGroupsRetrieveRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this tunnel group.
+ @return ApiVpnTunnelGroupsRetrieveRequest
 */
 func (a *VpnAPIService) VpnTunnelGroupsRetrieve(ctx context.Context, id int32) ApiVpnTunnelGroupsRetrieveRequest {
 	return ApiVpnTunnelGroupsRetrieveRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return TunnelGroup
+//  @return TunnelGroup
 func (a *VpnAPIService) VpnTunnelGroupsRetrieveExecute(r ApiVpnTunnelGroupsRetrieveRequest) (*TunnelGroup, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *TunnelGroup
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *TunnelGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnTunnelGroupsRetrieve")
@@ -18911,9 +18856,9 @@ func (a *VpnAPIService) VpnTunnelGroupsRetrieveExecute(r ApiVpnTunnelGroupsRetri
 }
 
 type ApiVpnTunnelGroupsUpdateRequest struct {
-	ctx                context.Context
-	ApiService         *VpnAPIService
-	id                 int32
+	ctx context.Context
+	ApiService *VpnAPIService
+	id int32
 	tunnelGroupRequest *TunnelGroupRequest
 }
 
@@ -18931,27 +18876,26 @@ VpnTunnelGroupsUpdate Method for VpnTunnelGroupsUpdate
 
 Put a tunnel group object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this tunnel group.
-	@return ApiVpnTunnelGroupsUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this tunnel group.
+ @return ApiVpnTunnelGroupsUpdateRequest
 */
 func (a *VpnAPIService) VpnTunnelGroupsUpdate(ctx context.Context, id int32) ApiVpnTunnelGroupsUpdateRequest {
 	return ApiVpnTunnelGroupsUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return TunnelGroup
+//  @return TunnelGroup
 func (a *VpnAPIService) VpnTunnelGroupsUpdateExecute(r ApiVpnTunnelGroupsUpdateRequest) (*TunnelGroup, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPut
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *TunnelGroup
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *TunnelGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnTunnelGroupsUpdate")
@@ -19040,8 +18984,8 @@ func (a *VpnAPIService) VpnTunnelGroupsUpdateExecute(r ApiVpnTunnelGroupsUpdateR
 }
 
 type ApiVpnTunnelTerminationsBulkDestroyRequest struct {
-	ctx                      context.Context
-	ApiService               *VpnAPIService
+	ctx context.Context
+	ApiService *VpnAPIService
 	tunnelTerminationRequest *[]TunnelTerminationRequest
 }
 
@@ -19059,22 +19003,22 @@ VpnTunnelTerminationsBulkDestroy Method for VpnTunnelTerminationsBulkDestroy
 
 Delete a list of tunnel termination objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnTunnelTerminationsBulkDestroyRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnTunnelTerminationsBulkDestroyRequest
 */
 func (a *VpnAPIService) VpnTunnelTerminationsBulkDestroy(ctx context.Context) ApiVpnTunnelTerminationsBulkDestroyRequest {
 	return ApiVpnTunnelTerminationsBulkDestroyRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
 func (a *VpnAPIService) VpnTunnelTerminationsBulkDestroyExecute(r ApiVpnTunnelTerminationsBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnTunnelTerminationsBulkDestroy")
@@ -19153,8 +19097,8 @@ func (a *VpnAPIService) VpnTunnelTerminationsBulkDestroyExecute(r ApiVpnTunnelTe
 }
 
 type ApiVpnTunnelTerminationsBulkPartialUpdateRequest struct {
-	ctx                      context.Context
-	ApiService               *VpnAPIService
+	ctx context.Context
+	ApiService *VpnAPIService
 	tunnelTerminationRequest *[]TunnelTerminationRequest
 }
 
@@ -19172,25 +19116,24 @@ VpnTunnelTerminationsBulkPartialUpdate Method for VpnTunnelTerminationsBulkParti
 
 Patch a list of tunnel termination objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnTunnelTerminationsBulkPartialUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnTunnelTerminationsBulkPartialUpdateRequest
 */
 func (a *VpnAPIService) VpnTunnelTerminationsBulkPartialUpdate(ctx context.Context) ApiVpnTunnelTerminationsBulkPartialUpdateRequest {
 	return ApiVpnTunnelTerminationsBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []TunnelTermination
+//  @return []TunnelTermination
 func (a *VpnAPIService) VpnTunnelTerminationsBulkPartialUpdateExecute(r ApiVpnTunnelTerminationsBulkPartialUpdateRequest) ([]TunnelTermination, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []TunnelTermination
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []TunnelTermination
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnTunnelTerminationsBulkPartialUpdate")
@@ -19278,8 +19221,8 @@ func (a *VpnAPIService) VpnTunnelTerminationsBulkPartialUpdateExecute(r ApiVpnTu
 }
 
 type ApiVpnTunnelTerminationsBulkUpdateRequest struct {
-	ctx                      context.Context
-	ApiService               *VpnAPIService
+	ctx context.Context
+	ApiService *VpnAPIService
 	tunnelTerminationRequest *[]TunnelTerminationRequest
 }
 
@@ -19297,25 +19240,24 @@ VpnTunnelTerminationsBulkUpdate Method for VpnTunnelTerminationsBulkUpdate
 
 Put a list of tunnel termination objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnTunnelTerminationsBulkUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnTunnelTerminationsBulkUpdateRequest
 */
 func (a *VpnAPIService) VpnTunnelTerminationsBulkUpdate(ctx context.Context) ApiVpnTunnelTerminationsBulkUpdateRequest {
 	return ApiVpnTunnelTerminationsBulkUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []TunnelTermination
+//  @return []TunnelTermination
 func (a *VpnAPIService) VpnTunnelTerminationsBulkUpdateExecute(r ApiVpnTunnelTerminationsBulkUpdateRequest) ([]TunnelTermination, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPut
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []TunnelTermination
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []TunnelTermination
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnTunnelTerminationsBulkUpdate")
@@ -19403,8 +19345,8 @@ func (a *VpnAPIService) VpnTunnelTerminationsBulkUpdateExecute(r ApiVpnTunnelTer
 }
 
 type ApiVpnTunnelTerminationsCreateRequest struct {
-	ctx                              context.Context
-	ApiService                       *VpnAPIService
+	ctx context.Context
+	ApiService *VpnAPIService
 	writableTunnelTerminationRequest *WritableTunnelTerminationRequest
 }
 
@@ -19422,25 +19364,24 @@ VpnTunnelTerminationsCreate Method for VpnTunnelTerminationsCreate
 
 Post a list of tunnel termination objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnTunnelTerminationsCreateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnTunnelTerminationsCreateRequest
 */
 func (a *VpnAPIService) VpnTunnelTerminationsCreate(ctx context.Context) ApiVpnTunnelTerminationsCreateRequest {
 	return ApiVpnTunnelTerminationsCreateRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return TunnelTermination
+//  @return TunnelTermination
 func (a *VpnAPIService) VpnTunnelTerminationsCreateExecute(r ApiVpnTunnelTerminationsCreateRequest) (*TunnelTermination, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *TunnelTermination
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *TunnelTermination
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnTunnelTerminationsCreate")
@@ -19528,9 +19469,9 @@ func (a *VpnAPIService) VpnTunnelTerminationsCreateExecute(r ApiVpnTunnelTermina
 }
 
 type ApiVpnTunnelTerminationsDestroyRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *VpnAPIService
-	id         int32
+	id int32
 }
 
 func (r ApiVpnTunnelTerminationsDestroyRequest) Execute() (*http.Response, error) {
@@ -19542,24 +19483,24 @@ VpnTunnelTerminationsDestroy Method for VpnTunnelTerminationsDestroy
 
 Delete a tunnel termination object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this tunnel termination.
-	@return ApiVpnTunnelTerminationsDestroyRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this tunnel termination.
+ @return ApiVpnTunnelTerminationsDestroyRequest
 */
 func (a *VpnAPIService) VpnTunnelTerminationsDestroy(ctx context.Context, id int32) ApiVpnTunnelTerminationsDestroyRequest {
 	return ApiVpnTunnelTerminationsDestroyRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
 func (a *VpnAPIService) VpnTunnelTerminationsDestroyExecute(r ApiVpnTunnelTerminationsDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnTunnelTerminationsDestroy")
@@ -19634,72 +19575,72 @@ func (a *VpnAPIService) VpnTunnelTerminationsDestroyExecute(r ApiVpnTunnelTermin
 }
 
 type ApiVpnTunnelTerminationsListRequest struct {
-	ctx                context.Context
-	ApiService         *VpnAPIService
-	created            *[]time.Time
-	createdEmpty       *[]time.Time
-	createdGt          *[]time.Time
-	createdGte         *[]time.Time
-	createdLt          *[]time.Time
-	createdLte         *[]time.Time
-	createdN           *[]time.Time
-	createdByRequest   *string
-	id                 *[]int32
-	idEmpty            *bool
-	idGt               *[]int32
-	idGte              *[]int32
-	idLt               *[]int32
-	idLte              *[]int32
-	idN                *[]int32
-	interface_         *[]string
-	interfaceN         *[]string
-	interfaceId        *[]int32
-	interfaceIdN       *[]int32
-	lastUpdated        *[]time.Time
-	lastUpdatedEmpty   *[]time.Time
-	lastUpdatedGt      *[]time.Time
-	lastUpdatedGte     *[]time.Time
-	lastUpdatedLt      *[]time.Time
-	lastUpdatedLte     *[]time.Time
-	lastUpdatedN       *[]time.Time
-	limit              *int32
-	modifiedByRequest  *string
-	offset             *int32
-	ordering           *string
-	outsideIpId        *[]int32
-	outsideIpIdN       *[]int32
-	q                  *string
-	role               *[]string
-	roleEmpty          *bool
-	roleIc             *[]string
-	roleIe             *[]string
-	roleIew            *[]string
-	roleIsw            *[]string
-	roleN              *[]string
-	roleNic            *[]string
-	roleNie            *[]string
-	roleNiew           *[]string
-	roleNisw           *[]string
-	tag                *[]string
-	tagN               *[]string
-	terminationId      *[]int32
+	ctx context.Context
+	ApiService *VpnAPIService
+	created *[]time.Time
+	createdEmpty *[]time.Time
+	createdGt *[]time.Time
+	createdGte *[]time.Time
+	createdLt *[]time.Time
+	createdLte *[]time.Time
+	createdN *[]time.Time
+	createdByRequest *string
+	id *[]int32
+	idEmpty *bool
+	idGt *[]int32
+	idGte *[]int32
+	idLt *[]int32
+	idLte *[]int32
+	idN *[]int32
+	interface_ *[]string
+	interfaceN *[]string
+	interfaceId *[]int32
+	interfaceIdN *[]int32
+	lastUpdated *[]time.Time
+	lastUpdatedEmpty *[]time.Time
+	lastUpdatedGt *[]time.Time
+	lastUpdatedGte *[]time.Time
+	lastUpdatedLt *[]time.Time
+	lastUpdatedLte *[]time.Time
+	lastUpdatedN *[]time.Time
+	limit *int32
+	modifiedByRequest *string
+	offset *int32
+	ordering *string
+	outsideIpId *[]int32
+	outsideIpIdN *[]int32
+	q *string
+	role *[]string
+	roleEmpty *bool
+	roleIc *[]string
+	roleIe *[]string
+	roleIew *[]string
+	roleIsw *[]string
+	roleN *[]string
+	roleNic *[]string
+	roleNie *[]string
+	roleNiew *[]string
+	roleNisw *[]string
+	tag *[]string
+	tagN *[]string
+	terminationId *[]int32
 	terminationIdEmpty *bool
-	terminationIdGt    *[]int32
-	terminationIdGte   *[]int32
-	terminationIdLt    *[]int32
-	terminationIdLte   *[]int32
-	terminationIdN     *[]int32
-	terminationType    *string
-	terminationTypeN   *string
-	tunnel             *[]string
-	tunnelN            *[]string
-	tunnelId           *[]int32
-	tunnelIdN          *[]int32
-	updatedByRequest   *string
-	vminterface        *[]string
-	vminterfaceN       *[]string
-	vminterfaceId      *[]int32
-	vminterfaceIdN     *[]int32
+	terminationIdGt *[]int32
+	terminationIdGte *[]int32
+	terminationIdLt *[]int32
+	terminationIdLte *[]int32
+	terminationIdN *[]int32
+	terminationType *string
+	terminationTypeN *string
+	tunnel *[]string
+	tunnelN *[]string
+	tunnelId *[]int32
+	tunnelIdN *[]int32
+	updatedByRequest *string
+	vminterface *[]string
+	vminterfaceN *[]string
+	vminterfaceId *[]int32
+	vminterfaceIdN *[]int32
 }
 
 func (r ApiVpnTunnelTerminationsListRequest) Created(created []time.Time) ApiVpnTunnelTerminationsListRequest {
@@ -20049,25 +19990,24 @@ VpnTunnelTerminationsList Method for VpnTunnelTerminationsList
 
 Get a list of tunnel termination objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnTunnelTerminationsListRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnTunnelTerminationsListRequest
 */
 func (a *VpnAPIService) VpnTunnelTerminationsList(ctx context.Context) ApiVpnTunnelTerminationsListRequest {
 	return ApiVpnTunnelTerminationsListRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return PaginatedTunnelTerminationList
+//  @return PaginatedTunnelTerminationList
 func (a *VpnAPIService) VpnTunnelTerminationsListExecute(r ApiVpnTunnelTerminationsListRequest) (*PaginatedTunnelTerminationList, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PaginatedTunnelTerminationList
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PaginatedTunnelTerminationList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnTunnelTerminationsList")
@@ -20758,9 +20698,9 @@ func (a *VpnAPIService) VpnTunnelTerminationsListExecute(r ApiVpnTunnelTerminati
 }
 
 type ApiVpnTunnelTerminationsPartialUpdateRequest struct {
-	ctx                                     context.Context
-	ApiService                              *VpnAPIService
-	id                                      int32
+	ctx context.Context
+	ApiService *VpnAPIService
+	id int32
 	patchedWritableTunnelTerminationRequest *PatchedWritableTunnelTerminationRequest
 }
 
@@ -20778,27 +20718,26 @@ VpnTunnelTerminationsPartialUpdate Method for VpnTunnelTerminationsPartialUpdate
 
 Patch a tunnel termination object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this tunnel termination.
-	@return ApiVpnTunnelTerminationsPartialUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this tunnel termination.
+ @return ApiVpnTunnelTerminationsPartialUpdateRequest
 */
 func (a *VpnAPIService) VpnTunnelTerminationsPartialUpdate(ctx context.Context, id int32) ApiVpnTunnelTerminationsPartialUpdateRequest {
 	return ApiVpnTunnelTerminationsPartialUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return TunnelTermination
+//  @return TunnelTermination
 func (a *VpnAPIService) VpnTunnelTerminationsPartialUpdateExecute(r ApiVpnTunnelTerminationsPartialUpdateRequest) (*TunnelTermination, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *TunnelTermination
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *TunnelTermination
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnTunnelTerminationsPartialUpdate")
@@ -20884,9 +20823,9 @@ func (a *VpnAPIService) VpnTunnelTerminationsPartialUpdateExecute(r ApiVpnTunnel
 }
 
 type ApiVpnTunnelTerminationsRetrieveRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *VpnAPIService
-	id         int32
+	id int32
 }
 
 func (r ApiVpnTunnelTerminationsRetrieveRequest) Execute() (*TunnelTermination, *http.Response, error) {
@@ -20898,27 +20837,26 @@ VpnTunnelTerminationsRetrieve Method for VpnTunnelTerminationsRetrieve
 
 Get a tunnel termination object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this tunnel termination.
-	@return ApiVpnTunnelTerminationsRetrieveRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this tunnel termination.
+ @return ApiVpnTunnelTerminationsRetrieveRequest
 */
 func (a *VpnAPIService) VpnTunnelTerminationsRetrieve(ctx context.Context, id int32) ApiVpnTunnelTerminationsRetrieveRequest {
 	return ApiVpnTunnelTerminationsRetrieveRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return TunnelTermination
+//  @return TunnelTermination
 func (a *VpnAPIService) VpnTunnelTerminationsRetrieveExecute(r ApiVpnTunnelTerminationsRetrieveRequest) (*TunnelTermination, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *TunnelTermination
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *TunnelTermination
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnTunnelTerminationsRetrieve")
@@ -21002,9 +20940,9 @@ func (a *VpnAPIService) VpnTunnelTerminationsRetrieveExecute(r ApiVpnTunnelTermi
 }
 
 type ApiVpnTunnelTerminationsUpdateRequest struct {
-	ctx                              context.Context
-	ApiService                       *VpnAPIService
-	id                               int32
+	ctx context.Context
+	ApiService *VpnAPIService
+	id int32
 	writableTunnelTerminationRequest *WritableTunnelTerminationRequest
 }
 
@@ -21022,27 +20960,26 @@ VpnTunnelTerminationsUpdate Method for VpnTunnelTerminationsUpdate
 
 Put a tunnel termination object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this tunnel termination.
-	@return ApiVpnTunnelTerminationsUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this tunnel termination.
+ @return ApiVpnTunnelTerminationsUpdateRequest
 */
 func (a *VpnAPIService) VpnTunnelTerminationsUpdate(ctx context.Context, id int32) ApiVpnTunnelTerminationsUpdateRequest {
 	return ApiVpnTunnelTerminationsUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return TunnelTermination
+//  @return TunnelTermination
 func (a *VpnAPIService) VpnTunnelTerminationsUpdateExecute(r ApiVpnTunnelTerminationsUpdateRequest) (*TunnelTermination, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPut
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *TunnelTermination
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *TunnelTermination
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnTunnelTerminationsUpdate")
@@ -21131,8 +21068,8 @@ func (a *VpnAPIService) VpnTunnelTerminationsUpdateExecute(r ApiVpnTunnelTermina
 }
 
 type ApiVpnTunnelsBulkDestroyRequest struct {
-	ctx           context.Context
-	ApiService    *VpnAPIService
+	ctx context.Context
+	ApiService *VpnAPIService
 	tunnelRequest *[]TunnelRequest
 }
 
@@ -21150,22 +21087,22 @@ VpnTunnelsBulkDestroy Method for VpnTunnelsBulkDestroy
 
 Delete a list of tunnel objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnTunnelsBulkDestroyRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnTunnelsBulkDestroyRequest
 */
 func (a *VpnAPIService) VpnTunnelsBulkDestroy(ctx context.Context) ApiVpnTunnelsBulkDestroyRequest {
 	return ApiVpnTunnelsBulkDestroyRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
 func (a *VpnAPIService) VpnTunnelsBulkDestroyExecute(r ApiVpnTunnelsBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnTunnelsBulkDestroy")
@@ -21244,8 +21181,8 @@ func (a *VpnAPIService) VpnTunnelsBulkDestroyExecute(r ApiVpnTunnelsBulkDestroyR
 }
 
 type ApiVpnTunnelsBulkPartialUpdateRequest struct {
-	ctx           context.Context
-	ApiService    *VpnAPIService
+	ctx context.Context
+	ApiService *VpnAPIService
 	tunnelRequest *[]TunnelRequest
 }
 
@@ -21263,25 +21200,24 @@ VpnTunnelsBulkPartialUpdate Method for VpnTunnelsBulkPartialUpdate
 
 Patch a list of tunnel objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnTunnelsBulkPartialUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnTunnelsBulkPartialUpdateRequest
 */
 func (a *VpnAPIService) VpnTunnelsBulkPartialUpdate(ctx context.Context) ApiVpnTunnelsBulkPartialUpdateRequest {
 	return ApiVpnTunnelsBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []Tunnel
+//  @return []Tunnel
 func (a *VpnAPIService) VpnTunnelsBulkPartialUpdateExecute(r ApiVpnTunnelsBulkPartialUpdateRequest) ([]Tunnel, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []Tunnel
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []Tunnel
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnTunnelsBulkPartialUpdate")
@@ -21369,8 +21305,8 @@ func (a *VpnAPIService) VpnTunnelsBulkPartialUpdateExecute(r ApiVpnTunnelsBulkPa
 }
 
 type ApiVpnTunnelsBulkUpdateRequest struct {
-	ctx           context.Context
-	ApiService    *VpnAPIService
+	ctx context.Context
+	ApiService *VpnAPIService
 	tunnelRequest *[]TunnelRequest
 }
 
@@ -21388,25 +21324,24 @@ VpnTunnelsBulkUpdate Method for VpnTunnelsBulkUpdate
 
 Put a list of tunnel objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnTunnelsBulkUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnTunnelsBulkUpdateRequest
 */
 func (a *VpnAPIService) VpnTunnelsBulkUpdate(ctx context.Context) ApiVpnTunnelsBulkUpdateRequest {
 	return ApiVpnTunnelsBulkUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []Tunnel
+//  @return []Tunnel
 func (a *VpnAPIService) VpnTunnelsBulkUpdateExecute(r ApiVpnTunnelsBulkUpdateRequest) ([]Tunnel, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPut
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []Tunnel
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []Tunnel
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnTunnelsBulkUpdate")
@@ -21494,8 +21429,8 @@ func (a *VpnAPIService) VpnTunnelsBulkUpdateExecute(r ApiVpnTunnelsBulkUpdateReq
 }
 
 type ApiVpnTunnelsCreateRequest struct {
-	ctx                   context.Context
-	ApiService            *VpnAPIService
+	ctx context.Context
+	ApiService *VpnAPIService
 	writableTunnelRequest *WritableTunnelRequest
 }
 
@@ -21513,25 +21448,24 @@ VpnTunnelsCreate Method for VpnTunnelsCreate
 
 Post a list of tunnel objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnTunnelsCreateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnTunnelsCreateRequest
 */
 func (a *VpnAPIService) VpnTunnelsCreate(ctx context.Context) ApiVpnTunnelsCreateRequest {
 	return ApiVpnTunnelsCreateRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return Tunnel
+//  @return Tunnel
 func (a *VpnAPIService) VpnTunnelsCreateExecute(r ApiVpnTunnelsCreateRequest) (*Tunnel, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *Tunnel
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *Tunnel
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnTunnelsCreate")
@@ -21619,9 +21553,9 @@ func (a *VpnAPIService) VpnTunnelsCreateExecute(r ApiVpnTunnelsCreateRequest) (*
 }
 
 type ApiVpnTunnelsDestroyRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *VpnAPIService
-	id         int32
+	id int32
 }
 
 func (r ApiVpnTunnelsDestroyRequest) Execute() (*http.Response, error) {
@@ -21633,24 +21567,24 @@ VpnTunnelsDestroy Method for VpnTunnelsDestroy
 
 Delete a tunnel object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this tunnel.
-	@return ApiVpnTunnelsDestroyRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this tunnel.
+ @return ApiVpnTunnelsDestroyRequest
 */
 func (a *VpnAPIService) VpnTunnelsDestroy(ctx context.Context, id int32) ApiVpnTunnelsDestroyRequest {
 	return ApiVpnTunnelsDestroyRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
 func (a *VpnAPIService) VpnTunnelsDestroyExecute(r ApiVpnTunnelsDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnTunnelsDestroy")
@@ -21725,105 +21659,105 @@ func (a *VpnAPIService) VpnTunnelsDestroyExecute(r ApiVpnTunnelsDestroyRequest) 
 }
 
 type ApiVpnTunnelsListRequest struct {
-	ctx                context.Context
-	ApiService         *VpnAPIService
-	created            *[]time.Time
-	createdEmpty       *[]time.Time
-	createdGt          *[]time.Time
-	createdGte         *[]time.Time
-	createdLt          *[]time.Time
-	createdLte         *[]time.Time
-	createdN           *[]time.Time
-	createdByRequest   *string
-	description        *[]string
-	descriptionEmpty   *bool
-	descriptionIc      *[]string
-	descriptionIe      *[]string
-	descriptionIew     *[]string
-	descriptionIsw     *[]string
-	descriptionN       *[]string
-	descriptionNic     *[]string
-	descriptionNie     *[]string
-	descriptionNiew    *[]string
-	descriptionNisw    *[]string
-	encapsulation      *[]string
+	ctx context.Context
+	ApiService *VpnAPIService
+	created *[]time.Time
+	createdEmpty *[]time.Time
+	createdGt *[]time.Time
+	createdGte *[]time.Time
+	createdLt *[]time.Time
+	createdLte *[]time.Time
+	createdN *[]time.Time
+	createdByRequest *string
+	description *[]string
+	descriptionEmpty *bool
+	descriptionIc *[]string
+	descriptionIe *[]string
+	descriptionIew *[]string
+	descriptionIsw *[]string
+	descriptionN *[]string
+	descriptionNic *[]string
+	descriptionNie *[]string
+	descriptionNiew *[]string
+	descriptionNisw *[]string
+	encapsulation *[]string
 	encapsulationEmpty *bool
-	encapsulationIc    *[]string
-	encapsulationIe    *[]string
-	encapsulationIew   *[]string
-	encapsulationIsw   *[]string
-	encapsulationN     *[]string
-	encapsulationNic   *[]string
-	encapsulationNie   *[]string
-	encapsulationNiew  *[]string
-	encapsulationNisw  *[]string
-	group              *[]string
-	groupN             *[]string
-	groupId            *[]*int32
-	groupIdN           *[]*int32
-	id                 *[]int32
-	idEmpty            *bool
-	idGt               *[]int32
-	idGte              *[]int32
-	idLt               *[]int32
-	idLte              *[]int32
-	idN                *[]int32
-	ipsecProfile       *[]string
-	ipsecProfileN      *[]string
-	ipsecProfileId     *[]*int32
-	ipsecProfileIdN    *[]*int32
-	lastUpdated        *[]time.Time
-	lastUpdatedEmpty   *[]time.Time
-	lastUpdatedGt      *[]time.Time
-	lastUpdatedGte     *[]time.Time
-	lastUpdatedLt      *[]time.Time
-	lastUpdatedLte     *[]time.Time
-	lastUpdatedN       *[]time.Time
-	limit              *int32
-	modifiedByRequest  *string
-	name               *[]string
-	nameEmpty          *bool
-	nameIc             *[]string
-	nameIe             *[]string
-	nameIew            *[]string
-	nameIsw            *[]string
-	nameN              *[]string
-	nameNic            *[]string
-	nameNie            *[]string
-	nameNiew           *[]string
-	nameNisw           *[]string
-	offset             *int32
-	ordering           *string
-	q                  *string
-	status             *[]string
-	statusEmpty        *bool
-	statusIc           *[]string
-	statusIe           *[]string
-	statusIew          *[]string
-	statusIsw          *[]string
-	statusN            *[]string
-	statusNic          *[]string
-	statusNie          *[]string
-	statusNiew         *[]string
-	statusNisw         *[]string
-	tag                *[]string
-	tagN               *[]string
-	tenant             *[]string
-	tenantN            *[]string
-	tenantGroup        *[]string
-	tenantGroupN       *[]string
-	tenantGroupId      *[]string
-	tenantGroupIdN     *[]string
-	tenantId           *[]*int32
-	tenantIdN          *[]*int32
-	tunnelId           *[]int32
-	tunnelIdEmpty      *bool
-	tunnelIdGt         *[]int32
-	tunnelIdGte        *[]int32
-	tunnelIdLt         *[]int32
-	tunnelIdLte        *[]int32
-	tunnelIdN          *[]int32
-	updatedByRequest   *string
+	encapsulationIc *[]string
+	encapsulationIe *[]string
+	encapsulationIew *[]string
+	encapsulationIsw *[]string
+	encapsulationN *[]string
+	encapsulationNic *[]string
+	encapsulationNie *[]string
+	encapsulationNiew *[]string
+	encapsulationNisw *[]string
+	group *[]string
+	groupN *[]string
+	groupId *[]*int32
+	groupIdN *[]*int32
+	id *[]int32
+	idEmpty *bool
+	idGt *[]int32
+	idGte *[]int32
+	idLt *[]int32
+	idLte *[]int32
+	idN *[]int32
+	ipsecProfile *[]string
+	ipsecProfileN *[]string
+	ipsecProfileId *[]*int32
+	ipsecProfileIdN *[]*int32
+	lastUpdated *[]time.Time
+	lastUpdatedEmpty *[]time.Time
+	lastUpdatedGt *[]time.Time
+	lastUpdatedGte *[]time.Time
+	lastUpdatedLt *[]time.Time
+	lastUpdatedLte *[]time.Time
+	lastUpdatedN *[]time.Time
+	limit *int32
+	modifiedByRequest *string
+	name *[]string
+	nameEmpty *bool
+	nameIc *[]string
+	nameIe *[]string
+	nameIew *[]string
+	nameIsw *[]string
+	nameN *[]string
+	nameNic *[]string
+	nameNie *[]string
+	nameNiew *[]string
+	nameNisw *[]string
+	offset *int32
+	ordering *string
+	q *string
+	status *[]string
+	statusEmpty *bool
+	statusIc *[]string
+	statusIe *[]string
+	statusIew *[]string
+	statusIsw *[]string
+	statusN *[]string
+	statusNic *[]string
+	statusNie *[]string
+	statusNiew *[]string
+	statusNisw *[]string
+	tag *[]string
+	tagN *[]string
+	tenant *[]string
+	tenantN *[]string
+	tenantGroup *[]string
+	tenantGroupN *[]string
+	tenantGroupId *[]string
+	tenantGroupIdN *[]string
+	tenantId *[]*int32
+	tenantIdN *[]*int32
+	tunnelId *[]int32
+	tunnelIdEmpty *bool
+	tunnelIdGt *[]int32
+	tunnelIdGte *[]int32
+	tunnelIdLt *[]int32
+	tunnelIdLte *[]int32
+	tunnelIdN *[]int32
+	updatedByRequest *string
 }
 
 func (r ApiVpnTunnelsListRequest) Created(created []time.Time) ApiVpnTunnelsListRequest {
@@ -22336,25 +22270,24 @@ VpnTunnelsList Method for VpnTunnelsList
 
 Get a list of tunnel objects.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnTunnelsListRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVpnTunnelsListRequest
 */
 func (a *VpnAPIService) VpnTunnelsList(ctx context.Context) ApiVpnTunnelsListRequest {
 	return ApiVpnTunnelsListRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return PaginatedTunnelList
+//  @return PaginatedTunnelList
 func (a *VpnAPIService) VpnTunnelsListExecute(r ApiVpnTunnelsListRequest) (*PaginatedTunnelList, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PaginatedTunnelList
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PaginatedTunnelList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnTunnelsList")
@@ -23400,9 +23333,9 @@ func (a *VpnAPIService) VpnTunnelsListExecute(r ApiVpnTunnelsListRequest) (*Pagi
 }
 
 type ApiVpnTunnelsPartialUpdateRequest struct {
-	ctx                          context.Context
-	ApiService                   *VpnAPIService
-	id                           int32
+	ctx context.Context
+	ApiService *VpnAPIService
+	id int32
 	patchedWritableTunnelRequest *PatchedWritableTunnelRequest
 }
 
@@ -23420,27 +23353,26 @@ VpnTunnelsPartialUpdate Method for VpnTunnelsPartialUpdate
 
 Patch a tunnel object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this tunnel.
-	@return ApiVpnTunnelsPartialUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this tunnel.
+ @return ApiVpnTunnelsPartialUpdateRequest
 */
 func (a *VpnAPIService) VpnTunnelsPartialUpdate(ctx context.Context, id int32) ApiVpnTunnelsPartialUpdateRequest {
 	return ApiVpnTunnelsPartialUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return Tunnel
+//  @return Tunnel
 func (a *VpnAPIService) VpnTunnelsPartialUpdateExecute(r ApiVpnTunnelsPartialUpdateRequest) (*Tunnel, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *Tunnel
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *Tunnel
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnTunnelsPartialUpdate")
@@ -23526,9 +23458,9 @@ func (a *VpnAPIService) VpnTunnelsPartialUpdateExecute(r ApiVpnTunnelsPartialUpd
 }
 
 type ApiVpnTunnelsRetrieveRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *VpnAPIService
-	id         int32
+	id int32
 }
 
 func (r ApiVpnTunnelsRetrieveRequest) Execute() (*Tunnel, *http.Response, error) {
@@ -23540,27 +23472,26 @@ VpnTunnelsRetrieve Method for VpnTunnelsRetrieve
 
 Get a tunnel object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this tunnel.
-	@return ApiVpnTunnelsRetrieveRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this tunnel.
+ @return ApiVpnTunnelsRetrieveRequest
 */
 func (a *VpnAPIService) VpnTunnelsRetrieve(ctx context.Context, id int32) ApiVpnTunnelsRetrieveRequest {
 	return ApiVpnTunnelsRetrieveRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return Tunnel
+//  @return Tunnel
 func (a *VpnAPIService) VpnTunnelsRetrieveExecute(r ApiVpnTunnelsRetrieveRequest) (*Tunnel, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *Tunnel
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *Tunnel
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnTunnelsRetrieve")
@@ -23644,9 +23575,9 @@ func (a *VpnAPIService) VpnTunnelsRetrieveExecute(r ApiVpnTunnelsRetrieveRequest
 }
 
 type ApiVpnTunnelsUpdateRequest struct {
-	ctx                   context.Context
-	ApiService            *VpnAPIService
-	id                    int32
+	ctx context.Context
+	ApiService *VpnAPIService
+	id int32
 	writableTunnelRequest *WritableTunnelRequest
 }
 
@@ -23664,27 +23595,26 @@ VpnTunnelsUpdate Method for VpnTunnelsUpdate
 
 Put a tunnel object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this tunnel.
-	@return ApiVpnTunnelsUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id A unique integer value identifying this tunnel.
+ @return ApiVpnTunnelsUpdateRequest
 */
 func (a *VpnAPIService) VpnTunnelsUpdate(ctx context.Context, id int32) ApiVpnTunnelsUpdateRequest {
 	return ApiVpnTunnelsUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
-		id:         id,
+		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return Tunnel
+//  @return Tunnel
 func (a *VpnAPIService) VpnTunnelsUpdateExecute(r ApiVpnTunnelsUpdateRequest) (*Tunnel, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPut
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *Tunnel
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *Tunnel
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.VpnTunnelsUpdate")
