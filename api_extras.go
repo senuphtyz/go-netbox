@@ -11,7 +11,6 @@ API version: 4.1.4 (4.1)
 package netbox
 
 import (
-       "time"
 	"bytes"
 	"context"
 	"io"
