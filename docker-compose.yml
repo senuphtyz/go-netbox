@@ -2,6 +2,7 @@ services:
   main:
     build:
       context: .
+      network: host
       target: development
       args:
         USER_ID: ${USER_ID:-1000}
